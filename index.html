@@ -386,11 +386,11 @@ const SCENARIOS = [
   {
     id: "nat-allergy-01",
     title: "28F — Anaphylaxis at the Park",
-    dispatch: "28-year-old female, allergic reaction, difficulty breathing",
+    dispatch: "28-year-old female, swelling, difficulty breathing",
     category: "Medical Emergencies",
     difficulty: "Medium",
     level_min: "EMR",
-    patient: { age: 28, sex: "F", cc: "Allergic reaction, difficulty breathing" },
+    patient: { age: 28, sex: "F", cc: "Swelling and difficulty breathing" },
     scene: "You arrive at a public park on a warm afternoon. A 28-year-old female is seated on a bench, visibly distressed. Friends report she was stung by a bee on her right forearm approximately 10 minutes ago. She initially had localized swelling at the sting site, but symptoms have rapidly progressed. She now has diffuse urticaria across her trunk, facial swelling including her lips, audible stridor, and is complaining of throat tightness and difficulty breathing. She appears anxious and is speaking in short sentences.",
     history: { pmh: "Known bee allergy, asthma (mild intermittent)", meds: "Albuterol inhaler PRN", allergies: "Bee venom" },
     vitals: { hr: 124, bp: "88/54", rr: 26, spo2: 91, gcs: 15, temp: "98.4°F" },
@@ -595,11 +595,11 @@ const SCENARIOS = [
   {
     id: "nat-behavioral-01",
     title: "22M — Agitated Patient with Possible Substance Use",
-    dispatch: "22-year-old male, aggressive behavior, possible drug use",
+    dispatch: "22-year-old male, aggressive behavior, altered mental status",
     category: "Behavioral/Psychiatric",
     difficulty: "Medium",
     level_min: "EMT",
-    patient: { age: 22, sex: "M", cc: "Aggressive behavior" },
+    patient: { age: 22, sex: "M", cc: "Altered mental status, aggressive" },
     scene: "Law enforcement requests EMS to a convenience store parking lot. A 22-year-old male is pacing rapidly, yelling incoherently, and has punched a car window, cutting his right hand. He is sweating profusely despite cool ambient temperature. Friends at the scene report he took 'something' at a party about 2 hours ago but won't say what. Police have established a perimeter and the patient is not currently armed. He is pacing in an open area, alternating between shouting at bystanders and talking to himself.",
     history: { pmh: "Unknown — friends state he has no significant medical history and does not take medications regularly", meds: "Unknown substance ingested approximately 2 hours ago", allergies: "Unknown" },
     vitals: { hr: 138, bp: "168/98", rr: 22, spo2: 98, gcs: 14, temp: "102.4°F" },
@@ -807,7 +807,7 @@ const SCENARIOS = [
     category: "Cardiology",
     difficulty: "Hard",
     level_min: "EMT",
-    patient: { age: 58, sex: "M", cc: "Crushing substernal chest pain radiating to left arm" },
+    patient: { age: 58, sex: "M", cc: "Chest pain, sweating" },
     scene: "You respond to an office building. A 58-year-old male is seated in a chair in the break room, clutching his chest. Coworkers state he suddenly complained of chest pain about 15 minutes ago and became pale and sweaty. He appears anxious, diaphoretic, and in obvious distress. Skin is pale, cool, and diaphoretic.",
     history: { pmh: "Hypertension, hyperlipidemia, family history of MI (father at age 55)", meds: "Lisinopril, atorvastatin", allergies: "No known drug allergies" },
     vitals: { hr: 104, bp: "148/92", rr: 22, spo2: 95, gcs: 15, temp: "98.6°F" },
@@ -1031,7 +1031,7 @@ const SCENARIOS = [
         type: "mc",
         level_filter: "EMR-EMT-AEMT-Paramedic",
         multi_select: false,
-        narrative: "The patient is unresponsive (GCS 3), breathing at 4 breaths per minute, with cyanotic lips and SpO2 of 72%. Pinpoint pupils and scene evidence suggest opioid use.",
+        narrative: "The patient is unresponsive (GCS 3), breathing at 4 breaths per minute, with cyanotic lips and SpO2 of 72%. Pinpoint pupils are noted. Drug paraphernalia is visible nearby.",
         vitals_update: {},
         clinical_pearl: "Opioid overdose deaths occur from respiratory failure, not from the drug directly stopping the heart. The single most important intervention is restoring adequate ventilation. Naloxone is critical but takes 2–5 minutes to work — the patient will suffer irreversible brain damage or die from hypoxia in that time if you don't ventilate first.",
         options: [
@@ -1047,7 +1047,7 @@ const SCENARIOS = [
         type: "order",
         level_filter: "EMR-EMT-AEMT-Paramedic",
         multi_select: false,
-        narrative: "You have identified this as a suspected opioid overdose with respiratory failure. You need to manage this patient systematically.",
+        narrative: "The patient remains in respiratory failure. You need to manage this patient systematically.",
         vitals_update: {},
         clinical_pearl: "Titrate naloxone to restore adequate respirations, not necessarily to full consciousness. A fully awake patient who was using opioids may become combative, experience acute withdrawal (vomiting with aspiration risk), or leave against medical advice. The goal is a respiratory rate of 12+ with adequate tidal volume.",
         options: [
@@ -1087,7 +1087,7 @@ const SCENARIOS = [
     category: "OB/Peds/Neonatal",
     difficulty: "Hard",
     level_min: "EMT",
-    patient: { age: 32, sex: "F", cc: "Active labor with crowning — imminent delivery" },
+    patient: { age: 32, sex: "F", cc: "Pregnant, feels like baby is coming" },
     scene: "You arrive at a residence where a 32-year-old pregnant female is lying on the bedroom floor on towels. Her partner called 911 stating 'the baby is coming right now.' The patient is groaning with contractions approximately 60 seconds apart. Upon visual inspection, you can see the top of the baby's head at the vaginal opening during contractions (crowning). This is her third pregnancy (G3P2) and she states she 'delivers fast.'",
     history: { pmh: "Two prior uncomplicated vaginal deliveries, no gestational complications this pregnancy", meds: "Prenatal vitamins, iron supplement", allergies: "No known allergies" },
     vitals: { hr: 108, bp: "128/76", rr: 22, spo2: 98, gcs: 15, temp: "98.8°F" },
@@ -1683,7 +1683,7 @@ const SCENARIOS = [
     category: "Medical Emergencies",
     difficulty: "Hard",
     level_min: "EMT",
-    patient: { age: 42, sex: "M", cc: "Seizures, excessive secretions, found near pesticides" },
+    patient: { age: 42, sex: "M", cc: "Seizures, found in barn" },
     scene: "You arrive at a rural farm where a 42-year-old male farm worker was found collapsed in a barn near open containers of pesticide. He is lying in a puddle of liquid and his clothing is saturated. He is actively seizing with copious oral secretions, and you notice a strong chemical odor. A coworker states he was spraying crops and started complaining of blurred vision and stomach cramps about 30 minutes ago before collapsing. The patient is soaked with a chemical solution and the barn is not well ventilated.",
     history: { pmh: "No significant medical history", meds: "None", allergies: "No known allergies" },
     vitals: { hr: 48, bp: "90/60", rr: 8, spo2: 80, gcs: 3, temp: "98.6°F" },
@@ -1991,16 +1991,13 @@ function renderScenario() {
         ${s.patient.age}yo ${s.patient.sex === 'M' ? 'male' : 'female'} — ${s.patient.cc}<br>
         <span class="muted-label" style="font-size:.9em">PMH: ${s.history.pmh} | Meds: ${s.history.meds} | Allergies: ${s.history.allergies}</span>
       </div>
-      <div class="narrative">
-        <div class="label">🔍 Presentation</div>
-        ${s.presentation}
-      </div>
+
       ${vitalsHtml}
     `;
   }
 
   // Vitals update (mid-scenario vitals change)
-  if (q.vitals_update) {
+  if (q.vitals_update && Object.keys(q.vitals_update).length > 0) {
     const vu = q.vitals_update;
     html += `
       <div class="vitals-update-box">
