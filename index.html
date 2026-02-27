@@ -2352,7 +2352,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize the following clinical findings as characteristic of OPIOID toxidrome versus OTHER toxidromes:",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "Recognizing toxidrome patterns helps identify the substance class involved and guides treatment, even when the specific drug is unknown.",
         "clinical_pearl": "The classic opioid toxidrome triad is: respiratory depression + pinpoint pupils (miosis) + altered mental status. However, mixed ingestions are common — a patient may have taken stimulants AND opioids simultaneously, creating a confusing clinical picture. When in doubt, if respirations are depressed, give naloxone.",
@@ -2361,76 +2361,22 @@ const SCENARIOS = [
           "Other Toxidrome"
         ],
         "items": [
-          {
-            "text": "Pinpoint pupils (miosis)",
-            "category": "Opioid Toxidrome"
-          },
-          {
-            "text": "Respiratory depression with bradycardia",
-            "category": "Opioid Toxidrome"
-          },
-          {
-            "text": "Dilated pupils, tachycardia, agitation, and hyperthermia (sympathomimetic)",
-            "category": "Other Toxidrome"
-          },
-          {
-            "text": "Excessive salivation, lacrimation, urination, defecation, and bradycardia (cholinergic)",
-            "category": "Other Toxidrome"
-          },
-          {
-            "text": "Decreased level of consciousness with hypotension",
-            "category": "Opioid Toxidrome"
-          },
-          {
-            "text": "Seizures, wide QRS complex on ECG, and dry skin (anticholinergic/TCA)",
-            "category": "Other Toxidrome"
-          }
+          "Pinpoint pupils (miosis)",
+          "Respiratory depression with bradycardia",
+          "Dilated pupils, tachycardia, agitation, and hyperthermia (sympathomimetic)",
+          "Excessive salivation, lacrimation, urination, defecation, and bradycardia (cholinergic)",
+          "Decreased level of consciousness with hypotension",
+          "Seizures, wide QRS complex on ECG, and dry skin (anticholinergic/TCA)"
         ],
         "explanation": "The opioid toxidrome features respiratory depression, miosis, CNS depression, and hypotension. Sympathomimetic, cholinergic, and anticholinergic toxidromes have distinctly different presentations. Pattern recognition enables appropriate treatment even when the substance is unknown.",
         "guideline_ref": "2021 National EMS Education Standards — Toxicology; AHA 2020 ACLS — Toxicology",
-        "options": [
-          {
-            "text": {
-              "text": "Pinpoint pupils (miosis)",
-              "category": "Opioid Toxidrome"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Respiratory depression with bradycardia",
-              "category": "Opioid Toxidrome"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Dilated pupils, tachycardia, agitation, and hyperthermia (sympathomimetic)",
-              "category": "Other Toxidrome"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Excessive salivation, lacrimation, urination, defecation, and bradycardia (cholinergic)",
-              "category": "Other Toxidrome"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Decreased level of consciousness with hypotension",
-              "category": "Opioid Toxidrome"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Seizures, wide QRS complex on ECG, and dry skin (anticholinergic/TCA)",
-              "category": "Other Toxidrome"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
         ]
       },
       {
@@ -3480,106 +3426,34 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize each finding as characteristic of either Diabetic Ketoacidosis (DKA) or Hypoglycemia.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "categories": [
           "Diabetic Ketoacidosis (DKA)",
           "Hypoglycemia"
         ],
         "items": [
-          {
-            "text": "Kussmaul (deep, rapid) respirations",
-            "category": "Diabetic Ketoacidosis (DKA)"
-          },
-          {
-            "text": "Fruity or acetone odor on breath",
-            "category": "Diabetic Ketoacidosis (DKA)"
-          },
-          {
-            "text": "Warm, dry skin with signs of dehydration",
-            "category": "Diabetic Ketoacidosis (DKA)"
-          },
-          {
-            "text": "Gradual onset over hours to days",
-            "category": "Diabetic Ketoacidosis (DKA)"
-          },
-          {
-            "text": "Cool, pale, diaphoretic skin",
-            "category": "Hypoglycemia"
-          },
-          {
-            "text": "Rapid onset over minutes to hours",
-            "category": "Hypoglycemia"
-          },
-          {
-            "text": "Tremors, irritability, or seizure activity",
-            "category": "Hypoglycemia"
-          },
-          {
-            "text": "Blood glucose reading above 300 mg/dL",
-            "category": "Diabetic Ketoacidosis (DKA)"
-          }
+          "Kussmaul (deep, rapid) respirations",
+          "Fruity or acetone odor on breath",
+          "Warm, dry skin with signs of dehydration",
+          "Gradual onset over hours to days",
+          "Cool, pale, diaphoretic skin",
+          "Rapid onset over minutes to hours",
+          "Tremors, irritability, or seizure activity",
+          "Blood glucose reading above 300 mg/dL"
         ],
         "explanation": "DKA features develop gradually from insulin deficiency: hyperglycemia, ketone production, metabolic acidosis (Kussmaul breathing), and dehydration (warm/dry skin). Hypoglycemia features develop rapidly from excess insulin or missed meals: sympathetic activation (cool/diaphoretic skin, tremors) and neuroglycopenia (confusion, seizures).",
         "guideline_ref": "ADA Standards of Medical Care in Diabetes; 2021 National EMS Education Standards",
         "clinical_pearl": "The key prehospital distinction: hypoglycemia has a rapid onset (minutes to hours), cool/diaphoretic skin, and often presents with tremors, irritability, or seizures. DKA has a gradual onset (hours to days), warm/dry skin from dehydration, Kussmaul respirations, and fruity breath. Both cause altered mental status, but the treatments are very different — always check blood glucose.",
-        "options": [
-          {
-            "text": {
-              "text": "Kussmaul (deep, rapid) respirations",
-              "category": "Diabetic Ketoacidosis (DKA)"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Fruity or acetone odor on breath",
-              "category": "Diabetic Ketoacidosis (DKA)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Warm, dry skin with signs of dehydration",
-              "category": "Diabetic Ketoacidosis (DKA)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Gradual onset over hours to days",
-              "category": "Diabetic Ketoacidosis (DKA)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Cool, pale, diaphoretic skin",
-              "category": "Hypoglycemia"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Rapid onset over minutes to hours",
-              "category": "Hypoglycemia"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Tremors, irritability, or seizure activity",
-              "category": "Hypoglycemia"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Blood glucose reading above 300 mg/dL",
-              "category": "Diabetic Ketoacidosis (DKA)"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
         ]
       },
       {
@@ -4492,7 +4366,7 @@ const SCENARIOS = [
       {
         "phase": "reassessment",
         "prompt": "Categorize each item as either appropriate for an INFANT (<1 year) or a CHILD (1-puberty) during FBAO management.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "After several cycles, the grape dislodges and the child begins crying. While monitoring the patient, you review age-appropriate FBAO techniques with your partner.",
         "clinical_pearl": "The transition from 'infant' to 'child' FBAO technique is approximately at age 1. For patients near the age boundary (like this 18-month-old), back blows + chest thrusts remain appropriate if the child is small enough to position on the forearm.",
@@ -4501,76 +4375,22 @@ const SCENARIOS = [
           "Child FBAO Technique"
         ],
         "items": [
-          {
-            "text": "5 back blows + 5 chest thrusts",
-            "category": "Infant FBAO Technique"
-          },
-          {
-            "text": "Abdominal thrusts (Heimlich maneuver)",
-            "category": "Child FBAO Technique"
-          },
-          {
-            "text": "Support on forearm, head lower than trunk",
-            "category": "Infant FBAO Technique"
-          },
-          {
-            "text": "Stand or kneel behind the patient",
-            "category": "Child FBAO Technique"
-          },
-          {
-            "text": "Two-finger chest thrust technique",
-            "category": "Infant FBAO Technique"
-          },
-          {
-            "text": "Inward and upward fist thrusts above the navel",
-            "category": "Child FBAO Technique"
-          }
+          "5 back blows + 5 chest thrusts",
+          "Abdominal thrusts (Heimlich maneuver)",
+          "Support on forearm, head lower than trunk",
+          "Stand or kneel behind the patient",
+          "Two-finger chest thrust technique",
+          "Inward and upward fist thrusts above the navel"
         ],
         "explanation": "Infant FBAO relief uses back blows and chest thrusts with the infant positioned along the rescuer's forearm. Child FBAO relief uses abdominal thrusts (Heimlich maneuver) performed from behind the patient. Knowing the age-appropriate technique is essential to avoid injury.",
         "guideline_ref": "AHA BLS Guidelines — FBAO Management by Age Group",
-        "options": [
-          {
-            "text": {
-              "text": "5 back blows + 5 chest thrusts",
-              "category": "Infant FBAO Technique"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Abdominal thrusts (Heimlich maneuver)",
-              "category": "Child FBAO Technique"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Support on forearm, head lower than trunk",
-              "category": "Infant FBAO Technique"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Stand or kneel behind the patient",
-              "category": "Child FBAO Technique"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Two-finger chest thrust technique",
-              "category": "Infant FBAO Technique"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Inward and upward fist thrusts above the navel",
-              "category": "Child FBAO Technique"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
         ]
       }
     ]
@@ -5080,7 +4900,7 @@ const SCENARIOS = [
       {
         "phase": "treatment",
         "prompt": "Categorize each finding as either a sign of COMPENSATED respiratory distress or DECOMPENSATED respiratory failure.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "As you treat the patient, you discuss respiratory assessment findings with your partner to ensure you both recognize the warning signs of deterioration.",
         "clinical_pearl": "The transition from compensated distress to decompensated failure can happen rapidly in pediatric asthma patients. Continuous monitoring is essential — the patient may appear stable one minute and crash the next.",
@@ -5089,98 +4909,26 @@ const SCENARIOS = [
           "Decompensated Respiratory Failure"
         ],
         "items": [
-          {
-            "text": "Tachypnea with audible wheezing",
-            "category": "Compensated Respiratory Distress"
-          },
-          {
-            "text": "Silent chest with minimal air movement",
-            "category": "Decompensated Respiratory Failure"
-          },
-          {
-            "text": "Able to speak in short phrases, alert and oriented",
-            "category": "Compensated Respiratory Distress"
-          },
-          {
-            "text": "Altered mental status, unable to speak",
-            "category": "Decompensated Respiratory Failure"
-          },
-          {
-            "text": "Accessory muscle use with intercostal retractions",
-            "category": "Compensated Respiratory Distress"
-          },
-          {
-            "text": "Bradycardia and decreasing respiratory effort",
-            "category": "Decompensated Respiratory Failure"
-          },
-          {
-            "text": "Tachycardia with agitation and anxiety",
-            "category": "Compensated Respiratory Distress"
-          },
-          {
-            "text": "Cyanosis with head-bobbing respirations",
-            "category": "Decompensated Respiratory Failure"
-          }
+          "Tachypnea with audible wheezing",
+          "Silent chest with minimal air movement",
+          "Able to speak in short phrases, alert and oriented",
+          "Altered mental status, unable to speak",
+          "Accessory muscle use with intercostal retractions",
+          "Bradycardia and decreasing respiratory effort",
+          "Tachycardia with agitation and anxiety",
+          "Cyanosis with head-bobbing respirations"
         ],
         "explanation": "Compensated distress shows the body is still fighting: tachypnea, tachycardia, accessory muscle use, and the ability to speak all indicate ongoing compensation. Decompensated failure shows the body is losing the fight: silent chest, altered mental status, bradycardia, decreasing effort, and cyanosis are pre-arrest findings.",
         "guideline_ref": "AHA PALS Guidelines — Pediatric Respiratory Distress vs. Failure; EMT National Education Standards",
-        "options": [
-          {
-            "text": {
-              "text": "Tachypnea with audible wheezing",
-              "category": "Compensated Respiratory Distress"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Silent chest with minimal air movement",
-              "category": "Decompensated Respiratory Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Able to speak in short phrases, alert and oriented",
-              "category": "Compensated Respiratory Distress"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Altered mental status, unable to speak",
-              "category": "Decompensated Respiratory Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Accessory muscle use with intercostal retractions",
-              "category": "Compensated Respiratory Distress"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Bradycardia and decreasing respiratory effort",
-              "category": "Decompensated Respiratory Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Tachycardia with agitation and anxiety",
-              "category": "Compensated Respiratory Distress"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Cyanosis with head-bobbing respirations",
-              "category": "Decompensated Respiratory Failure"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
         ]
       },
       {
@@ -5499,7 +5247,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize each of the following findings as either an indication for IMMEDIATE SURGICAL INTERVENTION or a finding that can be MONITORED AND REASSESSED in the field.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "explanation": "Penetrating abdominal trauma with evisceration, hemodynamic instability, or peritoneal signs all indicate the need for emergent surgical exploration. Stable patients with isolated soft-tissue injury and no signs of shock may allow for continued assessment, but the threshold for rapid transport should remain low.",
         "guideline_ref": "ACS-COT Field Triage Decision Scheme; PHTLS 10th Ed — Abdominal Trauma",
@@ -5508,74 +5256,20 @@ const SCENARIOS = [
           "Monitor and Reassess"
         ],
         "items": [
-          {
-            "text": "Evisceration of abdominal contents",
-            "category": "Immediate Surgical Intervention"
-          },
-          {
-            "text": "Hypotension unresponsive to fluid resuscitation",
-            "category": "Immediate Surgical Intervention"
-          },
-          {
-            "text": "Isolated superficial laceration with stable vitals",
-            "category": "Monitor and Reassess"
-          },
-          {
-            "text": "Progressive abdominal rigidity and guarding",
-            "category": "Immediate Surgical Intervention"
-          },
-          {
-            "text": "Patient alert with stable vitals and soft abdomen",
-            "category": "Monitor and Reassess"
-          },
-          {
-            "text": "Declining mental status with penetrating mechanism",
-            "category": "Immediate Surgical Intervention"
-          }
+          "Evisceration of abdominal contents",
+          "Hypotension unresponsive to fluid resuscitation",
+          "Isolated superficial laceration with stable vitals",
+          "Progressive abdominal rigidity and guarding",
+          "Patient alert with stable vitals and soft abdomen",
+          "Declining mental status with penetrating mechanism"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Evisceration of abdominal contents",
-              "category": "Immediate Surgical Intervention"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Hypotension unresponsive to fluid resuscitation",
-              "category": "Immediate Surgical Intervention"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Isolated superficial laceration with stable vitals",
-              "category": "Monitor and Reassess"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Progressive abdominal rigidity and guarding",
-              "category": "Immediate Surgical Intervention"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Patient alert with stable vitals and soft abdomen",
-              "category": "Monitor and Reassess"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Declining mental status with penetrating mechanism",
-              "category": "Immediate Surgical Intervention"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
         ]
       }
     ]
@@ -5884,7 +5578,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize each finding as either an INDICATION for spinal motion restriction or NOT AN INDICATION based on national guidelines.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "explanation": "National guidelines (NAEMSP/ACS) recommend spinal motion restriction when specific criteria are met: significant mechanism with midline tenderness, neurological deficits, altered mental status, distracting injuries, or intoxication that prevents reliable exam. A reliable negative exam in an alert, sober patient without midline tenderness can clear the need for SMR.",
         "guideline_ref": "NAEMSP/ACS 2018 Position Statement on EMS Spinal Precautions; PHTLS 10th Ed — Spinal Trauma",
@@ -5893,85 +5587,22 @@ const SCENARIOS = [
           "Not an Indication for SMR"
         ],
         "items": [
-          {
-            "text": "Midline cervical tenderness on palpation",
-            "category": "Indication for SMR"
-          },
-          {
-            "text": "Neurological deficit (bilateral hand tingling)",
-            "category": "Indication for SMR"
-          },
-          {
-            "text": "Altered mental status (GCS < 15)",
-            "category": "Indication for SMR"
-          },
-          {
-            "text": "Isolated minor fender-bender, no pain, no tenderness, GCS 15",
-            "category": "Not an Indication for SMR"
-          },
-          {
-            "text": "Significant mechanism with distracting painful injury",
-            "category": "Indication for SMR"
-          },
-          {
-            "text": "Alert patient, no neck pain, no tenderness, full ROM, no intoxication",
-            "category": "Not an Indication for SMR"
-          },
-          {
-            "text": "Patient intoxicated and unable to provide reliable exam",
-            "category": "Indication for SMR"
-          }
+          "Midline cervical tenderness on palpation",
+          "Neurological deficit (bilateral hand tingling)",
+          "Altered mental status (GCS < 15)",
+          "Isolated minor fender-bender, no pain, no tenderness, GCS 15",
+          "Significant mechanism with distracting painful injury",
+          "Alert patient, no neck pain, no tenderness, full ROM, no intoxication",
+          "Patient intoxicated and unable to provide reliable exam"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Midline cervical tenderness on palpation",
-              "category": "Indication for SMR"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Neurological deficit (bilateral hand tingling)",
-              "category": "Indication for SMR"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Altered mental status (GCS < 15)",
-              "category": "Indication for SMR"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Isolated minor fender-bender, no pain, no tenderness, GCS 15",
-              "category": "Not an Indication for SMR"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Significant mechanism with distracting painful injury",
-              "category": "Indication for SMR"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Alert patient, no neck pain, no tenderness, full ROM, no intoxication",
-              "category": "Not an Indication for SMR"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Patient intoxicated and unable to provide reliable exam",
-              "category": "Indication for SMR"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
         ]
       },
       {
@@ -6126,95 +5757,32 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize each documentation element as either APPROPRIATE or INAPPROPRIATE for an EMS report involving suspected non-accidental trauma.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "categories": [
           "Appropriate Documentation",
           "Inappropriate Documentation"
         ],
         "items": [
-          {
-            "text": "\"Multiple bruises noted on anterior torso ranging from yellow-green to dark purple\"",
-            "category": "Appropriate Documentation"
-          },
-          {
-            "text": "\"The boyfriend obviously beat this child\"",
-            "category": "Inappropriate Documentation"
-          },
-          {
-            "text": "\"Mother states child fell down 3 carpeted stairs approximately 1 hour ago\"",
-            "category": "Appropriate Documentation"
-          },
-          {
-            "text": "\"This is clearly a case of child abuse\"",
-            "category": "Inappropriate Documentation"
-          },
-          {
-            "text": "\"Child is withdrawn, avoids eye contact, does not reach for caregiver\"",
-            "category": "Appropriate Documentation"
-          },
-          {
-            "text": "\"Reported mechanism inconsistent with observed injury pattern\" — documented factually",
-            "category": "Appropriate Documentation"
-          },
-          {
-            "text": "Omitting bruise findings from the report to avoid conflict",
-            "category": "Inappropriate Documentation"
-          }
+          "\"Multiple bruises noted on anterior torso ranging from yellow-green to dark purple\"",
+          "\"The boyfriend obviously beat this child\"",
+          "\"Mother states child fell down 3 carpeted stairs approximately 1 hour ago\"",
+          "\"This is clearly a case of child abuse\"",
+          "\"Child is withdrawn, avoids eye contact, does not reach for caregiver\"",
+          "\"Reported mechanism inconsistent with observed injury pattern\" — documented factually",
+          "Omitting bruise findings from the report to avoid conflict"
         ],
         "explanation": "EMS documentation in suspected abuse cases must be objective, factual, and thorough. Describe what you see without diagnosing abuse. Use direct quotes when possible. Avoid subjective opinions, accusations, or conclusions about who caused injuries. Your documentation may become part of a legal investigation.",
         "guideline_ref": "NAEMSP Position Statement on Child Maltreatment; EMS Documentation Standards",
         "clinical_pearl": "Document like your report will be read in court — because it might be. Use objective language: describe colors, sizes, locations, and patterns. Quote caregivers verbatim when possible. Never accuse or diagnose abuse in your report — state facts and let investigators draw conclusions.",
-        "options": [
-          {
-            "text": {
-              "text": "\"Multiple bruises noted on anterior torso ranging from yellow-green to dark purple\"",
-              "category": "Appropriate Documentation"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "\"The boyfriend obviously beat this child\"",
-              "category": "Inappropriate Documentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "\"Mother states child fell down 3 carpeted stairs approximately 1 hour ago\"",
-              "category": "Appropriate Documentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "\"This is clearly a case of child abuse\"",
-              "category": "Inappropriate Documentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "\"Child is withdrawn, avoids eye contact, does not reach for caregiver\"",
-              "category": "Appropriate Documentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "\"Reported mechanism inconsistent with observed injury pattern\" — documented factually",
-              "category": "Appropriate Documentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Omitting bruise findings from the report to avoid conflict",
-              "category": "Inappropriate Documentation"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
         ]
       },
       {
@@ -6327,7 +5895,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize each injury mechanism into the correct blast injury phase.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "AEMT-Paramedic",
         "explanation": "Blast injuries are classified into four phases: PRIMARY (overpressure wave affecting air-filled organs), SECONDARY (projectiles/shrapnel), TERTIARY (body thrown by blast wind), and QUATERNARY (everything else — burns, crush, inhalation, environmental). Understanding phases helps anticipate occult injuries.",
         "guideline_ref": "PHTLS 10th Ed — Blast Injuries; CDC Blast Injury Fact Sheets",
@@ -6338,96 +5906,24 @@ const SCENARIOS = [
           "Quaternary (Other)"
         ],
         "items": [
-          {
-            "text": "Tympanic membrane rupture",
-            "category": "Primary (Overpressure)"
-          },
-          {
-            "text": "Blast lung (pulmonary contusion from pressure wave)",
-            "category": "Primary (Overpressure)"
-          },
-          {
-            "text": "Metal fragment embedded in thigh",
-            "category": "Secondary (Projectiles)"
-          },
-          {
-            "text": "Patient thrown 15 feet and striking the ground",
-            "category": "Tertiary (Displacement)"
-          },
-          {
-            "text": "Flash burns to face and arms",
-            "category": "Quaternary (Other)"
-          },
-          {
-            "text": "Bowel perforation from pressure wave",
-            "category": "Primary (Overpressure)"
-          },
-          {
-            "text": "Fractures from impact after being thrown",
-            "category": "Tertiary (Displacement)"
-          },
-          {
-            "text": "Inhalation injury from toxic fumes",
-            "category": "Quaternary (Other)"
-          }
+          "Tympanic membrane rupture",
+          "Blast lung (pulmonary contusion from pressure wave)",
+          "Metal fragment embedded in thigh",
+          "Patient thrown 15 feet and striking the ground",
+          "Flash burns to face and arms",
+          "Bowel perforation from pressure wave",
+          "Fractures from impact after being thrown",
+          "Inhalation injury from toxic fumes"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Tympanic membrane rupture",
-              "category": "Primary (Overpressure)"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Blast lung (pulmonary contusion from pressure wave)",
-              "category": "Primary (Overpressure)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Metal fragment embedded in thigh",
-              "category": "Secondary (Projectiles)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Patient thrown 15 feet and striking the ground",
-              "category": "Tertiary (Displacement)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Flash burns to face and arms",
-              "category": "Quaternary (Other)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Bowel perforation from pressure wave",
-              "category": "Primary (Overpressure)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Fractures from impact after being thrown",
-              "category": "Tertiary (Displacement)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Inhalation injury from toxic fumes",
-              "category": "Quaternary (Other)"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0,
+          2,
+          3
         ]
       },
       {
@@ -6893,7 +6389,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize the following findings as either signs of SEVERE preeclampsia/eclampsia or NORMAL pregnancy findings.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "The seizure has stopped. You are gathering additional history from the partner while continuing transport.",
         "clinical_pearl": "Distinguishing normal pregnancy discomforts from warning signs of preeclampsia/eclampsia is critical. Severe headache, visual changes, upper abdominal pain, and marked edema with hypertension are red flags that demand urgent evaluation.",
@@ -6904,96 +6400,24 @@ const SCENARIOS = [
           "Normal Pregnancy Findings"
         ],
         "items": [
-          {
-            "text": "Blood pressure 188/116",
-            "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-          },
-          {
-            "text": "Mild ankle swelling that worsens throughout the day",
-            "category": "Normal Pregnancy Findings"
-          },
-          {
-            "text": "Severe persistent headache unrelieved by rest",
-            "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-          },
-          {
-            "text": "Occasional heartburn after meals",
-            "category": "Normal Pregnancy Findings"
-          },
-          {
-            "text": "Visual disturbances — seeing spots or flashing lights",
-            "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-          },
-          {
-            "text": "Right upper quadrant or epigastric pain",
-            "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-          },
-          {
-            "text": "Mild shortness of breath when climbing stairs",
-            "category": "Normal Pregnancy Findings"
-          },
-          {
-            "text": "Sudden facial and hand edema",
-            "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-          }
+          "Blood pressure 188/116",
+          "Mild ankle swelling that worsens throughout the day",
+          "Severe persistent headache unrelieved by rest",
+          "Occasional heartburn after meals",
+          "Visual disturbances — seeing spots or flashing lights",
+          "Right upper quadrant or epigastric pain",
+          "Mild shortness of breath when climbing stairs",
+          "Sudden facial and hand edema"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Blood pressure 188/116",
-              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Mild ankle swelling that worsens throughout the day",
-              "category": "Normal Pregnancy Findings"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Severe persistent headache unrelieved by rest",
-              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Occasional heartburn after meals",
-              "category": "Normal Pregnancy Findings"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Visual disturbances — seeing spots or flashing lights",
-              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Right upper quadrant or epigastric pain",
-              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Mild shortness of breath when climbing stairs",
-              "category": "Normal Pregnancy Findings"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Sudden facial and hand edema",
-              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
         ]
       }
     ]
@@ -7179,7 +6603,7 @@ const SCENARIOS = [
       {
         "phase": "reassessment",
         "prompt": "During transport, the cord pulsations weaken significantly. Categorize each potential cause and intervention appropriately.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "Paramedic",
         "narrative": "Five minutes into transport, you notice the cord pulsations have weakened noticeably. The mother's BP is 118/74, HR 112. Contractions are less frequent since terbutaline administration but still present. You are maintaining manual elevation of the presenting part.",
         "clinical_pearl": "Weakening cord pulsations indicate decreasing fetal perfusion — this is an ominous sign. Reassess your hand position to ensure adequate elevation, verify maternal hemodynamic status (hypotension reduces uterine perfusion), and consider whether contractions are still compressing the cord. Communicate this change immediately to the receiving facility so they can expedite the OR team.",
@@ -7188,87 +6612,24 @@ const SCENARIOS = [
           "Appropriate Immediate Response"
         ],
         "items": [
-          {
-            "text": "Insufficient elevation of the presenting part allowing intermittent cord compression",
-            "category": "Likely Contributing to Decreased Cord Pulsations"
-          },
-          {
-            "text": "Maternal hypotension reducing uterine blood flow",
-            "category": "Likely Contributing to Decreased Cord Pulsations"
-          },
-          {
-            "text": "Cord vasospasm from exposure to cold or drying",
-            "category": "Likely Contributing to Decreased Cord Pulsations"
-          },
-          {
-            "text": "Reposition hand to ensure maximal lift of the presenting part off the cord",
-            "category": "Appropriate Immediate Response"
-          },
-          {
-            "text": "Administer additional IV fluid bolus to optimize maternal perfusion",
-            "category": "Appropriate Immediate Response"
-          },
-          {
-            "text": "Re-wet cord dressings with warm saline to prevent vasospasm",
-            "category": "Appropriate Immediate Response"
-          },
-          {
-            "text": "Update the receiving facility on fetal status change and request immediate OR availability",
-            "category": "Appropriate Immediate Response"
-          }
+          "Insufficient elevation of the presenting part allowing intermittent cord compression",
+          "Maternal hypotension reducing uterine blood flow",
+          "Cord vasospasm from exposure to cold or drying",
+          "Reposition hand to ensure maximal lift of the presenting part off the cord",
+          "Administer additional IV fluid bolus to optimize maternal perfusion",
+          "Re-wet cord dressings with warm saline to prevent vasospasm",
+          "Update the receiving facility on fetal status change and request immediate OR availability"
         ],
         "explanation": "Weakening cord pulsations require immediate reassessment of all modifiable factors: hand position, maternal hemodynamics, and cord condition. Simultaneously communicating the deterioration to the receiving facility allows them to have the OR immediately ready upon arrival. Every second matters for fetal survival.",
         "guideline_ref": "ACOG Umbilical Cord Prolapse Management; NAEMSP Obstetric Emergencies; 2021 National EMS Education Standards",
-        "options": [
-          {
-            "text": {
-              "text": "Insufficient elevation of the presenting part allowing intermittent cord compression",
-              "category": "Likely Contributing to Decreased Cord Pulsations"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Maternal hypotension reducing uterine blood flow",
-              "category": "Likely Contributing to Decreased Cord Pulsations"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Cord vasospasm from exposure to cold or drying",
-              "category": "Likely Contributing to Decreased Cord Pulsations"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Reposition hand to ensure maximal lift of the presenting part off the cord",
-              "category": "Appropriate Immediate Response"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Administer additional IV fluid bolus to optimize maternal perfusion",
-              "category": "Appropriate Immediate Response"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Re-wet cord dressings with warm saline to prevent vasospasm",
-              "category": "Appropriate Immediate Response"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Update the receiving facility on fetal status change and request immediate OR availability",
-              "category": "Appropriate Immediate Response"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
         ]
       }
     ]
@@ -7337,7 +6698,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize the following clinical findings by severity of dehydration.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT",
         "narrative": "You are assessing the infant more thoroughly while your partner prepares for transport. The mother provides additional details about the baby's condition over the past 48 hours.",
         "explanation": "Classifying dehydration severity guides the urgency of intervention. Mild dehydration shows subtle signs; moderate shows clear clinical findings; severe dehydration presents with signs of shock and requires immediate fluid resuscitation and emergent transport.",
@@ -7349,118 +6710,28 @@ const SCENARIOS = [
           "Severe Dehydration"
         ],
         "items": [
-          {
-            "text": "Slightly decreased urine output",
-            "category": "Mild Dehydration"
-          },
-          {
-            "text": "Sunken fontanelle",
-            "category": "Moderate Dehydration"
-          },
-          {
-            "text": "No tears when crying",
-            "category": "Moderate Dehydration"
-          },
-          {
-            "text": "Mottled skin with capillary refill >4 seconds",
-            "category": "Severe Dehydration"
-          },
-          {
-            "text": "Slightly dry mucous membranes",
-            "category": "Mild Dehydration"
-          },
-          {
-            "text": "No urine output for 8+ hours",
-            "category": "Severe Dehydration"
-          },
-          {
-            "text": "Lethargic and limp — difficult to arouse",
-            "category": "Severe Dehydration"
-          },
-          {
-            "text": "Increased thirst, mildly fussy",
-            "category": "Mild Dehydration"
-          },
-          {
-            "text": "Tachycardia with weak peripheral pulses",
-            "category": "Moderate Dehydration"
-          },
-          {
-            "text": "Hypotension with altered mental status",
-            "category": "Severe Dehydration"
-          }
+          "Slightly decreased urine output",
+          "Sunken fontanelle",
+          "No tears when crying",
+          "Mottled skin with capillary refill >4 seconds",
+          "Slightly dry mucous membranes",
+          "No urine output for 8+ hours",
+          "Lethargic and limp — difficult to arouse",
+          "Increased thirst, mildly fussy",
+          "Tachycardia with weak peripheral pulses",
+          "Hypotension with altered mental status"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Slightly decreased urine output",
-              "category": "Mild Dehydration"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Sunken fontanelle",
-              "category": "Moderate Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "No tears when crying",
-              "category": "Moderate Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Mottled skin with capillary refill >4 seconds",
-              "category": "Severe Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Slightly dry mucous membranes",
-              "category": "Mild Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "No urine output for 8+ hours",
-              "category": "Severe Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Lethargic and limp — difficult to arouse",
-              "category": "Severe Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Increased thirst, mildly fussy",
-              "category": "Mild Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Tachycardia with weak peripheral pulses",
-              "category": "Moderate Dehydration"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Hypotension with altered mental status",
-              "category": "Severe Dehydration"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          2,
+          0,
+          1,
+          2
         ]
       },
       {
@@ -7768,7 +7039,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize the following findings as either signs of WORSENING CONDITION requiring immediate intervention or EXPECTED FINDINGS in this presentation.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "You are en route to the hospital. The patient has been on his side with cooling measures in place for 4 minutes. You are performing ongoing assessment.",
         "categories": [
@@ -7776,99 +7047,27 @@ const SCENARIOS = [
           "Expected Finding in This Presentation"
         ],
         "items": [
-          {
-            "text": "Patient suddenly stops struggling and becomes quiet",
-            "category": "Worsening — Immediate Intervention Needed"
-          },
-          {
-            "text": "Continued diaphoresis (profuse sweating)",
-            "category": "Expected Finding in This Presentation"
-          },
-          {
-            "text": "Heart rate remains elevated at 158 bpm",
-            "category": "Expected Finding in This Presentation"
-          },
-          {
-            "text": "Patient becomes unresponsive with agonal breathing",
-            "category": "Worsening — Immediate Intervention Needed"
-          },
-          {
-            "text": "Incoherent screaming and continued agitation",
-            "category": "Expected Finding in This Presentation"
-          },
-          {
-            "text": "Loss of peripheral pulses with central pulses weakening",
-            "category": "Worsening — Immediate Intervention Needed"
-          },
-          {
-            "text": "Skin remains hot and flushed",
-            "category": "Expected Finding in This Presentation"
-          },
-          {
-            "text": "Cardiac monitor shows widening QRS complexes",
-            "category": "Worsening — Immediate Intervention Needed"
-          }
+          "Patient suddenly stops struggling and becomes quiet",
+          "Continued diaphoresis (profuse sweating)",
+          "Heart rate remains elevated at 158 bpm",
+          "Patient becomes unresponsive with agonal breathing",
+          "Incoherent screaming and continued agitation",
+          "Loss of peripheral pulses with central pulses weakening",
+          "Skin remains hot and flushed",
+          "Cardiac monitor shows widening QRS complexes"
         ],
         "explanation": "Differentiating expected findings from signs of imminent collapse is essential. Sudden cessation of agitation, declining mental status, and loss of pulses indicate the patient is transitioning from a hypermetabolic state to cardiovascular collapse.",
         "guideline_ref": "NAEMSP Excited Delirium Management; ACEP Excited Delirium White Paper",
         "clinical_pearl": "The most dangerous moment in excited delirium is when the patient suddenly becomes quiet and stops struggling. This is NOT a sign of improvement — it often precedes cardiac arrest. Treat sudden calm as a critical deterioration.",
-        "options": [
-          {
-            "text": {
-              "text": "Patient suddenly stops struggling and becomes quiet",
-              "category": "Worsening — Immediate Intervention Needed"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Continued diaphoresis (profuse sweating)",
-              "category": "Expected Finding in This Presentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Heart rate remains elevated at 158 bpm",
-              "category": "Expected Finding in This Presentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Patient becomes unresponsive with agonal breathing",
-              "category": "Worsening — Immediate Intervention Needed"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Incoherent screaming and continued agitation",
-              "category": "Expected Finding in This Presentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Loss of peripheral pulses with central pulses weakening",
-              "category": "Worsening — Immediate Intervention Needed"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Skin remains hot and flushed",
-              "category": "Expected Finding in This Presentation"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Cardiac monitor shows widening QRS complexes",
-              "category": "Worsening — Immediate Intervention Needed"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
         ]
       },
       {
@@ -8312,7 +7511,7 @@ const SCENARIOS = [
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following core body temperatures into the correct hypothermia severity classification.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "You have removed the patient's cold clothing and wrapped him in blankets. You are en route to the hospital and reviewing hypothermia classifications.",
         "clinical_pearl": "Shivering typically stops below 86°F (30°C), which is a sign of worsening hypothermia — not improvement. The absence of shivering in a cold patient is ominous.",
@@ -8322,76 +7521,22 @@ const SCENARIOS = [
           "Severe (Below 82°F / Below 28°C)"
         ],
         "items": [
-          {
-            "text": "93°F — shivering, alert and oriented",
-            "category": "Mild (90–95°F / 32–35°C)"
-          },
-          {
-            "text": "88°F — shivering has stopped, confused",
-            "category": "Moderate (82–90°F / 28–32°C)"
-          },
-          {
-            "text": "84°F — lethargic, bradycardic, no shivering",
-            "category": "Moderate (82–90°F / 28–32°C)"
-          },
-          {
-            "text": "78°F — unresponsive, barely detectable pulse",
-            "category": "Severe (Below 82°F / Below 28°C)"
-          },
-          {
-            "text": "91°F — vigorous shivering, mild confusion",
-            "category": "Mild (90–95°F / 32–35°C)"
-          },
-          {
-            "text": "75°F — fixed dilated pupils, no detectable pulse",
-            "category": "Severe (Below 82°F / Below 28°C)"
-          }
+          "93°F — shivering, alert and oriented",
+          "88°F — shivering has stopped, confused",
+          "84°F — lethargic, bradycardic, no shivering",
+          "78°F — unresponsive, barely detectable pulse",
+          "91°F — vigorous shivering, mild confusion",
+          "75°F — fixed dilated pupils, no detectable pulse"
         ],
         "explanation": "Hypothermia is classified by core temperature: Mild (90–95°F) presents with shivering and altered mentation; Moderate (82–90°F) shows loss of shivering, worsening confusion, and bradycardia; Severe (below 82°F) presents with unresponsiveness, absent reflexes, and risk of cardiac arrest.",
         "guideline_ref": "AHA ECC 2020 — Accidental Hypothermia; Wilderness Medical Society CPG for Hypothermia",
-        "options": [
-          {
-            "text": {
-              "text": "93°F — shivering, alert and oriented",
-              "category": "Mild (90–95°F / 32–35°C)"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "88°F — shivering has stopped, confused",
-              "category": "Moderate (82–90°F / 28–32°C)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "84°F — lethargic, bradycardic, no shivering",
-              "category": "Moderate (82–90°F / 28–32°C)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "78°F — unresponsive, barely detectable pulse",
-              "category": "Severe (Below 82°F / Below 28°C)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "91°F — vigorous shivering, mild confusion",
-              "category": "Mild (90–95°F / 32–35°C)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "75°F — fixed dilated pupils, no detectable pulse",
-              "category": "Severe (Below 82°F / Below 28°C)"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2
         ]
       },
       {
@@ -8401,27 +7546,13 @@ const SCENARIOS = [
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "Your partner asks you to walk through the management steps for this patient as you continue transport.",
         "items": [
-          {
-            "text": "Ensure scene safety and move patient to a warm environment"
-          },
-          {
-            "text": "Gently remove cold/wet clothing"
-          },
-          {
-            "text": "Handle the patient gently — avoid rough or jarring movements"
-          },
-          {
-            "text": "Apply warm blankets, heat packs to trunk (axillae, groin, neck)"
-          },
-          {
-            "text": "Administer warmed, humidified oxygen if available"
-          },
-          {
-            "text": "Monitor cardiac rhythm continuously during transport"
-          },
-          {
-            "text": "Transport to an appropriate facility for active core rewarming"
-          }
+          "Ensure scene safety and move patient to a warm environment",
+          "Gently remove cold/wet clothing",
+          "Handle the patient gently — avoid rough or jarring movements",
+          "Apply warm blankets, heat packs to trunk (axillae, groin, neck)",
+          "Administer warmed, humidified oxygen if available",
+          "Monitor cardiac rhythm continuously during transport",
+          "Transport to an appropriate facility for active core rewarming"
         ],
         "explanation": "Hypothermia management follows a stepwise approach: remove from the cold, prevent further heat loss, gently rewarm, support oxygenation, and transport. Gentle handling throughout is critical to prevent dysrhythmias.",
         "guideline_ref": "AHA ECC 2020 — Hypothermia; NAEMSP Hypothermia Guidelines; Wilderness Medical Society CPG",
@@ -8566,24 +7697,12 @@ const SCENARIOS = [
         "narrative": "You have assessed the patient and are preparing to manage and transport. Your partner is getting the stretcher.",
         "clinical_pearl": "The definitive treatment for pit viper envenomation is antivenom (CroFab or Anavip), which is only available at the hospital. Your prehospital role is to prevent further harm, monitor for systemic progression, and transport rapidly to a facility with antivenom capability.",
         "items": [
-          {
-            "text": "Ensure the scene is safe — move away from the snake's location"
-          },
-          {
-            "text": "Calm and reassure the patient; limit physical activity"
-          },
-          {
-            "text": "Remove rings, watches, and tight clothing from the affected extremity"
-          },
-          {
-            "text": "Immobilize the extremity with a splint; keep at or slightly below heart level"
-          },
-          {
-            "text": "Mark the edge of swelling and note the time"
-          },
-          {
-            "text": "Transport to a facility capable of administering antivenom"
-          }
+          "Ensure the scene is safe — move away from the snake's location",
+          "Calm and reassure the patient; limit physical activity",
+          "Remove rings, watches, and tight clothing from the affected extremity",
+          "Immobilize the extremity with a splint; keep at or slightly below heart level",
+          "Mark the edge of swelling and note the time",
+          "Transport to a facility capable of administering antivenom"
         ],
         "explanation": "Snake bite management prioritizes safety, calming the patient (elevated heart rate increases venom distribution), removing constrictive items before swelling worsens, immobilization, tracking progression, and rapid transport to definitive care (antivenom).",
         "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020",
@@ -8599,7 +7718,7 @@ const SCENARIOS = [
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following actions into appropriate (DO) and inappropriate (DON'T) for prehospital snake bite management.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "While transporting, your new partner asks about common myths versus evidence-based practices for snake bites.",
         "clinical_pearl": "Attempting to capture or kill the snake delays care and risks additional bites. A photo from a safe distance may help with identification, but it should never delay transport.",
@@ -8608,109 +7727,28 @@ const SCENARIOS = [
           "DON'T — Harmful or Ineffective"
         ],
         "items": [
-          {
-            "text": "Immobilize the affected limb",
-            "category": "DO — Appropriate Actions"
-          },
-          {
-            "text": "Remove jewelry and constrictive clothing",
-            "category": "DO — Appropriate Actions"
-          },
-          {
-            "text": "Keep the patient calm and still",
-            "category": "DO — Appropriate Actions"
-          },
-          {
-            "text": "Mark and monitor swelling progression",
-            "category": "DO — Appropriate Actions"
-          },
-          {
-            "text": "Apply a constriction band or tourniquet",
-            "category": "DON'T — Harmful or Ineffective"
-          },
-          {
-            "text": "Apply ice or a cold pack to the bite",
-            "category": "DON'T — Harmful or Ineffective"
-          },
-          {
-            "text": "Cut the wound and suction the venom",
-            "category": "DON'T — Harmful or Ineffective"
-          },
-          {
-            "text": "Apply electric shock to the bite site",
-            "category": "DON'T — Harmful or Ineffective"
-          },
-          {
-            "text": "Give the patient aspirin for pain",
-            "category": "DON'T — Harmful or Ineffective"
-          }
+          "Immobilize the affected limb",
+          "Remove jewelry and constrictive clothing",
+          "Keep the patient calm and still",
+          "Mark and monitor swelling progression",
+          "Apply a constriction band or tourniquet",
+          "Apply ice or a cold pack to the bite",
+          "Cut the wound and suction the venom",
+          "Apply electric shock to the bite site",
+          "Give the patient aspirin for pain"
         ],
         "explanation": "Evidence-based snake bite care focuses on immobilization, swelling monitoring, and rapid transport. Many traditional remedies (tourniquet, incision/suction, ice, electric shock) are harmful. Aspirin and NSAIDs are avoided because pit viper venom can cause coagulopathy, and these drugs impair clotting.",
         "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020",
-        "options": [
-          {
-            "text": {
-              "text": "Immobilize the affected limb",
-              "category": "DO — Appropriate Actions"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Remove jewelry and constrictive clothing",
-              "category": "DO — Appropriate Actions"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Keep the patient calm and still",
-              "category": "DO — Appropriate Actions"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Mark and monitor swelling progression",
-              "category": "DO — Appropriate Actions"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Apply a constriction band or tourniquet",
-              "category": "DON'T — Harmful or Ineffective"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Apply ice or a cold pack to the bite",
-              "category": "DON'T — Harmful or Ineffective"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Cut the wound and suction the venom",
-              "category": "DON'T — Harmful or Ineffective"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Apply electric shock to the bite site",
-              "category": "DON'T — Harmful or Ineffective"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Give the patient aspirin for pain",
-              "category": "DON'T — Harmful or Ineffective"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
         ]
       },
       {
@@ -8946,30 +7984,14 @@ const SCENARIOS = [
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "You are packaging the patient for transport. Your crew asks for a summary of priorities.",
         "items": [
-          {
-            "text": "Confirm scene safety — ensure power source is disconnected"
-          },
-          {
-            "text": "Establish manual in-line cervical spine stabilization"
-          },
-          {
-            "text": "Manage airway with jaw-thrust maneuver; provide high-flow oxygen"
-          },
-          {
-            "text": "Assess circulation — control any hemorrhage, assess pulses distal to burns"
-          },
-          {
-            "text": "Apply cardiac monitor; initiate continuous ECG monitoring"
-          },
-          {
-            "text": "Cover burns with dry sterile dressings"
-          },
-          {
-            "text": "Initiate IV access and fluid resuscitation (AEMT/Paramedic)"
-          },
-          {
-            "text": "Rapidly transport to a burn/trauma center"
-          }
+          "Confirm scene safety — ensure power source is disconnected",
+          "Establish manual in-line cervical spine stabilization",
+          "Manage airway with jaw-thrust maneuver; provide high-flow oxygen",
+          "Assess circulation — control any hemorrhage, assess pulses distal to burns",
+          "Apply cardiac monitor; initiate continuous ECG monitoring",
+          "Cover burns with dry sterile dressings",
+          "Initiate IV access and fluid resuscitation (AEMT/Paramedic)",
+          "Rapidly transport to a burn/trauma center"
         ],
         "explanation": "Electrical injury management follows a trauma-based approach: scene safety first (power off), then C-spine, airway, breathing, circulation, cardiac monitoring, wound care, fluids, and transport to an appropriate center. These patients require burn center and/or trauma center care.",
         "guideline_ref": "PHTLS 9th Edition — Electrical Injuries; ABA Burn Referral Criteria; AHA ACLS 2020",
@@ -9056,27 +8078,13 @@ const SCENARIOS = [
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "You have stopped your unit upwind at a safe distance. Dispatch confirms fire/hazmat is en route. Several patients are walking toward your position coughing.",
         "items": [
-          {
-            "text": "Recognize the presence of a hazardous material (visual clues, placards, cloud)"
-          },
-          {
-            "text": "Establish a safe position upwind, uphill, and at a safe distance"
-          },
-          {
-            "text": "Request hazmat team, fire, and additional EMS resources through dispatch"
-          },
-          {
-            "text": "Isolate the area — deny entry to bystanders and other responders"
-          },
-          {
-            "text": "Attempt to identify the substance using binoculars, ERG, or information from the driver"
-          },
-          {
-            "text": "Direct ambulatory patients to move upwind and await decontamination"
-          },
-          {
-            "text": "Establish a treatment area in the cold zone for decontaminated patients"
-          }
+          "Recognize the presence of a hazardous material (visual clues, placards, cloud)",
+          "Establish a safe position upwind, uphill, and at a safe distance",
+          "Request hazmat team, fire, and additional EMS resources through dispatch",
+          "Isolate the area — deny entry to bystanders and other responders",
+          "Attempt to identify the substance using binoculars, ERG, or information from the driver",
+          "Direct ambulatory patients to move upwind and await decontamination",
+          "Establish a treatment area in the cold zone for decontaminated patients"
         ],
         "explanation": "The Awareness-level response follows: Recognize → Protect yourself → Notify → Isolate → Identify (from a distance) → Direct patients away from the hazard → Prepare for treatment only after decontamination. Never enter the hot zone.",
         "guideline_ref": "OSHA 29 CFR 1910.120 — Awareness Level Competencies; ERG; FIRESCOPE ICS",
@@ -9093,7 +8101,7 @@ const SCENARIOS = [
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following activities into the correct hazmat zone where they should occur.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "The hazmat team has arrived and is establishing zones. The incident commander asks you to help brief incoming EMS crews on the zone structure.",
         "categories": [
@@ -9102,98 +8110,26 @@ const SCENARIOS = [
           "Cold Zone (Support Zone)"
         ],
         "items": [
-          {
-            "text": "Hazmat technicians in Level A suits stop the chemical leak",
-            "category": "Hot Zone (Exclusion Zone)"
-          },
-          {
-            "text": "Rescue of non-ambulatory patients from the spill area",
-            "category": "Hot Zone (Exclusion Zone)"
-          },
-          {
-            "text": "Gross decontamination — initial wash-down of contaminated patients",
-            "category": "Warm Zone (Contamination Reduction)"
-          },
-          {
-            "text": "Removal and bagging of contaminated clothing",
-            "category": "Warm Zone (Contamination Reduction)"
-          },
-          {
-            "text": "Secondary decontamination — thorough washing before entering cold zone",
-            "category": "Warm Zone (Contamination Reduction)"
-          },
-          {
-            "text": "Full patient assessment, triage, and medical treatment by EMS",
-            "category": "Cold Zone (Support Zone)"
-          },
-          {
-            "text": "EMS command post and staging area",
-            "category": "Cold Zone (Support Zone)"
-          },
-          {
-            "text": "Loading patients into ambulances for transport",
-            "category": "Cold Zone (Support Zone)"
-          }
+          "Hazmat technicians in Level A suits stop the chemical leak",
+          "Rescue of non-ambulatory patients from the spill area",
+          "Gross decontamination — initial wash-down of contaminated patients",
+          "Removal and bagging of contaminated clothing",
+          "Secondary decontamination — thorough washing before entering cold zone",
+          "Full patient assessment, triage, and medical treatment by EMS",
+          "EMS command post and staging area",
+          "Loading patients into ambulances for transport"
         ],
         "explanation": "Hazmat zones separate the dangerous area (Hot) from the decontamination corridor (Warm) and the clean treatment/support area (Cold). EMS without hazmat PPE operates only in the Cold Zone. Patients must be decontaminated in the Warm Zone before receiving medical care in the Cold Zone.",
         "guideline_ref": "OSHA 29 CFR 1910.120; FIRESCOPE ICS-HM; NFPA 472/473",
-        "options": [
-          {
-            "text": {
-              "text": "Hazmat technicians in Level A suits stop the chemical leak",
-              "category": "Hot Zone (Exclusion Zone)"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Rescue of non-ambulatory patients from the spill area",
-              "category": "Hot Zone (Exclusion Zone)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Gross decontamination — initial wash-down of contaminated patients",
-              "category": "Warm Zone (Contamination Reduction)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Removal and bagging of contaminated clothing",
-              "category": "Warm Zone (Contamination Reduction)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Secondary decontamination — thorough washing before entering cold zone",
-              "category": "Warm Zone (Contamination Reduction)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Full patient assessment, triage, and medical treatment by EMS",
-              "category": "Cold Zone (Support Zone)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "EMS command post and staging area",
-              "category": "Cold Zone (Support Zone)"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Loading patients into ambulances for transport",
-              "category": "Cold Zone (Support Zone)"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2
         ]
       },
       {
@@ -9356,27 +8292,13 @@ const SCENARIOS = [
           "gcs": 10
         },
         "items": [
-          {
-            "text": "Maintain cervical spine stabilization throughout extrication"
-          },
-          {
-            "text": "Apply high-flow oxygen via non-rebreather mask"
-          },
-          {
-            "text": "Control any external hemorrhage with direct pressure and tourniquets as needed"
-          },
-          {
-            "text": "Apply a traction splint to the angulated femur fracture once extricated"
-          },
-          {
-            "text": "Prepare a concise handoff report (MIST: Mechanism, Injuries, Signs/vitals, Treatment)"
-          },
-          {
-            "text": "Identify and secure a safe landing zone (100 × 100 ft minimum, clear of debris and wires)"
-          },
-          {
-            "text": "Transfer patient care to the flight crew with verbal and written report"
-          }
+          "Maintain cervical spine stabilization throughout extrication",
+          "Apply high-flow oxygen via non-rebreather mask",
+          "Control any external hemorrhage with direct pressure and tourniquets as needed",
+          "Apply a traction splint to the angulated femur fracture once extricated",
+          "Prepare a concise handoff report (MIST: Mechanism, Injuries, Signs/vitals, Treatment)",
+          "Identify and secure a safe landing zone (100 × 100 ft minimum, clear of debris and wires)",
+          "Transfer patient care to the flight crew with verbal and written report"
         ],
         "explanation": "While awaiting the helicopter, focus on life-saving interventions: C-spine, oxygen, hemorrhage control, and splinting. Simultaneously prepare a landing zone and organize a concise handoff report. The MIST format (Mechanism, Injuries, Signs/vitals, Treatment) provides the flight crew with critical information efficiently.",
         "guideline_ref": "NAEMSP Air Medical Guidelines; PHTLS 9th Edition; ACS-COT Field Triage",
@@ -9463,30 +8385,14 @@ const SCENARIOS = [
         "narrative": "The patient continues to refuse transport. You need to follow proper refusal procedures to protect the patient and yourself.",
         "clinical_pearl": "Consider contacting medical control (online medical direction) for high-risk refusals. Having a physician speak directly with the patient can sometimes change their mind and also provides additional documentation and medical oversight for the refusal.",
         "items": [
-          {
-            "text": "Perform a thorough patient assessment including vitals and history"
-          },
-          {
-            "text": "Assess decision-making capacity: alert, oriented, understands situation and consequences"
-          },
-          {
-            "text": "Clearly explain your assessment findings and why transport is recommended"
-          },
-          {
-            "text": "Explain specific risks of refusing, including the possibility of worsening condition or death"
-          },
-          {
-            "text": "Contact medical control (online medical direction) for physician input on this high-risk refusal"
-          },
-          {
-            "text": "If patient still refuses: have patient sign the refusal form after confirming understanding"
-          },
-          {
-            "text": "Provide instructions for calling 911 again if symptoms return or worsen"
-          },
-          {
-            "text": "Document the entire encounter thoroughly: assessment, risks explained, patient responses, and signatures"
-          }
+          "Perform a thorough patient assessment including vitals and history",
+          "Assess decision-making capacity: alert, oriented, understands situation and consequences",
+          "Clearly explain your assessment findings and why transport is recommended",
+          "Explain specific risks of refusing, including the possibility of worsening condition or death",
+          "Contact medical control (online medical direction) for physician input on this high-risk refusal",
+          "If patient still refuses: have patient sign the refusal form after confirming understanding",
+          "Provide instructions for calling 911 again if symptoms return or worsen",
+          "Document the entire encounter thoroughly: assessment, risks explained, patient responses, and signatures"
         ],
         "explanation": "A proper refusal of care follows a systematic approach: assess the patient, confirm capacity, inform them of risks (especially death or serious harm), involve medical control for high-risk situations, obtain a signed refusal, provide return instructions, and document everything meticulously.",
         "guideline_ref": "NAEMSP Position Statement — Patient Refusal of Transport; ACEP Informed Consent in EMS",
@@ -9787,7 +8693,7 @@ const SCENARIOS = [
       {
         "phase": "transport",
         "prompt": "En route, the patient's SpO2 drops to 85% despite high-flow O2 and she becomes increasingly dyspneic. You suspect worsening acute chest syndrome. Categorize each intervention as APPROPRIATE or NOT APPROPRIATE for this deterioration.",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "Paramedic",
         "narrative": "Despite NRB at 15 LPM, the patient's SpO2 has fallen to 85%. She is using accessory muscles, speaking only 1-2 words at a time, and becoming increasingly anxious. Lung sounds reveal crackles in the right lower lobe. HR 128, BP 108/68, RR 32.",
         "vitals_update": {
@@ -9801,88 +8707,25 @@ const SCENARIOS = [
           "Not Appropriate"
         ],
         "items": [
-          {
-            "text": "Switch to CPAP at 5-10 cmH2O to improve oxygenation and reduce work of breathing",
-            "category": "Appropriate Intervention"
-          },
-          {
-            "text": "Continue IV normal saline at maintenance rate to maintain hydration",
-            "category": "Appropriate Intervention"
-          },
-          {
-            "text": "Prepare for endotracheal intubation if CPAP fails to improve oxygenation",
-            "category": "Appropriate Intervention"
-          },
-          {
-            "text": "Administer albuterol 2.5 mg nebulized if wheezing or bronchospasm is present",
-            "category": "Appropriate Intervention"
-          },
-          {
-            "text": "Administer a 2-liter normal saline bolus to treat the presumed hypovolemia",
-            "category": "Not Appropriate"
-          },
-          {
-            "text": "Reduce oxygen flow to 2 LPM nasal cannula to prevent oxygen toxicity",
-            "category": "Not Appropriate"
-          },
-          {
-            "text": "Notify receiving facility early for preparation of blood transfusion and respiratory support",
-            "category": "Appropriate Intervention"
-          }
+          "Switch to CPAP at 5-10 cmH2O to improve oxygenation and reduce work of breathing",
+          "Continue IV normal saline at maintenance rate to maintain hydration",
+          "Prepare for endotracheal intubation if CPAP fails to improve oxygenation",
+          "Administer albuterol 2.5 mg nebulized if wheezing or bronchospasm is present",
+          "Administer a 2-liter normal saline bolus to treat the presumed hypovolemia",
+          "Reduce oxygen flow to 2 LPM nasal cannula to prevent oxygen toxicity",
+          "Notify receiving facility early for preparation of blood transfusion and respiratory support"
         ],
         "explanation": "Worsening acute chest syndrome requires escalating respiratory support: CPAP provides positive pressure to recruit collapsed alveoli. If CPAP fails, intubation may be necessary. Albuterol can help if bronchospasm is contributing. Aggressive fluid boluses can worsen pulmonary edema in ACS. Reducing oxygen in a patient with SpO2 85% is dangerous. Early hospital notification allows preparation of exchange transfusion, the definitive treatment.",
         "guideline_ref": "NAEMSP Sickle Cell Prehospital Guidelines; ACS Management Guidelines; 2021 National EMS Education Standards — Paramedic Respiratory Emergencies",
         "clinical_pearl": "CPAP is a powerful tool for sickle cell patients with acute chest syndrome. The positive pressure recruits collapsed alveoli and improves V/Q matching without intubation. If you don't have CPAP, assist ventilations with BVM if the patient tires. Early notification to the ED is critical — these patients may need emergent exchange transfusion, which requires advance preparation.",
-        "options": [
-          {
-            "text": {
-              "text": "Switch to CPAP at 5-10 cmH2O to improve oxygenation and reduce work of breathing",
-              "category": "Appropriate Intervention"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Continue IV normal saline at maintenance rate to maintain hydration",
-              "category": "Appropriate Intervention"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Prepare for endotracheal intubation if CPAP fails to improve oxygenation",
-              "category": "Appropriate Intervention"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Administer albuterol 2.5 mg nebulized if wheezing or bronchospasm is present",
-              "category": "Appropriate Intervention"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Administer a 2-liter normal saline bolus to treat the presumed hypovolemia",
-              "category": "Not Appropriate"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Reduce oxygen flow to 2 LPM nasal cannula to prevent oxygen toxicity",
-              "category": "Not Appropriate"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Notify receiving facility early for preparation of blood transfusion and respiratory support",
-              "category": "Appropriate Intervention"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
         ]
       }
     ]
@@ -10115,7 +8958,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize the following clinical findings as features of LEFT-sided heart failure or RIGHT-sided heart failure:",
-        "type": "mc",
+        "type": "categorize",
         "level_filter": "AEMT-Paramedic",
         "narrative": "As you continue your assessment, you note multiple findings. Understanding which side of the heart is failing helps guide your treatment priorities and hospital communication.",
         "clinical_pearl": "Remember: LEFT = LUNGS, RIGHT = the REST. Left-sided failure backs blood into the pulmonary circuit (crackles, dyspnea, orthopnea, pink frothy sputum). Right-sided failure backs blood into the systemic venous system (JVD, peripheral edema, hepatomegaly, ascites). Many patients with advanced CHF have biventricular failure with features of both.",
@@ -10126,118 +8969,28 @@ const SCENARIOS = [
           "Right-Sided Heart Failure"
         ],
         "items": [
-          {
-            "text": "Pulmonary crackles / rales",
-            "category": "Left-Sided Heart Failure"
-          },
-          {
-            "text": "Orthopnea (sleeping on multiple pillows)",
-            "category": "Left-Sided Heart Failure"
-          },
-          {
-            "text": "Paroxysmal nocturnal dyspnea (waking up gasping)",
-            "category": "Left-Sided Heart Failure"
-          },
-          {
-            "text": "Pink, frothy sputum",
-            "category": "Left-Sided Heart Failure"
-          },
-          {
-            "text": "Dyspnea on exertion",
-            "category": "Left-Sided Heart Failure"
-          },
-          {
-            "text": "Jugular venous distension (JVD)",
-            "category": "Right-Sided Heart Failure"
-          },
-          {
-            "text": "Peripheral edema (swollen ankles/legs)",
-            "category": "Right-Sided Heart Failure"
-          },
-          {
-            "text": "Hepatomegaly (enlarged liver)",
-            "category": "Right-Sided Heart Failure"
-          },
-          {
-            "text": "Ascites (abdominal fluid accumulation)",
-            "category": "Right-Sided Heart Failure"
-          },
-          {
-            "text": "Weight gain from fluid retention",
-            "category": "Right-Sided Heart Failure"
-          }
+          "Pulmonary crackles / rales",
+          "Orthopnea (sleeping on multiple pillows)",
+          "Paroxysmal nocturnal dyspnea (waking up gasping)",
+          "Pink, frothy sputum",
+          "Dyspnea on exertion",
+          "Jugular venous distension (JVD)",
+          "Peripheral edema (swollen ankles/legs)",
+          "Hepatomegaly (enlarged liver)",
+          "Ascites (abdominal fluid accumulation)",
+          "Weight gain from fluid retention"
         ],
-        "options": [
-          {
-            "text": {
-              "text": "Pulmonary crackles / rales",
-              "category": "Left-Sided Heart Failure"
-            },
-            "correct": true
-          },
-          {
-            "text": {
-              "text": "Orthopnea (sleeping on multiple pillows)",
-              "category": "Left-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Paroxysmal nocturnal dyspnea (waking up gasping)",
-              "category": "Left-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Pink, frothy sputum",
-              "category": "Left-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Dyspnea on exertion",
-              "category": "Left-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Jugular venous distension (JVD)",
-              "category": "Right-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Peripheral edema (swollen ankles/legs)",
-              "category": "Right-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Hepatomegaly (enlarged liver)",
-              "category": "Right-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Ascites (abdominal fluid accumulation)",
-              "category": "Right-Sided Heart Failure"
-            },
-            "correct": false
-          },
-          {
-            "text": {
-              "text": "Weight gain from fluid retention",
-              "category": "Right-Sided Heart Failure"
-            },
-            "correct": false
-          }
+        "correctCategories": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
         ]
       },
       {
@@ -14398,26 +13151,10 @@ const SCENARIOS = [
         "type": "table",
         "level_filter": "AEMT-Paramedic",
         "items": [
-          {
-            "drug_pair": "TMP-SMX + Warfarin",
-            "interaction": "Increased anticoagulant effect → bleeding risk",
-            "severity": "High"
-          },
-          {
-            "drug_pair": "TMP-SMX + Metoprolol",
-            "interaction": "Increased metoprolol levels → excessive bradycardia/hypotension",
-            "severity": "Moderate"
-          },
-          {
-            "drug_pair": "TMP-SMX + Digoxin",
-            "interaction": "Increased digoxin levels → toxicity (nausea, bradycardia, visual changes)",
-            "severity": "High"
-          },
-          {
-            "drug_pair": "TMP-SMX + Potassium supplement",
-            "interaction": "Hyperkalemia risk (TMP-SMX blocks renal K+ excretion)",
-            "severity": "High"
-          }
+          "TMP-SMX + Warfarin: Increased anticoagulant effect → bleeding risk",
+          "TMP-SMX + Metoprolol: Increased metoprolol levels → excessive bradycardia/hypotension",
+          "TMP-SMX + Digoxin: Increased digoxin levels → toxicity (nausea, bradycardia, visual changes)",
+          "TMP-SMX + Potassium supplement: Hyperkalemia risk (TMP-SMX blocks renal K+ excretion)"
         ],
         "explanation": "Trimethoprim-sulfamethoxazole is notorious for drug interactions in elderly polypharmacy patients. It inhibits CYP2C9, increasing warfarin's anticoagulant effect (bleeding risk). It reduces renal clearance of digoxin, potentially causing toxicity (bradycardia, visual changes, nausea). TMP blocks ENaC channels in the kidney similarly to amiloride, causing potassium retention — combined with a potassium supplement, this creates hyperkalemia risk. The bradycardia and hypotension here likely reflect digoxin toxicity and/or hyperkalemia, both precipitated by the new antibiotic.",
         "guideline_ref": "AGS Beers Criteria (2023) — Potentially Inappropriate Medications in Older Adults; FDA Drug Interaction Labeling Guidelines",
@@ -15654,26 +14391,11 @@ const SCENARIOS = [
         "level_filter": "Paramedic",
         "narrative": "You are interpreting ECG findings in the context of suspected hyperkalemia. Match each ECG change to its place in the progression of hyperkalemia.",
         "items": [
-          {
-            "label": "Peaked T-waves",
-            "correctZone": "Mild-Moderate (5.5–6.5 mEq/L)"
-          },
-          {
-            "label": "Prolonged PR interval",
-            "correctZone": "Moderate (6.5–7.5 mEq/L)"
-          },
-          {
-            "label": "Widened QRS complex",
-            "correctZone": "Moderate-Severe (7.0–8.0 mEq/L)"
-          },
-          {
-            "label": "Sine wave pattern",
-            "correctZone": "Severe/Pre-arrest (>8.0 mEq/L)"
-          },
-          {
-            "label": "Loss of P-waves",
-            "correctZone": "Moderate-Severe (7.0–8.0 mEq/L)"
-          }
+          "Peaked T-waves",
+          "Prolonged PR interval",
+          "Widened QRS complex",
+          "Sine wave pattern",
+          "Loss of P-waves"
         ],
         "explanation": "Hyperkalemia produces a predictable ECG progression: peaked T-waves appear first, followed by PR prolongation, P-wave loss, QRS widening, and ultimately a sine wave pattern preceding cardiac arrest. Recognizing where a patient falls in this spectrum guides urgency of treatment.",
         "guideline_ref": "AHA ACLS 2020 — Electrolyte Emergencies; Mattu A, Brady W. ECGs for the Emergency Physician",
@@ -16016,26 +14738,11 @@ const SCENARIOS = [
         "level_filter": "Paramedic",
         "narrative": "Complete the table matching clinical findings to the organ system affected by lithium toxicity.",
         "items": [
-          {
-            "finding": "Coarse tremor progressing to myoclonus",
-            "system": "Neurological"
-          },
-          {
-            "finding": "Bradycardia with first-degree AV block",
-            "system": "Cardiovascular"
-          },
-          {
-            "finding": "Nausea, vomiting, diarrhea (reported by roommate earlier)",
-            "system": "Gastrointestinal"
-          },
-          {
-            "finding": "Confusion and declining GCS",
-            "system": "Central Nervous System"
-          },
-          {
-            "finding": "Polyuria preceding this event (reported by roommate)",
-            "system": "Renal — Nephrogenic DI"
-          }
+          "Coarse tremor progressing to myoclonus",
+          "Bradycardia with first-degree AV block",
+          "Nausea, vomiting, diarrhea (reported by roommate earlier)",
+          "Confusion and declining GCS",
+          "Polyuria preceding this event (reported by roommate)"
         ],
         "explanation": "Lithium toxicity is a multi-system poisoning. GI symptoms often appear first (chronic toxicity may skip this). Neurological effects range from tremor to seizures and coma. Cardiovascular effects include bradycardia, AV blocks, and QT prolongation. Nephrogenic diabetes insipidus causes polyuria which worsens dehydration and toxicity in a vicious cycle.",
         "guideline_ref": "AAPCC/ACMT Guidelines on Lithium Poisoning; Goldfrank's Toxicologic Emergencies",
