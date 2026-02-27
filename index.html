@@ -1633,7 +1633,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "You perform a more detailed stroke severity assessment. Match each component to the appropriate stroke severity scale.",
-        "type": "table",
+        "type": "mc",
         "level_filter": "Paramedic",
         "multi_select": false,
         "narrative": "Medical command asks you to perform a severity-based stroke assessment to help determine if the patient may benefit from direct transport to a Comprehensive Stroke Center for thrombectomy rather than the closer Primary Stroke Center.",
@@ -2719,7 +2719,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Match each heat illness classification to its characteristic clinical findings:",
-        "type": "table",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "multi_select": false,
         "narrative": "Understanding the spectrum of heat-related illness helps providers accurately assess severity and determine appropriate treatment urgency.",
@@ -3647,7 +3647,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Using START triage, categorize each of the following four patients into the correct triage category.",
-        "type": "table",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "multi_select": false,
         "narrative": "You begin rapid START triage. You assess the following four patients in sequence.",
@@ -4536,42 +4536,6 @@ const SCENARIOS = [
           }
         ],
         "selectCount": 4
-      },
-      {
-        "phase": "reassessment",
-        "prompt": "Match each post-ROSC finding with the appropriate immediate response.",
-        "type": "table",
-        "level_filter": "EMT-AEMT-Paramedic",
-        "narrative": "En route to the hospital, you continue to monitor the patient. Your partner quizzes you on potential post-ROSC complications and how to respond to changes in the patient's condition.",
-        "clinical_pearl": "Post-ROSC patients may display a variety of signs. Purposeful movement and improving GCS are encouraging. Hypotension, re-arrest, and seizures are common complications that require immediate action.",
-        "columns": [
-          "Post-ROSC Finding",
-          "Immediate Response"
-        ],
-        "rows": [
-          [
-            "Loss of palpable pulse",
-            "Immediately resume CPR and reanalyze with AED"
-          ],
-          [
-            "SpO2 drops below 80% despite BVM ventilations",
-            "Reassess airway patency, reposition, ensure good mask seal, consider OPA/NPA"
-          ],
-          [
-            "Patient begins to vomit",
-            "Logroll to side, suction airway, then reposition and resume ventilations"
-          ],
-          [
-            "Patient begins purposeful movement",
-            "Continue monitoring, provide reassurance, reassess mental status"
-          ],
-          [
-            "Blood pressure drops to 70/40",
-            "Position supine, elevate legs if no contraindication, expedite transport"
-          ]
-        ],
-        "explanation": "Post-ROSC care requires constant vigilance for re-arrest, airway compromise, hemodynamic instability, and neurological changes. Each finding demands a specific, time-sensitive response at the EMT level.",
-        "guideline_ref": "AHA ACLS Guidelines — Post-Cardiac Arrest Care; NAEMSP Post-Resuscitation Care"
       }
     ]
   },
@@ -5340,57 +5304,6 @@ const SCENARIOS = [
         ]
       },
       {
-        "phase": "assessment",
-        "prompt": "Using the Rule of Nines, estimate the total body surface area (BSA) burned. Match each body region to its percentage in an adult.",
-        "type": "table",
-        "level_filter": "EMR-EMT-AEMT",
-        "clinical_pearl": "The Rule of Nines is a rapid estimation tool for adults. Remember: each arm is 9%, the anterior trunk is 18%, the posterior trunk is 18%, each leg is 18%, the head is 9%, and the perineum is 1%. In this patient, both entire arms (9% + 9% = 18%) and the anterior chest (9% — half the anterior trunk) totals approximately 27% TBSA.",
-        "explanation": "The Rule of Nines allows rapid BSA estimation to guide fluid resuscitation decisions and burn center referral criteria. Burns >20% TBSA in adults require aggressive fluid resuscitation and burn center transfer.",
-        "guideline_ref": "ABA Burn Referral Criteria; PHTLS 10th Ed — Burns; Parkland Formula Reference",
-        "columns": [
-          "Body Region",
-          "Adult Rule of Nines %"
-        ],
-        "rows": [
-          {
-            "values": [
-              "Head and neck",
-              "9%"
-            ]
-          },
-          {
-            "values": [
-              "Each upper extremity (entire arm)",
-              "9%"
-            ]
-          },
-          {
-            "values": [
-              "Anterior trunk",
-              "18%"
-            ]
-          },
-          {
-            "values": [
-              "Posterior trunk",
-              "18%"
-            ]
-          },
-          {
-            "values": [
-              "Each lower extremity (entire leg)",
-              "18%"
-            ]
-          },
-          {
-            "values": [
-              "Perineum",
-              "1%"
-            ]
-          }
-        ]
-      },
-      {
         "phase": "treatment",
         "prompt": "Place the following burn management steps in the correct order from first to last.",
         "type": "order",
@@ -6100,60 +6013,6 @@ const SCENARIOS = [
           4,
           5
         ]
-      },
-      {
-        "phase": "assessment",
-        "prompt": "Review the stages of hemorrhagic shock. Match each stage to its estimated blood loss and key clinical findings.",
-        "type": "table",
-        "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "clinical_pearl": "In healthy adults, compensatory mechanisms can mask significant blood loss. Tachycardia is often the first measurable sign. Hypotension typically doesn't appear until Class III shock (~30% volume loss). Young, fit patients compensate longer but decompensate suddenly. This patient's presentation (HR 120, BP 96/62, pale, diaphoretic) is consistent with Class III hemorrhagic shock.",
-        "explanation": "The four classes of hemorrhagic shock help estimate blood loss severity and guide treatment urgency. Recognizing the class of shock informs transport decisions and fluid resuscitation strategies.",
-        "guideline_ref": "PHTLS 10th Ed — Shock; ATLS 10th Ed — Hemorrhagic Shock Classification",
-        "columns": [
-          "Shock Class",
-          "Blood Loss",
-          "Heart Rate",
-          "Blood Pressure",
-          "Mental Status"
-        ],
-        "rows": [
-          {
-            "values": [
-              "Class I",
-              "Up to 15% (~750 mL)",
-              "Normal to mildly elevated",
-              "Normal",
-              "Alert, minimal anxiety"
-            ]
-          },
-          {
-            "values": [
-              "Class II",
-              "15–30% (~750–1500 mL)",
-              "100–120",
-              "Normal (narrowed pulse pressure)",
-              "Anxious, mildly confused"
-            ]
-          },
-          {
-            "values": [
-              "Class III",
-              "30–40% (~1500–2000 mL)",
-              "120–140",
-              "Decreased",
-              "Confused, anxious"
-            ]
-          },
-          {
-            "values": [
-              "Class IV",
-              ">40% (>2000 mL)",
-              ">140 or absent",
-              "Severely decreased",
-              "Lethargic, obtunded"
-            ]
-          }
-        ]
       }
     ]
   },
@@ -6732,42 +6591,6 @@ const SCENARIOS = [
           0,
           1,
           2
-        ]
-      },
-      {
-        "phase": "treatment",
-        "prompt": "Match each assessment finding to the appropriate intervention.",
-        "type": "table",
-        "level_filter": "EMR-EMT",
-        "narrative": "You have determined this infant is severely dehydrated and in shock. You are preparing interventions during transport.",
-        "clinical_pearl": "At the EMT level, keeping the infant warm, providing blow-by oxygen, continuous monitoring, and rapid transport to an appropriate facility are the key interventions. Avoid agitating the infant unnecessarily — a crying infant increases oxygen demand.",
-        "explanation": "Each clinical finding drives a specific intervention. Matching findings to treatments reinforces the assessment-driven approach to pediatric shock management.",
-        "guideline_ref": "NAEMSP Pediatric Shock Management; PEPP; AHA PALS Guidelines",
-        "columns": [
-          "Assessment Finding",
-          "Appropriate Intervention"
-        ],
-        "rows": [
-          [
-            "Tachycardia (HR 188) with weak pulses and mottling",
-            "Keep warm and transport emergently; notify receiving facility early"
-          ],
-          [
-            "Lethargy and poor responsiveness (GCS 12)",
-            "Continuous monitoring of mental status; reassess after each intervention"
-          ],
-          [
-            "Temperature 100.4°F with ongoing fluid losses",
-            "Prevent further heat loss — remove wet clothing, wrap in warm blankets"
-          ],
-          [
-            "SpO2 97% with tachypnea (RR 44)",
-            "Provide blow-by oxygen or non-rebreather mask; avoid agitating the infant"
-          ],
-          [
-            "No urine output for 8 hours",
-            "Document and report to receiving facility as indicator of perfusion status"
-          ]
         ]
       },
       {
@@ -7388,60 +7211,6 @@ const SCENARIOS = [
           3,
           4,
           5
-        ]
-      },
-      {
-        "phase": "decision-making",
-        "prompt": "Calculate the correct doses for each medication for this 35 kg patient.",
-        "type": "table",
-        "level_filter": "Paramedic",
-        "narrative": "The seizure has finally stopped after the second dose of benzodiazepine. The child is postictal. You are reviewing your medication reference to prepare for possible recurrence and ensure all dosing has been correct.",
-        "clinical_pearl": "Pediatric medication errors are among the most common and dangerous in EMS. Always use weight-based dosing (mg/kg), double-check your math, and use a length-based resuscitation tape (Broselow) when available. The most lethal dosing errors involve 10-fold miscalculations — always verify decimal placement.",
-        "explanation": "Accurate weight-based dosing is critical in pediatric emergencies. This table covers the key medications used in pediatric status epilepticus. Each dose is calculated as: dose (mg) = weight (kg) × dose per kg. Always verify against the maximum single dose.",
-        "guideline_ref": "AHA PALS Pharmacology; NAEMSP Pediatric Drug Dosing; Broselow Tape Reference",
-        "columns": [
-          "Medication",
-          "Dose per kg",
-          "Calculated Dose (35 kg)",
-          "Max Single Dose",
-          "Route"
-        ],
-        "rows": [
-          [
-            "Midazolam (first-line, no IV)",
-            "0.2 mg/kg",
-            "7 mg",
-            "10 mg",
-            "IM or IN"
-          ],
-          [
-            "Midazolam (IV/IO)",
-            "0.1 mg/kg",
-            "3.5 mg",
-            "5 mg",
-            "IV/IO"
-          ],
-          [
-            "Diazepam (IV)",
-            "0.2 mg/kg",
-            "7 mg",
-            "10 mg",
-            "IV"
-          ],
-          [
-            "Diazepam (rectal)",
-            "0.5 mg/kg",
-            "17.5 mg",
-            "20 mg",
-            "PR"
-          ],
-          [
-            "Lorazepam (IV/IO)",
-            "0.1 mg/kg",
-            "3.5 mg",
-            "4 mg",
-            "IV/IO"
-          ]
         ]
       }
     ]
@@ -8131,41 +7900,6 @@ const SCENARIOS = [
           2,
           2
         ]
-      },
-      {
-        "phase": "clinical-reasoning",
-        "prompt": "Match the following hazmat reference resources to their correct description and primary use.",
-        "type": "table",
-        "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "narrative": "While waiting for the hazmat team, your partner asks about the different resources available for identifying hazardous materials.",
-        "columns": [
-          "Resource",
-          "Description"
-        ],
-        "rows": [
-          {
-            "Resource": "ERG (Emergency Response Guidebook)",
-            "Description": "DOT guide with initial isolation distances, ID numbers, and first-response actions for hazmat incidents"
-          },
-          {
-            "Resource": "SDS (Safety Data Sheet)",
-            "Description": "Manufacturer-provided document with detailed chemical properties, health hazards, and first-aid measures"
-          },
-          {
-            "Resource": "CHEMTREC (1-800-424-9300)",
-            "Description": "24/7 emergency hotline providing real-time chemical information and response guidance"
-          },
-          {
-            "Resource": "UN/DOT Placards",
-            "Description": "Diamond-shaped signs on vehicles indicating hazard class, division, and 4-digit ID number"
-          },
-          {
-            "Resource": "NIOSH Pocket Guide",
-            "Description": "Reference for occupational chemical hazards including exposure limits and PPE recommendations"
-          }
-        ],
-        "explanation": "Multiple resources exist for hazmat identification and response. The ERG is the most commonly used initial field reference. SDS sheets provide detailed information if available. CHEMTREC offers 24/7 expert guidance. Placards provide immediate visual clues about hazard class. The NIOSH Pocket Guide is useful for detailed exposure information.",
-        "guideline_ref": "OSHA 29 CFR 1910.120; DOT ERG 2024; NFPA 472"
       }
     ]
   },
@@ -8854,41 +8588,6 @@ const SCENARIOS = [
           2,
           3,
           4
-        ]
-      },
-      {
-        "phase": "evaluation",
-        "prompt": "Match each hyperkalemia treatment to its correct mechanism of action:",
-        "type": "table",
-        "level_filter": "Paramedic",
-        "narrative": "During transport, you review the rationale for each intervention with your partner. Understanding why each treatment works helps guide decision-making if the patient's condition changes.",
-        "explanation": "Hyperkalemia treatment works through three distinct mechanisms: cardiac membrane stabilization (calcium), intracellular potassium shifting (albuterol, sodium bicarbonate, insulin/glucose), and potassium elimination (dialysis, kayexalate). Prehospital care focuses on the first two — only the hospital can provide elimination therapies.",
-        "guideline_ref": "AHA ACLS Guidelines — Hyperkalemia Management; Pharmacology of Electrolyte Emergencies",
-        "columns": [
-          "Treatment",
-          "Mechanism of Action"
-        ],
-        "rows": [
-          [
-            "Calcium chloride / gluconate",
-            "Stabilizes cardiac cell membranes — does NOT lower potassium"
-          ],
-          [
-            "Nebulized albuterol (high dose)",
-            "Beta-2 stimulation drives potassium into cells via Na+/K+ ATPase"
-          ],
-          [
-            "Sodium bicarbonate",
-            "Corrects acidosis, causing hydrogen ion exchange and potassium shift into cells"
-          ],
-          [
-            "Insulin with dextrose (hospital)",
-            "Insulin drives potassium into cells; dextrose prevents hypoglycemia"
-          ],
-          [
-            "Hemodialysis (hospital)",
-            "Directly removes potassium from the blood — only definitive treatment"
-          ]
         ]
       }
     ]
@@ -9702,7 +9401,7 @@ const SCENARIOS = [
       {
         "phase": "treatment",
         "prompt": "Review the following table comparing panic attack and cardiac event presentations. Which row contains an ERROR?",
-        "type": "table",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "| Feature | Panic Attack | Cardiac Event |\n|---|---|---|\n| Onset | Sudden, often at rest | Often exertional |\n| Duration | 10-30 minutes typically | Variable, often >30 min |\n| Pain character | Sharp, localized | Pressure, squeezing |\n| Associated symptoms | Tingling, derealization | Diaphoresis, nausea |\n| ECG findings | Normal sinus or sinus tach | ST changes, arrhythmias |\n| Response to coaching | Often improves | No improvement |\n| Age relevance | Can occur at any age | Risk increases with age, but occurs at any age |",
         "options": [
@@ -10770,7 +10469,7 @@ const SCENARIOS = [
       {
         "phase": "post-call",
         "prompt": "Review the Day 1 patient data summary table. Based on this data, which operational adjustment is MOST warranted for Day 2?",
-        "type": "table",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "| Category | Patients Seen | Transported | Treat & Release | Avg On-Site Time |\n|---|---|---|---|---|\n| Heat-related illness | 52 | 3 | 49 | 28 min |\n| Alcohol intoxication | 28 | 4 | 24 | 45 min |\n| Minor trauma (falls/lacs) | 10 | 1 | 9 | 18 min |\n| Cardiac/respiratory | 3 | 3 | 0 | 12 min |\n| Other | 2 | 0 | 2 | 10 min |\n| **Totals** | **95** | **11** | **84** | **29 min** |",
         "options": [
@@ -11440,85 +11139,6 @@ const SCENARIOS = [
     },
     "questions": [
       {
-        "phase": "assessment",
-        "prompt": "The patient has joint pain ('the bends'), mottled skin ('cutis marmorata'), and confusion after a rapid ascent from depth. On the table below, match each diving injury to its mechanism and typical presentation timeline.",
-        "type": "table",
-        "level_filter": "EMT-AEMT-Paramedic",
-        "headers": [
-          "Condition",
-          "Mechanism",
-          "Onset After Surfacing"
-        ],
-        "rows": [
-          {
-            "label": "Decompression Sickness (DCS)",
-            "cells": [
-              {
-                "answer": "Dissolved nitrogen forms bubbles in tissues during ascent",
-                "options": [
-                  "Dissolved nitrogen forms bubbles in tissues during ascent",
-                  "Air trapped in enclosed body spaces expands",
-                  "Air embolism from ruptured alveoli"
-                ]
-              },
-              {
-                "answer": "Minutes to 24 hours",
-                "options": [
-                  "Immediate upon surfacing",
-                  "Minutes to 24 hours",
-                  "24-72 hours"
-                ]
-              }
-            ]
-          },
-          {
-            "label": "Arterial Gas Embolism (AGE)",
-            "cells": [
-              {
-                "answer": "Air embolism from ruptured alveoli",
-                "options": [
-                  "Dissolved nitrogen forms bubbles in tissues during ascent",
-                  "Air trapped in enclosed body spaces expands",
-                  "Air embolism from ruptured alveoli"
-                ]
-              },
-              {
-                "answer": "Immediate upon surfacing",
-                "options": [
-                  "Immediate upon surfacing",
-                  "Minutes to 24 hours",
-                  "24-72 hours"
-                ]
-              }
-            ]
-          },
-          {
-            "label": "Barotrauma (Squeeze)",
-            "cells": [
-              {
-                "answer": "Air trapped in enclosed body spaces expands",
-                "options": [
-                  "Dissolved nitrogen forms bubbles in tissues during ascent",
-                  "Air trapped in enclosed body spaces expands",
-                  "Air embolism from ruptured alveoli"
-                ]
-              },
-              {
-                "answer": "Immediate upon surfacing",
-                "options": [
-                  "Immediate upon surfacing",
-                  "Minutes to 24 hours",
-                  "24-72 hours"
-                ]
-              }
-            ]
-          }
-        ],
-        "explanation": "DCS occurs when dissolved nitrogen comes out of solution as bubbles during ascent — onset is typically minutes to hours. AGE is caused by alveolar rupture sending air emboli to the brain — onset is immediate and often presents as stroke-like symptoms. Barotrauma/squeeze involves gas expansion in enclosed spaces (sinuses, ears, lungs) during ascent.",
-        "guideline_ref": "Divers Alert Network (DAN) – Field Management of Diving Emergencies (2023)",
-        "clinical_pearl": "A patent foramen ovale (PFO) dramatically increases DCS risk because venous nitrogen bubbles can shunt directly into arterial circulation, bypassing the pulmonary filter. Up to 50% of serious DCS cases have a PFO."
-      },
-      {
         "phase": "treatment",
         "prompt": "What is the MOST important prehospital treatment for this patient?",
         "type": "mc",
@@ -11989,42 +11609,6 @@ const SCENARIOS = [
         "explanation": "High-flow O2 is the immediate first step. RSI preparation must precede the attempt. Visualization confirms tube placement potential, and waveform ETCO2 is the gold standard for confirming ETT placement.",
         "guideline_ref": "AHA/NAEMSP Airway Management Guidelines; ABA Inhalation Injury Guidelines",
         "clinical_pearl": "Use an ETT 0.5–1.0 size smaller than normal — edematous airways narrow the glottic opening. Have a surgical airway kit immediately available as a backup."
-      },
-      {
-        "phase": "treatment",
-        "prompt": "Complete the following table comparing monitoring methods for this patient:",
-        "type": "table",
-        "level_filter": "EMT-AEMT-Paramedic",
-        "columns": [
-          "Monitoring Method",
-          "Reliable in This Patient?",
-          "Reason"
-        ],
-        "rows": [
-          {
-            "Monitoring Method": "Standard Pulse Oximetry (SpO2)",
-            "Reliable in This Patient?": "No",
-            "Reason": "Cannot distinguish COHb from oxyhemoglobin — falsely normal readings"
-          },
-          {
-            "Monitoring Method": "CO-Oximetry",
-            "Reliable in This Patient?": "Yes",
-            "Reason": "Uses multiple wavelengths to separately measure COHb, O2Hb, and MetHb"
-          },
-          {
-            "Monitoring Method": "Waveform Capnography (ETCO2)",
-            "Reliable in This Patient?": "Yes",
-            "Reason": "Measures exhaled CO2 directly — not affected by CO poisoning"
-          },
-          {
-            "Monitoring Method": "Skin Color Assessment",
-            "Reliable in This Patient?": "No",
-            "Reason": "COHb can cause cherry-red coloring that mimics good perfusion"
-          }
-        ],
-        "explanation": "Standard pulse oximetry cannot distinguish carboxyhemoglobin (COHb) from oxyhemoglobin — SpO2 may read falsely normal despite significant CO poisoning. CO-oximetry and capnography remain reliable adjuncts.",
-        "guideline_ref": "NAEMSP CO Poisoning Guidelines; AHA 2020 Guidelines — Special Circumstances",
-        "clinical_pearl": "A CO-oximeter (multiwavelength) can measure COHb directly. If unavailable, treat the exposure, not the number — administer 100% O2 regardless of SpO2 reading in fire victims."
       }
     ]
   },
@@ -12972,37 +12556,6 @@ const SCENARIOS = [
         "guideline_ref": "NRP 8th Edition (AAP/AHA 2021) — Positive Pressure Ventilation and Chest Compressions Algorithm",
         "clinical_pearl": "In neonatal resuscitation, the compression-to-ventilation ratio is 3:1 (not 15:2 or 30:2) — reflecting that neonatal arrest is almost always respiratory in origin. Ventilation is the most important intervention.",
         "critical": true
-      },
-      {
-        "phase": "treatment",
-        "prompt": "You are managing the newborn and mother simultaneously. Match each task to the appropriate priority category for your team:",
-        "type": "graphical",
-        "level_filter": "EMT-AEMT-Paramedic",
-        "prompt_image_desc": "Timeline showing concurrent maternal and neonatal management priorities: Immediate (0-60 sec), Urgent (1-5 min), and Ongoing (5+ min). Items must be placed in correct time windows.",
-        "items": [
-          "Clamp and cut umbilical cord",
-          "Neonatal airway management and PPV",
-          "Maternal uterine massage for placental delivery",
-          "Continuous neonatal HR and SpO2 monitoring",
-          "Maternal hemorrhage assessment",
-          "Thermoregulation — dry and wrap newborn"
-        ],
-        "categories": [
-          "Immediate (0-60 sec)",
-          "Urgent (1-5 min)",
-          "Ongoing (5+ min)"
-        ],
-        "correctCategories": {
-          "Neonatal airway management and PPV": "Immediate (0-60 sec)",
-          "Thermoregulation — dry and wrap newborn": "Immediate (0-60 sec)",
-          "Clamp and cut umbilical cord": "Urgent (1-5 min)",
-          "Maternal hemorrhage assessment": "Urgent (1-5 min)",
-          "Continuous neonatal HR and SpO2 monitoring": "Ongoing (5+ min)",
-          "Maternal uterine massage for placental delivery": "Ongoing (5+ min)"
-        },
-        "explanation": "The non-breathing newborn is the immediate priority — airway management and thermoregulation cannot wait. Cord clamping facilitates separation for resuscitation (in a compromised neonate, delayed clamping is not recommended). Maternal hemorrhage assessment is urgent but secondary to neonatal resuscitation when the mother is stable. Ongoing monitoring and placental management continue during transport.",
-        "guideline_ref": "NRP 8th Edition — Team-Based Resuscitation; NAEMSP Field Delivery Guidelines",
-        "clinical_pearl": "In a field delivery with a compromised neonate, immediately clamp and cut the cord to allow the baby to be moved to a clean, warm surface for resuscitation — delayed cord clamping is only for vigorous newborns."
       }
     ]
   },
@@ -13145,21 +12698,6 @@ const SCENARIOS = [
       "temp": "99.1°F"
     },
     "questions": [
-      {
-        "phase": "assessment",
-        "prompt": "This patient's presentation — new confusion, bradycardia, and hypotension — may be explained by drug-drug interactions involving her recently added antibiotic (trimethoprim-sulfamethoxazole). Which potential interactions are of greatest concern?",
-        "type": "table",
-        "level_filter": "AEMT-Paramedic",
-        "items": [
-          "TMP-SMX + Warfarin: Increased anticoagulant effect → bleeding risk",
-          "TMP-SMX + Metoprolol: Increased metoprolol levels → excessive bradycardia/hypotension",
-          "TMP-SMX + Digoxin: Increased digoxin levels → toxicity (nausea, bradycardia, visual changes)",
-          "TMP-SMX + Potassium supplement: Hyperkalemia risk (TMP-SMX blocks renal K+ excretion)"
-        ],
-        "explanation": "Trimethoprim-sulfamethoxazole is notorious for drug interactions in elderly polypharmacy patients. It inhibits CYP2C9, increasing warfarin's anticoagulant effect (bleeding risk). It reduces renal clearance of digoxin, potentially causing toxicity (bradycardia, visual changes, nausea). TMP blocks ENaC channels in the kidney similarly to amiloride, causing potassium retention — combined with a potassium supplement, this creates hyperkalemia risk. The bradycardia and hypotension here likely reflect digoxin toxicity and/or hyperkalemia, both precipitated by the new antibiotic.",
-        "guideline_ref": "AGS Beers Criteria (2023) — Potentially Inappropriate Medications in Older Adults; FDA Drug Interaction Labeling Guidelines",
-        "clinical_pearl": "TMP-SMX is one of the most dangerous additions to an elderly patient's medication list — it interacts with warfarin, digoxin, ACE inhibitors, and potassium-sparing agents. Always ask about new medications in the past 1-2 weeks."
-      },
       {
         "phase": "treatment",
         "prompt": "Given the likelihood of digoxin toxicity and possible hyperkalemia contributing to this patient's bradycardia and hypotension, which is the most appropriate prehospital intervention?",
@@ -13710,7 +13248,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Review the patient's risk factors and determine which features make this a HIGH-risk geriatric head injury requiring emergent trauma center transport:",
-        "type": "table",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "| Risk Factor | This Patient | High Risk? |\n|---|---|---|\n| Age | 78 years old | ? |\n| Anticoagulant use | Apixaban (Eliquis) 5mg BID | ? |\n| GCS | 15 — alert and oriented | ? |\n| Mechanism | Ground-level fall onto furniture | ? |\n| LOC / Amnesia | Denies loss of consciousness | ? |\n| Symptoms | Mild headache at laceration site only | ? |",
         "options": [
@@ -14383,23 +13921,6 @@ const SCENARIOS = [
         "guideline_ref": "AHA ACLS 2020 — Hyperkalemia; NASEMSO National Model EMS Clinical Guidelines",
         "clinical_pearl": "Calcium is the first drug to give in severe hyperkalemia with ECG changes — it does NOT lower potassium, but it stabilizes the myocardium within minutes and buys time for potassium-lowering therapies to work.",
         "critical": true
-      },
-      {
-        "phase": "treatment",
-        "prompt": "Review the following 12-lead ECG findings and match each to the corresponding stage of hyperkalemia severity.",
-        "type": "graphical",
-        "level_filter": "Paramedic",
-        "narrative": "You are interpreting ECG findings in the context of suspected hyperkalemia. Match each ECG change to its place in the progression of hyperkalemia.",
-        "items": [
-          "Peaked T-waves",
-          "Prolonged PR interval",
-          "Widened QRS complex",
-          "Sine wave pattern",
-          "Loss of P-waves"
-        ],
-        "explanation": "Hyperkalemia produces a predictable ECG progression: peaked T-waves appear first, followed by PR prolongation, P-wave loss, QRS widening, and ultimately a sine wave pattern preceding cardiac arrest. Recognizing where a patient falls in this spectrum guides urgency of treatment.",
-        "guideline_ref": "AHA ACLS 2020 — Electrolyte Emergencies; Mattu A, Brady W. ECGs for the Emergency Physician",
-        "clinical_pearl": "The classic 'peaked T-waves' of hyperkalemia are best seen in the precordial leads (V2-V4). However, ECG changes correlate poorly with exact potassium levels — a patient with 'mild' ECG changes can deteriorate to arrest rapidly."
       }
     ]
   },
@@ -14730,24 +14251,6 @@ const SCENARIOS = [
         "explanation": "Airway assessment is always first with altered mental status. Glucose check rules out a common reversible cause. Cardiac monitoring is critical because lithium toxicity causes bradycardia and conduction abnormalities. Normal saline enhances renal lithium excretion. Severe cases require hemodialysis.",
         "guideline_ref": "AAPCC/ACMT Lithium Poisoning Management Guidelines; NASEMSO National Model EMS Clinical Guidelines",
         "clinical_pearl": "Normal saline is the preferred fluid in lithium toxicity — lithium is reabsorbed in the proximal tubule alongside sodium. Volume expansion with NS enhances lithium excretion. Avoid lactated Ringer's as the lower sodium content is less effective."
-      },
-      {
-        "phase": "transport",
-        "prompt": "During transport, the cardiac monitor shows a sinus bradycardia at 44 bpm with a new first-degree AV block. The patient's mental status has declined to GCS 9. You are reviewing this clinical picture. Match each finding to the body system affected by lithium toxicity.",
-        "type": "table",
-        "level_filter": "Paramedic",
-        "narrative": "Complete the table matching clinical findings to the organ system affected by lithium toxicity.",
-        "items": [
-          "Coarse tremor progressing to myoclonus",
-          "Bradycardia with first-degree AV block",
-          "Nausea, vomiting, diarrhea (reported by roommate earlier)",
-          "Confusion and declining GCS",
-          "Polyuria preceding this event (reported by roommate)"
-        ],
-        "explanation": "Lithium toxicity is a multi-system poisoning. GI symptoms often appear first (chronic toxicity may skip this). Neurological effects range from tremor to seizures and coma. Cardiovascular effects include bradycardia, AV blocks, and QT prolongation. Nephrogenic diabetes insipidus causes polyuria which worsens dehydration and toxicity in a vicious cycle.",
-        "guideline_ref": "AAPCC/ACMT Guidelines on Lithium Poisoning; Goldfrank's Toxicologic Emergencies",
-        "clinical_pearl": "Lithium toxicity has a paradox: the kidney damage it causes (nephrogenic DI → polyuria → dehydration) actually worsens the toxicity by concentrating the drug. This positive feedback loop is why chronic lithium toxicity can escalate rapidly and why aggressive hydration is critical.",
-        "critical": true
       }
     ]
   },
@@ -15741,10 +15244,10 @@ function renderScenario() {
   }
 
   // Vitals update box
-  if (q.vitals_update) {
+  if (q.vitals_update && Object.keys(q.vitals_update).length > 0) {
     const vu = q.vitals_update;
     html += `<div class="vitals-update-box"><div class="label">⚠️ Updated Vitals</div><div class="vitals-grid">
-      ${Object.entries(vu).map(([k, v]) => `<div class="vital"><div class="val mono">${v}</div><div class="lbl">${k.toUpperCase()}</div></div>`).join('')}
+      ${Object.entries(vu).map(([k, v]) => v ? `<div class="vital"><div class="val mono">${v}</div><div class="lbl">${k.toUpperCase()}</div></div>` : '').join('')}
     </div></div>`;
   }
 
