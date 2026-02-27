@@ -1393,7 +1393,8 @@ const SCENARIOS = [
             "guideline_ref": "NAEMSP Position Statement — Prehospital Hypoglycemia Management and Transport Decisions"
           }
         ],
-        "clinical_pearl": "Patients on long-acting insulin (glargine, detemir) who develop hypoglycemia are at high risk for rebound hypoglycemia. A single dextrose bolus may last only 15-20 minutes while the insulin continues to work for hours. These patients generally require hospital observation and a continuous dextrose infusion."
+        "clinical_pearl": "Patients on long-acting insulin (glargine, detemir) who develop hypoglycemia are at high risk for rebound hypoglycemia. A single dextrose bolus may last only 15-20 minutes while the insulin continues to work for hours. These patients generally require hospital observation and a continuous dextrose infusion.",
+        "selectCount": 3
       }
     ]
   },
@@ -1469,47 +1470,23 @@ const SCENARIOS = [
         "prompt": "Place the following steps of your stroke assessment and early management in the correct order:",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "Your CPSS is positive for all three components. You need to move efficiently — time is critical.",
-        "vitals_update": {},
-        "clinical_pearl": "Remember: 'Time is brain.' Each minute of large vessel occlusion results in the loss of approximately 1.9 million neurons. Establishing last known well time is as important as any intervention you perform.",
-        "options": [
-          {
-            "text": "Establish last known well time and note current time",
-            "correct": true,
-            "critical": false,
-            "explanation": "First priority — last known well time determines eligibility for thrombolytics (up to 4.5 hours) and thrombectomy (up to 24 hours in select patients). Document it immediately.",
-            "guideline_ref": "AHA/ASA 2019 Acute Ischemic Stroke Guidelines"
-          },
-          {
-            "text": "Perform Cincinnati Prehospital Stroke Scale assessment",
-            "correct": true,
-            "critical": false,
-            "explanation": "Rapid validated stroke screen confirms suspicion and communicates findings efficiently to the receiving facility.",
-            "guideline_ref": "AHA/ASA Prehospital Stroke Care"
-          },
-          {
-            "text": "Check blood glucose level",
-            "correct": true,
-            "critical": false,
-            "explanation": "Hypoglycemia is the most common stroke mimic and is rapidly reversible. Checking glucose is essential to rule out this treatable cause.",
-            "guideline_ref": "AHA/ASA 2019 Guidelines; National EMS Education Standards"
-          },
-          {
-            "text": "Provide early notification to a designated stroke center",
-            "correct": true,
-            "critical": false,
-            "explanation": "Early hospital notification activates the stroke team and reduces door-to-needle time. This should occur as soon as stroke is suspected, not upon arrival.",
-            "guideline_ref": "AHA/ASA Mission: Lifeline Stroke Severity-Based Routing"
-          },
-          {
-            "text": "Initiate rapid transport to the closest appropriate stroke center",
-            "correct": true,
-            "critical": false,
-            "explanation": "Transport to the closest appropriate stroke-capable facility — not necessarily the closest hospital. Do not delay transport for non-essential interventions.",
-            "guideline_ref": "AHA/ASA 2019 Guidelines; NAEMSP Position Statement on Stroke Routing"
-          }
-        ]
+        "items": [
+          "Establish last known well time and note current time",
+          "Perform Cincinnati Prehospital Stroke Scale assessment",
+          "Check blood glucose level",
+          "Provide early notification to a designated stroke center",
+          "Initiate rapid transport to the closest appropriate stroke center"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: First priority — last known well time determines eligibility for thrombolytics (up to 4.5 hours) and thrombectomy (up to 24 hours in select patients). Document it immediately. | Step 2: Rapid validated stroke screen confirms suspicion and communicates findings efficiently to the receiving facility. | Step 3: Hypoglycemia is the most common stroke mimic and is rapidly reversible. Checking glucose is essential to rule out this treatable cause. | Step 4: Early hospital notification activates the stroke team and reduces door-to-needle time. This should occur as soon as stroke is suspected, not upon arrival. | Step 5: Transport to the closest appropriate stroke-capable facility — not necessarily the closest hospital. Do not delay transport for non-essential interventions.",
+        "guideline_ref": "AHA/ASA 2019 Acute Ischemic Stroke Guidelines; AHA/ASA Prehospital Stroke Care; AHA/ASA 2019 Guidelines; National EMS Education Standards; AHA/ASA Mission: Lifeline Stroke Severity-Based Routing; AHA/ASA 2019 Guidelines; NAEMSP Position Statement on Stroke Routing",
+        "clinical_pearl": null
       },
       {
         "phase": "transport",
@@ -1562,7 +1539,8 @@ const SCENARIOS = [
             "explanation": "NEVER administer aspirin in the prehospital setting for suspected stroke. A CT scan must first rule out hemorrhagic stroke — aspirin could worsen an intracranial hemorrhage and be fatal.",
             "guideline_ref": "AHA/ASA 2019 Guidelines; National EMS Education Standards"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "assessment",
@@ -1649,7 +1627,8 @@ const SCENARIOS = [
             "explanation": "Nitroglycerin causes unpredictable BP drops and is NOT indicated for stroke-related hypertension. The resulting hypotension can worsen cerebral ischemia catastrophically.",
             "guideline_ref": "AHA/ASA 2019 Guidelines — Blood Pressure Management in Acute Stroke"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "assessment",
@@ -1808,46 +1787,23 @@ const SCENARIOS = [
         "prompt": "Place the following ACS management steps in the correct sequence:",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "narrative": "You have confirmed an inferior STEMI on 12-lead ECG. The patient continues to have 9/10 chest pain. Blood pressure is 142/88.",
-        "vitals_update": {},
-        "clinical_pearl": "For STEMI, the goal is first medical contact to percutaneous coronary intervention (PCI) within 90 minutes (or 120 minutes if transfer is needed). Every minute of delay increases myocardial damage. Early cath lab activation notification is critical.",
-        "options": [
-          {
-            "text": "Administer aspirin 162–325 mg chewed if not already given",
-            "correct": true,
-            "critical": false,
-            "explanation": "Aspirin is the first medication priority in ACS. If not already administered, give it immediately.",
-            "guideline_ref": "AHA 2020 ACLS ACS Algorithm"
-          },
-          {
-            "text": "Acquire right-sided 12-lead ECG (V4R) to evaluate for right ventricular involvement",
-            "correct": true,
-            "critical": false,
-            "explanation": "In inferior STEMI, right ventricular infarction occurs in up to 50% of cases. V4R is the most sensitive single lead for RV infarction and changes treatment (avoid nitroglycerin, give fluids).",
-            "guideline_ref": "AHA 2020 ACLS Guidelines; STEMI Management"
-          },
-          {
-            "text": "Activate cardiac catheterization lab via early hospital notification with 12-lead ECG transmission",
-            "correct": true,
-            "critical": false,
-            "explanation": "Early cath lab activation and ECG transmission reduce door-to-balloon time. This should occur as soon as STEMI is identified.",
-            "guideline_ref": "AHA 2020 ACLS Guidelines; Mission: Lifeline"
-          },
-          {
-            "text": "Administer nitroglycerin 0.4 mg sublingual if no RV infarction and BP supports it",
-            "correct": true,
-            "critical": false,
-            "explanation": "Nitroglycerin is appropriate after ruling out RV involvement (via V4R) and confirming adequate blood pressure. Contraindicated in RV infarction, hypotension, or recent PDE5 inhibitor use.",
-            "guideline_ref": "AHA 2020 ACLS ACS Algorithm"
-          },
-          {
-            "text": "Initiate rapid transport to the closest PCI-capable facility",
-            "correct": true,
-            "critical": false,
-            "explanation": "STEMI patients should be transported to a PCI-capable facility. Primary PCI is the preferred reperfusion strategy when achievable within guideline time windows.",
-            "guideline_ref": "AHA 2020 ACLS Guidelines; ACC/AHA STEMI Guidelines"
-          }
-        ]
+        "items": [
+          "Administer aspirin 162–325 mg chewed if not already given",
+          "Acquire right-sided 12-lead ECG (V4R) to evaluate for right ventricular involvement",
+          "Activate cardiac catheterization lab via early hospital notification with 12-lead ECG transmission",
+          "Administer nitroglycerin 0.4 mg sublingual if no RV infarction and BP supports it",
+          "Initiate rapid transport to the closest PCI-capable facility"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: Aspirin is the first medication priority in ACS. If not already administered, give it immediately. | Step 2: In inferior STEMI, right ventricular infarction occurs in up to 50% of cases. V4R is the most sensitive single lead for RV infarction and changes treatment (avoid nitroglycerin, give fluids). | Step 3: Early cath lab activation and ECG transmission reduce door-to-balloon time. This should occur as soon as STEMI is identified. | Step 4: Nitroglycerin is appropriate after ruling out RV involvement (via V4R) and confirming adequate blood pressure. Contraindicated in RV infarction, hypotension, or recent PDE5 inhibitor use. | Step 5: STEMI patients should be transported to a PCI-capable facility. Primary PCI is the preferred reperfusion strategy when achievable within guideline time windows.",
+        "guideline_ref": "AHA 2020 ACLS ACS Algorithm; AHA 2020 ACLS Guidelines; STEMI Management; AHA 2020 ACLS Guidelines; Mission: Lifeline; AHA 2020 ACLS Guidelines; ACC/AHA STEMI Guidelines",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
@@ -1893,7 +1849,8 @@ const SCENARIOS = [
             "explanation": "Age alone is not a contraindication to nitroglycerin. Dosing and monitoring are the same across adult age groups, though elderly patients may be more sensitive to hypotension.",
             "guideline_ref": "AHA 2020 ACLS Guidelines"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "treatment",
@@ -2011,94 +1968,50 @@ const SCENARIOS = [
         "prompt": "Categorize the following clinical findings as indicators of UPPER AIRWAY obstruction or LOWER AIRWAY obstruction:",
         "type": "categorize",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "Understanding the difference between upper and lower airway findings helps determine the cause of respiratory distress and guides treatment decisions.",
-        "vitals_update": {},
-        "clinical_pearl": "A simple rule: inspiratory sounds suggest upper airway problems (above the vocal cords), while expiratory sounds suggest lower airway problems (below the carina). Stridor = upper. Wheezing = lower. This distinction changes your entire management approach.",
-        "options": [
-          {
-            "text": "Inspiratory stridor → UPPER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "Stridor is a high-pitched sound heard on inspiration caused by turbulent airflow through a narrowed upper airway (supraglottic or subglottic). It is the hallmark of upper airway obstruction.",
-            "guideline_ref": "2021 National EMS Education Standards — Airway Management"
-          },
-          {
-            "text": "Barking or seal-like cough → UPPER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "The barking cough of croup results from subglottic edema and inflammation, which is an upper airway process.",
-            "guideline_ref": "AAP Croup Guidelines"
-          },
-          {
-            "text": "Expiratory wheezing → LOWER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "Wheezing is caused by narrowing of the bronchioles (lower airways). Air becomes trapped during exhalation, creating the characteristic musical sound. Common in asthma and bronchiolitis.",
-            "guideline_ref": "2021 National EMS Education Standards — Respiratory Emergencies"
-          },
-          {
-            "text": "Hoarse or muffled voice → UPPER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "Voice changes indicate involvement of the larynx or supraglottic structures — upper airway anatomy.",
-            "guideline_ref": "2021 National EMS Education Standards — Airway Assessment"
-          },
-          {
-            "text": "Prolonged expiratory phase → LOWER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "Prolonged expiration indicates air trapping from lower airway obstruction. The patient must actively exhale to push air past narrowed bronchioles.",
-            "guideline_ref": "NAEPP Guidelines; National EMS Education Standards"
-          },
-          {
-            "text": "Drooling with inability to swallow → UPPER AIRWAY",
-            "correct": true,
-            "critical": false,
-            "explanation": "Drooling and dysphagia indicate supraglottic swelling (as in epiglottitis or peritonsillar abscess) — upper airway emergencies that may progress to complete obstruction.",
-            "guideline_ref": "AAP Pediatric Emergency Guidelines"
-          }
-        ]
+        "items": [
+          "Inspiratory stridor",
+          "Barking or seal-like cough",
+          "Expiratory wheezing",
+          "Hoarse or muffled voice",
+          "Prolonged expiratory phase",
+          "Drooling with inability to swallow"
+        ],
+        "categories": [
+          "UPPER AIRWAY",
+          "LOWER AIRWAY"
+        ],
+        "correctCategories": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "explanation": "Inspiratory stridor: Stridor is a high-pitched sound heard on inspiration caused by turbulent airflow through a narrowed upper airway (supraglottic or subglottic). It is the hallmark of upper airway obstruction. | Barking or seal-like cough: The barking cough of croup results from subglottic edema and inflammation, which is an upper airway process. | Expiratory wheezing: Wheezing is caused by narrowing of the bronchioles (lower airways). Air becomes trapped during exhalation, creating the characteristic musical sound. Common in asthma and bronchiolitis. | Hoarse or muffled voice: Voice changes indicate involvement of the larynx or supraglottic structures — upper airway anatomy. | Prolonged expiratory phase: Prolonged expiration indicates air trapping from lower airway obstruction. The patient must actively exhale to push air past narrowed bronchioles. | Drooling with inability to swallow: Drooling and dysphagia indicate supraglottic swelling (as in epiglottitis or peritonsillar abscess) — upper airway emergencies that may progress to complete obstruction.",
+        "guideline_ref": "2021 National EMS Education Standards — Airway Management; AAP Croup Guidelines; 2021 National EMS Education Standards — Respiratory Emergencies; 2021 National EMS Education Standards — Airway Assessment; NAEPP Guidelines; National EMS Education Standards; AAP Pediatric Emergency Guidelines",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
         "prompt": "Place the following treatment and management steps for this child in the correct priority order:",
         "type": "order",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "The child continues to have stridor at rest with mild intercostal retractions. SpO2 is 93%. He is crying but consolable when held by his mother. You need to manage this patient for transport.",
-        "vitals_update": {},
-        "clinical_pearl": "In croup, keeping the child calm is therapeutic. Agitation and crying increase airway turbulence and can worsen the obstruction dramatically. Allow the parent to hold the child whenever possible. Cool mist/humidified oxygen and blow-by oxygen delivery are preferred over face masks in this age group.",
-        "options": [
-          {
-            "text": "Allow the child to remain in a position of comfort with the parent — avoid agitating the child",
-            "correct": true,
-            "critical": false,
-            "explanation": "Most important first step. Agitation worsens stridor and can precipitate complete obstruction. A calm child in a comfortable position has better airway dynamics.",
-            "guideline_ref": "2021 National EMS Education Standards — Pediatric Assessment; PAT (Pediatric Assessment Triangle)"
-          },
-          {
-            "text": "Administer humidified blow-by oxygen to maintain SpO2 above 94%",
-            "correct": true,
-            "critical": false,
-            "explanation": "With SpO2 at 93%, supplemental oxygen is indicated. Blow-by delivery is least distressing and should be attempted before a mask. Let the parent hold the tubing near the child's face.",
-            "guideline_ref": "2021 National EMS Education Standards — Pediatric Oxygen Therapy"
-          },
-          {
-            "text": "Continuously monitor for signs of worsening airway obstruction during transport",
-            "correct": true,
-            "critical": false,
-            "explanation": "Croup can progress. Monitor for absent stridor (may indicate complete obstruction, not improvement), severe retractions, cyanosis, or altered mental status.",
-            "guideline_ref": "2021 National EMS Education Standards — Pediatric Reassessment"
-          },
-          {
-            "text": "Transport to an appropriate facility with the child secured in a car seat or on the parent's lap with both restrained",
-            "correct": true,
-            "critical": false,
-            "explanation": "Safe transport is essential. If the child tolerates a car seat, use it. Otherwise, the child may be transported on the restrained parent's lap per local guidelines, prioritizing both safety and keeping the child calm.",
-            "guideline_ref": "2021 National EMS Education Standards — Pediatric Transport; NAEMSP Pediatric Transport Position"
-          }
-        ]
+        "items": [
+          "Allow the child to remain in a position of comfort with the parent — avoid agitating the child",
+          "Administer humidified blow-by oxygen to maintain SpO2 above 94%",
+          "Continuously monitor for signs of worsening airway obstruction during transport",
+          "Transport to an appropriate facility with the child secured in a car seat or on the parent's lap with both restrained"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "explanation": "Step 1: Most important first step. Agitation worsens stridor and can precipitate complete obstruction. A calm child in a comfortable position has better airway dynamics. | Step 2: With SpO2 at 93%, supplemental oxygen is indicated. Blow-by delivery is least distressing and should be attempted before a mask. Let the parent hold the tubing near the child's face. | Step 3: Croup can progress. Monitor for absent stridor (may indicate complete obstruction, not improvement), severe retractions, cyanosis, or altered mental status. | Step 4: Safe transport is essential. If the child tolerates a car seat, use it. Otherwise, the child may be transported on the restrained parent's lap per local guidelines, prioritizing both safety and keeping the child calm.",
+        "guideline_ref": "2021 National EMS Education Standards — Pediatric Assessment; PAT (Pediatric Assessment Triangle); 2021 National EMS Education Standards — Pediatric Oxygen Therapy; 2021 National EMS Education Standards — Pediatric Reassessment; 2021 National EMS Education Standards — Pediatric Transport; NAEMSP Pediatric Transport Position",
+        "clinical_pearl": null
       }
     ]
   },
@@ -2209,7 +2122,8 @@ const SCENARIOS = [
             "guideline_ref": "NAEMSP Position Statement on Prehospital Pain Management; 2021 National EMS Education Standards"
           }
         ],
-        "clinical_pearl": "Anticoagulated geriatric trauma patients are high-risk. Hip fractures in elderly patients on anticoagulants have increased surgical mortality, greater blood loss, and higher complication rates. Additionally, these patients may have occult bleeding that presents late. Even 'minor' mechanisms in anticoagulated elderly patients warrant a high index of suspicion."
+        "clinical_pearl": "Anticoagulated geriatric trauma patients are high-risk. Hip fractures in elderly patients on anticoagulants have increased surgical mortality, greater blood loss, and higher complication rates. Additionally, these patients may have occult bleeding that presents late. Even 'minor' mechanisms in anticoagulated elderly patients warrant a high index of suspicion.",
+        "selectCount": 4
       },
       {
         "phase": "treatment",
@@ -2339,7 +2253,8 @@ const SCENARIOS = [
             "guideline_ref": "AHA Arrhythmia Recognition"
           }
         ],
-        "clinical_pearl": "Always consider why a geriatric patient fell. A 12-lead ECG can reveal cardiac causes that change everything — acute MI, complete heart block, and long QT can all present as 'I just fell.' In anticoagulated patients with atrial fibrillation, any rhythm change also raises concern for stroke."
+        "clinical_pearl": "Always consider why a geriatric patient fell. A 12-lead ECG can reveal cardiac causes that change everything — acute MI, complete heart block, and long QT can all present as 'I just fell.' In anticoagulated patients with atrial fibrillation, any rhythm change also raises concern for stroke.",
+        "selectCount": 3
       }
     ]
   },
@@ -2425,12 +2340,19 @@ const SCENARIOS = [
           "Monitor closely for recurrence — naloxone duration (30–90 min) may be shorter than the opioid, requiring redosing or extended observation"
         ],
         "explanation": "Scene safety first (needles, unknown substances). Ventilation is the immediate life-saving priority. Naloxone administration follows. Titration continues until adequate respirations are restored. Ongoing monitoring is essential because naloxone may wear off before the opioid.",
-        "guideline_ref": "AHA 2020 Opioid-Associated Emergency Guidelines; NAEMSP Position on Naloxone Administration"
+        "guideline_ref": "AHA 2020 Opioid-Associated Emergency Guidelines; NAEMSP Position on Naloxone Administration",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "assessment",
         "prompt": "Categorize the following clinical findings as characteristic of OPIOID toxidrome versus OTHER toxidromes:",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "Recognizing toxidrome patterns helps identify the substance class involved and guides treatment, even when the specific drug is unknown.",
         "clinical_pearl": "The classic opioid toxidrome triad is: respiratory depression + pinpoint pupils (miosis) + altered mental status. However, mixed ingestions are common — a patient may have taken stimulants AND opioids simultaneously, creating a confusing clinical picture. When in doubt, if respirations are depressed, give naloxone.",
@@ -2465,7 +2387,51 @@ const SCENARIOS = [
           }
         ],
         "explanation": "The opioid toxidrome features respiratory depression, miosis, CNS depression, and hypotension. Sympathomimetic, cholinergic, and anticholinergic toxidromes have distinctly different presentations. Pattern recognition enables appropriate treatment even when the substance is unknown.",
-        "guideline_ref": "2021 National EMS Education Standards — Toxicology; AHA 2020 ACLS — Toxicology"
+        "guideline_ref": "2021 National EMS Education Standards — Toxicology; AHA 2020 ACLS — Toxicology",
+        "options": [
+          {
+            "text": {
+              "text": "Pinpoint pupils (miosis)",
+              "category": "Opioid Toxidrome"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Respiratory depression with bradycardia",
+              "category": "Opioid Toxidrome"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Dilated pupils, tachycardia, agitation, and hyperthermia (sympathomimetic)",
+              "category": "Other Toxidrome"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Excessive salivation, lacrimation, urination, defecation, and bradycardia (cholinergic)",
+              "category": "Other Toxidrome"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Decreased level of consciousness with hypotension",
+              "category": "Opioid Toxidrome"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Seizures, wide QRS complex on ECG, and dry skin (anticholinergic/TCA)",
+              "category": "Other Toxidrome"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -2617,47 +2583,23 @@ const SCENARIOS = [
         "prompt": "Place the following steps of normal cephalic delivery in the correct sequence:",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "You have decided to prepare for field delivery. The patient is pushing with contractions and the baby's head is advancing.",
-        "vitals_update": {},
-        "clinical_pearl": "Do NOT pull the baby out — guide and support. The most common delivery complication for EMS providers is nuchal cord (cord around the neck), occurring in up to 25% of deliveries. If encountered, attempt to slip it over the baby's head. If too tight, clamp in two places and cut between the clamps, then continue delivery.",
-        "options": [
-          {
-            "text": "Apply gentle, controlled pressure to the baby's head as it delivers to prevent explosive delivery",
-            "correct": true,
-            "critical": false,
-            "explanation": "Controlled delivery of the head prevents perineal tearing and protects the baby. Apply gentle counterpressure — never hold the baby back, just slow the delivery.",
-            "guideline_ref": "2021 National EMS Education Standards — Normal Delivery; NRP 8th Edition"
-          },
-          {
-            "text": "Check for nuchal cord once the head is delivered — if present, attempt to slip it over the head or clamp and cut",
-            "correct": true,
-            "critical": false,
-            "explanation": "Immediately check for cord around the neck after the head delivers. Nuchal cord occurs in ~25% of deliveries. Slip it over the head if loose; if tight, clamp and cut.",
-            "guideline_ref": "2021 National EMS Education Standards — Delivery Complications; NRP 8th Edition"
-          },
-          {
-            "text": "Suction the mouth first, then the nose, only if obvious obstruction is present",
-            "correct": true,
-            "critical": false,
-            "explanation": "Current NRP guidelines recommend suctioning only if the airway appears obstructed. Routine suctioning is no longer recommended as it can cause vagal bradycardia and delay breathing.",
-            "guideline_ref": "NRP 8th Edition (2021); AHA Neonatal Resuscitation Guidelines"
-          },
-          {
-            "text": "Guide the anterior shoulder downward gently, then deliver the posterior shoulder upward",
-            "correct": true,
-            "critical": false,
-            "explanation": "After head delivery, guide gently downward to deliver the anterior (top) shoulder, then upward to deliver the posterior shoulder. Never force — if shoulders don't deliver, suspect shoulder dystocia.",
-            "guideline_ref": "2021 National EMS Education Standards — Normal Delivery"
-          },
-          {
-            "text": "Clamp the cord in two places and cut between the clamps — delay clamping 30–60 seconds in vigorous term newborns",
-            "correct": true,
-            "critical": false,
-            "explanation": "Delayed cord clamping (30–60 seconds) for vigorous term newborns improves iron stores and transitional circulation. Clamp at least 2 inches apart and cut between the clamps with sterile scissors.",
-            "guideline_ref": "NRP 8th Edition; AHA/AAP 2020 Neonatal Resuscitation Guidelines; ACOG Delayed Cord Clamping"
-          }
-        ]
+        "items": [
+          "Apply gentle, controlled pressure to the baby's head as it delivers to prevent explosive delivery",
+          "Check for nuchal cord once the head is delivered — if present, attempt to slip it over the head or clamp and cut",
+          "Suction the mouth first, then the nose, only if obvious obstruction is present",
+          "Guide the anterior shoulder downward gently, then deliver the posterior shoulder upward",
+          "Clamp the cord in two places and cut between the clamps — delay clamping 30–60 seconds in vigorous term newborns"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: Controlled delivery of the head prevents perineal tearing and protects the baby. Apply gentle counterpressure — never hold the baby back, just slow the delivery. | Step 2: Immediately check for cord around the neck after the head delivers. Nuchal cord occurs in ~25% of deliveries. Slip it over the head if loose; if tight, clamp and cut. | Step 3: Current NRP guidelines recommend suctioning only if the airway appears obstructed. Routine suctioning is no longer recommended as it can cause vagal bradycardia and delay breathing. | Step 4: After head delivery, guide gently downward to deliver the anterior (top) shoulder, then upward to deliver the posterior shoulder. Never force — if shoulders don't deliver, suspect shoulder dystocia. | Step 5: Delayed cord clamping (30–60 seconds) for vigorous term newborns improves iron stores and transitional circulation. Clamp at least 2 inches apart and cut between the clamps with sterile scissors.",
+        "guideline_ref": "2021 National EMS Education Standards — Normal Delivery; NRP 8th Edition; 2021 National EMS Education Standards — Delivery Complications; NRP 8th Edition; NRP 8th Edition (2021); AHA Neonatal Resuscitation Guidelines; 2021 National EMS Education Standards — Normal Delivery; NRP 8th Edition; AHA/AAP 2020 Neonatal Resuscitation Guidelines; ACOG Delayed Cord Clamping",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
@@ -2704,66 +2646,37 @@ const SCENARIOS = [
             "explanation": "This outdated practice is dangerous. It can cause spinal injury, intracranial hemorrhage, and hypothermia. Proper neonatal resuscitation involves positioning, suctioning only if needed, and PPV.",
             "guideline_ref": "NRP 8th Edition; 2021 National EMS Education Standards"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "assessment",
         "prompt": "Categorize the following findings as NORMAL delivery/postpartum findings versus ABNORMAL findings requiring immediate intervention:",
         "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "After delivery of the newborn, you continue to monitor both mother and baby. Identify which findings are expected and which require immediate action.",
-        "vitals_update": {
-          "hr": 98,
-          "bp": "118/72",
-          "rr": 20,
-          "spo2": 98
-        },
-        "clinical_pearl": "Postpartum hemorrhage (>500 mL blood loss after vaginal delivery) is the leading cause of maternal death worldwide. Fundal massage is the first-line intervention: place one hand above the pubic bone for support and massage the uterine fundus firmly with the other hand until the uterus feels firm (like a grapefruit). Encourage breastfeeding — nipple stimulation releases oxytocin which promotes uterine contraction.",
-        "options": [
-          {
-            "text": "Delivery of the placenta within 20 minutes with moderate blood loss (up to 300 mL) → NORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "The placenta typically delivers within 5–30 minutes after the baby. Up to 500 mL of blood loss is considered physiologically normal for vaginal delivery, though prompt management begins well before that threshold.",
-            "guideline_ref": "2021 National EMS Education Standards — Postpartum Care; ACOG Postpartum Hemorrhage Guidelines"
-          },
-          {
-            "text": "Continuous bright red vaginal bleeding soaking more than one pad per minute after placental delivery → ABNORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "This rate of bleeding suggests postpartum hemorrhage, most commonly from uterine atony. Immediate fundal massage, keep the uterus firm, and rapid transport. This is a life-threatening emergency.",
-            "guideline_ref": "ACOG Postpartum Hemorrhage Guidelines; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Mild uterine cramping after delivery with a firm uterine fundus palpable at the umbilicus → NORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "Cramping after delivery indicates uterine involution (contraction). A firm fundus at the level of the umbilicus is the expected normal finding and indicates the uterus is contracting to control bleeding.",
-            "guideline_ref": "2021 National EMS Education Standards — Postpartum Assessment"
-          },
-          {
-            "text": "Newborn with acrocyanosis (blue hands and feet) but pink trunk, strong cry, and HR above 100 → NORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "Acrocyanosis (blue extremities) is normal in the first 24–48 hours. A pink trunk, strong cry, and heart rate >100 bpm indicate a vigorous, well-transitioning newborn. Central cyanosis would be abnormal.",
-            "guideline_ref": "NRP 8th Edition; AHA 2020 Neonatal Assessment"
-          },
-          {
-            "text": "Placenta has not delivered after 30 minutes, with increasing vaginal bleeding → ABNORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "A retained placenta beyond 30 minutes with increasing bleeding is an emergency. Do NOT pull on the cord — this can cause uterine inversion or cord avulsion. Transport immediately for manual extraction.",
-            "guideline_ref": "2021 National EMS Education Standards — Postpartum Complications; ACOG Guidelines"
-          },
-          {
-            "text": "Newborn with central cyanosis, gasping respirations, and HR below 60 at 5 minutes of age → ABNORMAL",
-            "correct": true,
-            "critical": false,
-            "explanation": "This newborn is critically ill. Central cyanosis, gasping, and HR <60 at 5 minutes despite PPV indicates the need for chest compressions (3:1 ratio with ventilations) and emergency transport.",
-            "guideline_ref": "NRP 8th Edition; AHA 2020 Neonatal Resuscitation Algorithm"
-          }
-        ]
+        "items": [
+          "Delivery of the placenta within 20 minutes with moderate blood loss (up to 300 mL)",
+          "Continuous bright red vaginal bleeding soaking more than one pad per minute after placental delivery",
+          "Mild uterine cramping after delivery with a firm uterine fundus palpable at the umbilicus",
+          "Newborn with acrocyanosis (blue hands and feet) but pink trunk, strong cry, and HR above 100",
+          "Placenta has not delivered after 30 minutes, with increasing vaginal bleeding",
+          "Newborn with central cyanosis, gasping respirations, and HR below 60 at 5 minutes of age"
+        ],
+        "categories": [
+          "NORMAL",
+          "ABNORMAL"
+        ],
+        "correctCategories": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "explanation": "Delivery of the placenta within 20 minutes with moderate blood loss (up to 300 mL): The placenta typically delivers within 5–30 minutes after the baby. Up to 500 mL of blood loss is considered physiologically normal for vaginal delivery, though prompt management begins well before that threshold. | Continuous bright red vaginal bleeding soaking more than one pad per minute after placental delivery: This rate of bleeding suggests postpartum hemorrhage, most commonly from uterine atony. Immediate fundal massage, keep the uterus firm, and rapid transport. This is a life-threatening emergency. | Mild uterine cramping after delivery with a firm uterine fundus palpable at the umbilicus: Cramping after delivery indicates uterine involution (contraction). A firm fundus at the level of the umbilicus is the expected normal finding and indicates the uterus is contracting to control bleeding. | Newborn with acrocyanosis (blue hands and feet) but pink trunk, strong cry, and HR above 100: Acrocyanosis (blue extremities) is normal in the first 24–48 hours. A pink trunk, strong cry, and heart rate >100 bpm indicate a vigorous, well-transitioning newborn. Central cyanosis would be abnormal. | Placenta has not delivered after 30 minutes, with increasing vaginal bleeding: A retained placenta beyond 30 minutes with increasing bleeding is an emergency. Do NOT pull on the cord — this can cause uterine inversion or cord avulsion. Transport immediately for manual extraction. | Newborn with central cyanosis, gasping respirations, and HR below 60 at 5 minutes of age: This newborn is critically ill. Central cyanosis, gasping, and HR <60 at 5 minutes despite PPV indicates the need for chest compressions (3:1 ratio with ventilations) and emergency transport.",
+        "guideline_ref": "2021 National EMS Education Standards — Postpartum Care; ACOG Postpartum Hemorrhage Guidelines; ACOG Postpartum Hemorrhage Guidelines; 2021 National EMS Education Standards; 2021 National EMS Education Standards — Postpartum Assessment; NRP 8th Edition; AHA 2020 Neonatal Assessment; 2021 National EMS Education Standards — Postpartum Complications; ACOG Guidelines; NRP 8th Edition; AHA 2020 Neonatal Resuscitation Algorithm",
+        "clinical_pearl": null
       }
     ]
   },
@@ -2839,47 +2752,23 @@ const SCENARIOS = [
         "prompt": "Place the following cooling interventions in order of priority for this heat stroke patient:",
         "type": "order",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "You have identified this as heat stroke. Rapid cooling is the definitive treatment — every minute of delay increases organ damage and mortality.",
-        "vitals_update": {},
-        "clinical_pearl": "The goal is to reduce core temperature to below 104°F (40°C) as rapidly as possible. Cold water immersion is the gold standard (cooling rate ~0.2°C/min). If immersion isn't possible, apply ice packs to the neck, axillae, and groin (areas of high blood flow), and wet the entire body with cool water while fanning. Do NOT administer antipyretics (acetaminophen/ibuprofen) — they don't work for heat stroke and may worsen liver/kidney injury.",
-        "options": [
-          {
-            "text": "Remove the patient from the hot environment to a shaded or air-conditioned area",
-            "correct": true,
-            "critical": false,
-            "explanation": "First step — stop the heat exposure. Move to shade or a cooled ambulance. This alone won't suffice but prevents further heat gain.",
-            "guideline_ref": "2021 National EMS Education Standards — Environmental Emergencies"
-          },
-          {
-            "text": "Remove excess clothing and begin cold water immersion if available, or apply ice packs to neck, axillae, and groin",
-            "correct": true,
-            "critical": false,
-            "explanation": "Aggressive cooling is the definitive treatment. Cold water immersion is the gold standard. If unavailable, ice packs to the neck, axillae, and groin target high-flow vascular areas for maximum heat exchange.",
-            "guideline_ref": "Wilderness Medical Society Heat Illness Guidelines; NAEMSP Position on Heat Stroke"
-          },
-          {
-            "text": "Wet the patient's entire body with cool water and fan continuously to maximize evaporative cooling",
-            "correct": true,
-            "critical": false,
-            "explanation": "Evaporative cooling (wetting + fanning) is effective and can be done simultaneously with ice packs. This creates additional cooling via convection and evaporation.",
-            "guideline_ref": "2021 National EMS Education Standards — Environmental Cooling Methods"
-          },
-          {
-            "text": "Administer IV normal saline (if scope allows) for volume replacement — avoid ice-cold fluids that may cause shivering",
-            "correct": true,
-            "critical": false,
-            "explanation": "IV fluids address dehydration and support blood pressure. Room temperature or cool fluids are appropriate. Some evidence supports cold IV fluids for internal cooling, though shivering must be monitored as it generates heat.",
-            "guideline_ref": "2021 National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Guidelines"
-          },
-          {
-            "text": "Initiate rapid transport to the hospital while continuing active cooling measures en route",
-            "correct": true,
-            "critical": false,
-            "explanation": "Heat stroke requires hospital-based monitoring, lab evaluation (rhabdomyolysis, coagulopathy, organ damage), and potentially more aggressive interventions. Never delay cooling for transport — do both simultaneously.",
-            "guideline_ref": "2021 National EMS Education Standards — Environmental Emergencies"
-          }
-        ]
+        "items": [
+          "Remove the patient from the hot environment to a shaded or air-conditioned area",
+          "Remove excess clothing and begin cold water immersion if available, or apply ice packs to neck, axillae, and groin",
+          "Wet the patient's entire body with cool water and fan continuously to maximize evaporative cooling",
+          "Administer IV normal saline (if scope allows) for volume replacement — avoid ice-cold fluids that may cause shivering",
+          "Initiate rapid transport to the hospital while continuing active cooling measures en route"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: First step — stop the heat exposure. Move to shade or a cooled ambulance. This alone won't suffice but prevents further heat gain. | Step 2: Aggressive cooling is the definitive treatment. Cold water immersion is the gold standard. If unavailable, ice packs to the neck, axillae, and groin target high-flow vascular areas for maximum heat exchange. | Step 3: Evaporative cooling (wetting + fanning) is effective and can be done simultaneously with ice packs. This creates additional cooling via convection and evaporation. | Step 4: IV fluids address dehydration and support blood pressure. Room temperature or cool fluids are appropriate. Some evidence supports cold IV fluids for internal cooling, though shivering must be monitored as it generates heat. | Step 5: Heat stroke requires hospital-based monitoring, lab evaluation (rhabdomyolysis, coagulopathy, organ damage), and potentially more aggressive interventions. Never delay cooling for transport — do both simultaneously.",
+        "guideline_ref": "2021 National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Heat Illness Guidelines; NAEMSP Position on Heat Stroke; 2021 National EMS Education Standards — Environmental Cooling Methods; 2021 National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Guidelines",
+        "clinical_pearl": null
       },
       {
         "phase": "assessment",
@@ -2973,7 +2862,8 @@ const SCENARIOS = [
             "explanation": "Dantrolene is the treatment for malignant hyperthermia (an anesthetic complication), NOT environmental heat stroke. While both involve dangerous hyperthermia, the mechanisms differ. Dantrolene has not shown benefit in exertional or classic heat stroke.",
             "guideline_ref": "Wilderness Medical Society Heat Illness Guidelines"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "treatment",
@@ -3089,106 +2979,52 @@ const SCENARIOS = [
         "prompt": "Categorize each of the following findings as either a SIRS Criterion or a Sign of Organ Dysfunction.",
         "type": "categorize",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "You continue your assessment. The nursing staff provides additional history and you gather more clinical data.",
-        "vitals_update": {},
-        "clinical_pearl": "SIRS criteria (temperature, heart rate, respiratory rate, WBC) identify a systemic inflammatory response but are non-specific. Organ dysfunction signs (hypotension, altered mental status, elevated lactate, decreased urine output) indicate that the infection is causing life-threatening physiologic derangement — this is what defines sepsis.",
-        "options": [
-          {
-            "text": "Heart rate of 118 bpm → SIRS Criterion",
-            "correct": true,
-            "critical": false,
-            "explanation": "Heart rate >90 bpm is one of the four classic SIRS criteria.",
-            "guideline_ref": "ACCP/SCCM Consensus Definitions; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Temperature of 103.2°F → SIRS Criterion",
-            "correct": true,
-            "critical": false,
-            "explanation": "Temperature >100.4°F (38°C) or <96.8°F (36°C) is a SIRS criterion.",
-            "guideline_ref": "ACCP/SCCM Consensus Definitions"
-          },
-          {
-            "text": "Respiratory rate of 24 → SIRS Criterion",
-            "correct": true,
-            "critical": false,
-            "explanation": "Respiratory rate >20 breaths per minute is a SIRS criterion.",
-            "guideline_ref": "ACCP/SCCM Consensus Definitions"
-          },
-          {
-            "text": "Blood pressure of 82/48 → Sign of Organ Dysfunction",
-            "correct": true,
-            "critical": false,
-            "explanation": "Hypotension (SBP <90 or MAP <65) indicates cardiovascular organ dysfunction and is a hallmark of septic shock.",
-            "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines"
-          },
-          {
-            "text": "GCS of 12 (altered mental status) → Sign of Organ Dysfunction",
-            "correct": true,
-            "critical": false,
-            "explanation": "Acute alteration in mental status indicates central nervous system organ dysfunction secondary to poor perfusion or direct inflammatory effects.",
-            "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines"
-          },
-          {
-            "text": "Dark concentrated urine output → Sign of Organ Dysfunction",
-            "correct": true,
-            "critical": false,
-            "explanation": "Decreased and concentrated urine output indicates renal organ dysfunction, a common early sign of sepsis-related hypoperfusion.",
-            "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines"
-          }
-        ]
+        "items": [
+          "Heart rate of 118 bpm",
+          "Temperature of 103.2°F",
+          "Respiratory rate of 24",
+          "Blood pressure of 82/48",
+          "GCS of 12 (altered mental status)",
+          "Dark concentrated urine output"
+        ],
+        "categories": [
+          "SIRS Criterion",
+          "Sign of Organ Dysfunction"
+        ],
+        "correctCategories": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "explanation": "Heart rate of 118 bpm: Heart rate >90 bpm is one of the four classic SIRS criteria. | Temperature of 103.2°F: Temperature >100.4°F (38°C) or <96.8°F (36°C) is a SIRS criterion. | Respiratory rate of 24: Respiratory rate >20 breaths per minute is a SIRS criterion. | Blood pressure of 82/48: Hypotension (SBP <90 or MAP <65) indicates cardiovascular organ dysfunction and is a hallmark of septic shock. | GCS of 12 (altered mental status): Acute alteration in mental status indicates central nervous system organ dysfunction secondary to poor perfusion or direct inflammatory effects. | Dark concentrated urine output: Decreased and concentrated urine output indicates renal organ dysfunction, a common early sign of sepsis-related hypoperfusion.",
+        "guideline_ref": "ACCP/SCCM Consensus Definitions; 2021 National EMS Education Standards; ACCP/SCCM Consensus Definitions; Surviving Sepsis Campaign 2021 Guidelines",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
         "prompt": "Place the following sepsis management steps in the correct priority order.",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "You have confirmed your clinical suspicion of sepsis with hemodynamic compromise. You need to initiate treatment and prepare for transport.",
-        "vitals_update": {
-          "hr": 122,
-          "bp": "78/44",
-          "rr": 26,
-          "spo2": 89
-        },
-        "clinical_pearl": "Prehospital sepsis management follows an ABCDE approach. Airway and breathing take priority, followed by circulatory support with IV fluids. Early hospital notification allows the receiving facility to prepare for time-sensitive interventions including blood cultures and antibiotics.",
-        "options": [
-          {
-            "text": "Apply high-flow oxygen to address hypoxia",
-            "correct": true,
-            "critical": false,
-            "explanation": "Addressing the airway and breathing is always the first priority. This patient's SpO2 of 89% requires immediate supplemental oxygen.",
-            "guideline_ref": "2021 National EMS Education Standards; AHA ACLS Guidelines"
-          },
-          {
-            "text": "Establish IV/IO access for fluid resuscitation",
-            "correct": true,
-            "critical": false,
-            "explanation": "Vascular access is essential to deliver the fluid boluses needed to support blood pressure in septic shock.",
-            "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines; NAEMSP Position Statement on Sepsis"
-          },
-          {
-            "text": "Administer a 500 mL normal saline bolus and reassess",
-            "correct": true,
-            "critical": false,
-            "explanation": "Initial fluid resuscitation with crystalloid is the primary circulatory intervention in prehospital sepsis management. Administer in measured boluses with frequent reassessment.",
-            "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines"
-          },
-          {
-            "text": "Provide early hospital notification as a sepsis alert",
-            "correct": true,
-            "critical": false,
-            "explanation": "Early notification allows the receiving facility to mobilize sepsis bundles including antibiotics and lab draws, reducing time to definitive treatment.",
-            "guideline_ref": "NAEMSP Position Statement on Prehospital Sepsis; Surviving Sepsis Campaign 2021"
-          },
-          {
-            "text": "Initiate rapid transport to the closest appropriate facility",
-            "correct": true,
-            "critical": false,
-            "explanation": "Sepsis is a time-sensitive emergency. Rapid transport to a facility capable of managing septic shock is critical to patient survival.",
-            "guideline_ref": "2021 National EMS Education Standards"
-          }
-        ]
+        "items": [
+          "Apply high-flow oxygen to address hypoxia",
+          "Establish IV/IO access for fluid resuscitation",
+          "Administer a 500 mL normal saline bolus and reassess",
+          "Provide early hospital notification as a sepsis alert",
+          "Initiate rapid transport to the closest appropriate facility"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: Addressing the airway and breathing is always the first priority. This patient's SpO2 of 89% requires immediate supplemental oxygen. | Step 2: Vascular access is essential to deliver the fluid boluses needed to support blood pressure in septic shock. | Step 3: Initial fluid resuscitation with crystalloid is the primary circulatory intervention in prehospital sepsis management. Administer in measured boluses with frequent reassessment. | Step 4: Early notification allows the receiving facility to mobilize sepsis bundles including antibiotics and lab draws, reducing time to definitive treatment. | Step 5: Sepsis is a time-sensitive emergency. Rapid transport to a facility capable of managing septic shock is critical to patient survival.",
+        "guideline_ref": "2021 National EMS Education Standards; AHA ACLS Guidelines; Surviving Sepsis Campaign 2021 Guidelines; NAEMSP Position Statement on Sepsis; Surviving Sepsis Campaign 2021 Guidelines; NAEMSP Position Statement on Prehospital Sepsis; Surviving Sepsis Campaign 2021; 2021 National EMS Education Standards",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
@@ -3235,7 +3071,8 @@ const SCENARIOS = [
             "explanation": "Unrestricted large-volume fluid administration without reassessment can lead to fluid overload and pulmonary edema, especially in elderly patients with comorbidities.",
             "guideline_ref": "Surviving Sepsis Campaign 2021 Guidelines"
           }
-        ]
+        ],
+        "selectCount": 3
       }
     ]
   },
@@ -3311,50 +3148,23 @@ const SCENARIOS = [
         "prompt": "Place the following steps for managing this submersion victim in the correct sequence.",
         "type": "order",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "You are establishing your management plan for this pediatric submersion victim.",
-        "vitals_update": {
-          "hr": 48,
-          "spo2": 62
-        },
-        "clinical_pearl": "The drowning resuscitation sequence prioritizes the airway and breathing over circulation, which differs from the C-A-B approach used in standard cardiac arrest. The AHA recommends A-B-C for drowning victims because the arrest mechanism is respiratory. Inline spinal stabilization should be considered if mechanism suggests diving or trauma but should never delay ventilation.",
-        "options": [
-          {
-            "text": "Open the airway with jaw thrust while maintaining cervical spine precautions",
-            "correct": true,
-            "critical": false,
-            "explanation": "Airway management is the first step. A jaw thrust is preferred when spinal injury cannot be ruled out, though a head-tilt chin-lift may be used if jaw thrust is ineffective.",
-            "guideline_ref": "AHA 2020 Guidelines for CPR & ECC; PHTLS 9th Edition"
-          },
-          {
-            "text": "Suction the airway if water or debris is visible in the oropharynx",
-            "correct": true,
-            "critical": false,
-            "explanation": "Clearing the airway of visible obstructions allows for effective ventilation. Brief suctioning is appropriate but should not significantly delay rescue breathing.",
-            "guideline_ref": "AHA 2020 Guidelines for CPR & ECC"
-          },
-          {
-            "text": "Deliver rescue breaths via BVM with high-flow oxygen at age-appropriate rate",
-            "correct": true,
-            "critical": false,
-            "explanation": "Ventilation with supplemental oxygen is the definitive initial treatment for drowning. Deliver breaths at 12-20 per minute for a pediatric patient, watching for chest rise.",
-            "guideline_ref": "AHA 2020 Guidelines for CPR & ECC — Pediatric BLS"
-          },
-          {
-            "text": "Begin chest compressions if heart rate falls below 60 bpm with poor perfusion",
-            "correct": true,
-            "critical": false,
-            "explanation": "In pediatric patients, a heart rate below 60 bpm with signs of poor perfusion (cyanosis, altered consciousness) despite adequate oxygenation and ventilation warrants chest compressions.",
-            "guideline_ref": "AHA 2020 PALS Guidelines"
-          },
-          {
-            "text": "Remove wet clothing and prevent further heat loss during ongoing resuscitation",
-            "correct": true,
-            "critical": false,
-            "explanation": "Hypothermia worsens outcomes in drowning. Remove wet clothing and cover the patient to prevent further heat loss while continuing resuscitation efforts.",
-            "guideline_ref": "AHA 2020 Guidelines for CPR & ECC; Wilderness Medical Society Guidelines"
-          }
-        ]
+        "items": [
+          "Open the airway with jaw thrust while maintaining cervical spine precautions",
+          "Suction the airway if water or debris is visible in the oropharynx",
+          "Deliver rescue breaths via BVM with high-flow oxygen at age-appropriate rate",
+          "Begin chest compressions if heart rate falls below 60 bpm with poor perfusion",
+          "Remove wet clothing and prevent further heat loss during ongoing resuscitation"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: Airway management is the first step. A jaw thrust is preferred when spinal injury cannot be ruled out, though a head-tilt chin-lift may be used if jaw thrust is ineffective. | Step 2: Clearing the airway of visible obstructions allows for effective ventilation. Brief suctioning is appropriate but should not significantly delay rescue breathing. | Step 3: Ventilation with supplemental oxygen is the definitive initial treatment for drowning. Deliver breaths at 12-20 per minute for a pediatric patient, watching for chest rise. | Step 4: In pediatric patients, a heart rate below 60 bpm with signs of poor perfusion (cyanosis, altered consciousness) despite adequate oxygenation and ventilation warrants chest compressions. | Step 5: Hypothermia worsens outcomes in drowning. Remove wet clothing and cover the patient to prevent further heat loss while continuing resuscitation efforts.",
+        "guideline_ref": "AHA 2020 Guidelines for CPR & ECC; PHTLS 9th Edition; AHA 2020 Guidelines for CPR & ECC; AHA 2020 Guidelines for CPR & ECC — Pediatric BLS; AHA 2020 PALS Guidelines; AHA 2020 Guidelines for CPR & ECC; Wilderness Medical Society Guidelines",
+        "clinical_pearl": null
       },
       {
         "phase": "assessment",
@@ -3405,7 +3215,8 @@ const SCENARIOS = [
             "explanation": "Drowning victims frequently swallow large amounts of water, causing gastric distension that impairs diaphragmatic excursion and increases aspiration risk during BVM ventilation.",
             "guideline_ref": "AHA 2020 Guidelines for CPR & ECC"
           }
-        ]
+        ],
+        "selectCount": 4
       }
     ]
   },
@@ -3530,51 +3341,23 @@ const SCENARIOS = [
         "prompt": "Place the following steps for managing this patient's tension pneumothorax in the correct procedural order.",
         "type": "order",
         "level_filter": "AEMT-Paramedic",
-        "narrative": "The patient is rapidly deteriorating. SpO2 has dropped to 76% and he is becoming less responsive. You must act immediately.",
-        "vitals_update": {
-          "hr": 140,
-          "bp": "74/50",
-          "spo2": 76,
-          "gcs": 12
-        },
-        "clinical_pearl": "For an open pneumothorax converting to tension, the immediate action is to seal the wound with a vented chest seal (or burp a non-vented seal). If tension physiology persists or worsens despite a vented seal, needle decompression is indicated at the approved site. The 2nd intercostal space midclavicular line or 4th-5th intercostal space anterior axillary line are accepted landmarks. Always reassess after each intervention.",
-        "options": [
-          {
-            "text": "Apply a commercial vented chest seal over the open wound",
-            "correct": true,
-            "critical": false,
-            "explanation": "The first priority is to seal the open chest wound. A vented (three-way valve) chest seal allows air to escape during exhalation while preventing air entry during inhalation, addressing the open pneumothorax.",
-            "guideline_ref": "PHTLS 9th Edition; TCCC Guidelines; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Administer high-flow oxygen via non-rebreather mask at 15 LPM",
-            "correct": true,
-            "critical": false,
-            "explanation": "High-flow oxygen addresses hypoxia and helps with nitrogen washout of the pneumothorax. Apply oxygen while preparing for further interventions.",
-            "guideline_ref": "PHTLS 9th Edition; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Reassess breath sounds and hemodynamic status after chest seal application",
-            "correct": true,
-            "critical": false,
-            "explanation": "After sealing the wound, reassess to determine if the vented seal has relieved the tension. If hypotension and absent breath sounds persist, needle decompression is indicated.",
-            "guideline_ref": "PHTLS 9th Edition; TCCC Guidelines"
-          },
-          {
-            "text": "Perform needle decompression at the approved site if tension physiology persists",
-            "correct": true,
-            "critical": false,
-            "explanation": "If the vented chest seal does not relieve the tension, decompress with a 14-gauge or larger needle/catheter at the 2nd ICS midclavicular line or 4th-5th ICS anterior axillary line on the affected side.",
-            "guideline_ref": "PHTLS 9th Edition; TCCC Guidelines; NAEMSP Position Statement"
-          },
-          {
-            "text": "Reassess vitals and breath sounds post-decompression, initiate rapid transport",
-            "correct": true,
-            "critical": false,
-            "explanation": "After decompression, reassess for improvement in breath sounds, blood pressure, and oxygenation. Initiate rapid transport to a trauma center — needle decompression is a temporizing measure, not definitive treatment.",
-            "guideline_ref": "PHTLS 9th Edition; ACS Committee on Trauma"
-          }
-        ]
+        "items": [
+          "Apply a commercial vented chest seal over the open wound",
+          "Administer high-flow oxygen via non-rebreather mask at 15 LPM",
+          "Reassess breath sounds and hemodynamic status after chest seal application",
+          "Perform needle decompression at the approved site if tension physiology persists",
+          "Reassess vitals and breath sounds post-decompression, initiate rapid transport"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: The first priority is to seal the open chest wound. A vented (three-way valve) chest seal allows air to escape during exhalation while preventing air entry during inhalation, addressing the open pneumothorax. | Step 2: High-flow oxygen addresses hypoxia and helps with nitrogen washout of the pneumothorax. Apply oxygen while preparing for further interventions. | Step 3: After sealing the wound, reassess to determine if the vented seal has relieved the tension. If hypotension and absent breath sounds persist, needle decompression is indicated. | Step 4: If the vented chest seal does not relieve the tension, decompress with a 14-gauge or larger needle/catheter at the 2nd ICS midclavicular line or 4th-5th ICS anterior axillary line on the affected side. | Step 5: After decompression, reassess for improvement in breath sounds, blood pressure, and oxygenation. Initiate rapid transport to a trauma center — needle decompression is a temporizing measure, not definitive treatment.",
+        "guideline_ref": "PHTLS 9th Edition; TCCC Guidelines; 2021 National EMS Education Standards; PHTLS 9th Edition; 2021 National EMS Education Standards; PHTLS 9th Edition; TCCC Guidelines; PHTLS 9th Edition; TCCC Guidelines; NAEMSP Position Statement; PHTLS 9th Edition; ACS Committee on Trauma",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
@@ -3697,7 +3480,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize each finding as characteristic of either Diabetic Ketoacidosis (DKA) or Hypoglycemia.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "categories": [
           "Diabetic Ketoacidosis (DKA)",
@@ -3739,7 +3522,65 @@ const SCENARIOS = [
         ],
         "explanation": "DKA features develop gradually from insulin deficiency: hyperglycemia, ketone production, metabolic acidosis (Kussmaul breathing), and dehydration (warm/dry skin). Hypoglycemia features develop rapidly from excess insulin or missed meals: sympathetic activation (cool/diaphoretic skin, tremors) and neuroglycopenia (confusion, seizures).",
         "guideline_ref": "ADA Standards of Medical Care in Diabetes; 2021 National EMS Education Standards",
-        "clinical_pearl": "The key prehospital distinction: hypoglycemia has a rapid onset (minutes to hours), cool/diaphoretic skin, and often presents with tremors, irritability, or seizures. DKA has a gradual onset (hours to days), warm/dry skin from dehydration, Kussmaul respirations, and fruity breath. Both cause altered mental status, but the treatments are very different — always check blood glucose."
+        "clinical_pearl": "The key prehospital distinction: hypoglycemia has a rapid onset (minutes to hours), cool/diaphoretic skin, and often presents with tremors, irritability, or seizures. DKA has a gradual onset (hours to days), warm/dry skin from dehydration, Kussmaul respirations, and fruity breath. Both cause altered mental status, but the treatments are very different — always check blood glucose.",
+        "options": [
+          {
+            "text": {
+              "text": "Kussmaul (deep, rapid) respirations",
+              "category": "Diabetic Ketoacidosis (DKA)"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Fruity or acetone odor on breath",
+              "category": "Diabetic Ketoacidosis (DKA)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Warm, dry skin with signs of dehydration",
+              "category": "Diabetic Ketoacidosis (DKA)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Gradual onset over hours to days",
+              "category": "Diabetic Ketoacidosis (DKA)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Cool, pale, diaphoretic skin",
+              "category": "Hypoglycemia"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Rapid onset over minutes to hours",
+              "category": "Hypoglycemia"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Tremors, irritability, or seizure activity",
+              "category": "Hypoglycemia"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Blood glucose reading above 300 mg/dL",
+              "category": "Diabetic Ketoacidosis (DKA)"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -3974,47 +3815,23 @@ const SCENARIOS = [
         "prompt": "Place the following ICS setup priorities in the correct order for this MCI.",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "Additional resources are responding. You need to establish an organized ICS structure.",
-        "vitals_update": {},
-        "clinical_pearl": "ICS should be established early and expanded as needed. The first arriving unit is Incident Commander until formally transferred to a higher-ranking or more qualified officer. Key early priorities include establishing command, requesting resources, beginning triage, designating a treatment area, and setting up a staging area for incoming units. Structure prevents chaos.",
-        "options": [
-          {
-            "text": "Assume Incident Command and establish a command post in a safe location",
-            "correct": true,
-            "critical": false,
-            "explanation": "The first arriving EMS unit assumes Incident Command. Establish a command post upwind and uphill from hazards with good visibility of the scene.",
-            "guideline_ref": "NIMS/ICS; FEMA IS-100/200; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Transmit a brief initial size-up report and request additional resources",
-            "correct": true,
-            "critical": false,
-            "explanation": "Radio a concise size-up: incident type, approximate patient count, hazards, resources needed. This triggers mutual aid and sets expectations for responding units.",
-            "guideline_ref": "NIMS/ICS; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Begin START triage to categorize all patients by acuity",
-            "correct": true,
-            "critical": false,
-            "explanation": "Once command is established and resources requested, begin rapid triage of all patients. This determines treatment priorities and resource allocation.",
-            "guideline_ref": "START Triage System; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Designate treatment and staging areas for incoming units",
-            "correct": true,
-            "critical": false,
-            "explanation": "As additional units arrive, they need clear direction. Designate a treatment area (divided by triage category) and a staging area where incoming resources report.",
-            "guideline_ref": "NIMS/ICS; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Assign arriving personnel to Triage, Treatment, and Transport roles",
-            "correct": true,
-            "critical": false,
-            "explanation": "As resources arrive, assign ICS roles: Triage Officer, Treatment Officer, Transport Officer. This distributes workload and maintains organized patient flow.",
-            "guideline_ref": "NIMS/ICS; 2021 National EMS Education Standards"
-          }
-        ]
+        "items": [
+          "Assume Incident Command and establish a command post in a safe location",
+          "Transmit a brief initial size-up report and request additional resources",
+          "Begin START triage to categorize all patients by acuity",
+          "Designate treatment and staging areas for incoming units",
+          "Assign arriving personnel to Triage, Treatment, and Transport roles"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: The first arriving EMS unit assumes Incident Command. Establish a command post upwind and uphill from hazards with good visibility of the scene. | Step 2: Radio a concise size-up: incident type, approximate patient count, hazards, resources needed. This triggers mutual aid and sets expectations for responding units. | Step 3: Once command is established and resources requested, begin rapid triage of all patients. This determines treatment priorities and resource allocation. | Step 4: As additional units arrive, they need clear direction. Designate a treatment area (divided by triage category) and a staging area where incoming resources report. | Step 5: As resources arrive, assign ICS roles: Triage Officer, Treatment Officer, Transport Officer. This distributes workload and maintains organized patient flow.",
+        "guideline_ref": "NIMS/ICS; FEMA IS-100/200; 2021 National EMS Education Standards; NIMS/ICS; 2021 National EMS Education Standards; START Triage System; 2021 National EMS Education Standards",
+        "clinical_pearl": null
       },
       {
         "phase": "transport",
@@ -4061,7 +3878,8 @@ const SCENARIOS = [
             "explanation": "BLACK (Expectant/Deceased) patients are not transported until all RED and YELLOW patients have been managed. Transporting deceased patients wastes ambulance resources needed for salvageable patients.",
             "guideline_ref": "START Triage System; NIMS/ICS; 2021 National EMS Education Standards"
           }
-        ]
+        ],
+        "selectCount": 3
       }
     ]
   },
@@ -4097,47 +3915,23 @@ const SCENARIOS = [
         "prompt": "Place the initial steps of newborn resuscitation (NRP) in the correct order for this non-breathing newborn.",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
-        "narrative": "The newborn is limp, not crying, and has no respiratory effort. You must initiate the NRP algorithm immediately.",
-        "vitals_update": {},
-        "clinical_pearl": "The NRP initial steps are performed within the first 30 seconds — the 'Golden Minute.' Warming, drying, stimulating, and clearing the airway (if needed) are performed simultaneously and rapidly. Most newborns respond to these initial steps alone. If not, positive pressure ventilation is the single most important intervention in neonatal resuscitation. Ventilation, ventilation, ventilation.",
-        "options": [
-          {
-            "text": "Provide warmth: place newborn on a warm surface, skin-to-skin if no radiant warmer available",
-            "correct": true,
-            "critical": false,
-            "explanation": "Hypothermia prevention is critical. Newborns lose heat rapidly. Place on a warm, dry surface. In the prehospital setting, skin-to-skin contact with the mother and covering both is effective when a warmer is unavailable.",
-            "guideline_ref": "AHA/AAP NRP 8th Edition 2020; 2021 National EMS Education Standards"
-          },
-          {
-            "text": "Dry thoroughly with warm towels, removing wet linens, and stimulate by rubbing the back or flicking the soles",
-            "correct": true,
-            "critical": false,
-            "explanation": "Vigorous drying provides thermal management and tactile stimulation simultaneously. Remove wet towels and replace with dry ones. Brief stimulation (back rub, sole flicks) may initiate breathing.",
-            "guideline_ref": "AHA/AAP NRP 8th Edition 2020"
-          },
-          {
-            "text": "Position the airway in a neutral 'sniffing' position and suction only if the airway is visibly obstructed",
-            "correct": true,
-            "critical": false,
-            "explanation": "Place the head in a neutral position (slight extension). Routine suctioning is no longer recommended — suction only if visible secretions are obstructing the airway.",
-            "guideline_ref": "AHA/AAP NRP 8th Edition 2020"
-          },
-          {
-            "text": "Assess breathing and heart rate — if apneic or HR <100 after initial steps, begin positive pressure ventilation",
-            "correct": true,
-            "critical": false,
-            "explanation": "After the initial steps (within 30-60 seconds), if the newborn remains apneic or has a heart rate below 100 bpm, PPV with room air or blended oxygen is initiated. PPV is the most critical intervention.",
-            "guideline_ref": "AHA/AAP NRP 8th Edition 2020"
-          },
-          {
-            "text": "Deliver PPV at a rate of 40-60 breaths per minute using a BVM with appropriate-sized mask",
-            "correct": true,
-            "critical": false,
-            "explanation": "PPV is delivered at 40-60 breaths per minute with just enough pressure to see gentle chest rise. Use a neonatal-sized mask ensuring a good seal over the mouth and nose.",
-            "guideline_ref": "AHA/AAP NRP 8th Edition 2020; 2021 National EMS Education Standards"
-          }
-        ]
+        "items": [
+          "Provide warmth: place newborn on a warm surface, skin-to-skin if no radiant warmer available",
+          "Dry thoroughly with warm towels, removing wet linens, and stimulate by rubbing the back or flicking the soles",
+          "Position the airway in a neutral 'sniffing' position and suction only if the airway is visibly obstructed",
+          "Assess breathing and heart rate — if apneic or HR <100 after initial steps, begin positive pressure ventilation",
+          "Deliver PPV at a rate of 40-60 breaths per minute using a BVM with appropriate-sized mask"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "explanation": "Step 1: Hypothermia prevention is critical. Newborns lose heat rapidly. Place on a warm, dry surface. In the prehospital setting, skin-to-skin contact with the mother and covering both is effective when a warmer is unavailable. | Step 2: Vigorous drying provides thermal management and tactile stimulation simultaneously. Remove wet towels and replace with dry ones. Brief stimulation (back rub, sole flicks) may initiate breathing. | Step 3: Place the head in a neutral position (slight extension). Routine suctioning is no longer recommended — suction only if visible secretions are obstructing the airway. | Step 4: After the initial steps (within 30-60 seconds), if the newborn remains apneic or has a heart rate below 100 bpm, PPV with room air or blended oxygen is initiated. PPV is the most critical intervention. | Step 5: PPV is delivered at 40-60 breaths per minute with just enough pressure to see gentle chest rise. Use a neonatal-sized mask ensuring a good seal over the mouth and nose.",
+        "guideline_ref": "AHA/AAP NRP 8th Edition 2020; 2021 National EMS Education Standards; AHA/AAP NRP 8th Edition 2020",
+        "clinical_pearl": null
       },
       {
         "phase": "treatment",
@@ -4184,7 +3978,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize each of the following newborn findings as either Reassuring or Concerning.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "multi_select": false,
         "narrative": "After 2 minutes of compressions and PPV, the newborn's heart rate rises to 120 bpm and she begins to make weak respiratory efforts. You continue to monitor closely.",
@@ -4312,7 +4106,6 @@ const SCENARIOS = [
         "prompt": "Place the following management steps in the correct priority order for this organophosphate poisoning patient.",
         "type": "order",
         "level_filter": "EMT-AEMT-Paramedic",
-        "multi_select": false,
         "narrative": "You have identified this as organophosphate poisoning. The patient is seizing, bradycardic, and has copious secretions threatening his airway. You must act quickly while protecting yourself and your crew.",
         "vitals_update": {
           "hr": 44,
@@ -4320,42 +4113,19 @@ const SCENARIOS = [
           "spo2": 74
         },
         "clinical_pearl": "Scene safety is paramount with organophosphate exposure — rescuers MUST wear appropriate PPE (minimum nitrile gloves, ideally full chemical PPE) to avoid secondary contamination. Decontamination before treatment prevents ongoing absorption AND protects the treatment team. Remove all clothing (removes ~80% of contamination) and brush/rinse visible chemical. Then address ABCs — suction secretions aggressively, provide ventilation, and administer antidotes.",
-        "options": [
-          {
-            "text": "Don appropriate PPE and ensure scene safety — do NOT enter the contaminated area without protection",
-            "correct": true,
-            "critical": false,
-            "explanation": "Organophosphates can be absorbed through skin, inhalation, and mucous membranes. Entering without PPE risks provider poisoning, creating additional patients. Minimum PPE includes chemical-resistant gloves and respiratory protection.",
-            "guideline_ref": "2021 National EMS Education Standards; NAEMSP Hazmat Guidelines; OSHA HAZWOPER"
-          },
-          {
-            "text": "Remove the patient from the contaminated environment to fresh air",
-            "correct": true,
-            "critical": false,
-            "explanation": "Move the patient out of the poorly ventilated barn to stop ongoing inhalation exposure. This is a basic rescue/removal step performed with PPE in place.",
-            "guideline_ref": "2021 National EMS Education Standards; ATSDR Organophosphate Guidelines"
-          },
-          {
-            "text": "Perform gross decontamination: remove all clothing and irrigate skin with copious water",
-            "correct": true,
-            "critical": false,
-            "explanation": "Removing contaminated clothing eliminates approximately 80% of the exposure. Copious water irrigation of the skin reduces ongoing dermal absorption. Decontaminate before loading into the ambulance.",
-            "guideline_ref": "2021 National EMS Education Standards; NAEMSP Hazmat Guidelines"
-          },
-          {
-            "text": "Aggressively suction airway secretions and provide BVM ventilation with high-flow oxygen",
-            "correct": true,
-            "critical": false,
-            "explanation": "Copious secretions (bronchorrhea) are the immediate life threat. Suction aggressively to maintain the airway, then ventilate with high-flow oxygen. These patients die from respiratory failure — airway management is critical.",
-            "guideline_ref": "2021 National EMS Education Standards; AHA ACLS"
-          },
-          {
-            "text": "Administer antidote therapy (atropine) and initiate rapid transport to definitive care",
-            "correct": true,
-            "critical": false,
-            "explanation": "Atropine blocks muscarinic receptor effects, drying secretions and increasing heart rate. This is a Paramedic-level intervention. Rapid transport is essential as these patients may need pralidoxime (2-PAM) and prolonged ICU care.",
-            "guideline_ref": "AHA ACLS; NAEMSP Toxicology Guidelines; 2021 National EMS Education Standards"
-          }
+        "items": [
+          "Don appropriate PPE and ensure scene safety — do NOT enter the contaminated area without protection",
+          "Remove the patient from the contaminated environment to fresh air",
+          "Perform gross decontamination: remove all clothing and irrigate skin with copious water",
+          "Aggressively suction airway secretions and provide BVM ventilation with high-flow oxygen",
+          "Administer antidote therapy (atropine) and initiate rapid transport to definitive care"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
         ]
       },
       {
@@ -4403,7 +4173,8 @@ const SCENARIOS = [
             "explanation": "Atropine blocks muscarinic receptors (secretions, bradycardia, bronchospasm) but does not address nicotinic effects (fasciculations, muscle weakness, paralysis). Pralidoxime (2-PAM) is needed for nicotinic symptoms.",
             "guideline_ref": "NAEMSP Toxicology Guidelines; ATSDR Organophosphate Management"
           }
-        ]
+        ],
+        "selectCount": 4
       }
     ]
   },
@@ -4484,7 +4255,14 @@ const SCENARIOS = [
           "Prepare for transport and provide ongoing reassessment"
         ],
         "explanation": "Positioning comes first to optimize respiratory mechanics. Medication assistance follows since the patient has a prescribed inhaler (EMT scope with medical direction). Oxygen titration is concurrent but listed after initial positioning. Full vital signs and lung sound reassessment guide further decisions, then prepare for transport with ongoing monitoring.",
-        "guideline_ref": "NREMT Psychomotor Skills — Supplemental Oxygen / Airway Management; National EMS Education Standards"
+        "guideline_ref": "NREMT Psychomotor Skills — Supplemental Oxygen / Airway Management; National EMS Education Standards",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "treatment",
@@ -4530,7 +4308,8 @@ const SCENARIOS = [
             "explanation": "This patient has obstructive lung disease, not pulmonary edema. Diuretics are not indicated for COPD exacerbation and could cause volume depletion and electrolyte imbalances. The crackles heard in COPD are from mucus plugging, not fluid overload.",
             "guideline_ref": "GOLD COPD Guidelines; NAEMSP Respiratory Emergency Management"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "reassessment",
@@ -4585,7 +4364,8 @@ const SCENARIOS = [
             "explanation": "EMTs assisting with a patient's prescribed medication should follow local protocol regarding repeat doses and medical direction contact.",
             "guideline_ref": "NREMT Practice Standards — Medication Administration (EMT)"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "reassessment",
@@ -4609,7 +4389,14 @@ const SCENARIOS = [
           "Notify receiving facility of impending respiratory failure — request respiratory therapy at bedside on arrival"
         ],
         "explanation": "Assisted ventilation is the immediate priority when the patient is failing. Epinephrine IM provides potent bronchodilation via beta-2 stimulation. Advanced airway preparation is prudent if BVM is inadequate. Magnesium sulfate is an evidence-based adjunct that relaxes bronchial smooth muscle. Early hospital notification ensures resources are ready. Note: ventilate slowly to avoid auto-PEEP and air trapping, which can cause pneumothorax in obstructive disease.",
-        "guideline_ref": "NAEMSP Airway Management; GOLD COPD Guidelines; National EMS Education Standards — Airway Management"
+        "guideline_ref": "NAEMSP Airway Management; GOLD COPD Guidelines; National EMS Education Standards — Airway Management",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       }
     ]
   },
@@ -4692,12 +4479,20 @@ const SCENARIOS = [
           "If obstruction not relieved, repeat cycles; if infant becomes unresponsive and pulseless, begin CPR"
         ],
         "explanation": "The AHA-recommended sequence for infant FBAO is: position face-down for back blows, deliver 5 back blows, turn face-up for chest thrusts, deliver 5 chest thrusts, then visually check the airway. Repeat until the object is expelled or the patient becomes pulseless (then transition to CPR).",
-        "guideline_ref": "AHA BLS Guidelines — Foreign Body Airway Obstruction in Infants"
+        "guideline_ref": "AHA BLS Guidelines — Foreign Body Airway Obstruction in Infants",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       },
       {
         "phase": "reassessment",
         "prompt": "Categorize each item as either appropriate for an INFANT (<1 year) or a CHILD (1-puberty) during FBAO management.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "After several cycles, the grape dislodges and the child begins crying. While monitoring the patient, you review age-appropriate FBAO techniques with your partner.",
         "clinical_pearl": "The transition from 'infant' to 'child' FBAO technique is approximately at age 1. For patients near the age boundary (like this 18-month-old), back blows + chest thrusts remain appropriate if the child is small enough to position on the forearm.",
@@ -4732,7 +4527,51 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Infant FBAO relief uses back blows and chest thrusts with the infant positioned along the rescuer's forearm. Child FBAO relief uses abdominal thrusts (Heimlich maneuver) performed from behind the patient. Knowing the age-appropriate technique is essential to avoid injury.",
-        "guideline_ref": "AHA BLS Guidelines — FBAO Management by Age Group"
+        "guideline_ref": "AHA BLS Guidelines — FBAO Management by Age Group",
+        "options": [
+          {
+            "text": {
+              "text": "5 back blows + 5 chest thrusts",
+              "category": "Infant FBAO Technique"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Abdominal thrusts (Heimlich maneuver)",
+              "category": "Child FBAO Technique"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Support on forearm, head lower than trunk",
+              "category": "Infant FBAO Technique"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Stand or kneel behind the patient",
+              "category": "Child FBAO Technique"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Two-finger chest thrust technique",
+              "category": "Infant FBAO Technique"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Inward and upward fist thrusts above the navel",
+              "category": "Child FBAO Technique"
+            },
+            "correct": false
+          }
+        ]
       }
     ]
   },
@@ -4778,7 +4617,14 @@ const SCENARIOS = [
           "Obtain brief history from bystanders (collapse circumstances, down time, number of shocks)"
         ],
         "explanation": "Taking over CPR immediately ensures continued high-quality compressions. Verifying the AED and rhythm guides next steps. Establishing an airway/ventilation plan occurs in parallel. Shocks are delivered as indicated with immediate CPR resumption. History is gathered without delaying resuscitation efforts.",
-        "guideline_ref": "AHA BLS/ACLS Guidelines — Cardiac Arrest Management Sequence"
+        "guideline_ref": "AHA BLS/ACLS Guidelines — Cardiac Arrest Management Sequence",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "treatment",
@@ -4868,7 +4714,8 @@ const SCENARIOS = [
             "explanation": "The recovery position is for unresponsive patients who are breathing adequately on their own. This patient is apneic and requires ongoing assisted ventilations — the supine position with airway management is appropriate.",
             "guideline_ref": "AHA BLS Guidelines — Recovery Position Indications"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "reassessment",
@@ -5026,7 +4873,14 @@ const SCENARIOS = [
           "Prepare for and anticipate atropine administration or transcutaneous pacing per medical direction"
         ],
         "explanation": "The treatment ladder for symptomatic bradycardia follows ABCs first (airway/oxygen), then vascular access, fluid resuscitation for hypotension, and rapid transport. Pharmacological intervention (atropine) and electrical therapy (pacing) follow the ACLS bradycardia algorithm and may require paramedic-level intervention or medical direction.",
-        "guideline_ref": "AHA ACLS Guidelines — Bradycardia Algorithm; NAEMSP Scope of Practice"
+        "guideline_ref": "AHA ACLS Guidelines — Bradycardia Algorithm; NAEMSP Scope of Practice",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       }
     ]
   },
@@ -5108,7 +4962,14 @@ const SCENARIOS = [
           "If adenosine fails and patient remains stable: consider calcium channel blocker or transport for further management"
         ],
         "explanation": "The ACLS tachycardia algorithm for stable narrow complex tachycardia follows a stepwise approach: establish monitoring/access, attempt vagal maneuvers first (low-risk), then escalate to adenosine 6mg, followed by 12mg if needed. If chemical cardioversion fails, additional agents or synchronized cardioversion may be considered.",
-        "guideline_ref": "AHA ACLS Guidelines — Tachycardia with a Pulse Algorithm"
+        "guideline_ref": "AHA ACLS Guidelines — Tachycardia with a Pulse Algorithm",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "treatment",
@@ -5219,7 +5080,7 @@ const SCENARIOS = [
       {
         "phase": "treatment",
         "prompt": "Categorize each finding as either a sign of COMPENSATED respiratory distress or DECOMPENSATED respiratory failure.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "As you treat the patient, you discuss respiratory assessment findings with your partner to ensure you both recognize the warning signs of deterioration.",
         "clinical_pearl": "The transition from compensated distress to decompensated failure can happen rapidly in pediatric asthma patients. Continuous monitoring is essential — the patient may appear stable one minute and crash the next.",
@@ -5262,7 +5123,65 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Compensated distress shows the body is still fighting: tachypnea, tachycardia, accessory muscle use, and the ability to speak all indicate ongoing compensation. Decompensated failure shows the body is losing the fight: silent chest, altered mental status, bradycardia, decreasing effort, and cyanosis are pre-arrest findings.",
-        "guideline_ref": "AHA PALS Guidelines — Pediatric Respiratory Distress vs. Failure; EMT National Education Standards"
+        "guideline_ref": "AHA PALS Guidelines — Pediatric Respiratory Distress vs. Failure; EMT National Education Standards",
+        "options": [
+          {
+            "text": {
+              "text": "Tachypnea with audible wheezing",
+              "category": "Compensated Respiratory Distress"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Silent chest with minimal air movement",
+              "category": "Decompensated Respiratory Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Able to speak in short phrases, alert and oriented",
+              "category": "Compensated Respiratory Distress"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Altered mental status, unable to speak",
+              "category": "Decompensated Respiratory Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Accessory muscle use with intercostal retractions",
+              "category": "Compensated Respiratory Distress"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Bradycardia and decreasing respiratory effort",
+              "category": "Decompensated Respiratory Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Tachycardia with agitation and anxiety",
+              "category": "Compensated Respiratory Distress"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Cyanosis with head-bobbing respirations",
+              "category": "Decompensated Respiratory Failure"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -5279,7 +5198,14 @@ const SCENARIOS = [
           "Initiate rapid transport with early hospital notification, prepare BVM for potential respiratory failure"
         ],
         "explanation": "Upright positioning optimizes respiratory mechanics. High-flow oxygen addresses the immediate hypoxemia. Medication assistance with the patient's prescribed albuterol targets the underlying bronchospasm. Reassessment guides further treatment decisions. Early transport preparation with BVM readiness anticipates potential deterioration.",
-        "guideline_ref": "NAEMSP Guidelines — Acute Asthma Management; AHA PALS Guidelines — Asthma"
+        "guideline_ref": "NAEMSP Guidelines — Acute Asthma Management; AHA PALS Guidelines — Asthma",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "treatment",
@@ -5296,7 +5222,14 @@ const SCENARIOS = [
           "Consider advanced airway only as a last resort — prepare for difficult ventilation due to high airway resistance"
         ],
         "explanation": "Continuous nebulization with combined beta-agonist and anticholinergic provides maximum inhaled bronchodilation. Magnesium sulfate is a smooth muscle relaxant with evidence supporting its use in severe acute asthma. IM epinephrine provides systemic beta-agonism when inhaled medications can't reach the lower airways due to severe obstruction. BVM with slow rates prevents air trapping. Intubation is a last resort in status asthmaticus — these patients are extremely difficult to ventilate mechanically.",
-        "guideline_ref": "AHA PALS Guidelines — Severe Asthma; NAEMSP Acute Asthma Management; 2021 National EMS Education Standards"
+        "guideline_ref": "AHA PALS Guidelines — Severe Asthma; NAEMSP Acute Asthma Management; 2021 National EMS Education Standards",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "phase": "reassessment",
@@ -5352,7 +5285,8 @@ const SCENARIOS = [
             "explanation": "Decreasing wheezing with worsening mental status and falling SpO2 is NOT improvement — it indicates the patient is moving so little air that wheezing can no longer be generated. This is a critical, life-threatening deterioration.",
             "guideline_ref": "AHA PALS Guidelines — Silent Chest in Asthma as Ominous Sign"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "reassessment",
@@ -5412,7 +5346,8 @@ const SCENARIOS = [
             "explanation": "Needle decompression is only indicated when clinical signs of tension pneumothorax are present (absent breath sounds unilaterally, tracheal deviation, hemodynamic collapse not improved by disconnecting the ETT). Prophylactic decompression causes unnecessary iatrogenic injury.",
             "guideline_ref": "AHA PALS Guidelines; NAEMSP Needle Decompression Indications"
           }
-        ]
+        ],
+        "selectCount": 4
       }
     ]
   },
@@ -5503,6 +5438,14 @@ const SCENARIOS = [
           "Position patient supine with knees flexed if tolerated",
           "Initiate rapid transport to trauma center and keep patient warm",
           "Obtain vitals and secondary assessment en route"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -5550,12 +5493,13 @@ const SCENARIOS = [
             "explanation": "Tachypnea is a compensatory response to metabolic acidosis from poor perfusion.",
             "guideline_ref": "PHTLS 10th Ed — Shock"
           }
-        ]
+        ],
+        "selectCount": 5
       },
       {
         "phase": "decision-making",
         "prompt": "Categorize each of the following findings as either an indication for IMMEDIATE SURGICAL INTERVENTION or a finding that can be MONITORED AND REASSESSED in the field.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "explanation": "Penetrating abdominal trauma with evisceration, hemodynamic instability, or peritoneal signs all indicate the need for emergent surgical exploration. Stable patients with isolated soft-tissue injury and no signs of shock may allow for continued assessment, but the threshold for rapid transport should remain low.",
         "guideline_ref": "ACS-COT Field Triage Decision Scheme; PHTLS 10th Ed — Abdominal Trauma",
@@ -5587,6 +5531,50 @@ const SCENARIOS = [
           {
             "text": "Declining mental status with penetrating mechanism",
             "category": "Immediate Surgical Intervention"
+          }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Evisceration of abdominal contents",
+              "category": "Immediate Surgical Intervention"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Hypotension unresponsive to fluid resuscitation",
+              "category": "Immediate Surgical Intervention"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Isolated superficial laceration with stable vitals",
+              "category": "Monitor and Reassess"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Progressive abdominal rigidity and guarding",
+              "category": "Immediate Surgical Intervention"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Patient alert with stable vitals and soft abdomen",
+              "category": "Monitor and Reassess"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Declining mental status with penetrating mechanism",
+              "category": "Immediate Surgical Intervention"
+            },
+            "correct": false
           }
         ]
       }
@@ -5730,6 +5718,14 @@ const SCENARIOS = [
           "Cover burns with dry sterile dressings — avoid wet dressings on large burns",
           "Keep the patient warm to prevent hypothermia",
           "Initiate rapid transport to a burn center"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -5888,7 +5884,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize each finding as either an INDICATION for spinal motion restriction or NOT AN INDICATION based on national guidelines.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "explanation": "National guidelines (NAEMSP/ACS) recommend spinal motion restriction when specific criteria are met: significant mechanism with midline tenderness, neurological deficits, altered mental status, distracting injuries, or intoxication that prevents reliable exam. A reliable negative exam in an alert, sober patient without midline tenderness can clear the need for SMR.",
         "guideline_ref": "NAEMSP/ACS 2018 Position Statement on EMS Spinal Precautions; PHTLS 10th Ed — Spinal Trauma",
@@ -5925,6 +5921,57 @@ const SCENARIOS = [
             "text": "Patient intoxicated and unable to provide reliable exam",
             "category": "Indication for SMR"
           }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Midline cervical tenderness on palpation",
+              "category": "Indication for SMR"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Neurological deficit (bilateral hand tingling)",
+              "category": "Indication for SMR"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Altered mental status (GCS < 15)",
+              "category": "Indication for SMR"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Isolated minor fender-bender, no pain, no tenderness, GCS 15",
+              "category": "Not an Indication for SMR"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Significant mechanism with distracting painful injury",
+              "category": "Indication for SMR"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Alert patient, no neck pain, no tenderness, full ROM, no intoxication",
+              "category": "Not an Indication for SMR"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Patient intoxicated and unable to provide reliable exam",
+              "category": "Indication for SMR"
+            },
+            "correct": false
+          }
         ]
       },
       {
@@ -5947,6 +5994,14 @@ const SCENARIOS = [
           "Extricate the patient and board from the water as a unit",
           "Apply cervical collar once out of the water and reassess neurovascular status",
           "Transport with continuous spinal precautions and reassess en route"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       }
     ]
@@ -6065,12 +6120,13 @@ const SCENARIOS = [
             "guideline_ref": "CDC Child Abuse Recognition"
           }
         ],
-        "clinical_pearl": "The TEN-4 FACES bruising rule helps identify concerning patterns: bruises to the Torso, Ears, Neck in a child ≤4 years, or to the Frenulum, Angle of jaw, Cheeks, Eyes, Sclera at any age. Bruises in pre-mobile infants are extremely rare and almost always warrant further evaluation. 'Those who don't cruise rarely bruise.'"
+        "clinical_pearl": "The TEN-4 FACES bruising rule helps identify concerning patterns: bruises to the Torso, Ears, Neck in a child ≤4 years, or to the Frenulum, Angle of jaw, Cheeks, Eyes, Sclera at any age. Bruises in pre-mobile infants are extremely rare and almost always warrant further evaluation. 'Those who don't cruise rarely bruise.'",
+        "selectCount": 5
       },
       {
         "phase": "decision-making",
         "prompt": "Categorize each documentation element as either APPROPRIATE or INAPPROPRIATE for an EMS report involving suspected non-accidental trauma.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "categories": [
           "Appropriate Documentation",
@@ -6108,7 +6164,58 @@ const SCENARIOS = [
         ],
         "explanation": "EMS documentation in suspected abuse cases must be objective, factual, and thorough. Describe what you see without diagnosing abuse. Use direct quotes when possible. Avoid subjective opinions, accusations, or conclusions about who caused injuries. Your documentation may become part of a legal investigation.",
         "guideline_ref": "NAEMSP Position Statement on Child Maltreatment; EMS Documentation Standards",
-        "clinical_pearl": "Document like your report will be read in court — because it might be. Use objective language: describe colors, sizes, locations, and patterns. Quote caregivers verbatim when possible. Never accuse or diagnose abuse in your report — state facts and let investigators draw conclusions."
+        "clinical_pearl": "Document like your report will be read in court — because it might be. Use objective language: describe colors, sizes, locations, and patterns. Quote caregivers verbatim when possible. Never accuse or diagnose abuse in your report — state facts and let investigators draw conclusions.",
+        "options": [
+          {
+            "text": {
+              "text": "\"Multiple bruises noted on anterior torso ranging from yellow-green to dark purple\"",
+              "category": "Appropriate Documentation"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "\"The boyfriend obviously beat this child\"",
+              "category": "Inappropriate Documentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "\"Mother states child fell down 3 carpeted stairs approximately 1 hour ago\"",
+              "category": "Appropriate Documentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "\"This is clearly a case of child abuse\"",
+              "category": "Inappropriate Documentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "\"Child is withdrawn, avoids eye contact, does not reach for caregiver\"",
+              "category": "Appropriate Documentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "\"Reported mechanism inconsistent with observed injury pattern\" — documented factually",
+              "category": "Appropriate Documentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Omitting bruise findings from the report to avoid conflict",
+              "category": "Inappropriate Documentation"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -6220,7 +6327,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize each injury mechanism into the correct blast injury phase.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "AEMT-Paramedic",
         "explanation": "Blast injuries are classified into four phases: PRIMARY (overpressure wave affecting air-filled organs), SECONDARY (projectiles/shrapnel), TERTIARY (body thrown by blast wind), and QUATERNARY (everything else — burns, crush, inhalation, environmental). Understanding phases helps anticipate occult injuries.",
         "guideline_ref": "PHTLS 10th Ed — Blast Injuries; CDC Blast Injury Fact Sheets",
@@ -6263,6 +6370,64 @@ const SCENARIOS = [
             "text": "Inhalation injury from toxic fumes",
             "category": "Quaternary (Other)"
           }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Tympanic membrane rupture",
+              "category": "Primary (Overpressure)"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Blast lung (pulmonary contusion from pressure wave)",
+              "category": "Primary (Overpressure)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Metal fragment embedded in thigh",
+              "category": "Secondary (Projectiles)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Patient thrown 15 feet and striking the ground",
+              "category": "Tertiary (Displacement)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Flash burns to face and arms",
+              "category": "Quaternary (Other)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Bowel perforation from pressure wave",
+              "category": "Primary (Overpressure)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Fractures from impact after being thrown",
+              "category": "Tertiary (Displacement)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Inhalation injury from toxic fumes",
+              "category": "Quaternary (Other)"
+            },
+            "correct": false
+          }
         ]
       },
       {
@@ -6286,6 +6451,14 @@ const SCENARIOS = [
           "Stabilize the embedded thigh object with bulky dressings",
           "Establish IV/IO access for judicious fluid resuscitation",
           "Prevent hypothermia and initiate rapid transport to a trauma center"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -6332,7 +6505,8 @@ const SCENARIOS = [
             "explanation": "Blast lung can cause air to enter pulmonary vasculature, leading to arterial air embolism — a potentially fatal complication.",
             "guideline_ref": "PHTLS 10th Ed — Blast Injuries; CDC Blast Injury Fact Sheets"
           }
-        ]
+        ],
+        "selectCount": 5
       }
     ]
   },
@@ -6421,6 +6595,14 @@ const SCENARIOS = [
           "If first tourniquet does not control bleeding, apply a second tourniquet proximal to the first",
           "Note tourniquet application time and do not remove in the field",
           "Reassess distal hemorrhage control and initiate rapid transport"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -6557,6 +6739,13 @@ const SCENARIOS = [
           "Obtain vascular access or prepare for transport",
           "Perform ongoing neurological and vital sign reassessment",
           "Transport emergently to closest appropriate facility with OB capability"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
         ]
       },
       {
@@ -6644,7 +6833,8 @@ const SCENARIOS = [
             "explanation": "Magnesium sulfate is the treatment of choice for eclamptic seizures but is outside EMT scope of practice.",
             "guideline_ref": "NAEMSP Obstetric Emergencies; AHA ACLS in Pregnancy"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "reassessment",
@@ -6697,12 +6887,13 @@ const SCENARIOS = [
             "explanation": "A fetal heart rate of 140 bpm is within the normal range (110-160 bpm) and does not indicate magnesium toxicity. Fetal bradycardia (<110) could be concerning but is not typically the first sign of maternal magnesium toxicity.",
             "guideline_ref": "ACOG Fetal Heart Rate Monitoring Guidelines"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "decision-making",
         "prompt": "Categorize the following findings as either signs of SEVERE preeclampsia/eclampsia or NORMAL pregnancy findings.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "The seizure has stopped. You are gathering additional history from the partner while continuing transport.",
         "clinical_pearl": "Distinguishing normal pregnancy discomforts from warning signs of preeclampsia/eclampsia is critical. Severe headache, visual changes, upper abdominal pain, and marked edema with hypertension are red flags that demand urgent evaluation.",
@@ -6744,6 +6935,64 @@ const SCENARIOS = [
           {
             "text": "Sudden facial and hand edema",
             "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+          }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Blood pressure 188/116",
+              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Mild ankle swelling that worsens throughout the day",
+              "category": "Normal Pregnancy Findings"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Severe persistent headache unrelieved by rest",
+              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Occasional heartburn after meals",
+              "category": "Normal Pregnancy Findings"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Visual disturbances — seeing spots or flashing lights",
+              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Right upper quadrant or epigastric pain",
+              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Mild shortness of breath when climbing stairs",
+              "category": "Normal Pregnancy Findings"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Sudden facial and hand edema",
+              "category": "Severe Preeclampsia / Eclampsia Warning Signs"
+            },
+            "correct": false
           }
         ]
       }
@@ -6827,6 +7076,13 @@ const SCENARIOS = [
           "Administer high-flow oxygen to the mother via non-rebreather mask",
           "Notify receiving hospital of cord prolapse for emergency cesarean preparation",
           "Transport emergently while maintaining manual elevation of the presenting part"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
         ]
       },
       {
@@ -6869,7 +7125,8 @@ const SCENARIOS = [
             "explanation": "Pushing increases pressure on the cord and could worsen compression. The mother should be coached to use panting breaths to resist the urge to push.",
             "guideline_ref": "NAEMSP Obstetric Emergencies"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "treatment",
@@ -6916,12 +7173,13 @@ const SCENARIOS = [
             "explanation": "While maternal comfort is important, opioids cross the placenta and can cause neonatal respiratory depression at delivery. Given the imminent cesarean (8 minutes transport), the surgical team will manage anesthesia. Prehospital opioids offer limited benefit and add fetal risk in this scenario.",
             "guideline_ref": "2021 National EMS Education Standards — OB Pharmacology; ACOG Intrapartum Opioid Considerations"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "reassessment",
         "prompt": "During transport, the cord pulsations weaken significantly. Categorize each potential cause and intervention appropriately.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "Paramedic",
         "narrative": "Five minutes into transport, you notice the cord pulsations have weakened noticeably. The mother's BP is 118/74, HR 112. Contractions are less frequent since terbutaline administration but still present. You are maintaining manual elevation of the presenting part.",
         "clinical_pearl": "Weakening cord pulsations indicate decreasing fetal perfusion — this is an ominous sign. Reassess your hand position to ensure adequate elevation, verify maternal hemodynamic status (hypotension reduces uterine perfusion), and consider whether contractions are still compressing the cord. Communicate this change immediately to the receiving facility so they can expedite the OR team.",
@@ -6960,7 +7218,58 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Weakening cord pulsations require immediate reassessment of all modifiable factors: hand position, maternal hemodynamics, and cord condition. Simultaneously communicating the deterioration to the receiving facility allows them to have the OR immediately ready upon arrival. Every second matters for fetal survival.",
-        "guideline_ref": "ACOG Umbilical Cord Prolapse Management; NAEMSP Obstetric Emergencies; 2021 National EMS Education Standards"
+        "guideline_ref": "ACOG Umbilical Cord Prolapse Management; NAEMSP Obstetric Emergencies; 2021 National EMS Education Standards",
+        "options": [
+          {
+            "text": {
+              "text": "Insufficient elevation of the presenting part allowing intermittent cord compression",
+              "category": "Likely Contributing to Decreased Cord Pulsations"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Maternal hypotension reducing uterine blood flow",
+              "category": "Likely Contributing to Decreased Cord Pulsations"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Cord vasospasm from exposure to cold or drying",
+              "category": "Likely Contributing to Decreased Cord Pulsations"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Reposition hand to ensure maximal lift of the presenting part off the cord",
+              "category": "Appropriate Immediate Response"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Administer additional IV fluid bolus to optimize maternal perfusion",
+              "category": "Appropriate Immediate Response"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Re-wet cord dressings with warm saline to prevent vasospasm",
+              "category": "Appropriate Immediate Response"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Update the receiving facility on fetal status change and request immediate OR availability",
+              "category": "Appropriate Immediate Response"
+            },
+            "correct": false
+          }
+        ]
       }
     ]
   },
@@ -7028,7 +7337,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize the following clinical findings by severity of dehydration.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT",
         "narrative": "You are assessing the infant more thoroughly while your partner prepares for transport. The mother provides additional details about the baby's condition over the past 48 hours.",
         "explanation": "Classifying dehydration severity guides the urgency of intervention. Mild dehydration shows subtle signs; moderate shows clear clinical findings; severe dehydration presents with signs of shock and requires immediate fluid resuscitation and emergent transport.",
@@ -7079,6 +7388,78 @@ const SCENARIOS = [
           {
             "text": "Hypotension with altered mental status",
             "category": "Severe Dehydration"
+          }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Slightly decreased urine output",
+              "category": "Mild Dehydration"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Sunken fontanelle",
+              "category": "Moderate Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "No tears when crying",
+              "category": "Moderate Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Mottled skin with capillary refill >4 seconds",
+              "category": "Severe Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Slightly dry mucous membranes",
+              "category": "Mild Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "No urine output for 8+ hours",
+              "category": "Severe Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Lethargic and limp — difficult to arouse",
+              "category": "Severe Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Increased thirst, mildly fussy",
+              "category": "Mild Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Tachycardia with weak peripheral pulses",
+              "category": "Moderate Dehydration"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Hypotension with altered mental status",
+              "category": "Severe Dehydration"
+            },
+            "correct": false
           }
         ]
       },
@@ -7314,7 +7695,8 @@ const SCENARIOS = [
             "guideline_ref": "NAEMSP Excited Delirium Management; ACEP White Paper"
           }
         ],
-        "clinical_pearl": "Positioning and cooling are the two interventions available at all provider levels that most directly reduce mortality. Get the patient off their stomach and start cooling immediately — don't wait for ALS."
+        "clinical_pearl": "Positioning and cooling are the two interventions available at all provider levels that most directly reduce mortality. Get the patient off their stomach and start cooling immediately — don't wait for ALS.",
+        "selectCount": 3
       },
       {
         "phase": "treatment",
@@ -7386,7 +7768,7 @@ const SCENARIOS = [
       {
         "phase": "decision-making",
         "prompt": "Categorize the following findings as either signs of WORSENING CONDITION requiring immediate intervention or EXPECTED FINDINGS in this presentation.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "You are en route to the hospital. The patient has been on his side with cooling measures in place for 4 minutes. You are performing ongoing assessment.",
         "categories": [
@@ -7429,7 +7811,65 @@ const SCENARIOS = [
         ],
         "explanation": "Differentiating expected findings from signs of imminent collapse is essential. Sudden cessation of agitation, declining mental status, and loss of pulses indicate the patient is transitioning from a hypermetabolic state to cardiovascular collapse.",
         "guideline_ref": "NAEMSP Excited Delirium Management; ACEP Excited Delirium White Paper",
-        "clinical_pearl": "The most dangerous moment in excited delirium is when the patient suddenly becomes quiet and stops struggling. This is NOT a sign of improvement — it often precedes cardiac arrest. Treat sudden calm as a critical deterioration."
+        "clinical_pearl": "The most dangerous moment in excited delirium is when the patient suddenly becomes quiet and stops struggling. This is NOT a sign of improvement — it often precedes cardiac arrest. Treat sudden calm as a critical deterioration.",
+        "options": [
+          {
+            "text": {
+              "text": "Patient suddenly stops struggling and becomes quiet",
+              "category": "Worsening — Immediate Intervention Needed"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Continued diaphoresis (profuse sweating)",
+              "category": "Expected Finding in This Presentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Heart rate remains elevated at 158 bpm",
+              "category": "Expected Finding in This Presentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Patient becomes unresponsive with agonal breathing",
+              "category": "Worsening — Immediate Intervention Needed"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Incoherent screaming and continued agitation",
+              "category": "Expected Finding in This Presentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Loss of peripheral pulses with central pulses weakening",
+              "category": "Worsening — Immediate Intervention Needed"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Skin remains hot and flushed",
+              "category": "Expected Finding in This Presentation"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Cardiac monitor shows widening QRS complexes",
+              "category": "Worsening — Immediate Intervention Needed"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "decision-making",
@@ -7556,6 +7996,13 @@ const SCENARIOS = [
           "Establish rapport — use calm, non-judgmental communication and active listening",
           "Bring the medication container and any remaining pills to the hospital",
           "Transport to a facility capable of both medical management and psychiatric evaluation"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
         ]
       },
       {
@@ -7602,7 +8049,8 @@ const SCENARIOS = [
             "explanation": "While symptoms may be delayed, the treatment window is time-sensitive. NAC is most effective within 8 hours, and every hour of delay reduces its efficacy. This patient needs expedient transport to receive timely antidote therapy.",
             "guideline_ref": "Rumack-Matthew Nomogram; NAEMSP Toxicology Emergencies"
           }
-        ]
+        ],
+        "selectCount": 3
       },
       {
         "phase": "reassessment",
@@ -7644,7 +8092,8 @@ const SCENARIOS = [
             "explanation": "Lecturing, scolding, or shaming a suicidal patient is harmful and unprofessional. It increases psychological distress and may reduce the likelihood of seeking help in the future.",
             "guideline_ref": "NAEMSP Behavioral Emergency Guidelines; Crisis Intervention Standards"
           }
-        ]
+        ],
+        "selectCount": 3
       }
     ]
   },
@@ -7732,6 +8181,14 @@ const SCENARIOS = [
           "Check blood glucose and treat hypoglycemia if present",
           "If seizure continues after two benzodiazepine doses, consider second-line agent (e.g., levetiracetam, fosphenytoin per protocol)",
           "Transport emergently with continuous monitoring and seizure precautions"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -7855,7 +8312,7 @@ const SCENARIOS = [
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following core body temperatures into the correct hypothermia severity classification.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMT-AEMT-Paramedic",
         "narrative": "You have removed the patient's cold clothing and wrapped him in blankets. You are en route to the hospital and reviewing hypothermia classifications.",
         "clinical_pearl": "Shivering typically stops below 86°F (30°C), which is a sign of worsening hypothermia — not improvement. The absence of shivering in a cold patient is ominous.",
@@ -7891,7 +8348,51 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Hypothermia is classified by core temperature: Mild (90–95°F) presents with shivering and altered mentation; Moderate (82–90°F) shows loss of shivering, worsening confusion, and bradycardia; Severe (below 82°F) presents with unresponsiveness, absent reflexes, and risk of cardiac arrest.",
-        "guideline_ref": "AHA ECC 2020 — Accidental Hypothermia; Wilderness Medical Society CPG for Hypothermia"
+        "guideline_ref": "AHA ECC 2020 — Accidental Hypothermia; Wilderness Medical Society CPG for Hypothermia",
+        "options": [
+          {
+            "text": {
+              "text": "93°F — shivering, alert and oriented",
+              "category": "Mild (90–95°F / 32–35°C)"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "88°F — shivering has stopped, confused",
+              "category": "Moderate (82–90°F / 28–32°C)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "84°F — lethargic, bradycardic, no shivering",
+              "category": "Moderate (82–90°F / 28–32°C)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "78°F — unresponsive, barely detectable pulse",
+              "category": "Severe (Below 82°F / Below 28°C)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "91°F — vigorous shivering, mild confusion",
+              "category": "Mild (90–95°F / 32–35°C)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "75°F — fixed dilated pupils, no detectable pulse",
+              "category": "Severe (Below 82°F / Below 28°C)"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -7923,7 +8424,16 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Hypothermia management follows a stepwise approach: remove from the cold, prevent further heat loss, gently rewarm, support oxygenation, and transport. Gentle handling throughout is critical to prevent dysrhythmias.",
-        "guideline_ref": "AHA ECC 2020 — Hypothermia; NAEMSP Hypothermia Guidelines; Wilderness Medical Society CPG"
+        "guideline_ref": "AHA ECC 2020 — Hypothermia; NAEMSP Hypothermia Guidelines; Wilderness Medical Society CPG",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
       },
       {
         "phase": "treatment",
@@ -7980,7 +8490,8 @@ const SCENARIOS = [
             "explanation": "Alcohol causes peripheral vasodilation, accelerating heat loss, and impairs the shivering response. It worsens hypothermia.",
             "guideline_ref": "Wilderness Medical Society CPG"
           }
-        ]
+        ],
+        "selectCount": 3
       }
     ]
   },
@@ -8075,12 +8586,20 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Snake bite management prioritizes safety, calming the patient (elevated heart rate increases venom distribution), removing constrictive items before swelling worsens, immobilization, tracking progression, and rapid transport to definitive care (antivenom).",
-        "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020"
+        "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       },
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following actions into appropriate (DO) and inappropriate (DON'T) for prehospital snake bite management.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "While transporting, your new partner asks about common myths versus evidence-based practices for snake bites.",
         "clinical_pearl": "Attempting to capture or kill the snake delays care and risks additional bites. A photo from a safe distance may help with identification, but it should never delay transport.",
@@ -8127,7 +8646,72 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Evidence-based snake bite care focuses on immobilization, swelling monitoring, and rapid transport. Many traditional remedies (tourniquet, incision/suction, ice, electric shock) are harmful. Aspirin and NSAIDs are avoided because pit viper venom can cause coagulopathy, and these drugs impair clotting.",
-        "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020"
+        "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation; AHA First Aid 2020",
+        "options": [
+          {
+            "text": {
+              "text": "Immobilize the affected limb",
+              "category": "DO — Appropriate Actions"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Remove jewelry and constrictive clothing",
+              "category": "DO — Appropriate Actions"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Keep the patient calm and still",
+              "category": "DO — Appropriate Actions"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Mark and monitor swelling progression",
+              "category": "DO — Appropriate Actions"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Apply a constriction band or tourniquet",
+              "category": "DON'T — Harmful or Ineffective"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Apply ice or a cold pack to the bite",
+              "category": "DON'T — Harmful or Ineffective"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Cut the wound and suction the venom",
+              "category": "DON'T — Harmful or Ineffective"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Apply electric shock to the bite site",
+              "category": "DON'T — Harmful or Ineffective"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Give the patient aspirin for pain",
+              "category": "DON'T — Harmful or Ineffective"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "treatment",
@@ -8187,7 +8771,8 @@ const SCENARIOS = [
             "explanation": "Opioid analgesics are the appropriate choice for snake bite pain because they do not affect coagulation. Fentanyl provides effective analgesia with a rapid onset and short duration, allowing for dose titration.",
             "guideline_ref": "Wilderness Medical Society CPG — Snake Envenomation Pain Management; 2021 National EMS Education Standards — Pharmacology"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "reassessment",
@@ -8351,7 +8936,8 @@ const SCENARIOS = [
             "explanation": "This is a dangerous assumption. Electrical injuries cause severe internal damage disproportionate to external findings. Small entry/exit wounds can mask life-threatening muscle destruction, cardiac damage, and internal hemorrhage.",
             "guideline_ref": "PHTLS 9th Edition — Electrical Injuries"
           }
-        ]
+        ],
+        "selectCount": 5
       },
       {
         "phase": "transport",
@@ -8386,7 +8972,17 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Electrical injury management follows a trauma-based approach: scene safety first (power off), then C-spine, airway, breathing, circulation, cardiac monitoring, wound care, fluids, and transport to an appropriate center. These patients require burn center and/or trauma center care.",
-        "guideline_ref": "PHTLS 9th Edition — Electrical Injuries; ABA Burn Referral Criteria; AHA ACLS 2020"
+        "guideline_ref": "PHTLS 9th Edition — Electrical Injuries; ABA Burn Referral Criteria; AHA ACLS 2020",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       }
     ]
   },
@@ -8483,12 +9079,21 @@ const SCENARIOS = [
           }
         ],
         "explanation": "The Awareness-level response follows: Recognize → Protect yourself → Notify → Isolate → Identify (from a distance) → Direct patients away from the hazard → Prepare for treatment only after decontamination. Never enter the hot zone.",
-        "guideline_ref": "OSHA 29 CFR 1910.120 — Awareness Level Competencies; ERG; FIRESCOPE ICS"
+        "guideline_ref": "OSHA 29 CFR 1910.120 — Awareness Level Competencies; ERG; FIRESCOPE ICS",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
       },
       {
         "phase": "clinical-reasoning",
         "prompt": "Categorize the following activities into the correct hazmat zone where they should occur.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "EMR-EMT-AEMT-Paramedic",
         "narrative": "The hazmat team has arrived and is establishing zones. The incident commander asks you to help brief incoming EMS crews on the zone structure.",
         "categories": [
@@ -8531,7 +9136,65 @@ const SCENARIOS = [
           }
         ],
         "explanation": "Hazmat zones separate the dangerous area (Hot) from the decontamination corridor (Warm) and the clean treatment/support area (Cold). EMS without hazmat PPE operates only in the Cold Zone. Patients must be decontaminated in the Warm Zone before receiving medical care in the Cold Zone.",
-        "guideline_ref": "OSHA 29 CFR 1910.120; FIRESCOPE ICS-HM; NFPA 472/473"
+        "guideline_ref": "OSHA 29 CFR 1910.120; FIRESCOPE ICS-HM; NFPA 472/473",
+        "options": [
+          {
+            "text": {
+              "text": "Hazmat technicians in Level A suits stop the chemical leak",
+              "category": "Hot Zone (Exclusion Zone)"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Rescue of non-ambulatory patients from the spill area",
+              "category": "Hot Zone (Exclusion Zone)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Gross decontamination — initial wash-down of contaminated patients",
+              "category": "Warm Zone (Contamination Reduction)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Removal and bagging of contaminated clothing",
+              "category": "Warm Zone (Contamination Reduction)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Secondary decontamination — thorough washing before entering cold zone",
+              "category": "Warm Zone (Contamination Reduction)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Full patient assessment, triage, and medical treatment by EMS",
+              "category": "Cold Zone (Support Zone)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "EMS command post and staging area",
+              "category": "Cold Zone (Support Zone)"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Loading patients into ambulances for transport",
+              "category": "Cold Zone (Support Zone)"
+            },
+            "correct": false
+          }
+        ]
       },
       {
         "phase": "clinical-reasoning",
@@ -8676,7 +9339,8 @@ const SCENARIOS = [
             "explanation": "Air medical activation is a clinical and operational decision based on patient need, not patient or family preference.",
             "guideline_ref": "NAEMSP Air Medical Position Statement"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "treatment",
@@ -8715,7 +9379,16 @@ const SCENARIOS = [
           }
         ],
         "explanation": "While awaiting the helicopter, focus on life-saving interventions: C-spine, oxygen, hemorrhage control, and splinting. Simultaneously prepare a landing zone and organize a concise handoff report. The MIST format (Mechanism, Injuries, Signs/vitals, Treatment) provides the flight crew with critical information efficiently.",
-        "guideline_ref": "NAEMSP Air Medical Guidelines; PHTLS 9th Edition; ACS-COT Field Triage"
+        "guideline_ref": "NAEMSP Air Medical Guidelines; PHTLS 9th Edition; ACS-COT Field Triage",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
       }
     ]
   },
@@ -8816,7 +9489,17 @@ const SCENARIOS = [
           }
         ],
         "explanation": "A proper refusal of care follows a systematic approach: assess the patient, confirm capacity, inform them of risks (especially death or serious harm), involve medical control for high-risk situations, obtain a signed refusal, provide return instructions, and document everything meticulously.",
-        "guideline_ref": "NAEMSP Position Statement — Patient Refusal of Transport; ACEP Informed Consent in EMS"
+        "guideline_ref": "NAEMSP Position Statement — Patient Refusal of Transport; ACEP Informed Consent in EMS",
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       {
         "phase": "clinical-reasoning",
@@ -8868,7 +9551,8 @@ const SCENARIOS = [
             "explanation": "Personal opinions do not belong in medical documentation. Document objective findings, what was communicated, and patient responses — not subjective judgments about the patient's choices.",
             "guideline_ref": "EMS Documentation Best Practices"
           }
-        ]
+        ],
+        "selectCount": 6
       },
       {
         "phase": "assessment",
@@ -9055,7 +9739,8 @@ const SCENARIOS = [
             "guideline_ref": "NAEMSP Sickle Cell Prehospital Guidelines"
           }
         ],
-        "clinical_pearl": "Cold exposure and dehydration trigger sickling. Keep the ambulance warm, use warmed IV fluids if available, and avoid ice packs. Sickle cell patients often have difficult IV access due to repeated hospitalizations — consider alternative sites early."
+        "clinical_pearl": "Cold exposure and dehydration trigger sickling. Keep the ambulance warm, use warmed IV fluids if available, and avoid ice packs. Sickle cell patients often have difficult IV access due to repeated hospitalizations — consider alternative sites early.",
+        "selectCount": 4
       },
       {
         "phase": "treatment",
@@ -9102,7 +9787,7 @@ const SCENARIOS = [
       {
         "phase": "transport",
         "prompt": "En route, the patient's SpO2 drops to 85% despite high-flow O2 and she becomes increasingly dyspneic. You suspect worsening acute chest syndrome. Categorize each intervention as APPROPRIATE or NOT APPROPRIATE for this deterioration.",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "Paramedic",
         "narrative": "Despite NRB at 15 LPM, the patient's SpO2 has fallen to 85%. She is using accessory muscles, speaking only 1-2 words at a time, and becoming increasingly anxious. Lung sounds reveal crackles in the right lower lobe. HR 128, BP 108/68, RR 32.",
         "vitals_update": {
@@ -9147,7 +9832,58 @@ const SCENARIOS = [
         ],
         "explanation": "Worsening acute chest syndrome requires escalating respiratory support: CPAP provides positive pressure to recruit collapsed alveoli. If CPAP fails, intubation may be necessary. Albuterol can help if bronchospasm is contributing. Aggressive fluid boluses can worsen pulmonary edema in ACS. Reducing oxygen in a patient with SpO2 85% is dangerous. Early hospital notification allows preparation of exchange transfusion, the definitive treatment.",
         "guideline_ref": "NAEMSP Sickle Cell Prehospital Guidelines; ACS Management Guidelines; 2021 National EMS Education Standards — Paramedic Respiratory Emergencies",
-        "clinical_pearl": "CPAP is a powerful tool for sickle cell patients with acute chest syndrome. The positive pressure recruits collapsed alveoli and improves V/Q matching without intubation. If you don't have CPAP, assist ventilations with BVM if the patient tires. Early notification to the ED is critical — these patients may need emergent exchange transfusion, which requires advance preparation."
+        "clinical_pearl": "CPAP is a powerful tool for sickle cell patients with acute chest syndrome. The positive pressure recruits collapsed alveoli and improves V/Q matching without intubation. If you don't have CPAP, assist ventilations with BVM if the patient tires. Early notification to the ED is critical — these patients may need emergent exchange transfusion, which requires advance preparation.",
+        "options": [
+          {
+            "text": {
+              "text": "Switch to CPAP at 5-10 cmH2O to improve oxygenation and reduce work of breathing",
+              "category": "Appropriate Intervention"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Continue IV normal saline at maintenance rate to maintain hydration",
+              "category": "Appropriate Intervention"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Prepare for endotracheal intubation if CPAP fails to improve oxygenation",
+              "category": "Appropriate Intervention"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Administer albuterol 2.5 mg nebulized if wheezing or bronchospasm is present",
+              "category": "Appropriate Intervention"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Administer a 2-liter normal saline bolus to treat the presumed hypovolemia",
+              "category": "Not Appropriate"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Reduce oxygen flow to 2 LPM nasal cannula to prevent oxygen toxicity",
+              "category": "Not Appropriate"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Notify receiving facility early for preparation of blood transfusion and respiratory support",
+              "category": "Appropriate Intervention"
+            },
+            "correct": false
+          }
+        ]
       }
     ]
   },
@@ -9268,6 +10004,13 @@ const SCENARIOS = [
           "Continuous cardiac monitoring with transcutaneous pacing pads applied",
           "Rapid transport to facility with emergent dialysis capability",
           "Provide early hospital notification with ECG findings and missed dialysis history"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4
         ]
       },
       {
@@ -9372,7 +10115,7 @@ const SCENARIOS = [
       {
         "phase": "assessment",
         "prompt": "Categorize the following clinical findings as features of LEFT-sided heart failure or RIGHT-sided heart failure:",
-        "type": "categorize",
+        "type": "mc",
         "level_filter": "AEMT-Paramedic",
         "narrative": "As you continue your assessment, you note multiple findings. Understanding which side of the heart is failing helps guide your treatment priorities and hospital communication.",
         "clinical_pearl": "Remember: LEFT = LUNGS, RIGHT = the REST. Left-sided failure backs blood into the pulmonary circuit (crackles, dyspnea, orthopnea, pink frothy sputum). Right-sided failure backs blood into the systemic venous system (JVD, peripheral edema, hepatomegaly, ascites). Many patients with advanced CHF have biventricular failure with features of both.",
@@ -9423,6 +10166,78 @@ const SCENARIOS = [
             "text": "Weight gain from fluid retention",
             "category": "Right-Sided Heart Failure"
           }
+        ],
+        "options": [
+          {
+            "text": {
+              "text": "Pulmonary crackles / rales",
+              "category": "Left-Sided Heart Failure"
+            },
+            "correct": true
+          },
+          {
+            "text": {
+              "text": "Orthopnea (sleeping on multiple pillows)",
+              "category": "Left-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Paroxysmal nocturnal dyspnea (waking up gasping)",
+              "category": "Left-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Pink, frothy sputum",
+              "category": "Left-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Dyspnea on exertion",
+              "category": "Left-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Jugular venous distension (JVD)",
+              "category": "Right-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Peripheral edema (swollen ankles/legs)",
+              "category": "Right-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Hepatomegaly (enlarged liver)",
+              "category": "Right-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Ascites (abdominal fluid accumulation)",
+              "category": "Right-Sided Heart Failure"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "text": "Weight gain from fluid retention",
+              "category": "Right-Sided Heart Failure"
+            },
+            "correct": false
+          }
         ]
       },
       {
@@ -9445,6 +10260,14 @@ const SCENARIOS = [
           "Continuous cardiac monitoring — obtain 12-lead ECG to evaluate for acute MI as cause",
           "Provide early notification to receiving facility of cardiogenic shock presentation",
           "Rapid transport — reassess CPAP tolerance and respiratory status every 2-3 minutes"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -9605,6 +10428,14 @@ const SCENARIOS = [
           "Resume manual ventilation and reassess SpO2, blood pressure, and heart rate",
           "Secure the catheter and monitor for reaccumulation (may need repeat decompression)",
           "Continue rapid transport and notify receiving facility of pneumothorax and decompression"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       }
     ]
@@ -9692,6 +10523,14 @@ const SCENARIOS = [
           "Establish IV access and administer normal saline bolus for hypotension",
           "Consider adjunct medications: diphenhydramine, nebulized albuterol for persistent wheezing",
           "Initiate rapid transport — be prepared to repeat epinephrine in 5-15 minutes if no improvement"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
       {
@@ -9707,22 +10546,34 @@ const SCENARIOS = [
         },
         "explanation": "The critical distinction is systemic severity and involvement of multiple organ systems. Mild reactions involve the skin and cause discomfort but do not threaten life. Severe reactions (anaphylaxis) involve the airway, breathing, or circulation and are immediately life-threatening. Any airway or hemodynamic compromise in an allergic reaction = anaphylaxis = epinephrine.",
         "guideline_ref": "NIAID/FAAN Anaphylaxis Diagnostic Criteria; World Allergy Organization Anaphylaxis Guidelines",
-        "categories": {
-          "Mild Allergic Reaction": [
-            "Localized hives or urticaria without spread",
-            "Itching and skin redness at the exposure site",
-            "Mild, localized swelling (e.g., small area around injection)",
-            "Runny nose or mild sneezing",
-            "Isolated mild nausea without other systemic symptoms"
-          ],
-          "Severe Allergic Reaction (Anaphylaxis)": [
-            "Stridor or hoarseness indicating airway edema",
-            "Wheezing or significant bronchospasm",
-            "Hypotension or signs of shock (tachycardia, pallor, altered mental status)",
-            "Widespread angioedema (lips, tongue, throat swelling)",
-            "Abdominal cramping with vomiting AND skin/respiratory involvement"
-          ]
-        }
+        "categories": [
+          "Mild Allergic Reaction",
+          "Severe Allergic Reaction (Anaphylaxis)"
+        ],
+        "items": [
+          "Localized hives or urticaria without spread",
+          "Itching and skin redness at the exposure site",
+          "Mild, localized swelling (e.g., small area around injection)",
+          "Runny nose or mild sneezing",
+          "Isolated mild nausea without other systemic symptoms",
+          "Stridor or hoarseness indicating airway edema",
+          "Wheezing or significant bronchospasm",
+          "Hypotension or signs of shock (tachycardia, pallor, altered mental status)",
+          "Widespread angioedema (lips, tongue, throat swelling)",
+          "Abdominal cramping with vomiting AND skin/respiratory involvement"
+        ],
+        "correctCategories": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
       }
     ]
   },
@@ -9833,7 +10684,8 @@ const SCENARIOS = [
             "explanation": "SpO2 measures oxygenation, not perfusion or hemodynamic stability. A patient can maintain normal SpO2 while bleeding to death. The hypotension and tachycardia are the critical indicators of hemodynamic compromise.",
             "guideline_ref": "AHA Shock Assessment — Limitations of Pulse Oximetry"
           }
-        ]
+        ],
+        "selectCount": 4
       },
       {
         "phase": "treatment",
@@ -9855,6 +10707,14 @@ const SCENARIOS = [
           "Establish IV access en route — administer judicious fluid bolus (avoid aggressive resuscitation)",
           "Provide early notification to receiving facility: suspected surgical abdomen, hemodynamic instability, anticoagulant use",
           "Continuous reassessment of mental status and vitals during transport"
+        ],
+        "correctOrder": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       }
     ]

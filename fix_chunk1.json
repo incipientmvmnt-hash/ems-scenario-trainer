@@ -1,0 +1,369 @@
+[
+  {
+    "scenarioId": "nat-str-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "assessment",
+      "prompt": "Place the following steps of your stroke assessment and early management in the correct order:",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Establish last known well time and note current time",
+        "Perform Cincinnati Prehospital Stroke Scale assessment",
+        "Check blood glucose level",
+        "Provide early notification to a designated stroke center",
+        "Initiate rapid transport to the closest appropriate stroke center"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: First priority — last known well time determines eligibility for thrombolytics (up to 4.5 hours) and thrombectomy (up to 24 hours in select patients). Document it immediately. | Step 2: Rapid validated stroke screen confirms suspicion and communicates findings efficiently to the receiving facility. | Step 3: Hypoglycemia is the most common stroke mimic and is rapidly reversible. Checking glucose is essential to rule out this treatable cause. | Step 4: Early hospital notification activates the stroke team and reduces door-to-needle time. This should occur as soon as stroke is suspected, not upon arrival. | Step 5: Transport to the closest appropriate stroke-capable facility — not necessarily the closest hospital. Do not delay transport for non-essential interventions.",
+      "guideline_ref": "AHA/ASA 2019 Acute Ischemic Stroke Guidelines; AHA/ASA Prehospital Stroke Care; AHA/ASA 2019 Guidelines; National EMS Education Standards; AHA/ASA Mission: Lifeline Stroke Severity-Based Routing; AHA/ASA 2019 Guidelines; NAEMSP Position Statement on Stroke Routing",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-acs-01",
+    "qIndex": 2,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following ACS management steps in the correct sequence:",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Administer aspirin 162–325 mg chewed if not already given",
+        "Acquire right-sided 12-lead ECG (V4R) to evaluate for right ventricular involvement",
+        "Activate cardiac catheterization lab via early hospital notification with 12-lead ECG transmission",
+        "Administer nitroglycerin 0.4 mg sublingual if no RV infarction and BP supports it",
+        "Initiate rapid transport to the closest PCI-capable facility"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: Aspirin is the first medication priority in ACS. If not already administered, give it immediately. | Step 2: In inferior STEMI, right ventricular infarction occurs in up to 50% of cases. V4R is the most sensitive single lead for RV infarction and changes treatment (avoid nitroglycerin, give fluids). | Step 3: Early cath lab activation and ECG transmission reduce door-to-balloon time. This should occur as soon as STEMI is identified. | Step 4: Nitroglycerin is appropriate after ruling out RV involvement (via V4R) and confirming adequate blood pressure. Contraindicated in RV infarction, hypotension, or recent PDE5 inhibitor use. | Step 5: STEMI patients should be transported to a PCI-capable facility. Primary PCI is the preferred reperfusion strategy when achievable within guideline time windows.",
+      "guideline_ref": "AHA 2020 ACLS ACS Algorithm; AHA 2020 ACLS Guidelines; STEMI Management; AHA 2020 ACLS Guidelines; Mission: Lifeline; AHA 2020 ACLS Guidelines; ACC/AHA STEMI Guidelines",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-ped-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "assessment",
+      "prompt": "Categorize the following clinical findings as indicators of UPPER AIRWAY obstruction or LOWER AIRWAY obstruction:",
+      "type": "categorize",
+      "level_filter": "EMR-EMT-AEMT-Paramedic",
+      "items": [
+        "Inspiratory stridor",
+        "Barking or seal-like cough",
+        "Expiratory wheezing",
+        "Hoarse or muffled voice",
+        "Prolonged expiratory phase",
+        "Drooling with inability to swallow"
+      ],
+      "categories": [
+        "UPPER AIRWAY",
+        "LOWER AIRWAY"
+      ],
+      "correctCategories": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "explanation": "Inspiratory stridor: Stridor is a high-pitched sound heard on inspiration caused by turbulent airflow through a narrowed upper airway (supraglottic or subglottic). It is the hallmark of upper airway obstruction. | Barking or seal-like cough: The barking cough of croup results from subglottic edema and inflammation, which is an upper airway process. | Expiratory wheezing: Wheezing is caused by narrowing of the bronchioles (lower airways). Air becomes trapped during exhalation, creating the characteristic musical sound. Common in asthma and bronchiolitis. | Hoarse or muffled voice: Voice changes indicate involvement of the larynx or supraglottic structures — upper airway anatomy. | Prolonged expiratory phase: Prolonged expiration indicates air trapping from lower airway obstruction. The patient must actively exhale to push air past narrowed bronchioles. | Drooling with inability to swallow: Drooling and dysphagia indicate supraglottic swelling (as in epiglottitis or peritonsillar abscess) — upper airway emergencies that may progress to complete obstruction.",
+      "guideline_ref": "2021 National EMS Education Standards — Airway Management; AAP Croup Guidelines; 2021 National EMS Education Standards — Respiratory Emergencies; 2021 National EMS Education Standards — Airway Assessment; NAEPP Guidelines; National EMS Education Standards; AAP Pediatric Emergency Guidelines",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-ped-01",
+    "qIndex": 2,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following treatment and management steps for this child in the correct priority order:",
+      "type": "order",
+      "level_filter": "EMR-EMT-AEMT-Paramedic",
+      "items": [
+        "Allow the child to remain in a position of comfort with the parent — avoid agitating the child",
+        "Administer humidified blow-by oxygen to maintain SpO2 above 94%",
+        "Continuously monitor for signs of worsening airway obstruction during transport",
+        "Transport to an appropriate facility with the child secured in a car seat or on the parent's lap with both restrained"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Step 1: Most important first step. Agitation worsens stridor and can precipitate complete obstruction. A calm child in a comfortable position has better airway dynamics. | Step 2: With SpO2 at 93%, supplemental oxygen is indicated. Blow-by delivery is least distressing and should be attempted before a mask. Let the parent hold the tubing near the child's face. | Step 3: Croup can progress. Monitor for absent stridor (may indicate complete obstruction, not improvement), severe retractions, cyanosis, or altered mental status. | Step 4: Safe transport is essential. If the child tolerates a car seat, use it. Otherwise, the child may be transported on the restrained parent's lap per local guidelines, prioritizing both safety and keeping the child calm.",
+      "guideline_ref": "2021 National EMS Education Standards — Pediatric Assessment; PAT (Pediatric Assessment Triangle); 2021 National EMS Education Standards — Pediatric Oxygen Therapy; 2021 National EMS Education Standards — Pediatric Reassessment; 2021 National EMS Education Standards — Pediatric Transport; NAEMSP Pediatric Transport Position",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-obn-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following steps of normal cephalic delivery in the correct sequence:",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Apply gentle, controlled pressure to the baby's head as it delivers to prevent explosive delivery",
+        "Check for nuchal cord once the head is delivered — if present, attempt to slip it over the head or clamp and cut",
+        "Suction the mouth first, then the nose, only if obvious obstruction is present",
+        "Guide the anterior shoulder downward gently, then deliver the posterior shoulder upward",
+        "Clamp the cord in two places and cut between the clamps — delay clamping 30–60 seconds in vigorous term newborns"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: Controlled delivery of the head prevents perineal tearing and protects the baby. Apply gentle counterpressure — never hold the baby back, just slow the delivery. | Step 2: Immediately check for cord around the neck after the head delivers. Nuchal cord occurs in ~25% of deliveries. Slip it over the head if loose; if tight, clamp and cut. | Step 3: Current NRP guidelines recommend suctioning only if the airway appears obstructed. Routine suctioning is no longer recommended as it can cause vagal bradycardia and delay breathing. | Step 4: After head delivery, guide gently downward to deliver the anterior (top) shoulder, then upward to deliver the posterior shoulder. Never force — if shoulders don't deliver, suspect shoulder dystocia. | Step 5: Delayed cord clamping (30–60 seconds) for vigorous term newborns improves iron stores and transitional circulation. Clamp at least 2 inches apart and cut between the clamps with sterile scissors.",
+      "guideline_ref": "2021 National EMS Education Standards — Normal Delivery; NRP 8th Edition; 2021 National EMS Education Standards — Delivery Complications; NRP 8th Edition; NRP 8th Edition (2021); AHA Neonatal Resuscitation Guidelines; 2021 National EMS Education Standards — Normal Delivery; NRP 8th Edition; AHA/AAP 2020 Neonatal Resuscitation Guidelines; ACOG Delayed Cord Clamping",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-obn-01",
+    "qIndex": 3,
+    "replacement": {
+      "phase": "assessment",
+      "prompt": "Categorize the following findings as NORMAL delivery/postpartum findings versus ABNORMAL findings requiring immediate intervention:",
+      "type": "categorize",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Delivery of the placenta within 20 minutes with moderate blood loss (up to 300 mL)",
+        "Continuous bright red vaginal bleeding soaking more than one pad per minute after placental delivery",
+        "Mild uterine cramping after delivery with a firm uterine fundus palpable at the umbilicus",
+        "Newborn with acrocyanosis (blue hands and feet) but pink trunk, strong cry, and HR above 100",
+        "Placenta has not delivered after 30 minutes, with increasing vaginal bleeding",
+        "Newborn with central cyanosis, gasping respirations, and HR below 60 at 5 minutes of age"
+      ],
+      "categories": [
+        "NORMAL",
+        "ABNORMAL"
+      ],
+      "correctCategories": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "explanation": "Delivery of the placenta within 20 minutes with moderate blood loss (up to 300 mL): The placenta typically delivers within 5–30 minutes after the baby. Up to 500 mL of blood loss is considered physiologically normal for vaginal delivery, though prompt management begins well before that threshold. | Continuous bright red vaginal bleeding soaking more than one pad per minute after placental delivery: This rate of bleeding suggests postpartum hemorrhage, most commonly from uterine atony. Immediate fundal massage, keep the uterus firm, and rapid transport. This is a life-threatening emergency. | Mild uterine cramping after delivery with a firm uterine fundus palpable at the umbilicus: Cramping after delivery indicates uterine involution (contraction). A firm fundus at the level of the umbilicus is the expected normal finding and indicates the uterus is contracting to control bleeding. | Newborn with acrocyanosis (blue hands and feet) but pink trunk, strong cry, and HR above 100: Acrocyanosis (blue extremities) is normal in the first 24–48 hours. A pink trunk, strong cry, and heart rate >100 bpm indicate a vigorous, well-transitioning newborn. Central cyanosis would be abnormal. | Placenta has not delivered after 30 minutes, with increasing vaginal bleeding: A retained placenta beyond 30 minutes with increasing bleeding is an emergency. Do NOT pull on the cord — this can cause uterine inversion or cord avulsion. Transport immediately for manual extraction. | Newborn with central cyanosis, gasping respirations, and HR below 60 at 5 minutes of age: This newborn is critically ill. Central cyanosis, gasping, and HR <60 at 5 minutes despite PPV indicates the need for chest compressions (3:1 ratio with ventilations) and emergency transport.",
+      "guideline_ref": "2021 National EMS Education Standards — Postpartum Care; ACOG Postpartum Hemorrhage Guidelines; ACOG Postpartum Hemorrhage Guidelines; 2021 National EMS Education Standards; 2021 National EMS Education Standards — Postpartum Assessment; NRP 8th Edition; AHA 2020 Neonatal Assessment; 2021 National EMS Education Standards — Postpartum Complications; ACOG Guidelines; NRP 8th Edition; AHA 2020 Neonatal Resuscitation Algorithm",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-env-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following cooling interventions in order of priority for this heat stroke patient:",
+      "type": "order",
+      "level_filter": "EMR-EMT-AEMT-Paramedic",
+      "items": [
+        "Remove the patient from the hot environment to a shaded or air-conditioned area",
+        "Remove excess clothing and begin cold water immersion if available, or apply ice packs to neck, axillae, and groin",
+        "Wet the patient's entire body with cool water and fan continuously to maximize evaporative cooling",
+        "Administer IV normal saline (if scope allows) for volume replacement — avoid ice-cold fluids that may cause shivering",
+        "Initiate rapid transport to the hospital while continuing active cooling measures en route"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: First step — stop the heat exposure. Move to shade or a cooled ambulance. This alone won't suffice but prevents further heat gain. | Step 2: Aggressive cooling is the definitive treatment. Cold water immersion is the gold standard. If unavailable, ice packs to the neck, axillae, and groin target high-flow vascular areas for maximum heat exchange. | Step 3: Evaporative cooling (wetting + fanning) is effective and can be done simultaneously with ice packs. This creates additional cooling via convection and evaporation. | Step 4: IV fluids address dehydration and support blood pressure. Room temperature or cool fluids are appropriate. Some evidence supports cold IV fluids for internal cooling, though shivering must be monitored as it generates heat. | Step 5: Heat stroke requires hospital-based monitoring, lab evaluation (rhabdomyolysis, coagulopathy, organ damage), and potentially more aggressive interventions. Never delay cooling for transport — do both simultaneously.",
+      "guideline_ref": "2021 National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Heat Illness Guidelines; NAEMSP Position on Heat Stroke; 2021 National EMS Education Standards — Environmental Cooling Methods; 2021 National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Guidelines",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-sep-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "assessment",
+      "prompt": "Categorize each of the following findings as either a SIRS Criterion or a Sign of Organ Dysfunction.",
+      "type": "categorize",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Heart rate of 118 bpm",
+        "Temperature of 103.2°F",
+        "Respiratory rate of 24",
+        "Blood pressure of 82/48",
+        "GCS of 12 (altered mental status)",
+        "Dark concentrated urine output"
+      ],
+      "categories": [
+        "SIRS Criterion",
+        "Sign of Organ Dysfunction"
+      ],
+      "correctCategories": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "explanation": "Heart rate of 118 bpm: Heart rate >90 bpm is one of the four classic SIRS criteria. | Temperature of 103.2°F: Temperature >100.4°F (38°C) or <96.8°F (36°C) is a SIRS criterion. | Respiratory rate of 24: Respiratory rate >20 breaths per minute is a SIRS criterion. | Blood pressure of 82/48: Hypotension (SBP <90 or MAP <65) indicates cardiovascular organ dysfunction and is a hallmark of septic shock. | GCS of 12 (altered mental status): Acute alteration in mental status indicates central nervous system organ dysfunction secondary to poor perfusion or direct inflammatory effects. | Dark concentrated urine output: Decreased and concentrated urine output indicates renal organ dysfunction, a common early sign of sepsis-related hypoperfusion.",
+      "guideline_ref": "ACCP/SCCM Consensus Definitions; 2021 National EMS Education Standards; ACCP/SCCM Consensus Definitions; Surviving Sepsis Campaign 2021 Guidelines",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-sep-01",
+    "qIndex": 2,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following sepsis management steps in the correct priority order.",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Apply high-flow oxygen to address hypoxia",
+        "Establish IV/IO access for fluid resuscitation",
+        "Administer a 500 mL normal saline bolus and reassess",
+        "Provide early hospital notification as a sepsis alert",
+        "Initiate rapid transport to the closest appropriate facility"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: Addressing the airway and breathing is always the first priority. This patient's SpO2 of 89% requires immediate supplemental oxygen. | Step 2: Vascular access is essential to deliver the fluid boluses needed to support blood pressure in septic shock. | Step 3: Initial fluid resuscitation with crystalloid is the primary circulatory intervention in prehospital sepsis management. Administer in measured boluses with frequent reassessment. | Step 4: Early notification allows the receiving facility to mobilize sepsis bundles including antibiotics and lab draws, reducing time to definitive treatment. | Step 5: Sepsis is a time-sensitive emergency. Rapid transport to a facility capable of managing septic shock is critical to patient survival.",
+      "guideline_ref": "2021 National EMS Education Standards; AHA ACLS Guidelines; Surviving Sepsis Campaign 2021 Guidelines; NAEMSP Position Statement on Sepsis; Surviving Sepsis Campaign 2021 Guidelines; NAEMSP Position Statement on Prehospital Sepsis; Surviving Sepsis Campaign 2021; 2021 National EMS Education Standards",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-drn-01",
+    "qIndex": 1,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following steps for managing this submersion victim in the correct sequence.",
+      "type": "order",
+      "level_filter": "EMR-EMT-AEMT-Paramedic",
+      "items": [
+        "Open the airway with jaw thrust while maintaining cervical spine precautions",
+        "Suction the airway if water or debris is visible in the oropharynx",
+        "Deliver rescue breaths via BVM with high-flow oxygen at age-appropriate rate",
+        "Begin chest compressions if heart rate falls below 60 bpm with poor perfusion",
+        "Remove wet clothing and prevent further heat loss during ongoing resuscitation"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: Airway management is the first step. A jaw thrust is preferred when spinal injury cannot be ruled out, though a head-tilt chin-lift may be used if jaw thrust is ineffective. | Step 2: Clearing the airway of visible obstructions allows for effective ventilation. Brief suctioning is appropriate but should not significantly delay rescue breathing. | Step 3: Ventilation with supplemental oxygen is the definitive initial treatment for drowning. Deliver breaths at 12-20 per minute for a pediatric patient, watching for chest rise. | Step 4: In pediatric patients, a heart rate below 60 bpm with signs of poor perfusion (cyanosis, altered consciousness) despite adequate oxygenation and ventilation warrants chest compressions. | Step 5: Hypothermia worsens outcomes in drowning. Remove wet clothing and cover the patient to prevent further heat loss while continuing resuscitation efforts.",
+      "guideline_ref": "AHA 2020 Guidelines for CPR & ECC; PHTLS 9th Edition; AHA 2020 Guidelines for CPR & ECC; AHA 2020 Guidelines for CPR & ECC — Pediatric BLS; AHA 2020 PALS Guidelines; AHA 2020 Guidelines for CPR & ECC; Wilderness Medical Society Guidelines",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-tpn-01",
+    "qIndex": 2,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the following steps for managing this patient's tension pneumothorax in the correct procedural order.",
+      "type": "order",
+      "level_filter": "AEMT-Paramedic",
+      "items": [
+        "Apply a commercial vented chest seal over the open wound",
+        "Administer high-flow oxygen via non-rebreather mask at 15 LPM",
+        "Reassess breath sounds and hemodynamic status after chest seal application",
+        "Perform needle decompression at the approved site if tension physiology persists",
+        "Reassess vitals and breath sounds post-decompression, initiate rapid transport"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: The first priority is to seal the open chest wound. A vented (three-way valve) chest seal allows air to escape during exhalation while preventing air entry during inhalation, addressing the open pneumothorax. | Step 2: High-flow oxygen addresses hypoxia and helps with nitrogen washout of the pneumothorax. Apply oxygen while preparing for further interventions. | Step 3: After sealing the wound, reassess to determine if the vented seal has relieved the tension. If hypotension and absent breath sounds persist, needle decompression is indicated. | Step 4: If the vented chest seal does not relieve the tension, decompress with a 14-gauge or larger needle/catheter at the 2nd ICS midclavicular line or 4th-5th ICS anterior axillary line on the affected side. | Step 5: After decompression, reassess for improvement in breath sounds, blood pressure, and oxygenation. Initiate rapid transport to a trauma center — needle decompression is a temporizing measure, not definitive treatment.",
+      "guideline_ref": "PHTLS 9th Edition; TCCC Guidelines; 2021 National EMS Education Standards; PHTLS 9th Edition; 2021 National EMS Education Standards; PHTLS 9th Edition; TCCC Guidelines; PHTLS 9th Edition; TCCC Guidelines; NAEMSP Position Statement; PHTLS 9th Edition; ACS Committee on Trauma",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-mci-01",
+    "qIndex": 2,
+    "replacement": {
+      "phase": "scene_size_up",
+      "prompt": "Place the following ICS setup priorities in the correct order for this MCI.",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Assume Incident Command and establish a command post in a safe location",
+        "Transmit a brief initial size-up report and request additional resources",
+        "Begin START triage to categorize all patients by acuity",
+        "Designate treatment and staging areas for incoming units",
+        "Assign arriving personnel to Triage, Treatment, and Transport roles"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: The first arriving EMS unit assumes Incident Command. Establish a command post upwind and uphill from hazards with good visibility of the scene. | Step 2: Radio a concise size-up: incident type, approximate patient count, hazards, resources needed. This triggers mutual aid and sets expectations for responding units. | Step 3: Once command is established and resources requested, begin rapid triage of all patients. This determines treatment priorities and resource allocation. | Step 4: As additional units arrive, they need clear direction. Designate a treatment area (divided by triage category) and a staging area where incoming resources report. | Step 5: As resources arrive, assign ICS roles: Triage Officer, Treatment Officer, Transport Officer. This distributes workload and maintains organized patient flow.",
+      "guideline_ref": "NIMS/ICS; FEMA IS-100/200; 2021 National EMS Education Standards; NIMS/ICS; 2021 National EMS Education Standards; START Triage System; 2021 National EMS Education Standards",
+      "clinical_pearl": null
+    }
+  },
+  {
+    "scenarioId": "nat-neo-01",
+    "qIndex": 0,
+    "replacement": {
+      "phase": "treatment",
+      "prompt": "Place the initial steps of newborn resuscitation (NRP) in the correct order for this non-breathing newborn.",
+      "type": "order",
+      "level_filter": "EMT-AEMT-Paramedic",
+      "items": [
+        "Provide warmth: place newborn on a warm surface, skin-to-skin if no radiant warmer available",
+        "Dry thoroughly with warm towels, removing wet linens, and stimulate by rubbing the back or flicking the soles",
+        "Position the airway in a neutral 'sniffing' position and suction only if the airway is visibly obstructed",
+        "Assess breathing and heart rate — if apneic or HR <100 after initial steps, begin positive pressure ventilation",
+        "Deliver PPV at a rate of 40-60 breaths per minute using a BVM with appropriate-sized mask"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Step 1: Hypothermia prevention is critical. Newborns lose heat rapidly. Place on a warm, dry surface. In the prehospital setting, skin-to-skin contact with the mother and covering both is effective when a warmer is unavailable. | Step 2: Vigorous drying provides thermal management and tactile stimulation simultaneously. Remove wet towels and replace with dry ones. Brief stimulation (back rub, sole flicks) may initiate breathing. | Step 3: Place the head in a neutral position (slight extension). Routine suctioning is no longer recommended — suction only if visible secretions are obstructing the airway. | Step 4: After the initial steps (within 30-60 seconds), if the newborn remains apneic or has a heart rate below 100 bpm, PPV with room air or blended oxygen is initiated. PPV is the most critical intervention. | Step 5: PPV is delivered at 40-60 breaths per minute with just enough pressure to see gentle chest rise. Use a neonatal-sized mask ensuring a good seal over the mouth and nose.",
+      "guideline_ref": "AHA/AAP NRP 8th Edition 2020; 2021 National EMS Education Standards; AHA/AAP NRP 8th Edition 2020",
+      "clinical_pearl": null
+    }
+  }
+]
