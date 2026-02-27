@@ -16116,6 +16116,34 @@ function renderScenario() {
       ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
     </div>`;
 
+  // Dispatch & scene context (show on first question, collapsible after)
+  if (state.questionIndex === 0) {
+    const v = s.vitals || {};
+    html += `<div class="narrative" style="border-left:3px solid #ff4422;margin-bottom:16px">
+      <div class="label" style="color:#ff4422;font-weight:700">DISPATCH</div>
+      <div style="font-size:1em;font-weight:600;margin-bottom:8px">${s.dispatch}</div>
+      <div style="font-size:.85em;color:rgba(255,255,255,.7);margin-bottom:10px">${s.scene}</div>
+      <div style="font-size:.8em;margin-bottom:6px"><strong style="color:#00f0ff">Hx:</strong> ${s.history?.pmh || 'Unknown'}</div>
+      <div style="font-size:.8em;margin-bottom:6px"><strong style="color:#00f0ff">Meds:</strong> ${s.history?.meds || 'Unknown'}</div>
+      <div style="font-size:.8em;margin-bottom:10px"><strong style="color:#00f0ff">Allergies:</strong> ${s.history?.allergies || 'NKDA'}</div>
+      <div class="vitals-grid">
+        ${v.hr != null ? `<div class="vital"><div class="val mono">${v.hr}</div><div class="lbl">HR</div></div>` : ''}
+        ${v.bp ? `<div class="vital"><div class="val mono">${v.bp}</div><div class="lbl">BP</div></div>` : ''}
+        ${v.rr != null ? `<div class="vital"><div class="val mono">${v.rr}</div><div class="lbl">RR</div></div>` : ''}
+        ${v.spo2 != null ? `<div class="vital"><div class="val mono">${v.spo2}%</div><div class="lbl">SpO₂</div></div>` : ''}
+        ${v.gcs != null ? `<div class="vital"><div class="val mono">${v.gcs}</div><div class="lbl">GCS</div></div>` : ''}
+        ${v.temp ? `<div class="vital"><div class="val mono">${v.temp}</div><div class="lbl">Temp</div></div>` : ''}
+      </div>
+    </div>`;
+  } else {
+    html += `<details style="margin-bottom:12px"><summary style="color:#00f0ff;cursor:pointer;font-size:.8em">View Dispatch & Vitals</summary>
+      <div class="narrative" style="border-left:3px solid #ff4422;margin-top:8px">
+        <div style="font-size:.9em;font-weight:600">${s.dispatch}</div>
+        <div style="font-size:.8em;margin-top:4px"><strong style="color:#00f0ff">Hx:</strong> ${s.history?.pmh || 'Unknown'} | <strong style="color:#00f0ff">Meds:</strong> ${s.history?.meds || 'Unknown'} | <strong style="color:#00f0ff">Allergies:</strong> ${s.history?.allergies || 'NKDA'}</div>
+      </div>
+    </details>`;
+  }
+
   // Phase label
   if (q.phase) html += `<span class="phase-label">${q.phase}</span>`;
 
