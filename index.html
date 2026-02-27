@@ -17011,8 +17011,8 @@ function renderScenario() {
   if (q.phase) html += `<span class="phase-label">${q.phase}</span>`;
 
   // Narrative
-  if (q.narrative) html += `<div class="narrative"><div class="label">📋 Scenario</div>${q.narrative}</div>`;
-  if (q.narrative_update) html += `<div class="narrative-update"><div class="label">📝 Update</div>${q.narrative_update}</div>`;
+  if (q.narrative && qType !== 'graphical') html += `<div class="narrative"><div class="label">UPDATE</div>${q.narrative}</div>`;
+  if (q.narrative_update) html += `<div class="narrative"><div class="label">UPDATE</div>${q.narrative_update}</div>`;
 
   // Vitals
   if (q.vitals) {
@@ -17043,6 +17043,7 @@ function renderScenario() {
 
   // Question prompt
   html += `<div class="question-prompt">${q.prompt}</div>`;
+  if (qType === 'graphical' && q.narrative) html += `<div class="narrative" style="font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.75em;white-space:pre-wrap;border-left:3px solid #00f0ff;margin:12px 0">${q.narrative}</div>`;
 
   // Render based on type
   if (qType === 'mc' || qType === 'mr') {
