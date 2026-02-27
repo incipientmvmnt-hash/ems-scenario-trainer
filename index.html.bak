@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#0a0a0f">
+<meta name="theme-color" content="#0a0e1a">
 <title>EMS Scenario Trainer</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 html{overflow-y:scroll;-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,SF Pro,Inter,system-ui,sans-serif;background:#0a0a0f;color:#e0e0e0;
+body{font-family:-apple-system,SF Pro,Inter,system-ui,sans-serif;background:#0a0e1a;color:#fff;
   padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  touch-action:pan-y;min-height:100dvh}
-body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,240,255,.015) 2px,rgba(0,240,255,.015) 4px)}
-.mono{font-family:'JetBrains Mono','Fira Code','Courier New',monospace}
+  touch-action:pan-y;min-height:100dvh;
+  background-image:radial-gradient(ellipse at 20% 50%, rgba(74,158,255,.15) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 20%, rgba(217,83,79,.12) 0%, transparent 50%),
+                    radial-gradient(ellipse at 50% 80%, rgba(52,199,89,.1) 0%, transparent 50%)}
 .container{max-width:600px;margin:0 auto;padding:16px}
 @media(min-width:768px){
   .container{max-width:800px;padding:32px}
@@ -36,7 +35,7 @@ body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointe
   .explanation{font-size:.9em;padding:14px}
   .clinical-pearl{padding:16px;border-radius:14px}
   .progress-bar{margin-bottom:24px}
-  .domain-chip,.diff-chip{padding:10px 18px;font-size:.9em}
+  .domain-chip{padding:10px 18px;font-size:.9em}
 }
 @media(min-width:1024px){
   .container{max-width:960px;padding:40px}
@@ -46,9 +45,11 @@ body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointe
   .scenario-item{padding:8px 0}
   .card{margin-bottom:16px}
 }
-@media(min-width:1280px){.container{max-width:1080px}}
+@media(min-width:1280px){
+  .container{max-width:1080px}
+}
 .stats-row{display:flex;justify-content:center;gap:16px;margin:20px 0 28px}
-.stat-num{font-size:1.6em;font-weight:700;font-family:'JetBrains Mono','Fira Code','Courier New',monospace}
+.stat-num{font-size:1.6em;font-weight:700}
 @media(min-width:768px){
   .stats-row{gap:32px;margin:28px 0 36px}
   .stat-num{font-size:2em}
@@ -57,222 +58,219 @@ body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointe
   .home-section{padding:28px;border-radius:20px}
 }
 h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
-.subtitle{text-align:center;color:#7a8194;margin-bottom:24px;font-size:.95em}
-.card{background:rgba(10,15,25,.6);border-radius:12px;padding:16px;margin-bottom:12px;transition:all .2s;cursor:pointer;border:1px solid rgba(0,240,255,.12);box-shadow:0 0 12px rgba(0,240,255,.05)}
+.subtitle{text-align:center;color:#8b92a8;margin-bottom:24px;font-size:.95em}
+.card{background:rgba(20,25,41,.35);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-radius:12px;padding:16px;margin-bottom:12px;transition:all .2s;cursor:pointer;border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 24px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06)}
 .card:active{transform:scale(.98)}
-.card.selected{border-color:#00f0ff;box-shadow:0 0 20px rgba(0,240,255,.25)}
-.level-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
-.level-card{text-align:center;padding:16px 12px;font-weight:600;font-size:1em;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
-.level-card .desc{font-size:.7em;font-weight:400;color:#7a8194;margin-top:4px}
-.level-card[data-level="EMR"]{border-color:rgba(0,240,255,.3);color:#7a8194}
-.level-card[data-level="EMR"].selected{background:rgba(0,240,255,.08);border-color:#00f0ff;color:#00f0ff;box-shadow:0 0 16px rgba(0,240,255,.3)}
-.level-card[data-level="EMT"]{border-color:rgba(0,240,255,.3);color:#f0ad4e}
-.level-card[data-level="EMT"].selected{background:rgba(240,173,78,.1);border-color:#f0ad4e;box-shadow:0 0 16px rgba(240,173,78,.3)}
-.level-card[data-level="AEMT"]{border-color:rgba(0,240,255,.3);color:#34c759}
-.level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.1);border-color:#34c759;box-shadow:0 0 16px rgba(52,199,89,.3)}
-.level-card[data-level="Paramedic"]{border-color:rgba(0,240,255,.3);color:#ff2d6f}
-.level-card[data-level="Paramedic"].selected{background:rgba(255,45,111,.1);border-color:#ff2d6f;box-shadow:0 0 16px rgba(255,45,111,.3)}
-.btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:1em;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:12px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.card.selected{border-color:#d9534f}
+.level-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+.level-card{text-align:center;padding:20px 12px;font-weight:600;font-size:1.1em}
+.level-card .desc{font-size:.75em;font-weight:400;color:#8b92a8;margin-top:6px}
+
+.level-card[data-level="EMR"]{border-color:#a0a0a0;color:#a0a0a0}
+.level-card[data-level="EMR"].selected{background:rgba(160,160,160,.15);border-color:#a0a0a0}
+.level-card[data-level="EMT"]{border-color:#f0ad4e;color:#f0ad4e}
+.level-card[data-level="EMT"].selected{background:rgba(240,173,78,.15);border-color:#f0ad4e}
+.level-card[data-level="AEMT"]{border-color:#34c759;color:#34c759}
+.level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.15);border-color:#34c759}
+.level-card[data-level="Paramedic"]{border-color:#d9534f;color:#d9534f}
+.level-card[data-level="Paramedic"].selected{background:rgba(217,83,79,.15);border-color:#d9534f}
+.btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:1em;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:12px}
 .btn:active{transform:scale(.97)}
-.btn-primary{background:rgba(0,240,255,.15);color:#00f0ff;border:1px solid rgba(0,240,255,.4);box-shadow:0 0 20px rgba(0,240,255,.2)}
-.btn-primary:hover{box-shadow:0 0 30px rgba(0,240,255,.35)}
-.btn-primary:disabled{background:rgba(30,30,40,.5);color:#555;cursor:not-allowed;border-color:#333;box-shadow:none}
-.btn-secondary{background:rgba(255,45,111,.08);color:#ff2d6f;border:1px solid rgba(255,45,111,.25);box-shadow:0 0 12px rgba(255,45,111,.1)}
+.btn-primary{background:rgba(217,83,79,.7);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:#fff;border:1px solid rgba(255,255,255,.15);box-shadow:0 4px 20px rgba(217,83,79,.3)}
+.btn-primary:disabled{background:#333;color:#666;cursor:not-allowed}
+.btn-secondary{background:rgba(30,36,64,.35);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 2px 16px rgba(0,0,0,.2)}
 .btn-small{display:inline-block;width:auto;padding:8px 16px;font-size:.9em;margin:4px}
-.btn-random{background:linear-gradient(135deg,rgba(0,240,255,.2),rgba(255,45,111,.2));color:#fff;border:1px solid rgba(0,240,255,.3);box-shadow:0 0 24px rgba(0,240,255,.15),0 0 24px rgba(255,45,111,.1);font-size:1.15em;padding:18px;margin-top:16px}
-.btn-random:hover{box-shadow:0 0 36px rgba(0,240,255,.3),0 0 36px rgba(255,45,111,.2)}
-.browse-link{display:block;text-align:center;color:#7a8194;font-size:.9em;margin-top:12px;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(0,240,255,.3)}
-.browse-link:hover{color:#00f0ff}
-.counter-text{text-align:center;color:#00f0ff;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.85em;margin-top:8px}
 .progress-bar{display:flex;gap:4px;margin-bottom:20px}
-.progress-step{flex:1;text-align:center;font-size:.7em;color:#7a8194;padding-bottom:8px;border-bottom:3px solid rgba(0,240,255,.15)}
-.progress-step.active{color:#00f0ff;border-color:#00f0ff;text-shadow:0 0 8px rgba(0,240,255,.5)}
+.progress-step{flex:1;text-align:center;font-size:.7em;color:#8b92a8;padding-bottom:8px;border-bottom:3px solid rgba(30,36,64,.6)}
+.progress-step.active{color:#d9534f;border-color:#d9534f}
 .progress-step.done{color:#34c759;border-color:#34c759}
-.narrative{background:rgba(10,15,25,.5);border:1px solid rgba(0,240,255,.1);box-shadow:0 0 8px rgba(0,240,255,.05);border-radius:12px;padding:16px;margin-bottom:16px;line-height:1.6;font-size:.95em}
-.narrative .label{color:#00f0ff;font-weight:600;font-size:.8em;text-transform:uppercase;margin-bottom:6px;letter-spacing:.5px}
+.narrative{background:rgba(20,25,41,.3);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 20px rgba(0,0,0,.25);border-radius:12px;padding:16px;margin-bottom:16px;line-height:1.6;font-size:.95em}
+.narrative .label{color:#d9534f;font-weight:600;font-size:.8em;text-transform:uppercase;margin-bottom:6px}
 .vitals-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:12px 0}
-.vital{background:rgba(10,15,25,.6);border:1px solid rgba(0,240,255,.15);box-shadow:0 0 6px rgba(0,240,255,.05);border-radius:8px;padding:8px;text-align:center}
-.vital .val{font-size:1.1em;font-weight:600;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;color:#00f0ff}
-.vital .lbl{font-size:.7em;color:#7a8194;margin-top:2px}
-.option{background:rgba(10,15,25,.5);border-radius:12px;padding:14px 16px;margin-bottom:8px;cursor:pointer;border:1px solid rgba(0,240,255,.1);box-shadow:0 0 6px rgba(0,240,255,.03);transition:all .2s;line-height:1.4}
+.vital{background:rgba(13,16,32,.35);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);box-shadow:0 2px 12px rgba(0,0,0,.2);border-radius:8px;padding:8px;text-align:center}
+.vital .val{font-size:1.1em;font-weight:600}
+.vital .lbl{font-size:.7em;color:#8b92a8;margin-top:2px}
+.option{background:rgba(20,25,41,.3);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-radius:12px;padding:14px 16px;margin-bottom:8px;cursor:pointer;border:1px solid rgba(255,255,255,.12);box-shadow:0 2px 16px rgba(0,0,0,.2);transition:all .2s;line-height:1.4}
 .option:active{transform:scale(.98)}
-.option.selected{border-color:#00f0ff;background:rgba(0,240,255,.08);box-shadow:0 0 16px rgba(0,240,255,.15)}
-.option.correct{border-color:#34c759;background:rgba(52,199,89,.1);box-shadow:0 0 12px rgba(52,199,89,.15)}
-.option.incorrect{border-color:#ff2d6f;background:rgba(255,45,111,.08);box-shadow:0 0 12px rgba(255,45,111,.15)}
-.option.missed{border-color:#f0ff00;background:rgba(240,255,0,.06)}
+.option.selected{border-color:#4a9eff;background:rgba(74,158,255,.1)}
+.option.correct{border-color:#34c759;background:rgba(52,199,89,.15)}
+.option.incorrect{border-color:#d9534f;background:rgba(217,83,79,.15)}
+.option.missed{border-color:#f0ad4e;background:rgba(240,173,78,.1)}
 .option .indicator{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle}
 .option.correct .indicator{background:#34c759}
-.option.incorrect .indicator{background:#ff2d6f}
-.option.missed .indicator{background:#f0ff00}
-.explanation{font-size:.85em;color:#7a8194;margin-top:8px;padding:10px;background:rgba(10,15,25,.6);border:1px solid rgba(0,240,255,.08);border-radius:8px;line-height:1.5}
-.explanation .ref{color:#00f0ff;font-weight:500;display:block;margin-top:4px;word-break:break-word;font-size:.8em}
+.option.incorrect .indicator{background:#d9534f}
+.option.missed .indicator{background:#f0ad4e}
+.explanation{font-size:.85em;color:#8b92a8;margin-top:8px;padding:10px;background:rgba(13,16,32,.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:8px;line-height:1.5}
+.explanation .ref{color:#4a9eff;font-weight:500;display:block;margin-top:4px;word-break:break-word;font-size:.8em}
 .question-prompt{font-size:1em;font-weight:500;margin-bottom:12px;line-height:1.5}
-.multi-hint{font-size:.8em;color:#7a8194;margin-bottom:8px}
-.score-circle{width:120px;height:120px;border-radius:50%;margin:20px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2em;font-weight:700;font-family:'JetBrains Mono','Fira Code','Courier New',monospace}
-.score-good{background:rgba(52,199,89,.15);color:#34c759;border:2px solid #34c759;box-shadow:0 0 20px rgba(52,199,89,.2)}
-.score-ok{background:rgba(240,173,78,.15);color:#f0ad4e;border:2px solid #f0ad4e;box-shadow:0 0 20px rgba(240,173,78,.2)}
-.score-bad{background:rgba(255,45,111,.15);color:#ff2d6f;border:2px solid #ff2d6f;box-shadow:0 0 20px rgba(255,45,111,.2)}
+.multi-hint{font-size:.8em;color:#8b92a8;margin-bottom:8px}
+.score-circle{width:120px;height:120px;border-radius:50%;margin:20px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2em;font-weight:700;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.score-good{background:rgba(52,199,89,.2);color:#34c759;border:3px solid #34c759}
+.score-ok{background:rgba(240,173,78,.2);color:#f0ad4e;border:3px solid #f0ad4e}
+.score-bad{background:rgba(217,83,79,.2);color:#d9534f;border:3px solid #d9534f}
 .score-circle .pct{font-size:.4em;font-weight:400}
-.review-item{background:rgba(10,15,25,.5);border:1px solid rgba(0,240,255,.1);border-radius:12px;padding:14px;margin-bottom:10px}
+.review-item{background:rgba(20,25,41,.3);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 20px rgba(0,0,0,.25);border-radius:12px;padding:14px;margin-bottom:10px}
 .review-item .q{font-weight:500;margin-bottom:6px;font-size:.95em}
 .review-item .your-ans{font-size:.85em;margin-bottom:4px}
 .review-item .correct-ans{font-size:.85em;color:#34c759}
-.review-item .wrong{color:#ff2d6f}
-.tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.7em;font-weight:600;margin-right:4px;font-family:'JetBrains Mono','Fira Code','Courier New',monospace}
-.tag-easy{background:rgba(52,199,89,.15);color:#34c759;border:1px solid rgba(52,199,89,.3)}
-.tag-medium{background:rgba(240,173,78,.15);color:#f0ad4e;border:1px solid rgba(240,173,78,.3)}
-.tag-hard{background:rgba(255,45,111,.15);color:#ff2d6f;border:1px solid rgba(255,45,111,.3)}
-.tag-proto{background:rgba(0,240,255,.1);color:#00f0ff;border:1px solid rgba(0,240,255,.3)}
-.category-header{color:#7a8194;font-size:.8em;font-weight:600;text-transform:uppercase;margin:16px 0 8px;letter-spacing:.5px}
+.review-item .wrong{color:#d9534f}
+.tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.7em;font-weight:600;margin-right:4px}
+.tag-easy{background:rgba(52,199,89,.2);color:#34c759}
+.tag-medium{background:rgba(240,173,78,.2);color:#f0ad4e}
+.tag-hard{background:rgba(217,83,79,.2);color:#d9534f}
+.tag-proto{background:rgba(74,158,255,.2);color:#4a9eff}
+.category-header{color:#8b92a8;font-size:.8em;font-weight:600;text-transform:uppercase;margin:16px 0 8px;letter-spacing:.5px}
 .scenario-item{display:flex;justify-content:space-between;align-items:center}
 .scenario-item .title{font-weight:500;font-size:.95em}
 .scenario-item .tags{margin-top:4px}
 .hidden{display:none!important}
 .fade-in{animation:fadeIn .3s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes glitch{0%,100%{text-shadow:2px 0 #ff2d6f,-2px 0 #00f0ff}25%{text-shadow:-2px 0 #ff2d6f,2px 0 #00f0ff}50%{text-shadow:1px 1px #ff2d6f,-1px -1px #00f0ff}75%{text-shadow:-1px 1px #00f0ff,1px -1px #ff2d6f}}
-.back-btn{background:none;border:none;color:#7a8194;font-size:.9em;cursor:pointer;padding:8px 0;display:flex;align-items:center;gap:4px}
+.back-btn{background:none;border:none;color:#8b92a8;font-size:.9em;cursor:pointer;padding:8px 0;display:flex;align-items:center;gap:4px}
 .back-btn:before{content:'←'}
-.phase-label{display:inline-block;background:rgba(0,240,255,.1);color:#00f0ff;padding:4px 10px;border-radius:6px;font-size:.75em;font-weight:600;margin-bottom:12px;text-transform:uppercase;border:1px solid rgba(0,240,255,.2)}
-.vitals-update-box{background:rgba(255,45,111,.06);border:1px solid rgba(255,45,111,.3);border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 0 12px rgba(255,45,111,.08)}
-.vitals-update-box .label{color:#ff2d6f;font-weight:700;font-size:.9em;margin-bottom:8px}
-.critical-error{background:rgba(240,255,0,.06);border:1px solid rgba(240,255,0,.3);border-radius:8px;padding:12px;margin-top:8px;line-height:1.5;font-size:.85em;color:#f0ff00}
-.critical-error .critical-title{font-weight:700;font-size:.9em;margin-bottom:6px;color:#f0ff00}
-.clinical-pearl{background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.2);border-radius:8px;padding:12px;margin-top:10px;font-size:.85em;line-height:1.5;color:#8bb8f0}
-.clinical-pearl .pearl-title{color:#00f0ff;font-weight:600;margin-bottom:2px}
-.narrative-update{background:rgba(10,15,25,.5);border-left:3px solid #f0ad4e;border:1px solid rgba(240,173,78,.15);border-left:3px solid #f0ad4e;border-radius:0 12px 12px 0;padding:16px;margin-bottom:16px;line-height:1.6;font-size:.95em}
+.phase-label{display:inline-block;background:rgba(217,83,79,.2);color:#d9534f;padding:4px 10px;border-radius:6px;font-size:.75em;font-weight:600;margin-bottom:12px;text-transform:uppercase}
+.vitals-update-box{background:rgba(217,83,79,.1);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(217,83,79,.4);border-radius:12px;padding:16px;margin-bottom:16px}
+.vitals-update-box .label{color:#d9534f;font-weight:700;font-size:.9em;margin-bottom:8px}
+.critical-error{background:rgba(255,152,0,.12);border:1px solid rgba(255,152,0,.4);border-radius:8px;padding:12px;margin-top:8px;line-height:1.5;font-size:.85em;color:#ffcc80}
+.critical-error .critical-title{font-weight:700;font-size:.9em;margin-bottom:6px;color:#ffa726}
+.clinical-pearl{background:rgba(74,158,255,.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(74,158,255,.25);border-radius:8px;padding:12px;margin-top:10px;font-size:.85em;line-height:1.5;color:#8bb8f0}
+.clinical-pearl .pearl-title{color:#4a9eff;font-weight:600;margin-bottom:2px}
+.narrative-update{background:rgba(20,25,41,.5);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-left:3px solid #f0ad4e;border:1px solid rgba(240,173,78,.2);border-left:3px solid #f0ad4e;border-radius:0 12px 12px 0;padding:16px;margin-bottom:16px;line-height:1.6;font-size:.95em}
 .narrative-update .label{color:#f0ad4e;font-weight:600;font-size:.8em;text-transform:uppercase;margin-bottom:6px}
 .score-tier{text-align:center;padding:16px;border-radius:12px;margin:16px 0;line-height:1.5}
 .score-tier .tier-name{font-size:1.3em;font-weight:700;margin-bottom:4px}
 .score-tier .tier-desc{font-size:.9em;opacity:.9}
-.score-tier.tier-expert{background:rgba(52,199,89,.1);color:#34c759;border:1px solid rgba(52,199,89,.4);box-shadow:0 0 16px rgba(52,199,89,.15)}
-.score-tier.tier-competent{background:rgba(240,173,78,.1);color:#f0ad4e;border:1px solid rgba(240,173,78,.4);box-shadow:0 0 16px rgba(240,173,78,.15)}
-.score-tier.tier-developing{background:rgba(255,152,0,.1);color:#ff9800;border:1px solid rgba(255,152,0,.4)}
-.score-tier.tier-novice{background:rgba(255,45,111,.1);color:#ff2d6f;border:1px solid rgba(255,45,111,.4)}
-.critical-fails-warning{background:rgba(255,45,111,.1);border:1px solid rgba(255,45,111,.4);border-radius:12px;padding:14px;margin:12px 0;text-align:center;color:#ff2d6f;font-weight:600}
+.score-tier.tier-expert{background:rgba(52,199,89,.15);color:#34c759;border:2px solid #34c759}
+.score-tier.tier-competent{background:rgba(240,173,78,.15);color:#f0ad4e;border:2px solid #f0ad4e}
+.score-tier.tier-developing{background:rgba(255,152,0,.15);color:#ff9800;border:2px solid #ff9800}
+.score-tier.tier-novice{background:rgba(217,83,79,.15);color:#d9534f;border:2px solid #d9534f}
+.critical-fails-warning{background:rgba(183,28,28,.2);border:2px solid #b71c1c;border-radius:12px;padding:14px;margin:12px 0;text-align:center;color:#ff5252;font-weight:600}
 
 /* Order (drag-reorder) */
 .order-list{display:flex;flex-direction:column;gap:8px}
-.order-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(10,15,25,.5);border:1px solid rgba(0,240,255,.1);box-shadow:0 0 6px rgba(0,240,255,.03)}
+.order-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(20,25,41,.3);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);box-shadow:0 2px 16px rgba(0,0,0,.2)}
 .order-item .arrows{display:flex;flex-direction:column;gap:2px}
-.order-item .arrows button{width:40px;height:34px;border:none;background:rgba(0,240,255,.1);color:#00f0ff;border-radius:6px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.order-item .arrows button:active{background:rgba(0,240,255,.3)}
+.order-item .arrows button{width:40px;height:34px;border:none;background:rgba(255,255,255,.1);color:#fff;border-radius:6px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.order-item .arrows button:active{background:rgba(74,158,255,.3)}
 .order-item .order-text{flex:1;font-size:.95rem;line-height:1.4}
-.order-item.correct-show{background:rgba(52,199,89,.1);border-color:rgba(52,199,89,.4)}
-.order-item.wrong-show{background:rgba(255,45,111,.1);border-color:rgba(255,45,111,.4)}
+.order-item.correct-show{background:rgba(52,199,89,.15);border-color:rgba(52,199,89,.4)}
+.order-item.wrong-show{background:rgba(217,83,79,.15);border-color:rgba(217,83,79,.4)}
 
 /* Categorize */
 .cat-items{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.cat-chip{padding:10px 16px;border-radius:10px;background:rgba(10,15,25,.5);border:1px solid rgba(0,240,255,.1);cursor:pointer;font-size:.9rem;transition:all .15s;box-shadow:0 0 6px rgba(0,240,255,.03)}
-.cat-chip:active,.cat-chip.picked{background:rgba(0,240,255,.15);border-color:rgba(0,240,255,.4)}
+.cat-chip{padding:10px 16px;border-radius:10px;background:rgba(20,25,41,.3);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);cursor:pointer;font-size:.9rem;transition:all .15s;box-shadow:0 2px 16px rgba(0,0,0,.2)}
+.cat-chip:active,.cat-chip.picked{background:rgba(74,158,255,.25);border-color:rgba(74,158,255,.4)}
 .cat-chip.placed{opacity:.4;cursor:default}
 .cat-buckets{display:flex;gap:10px;flex-wrap:wrap}
-.cat-bucket{flex:1;min-width:140px;min-height:80px;border-radius:12px;padding:12px;background:rgba(10,15,25,.3);border:2px dashed rgba(0,240,255,.15);transition:all .15s;cursor:pointer}
-.cat-bucket.highlight{border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.05)}
-.cat-bucket-title{font-size:.8rem;font-weight:600;color:rgba(0,240,255,.4);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.cat-bucket{flex:1;min-width:140px;min-height:80px;border-radius:12px;padding:12px;background:rgba(20,25,41,.2);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:2px dashed rgba(255,255,255,.15);transition:all .15s;cursor:pointer}
+.cat-bucket.highlight{border-color:rgba(74,158,255,.5);background:rgba(74,158,255,.08)}
+.cat-bucket-title{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
 .cat-bucket-items{display:flex;flex-wrap:wrap;gap:6px}
-.cat-bucket-items .placed-chip{padding:6px 12px;border-radius:8px;background:rgba(0,240,255,.12);font-size:.85rem;cursor:pointer}
+.cat-bucket-items .placed-chip{padding:6px 12px;border-radius:8px;background:rgba(74,158,255,.2);font-size:.85rem;cursor:pointer}
 
 /* Table / matrix */
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px}
-.q-table{width:100%;min-width:320px;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid rgba(0,240,255,.15)}
-.q-table th,.q-table td{padding:10px 8px;text-align:center;border-bottom:1px solid rgba(0,240,255,.08)}
-.q-table th{background:rgba(0,240,255,.06);font-size:.75rem;font-weight:600;color:rgba(0,240,255,.5);white-space:nowrap}
+.q-table{width:100%;min-width:320px;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,.1)}
+.q-table th,.q-table td{padding:10px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.q-table th{background:rgba(255,255,255,.08);font-size:.75rem;font-weight:600;color:rgba(255,255,255,.6);white-space:nowrap}
 .q-table td{font-size:.82rem;line-height:1.3}
 .q-table td:first-child{text-align:left;font-weight:500;min-width:100px;max-width:160px}
-.q-table .cell-btn{width:40px;height:40px;border-radius:8px;border:2px solid rgba(0,240,255,.2);background:transparent;color:#e0e0e0;cursor:pointer;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;transition:all .15s}
-.cell-btn.on{background:rgba(0,240,255,.2);border-color:#00f0ff}
-.cell-btn.correct-show{background:rgba(52,199,89,.2);border-color:#34c759}
-.cell-btn.wrong-show{background:rgba(255,45,111,.2);border-color:#ff2d6f}
+.q-table .cell-btn{width:40px;height:40px;border-radius:8px;border:2px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;transition:all .15s}
+.cell-btn.on{background:rgba(74,158,255,.3);border-color:#4a9eff}
+.cell-btn.correct-show{background:rgba(52,199,89,.3);border-color:#34c759}
+.cell-btn.wrong-show{background:rgba(217,83,79,.3);border-color:#d9534f}
 
-.select-count-hint{font-size:.8em;color:#7a8194;margin-bottom:8px}
+/* Select count hint */
+.select-count-hint{font-size:.8em;color:#8b92a8;margin-bottom:8px}
 
-/* Theme toggle */
-.theme-toggle{position:fixed;top:12px;right:12px;z-index:1000;width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,240,255,.2);background:rgba(10,15,25,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);cursor:pointer;font-size:1.2em;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:0 0 12px rgba(0,240,255,.1)}
+/* Theme toggle button */
+.theme-toggle{position:fixed;top:12px;right:12px;z-index:1000;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(20,25,41,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);cursor:pointer;font-size:1.2em;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .theme-toggle:active{transform:scale(.9)}
-body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(0,80,120,.15);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body.light-mode .theme-toggle{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.1);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 
-/* Domain & Difficulty chips */
-.domain-chip,.diff-chip{display:inline-block;padding:8px 14px;border-radius:20px;font-size:.85em;cursor:pointer;margin:4px;transition:all .15s;background:rgba(0,240,255,.04);border:1px solid rgba(0,240,255,.1)}
-.domain-chip:active,.diff-chip:active{transform:scale(.95)}
-.domain-chip.selected{background:rgba(0,240,255,.15);border-color:rgba(0,240,255,.4);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
-.diff-chip.selected{background:rgba(255,45,111,.12);border-color:rgba(255,45,111,.35);color:#ff2d6f;box-shadow:0 0 10px rgba(255,45,111,.12)}
-
-.muted-label{color:#7a8194}
-.hero-title{font-size:1.8em;margin:0 0 6px;color:#00f0ff;text-shadow:0 0 20px rgba(0,240,255,.3);animation:glitch 4s ease-in-out infinite;letter-spacing:1px}
-.hero-sub{color:#7a8194;font-size:.9em;margin:0;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;letter-spacing:.5px}
-.stat-divider{width:1px;background:rgba(0,240,255,.15)}
-.home-section{background:rgba(10,15,25,.5);border:1px solid rgba(0,240,255,.08);border-radius:16px;padding:20px;margin-bottom:24px;box-shadow:0 0 16px rgba(0,240,255,.03)}
-
-/* ===== Light Mode ===== */
-body.light-mode{background:#f5f7fa;color:#1a1a2e}
-body.light-mode::after{background:none}
-body.light-mode .subtitle,body.light-mode .vital .lbl,body.light-mode .level-card .desc,body.light-mode .multi-hint,body.light-mode .select-count-hint,body.light-mode .muted-label{color:#6b7280}
-body.light-mode .vital .val{color:#1a5276}
-body.light-mode .card,body.light-mode .narrative,body.light-mode .option,body.light-mode .review-item{background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,80,120,.1);box-shadow:0 2px 8px rgba(0,0,0,.06);color:#1a1a2e}
-body.light-mode .vital{background:rgba(255,255,255,.7);border-color:rgba(0,80,120,.1);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-body.light-mode .explanation{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);color:#4a4a5a}
-body.light-mode .explanation .ref{color:#1a5276}
-body.light-mode .clinical-pearl{background:rgba(0,100,150,.06);border-color:rgba(0,100,150,.2);color:#1a5276}
-body.light-mode .clinical-pearl .pearl-title{color:#1a5276}
-body.light-mode .critical-error{background:rgba(200,80,50,.06);border-color:rgba(200,80,50,.2);color:#8b3a37}
-body.light-mode .critical-error .critical-title{color:#c04540}
-body.light-mode .vitals-update-box{background:rgba(200,80,50,.04);border-color:rgba(200,80,50,.2)}
-body.light-mode .narrative-update{background:rgba(255,255,255,.7);border-color:rgba(200,150,50,.15);border-left-color:#c08a2e;color:#1a1a2e}
-body.light-mode .btn-primary{background:rgba(0,100,150,.08);color:#1a5276;border-color:rgba(0,100,150,.25);box-shadow:none}
-body.light-mode .btn-primary:disabled{background:#ddd;color:#888;border-color:#ccc}
-body.light-mode .btn-secondary{background:rgba(0,0,0,.04);color:#1a1a2e;border-color:rgba(0,0,0,.1);box-shadow:none}
-body.light-mode .btn-random{background:rgba(0,100,150,.1);color:#1a5276;border-color:rgba(0,100,150,.2);box-shadow:none}
-body.light-mode .option.selected{background:rgba(0,100,150,.08);border-color:rgba(0,100,150,.4)}
-body.light-mode .option.correct{background:rgba(52,199,89,.1);border-color:rgba(52,199,89,.5)}
-body.light-mode .option.incorrect{background:rgba(200,80,50,.08);border-color:rgba(200,80,50,.5)}
-body.light-mode .option.missed{background:rgba(200,150,50,.08);border-color:rgba(200,150,50,.5)}
-body.light-mode .progress-step{color:#6b7280;border-color:rgba(0,0,0,.08)}
-body.light-mode .progress-step.active{color:#1a5276;border-color:#1a5276}
-body.light-mode .progress-step.done{color:#2a9e47;border-color:#2a9e47}
+/* ===== Light Mode Overrides ===== */
+body.light-mode{background:#f0f2f5;color:#1a1a2e;
+  background-image:radial-gradient(ellipse at 20% 50%, rgba(74,158,255,.08) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 20%, rgba(217,83,79,.06) 0%, transparent 50%),
+                    radial-gradient(ellipse at 50% 80%, rgba(52,199,89,.05) 0%, transparent 50%)}
+body.light-mode .subtitle,body.light-mode .vital .lbl,body.light-mode .level-card .desc,body.light-mode .multi-hint,body.light-mode .select-count-hint{color:#6b7280}
+body.light-mode .vital .val{color:#1a1a2e}
+body.light-mode .card,body.light-mode .narrative,body.light-mode .option,body.light-mode .review-item{background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.08);color:#1a1a2e}
+body.light-mode .vital{background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body.light-mode .explanation{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);color:#4a4a5a;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+body.light-mode .explanation .ref{color:#2563eb}
+body.light-mode .clinical-pearl{background:rgba(52,199,89,.08);border-color:rgba(52,199,89,.3);color:#1a6b3a}
+body.light-mode .clinical-pearl .pearl-title{color:#34c759}
+body.light-mode .critical-error{background:rgba(217,83,79,.08);border-color:rgba(217,83,79,.3);color:#8b3a37}
+body.light-mode .critical-error .critical-title{color:#d9534f}
+body.light-mode .vitals-update-box{background:rgba(217,83,79,.06);border-color:rgba(217,83,79,.25);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+body.light-mode .narrative-update{background:rgba(255,255,255,.7);border-color:rgba(240,173,78,.15);border-left-color:#f0ad4e;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#1a1a2e}
+body.light-mode .btn-primary{background:rgba(217,83,79,.85);color:#fff;border-color:rgba(217,83,79,.3);box-shadow:0 4px 20px rgba(217,83,79,.2)}
+body.light-mode .btn-primary:disabled{background:#ccc;color:#888}
+body.light-mode .btn-secondary{background:rgba(0,0,0,.05);color:#1a1a2e;border-color:rgba(0,0,0,.1);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+body.light-mode .option.selected{background:rgba(74,158,255,.12);border-color:rgba(74,158,255,.5)}
+body.light-mode .option.correct{background:rgba(52,199,89,.12);border-color:rgba(52,199,89,.6)}
+body.light-mode .option.incorrect{background:rgba(217,83,79,.12);border-color:rgba(217,83,79,.6)}
+body.light-mode .option.missed{background:rgba(240,173,78,.12);border-color:rgba(240,173,78,.6)}
+body.light-mode .progress-step{color:#6b7280;border-color:rgba(0,0,0,.1)}
+body.light-mode .progress-step.active{color:#d9534f;border-color:#d9534f}
+body.light-mode .progress-step.done{color:#34c759;border-color:#34c759}
 body.light-mode .back-btn{color:#6b7280}
-body.light-mode .phase-label{background:rgba(0,100,150,.06);color:#1a5276;border-color:rgba(0,100,150,.15)}
-body.light-mode .narrative .label{color:#1a5276}
-body.light-mode .vitals-update-box .label{color:#c04540}
-body.light-mode .narrative-update .label{color:#c08a2e}
+body.light-mode .phase-label{background:rgba(217,83,79,.1);color:#d9534f}
+body.light-mode .narrative .label{color:#d9534f}
+body.light-mode .vitals-update-box .label{color:#d9534f}
+body.light-mode .narrative-update .label{color:#f0ad4e}
 body.light-mode .question-prompt{color:#1a1a2e}
 body.light-mode .category-header{color:#6b7280}
 body.light-mode .scenario-item .title{color:#1a1a2e}
-body.light-mode .critical-fails-warning{background:rgba(200,50,50,.06);border-color:#b71c1c;color:#d32f2f}
-body.light-mode .hero-title{color:#1a5276;text-shadow:none;animation:none}
+body.light-mode .critical-fails-warning{background:rgba(183,28,28,.1);border-color:#b71c1c;color:#d32f2f}
+body.light-mode .score-tier{color:inherit}
+/* Level cards: keep text colors, adjust bg on selected */
+.muted-label{color:#8b92a8}
+.hero-title{font-size:1.8em;margin:0 0 6px;background:linear-gradient(135deg,#fff,#8b92a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{color:#8b92a8;font-size:.9em;margin:0}
+.stat-divider{width:1px;background:#1e2440}
+.home-section{background:#141929;border-radius:16px;padding:20px;margin-bottom:24px}
+body.light-mode .muted-label{color:#6b7280}
+body.light-mode .hero-title{background:linear-gradient(135deg,#1a1a2e,#6b7280);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 body.light-mode .hero-sub{color:#6b7280}
-body.light-mode .stat-divider{background:rgba(0,0,0,.1)}
-body.light-mode .home-section{background:rgba(255,255,255,.6);border-color:rgba(0,0,0,.06);box-shadow:0 2px 8px rgba(0,0,0,.04)}
-body.light-mode .level-card{background:rgba(255,255,255,.5);border-color:rgba(0,0,0,.08)}
-body.light-mode .level-card[data-level="EMR"]{color:#666}
-body.light-mode .level-card[data-level="EMR"].selected{background:rgba(0,100,150,.06);border-color:#1a5276;color:#1a5276}
-body.light-mode .level-card[data-level="EMT"]{color:#c08a2e}
-body.light-mode .level-card[data-level="EMT"].selected{background:rgba(200,150,50,.08)}
-body.light-mode .level-card[data-level="AEMT"]{color:#2a9e47}
-body.light-mode .level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.08)}
-body.light-mode .level-card[data-level="Paramedic"]{color:#c04540}
-body.light-mode .level-card[data-level="Paramedic"].selected{background:rgba(200,80,50,.08);border-color:#c04540}
-body.light-mode .domain-chip,.diff-chip{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);color:#1a1a2e}
-body.light-mode .domain-chip.selected{background:rgba(0,100,150,.08);border-color:rgba(0,100,150,.3);color:#1a5276}
-body.light-mode .diff-chip.selected{background:rgba(200,80,50,.06);border-color:rgba(200,80,50,.25);color:#c04540}
-body.light-mode .counter-text{color:#1a5276}
-body.light-mode .stat-num{color:#1a5276}
-/* Light mode: order/cat/table */
-body.light-mode .order-item{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.08);color:#1a1a2e}
-body.light-mode .order-item .arrows button{background:rgba(0,0,0,.05);color:#1a1a2e}
-body.light-mode .cat-chip{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.08);color:#1a1a2e}
-body.light-mode .cat-chip:active,body.light-mode .cat-chip.picked{background:rgba(0,100,150,.1);border-color:rgba(0,100,150,.3)}
-body.light-mode .cat-bucket{background:rgba(255,255,255,.4);border-color:rgba(0,0,0,.1)}
-body.light-mode .cat-bucket.highlight{border-color:rgba(0,100,150,.3);background:rgba(0,100,150,.04)}
-body.light-mode .cat-bucket-title{color:rgba(0,0,0,.35)}
-body.light-mode .cat-bucket-items .placed-chip{background:rgba(0,100,150,.08);color:#1a1a2e}
+body.light-mode .stat-divider{background:rgba(0,0,0,.12)}
+body.light-mode .home-section{background:rgba(255,255,255,.6);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+body.light-mode .level-card{background:rgba(255,255,255,.5);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,0,0,.08)}
+body.light-mode .level-card[data-level="EMR"]{color:#808080;border-color:#a0a0a0}
+body.light-mode .level-card[data-level="EMR"].selected{background:rgba(160,160,160,.12)}
+body.light-mode .level-card[data-level="EMT"]{color:#c88a2e;border-color:#f0ad4e}
+body.light-mode .level-card[data-level="EMT"].selected{background:rgba(240,173,78,.12)}
+body.light-mode .level-card[data-level="AEMT"]{color:#2a9e47;border-color:#34c759}
+body.light-mode .level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.12)}
+body.light-mode .level-card[data-level="Paramedic"]{color:#c04540;border-color:#d9534f}
+body.light-mode .level-card[data-level="Paramedic"].selected{background:rgba(217,83,79,.12)}
+/* Order items */
+body.light-mode .order-item{background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.08);color:#1a1a2e}
+body.light-mode .order-item .arrows button{background:rgba(0,0,0,.06);color:#1a1a2e}
+body.light-mode .order-item .arrows button:active{background:rgba(74,158,255,.2)}
+body.light-mode .order-item.correct-show{background:rgba(52,199,89,.12);border-color:rgba(52,199,89,.4)}
+body.light-mode .order-item.wrong-show{background:rgba(217,83,79,.12);border-color:rgba(217,83,79,.4)}
+/* Categorize */
+body.light-mode .cat-chip{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.08);color:#1a1a2e}
+body.light-mode .cat-chip:active,body.light-mode .cat-chip.picked{background:rgba(74,158,255,.15);border-color:rgba(74,158,255,.35)}
+body.light-mode .cat-bucket{background:rgba(255,255,255,.4);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:rgba(0,0,0,.12)}
+body.light-mode .cat-bucket.highlight{border-color:rgba(74,158,255,.4);background:rgba(74,158,255,.06)}
+body.light-mode .cat-bucket-title{color:rgba(0,0,0,.4)}
+body.light-mode .cat-bucket-items .placed-chip{background:rgba(74,158,255,.12);color:#1a1a2e}
+/* Table / matrix */
 body.light-mode .q-table{border-color:rgba(0,0,0,.1)}
-body.light-mode .q-table th{background:rgba(0,0,0,.03);color:rgba(0,0,0,.45)}
+body.light-mode .q-table th{background:rgba(0,0,0,.04);color:rgba(0,0,0,.5)}
 body.light-mode .q-table td{border-color:rgba(0,0,0,.06);color:#1a1a2e}
-body.light-mode .q-table .cell-btn{border-color:rgba(0,0,0,.12);color:#1a1a2e}
-body.light-mode .browse-link{color:#6b7280;text-decoration-color:rgba(0,100,150,.3)}
-body.light-mode .browse-link:hover{color:#1a5276}
-body.light-mode .tag-proto{background:rgba(0,100,150,.06);color:#1a5276;border-color:rgba(0,100,150,.2)}
+body.light-mode .q-table .cell-btn{border-color:rgba(0,0,0,.15);color:#1a1a2e}
+body.light-mode .cell-btn.on{background:rgba(74,158,255,.2);border-color:#4a9eff}
+body.light-mode .cell-btn.correct-show{background:rgba(52,199,89,.2);border-color:#34c759}
+body.light-mode .cell-btn.wrong-show{background:rgba(217,83,79,.2);border-color:#d9534f}
+.domain-chip{display:inline-block;padding:8px 14px;border-radius:20px;font-size:.85em;cursor:pointer;margin:4px;transition:all .15s;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.domain-chip:active{transform:scale(.95)}
+.domain-chip.selected{background:rgba(74,158,255,.2);border-color:rgba(74,158,255,.4);color:#4a9eff}
+body.light-mode .domain-chip{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);color:#1a1a2e}
+body.light-mode .domain-chip.selected{background:rgba(74,158,255,.12);border-color:rgba(74,158,255,.4);color:#2563eb}
 </style>
 </head>
 <body>
@@ -289,7 +287,7 @@ function toggleTheme(){
   document.body.classList.toggle('light-mode');
   const isLight=document.body.classList.contains('light-mode');
   localStorage.setItem('ems-theme',isLight?'light':'dark');
-  document.querySelector('meta[name="theme-color"]').content=isLight?'#f5f7fa':'#0a0a0f';
+  document.querySelector('meta[name="theme-color"]').content=isLight?'#f0f2f5':'#0a0e1a';
   updateThemeIcon();
 }
 function updateThemeIcon(){
@@ -9862,285 +9860,354 @@ const SCENARIOS = [
 ];
 
 
-
 // App State
-const app = document.getElementById('app');
-const state = {
-  screen: 'home',
-  selectedLevel: null,
-  selectedDomains: new Set(),
-  selectedDifficulties: new Set(),
+const DOMAINS = ['Airway & Breathing','Cardiology','Medical Emergencies','Trauma','OB/Peds/Neonatal','Behavioral/Psychiatric','Pharmacology','EMS Operations','Environmental'];
+let state = {
+  screen: 'home', // home, select, scenario, debrief
+  level: null,
   currentScenario: null,
   questionIndex: 0,
   answers: [],
   answered: false,
   selectedOptions: new Set(),
-  userState: {}
+  domains: new Set()
 };
 
-const DOMAINS = ['Airway','Cardiology','Medical','OB/GYN','Operations','Pediatrics','Psychiatry','Resuscitation','Trauma'];
-const DIFFICULTIES = ['Easy','Medium','Hard'];
-
-function getAvailableScenarios() {
-  let s = SCENARIOS;
-  if (state.selectedLevel) s = s.filter(sc => sc.level === state.selectedLevel);
-  if (state.selectedDomains.size > 0) s = s.filter(sc => sc.domains && sc.domains.some(d => state.selectedDomains.has(d)));
-  if (state.selectedDifficulties.size > 0) s = s.filter(sc => state.selectedDifficulties.has(sc.difficulty));
-  return s;
-}
-
-function getFilteredQuestions() {
-  if (!state.currentScenario) return [];
-  return state.currentScenario.questions;
-}
+const app = document.getElementById('app');
 
 function cleanProtocolRef(ref) {
   if (!ref) return '';
-  return ref.replace(/^(NREMT|NSC)\s*[-–]\s*/i, '').trim();
+  // Remove als_/bls_ prefix
+  let s = ref.replace(/^(als|bls)_/, '');
+  // Remove _for_pediatric_see... and similar cross-ref suffixes
+  s = s.replace(/_for_pediatric.*$/, '').replace(/_adult_for.*$/, '').replace(/_undifferentiated.*$/, '');
+  // Replace underscores with spaces, title case
+  s = s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  // Fix common terms
+  s = s.replace('Andor', '&').replace('Dif ', 'Difficulty ').replace('Copd', 'COPD');
+  return s;
 }
 
 function render() {
-  if (state.screen === 'home') renderHome();
-  else if (state.screen === 'select') renderSelect();
-  else if (state.screen === 'scenario') renderScenario();
-  else if (state.screen === 'debrief') renderDebrief();
+  switch(state.screen) {
+    case 'home': renderHome(); break;
+    case 'select': renderSelect(); break;
+    case 'scenario': renderScenario(); break;
+    case 'debrief': renderDebrief(); break;
+  }
+  window.scrollTo(0, 0);
 }
 
 function renderHome() {
-  const avail = getAvailableScenarios();
-  const totalScenarios = SCENARIOS.length;
-  const totalQuestions = SCENARIOS.reduce((a, s) => a + (s.questions ? s.questions.length : 0), 0);
-  
-  let html = `<div class="fade-in" style="padding-top:20px;">
-    <div style="text-align:center;margin-bottom:32px">
-      <h1 class="hero-title">⚡ EMS SCENARIO TRAINER</h1>
-      <p class="hero-sub">NREMT-style clinical scenarios</p>
-      <div class="stats-row">
-        <div style="text-align:center"><div class="stat-num">${totalScenarios}</div><div class="muted-label" style="font-size:.75em">Scenarios</div></div>
-        <div class="stat-divider"></div>
-        <div style="text-align:center"><div class="stat-num">${totalQuestions}</div><div class="muted-label" style="font-size:.75em">Questions</div></div>
-        <div class="stat-divider"></div>
-        <div style="text-align:center"><div class="stat-num">4</div><div class="muted-label" style="font-size:.75em">Levels</div></div>
+  const scenarioCount = SCENARIOS.length;
+  const categories = new Set(SCENARIOS.map(s => s.category));
+  const catCount = categories.size;
+  app.innerHTML = `
+    <div style="text-align:center;padding:30px 0 20px">
+      <h1 class="hero-title">EMS Scenario Trainer</h1>
+      <p class="hero-sub">National EMS Education Standards · 2021</p>
+    </div>
+
+    <div class="stats-row">
+      <div style="text-align:center">
+        <div class="stat-num" style="color:#d9534f">${scenarioCount}</div>
+        <div class="muted-label" style="font-size:.7em;text-transform:uppercase;letter-spacing:.5px">Scenarios</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div style="text-align:center">
+        <div class="stat-num" style="color:#4a9eff">4</div>
+        <div class="muted-label" style="font-size:.7em;text-transform:uppercase;letter-spacing:.5px">Provider Levels</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div style="text-align:center">
+        <div class="stat-num" style="color:#34c759">${catCount}</div>
+        <div class="muted-label" style="font-size:.7em;text-transform:uppercase;letter-spacing:.5px">Categories</div>
       </div>
     </div>
 
     <div class="home-section">
-      <div class="category-header">Certification Level</div>
-      <div class="level-cards">
-        ${['EMR','EMT','AEMT','Paramedic'].map(l => `
-          <div class="card level-card ${state.selectedLevel === l ? 'selected' : ''}" data-level="${l}" onclick="toggleLevel('${l}')">
-            ${l === 'EMR' ? '🩹' : l === 'EMT' ? '🚑' : l === 'AEMT' ? '💉' : '🏥'} ${l}
-            <div class="desc">${l === 'EMR' ? 'First Response' : l === 'EMT' ? 'Basic' : l === 'AEMT' ? 'Advanced' : 'Critical Care'}</div>
+      <p class="muted-label" style="font-size:.8em;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;font-weight:600">Select Your Certification Level</p>
+
+      <div class="card level-card" data-level="EMR" onclick="selectLevel('EMR')" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;margin-bottom:8px">
+        <div><div style="font-weight:600;font-size:1em">EMR</div><div class="desc" style="margin-top:2px">Emergency Medical Responder</div></div>
+      </div>
+
+      <div class="card level-card" data-level="EMT" onclick="selectLevel('EMT')" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;margin-bottom:8px">
+        <div><div style="font-weight:600;font-size:1em">EMT</div><div class="desc" style="margin-top:2px">Emergency Medical Technician</div></div>
+      </div>
+
+      <div class="card level-card" data-level="AEMT" onclick="selectLevel('AEMT')" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;margin-bottom:8px">
+        <div><div style="font-weight:600;font-size:1em">AEMT</div><div class="desc" style="margin-top:2px">Advanced Emergency Medical Technician</div></div>
+      </div>
+
+      <div class="card level-card" data-level="Paramedic" onclick="selectLevel('Paramedic')" style="display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;margin-bottom:0">
+        <div><div style="font-weight:600;font-size:1em">Paramedic</div><div class="desc" style="margin-top:2px">Paramedic</div></div>
+      </div>
+    </div>
+
+    <div class="home-section">
+      <p class="muted-label" style="font-size:.8em;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;font-weight:600">Filter by Domain (Optional)</p>
+      <div id="domainFilters">${DOMAINS.map(d => `<div class="domain-chip${state.domains.has(d) ? ' selected' : ''}" onclick="toggleDomain('${d.replace(/'/g, "\\'")}')">${d}</div>`).join('')}</div>
+      <p class="muted-label" style="font-size:.75em;margin-top:8px">Tap to filter, or leave all unselected for all domains</p>
+    </div>
+
+    <p class="muted-label" style="text-align:center;font-size:.75em;margin-top:16px">Based on 2021 National EMS Education Standards<br>For training purposes only — not a substitute for protocol review</p>
+  `;
+}
+
+function toggleDomain(domain) {
+  if (state.domains.has(domain)) state.domains.delete(domain);
+  else state.domains.add(domain);
+  renderHome();
+}
+
+function selectLevel(level) {
+  state.level = level;
+  state.screen = 'select';
+  render();
+}
+
+function getAvailableScenarios() {
+  const levelOrder = {EMR:1, EMT:2, AEMT:3, Paramedic:4};
+  const userLevel = levelOrder[state.level] || 1;
+  return SCENARIOS.filter(s => {
+    const minLevel = levelOrder[s.level_min] || 1;
+    if (userLevel < minLevel) return false;
+    if (state.domains.size > 0 && s.category && !state.domains.has(s.category)) return false;
+    return true;
+  });
+}
+
+function renderSelect() {
+  const scenarios = getAvailableScenarios();
+  const categories = {};
+  scenarios.forEach(s => {
+    if (!categories[s.category]) categories[s.category] = [];
+    categories[s.category].push(s);
+  });
+
+  let html = `
+    <button class="back-btn" onclick="state.screen='home';render()">Back</button>
+    <h1 style="font-size:1.3em;margin-bottom:4px">Choose a Scenario</h1>
+    <p class="subtitle">${scenarios.length} scenarios available</p>
+    <button class="btn btn-primary" onclick="startRandom()" style="margin-bottom:20px">🎲 Random Scenario</button>
+  `;
+
+  for (const [cat, items] of Object.entries(categories)) {
+    html += `<div class="category-header">${cat}</div>`;
+    items.forEach(s => {
+      const diffClass = s.difficulty === 'Easy' ? 'tag-easy' : s.difficulty === 'Medium' ? 'tag-medium' : 'tag-hard';
+      html += `
+        <div class="card" onclick="startScenario('${s.id}')" style="margin-bottom:8px">
+          <div class="scenario-item">
+            <div>
+              <div class="title">${s.dispatch}</div>
+              <div class="tags" style="margin-top:6px">
+                <span class="tag ${diffClass}">${s.difficulty}</span>
+              </div>
+            </div>
+            <span class="muted-label">›</span>
           </div>
-        `).join('')}
-      </div>
-    </div>
+        </div>`;
+    });
+  }
 
-    <div class="home-section">
-      <div class="category-header">Domain Filter <span style="font-weight:400;font-size:.85em">(optional)</span></div>
-      <div style="text-align:center">
-        ${DOMAINS.map(d => `<span class="domain-chip ${state.selectedDomains.has(d)?'selected':''}" onclick="toggleDomain('${d}')">${d}</span>`).join('')}
-      </div>
-    </div>
-
-    <div class="home-section">
-      <div class="category-header">Difficulty <span style="font-weight:400;font-size:.85em">(optional)</span></div>
-      <div style="text-align:center">
-        ${DIFFICULTIES.map(d => `<span class="diff-chip ${state.selectedDifficulties.has(d)?'selected':''}" onclick="toggleDifficulty('${d}')">${d === 'Easy' ? '🟢' : d === 'Medium' ? '🟡' : '🔴'} ${d}</span>`).join('')}
-      </div>
-    </div>
-
-    <div class="counter-text">${avail.length} scenario${avail.length !== 1 ? 's' : ''} available</div>
-
-    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>🎲 Random Scenario</button>
-    
-    <div class="browse-link" onclick="state.screen='select';render()">Browse All (${avail.length} available)</div>
-    <div style="height:40px"></div>
-  </div>`;
   app.innerHTML = html;
 }
 
-window.toggleLevel = function(l) {
-  state.selectedLevel = state.selectedLevel === l ? null : l;
-  render();
-};
-
-window.toggleDomain = function(d) {
-  if (state.selectedDomains.has(d)) state.selectedDomains.delete(d);
-  else state.selectedDomains.add(d);
-  render();
-};
-
-window.toggleDifficulty = function(d) {
-  if (state.selectedDifficulties.has(d)) state.selectedDifficulties.delete(d);
-  else state.selectedDifficulties.add(d);
-  render();
-};
-
-window.startRandom = function() {
-  const avail = getAvailableScenarios();
-  if (avail.length === 0) return;
-  const s = avail[Math.floor(Math.random() * avail.length)];
+function startRandom() {
+  const scenarios = getAvailableScenarios();
+  if (scenarios.length === 0) return;
+  const s = scenarios[Math.floor(Math.random() * scenarios.length)];
   startScenario(s.id);
-};
+}
 
-window.startScenario = function(id) {
-  const s = SCENARIOS.find(sc => sc.id === id);
-  if (!s) return;
-  state.currentScenario = s;
+function startScenario(id) {
+  state.currentScenario = SCENARIOS.find(s => s.id === id);
   state.questionIndex = 0;
   state.answers = [];
   state.answered = false;
   state.selectedOptions = new Set();
   state.userState = {};
   state.screen = 'scenario';
-  window.scrollTo(0, 0);
   render();
-};
+}
 
-function renderSelect() {
-  const avail = getAvailableScenarios();
-  let html = `<div class="fade-in">
-    <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-    <h1 style="font-size:1.3em;margin-bottom:4px">Choose a Scenario</h1>
-    <p class="muted-label" style="margin-bottom:16px;text-align:center">${avail.length} scenario${avail.length !== 1 ? 's' : ''} available</p>`;
-  
-  if (avail.length === 0) {
-    html += `<div style="text-align:center;padding:40px 0;color:#7a8194">No scenarios match your filters.<br>Try adjusting filters on the home screen.</div>`;
-  }
-
-  avail.forEach(s => {
-    const diffTag = s.difficulty === 'Easy' ? 'tag-easy' : s.difficulty === 'Medium' ? 'tag-medium' : 'tag-hard';
-    html += `
-      <div class="card" onclick="startScenario('${s.id}')">
-        <div class="scenario-item">
-          <div>
-            <div class="title">${s.title}</div>
-            <div class="tags">
-              <span class="tag ${diffTag}">${s.difficulty}</span>
-              ${s.domains ? s.domains.map(d => `<span class="tag tag-proto">${d}</span>`).join('') : ''}
-            </div>
-          </div>
-          <div style="color:#7a8194;font-size:1.2em">›</div>
-        </div>
-      </div>`;
+function getFilteredQuestions() {
+  const userLevel = state.level;
+  return state.currentScenario.questions.filter(q => {
+    const levels = q.level_filter.split('-');
+    return levels.includes(userLevel);
   });
-
-  html += `<div style="height:40px"></div></div>`;
-  app.innerHTML = html;
 }
 
 function renderScenario() {
   const s = state.currentScenario;
-  const qs = getFilteredQuestions();
-  if (state.questionIndex >= qs.length) {
+  const questions = getFilteredQuestions();
+  
+  if (state.questionIndex >= questions.length) {
     state.screen = 'debrief';
     render();
     return;
   }
-  const q = qs[state.questionIndex];
-  const qType = q.type || (q.multi_select ? 'mr' : 'mc');
-  const total = qs.length;
-  const current = state.questionIndex + 1;
 
-  // Init user state for special question types
-  if (qType === 'order' && !state.userState.order) {
-    state.userState.order = q.items.map((_, i) => i);
-    // Shuffle
-    for (let i = state.userState.order.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [state.userState.order[i], state.userState.order[j]] = [state.userState.order[j], state.userState.order[i]];
-    }
-  }
-  if (qType === 'categorize' && !state.userState.assignments) {
-    state.userState.assignments = q.items.map(() => -1);
-    state.userState.pickedItem = -1;
-  }
-  if (qType === 'table' && !state.userState.cells) {
-    state.userState.cells = q.rows.map(() => q.columns.map(() => 0));
-  }
-
-  let html = `<div class="fade-in">
-    <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-    <p class="muted-label" style="font-size:.85em;margin-bottom:4px">${s.title}</p>
-    <div class="progress-bar">
-      ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
-    </div>`;
-
-  // Phase label
-  if (q.phase) html += `<span class="phase-label">${q.phase}</span>`;
-
-  // Narrative
-  if (q.narrative) html += `<div class="narrative"><div class="label">📋 Scenario</div>${q.narrative}</div>`;
-  if (q.narrative_update) html += `<div class="narrative-update"><div class="label">📝 Update</div>${q.narrative_update}</div>`;
+  const q = questions[state.questionIndex];
+  const phases = ['scene','assessment','treatment','transport'];
+  const phaseLabels = {scene:'Scene Size-Up',assessment:'Assessment',treatment:'Treatment',transport:'Transport'};
+  
+  // Progress bar
+  let progressHtml = '<div class="progress-bar">';
+  const usedPhases = [...new Set(questions.map(qq => qq.phase))];
+  usedPhases.forEach(p => {
+    const qIdx = questions.findIndex(qq => qq.phase === p);
+    let cls = '';
+    if (p === q.phase) cls = 'active';
+    else if (qIdx < state.questionIndex) cls = 'done';
+    progressHtml += `<div class="progress-step ${cls}">${phaseLabels[p] || p}</div>`;
+  });
+  progressHtml += '</div>';
 
   // Vitals
-  if (q.vitals) {
-    const v = q.vitals;
-    html += `<div class="narrative"><div class="label">📊 Vitals</div><div class="vitals-grid">
-      ${v.hr ? `<div class="vital"><div class="val mono">${v.hr}</div><div class="lbl">HR</div></div>` : ''}
-      ${v.bp ? `<div class="vital"><div class="val mono">${v.bp}</div><div class="lbl">BP</div></div>` : ''}
-      ${v.rr ? `<div class="vital"><div class="val mono">${v.rr}</div><div class="lbl">RR</div></div>` : ''}
-      ${v.spo2 ? `<div class="vital"><div class="val mono">${v.spo2}</div><div class="lbl">SpO₂</div></div>` : ''}
-      ${v.temp ? `<div class="vital"><div class="val mono">${v.temp}</div><div class="lbl">Temp</div></div>` : ''}
-      ${v.etco2 ? `<div class="vital"><div class="val mono">${v.etco2}</div><div class="lbl">EtCO₂</div></div>` : ''}
-      ${v.bgl ? `<div class="vital"><div class="val mono">${v.bgl}</div><div class="lbl">BGL</div></div>` : ''}
-      ${v.gcs ? `<div class="vital"><div class="val mono">${v.gcs}</div><div class="lbl">GCS</div></div>` : ''}
-      ${v.pupils ? `<div class="vital"><div class="val mono">${v.pupils}</div><div class="lbl">Pupils</div></div>` : ''}
-      ${v.skin ? `<div class="vital"><div class="val mono">${v.skin}</div><div class="lbl">Skin</div></div>` : ''}
-      ${v.lung_sounds ? `<div class="vital"><div class="val mono">${v.lung_sounds}</div><div class="lbl">Lungs</div></div>` : ''}
-      ${v.ecg ? `<div class="vital"><div class="val mono">${v.ecg}</div><div class="lbl">ECG</div></div>` : ''}
-    </div></div>`;
+  let vitalsHtml = '';
+  if (s.vitals && state.questionIndex === 0) {
+    const v = s.vitals;
+    vitalsHtml = `
+      <div class="narrative">
+        <div class="label">Vitals</div>
+        <div class="vitals-grid">
+          ${v.hr !== undefined ? `<div class="vital"><div class="val">${v.hr}</div><div class="lbl">HR</div></div>` : ''}
+          ${v.bp ? `<div class="vital"><div class="val">${v.bp}</div><div class="lbl">BP</div></div>` : ''}
+          ${v.rr !== undefined ? `<div class="vital"><div class="val">${v.rr}</div><div class="lbl">RR</div></div>` : ''}
+          ${v.spo2 !== undefined ? `<div class="vital"><div class="val">${v.spo2}${typeof v.spo2 === 'number' ? '%' : ''}</div><div class="lbl">SpO₂</div></div>` : ''}
+          ${v.gcs !== undefined ? `<div class="vital"><div class="val">${v.gcs}</div><div class="lbl">GCS</div></div>` : ''}
+          ${v.temp ? `<div class="vital"><div class="val">${v.temp}</div><div class="lbl">Temp</div></div>` : ''}
+          ${v.bg ? `<div class="vital"><div class="val">${v.bg}</div><div class="lbl">BG</div></div>` : ''}
+        </div>
+      </div>`;
   }
 
-  // Vitals update box
-  if (q.vitals_update) {
+  // Build HTML
+  let html = `
+    <button class="back-btn" onclick="state.screen='select';render()">Exit Scenario</button>
+    ${progressHtml}
+    <div style="margin-bottom:6px"></div>
+  `;
+
+  // Show dispatch/scene on first question
+  if (state.questionIndex === 0) {
+    html += `
+      <div class="narrative">
+        <div class="label">📟 Dispatch</div>
+        ${s.dispatch}
+      </div>
+      <div class="narrative">
+        <div class="label">🏥 Scene</div>
+        ${s.scene}
+      </div>
+      <div class="narrative">
+        <div class="label">👤 Patient</div>
+        ${s.patient.age}yo ${s.patient.sex === 'M' ? 'male' : 'female'} — ${s.patient.cc}<br>
+        <span class="muted-label" style="font-size:.9em">PMH: ${s.history.pmh} | Meds: ${s.history.meds} | Allergies: ${s.history.allergies}</span>
+      </div>
+
+      ${vitalsHtml}
+    `;
+  }
+
+  // Vitals update (mid-scenario vitals change)
+  if (q.vitals_update && Object.keys(q.vitals_update).length > 0) {
     const vu = q.vitals_update;
-    html += `<div class="vitals-update-box"><div class="label">⚠️ Updated Vitals</div><div class="vitals-grid">
-      ${Object.entries(vu).map(([k, v]) => `<div class="vital"><div class="val mono">${v}</div><div class="lbl">${k.toUpperCase()}</div></div>`).join('')}
-    </div></div>`;
+    html += `
+      <div class="vitals-update-box">
+        <div class="label">⚠️ VITALS UPDATE</div>
+        <div class="vitals-grid">
+          ${vu.hr !== undefined ? `<div class="vital"><div class="val">${vu.hr}</div><div class="lbl">HR</div></div>` : ''}
+          ${vu.bp ? `<div class="vital"><div class="val">${vu.bp}</div><div class="lbl">BP</div></div>` : ''}
+          ${vu.rr !== undefined ? `<div class="vital"><div class="val">${vu.rr}</div><div class="lbl">RR</div></div>` : ''}
+          ${vu.spo2 !== undefined ? `<div class="vital"><div class="val">${vu.spo2}${typeof vu.spo2 === 'number' ? '%' : ''}</div><div class="lbl">SpO₂</div></div>` : ''}
+          ${vu.gcs !== undefined ? `<div class="vital"><div class="val">${vu.gcs}</div><div class="lbl">GCS</div></div>` : ''}
+          ${vu.temp ? `<div class="vital"><div class="val">${vu.temp}</div><div class="lbl">Temp</div></div>` : ''}
+          ${vu.bg ? `<div class="vital"><div class="val">${vu.bg}</div><div class="lbl">BG</div></div>` : ''}
+        </div>
+      </div>`;
   }
 
-  // Question prompt
-  html += `<div class="question-prompt">${q.prompt}</div>`;
+  // Narrative update (mid-scenario story progression)
+  if (q.narrative) {
+    html += `
+      <div class="narrative-update">
+        <div class="label">📋 Update</div>
+        ${q.narrative}
+      </div>`;
+  }
 
-  // Render based on type
-  if (qType === 'mc' || qType === 'mr') {
-    if (q.multi_select || qType === 'mr') {
-      const correctCount = q.options.filter(o => o.correct).length;
-      html += `<div class="multi-hint">Select all that apply (${correctCount} correct)</div>`;
+  html += `
+    <div class="phase-label">${phaseLabels[q.phase] || q.phase}</div>
+    <div class="question-prompt">Question ${state.questionIndex + 1} of ${questions.length}: ${q.prompt}</div>
+  `;
+
+  // Determine question type
+  const qType = q.type || (q.multi_select ? 'mr' : 'mc');
+
+  // Initialize userState for this question if not yet done
+  if (!state.userState) state.userState = {};
+  if (!state.userState._inited) {
+    if (qType === 'order') {
+      state.userState = { _inited: true, order: q.items.map((_,i) => i) };
+    } else if (qType === 'categorize') {
+      state.userState = { _inited: true, assignments: q.items.map(() => -1), pickedItem: -1 };
+    } else if (qType === 'table') {
+      state.userState = { _inited: true, cells: q.rows.map(() => q.columns.map(() => 0)) };
+    } else {
+      state.userState = { _inited: true };
     }
-    q.options.forEach((opt, i) => {
-      let cls = 'option';
-      if (state.selectedOptions.has(i)) cls += ' selected';
-      if (state.answered) {
-        if (opt.correct && state.selectedOptions.has(i)) cls = 'option correct';
-        else if (!opt.correct && state.selectedOptions.has(i)) cls = 'option incorrect';
-        else if (opt.correct && !state.selectedOptions.has(i)) cls = 'option missed';
-        else cls = 'option';
+  }
+
+  if (qType === 'mc' || qType === 'graphical' || qType === 'mr') {
+    // Existing MC/MR/Graphical rendering
+    if (qType === 'mr' || q.multi_select) {
+      const hint = q.selectCount ? `Select ${q.selectCount} that apply` : 'Select all that apply';
+      html += `<div class="multi-hint">${hint}</div>`;
+    }
+
+    // Shuffle options (seeded per question to stay stable on re-render)
+    if (!q._shuffled && q.options) {
+      for (let j = q.options.length - 1; j > 0; j--) {
+        const k = Math.floor(Math.random() * (j + 1));
+        [q.options[j], q.options[k]] = [q.options[k], q.options[j]];
       }
-      html += `<div class="${cls}" onclick="selectOption(${i})">
-        <span class="indicator"></span>${opt.text}
-        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">📖 ${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
-      </div>`;
-    });
-  } else if (qType === 'graphical') {
-    html += `<div class="select-count-hint">Tap the correct option</div>`;
-    q.options.forEach((opt, i) => {
-      let cls = 'option';
-      if (state.selectedOptions.has(i)) cls += ' selected';
-      if (state.answered) {
-        if (opt.correct && state.selectedOptions.has(i)) cls = 'option correct';
-        else if (!opt.correct && state.selectedOptions.has(i)) cls = 'option incorrect';
-        else if (opt.correct && !state.selectedOptions.has(i)) cls = 'option missed';
-        else cls = 'option';
-      }
-      html += `<div class="${cls}" onclick="selectOption(${i})">
-        ${opt.image_desc ? `<div style="font-size:.8em;color:#7a8194;margin-bottom:4px">${opt.image_desc}</div>` : ''}
-        <span class="indicator"></span>${opt.text}
-        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">📖 ${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
-      </div>`;
-    });
+      q._shuffled = true;
+    }
+
+    // Options
+    if (q.options) {
+      q.options.forEach((opt, i) => {
+        let cls = 'option';
+        let extra = '';
+        
+        if (state.answered) {
+          if (opt.correct) {
+            cls += ' correct';
+            extra = `<div class="explanation"><span class="indicator"></span> ✅ ${opt.explanation} <span class="ref">(${cleanProtocolRef(opt.protocol_ref)})</span></div>`;
+          } else if (state.selectedOptions.has(i)) {
+            cls += ' incorrect';
+            if (opt.critical) {
+              extra = `<div class="critical-error"><div class="critical-title">⚠️ Important Safety Consideration</div>${opt.explanation} <span class="ref" style="color:#ffcc80">(${cleanProtocolRef(opt.protocol_ref)})</span></div>`;
+            } else {
+              extra = `<div class="explanation"><span class="indicator"></span> ❌ ${opt.explanation} <span class="ref">(${cleanProtocolRef(opt.protocol_ref)})</span></div>`;
+            }
+          }
+        } else {
+          if (state.selectedOptions.has(i)) cls += ' selected';
+        }
+
+        html += `
+          <div class="${cls}" onclick="selectOption(${i})">
+            ${opt.text}
+            ${extra}
+          </div>`;
+      });
+    }
   } else if (qType === 'order') {
     html += `<div id="orderBody"></div>`;
   } else if (qType === 'categorize') {
@@ -10149,36 +10216,43 @@ function renderScenario() {
     html += `<div id="tableBody"></div>`;
   }
 
-  // Critical error / clinical pearl
-  if (state.answered) {
-    const lastAns = state.answers[state.answers.length - 1];
-    if (lastAns && lastAns.criticalFail && q.critical_action_explanation) {
-      html += `<div class="critical-error"><div class="critical-title">⚠️ Safety Consideration</div>${q.critical_action_explanation}</div>`;
-    }
-    if (q.clinical_pearl) {
-      html += `<div class="clinical-pearl"><div class="pearl-title">💡 Clinical Pearl</div>${q.clinical_pearl}</div>`;
-    }
+  // Clinical pearl (shown after answering)
+  if (state.answered && q.clinical_pearl) {
+    html += `
+      <div class="clinical-pearl">
+        <div class="pearl-title">💎 Clinical Pearl</div>
+        ${q.clinical_pearl}
+      </div>`;
   }
 
-  // Buttons
+  // Explanation for non-option types
+  if (state.answered && q.explanation && (qType === 'order' || qType === 'categorize' || qType === 'table')) {
+    html += `<div class="explanation">${q.explanation}${q.protocol_ref ? ` <span class="ref">(${cleanProtocolRef(q.protocol_ref)})</span>` : ''}</div>`;
+  }
+
+  // Button
   if (!state.answered) {
-    if (qType === 'mc' || qType === 'mr' || qType === 'graphical') {
-      html += `<button class="btn btn-primary" onclick="submitAnswer()" ${state.selectedOptions.size === 0 ? 'disabled' : ''}>Submit Answer</button>`;
+    let canSubmit = false;
+    if (qType === 'mc' || qType === 'graphical' || qType === 'mr') {
+      canSubmit = state.selectedOptions.size > 0;
     } else if (qType === 'order') {
-      html += `<button class="btn btn-primary" onclick="submitAnswer()">Submit Order</button>`;
+      canSubmit = true; // always can submit an ordering
     } else if (qType === 'categorize') {
-      html += `<button class="btn btn-primary" onclick="submitAnswer()" ${state.userState.assignments && state.userState.assignments.some(a => a < 0) ? 'disabled' : ''}>Submit Categories</button>`;
+      canSubmit = state.userState.assignments && state.userState.assignments.every(a => a >= 0);
     } else if (qType === 'table') {
-      html += `<button class="btn btn-primary" onclick="submitAnswer()" ${state.userState.cells && !state.userState.cells.every(row => row.some(c => c)) ? 'disabled' : ''}>Submit Answer</button>`;
+      canSubmit = state.userState.cells && state.userState.cells.every(row => row.some(c => c));
     }
+    const disabled = canSubmit ? '' : 'disabled';
+    html += `<button class="btn btn-primary" onclick="submitAnswer()" ${disabled}>Submit Answer</button>`;
   } else {
-    html += `<button class="btn btn-primary" onclick="nextQuestion()" style="margin-top:16px">${current >= total ? '📊 View Results' : 'Next Question →'}</button>`;
+    const isLast = state.questionIndex + 1 >= questions.length;
+    const label = isLast ? 'View Results 📊' : 'Next Question →';
+    html += `<button class="btn btn-primary" onclick="nextQuestion()">${label}</button>`;
   }
 
-  html += `<div style="height:40px"></div></div>`;
-  app.innerHTML = html;
+  app.innerHTML = `<div class="fade-in">${html}</div>`;
 
-  // Render special bodies after DOM insert
+  // Post-render for special question types
   if (qType === 'order') renderOrderBody(q);
   if (qType === 'categorize') renderCatBody(q);
   if (qType === 'table') renderTableBody(q);
@@ -10188,35 +10262,23 @@ function renderOrderBody(q) {
   const body = document.getElementById('orderBody');
   if (!body) return;
   body.innerHTML = '';
-  const list = document.createElement('div'); list.className = 'order-list';
+  const ol = document.createElement('div'); ol.className = 'order-list';
   state.userState.order.forEach((origIdx, pos) => {
-    const item = document.createElement('div');
-    let cls = 'order-item';
+    const d = document.createElement('div'); d.className = 'order-item';
+    d.innerHTML = `<div class="arrows"><button onclick="moveOrder(${pos},-1)">▲</button><button onclick="moveOrder(${pos},1)">▼</button></div><div class="order-text">${q.items[origIdx]}</div>`;
     if (state.answered) {
-      cls += origIdx === q.correctOrder[pos] ? ' correct-show' : ' wrong-show';
+      const correctOrigIdx = q.correctOrder[pos];
+      d.classList.add(origIdx === correctOrigIdx ? 'correct-show' : 'wrong-show');
+      d.querySelectorAll('.arrows button').forEach(b => b.disabled = true);
     }
-    item.className = cls;
-    item.innerHTML = `
-      <div class="arrows">
-        <button onclick="moveOrder(${pos},-1)" ${state.answered ? 'disabled' : ''}>▲</button>
-        <button onclick="moveOrder(${pos},1)" ${state.answered ? 'disabled' : ''}>▼</button>
-      </div>
-      <div class="order-text">${q.items[origIdx]}</div>
-    `;
-    list.appendChild(item);
+    ol.appendChild(d);
   });
-  body.appendChild(list);
+  body.appendChild(ol);
   if (state.answered) {
     const correctDiv = document.createElement('div');
     correctDiv.style.cssText = 'margin-top:12px;font-size:.85em;color:#34c759';
     correctDiv.innerHTML = '<strong>Correct order:</strong> ' + q.correctOrder.map(i => q.items[i]).join(' → ');
     body.appendChild(correctDiv);
-    if (q.protocol_ref) {
-      const ref = document.createElement('div');
-      ref.className = 'explanation';
-      ref.innerHTML = `<span class="ref">📖 ${cleanProtocolRef(q.protocol_ref)}</span>`;
-      body.appendChild(ref);
-    }
   }
 }
 
@@ -10299,9 +10361,11 @@ function renderTableBody(q) {
 window.toggleCell = function(ri, ci) {
   if (state.answered) return;
   const q = getFilteredQuestions()[state.questionIndex];
+  // One selection per row
   q.columns.forEach((_, c) => { state.userState.cells[ri][c] = 0; });
   state.userState.cells[ri][ci] = 1;
   renderTableBody(q);
+  // Re-check submit button state
   const btn = document.querySelector('.btn-primary');
   if (btn && btn.textContent.includes('Submit')) {
     btn.disabled = !state.userState.cells.every(row => row.some(c => c));
@@ -10399,6 +10463,7 @@ function renderDebrief() {
   if (pct >= 80) scoreClass = 'score-good';
   else if (pct >= 60) scoreClass = 'score-ok';
 
+  // Scoring tier
   let tierClass, tierName, tierDesc;
   if (pct >= 90) {
     tierClass = 'tier-expert'; tierName = '🏆 Expert';
@@ -10455,11 +10520,6 @@ function renderDebrief() {
   `;
 
   app.innerHTML = `<div class="fade-in">${html}</div>`;
-}
-
-// Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 
 // Start
