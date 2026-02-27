@@ -16360,7 +16360,7 @@ window.toggleCell = function(ri, ci) {
 function selectOption(i) {
   if (state.answered) return;
   const q = getFilteredQuestions()[state.questionIndex];
-  if (q.multi_select) {
+  if (q.type === 'mr' || q.multi_select) {
     if (state.selectedOptions.has(i)) state.selectedOptions.delete(i);
     else state.selectedOptions.add(i);
   } else {
