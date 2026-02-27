@@ -196,7 +196,7 @@ body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(
 .domain-chip,.diff-chip{display:inline-block;padding:8px 14px;border-radius:20px;font-size:.85em;cursor:pointer;margin:4px;transition:all .15s;background:rgba(0,240,255,.04);border:1px solid rgba(0,240,255,.1)}
 .domain-chip:active,.diff-chip:active{transform:scale(.95)}
 .domain-chip.selected{background:rgba(0,240,255,.15);border-color:rgba(0,240,255,.4);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
-.diff-chip.selected{background:rgba(255,68,34,.12);border-color:rgba(255,68,34,.35);color:#ff4422;box-shadow:0 0 10px rgba(255,68,34,.12)}
+.diff-chip.selected{background:rgba(0,240,255,.12);border-color:rgba(0,240,255,.35);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
 
 .muted-label{color:#7a8194}
 .hero-title{font-size:1.8em;margin:0 0 6px;color:#00f0ff;text-shadow:0 0 20px rgba(0,240,255,.3);animation:glitch 4s ease-in-out infinite;letter-spacing:1px}
@@ -9878,7 +9878,7 @@ const state = {
   userState: {}
 };
 
-const DOMAINS = ['Airway','Cardiology','Medical','OB/GYN','Operations','Pediatrics','Psychiatry','Resuscitation','Trauma'];
+const DOMAINS = ['Airway & Breathing','Cardiology','Medical Emergencies','Trauma','OB/Peds/Neonatal','Behavioral/Psychiatric','Pharmacology','EMS Operations','Environmental'];
 const DIFFICULTIES = ['Easy','Medium','Hard'];
 
 function getAvailableScenarios() {
@@ -9930,8 +9930,8 @@ function renderHome() {
       <div class="level-cards">
         ${['EMR','EMT','AEMT','Paramedic'].map(l => `
           <div class="card level-card ${state.selectedLevel === l ? 'selected' : ''}" data-level="${l}" onclick="toggleLevel('${l}')">
-            ${l === 'EMR' ? '🩹' : l === 'EMT' ? '🚑' : l === 'AEMT' ? '💉' : '🏥'} ${l}
-            <div class="desc">${l === 'EMR' ? 'First Response' : l === 'EMT' ? 'Basic' : l === 'AEMT' ? 'Advanced' : 'Critical Care'}</div>
+            ${l}
+            <div class="desc">${l === 'EMR' ? 'First Response' : l === 'EMT' ? 'Basic' : l === 'AEMT' ? 'Advanced' : 'Paramedic'}</div>
           </div>
         `).join('')}
       </div>
@@ -9947,13 +9947,13 @@ function renderHome() {
     <div class="home-section">
       <div class="category-header">Difficulty <span style="font-weight:400;font-size:.85em">(optional)</span></div>
       <div style="text-align:center">
-        ${DIFFICULTIES.map(d => `<span class="diff-chip ${state.selectedDifficulties.has(d)?'selected':''}" onclick="toggleDifficulty('${d}')">${d === 'Easy' ? '🟢' : d === 'Medium' ? '🟡' : '🔴'} ${d}</span>`).join('')}
+        ${DIFFICULTIES.map(d => `<span class="diff-chip ${state.selectedDifficulties.has(d)?'selected':''}" onclick="toggleDifficulty('${d}')">${d}</span>`).join('')}
       </div>
     </div>
 
     <div class="counter-text">${avail.length} scenario${avail.length !== 1 ? 's' : ''} available</div>
 
-    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>🎲 Random Scenario</button>
+    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>RANDOM SCENARIO</button>
     
     <div class="browse-link" onclick="state.screen='select';render()">Browse All (${avail.length} available)</div>
     <div style="height:40px"></div>
@@ -10448,7 +10448,7 @@ function renderDebrief() {
   });
 
   html += `
-    <button class="btn btn-primary" onclick="startRandom()" style="margin-top:16px">🎲 Next Random Scenario</button>
+    <button class="btn btn-primary" onclick="startRandom()" style="margin-top:16px">NEXT SCENARIO</button>
     <button class="btn btn-secondary" onclick="startScenario('${s.id}')">🔄 Try Again</button>
     <button class="btn btn-secondary" onclick="state.screen='select';render()">← Choose Another Scenario</button>
     <button class="btn btn-secondary" onclick="state.screen='home';render()">🏠 Home</button>
