@@ -5102,31 +5102,29 @@ const SCENARIOS = [
                                 "prompt": "Place the following steps of managing this patient in the correct order from first to last.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
-                                "narrative": "You are en route to the trauma center. The patient is becoming more anxious and his skin is cool and diaphoretic.",
+                                "narrative": "You have controlled external hemorrhage and note a small evisceration of bowel through the stab wound. The patient is becoming more anxious and his skin is cool and diaphoretic.",
                                 "vitals_update": {
                                         "hr": 124,
                                         "bp": "88/56",
                                         "rr": 26
                                 },
-                                "explanation": "The priority sequence follows the MARCH/PHTLS approach: address life threats, protect the wound, keep the patient warm, and transport rapidly to definitive surgical care.",
+                                "explanation": "With hemorrhage already controlled, the evisceration must be protected immediately — moist sterile dressing prevents desiccation and an occlusive layer prevents further contamination. Positioning supine with knees flexed reduces tension on the abdominal wall. Rapid transport is critical for surgical intervention. IV access and reassessment happen en route — do not delay transport for these.",
                                 "guideline_ref": "PHTLS 10th Ed — Abdominal Trauma; ACS-COT Field Triage Guidelines",
                                 "items": [
-                                        "Ensure scene safety and apply standard precautions/PPE",
-                                        "Perform primary assessment (XABCDE)",
                                         "Cover evisceration with moist sterile dressing and occlusive layer",
                                         "Position patient supine with knees flexed if tolerated",
                                         "Initiate rapid transport to trauma center and keep patient warm",
-                                        "Obtain vitals and secondary assessment en route"
+                                        "Obtain IV access and begin fluid resuscitation en route",
+                                        "Perform ongoing reassessment of vitals and mental status"
                                 ],
                                 "correctOrder": [
                                         0,
                                         1,
                                         2,
                                         3,
-                                        4,
-                                        5
+                                        4
                                 ],
-                                "clinical_pearl": "The priority sequence follows the MARCH/PHTLS approach: address life threats, protect the wound, keep the patient warm, and transport rapidly to definitive surgical care."
+                                "clinical_pearl": "Never attempt to replace eviscerated organs. Keep them moist and covered. This patient needs a surgeon, not a prolonged scene time."
                         },
                         {
                                 "phase": "reassessment",
@@ -5277,7 +5275,7 @@ const SCENARIOS = [
                                 "prompt": "Place the following burn management steps in the correct order from first to last.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT",
-                                "narrative": "You complete your burn care, wrap the patient, and begin transport to the regional burn center. She remains alert but anxious.",
+                                "narrative": "You arrive to find a 34-year-old female with partial and full-thickness burns to her anterior torso and both arms after a kitchen grease fire. She is alert and in significant pain.",
                                 "vitals_update": {
                                         "hr": 100,
                                         "bp": "128/80",
@@ -5816,7 +5814,7 @@ const SCENARIOS = [
                                 "prompt": "Place the following treatment steps in the correct priority order for this blast injury patient.",
                                 "type": "order",
                                 "level_filter": "AEMT-Paramedic",
-                                "narrative": "You stabilize the embedded object, address the pneumothorax, and prepare for rapid transport. The patient remains confused but is following commands.",
+                                "narrative": "You have stabilized the embedded shrapnel and addressed the pneumothorax. The patient remains hemodynamically unstable. Walk through your management priorities.",
                                 "vitals_update": {
                                         "hr": 122,
                                         "bp": "102/64",
@@ -7288,7 +7286,7 @@ const SCENARIOS = [
                                 "prompt": "Place the following steps for managing this hypothermic patient in the correct order.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
-                                "narrative": "Your partner asks you to walk through the management steps for this patient as you continue transport.",
+                                "narrative": "You arrive to find a 72-year-old male unresponsive in an unheated home. Environmental temperature is approximately 45°F. Your partner asks you to walk through the management priorities.",
                                 "items": [
                                         "Ensure scene safety and move patient to a warm environment",
                                         "Gently remove cold/wet clothing",
@@ -7727,7 +7725,7 @@ const SCENARIOS = [
                                 "prompt": "Place the following management priorities for this patient in the correct order.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
-                                "narrative": "You are packaging the patient for transport. Your crew asks for a summary of priorities.",
+                                "narrative": "You arrive on scene to find a 28-year-old male who fell from a ladder after contact with a power line. The power company has been notified. Outline your management priorities.",
                                 "items": [
                                         "Confirm scene safety — ensure power source is disconnected",
                                         "Establish manual in-line cervical spine stabilization",
