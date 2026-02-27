@@ -15227,7 +15227,7 @@ function renderScenario() {
   // Vitals
   if (q.vitals) {
     const v = q.vitals;
-    html += `<div class="narrative"><div class="label">📊 Vitals</div><div class="vitals-grid">
+    html += `<div class="narrative"><div class="label">VITALS</div><div class="vitals-grid">
       ${v.hr ? `<div class="vital"><div class="val mono">${v.hr}</div><div class="lbl">HR</div></div>` : ''}
       ${v.bp ? `<div class="vital"><div class="val mono">${v.bp}</div><div class="lbl">BP</div></div>` : ''}
       ${v.rr ? `<div class="vital"><div class="val mono">${v.rr}</div><div class="lbl">RR</div></div>` : ''}
@@ -15246,7 +15246,7 @@ function renderScenario() {
   // Vitals update box
   if (q.vitals_update && Object.keys(q.vitals_update).length > 0) {
     const vu = q.vitals_update;
-    html += `<div class="vitals-update-box"><div class="label">⚠️ Updated Vitals</div><div class="vitals-grid">
+    html += `<div class="vitals-update-box"><div class="label">UPDATED VITALS</div><div class="vitals-grid">
       ${Object.entries(vu).map(([k, v]) => v ? `<div class="vital"><div class="val mono">${v}</div><div class="lbl">${k.toUpperCase()}</div></div>` : '').join('')}
     </div></div>`;
   }
@@ -15272,7 +15272,7 @@ function renderScenario() {
       }
       html += `<div class="${cls}" onclick="selectOption(${i})">
         <span class="indicator"></span>${opt.text}
-        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">📖 ${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
+        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
       </div>`;
     });
   } else if (qType === 'graphical') {
@@ -15289,7 +15289,7 @@ function renderScenario() {
       html += `<div class="${cls}" onclick="selectOption(${i})">
         ${opt.image_desc ? `<div style="font-size:.8em;color:#7a8194;margin-bottom:4px">${opt.image_desc}</div>` : ''}
         <span class="indicator"></span>${opt.text}
-        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">📖 ${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
+        ${state.answered && opt.explanation ? `<div class="explanation">${opt.explanation}${opt.protocol_ref ? `<span class="ref">${cleanProtocolRef(opt.protocol_ref)}</span>` : ''}</div>` : ''}
       </div>`;
     });
   } else if (qType === 'order') {
@@ -15323,7 +15323,7 @@ function renderScenario() {
       html += `<button class="btn btn-primary" onclick="submitAnswer()" ${state.userState.cells && !state.userState.cells.every(row => row.some(c => c)) ? 'disabled' : ''}>Submit Answer</button>`;
     }
   } else {
-    html += `<button class="btn btn-primary" onclick="nextQuestion()" style="margin-top:16px">${current >= total ? '📊 View Results' : 'Next Question →'}</button>`;
+    html += `<button class="btn btn-primary" onclick="nextQuestion()" style="margin-top:16px">${current >= total ? 'VIEW RESULTS' : 'Next Question →'}</button>`;
   }
 
   html += `<div style="height:40px"></div></div>`;
@@ -15365,7 +15365,7 @@ function renderOrderBody(q) {
     if (q.protocol_ref) {
       const ref = document.createElement('div');
       ref.className = 'explanation';
-      ref.innerHTML = `<span class="ref">📖 ${cleanProtocolRef(q.protocol_ref)}</span>`;
+      ref.innerHTML = `<span class="ref">${cleanProtocolRef(q.protocol_ref)}</span>`;
       body.appendChild(ref);
     }
   }
@@ -15558,7 +15558,7 @@ function renderDebrief() {
     tierClass = 'tier-competent'; tierName = '✅ Competent';
     tierDesc = 'Solid foundation. Review the protocols you missed to strengthen your practice.';
   } else if (pct >= 50) {
-    tierClass = 'tier-developing'; tierName = '📖 Developing';
+    tierClass = 'tier-developing'; tierName = 'Developing';
     tierDesc = "You're building knowledge but need more protocol review before these calls.";
   } else {
     tierClass = 'tier-novice'; tierName = '📚 Building Foundation';
@@ -15568,7 +15568,7 @@ function renderDebrief() {
   const criticalFails = state.answers.filter(a => a.criticalFail).length;
 
   let html = `
-    <h1 style="font-size:1.3em;text-align:center">📊 Scenario Debrief</h1>
+    <h1 style="font-size:1.3em;text-align:center">SCENARIO DEBRIEF</h1>
     <p class="muted-label" style="text-align:center;margin-bottom:16px">${s.title}</p>
     
     <div class="score-circle ${scoreClass}">
