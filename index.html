@@ -11708,31 +11708,35 @@ const SCENARIOS = [
     "questions": [
       {
         "phase": "scene_size_up",
-        "prompt": "You arrive to an active thunderstorm with a pulseless patient on an open field. How does lightning MCI triage differ from standard triage?",
+        "prompt": "You arrive to find a single patient down in an open field during an active thunderstorm with visible lightning. What is your FIRST priority before initiating patient care?",
         "type": "mc",
-        "level_filter": "EMT-AEMT-Paramedic",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
         "options": [
           {
-            "text": "Treat walking wounded first, as in standard START triage",
-            "correct": false
+            "text": "Immediately begin chest compressions where the patient lies",
+            "correct": false,
+            "critical": true,
+            "explanation": "Starting CPR in an open field during an active thunderstorm puts you and your crew at extreme risk of a secondary lightning strike. Scene safety always comes first."
           },
           {
-            "text": "Prioritize pulseless/apneic patients first — 'reverse triage'",
-            "correct": true
+            "text": "Move the patient to a sheltered location before beginning resuscitation",
+            "correct": true,
+            "explanation": "With an active thunderstorm and visible lightning, the open field is an immediate danger zone. Lightning strike victims do not carry an electrical charge — they are safe to touch. Rapidly relocate to a hard-topped vehicle or structure, then begin resuscitation."
           },
           {
-            "text": "Tag all lightning victims as Expectant due to high mortality",
-            "correct": false
+            "text": "Wait in the ambulance until the storm passes, then assess the patient",
+            "correct": false,
+            "explanation": "While scene safety is critical, a pulseless patient cannot wait for the storm to pass. A rapid move to shelter followed by immediate resuscitation gives the best chance of survival."
           },
           {
-            "text": "No difference from standard MCI triage protocols",
-            "correct": false
+            "text": "Check for a pulse first to determine if resuscitation is needed before moving",
+            "correct": false,
+            "explanation": "A quick pulse check takes seconds, but lingering in the open field during active lightning puts the entire crew at risk. The priority is relocating to safety — assessment and resuscitation begin immediately after."
           }
         ],
-        "explanation": "Lightning MCI uses 'reverse triage' — the opposite of normal MCI protocol. Patients who appear dead (pulseless/apneic) are treated FIRST because lightning-induced cardiac arrest is often reversible with immediate CPR and defibrillation. Those who are breathing will likely survive without immediate intervention.",
-        "guideline_ref": "AHA/ILCOR Guidelines for CPR and ECC – Special Circumstances: Lightning Strike (2020)",
-        "clinical_pearl": "Lightning causes simultaneous cardiac and respiratory arrest. The heart may restart spontaneously, but respiratory arrest often persists longer. Without ventilatory support, the patient re-arrests from hypoxia — this is why aggressive airway management is critical.",
-        "critical": true
+        "explanation": "Scene safety is the absolute first priority. Lightning strike victims are safe to handle (they carry no residual charge), so rapid relocation to shelter is both safe and necessary. Lightning-induced cardiac arrest is highly reversible with prompt CPR and defibrillation, making rapid intervention after reaching safety critical.",
+        "guideline_ref": "AHA/ILCOR Guidelines — Special Circumstances: Lightning Strike (2020)",
+        "clinical_pearl": "Lightning strike victims do NOT carry an electrical charge — it is always safe to touch them immediately. Unlike high-voltage electrical injuries, there is no risk of secondary shock to rescuers from the patient."
       },
       {
         "phase": "treatment",
