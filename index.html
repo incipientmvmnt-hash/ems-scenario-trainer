@@ -9973,7 +9973,7 @@ function getAvailableScenarios() {
   return SCENARIOS.filter(s => {
     const minLevel = levelOrder[s.level_min] || 1;
     if (userLevel < minLevel) return false;
-    if (state.domains.size > 0 && s.domain && !state.domains.has(s.domain)) return false;
+    if (state.domains.size > 0 && s.category && !state.domains.has(s.category)) return false;
     return true;
   });
 }
