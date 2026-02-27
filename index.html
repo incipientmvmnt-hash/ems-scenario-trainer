@@ -15927,9 +15927,16 @@ const DOMAINS = ['Airway & Breathing','Cardiology','Medical Emergencies','Trauma
 const DIFFICULTIES = ['Easy','Medium','Hard'];
 
 function getAvailableScenarios() {
+  const levelOrder = {EMR:1, EMT:2, AEMT:3, Paramedic:4};
   let s = SCENARIOS;
-  if (state.selectedLevel) s = s.filter(sc => sc.level === state.selectedLevel);
-  if (state.selectedDomains.size > 0) s = s.filter(sc => sc.domains && sc.domains.some(d => state.selectedDomains.has(d)));
+  if (state.selectedLevel) {
+    const userLevel = levelOrder[state.selectedLevel] || 1;
+    s = s.filter(sc => {
+      const minLevel = levelOrder[sc.level_min] || 1;
+      return userLevel >= minLevel;
+    });
+  }
+  if (state.selectedDomains.size > 0) s = s.filter(sc => sc.category && state.selectedDomains.has(sc.category));
   if (state.selectedDifficulties.size > 0) s = s.filter(sc => state.selectedDifficulties.has(sc.difficulty));
   return s;
 }
