@@ -16111,7 +16111,6 @@ function renderScenario() {
 
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-    <p class="muted-label" style="font-size:.85em;margin-bottom:4px">${s.title}</p>
     <div class="progress-bar">
       ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
     </div>`;
