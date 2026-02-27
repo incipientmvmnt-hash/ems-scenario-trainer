@@ -193,7 +193,7 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(0,80,120,.15);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 
 /* Domain & Difficulty chips */
-.domain-chip,.diff-chip{display:inline-block;padding:8px 14px;border-radius:20px;font-size:.85em;cursor:pointer;margin:4px;transition:all .15s;background:rgba(0,240,255,.04);border:1px solid rgba(0,240,255,.1)}
+.domain-chip,.diff-chip{display:inline-block;padding:8px 14px;border-radius:20px;font-size:.85em;cursor:pointer;margin:4px;transition:all .15s;background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.15);color:rgba(255,255,255,.8)}
 .domain-chip:active,.diff-chip:active{transform:scale(.95)}
 .domain-chip.selected{background:rgba(0,240,255,.15);border-color:rgba(0,240,255,.4);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
 .diff-chip.selected{background:rgba(0,240,255,.12);border-color:rgba(0,240,255,.35);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
@@ -9937,25 +9937,25 @@ function renderHome() {
       </div>
     </div>
 
-    <div class="home-section">
-      <div class="category-header">Domain Filter <span style="font-weight:400;font-size:.85em">(optional)</span></div>
-      <div style="text-align:center">
-        ${DOMAINS.map(d => `<span class="domain-chip ${state.selectedDomains.has(d)?'selected':''}" onclick="toggleDomain('${d}')">${d}</span>`).join('')}
-      </div>
-    </div>
+    <div class="counter-text">${avail.length} scenario${avail.length !== 1 ? 's' : ''} available</div>
 
-    <div class="home-section">
+    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>RANDOM SCENARIO</button>
+    
+    <div class="browse-link" onclick="state.screen='select';render()">Browse All (${avail.length} available)</div>
+
+    <div class="home-section" style="margin-top:24px">
       <div class="category-header">Difficulty <span style="font-weight:400;font-size:.85em">(optional)</span></div>
       <div style="text-align:center">
         ${DIFFICULTIES.map(d => `<span class="diff-chip ${state.selectedDifficulties.has(d)?'selected':''}" onclick="toggleDifficulty('${d}')">${d}</span>`).join('')}
       </div>
     </div>
 
-    <div class="counter-text">${avail.length} scenario${avail.length !== 1 ? 's' : ''} available</div>
-
-    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>RANDOM SCENARIO</button>
-    
-    <div class="browse-link" onclick="state.screen='select';render()">Browse All (${avail.length} available)</div>
+    <div class="home-section">
+      <div class="category-header">Domain Filter <span style="font-weight:400;font-size:.85em">(optional)</span></div>
+      <div style="text-align:center">
+        ${DOMAINS.map(d => `<span class="domain-chip ${state.selectedDomains.has(d)?'selected':''}" onclick="toggleDomain('${d}')">${d}</span>`).join('')}
+      </div>
+    </div>
     <div style="height:40px"></div>
   </div>`;
   app.innerHTML = html;
