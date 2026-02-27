@@ -16511,6 +16511,15 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 
+// Expose to onclick handlers
+window.selectOption = selectOption;
+window.submitAnswer = submitAnswer;
+window.nextQuestion = nextQuestion;
+window.render = render;
+window.renderHome = renderHome;
+window.renderScenario = renderScenario;
+window.renderDebrief = renderDebrief;
+
 // Start
 render();
 </script>
