@@ -495,7 +495,25 @@ function showDashboard() {
   });
 }
 window.showDashboard = showDashboard;
-function trainDomain(d) { state.selectedDomains = new Set([d]); state.screen = 'home'; render(); }
+function trainDomain(d) {
+  state.selectedDomains = new Set([d]);
+  state.selectedLevel = null;
+  state.selectedDifficulties = new Set();
+  var avail = SCENARIOS.filter(function(s) { return s.category === d; });
+  if (avail.length > 0) {
+    var s = avail[Math.floor(Math.random() * avail.length)];
+    state.currentScenario = s;
+    state.questionIndex = 0;
+    state.answered = false;
+    state.selectedOptions = new Set();
+    state.answers = [];
+    state.screen = 'scenario';
+    render();
+  } else {
+    state.screen = 'home';
+    render();
+  }
+}
 window.trainDomain = trainDomain;
 // ===== END SUPABASE AUTH =====
 
