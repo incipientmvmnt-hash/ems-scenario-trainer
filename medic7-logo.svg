@@ -28,9 +28,6 @@
   <!-- MEDIC -->
   <text x="195" y="92" text-anchor="middle" font-family="'SF Pro Display', -apple-system, 'Inter', 'Helvetica Neue', sans-serif" font-size="96" font-weight="900" letter-spacing="6" fill="url(#cg)" filter="url(#cgl)">MEDIC</text>
   
-  <!-- Lightning bolt 7 -->
-  <g transform="translate(390, 8)" filter="url(#rgl)">
-    <path d="M 30 0 L 105 0 L 100 8 L 55 8 L 85 44 L 62 44 L 28 100 L 42 52 L 22 52 L 50 8 L 35 8 Z" fill="url(#rg)"/>
-    <path d="M 30 0 L 105 0 L 100 8 L 55 8 L 85 44 L 62 44 L 28 100 L 42 52 L 22 52 L 50 8 L 35 8 Z" fill="none" stroke="#ff6644" stroke-width="0.5" stroke-opacity="0.5"/>
-  </g>
+  <!-- 7 as a recognizable numeral with angular/lightning style -->
+  <text x="400" y="94" font-family="'SF Pro Display', -apple-system, 'Inter', 'Helvetica Neue', sans-serif" font-size="104" font-weight="900" font-style="italic" fill="url(#rg)" filter="url(#rgl)">7</text>
 </svg>
