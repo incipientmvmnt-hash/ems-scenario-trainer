@@ -30978,8 +30978,7 @@ function renderScenario() {
   // Render based on type
   if (qType === 'mc' || qType === 'mr') {
     if (q.multi_select || qType === 'mr') {
-      const correctCount = q.options.filter(o => o.correct).length;
-      html += `<div class="multi-hint">Select all that apply (${correctCount} correct)</div>`;
+      html += `<div class="multi-hint">Select all that apply</div>`;
     }
     q.options.forEach((opt, i) => {
       let cls = 'option';
