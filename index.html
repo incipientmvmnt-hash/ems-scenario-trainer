@@ -31619,7 +31619,6 @@ window.renderScenario = renderScenario;
 window.renderDebrief = renderDebrief;
 
 // Start
-try { render(); } catch(e) { document.getElementById('app').innerHTML = '<p style="color:red;padding:20px">Error: ' + e.message + '</p>'; }
-window.onerror = function(msg, url, line) { document.getElementById('app').innerHTML = '<p style="color:red;padding:20px">JS Error: ' + msg + ' (line ' + line + ')</p>'; };
+render();
 </script>
 </body></html>
