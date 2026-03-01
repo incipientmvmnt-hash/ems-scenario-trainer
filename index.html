@@ -17,10 +17,8 @@ body{font-family:-apple-system,SF Pro,Inter,system-ui,sans-serif;background:#060
   padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   touch-action:pan-y;min-height:100dvh}
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;
-  background:radial-gradient(ellipse at 50% 0%,rgba(0,240,255,.06) 0%,transparent 60%),
-  radial-gradient(ellipse at 80% 100%,rgba(255,68,34,.04) 0%,transparent 50%)}
-body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,240,255,.025) 2px,rgba(0,240,255,.025) 4px)}
+  background:radial-gradient(ellipse at 50% 0%,rgba(0,240,255,.03) 0%,transparent 60%)}
+body::after{display:none}
 @keyframes borderPulse{0%,100%{border-color:rgba(0,240,255,.3)}50%{border-color:rgba(0,240,255,.5)}}
 @keyframes neonPulse{0%,100%{box-shadow:0 0 15px rgba(0,240,255,.15),0 0 30px rgba(0,240,255,.05)}50%{box-shadow:0 0 20px rgba(0,240,255,.25),0 0 40px rgba(0,240,255,.1)}}
 .mono{font-family:'JetBrains Mono','Fira Code','Courier New',monospace}
@@ -68,21 +66,21 @@ body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointe
 }
 h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 .subtitle{text-align:center;color:#9aa0b0;margin-bottom:24px;font-size:.95em}
-.card{background:linear-gradient(135deg,rgba(8,14,25,.8),rgba(12,18,30,.9));border-radius:12px;padding:16px;margin-bottom:12px;transition:all .3s;cursor:pointer;border:1px solid rgba(0,240,255,.35);box-shadow:0 0 12px rgba(0,240,255,.1),0 0 30px rgba(0,240,255,.03);animation:borderPulse 4s ease-in-out infinite}
+.card{background:rgba(255,255,255,.04);border-radius:12px;padding:16px;margin-bottom:12px;transition:all .2s;cursor:pointer;border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .card:active{transform:scale(.98)}
-.card.selected{border-color:#00f0ff;box-shadow:0 0 20px rgba(0,240,255,.25)}
+.card.selected{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.08)}
 .level-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
-.level-card{text-align:center;padding:16px 12px;font-weight:600;font-size:1em;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
-.level-card .desc{font-size:.7em;font-weight:400;color:#9aa0b0;margin-top:4px}
-.level-card[data-level="EMR"]{border-color:rgba(0,240,255,.25);color:#9aa0b0}
-.level-card[data-level="EMR"].selected{background:rgba(0,240,255,.08);border-color:#00f0ff;color:#00f0ff;box-shadow:0 0 20px rgba(0,240,255,.3),0 0 40px rgba(0,240,255,.08)}
-.level-card[data-level="EMT"]{border-color:rgba(240,173,78,.25);color:#f0ad4e}
-.level-card[data-level="EMT"].selected{background:rgba(240,173,78,.1);border-color:#f0ad4e;box-shadow:0 0 20px rgba(240,173,78,.3),0 0 40px rgba(240,173,78,.08)}
-.level-card[data-level="AEMT"]{border-color:rgba(52,199,89,.25);color:#34c759}
-.level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.1);border-color:#34c759;box-shadow:0 0 20px rgba(52,199,89,.3),0 0 40px rgba(52,199,89,.08)}
-.level-card[data-level="Paramedic"]{border-color:rgba(255,68,34,.25);color:#ff4422}
-.level-card[data-level="Paramedic"].selected{background:rgba(255,68,34,.1);border-color:#ff4422;box-shadow:0 0 20px rgba(255,68,34,.3),0 0 40px rgba(255,68,34,.08)}
-.level-card:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(0,240,255,.15)}
+.level-card{text-align:center;padding:16px 12px;font-weight:600;font-size:1em;clip-path:none;border-radius:12px}
+.level-card .desc{font-size:.65em;font-weight:400;color:rgba(255,255,255,.3);margin-top:4px;letter-spacing:.5px}
+.level-card[data-level="EMR"]{color:rgba(255,255,255,.5)}
+.level-card[data-level="EMR"].selected{background:rgba(0,240,255,.08);border-color:rgba(0,240,255,.3);color:#00f0ff}
+.level-card[data-level="EMT"]{color:#f0ad4e}
+.level-card[data-level="EMT"].selected{background:rgba(240,173,78,.08);border-color:rgba(240,173,78,.3)}
+.level-card[data-level="AEMT"]{color:#34c759}
+.level-card[data-level="AEMT"].selected{background:rgba(52,199,89,.08);border-color:rgba(52,199,89,.3)}
+.level-card[data-level="Paramedic"]{color:#ff4422}
+.level-card[data-level="Paramedic"].selected{background:rgba(255,68,34,.08);border-color:rgba(255,68,34,.3)}
+.level-card:hover{transform:translateY(-1px)}
 .btn{display:block;width:100%;padding:14px;border:none;border-radius:12px;font-size:1em;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-top:12px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:rgba(0,240,255,.08);color:#00f0ff;border:1px solid rgba(0,240,255,.5);box-shadow:0 0 15px rgba(0,240,255,.15),0 0 30px rgba(0,240,255,.05);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
@@ -91,7 +89,7 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 .btn-primary:disabled{background:rgba(30,30,40,.5);color:#555;cursor:not-allowed;border-color:#333;box-shadow:none}
 .btn-secondary{background:rgba(255,68,34,.08);color:#ff4422;border:1px solid rgba(255,68,34,.25);box-shadow:0 0 12px rgba(255,68,34,.1)}
 .btn-small{display:inline-block;width:auto;padding:8px 16px;font-size:.9em;margin:4px}
-.btn-random{background:linear-gradient(135deg,rgba(0,240,255,.12),rgba(255,68,34,.12));color:#fff;border:1px solid rgba(0,240,255,.5);box-shadow:0 0 20px rgba(0,240,255,.2),0 0 40px rgba(0,240,255,.06),0 0 20px rgba(255,68,34,.1);font-size:1.15em;padding:18px;margin-top:16px;text-transform:uppercase;letter-spacing:3px;font-weight:700;animation:neonPulse 3s ease-in-out infinite;position:relative;overflow:hidden}
+.btn-random{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:1em;padding:16px;margin-top:20px;text-transform:uppercase;letter-spacing:4px;font-weight:600;position:relative;overflow:hidden;border-radius:14px;transition:all .2s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .btn-random::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,240,255,.1),transparent);transition:left .5s}
 .btn-random:hover::before{left:100%}
 .btn-random:hover{box-shadow:0 0 30px rgba(0,240,255,.4),0 0 60px rgba(0,240,255,.12),0 0 30px rgba(255,68,34,.15);border-color:#00f0ff;transform:translateY(-2px)}
@@ -139,7 +137,7 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 .tag-medium{background:rgba(240,173,78,.15);color:#f0ad4e;border:1px solid rgba(240,173,78,.3)}
 .tag-hard{background:rgba(255,68,34,.15);color:#ff4422;border:1px solid rgba(255,68,34,.3)}
 .tag-proto{background:rgba(0,240,255,.1);color:#00f0ff;border:1px solid rgba(0,240,255,.3)}
-.category-header{color:#9aa0b0;font-size:.8em;font-weight:600;text-transform:uppercase;margin:16px 0 8px;letter-spacing:.5px}
+.category-header{color:rgba(255,255,255,.35);font-size:.7em;font-weight:500;text-transform:uppercase;margin:16px 0 10px;letter-spacing:1.5px}
 .scenario-item{display:flex;justify-content:space-between;align-items:center}
 .scenario-item .title{font-weight:500;font-size:.95em}
 .scenario-item .tags{margin-top:4px}
@@ -209,7 +207,7 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(0,80,120,.15);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 
 /* Domain & Difficulty chips */
-.domain-chip,.diff-chip{display:block;padding:10px 12px;border-radius:10px;font-size:.8em;cursor:pointer;transition:all .15s;background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.15);color:rgba(255,255,255,.8);text-align:center}
+.domain-chip,.diff-chip{display:block;padding:10px 12px;border-radius:10px;font-size:.8em;cursor:pointer;transition:all .15s;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.7);text-align:center}
 .domain-chip:active,.diff-chip:active{transform:scale(.95)}
 .domain-chip.selected{background:rgba(0,240,255,.15);border-color:rgba(0,240,255,.4);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
 .diff-chip.selected{background:rgba(0,240,255,.12);border-color:rgba(0,240,255,.35);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
@@ -218,7 +216,7 @@ body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(
 .hero-title{font-size:2em;margin:0 0 6px;color:#00f0ff;text-shadow:0 0 10px rgba(0,240,255,.6),0 0 30px rgba(0,240,255,.3),0 0 60px rgba(0,240,255,.15);animation:glitch 4s ease-in-out infinite;letter-spacing:2px;font-weight:800}
 .hero-sub{color:#9aa0b0;font-size:.9em;margin:0;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;letter-spacing:.5px}
 .stat-divider{width:1px;background:rgba(0,240,255,.15)}
-.home-section{background:linear-gradient(135deg,rgba(8,14,25,.7),rgba(12,18,30,.8));border:1px solid rgba(0,240,255,.25);border-radius:16px;padding:20px;margin-bottom:24px;box-shadow:0 0 20px rgba(0,240,255,.06),0 0 40px rgba(0,240,255,.02)}
+.home-section{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px;margin-bottom:16px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 
 /* ===== Light Mode ===== */
 body.light-mode{background:#f5f7fa;color:#1a1a2e}
@@ -15496,15 +15494,15 @@ function renderHome() {
   
   let html = `<div class="fade-in" style="padding-top:20px;">
     <div style="text-align:center;margin-bottom:32px">
-      <img src="medic7-logo.jpg" alt="MEDIC7" style="max-width:320px;width:90%;height:auto;margin:0 auto;display:block;mix-blend-mode:lighten;filter:drop-shadow(0 0 20px rgba(0,240,255,.3))">
-      <p class="hero-sub" style="margin-top:4px;letter-spacing:2px;font-size:.7em;text-transform:uppercase;color:rgba(0,240,255,.6)">EMS Scenario Trainer</p>
-      <p class="hero-sub">NREMT-style clinical scenarios</p>
-      <div class="stats-row">
-        <div style="text-align:center"><div class="stat-num">${totalScenarios}</div><div class="muted-label" style="font-size:.75em">Scenarios</div></div>
-        <div class="stat-divider"></div>
-        <div style="text-align:center"><div class="stat-num">${totalQuestions}</div><div class="muted-label" style="font-size:.75em">Questions</div></div>
-        <div class="stat-divider"></div>
-        <div style="text-align:center"><div class="stat-num">4</div><div class="muted-label" style="font-size:.75em">Levels</div></div>
+      <img src="medic7-logo.jpg" alt="MEDIC7" style="max-width:280px;width:80%;height:auto;margin:0 auto 24px;display:block;mix-blend-mode:lighten">
+      <p style="margin:0 0 4px;letter-spacing:3px;font-size:.65em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500">EMS Scenario Trainer</p>
+      <p style="margin:0 0 28px;font-size:.85em;color:rgba(255,255,255,.35);font-weight:300">NREMT-style clinical scenarios</p>
+      <div style="display:flex;justify-content:center;gap:32px">
+        <div style="text-align:center"><div style="font-size:1.6em;font-weight:700;color:#fff;font-family:'JetBrains Mono','Fira Code',monospace">${totalScenarios}</div><div style="font-size:.65em;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;margin-top:2px">Scenarios</div></div>
+        <div style="width:1px;background:rgba(255,255,255,.08)"></div>
+        <div style="text-align:center"><div style="font-size:1.6em;font-weight:700;color:#fff;font-family:'JetBrains Mono','Fira Code',monospace">${totalQuestions}</div><div style="font-size:.65em;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;margin-top:2px">Questions</div></div>
+        <div style="width:1px;background:rgba(255,255,255,.08)"></div>
+        <div style="text-align:center"><div style="font-size:1.6em;font-weight:700;color:#fff;font-family:'JetBrains Mono','Fira Code',monospace">4</div><div style="font-size:.65em;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;margin-top:2px">Levels</div></div>
       </div>
     </div>
 
