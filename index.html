@@ -225,6 +225,8 @@ body.light-mode .subtitle,body.light-mode .vital .lbl,body.light-mode .level-car
 body.light-mode .vital .val{color:#1a5276}
 body.light-mode .card,body.light-mode .narrative,body.light-mode .option,body.light-mode .review-item{background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(0,80,120,.1);box-shadow:0 2px 8px rgba(0,0,0,.06);color:#1a1a2e!important}
 body.light-mode .narrative *,body.light-mode .option *{color:inherit}
+.scene-text{color:rgba(255,255,255,.7)}
+body.light-mode .scene-text{color:rgba(0,0,0,.7)!important}
 body.light-mode .vital{background:rgba(255,255,255,.7);border-color:rgba(0,80,120,.1);box-shadow:0 2px 8px rgba(0,0,0,.06)}
 body.light-mode .explanation{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08);color:#4a4a5a}
 body.light-mode .explanation .ref{color:#1a5276}
@@ -15652,7 +15654,7 @@ function renderScenario() {
     html += `<div class="narrative" style="border-left:3px solid #ff4422;margin-bottom:16px">
       <div class="label" style="color:#ff4422;font-weight:700">DISPATCH</div>
       <div style="font-size:1em;font-weight:600;margin-bottom:8px">${s.dispatch}</div>
-      <div style="font-size:.85em;color:rgba(255,255,255,.7);margin-bottom:10px">${s.scene}</div>
+      <div class="scene-text" style="font-size:.85em;margin-bottom:10px">${s.scene}</div>
       <div style="font-size:.8em;margin-bottom:6px"><strong style="color:#00f0ff">Hx:</strong> ${s.history?.pmh || 'Unknown'}</div>
       <div style="font-size:.8em;margin-bottom:6px"><strong style="color:#00f0ff">Meds:</strong> ${s.history?.meds || 'Unknown'}</div>
       <div style="font-size:.8em;margin-bottom:10px"><strong style="color:#00f0ff">Allergies:</strong> ${s.history?.allergies || 'NKDA'}</div>
