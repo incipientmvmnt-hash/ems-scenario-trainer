@@ -9003,10 +9003,9 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines — Post-Intubation Management; DOPE Mnemonic"
                                         },
                                         {
-                                                "text": "Displacement, Obstruction, Pneumothorax, Equipment",
+                                                "text": "Drugs, Oxygen, Pressure, Electrolytes",
                                                 "correct": false,
-                                                "critical": true,
-                                                "explanation": "Jumping to needle decompression without first ruling out simpler causes (displaced tube, kinked tubing, vent malfunction) is dangerous. Needle decompression on a patient who does not have a pneumothorax carries risk of iatrogenic injury. Follow the systematic approach.",
+                                                "explanation": "This is not a recognized mnemonic for ventilator troubleshooting. The DOPE mnemonic (Displacement, Obstruction, Pneumothorax, Equipment) systematically addresses the most common causes of acute deterioration in intubated patients.",
                                                 "guideline_ref": "AHA ACLS Guidelines — Post-Intubation Troubleshooting"
                                         },
                                         {
@@ -9016,10 +9015,9 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines — DOPE Mnemonic"
                                         },
                                         {
-                                                "text": "Displacement, Obstruction, Pneumothorax, Equipment",
+                                                "text": "Deterioration, Oxygenation, Perfusion, Evaluation",
                                                 "correct": false,
-                                                "critical": true,
-                                                "explanation": "Increasing ventilator pressure against an obstruction or into a tension pneumothorax can be fatal. Higher pressures could worsen a pneumothorax or cause barotrauma. Always disconnect and assess before adjusting the ventilator.",
+                                                "explanation": "While these concepts are relevant to patient assessment, they do not represent the DOPE mnemonic. DOPE stands for Displacement, Obstruction, Pneumothorax, and Equipment failure — the four most common reversible causes of sudden deterioration in an intubated patient.",
                                                 "guideline_ref": "AHA ACLS Guidelines — Ventilator Management; Barotrauma Prevention"
                                         }
                                 ]
@@ -9990,12 +9988,12 @@ const SCENARIOS = [
                                         "Both Drug Classes"
                                 ],
                                 "correctCategories": [
-                                        "Both Drug Classes",
-                                        "Both Drug Classes",
-                                        "Primarily Beta-Blocker Effect",
+                                        2,
+                                        2,
+                                        0,
                                         1,
-                                        "Both Drug Classes",
-                                        "Primarily Calcium Channel Blocker Effect"
+                                        2,
+                                        1
                                 ],
                                 "explanation": "Both drug classes cause bradycardia, hypotension, and decreased contractility through different mechanisms. Bronchospasm and hyperglycemia (masked hypoglycemia) are beta-blocker-specific effects. Peripheral vasodilation is primarily a CCB effect (especially dihydropyridines like amlodipine).",
                                 "guideline_ref": "ACMT Position Statement on Beta-Blocker and Calcium Channel Blocker Toxicity (2023); AHA ACLS Toxicology Guidelines",
@@ -12307,19 +12305,19 @@ const SCENARIOS = [
                                                 "explanation": "This is correct. Atrial fibrillation with rapid ventricular response aligns with current evidence-based guidelines and established clinical practice for this presentation."
                                         },
                                         {
-                                                "text": "A systolic blood pressure reading above 200 mmHg on initial assessment, regardless of symptoms",
+                                                "text": "Supraventricular tachycardia with a regular rate",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Supraventricular tachycardia (SVT) does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "SVT typically presents as a regular narrow-complex tachycardia, whereas this rhythm is irregularly irregular with no P waves — the hallmark of atrial fibrillation."
                                         },
                                         {
-                                                "text": "The patient being over 50 years of age with any degree of elevated blood pressure on assessment",
+                                                "text": "Ventricular tachycardia with an irregular pattern",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Ventricular tachycardia does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Ventricular tachycardia typically presents as a wide-complex tachycardia. This rhythm shows narrow QRS complexes with an irregularly irregular pattern and absent P waves, consistent with atrial fibrillation."
                                         },
                                         {
-                                                "text": "Having a documented history of chronic kidney disease at any stage, with elevated blood pressure",
+                                                "text": "Sinus tachycardia with premature atrial contractions",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Sinus tachycardia does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Sinus tachycardia is a regular rhythm with identifiable P waves before each QRS complex. This rhythm lacks discernible P waves and is irregularly irregular, which distinguishes atrial fibrillation from sinus tachycardia with PACs."
                                         }
                                 ],
                                 "explanation": "An irregularly irregular narrow-complex tachycardia without P waves is the hallmark of atrial fibrillation. The rate of 156 qualifies as rapid ventricular response (RVR), typically defined as >100 bpm.",
@@ -12433,17 +12431,17 @@ const SCENARIOS = [
                                         {
                                                 "text": "Cushing's triad",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. A systolic blood pressure above 200 mmHg does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Cushing's triad (hypertension, bradycardia, irregular respirations) is a sign of increased intracranial pressure, not a distinguishing feature between hypertensive emergency and urgency. The key distinction is the presence of end-organ damage."
                                         },
                                         {
                                                 "text": "Virchow's triad",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. The patient being over 50 years of age does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Virchow's triad (stasis, hypercoagulability, endothelial injury) relates to venous thromboembolism risk factors, not hypertensive classification. Hypertensive emergency is defined by acute end-organ damage, regardless of the specific BP reading."
                                         },
                                         {
                                                 "text": "Charcot's triad",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Having a history of chronic kidney disease does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Charcot's triad (fever, jaundice, right upper quadrant pain) is associated with ascending cholangitis. The distinction between hypertensive emergency and urgency depends on evidence of end-organ damage, not on specific named triads."
                                         }
                                 ],
                                 "explanation": "Hypertensive emergency is defined by severely elevated BP WITH evidence of acute end-organ damage. This patient shows neurological symptoms (headache, confusion, visual changes) suggesting hypertensive encephalopathy. The BP number alone does not define the emergency.",
@@ -12782,19 +12780,19 @@ const SCENARIOS = [
                                                 "explanation": "This is correct. Normal fetal heart rate is 120-160 bpm; a rate of 95 suggests fetal distress and reinforces the need for rapid transport aligns with current evidence-based guidelines and established clinical practice for this presentation."
                                         },
                                         {
-                                                "text": "Increase the albuterol nebulizer dose and continue ongoing monitoring",
+                                                "text": "A fetal heart rate of 95 bpm is within normal limits for a stressed fetus and does not require any change in management",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Fetal heart rate monitoring is unreliable in the field and should not influence transport decisions does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Normal fetal heart rate is 120-160 bpm. A rate of 95 bpm represents fetal bradycardia and is a sign of significant fetal distress, likely from decreased placental perfusion due to abruption."
                                         },
                                         {
-                                                "text": "Switch to blow-by oxygen delivery since the child appears tired and needs to rest without a tight-fitting mask on his face",
+                                                "text": "Administer a second IV fluid bolus and reassess fetal heart tones before making transport decisions",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. A fetal heart rate under 100 is normal during the third trimester at rest does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "While fluid resuscitation is important, fetal bradycardia in the setting of placental abruption indicates the need for emergent surgical delivery. Delaying transport to reassess could worsen outcomes for both mother and fetus."
                                         },
                                         {
-                                                "text": "Perform immediate endotracheal intubation with rapid sequence induction medications to secure the airway definitively now",
+                                                "text": "Place the patient supine to improve uterine blood flow and recheck the fetal heart rate",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Administer terbutaline to improve fetal heart rate does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Supine positioning in late pregnancy causes aortocaval compression, which would further compromise uterine perfusion. Left lateral tilt should be maintained. The fetal bradycardia reinforces the need for immediate transport to definitive OB surgical care."
                                         }
                                 ],
                                 "explanation": "Normal fetal heart rate is 120-160 bpm. Fetal bradycardia (<110 bpm) indicates distress, likely from decreased placental perfusion. While prehospital Doppler is not continuous fetal monitoring, a persistently low rate is a critical finding that reinforces urgent transport. Terbutaline is a tocolytic that may be used for acute tocolysis but does not treat the underlying cause of fetal bradycardia from abruption.",
@@ -12853,14 +12851,14 @@ const SCENARIOS = [
                                                 "explanation": "This is correct. SpO2 remaining below 90% despite supplemental oxygen aligns with current evidence-based guidelines and established clinical practice for this presentation."
                                         },
                                         {
-                                                "text": "Administer epinephrine immediately because the neonatal heart rate is below the normal threshold of 100 bpm",
+                                                "text": "Respiratory rate of 36 with audible expiratory wheezing on auscultation",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Respiratory rate of 36 with audible wheezing does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "While tachypnea and wheezing indicate ongoing bronchospasm, audible wheezing actually suggests air is still moving through the airways. Loss of wheezing with continued respiratory distress (silent chest) is more concerning for impending respiratory failure."
                                         },
                                         {
-                                                "text": "Stop all interventions and perform aggressive deep oropharyngeal suctioning to clear all visible meconium first",
+                                                "text": "Heart rate of 148 with good capillary refill and strong distal pulses",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. Heart rate of 148 does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
+                                                "explanation": "Tachycardia with good perfusion is an expected compensatory response to respiratory distress and bronchodilator therapy. This represents appropriate physiologic compensation, not respiratory failure. Concerning signs would include bradycardia, poor perfusion, or altered mental status."
                                         }
                                 ],
                                 "explanation": "The 'silent chest' — decreasing wheezing despite continued distress — indicates air movement is critically reduced and is an ominous sign. Altered mentation signals hypoxia or hypercapnia. Persistent hypoxemia despite oxygen indicates severe bronchospasm. Tachycardia and tachypnea with audible wheezing, while concerning, are expected in a moderate-severe exacerbation and don't alone signal imminent failure.",
@@ -29983,11 +29981,11 @@ const SCENARIOS = [
 								"Hemorrhagic Shock"
 						],
 						"correctCategories": [
-								1,
-								0,
 								0,
 								1,
-								0
+								1,
+								0,
+								1
 						],
 						"explanation": "Unequal pupils (anisocoria) with sluggish reactivity is a classic sign of uncal herniation from rising intracranial pressure — a TBI indicator. Tachycardia with weak pulses, delayed capillary refill with cool/pale skin, and narrowing pulse pressure with dropping BP are all indicators of hemorrhagic shock from blood loss. Repetitive questioning and disproportionate confusion suggest altered mentation from TBI rather than pure hypovolemia, as hemorrhagic shock patients typically remain oriented until late stages.",
 						"guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury and Hemorrhagic Shock; National EMS Education Standards — Trauma",
