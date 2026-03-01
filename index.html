@@ -366,10 +366,7 @@ initTheme();
 // ===== SUPABASE INIT =====
 const SUPABASE_URL = 'https://syomwtowczbifyiledmg.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo';
-let supabase = null;
-try {
-  supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-} catch(e) { console.warn('Supabase init failed:', e); }
+const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
 const authState = {
   user: null,
