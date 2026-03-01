@@ -7,8 +7,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0a0a0f">
 <title>MEDIC7 — EMS Scenario Trainer</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
@@ -277,49 +275,6 @@ body.light-mode .domain-chip.selected{background:rgba(0,100,150,.08);border-colo
 body.light-mode .diff-chip.selected{background:rgba(200,80,50,.06);border-color:rgba(200,80,50,.25);color:#c04540}
 body.light-mode .counter-text{color:#1a5276}
 body.light-mode .stat-num{color:#1a5276}
-
-/* Auth & Pro styles */
-.auth-bar{display:flex;align-items:center;gap:8px;margin-bottom:12px;justify-content:flex-end;padding-right:48px}
-.auth-bar .user-info{font-size:.75em;color:#9aa0b0;font-family:'JetBrains Mono',monospace}
-.auth-bar .pro-badge{display:inline-block;background:linear-gradient(135deg,#ff4422,#ff8800);color:#fff;font-size:.6em;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;margin-left:4px}
-.auth-bar button{background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer;font-family:'JetBrains Mono',monospace}
-.auth-bar button:hover{background:rgba(0,240,255,.1)}
-.auth-bar .dash-link{color:#ff4422;border-color:rgba(255,68,34,.3)}
-.auth-bar .dash-link:hover{background:rgba(255,68,34,.1)}
-body.light-mode .auth-bar .user-info{color:#6b7280}
-body.light-mode .auth-bar button{color:#1a5276;border-color:rgba(0,100,150,.25)}
-
-/* Auth Modal */
-.auth-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:2000;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
-.auth-modal{background:#0e1225;border:1px solid rgba(0,240,255,.3);border-radius:16px;padding:28px;width:90%;max-width:380px;box-shadow:0 0 40px rgba(0,240,255,.15)}
-.auth-modal h2{color:#00f0ff;font-size:1.2em;text-align:center;margin-bottom:16px}
-.auth-modal input{width:100%;padding:12px;border:1px solid rgba(0,240,255,.2);border-radius:8px;background:rgba(0,0,0,.3);color:#eaeaea;font-size:.95em;margin-bottom:10px;outline:none}
-.auth-modal input:focus{border-color:#00f0ff}
-.auth-modal .auth-error{color:#ff4422;font-size:.8em;text-align:center;margin-bottom:8px}
-.auth-modal .auth-toggle{color:#9aa0b0;font-size:.8em;text-align:center;margin-top:12px;cursor:pointer}
-.auth-modal .auth-toggle:hover{color:#00f0ff}
-.auth-modal .auth-close{position:absolute;top:12px;right:16px;color:#9aa0b0;cursor:pointer;font-size:1.2em}
-body.light-mode .auth-modal{background:#fff;border-color:rgba(0,100,150,.2);box-shadow:0 4px 20px rgba(0,0,0,.1)}
-body.light-mode .auth-modal h2{color:#1a5276}
-body.light-mode .auth-modal input{background:#f5f7fa;border-color:rgba(0,0,0,.1);color:#1a1a2e}
-
-/* Dashboard */
-.dash-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,240,255,.15);border-radius:12px;padding:16px;margin-bottom:12px}
-.dash-card h3{color:#00f0ff;font-size:.9em;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
-.dash-stat{display:flex;justify-content:space-around;text-align:center;margin-bottom:16px}
-.dash-stat .ds-val{font-size:1.8em;font-weight:700;font-family:'JetBrains Mono',monospace;color:#00f0ff}
-.dash-stat .ds-label{font-size:.65em;color:#9aa0b0;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-.weakness-callout{background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.3);border-radius:10px;padding:12px;margin-bottom:12px;text-align:center}
-.weakness-callout .weak-cat{color:#ff4422;font-weight:700;font-size:1.1em}
-.weakness-callout .weak-desc{color:#9aa0b0;font-size:.8em;margin-top:4px}
-.history-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.85em}
-.history-item .hi-icon{font-size:1em;margin-right:8px}
-.history-item .hi-cat{color:#9aa0b0;font-size:.75em}
-body.light-mode .dash-card{background:rgba(255,255,255,.6);border-color:rgba(0,0,0,.08)}
-body.light-mode .dash-card h3{color:#1a5276}
-body.light-mode .dash-stat .ds-val{color:#1a5276}
-body.light-mode .weakness-callout{background:rgba(200,80,50,.06);border-color:rgba(200,80,50,.2)}
-body.light-mode .history-item{border-color:rgba(0,0,0,.06)}
 /* Light mode: order/cat/table */
 body.light-mode .order-item{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.08);color:#1a1a2e}
 body.light-mode .order-item .arrows button{background:rgba(0,0,0,.05);color:#1a1a2e}
@@ -340,8 +295,6 @@ body.light-mode .tag-proto{background:rgba(0,100,150,.06);color:#1a5276;border-c
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
-<div id="authBar" class="auth-bar" style="max-width:600px;margin:8px auto 0;padding:0 16px"></div>
-<div id="authModal" class="auth-overlay hidden"></div>
 <div class="container" id="app"></div>
 
 <script>
@@ -362,286 +315,6 @@ function updateThemeIcon(){
   if(btn) btn.textContent=document.body.classList.contains('light-mode')?'🌙':'☀️';
 }
 initTheme();
-
-// ===== SUPABASE INIT =====
-const SUPABASE_URL = 'https://syomwtowczbifyiledmg.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo';
-const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-
-const authState = {
-  user: null,
-  profile: null,
-  isPro: false,
-  loading: true
-};
-
-// Auth bar rendering
-function renderAuthBar() {
-  const bar = document.getElementById('authBar');
-  if (!bar) return;
-  if (!supabase) { bar.innerHTML = ''; return; }
-  if (authState.loading) { bar.innerHTML = '<span class="user-info">...</span>'; return; }
-  if (authState.user) {
-    const name = authState.profile?.display_name || authState.user.email?.split('@')[0] || 'User';
-    const proBadge = authState.isPro ? '<span class="pro-badge">PRO</span>' : '';
-    const dashBtn = authState.isPro ? '<button class="dash-link" onclick="showDashboard()">📊 Dashboard</button>' : '';
-    bar.innerHTML = `<span class="user-info">${name}${proBadge}</span>${dashBtn}<button onclick="signOut()">Sign Out</button>`;
-  } else {
-    bar.innerHTML = '<button onclick="showAuthModal()">Sign In</button>';
-  }
-}
-
-// Auth modal
-function showAuthModal(mode) {
-  const modal = document.getElementById('authModal');
-  const isSignUp = mode === 'signup';
-  modal.classList.remove('hidden');
-  modal.innerHTML = `
-    <div class="auth-modal" style="position:relative">
-      <span class="auth-close" onclick="hideAuthModal()">✕</span>
-      <h2>${isSignUp ? 'Create Account' : 'Sign In'}</h2>
-      <div id="authError" class="auth-error hidden"></div>
-      <input id="authEmail" type="email" placeholder="Email" autocomplete="email">
-      <input id="authPass" type="password" placeholder="Password" autocomplete="${isSignUp ? 'new-password' : 'current-password'}">
-      <button class="btn btn-primary" style="margin-top:4px" onclick="doAuth('${isSignUp ? 'signup' : 'signin'}')">${isSignUp ? 'Create Account' : 'Sign In'}</button>
-      <div class="auth-toggle" onclick="showAuthModal('${isSignUp ? 'signin' : 'signup'}')">${isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}</div>
-    </div>`;
-  setTimeout(() => document.getElementById('authEmail')?.focus(), 100);
-}
-window.showAuthModal = showAuthModal;
-
-function hideAuthModal() {
-  document.getElementById('authModal').classList.add('hidden');
-}
-window.hideAuthModal = hideAuthModal;
-
-async function doAuth(mode) {
-  const email = document.getElementById('authEmail')?.value?.trim();
-  const pass = document.getElementById('authPass')?.value;
-  const errEl = document.getElementById('authError');
-  if (!email || !pass) { errEl.textContent = 'Email and password required'; errEl.classList.remove('hidden'); return; }
-  if (pass.length < 6) { errEl.textContent = 'Password must be at least 6 characters'; errEl.classList.remove('hidden'); return; }
-  errEl.classList.add('hidden');
-  
-  let result;
-  if (mode === 'signup') {
-    result = await supabase.auth.signUp({ email, password: pass });
-  } else {
-    result = await supabase.auth.signInWithPassword({ email, password: pass });
-  }
-  if (result.error) {
-    errEl.textContent = result.error.message;
-    errEl.classList.remove('hidden');
-    return;
-  }
-  hideAuthModal();
-  await loadUserProfile();
-  renderAuthBar();
-  if (typeof render === 'function') render();
-}
-window.doAuth = doAuth;
-
-async function signOut() {
-  if (!supabase) return;
-  await supabase.auth.signOut();
-  authState.user = null;
-  authState.profile = null;
-  authState.isPro = false;
-  renderAuthBar();
-  if (state.screen === 'dashboard') { state.screen = 'home'; }
-  if (typeof render === 'function') render();
-}
-window.signOut = signOut;
-
-async function loadUserProfile() {
-  if (!supabase) return;
-  const { data: { user } } = await supabase.auth.getUser();
-  authState.user = user;
-  authState.loading = false;
-  if (user) {
-    const { data: profile } = await supabase.from('profiles').select('*').eq('user_id', user.id).single();
-    authState.profile = profile;
-    authState.isPro = profile?.subscription_status === 'pro' && 
-      (!profile?.subscription_expires_at || new Date(profile.subscription_expires_at) > new Date());
-  }
-  renderAuthBar();
-}
-
-// Init auth on load
-if (supabase) {
-  supabase.auth.onAuthStateChange(async (event) => {
-    if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-      await loadUserProfile();
-    } else if (event === 'SIGNED_OUT') {
-      authState.user = null; authState.profile = null; authState.isPro = false;
-      authState.loading = false;
-      renderAuthBar();
-    }
-  });
-  loadUserProfile();
-} else {
-  authState.loading = false;
-}
-
-// ===== SCORE TRACKING (Pro only) =====
-async function trackAnswer(scenarioId, questionIndex, questionType, selectedAnswer, isCorrect, timeTakenMs, category, difficulty, levelFilter) {
-  if (!supabase || !authState.isPro || !authState.user) return;
-  try {
-    await supabase.from('answers').insert({
-      user_id: authState.user.id,
-      scenario_id: scenarioId,
-      question_index: questionIndex,
-      question_type: questionType,
-      selected_answer: selectedAnswer,
-      is_correct: isCorrect,
-      time_taken_ms: timeTakenMs,
-      category: category,
-      difficulty: difficulty,
-      level_filter: levelFilter
-    });
-  } catch (e) { console.warn('Track answer failed:', e); }
-}
-
-// ===== ANALYTICS DASHBOARD =====
-async function showDashboard() {
-  if (!authState.isPro || !authState.user) return;
-  state.screen = 'dashboard';
-  render();
-}
-window.showDashboard = showDashboard;
-
-async function renderDashboard() {
-  const app = document.getElementById('app');
-  app.innerHTML = '<div class="fade-in"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h1 style="font-size:1.3em">📊 Performance Dashboard</h1><p class="muted-label" style="text-align:center;margin-bottom:20px">Loading analytics...</p></div>';
-  
-  if (!supabase || !authState.user) return;
-
-  // Fetch all answers
-  const { data: answers } = await supabase.from('answers')
-    .select('*')
-    .eq('user_id', authState.user.id)
-    .order('created_at', { ascending: false });
-
-  if (!answers || answers.length === 0) {
-    app.innerHTML = `<div class="fade-in">
-      <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-      <h1 style="font-size:1.3em">📊 Performance Dashboard</h1>
-      <div style="text-align:center;padding:60px 0;color:#9aa0b0">
-        <div style="font-size:2em;margin-bottom:12px">📝</div>
-        <p>No data yet. Complete some scenarios to see your analytics!</p>
-      </div>
-      <button class="btn btn-primary" onclick="state.screen='home';render()">Start Training</button>
-    </div>`;
-    return;
-  }
-
-  // Compute stats
-  const total = answers.length;
-  const correct = answers.filter(a => a.is_correct).length;
-  const accuracy = Math.round(correct / total * 100);
-  const avgTime = Math.round(answers.reduce((s, a) => s + (a.time_taken_ms || 0), 0) / total / 1000 * 10) / 10;
-  const scenarios = new Set(answers.map(a => a.scenario_id)).size;
-
-  // Stats by category
-  const catStats = {};
-  answers.forEach(a => {
-    const cat = a.category || 'Unknown';
-    if (!catStats[cat]) catStats[cat] = { total: 0, correct: 0 };
-    catStats[cat].total++;
-    if (a.is_correct) catStats[cat].correct++;
-  });
-
-  const categories = Object.keys(catStats);
-  const catAccuracies = categories.map(c => Math.round(catStats[c].correct / catStats[c].total * 100));
-
-  // Weakest category
-  let weakest = null, weakestPct = 100;
-  categories.forEach((c, i) => {
-    if (catAccuracies[i] < weakestPct && catStats[c].total >= 2) {
-      weakestPct = catAccuracies[i];
-      weakest = c;
-    }
-  });
-
-  // Recent 20
-  const recent = answers.slice(0, 20);
-
-  let html = `<div class="fade-in">
-    <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-    <h1 style="font-size:1.3em">📊 Performance Dashboard</h1>
-    <p class="muted-label" style="text-align:center;margin-bottom:20px">Pro Analytics</p>
-
-    <div class="dash-card">
-      <h3>Overall Stats</h3>
-      <div class="dash-stat">
-        <div><div class="ds-val">${scenarios}</div><div class="ds-label">Scenarios</div></div>
-        <div><div class="ds-val">${total}</div><div class="ds-label">Questions</div></div>
-        <div><div class="ds-val">${accuracy}%</div><div class="ds-label">Accuracy</div></div>
-        <div><div class="ds-val">${avgTime}s</div><div class="ds-label">Avg Time</div></div>
-      </div>
-    </div>`;
-
-  if (weakest) {
-    html += `<div class="weakness-callout">
-      <div style="font-size:.7em;color:#9aa0b0;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Weakest Domain</div>
-      <div class="weak-cat">${weakest} — ${weakestPct}%</div>
-      <div class="weak-desc">${catStats[weakest].correct}/${catStats[weakest].total} correct</div>
-      <button class="btn btn-secondary btn-small" style="margin-top:8px" onclick="trainWeakness('${weakest}')">🎯 Train This Domain</button>
-    </div>`;
-  }
-
-  html += `<div class="dash-card">
-      <h3>Score by Domain</h3>
-      <canvas id="domainChart" height="200"></canvas>
-    </div>
-
-    <div class="dash-card">
-      <h3>Recent Answers</h3>`;
-  
-  recent.forEach(a => {
-    const icon = a.is_correct ? '✅' : '❌';
-    html += `<div class="history-item">
-      <div><span class="hi-icon">${icon}</span>${a.scenario_id} Q${a.question_index + 1}</div>
-      <div class="hi-cat">${a.category || ''}</div>
-    </div>`;
-  });
-
-  html += `</div><div style="height:40px"></div></div>`;
-  app.innerHTML = html;
-
-  // Render chart
-  const ctx = document.getElementById('domainChart');
-  if (ctx && window.Chart) {
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: categories,
-        datasets: [{
-          label: 'Accuracy %',
-          data: catAccuracies,
-          backgroundColor: catAccuracies.map(v => v >= 80 ? 'rgba(52,199,89,.6)' : v >= 60 ? 'rgba(240,173,78,.6)' : 'rgba(255,68,34,.6)'),
-          borderColor: catAccuracies.map(v => v >= 80 ? '#34c759' : v >= 60 ? '#f0ad4e' : '#ff4422'),
-          borderWidth: 1,
-          borderRadius: 4
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: {
-          y: { beginAtZero: true, max: 100, ticks: { color: '#9aa0b0' }, grid: { color: 'rgba(255,255,255,.05)' } },
-          x: { ticks: { color: '#9aa0b0', font: { size: 10 }, maxRotation: 45 }, grid: { display: false } }
-        }
-      }
-    });
-  }
-}
-
-window.trainWeakness = function(category) {
-  state.selectedDomains = new Set([category]);
-  state.screen = 'home';
-  render();
-};
 
 const SCENARIOS = [
         {
@@ -30965,8 +30638,7 @@ const state = {
   answers: [],
   answered: false,
   selectedOptions: new Set(),
-  userState: {},
-  questionStartTime: null
+  userState: {}
 };
 
 const DOMAINS = ['Airway & Breathing','Cardiology','Medical Emergencies','Trauma','OB/Peds/Neonatal','Behavioral/Psychiatric','Pharmacology','EMS Operations','Environmental'];
@@ -31002,7 +30674,6 @@ function render() {
   else if (state.screen === 'select') renderSelect();
   else if (state.screen === 'scenario') renderScenario();
   else if (state.screen === 'debrief') renderDebrief();
-  else if (state.screen === 'dashboard') renderDashboard();
 }
 
 function renderHome() {
@@ -31089,7 +30760,6 @@ window.startScenario = function(id) {
   state.answered = false;
   state.selectedOptions = new Set();
   state.userState = {};
-  state.questionStartTime = null;
   state.screen = 'scenario';
   window.scrollTo(0, 0);
   render();
@@ -31156,7 +30826,6 @@ function renderScenario() {
   if (qType === 'table' && !state.userState.cells) {
     state.userState.cells = q.rows.map(() => q.columns.map(() => 0));
   }
-  if (!state.questionStartTime) state.questionStartTime = Date.now();
 
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
@@ -31494,8 +31163,6 @@ function submitAnswer() {
     protocol = q.protocol_ref || '';
   }
 
-  const timeTaken = state.questionStartTime ? Date.now() - state.questionStartTime : null;
-
   state.answers.push({
     question: q.prompt,
     phase: q.phase,
@@ -31506,21 +31173,6 @@ function submitAnswer() {
     criticalFail: hasCriticalFail
   });
 
-  // Track to Supabase (Pro only)
-  if (state.currentScenario) {
-    trackAnswer(
-      state.currentScenario.id,
-      state.questionIndex,
-      qType,
-      selectedText,
-      isCorrect,
-      timeTaken,
-      state.currentScenario.category,
-      state.currentScenario.difficulty,
-      q.level_filter || ''
-    );
-  }
-
   renderScenario();
 }
 
@@ -31529,7 +31181,6 @@ function nextQuestion() {
   state.answered = false;
   state.selectedOptions = new Set();
   state.userState = {};
-  state.questionStartTime = null;
   render();
 }
 
