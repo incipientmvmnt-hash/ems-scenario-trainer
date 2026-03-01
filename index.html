@@ -342,7 +342,8 @@ function _renderAuth() {
     if (_auth.user) {
       var name = (_auth.profile && _auth.profile.display_name) || _auth.user.email.split('@')[0];
       var pro = _auth.isPro ? ' <span style="background:linear-gradient(135deg,#ff4422,#ff8800);color:#fff;font-size:.6em;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:4px">PRO</span>' : '';
-      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + name + pro + '</span> <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
+      var dashBtn = _auth.isPro ? ' <button onclick="showDashboard()" style="background:none;border:1px solid rgba(255,68,34,.3);color:#ff4422;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">📊 Dashboard</button>' : '';
+      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + name + pro + '</span>' + dashBtn + ' <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
     } else {
       bar.innerHTML = '<button onclick="showAuthModal()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign In</button>';
     }
@@ -390,6 +391,112 @@ if (_sb) {
   });
   _loadProfile();
 } else { _renderAuth(); }
+
+// ===== SCORE TRACKING (Pro only) =====
+var _trackStartTime = 0;
+function _startTimer() { _trackStartTime = Date.now(); }
+function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty, selectedAnswer) {
+  try {
+    if (!_sb || !_auth.isPro || !_auth.user) return;
+    var timeTaken = _trackStartTime ? Date.now() - _trackStartTime : 0;
+    _sb.from('answers').insert({
+      user_id: _auth.user.id,
+      scenario_id: scenarioId,
+      question_index: qIndex,
+      question_type: qType,
+      is_correct: isCorrect,
+      time_taken_ms: timeTaken,
+      category: category,
+      difficulty: difficulty,
+      selected_answer: selectedAnswer
+    }).then(function(){}).catch(function(){});
+  } catch(e) {}
+}
+
+// ===== DASHBOARD =====
+function showDashboard() {
+  if (!_sb || !_auth.isPro || !_auth.user) return;
+  state.screen = 'dashboard';
+  var app = document.getElementById('app');
+  app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h2 style="text-align:center;margin:16px 0">📊 Performance Dashboard</h2><p style="text-align:center;color:#9aa0b0">Loading...</p></div>';
+  
+  _sb.from('answers').select('*').eq('user_id', _auth.user.id).order('created_at', {ascending:false}).then(function(res) {
+    var answers = res.data || [];
+    if (answers.length === 0) {
+      app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h2 style="text-align:center;margin:16px 0">📊 Performance Dashboard</h2><p style="text-align:center;color:#9aa0b0;margin-top:40px">No data yet. Complete some scenarios to see your analytics!</p><button class="btn btn-primary" onclick="state.screen=\'home\';render()" style="margin-top:20px">Start Training</button></div>';
+      return;
+    }
+    
+    var total = answers.length;
+    var correct = answers.filter(function(a){return a.is_correct}).length;
+    var pct = Math.round(correct/total*100);
+    var avgTime = Math.round(answers.reduce(function(s,a){return s+(a.time_taken_ms||0)},0)/total/1000*10)/10;
+    
+    // By category
+    var cats = {};
+    answers.forEach(function(a) {
+      var c = a.category || 'Unknown';
+      if (!cats[c]) cats[c] = {total:0,correct:0};
+      cats[c].total++;
+      if (a.is_correct) cats[c].correct++;
+    });
+    
+    var weakest = null, weakestPct = 101;
+    var catNames = Object.keys(cats).sort();
+    catNames.forEach(function(c) {
+      var p = Math.round(cats[c].correct/cats[c].total*100);
+      if (p < weakestPct && cats[c].total >= 2) { weakestPct = p; weakest = c; }
+    });
+    
+    var scoreClass = pct >= 80 ? 'score-good' : pct >= 60 ? 'score-ok' : 'score-bad';
+    
+    var html = '<div class="fade-in" style="padding-top:20px">';
+    html += '<button class="back-btn" onclick="state.screen=\'home\';render()">Home</button>';
+    html += '<h2 style="text-align:center;margin:16px 0">\u{1F4CA} Performance Dashboard</h2>';
+    
+    html += '<div style="display:flex;justify-content:center;gap:24px;margin:20px 0">';
+    html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + total + '</div><div class="muted-label" style="font-size:.7em">Questions</div></div>';
+    html += '<div style="text-align:center"><div class="score-circle ' + scoreClass + '" style="width:80px;height:80px;font-size:1.2em">' + pct + '<span class="pct">%</span></div><div class="muted-label" style="font-size:.7em;margin-top:4px">Accuracy</div></div>';
+    html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + avgTime + 's</div><div class="muted-label" style="font-size:.7em">Avg Time</div></div>';
+    html += '</div>';
+    
+    html += '<div class="home-section" style="margin-top:20px">';
+    html += '<div class="category-header">Performance by Domain</div>';
+    catNames.forEach(function(c) {
+      var p = Math.round(cats[c].correct/cats[c].total*100);
+      var color = p >= 80 ? '#34c759' : p >= 60 ? '#f0ad4e' : '#ff4422';
+      html += '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:4px"><span>' + c + '</span><span style="color:' + color + '">' + p + '% (' + cats[c].correct + '/' + cats[c].total + ')</span></div>';
+      html += '<div style="height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden"><div style="height:100%;width:' + p + '%;background:' + color + ';border-radius:3px"></div></div></div>';
+    });
+    html += '</div>';
+    
+    if (weakest) {
+      html += '<div style="background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.2);border-radius:12px;padding:16px;margin:16px 0;text-align:center">';
+      html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest Domain: ' + weakest + ' (' + weakestPct + '%)</div>';
+      html += '<button class="btn btn-primary" onclick="trainDomain(\'' + weakest + '\')" style="font-size:.85em;padding:8px 16px">Train This Domain</button>';
+      html += '</div>';
+    }
+    
+    html += '<div class="home-section" style="margin-top:16px">';
+    html += '<div class="category-header">Recent Answers</div>';
+    answers.slice(0, 20).forEach(function(a) {
+      var icon = a.is_correct ? '\u2705' : '\u274C';
+      var time = a.time_taken_ms ? Math.round(a.time_taken_ms/1000) + 's' : '';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
+      html += '<span>' + icon + ' ' + (a.category||'?') + ' \u2014 ' + (a.question_type||'?') + '</span>';
+      html += '<span class="muted-label">' + time + '</span></div>';
+    });
+    html += '</div>';
+    
+    html += '<div style="height:40px"></div></div>';
+    app.innerHTML = html;
+  }).catch(function(e) {
+    app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><p style="text-align:center;color:#ff4422;margin-top:40px">Error loading dashboard</p></div>';
+  });
+}
+window.showDashboard = showDashboard;
+function trainDomain(d) { state.selectedDomains = new Set([d]); state.screen = 'home'; render(); }
+window.trainDomain = trainDomain;
 // ===== END SUPABASE AUTH =====
 
 const SCENARIOS = [
@@ -30874,6 +30981,7 @@ function renderSelect() {
 }
 
 function renderScenario() {
+  if (typeof _startTimer === 'function') _startTimer();
   const s = state.currentScenario;
   const qs = getFilteredQuestions();
   if (state.questionIndex >= qs.length) {
@@ -31247,6 +31355,11 @@ function submitAnswer() {
     protocol: protocol,
     criticalFail: hasCriticalFail
   });
+
+  // Track for Pro users
+  if (typeof _trackAnswer === 'function' && state.currentScenario) {
+    _trackAnswer(state.currentScenario.id, state.questionIndex, qType, isCorrect, state.currentScenario.category, state.currentScenario.difficulty, selectedText);
+  }
 
   renderScenario();
 }
