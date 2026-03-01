@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" fill="none">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4df8ff"/>
+      <stop offset="40%" stop-color="#00e0f0"/>
+      <stop offset="60%" stop-color="#009aaa"/>
+      <stop offset="100%" stop-color="#00d8e8"/>
+    </linearGradient>
+    <linearGradient id="rg" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#ff7744"/>
+      <stop offset="50%" stop-color="#ff4422"/>
+      <stop offset="100%" stop-color="#dd2200"/>
+    </linearGradient>
+    <filter id="cgl" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feFlood flood-color="#00f0ff" flood-opacity="0.25"/>
+      <feComposite in2="b" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rgl" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+      <feFlood flood-color="#ff4422" flood-opacity="0.35"/>
+      <feComposite in2="b" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- MEDIC -->
+  <text x="195" y="92" text-anchor="middle" font-family="'SF Pro Display', -apple-system, 'Inter', 'Helvetica Neue', sans-serif" font-size="96" font-weight="900" letter-spacing="6" fill="url(#cg)" filter="url(#cgl)">MEDIC</text>
+  
+  <!-- Lightning bolt 7 -->
+  <g transform="translate(390, 8)" filter="url(#rgl)">
+    <path d="M 30 0 L 105 0 L 100 8 L 55 8 L 85 44 L 62 44 L 28 100 L 42 52 L 22 52 L 50 8 L 35 8 Z" fill="url(#rg)"/>
+    <path d="M 30 0 L 105 0 L 100 8 L 55 8 L 85 44 L 62 44 L 28 100 L 42 52 L 22 52 L 50 8 L 35 8 Z" fill="none" stroke="#ff6644" stroke-width="0.5" stroke-opacity="0.5"/>
+  </g>
+</svg>
