@@ -1,0 +1,816 @@
+[
+  {
+    "id": "nat-air-11",
+    "title": "24M — Difficulty Breathing After Motorcycle Crash",
+    "dispatch": "24-year-old male, motorcycle accident, difficulty breathing",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 24, "sex": "M", "cc": "Difficulty breathing and chest pain after motorcycle crash"},
+    "scene": "You arrive at a rural two-lane highway where a 24-year-old male has been involved in a motorcycle crash. He was thrown approximately 15 feet after striking a guardrail. He is found sitting upright on the roadside, leaning forward and appearing severely dyspneic. His leather jacket has been partially removed by bystanders, revealing bruising over the right lateral chest wall. He is alert but increasingly agitated, stating he cannot catch his breath. Breath sounds are absent on the right side, and you note tracheal deviation toward the left.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 132, "bp": "82/50", "rr": 34, "spo2": 82, "gcs": 14, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on your primary assessment, which combination of findings is MOST consistent with this patient's presentation?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Absent breath sounds on the right, tracheal deviation to the left, hypotension, and jugular venous distension",
+            "correct": true,
+            "critical": false,
+            "explanation": "This constellation of findings—absent breath sounds ipsilateral to injury, contralateral tracheal deviation, hypotension, and JVD—is the classic presentation of tension pneumothorax. The increasing intrathoracic pressure compresses mediastinal structures and impedes venous return.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Bilateral absent breath sounds, symmetrical chest rise, and a normal blood pressure with tachycardia",
+            "correct": false,
+            "critical": false,
+            "explanation": "Bilateral absent breath sounds with symmetrical chest rise does not match this presentation. The findings here are clearly unilateral, and the hypotension indicates hemodynamic compromise.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Diminished breath sounds bilaterally, muffled heart sounds, and narrowing pulse pressure",
+            "correct": false,
+            "critical": false,
+            "explanation": "Muffled heart sounds with narrowing pulse pressure and JVD (Beck's triad) would suggest cardiac tamponade rather than a pneumothorax. This patient's findings are distinctly unilateral.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Crepitus over the right chest wall with stable vitals and adequate oxygen saturation on room air",
+            "correct": false,
+            "critical": false,
+            "explanation": "While rib fractures with crepitus may be present, the hemodynamic instability and absent breath sounds with tracheal deviation indicate a far more serious condition than simple rib fractures.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "Tracheal deviation is a late and ominous sign of tension pneumothorax. Do not wait for this finding to intervene—absent breath sounds with hypotension and respiratory distress after chest trauma should prompt immediate treatment."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order for managing this patient.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Perform needle decompression at the 2nd intercostal space, midclavicular line on the right",
+          "Apply high-flow oxygen via non-rebreather mask at 15 LPM",
+          "Establish large-bore IV access and begin fluid resuscitation",
+          "Reassess breath sounds and vital signs after decompression",
+          "Prepare for rapid transport to a trauma center"
+        ],
+        "correctOrder": [1, 0, 3, 2, 4],
+        "explanation": "First, apply high-flow oxygen to address the severe hypoxia. Second, perform needle decompression to relieve the tension pneumothorax—this is the definitive prehospital intervention. Third, reassess to confirm improvement. Fourth, establish IV access for fluid resuscitation to address the hypotension. Finally, prepare for rapid transport. Needle decompression should not be delayed, but supplemental oxygen can be applied almost simultaneously.",
+        "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; NAEMSP Position Statement on Needle Decompression",
+        "clinical_pearl": "An alternative needle decompression site is the 4th-5th intercostal space at the anterior axillary line, which may have a higher success rate due to thinner chest wall at that location. Use a catheter long enough to penetrate the chest wall (minimum 3.25 inches in adults)."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As an EMT without needle decompression in your scope, select ALL appropriate interventions for this patient.",
+        "type": "mr",
+        "level_filter": "EMT",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Apply high-flow oxygen via non-rebreather mask at 15 LPM",
+            "correct": true,
+            "critical": false,
+            "explanation": "High-flow oxygen is a critical BLS intervention for this severely hypoxic patient and should be applied immediately.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Request ALS intercept or backup immediately",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient requires needle decompression, which is beyond EMT scope. Requesting ALS intercept is essential and should happen as early as possible.",
+            "guideline_ref": "National EMS Education Standards — EMS Operations"
+          },
+          {
+            "text": "Initiate rapid transport to the nearest trauma center",
+            "correct": true,
+            "critical": false,
+            "explanation": "Rapid transport is critical as definitive treatment (chest tube) is only available at the hospital. Do not delay transport.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Perform needle decompression using a 14-gauge catheter",
+            "correct": false,
+            "critical": true,
+            "explanation": "Needle decompression is an ALS skill outside the EMT scope of practice. Attempting this procedure without training and authorization could cause additional harm.",
+            "guideline_ref": "National EMS Education Standards — Scope of Practice"
+          },
+          {
+            "text": "Apply an occlusive dressing to the right chest wall over the bruised area",
+            "correct": false,
+            "critical": false,
+            "explanation": "Occlusive dressings are used for open (sucking) chest wounds. This patient has a closed tension pneumothorax without an external wound. An occlusive dressing is not indicated and could worsen the condition if applied incorrectly.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "As an EMT, recognizing tension pneumothorax and initiating rapid transport with early ALS notification is life-saving. Positioning the patient upright (if spinal precautions allow) may slightly improve respiratory mechanics."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each finding as either an 'Early Sign' or 'Late Sign' of tension pneumothorax.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Absent breath sounds on the affected side",
+          "Tracheal deviation away from the affected side",
+          "Tachycardia and anxiety",
+          "Pulseless electrical activity (PEA) arrest",
+          "Chest pain and dyspnea after trauma",
+          "Jugular venous distension with hypotension"
+        ],
+        "categories": ["Early Sign", "Late Sign"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "Early signs include absent breath sounds (air accumulation begins immediately), tachycardia/anxiety (sympathetic response to hypoxia), and chest pain/dyspnea (initial symptoms). Late signs include tracheal deviation (requires significant pressure shift), JVD with hypotension (severe mediastinal compression), and PEA arrest (complete cardiovascular collapse). Recognizing early signs and intervening before late signs appear dramatically improves survival.",
+        "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; National EMS Education Standards — Trauma",
+        "clinical_pearl": "In the noisy prehospital environment, auscultating breath sounds can be challenging. Compare side to side systematically, and correlate with other findings like chest wall movement and percussion if trained."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-12",
+    "title": "3F — Choking at Daycare",
+    "dispatch": "3-year-old female, choking, turning blue",
+    "category": "Airway & Breathing",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 3, "sex": "F", "cc": "Choking episode, cyanosis"},
+    "scene": "You respond to a daycare center where staff report a 3-year-old female began choking during snack time. She was eating grapes when she suddenly stopped talking and grabbed at her throat. A daycare worker attempted back blows but stopped when the child became limp. On your arrival, the child is conscious but unable to cry or cough. She is sitting in a caregiver's lap, drooling, with visible cyanosis around her lips. Intercostal retractions are noted, and there is no audible air exchange.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 160, "bp": "Not obtained", "rr": 8, "spo2": 72, "gcs": 13, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This child is demonstrating signs of a severe (complete) airway obstruction. Which assessment finding BEST differentiates a complete obstruction from a partial obstruction?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Inability to cry, cough, or vocalize with no audible air movement",
+            "correct": true,
+            "critical": false,
+            "explanation": "Complete airway obstruction is characterized by the inability to produce any vocalization, effective cough, or audible air movement. This is a critical emergency requiring immediate intervention.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — Foreign Body Airway Obstruction; National EMS Education Standards — Airway"
+          },
+          {
+            "text": "Presence of a weak cough with intermittent wheezing between attempts",
+            "correct": false,
+            "critical": false,
+            "explanation": "A weak cough with wheezing indicates partial obstruction with some air exchange still occurring. While concerning, this allows time and the patient should be encouraged to continue coughing.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO"
+          },
+          {
+            "text": "Drooling and visible cyanosis without any history of foreign body ingestion",
+            "correct": false,
+            "critical": false,
+            "explanation": "While drooling and cyanosis are concerning, without a choking history these could indicate other conditions such as epiglottitis or croup. The witnessed choking event and complete absence of air exchange are the defining features.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO"
+          },
+          {
+            "text": "Tachycardia with retractions and a respiratory rate below normal for age",
+            "correct": false,
+            "critical": false,
+            "explanation": "While tachycardia and retractions indicate respiratory distress, these can be present in both partial and complete obstruction, as well as many other respiratory emergencies. The absence of vocalization and air movement is the key differentiator.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO"
+          }
+        ],
+        "clinical_pearl": "Grapes are one of the most common causes of fatal choking in children under 5. Their round shape and size can form a perfect seal in a small airway. Encourage parents to cut grapes lengthwise."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the correct sequence of interventions for managing this conscious child with a complete airway obstruction.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Deliver up to 5 abdominal thrusts (Heimlich maneuver)",
+          "Deliver up to 5 back blows between the shoulder blades",
+          "If the object is visible, attempt careful removal with a finger sweep",
+          "Reassess for object expulsion or loss of consciousness after each cycle"
+        ],
+        "correctOrder": [1, 0, 3, 2],
+        "explanation": "For a conscious child over age 1 with complete FBAO: begin with up to 5 back blows, followed by up to 5 abdominal thrusts, then reassess. Repeat cycles until the object is expelled or the child loses consciousness. Blind finger sweeps are not recommended—only remove the object if it is clearly visible in the mouth.",
+        "guideline_ref": "AHA BLS Guidelines 2020 — Pediatric FBAO; National EMS Education Standards — Airway",
+        "clinical_pearl": "For children under 1 year, use back blows and chest thrusts (NOT abdominal thrusts) due to the risk of abdominal organ injury. For children over 1 year, the technique mirrors the adult Heimlich maneuver but with age-appropriate force."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The child loses consciousness during your intervention. Select ALL correct next steps.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "After two cycles of back blows and abdominal thrusts, the child becomes limp and unresponsive. You lower her to a firm, flat surface.",
+        "vitals_update": {"hr": 60, "bp": "Not obtained", "rr": 0, "spo2": null, "gcs": 3},
+        "options": [
+          {
+            "text": "Begin CPR starting with 30 chest compressions",
+            "correct": true,
+            "critical": false,
+            "explanation": "When a choking patient loses consciousness, immediately begin CPR starting with chest compressions. Compressions may generate enough force to dislodge the foreign body.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO Unresponsive Patient"
+          },
+          {
+            "text": "Look in the mouth before each ventilation attempt and remove any visible object",
+            "correct": true,
+            "critical": false,
+            "explanation": "Each time you open the airway for ventilations, visually inspect the mouth. If you see the foreign body, remove it. Do not perform blind finger sweeps.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO Unresponsive Patient"
+          },
+          {
+            "text": "Attempt ventilations after 30 compressions; if air does not go in, reposition the airway and try again",
+            "correct": true,
+            "critical": false,
+            "explanation": "After compressions, attempt ventilation. If the chest does not rise, reposition the head-tilt/chin-lift and reattempt. If still unsuccessful, continue CPR cycles.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO Unresponsive Patient"
+          },
+          {
+            "text": "Continue alternating back blows and abdominal thrusts on the unconscious child",
+            "correct": false,
+            "critical": true,
+            "explanation": "Back blows and abdominal thrusts are only performed on conscious patients. Once the patient loses consciousness, transition immediately to CPR.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO Unresponsive Patient"
+          },
+          {
+            "text": "Perform a blind finger sweep to attempt to dislodge the foreign body",
+            "correct": false,
+            "critical": true,
+            "explanation": "Blind finger sweeps are not recommended in any patient, especially children, as they may push the object deeper into the airway or cause soft tissue injury.",
+            "guideline_ref": "AHA BLS Guidelines 2020 — FBAO Unresponsive Patient"
+          }
+        ],
+        "clinical_pearl": "If available, Magill forceps can be used by ALS providers under direct laryngoscopy to remove a visible foreign body from the airway. This is a critical ALS skill for refractory FBAO."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-13",
+    "title": "72F — Woke Up Short of Breath",
+    "dispatch": "72-year-old female, severe difficulty breathing, cannot lie flat",
+    "category": "Airway & Breathing",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 72, "sex": "F", "cc": "Acute onset dyspnea, orthopnea"},
+    "scene": "You arrive at a second-floor apartment at 0230 hours. A 72-year-old female is found sitting bolt upright on the edge of her bed, tripoding. She states she woke up about 30 minutes ago unable to breathe and feels like she is drowning. Her husband reports she has been sleeping on three pillows recently and her ankles have been progressively swelling over the past two weeks. The room is warm and well-lit. You note audible crackles without a stethoscope, frothy pink-tinged sputum at her lips, bilateral pedal edema (3+), and she is diaphoretic and pale.",
+    "history": {"pmh": "Congestive heart failure, hypertension, atrial fibrillation, Type 2 diabetes", "meds": "Furosemide, lisinopril, metformin, apixaban, carvedilol", "allergies": "Morphine (nausea)"},
+    "vitals": {"hr": 118, "bp": "198/110", "rr": 32, "spo2": 84, "gcs": 15, "temp": "98.0°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of assessment findings BEST supports the working impression for this patient?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Paroxysmal nocturnal dyspnea, frothy pink-tinged sputum, bilateral crackles, peripheral edema, and hypertension in a patient with a cardiac history",
+            "correct": true,
+            "critical": false,
+            "explanation": "This constellation—PND (waking from sleep with dyspnea), frothy pink sputum (pulmonary edema), bilateral crackles, peripheral edema, and hypertension—in a patient with known CHF is classic for acute decompensated heart failure with pulmonary edema.",
+            "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA Heart Failure Guidelines"
+          },
+          {
+            "text": "Sudden onset dyspnea with unilateral absent breath sounds and pleuritic chest pain in a patient on anticoagulation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Unilateral absent breath sounds with pleuritic pain would suggest pneumothorax or pleural effusion. This patient has bilateral crackles and signs of fluid overload, not a unilateral process.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Gradual onset wheezing, prolonged expiratory phase, barrel chest, and pursed-lip breathing in a patient with a smoking history",
+            "correct": false,
+            "critical": false,
+            "explanation": "These findings would suggest COPD exacerbation. While wheezing can occur with pulmonary edema (cardiac asthma), this patient's presentation with pink frothy sputum, PND, and bilateral edema points clearly to acute heart failure.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Acute onset stridor, urticaria, and hypotension following exposure to a known allergen",
+            "correct": false,
+            "critical": false,
+            "explanation": "This describes anaphylaxis. There is no allergen exposure, stridor, or urticaria in this patient. The presentation is clearly cardiac in origin.",
+            "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
+          }
+        ],
+        "clinical_pearl": "Paroxysmal nocturnal dyspnea (PND) occurs because recumbent positioning redistributes peripheral fluid into the central circulation, overwhelming an already failing heart. Orthopnea and PND are highly specific for heart failure."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following initial treatment interventions in order of priority for this patient.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Apply CPAP at 5-10 cmH2O with high-flow oxygen",
+          "Position the patient sitting fully upright with legs dependent",
+          "Establish IV access with a saline lock (avoid fluid bolus)",
+          "Administer sublingual nitroglycerin 0.4 mg (if systolic BP > 100)",
+          "Obtain a 12-lead ECG"
+        ],
+        "correctOrder": [1, 0, 2, 4, 3],
+        "explanation": "First, position upright with legs dependent to reduce preload. Second, apply CPAP—this is the single most impactful prehospital intervention for acute pulmonary edema, reducing work of breathing and improving oxygenation. Third, establish IV access (saline lock only—do NOT fluid bolus a CHF patient). Fourth, obtain a 12-lead ECG to evaluate for ischemia or arrhythmia as the precipitant. Fifth, administer nitroglycerin to reduce preload and afterload.",
+        "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; NAEMSP CPAP Guidelines",
+        "clinical_pearl": "CPAP works in pulmonary edema by increasing intrathoracic pressure, which reduces preload, pushes fluid out of alveoli back into capillaries, and recruits collapsed alveoli. Improvement can be dramatic within minutes."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL contraindications for CPAP use in the prehospital setting.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Systolic blood pressure less than 90 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "CPAP increases intrathoracic pressure and can further reduce preload and cardiac output. In hypotensive patients, this can precipitate cardiovascular collapse.",
+            "guideline_ref": "NAEMSP CPAP Position Statement"
+          },
+          {
+            "text": "Patient is unable to maintain a mask seal or is vomiting actively",
+            "correct": true,
+            "critical": false,
+            "explanation": "CPAP requires a mask seal and patient cooperation. Active vomiting creates aspiration risk with positive pressure, and inability to maintain a seal renders the device ineffective.",
+            "guideline_ref": "NAEMSP CPAP Position Statement"
+          },
+          {
+            "text": "Patient has a GCS less than 10 or is unable to follow commands",
+            "correct": true,
+            "critical": false,
+            "explanation": "Altered mental status with inability to protect the airway or cooperate with the device is a contraindication. These patients may require intubation instead.",
+            "guideline_ref": "NAEMSP CPAP Position Statement"
+          },
+          {
+            "text": "Patient's heart rate is greater than 100 beats per minute",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tachycardia is expected in acute pulmonary edema and is not a contraindication to CPAP. The heart rate should improve as respiratory distress resolves with treatment.",
+            "guideline_ref": "NAEMSP CPAP Position Statement"
+          },
+          {
+            "text": "Patient is currently prescribed apixaban for atrial fibrillation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Anticoagulant use has no bearing on CPAP administration. CPAP is a noninvasive respiratory support device and does not interact with blood-thinning medications.",
+            "guideline_ref": "NAEMSP CPAP Position Statement"
+          }
+        ],
+        "clinical_pearl": "If CPAP is not available, high-flow oxygen via NRB is the next best option. Encourage the patient to remain upright. Nitroglycerin can be administered even without CPAP and significantly helps reduce preload."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each medication as either 'Helpful in Acute Pulmonary Edema' or 'Potentially Harmful in Acute Pulmonary Edema.'",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Nitroglycerin 0.4 mg sublingual",
+          "Normal saline 1-liter IV bolus",
+          "Furosemide 40 mg IV (per medical direction)",
+          "Albuterol 2.5 mg nebulized as sole treatment",
+          "CPAP at 5-10 cmH2O"
+        ],
+        "categories": ["Helpful in Acute Pulmonary Edema", "Potentially Harmful in Acute Pulmonary Edema"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Nitroglycerin reduces preload and afterload, directly addressing the hemodynamic problem. CPAP provides critical respiratory support and reduces preload. IV furosemide promotes diuresis (per medical direction). A normal saline bolus adds volume to an already fluid-overloaded patient, worsening pulmonary edema. Albuterol alone treats bronchospasm, not the underlying fluid problem—while cardiac asthma wheezing may occur, relying solely on albuterol misses the root cause.",
+        "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA Heart Failure Guidelines",
+        "clinical_pearl": "Distinguishing cardiac asthma (wheezing from pulmonary edema) from true bronchospasm is critical. Key differentiators: cardiac asthma typically presents with crackles, orthopnea, peripheral edema, and frothy sputum—not seen in primary asthma/COPD."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-14",
+    "title": "67M — Can't Catch His Breath at Home",
+    "dispatch": "67-year-old male, progressive difficulty breathing, home oxygen user",
+    "category": "Airway & Breathing",
+    "difficulty": "Easy",
+    "level_min": "EMR",
+    "patient": {"age": 67, "sex": "M", "cc": "Worsening shortness of breath over 3 days"},
+    "scene": "You arrive at a ground-floor apartment with oxygen tubing visible running from a concentrator in the living room. A 67-year-old male is seated in a recliner in a tripod position. He speaks in 2-3 word sentences between breaths and appears fatigued. His wife states his breathing has worsened over the past three days after he ran out of one of his inhalers. She notes he has been coughing up thicker, more yellow sputum than usual. He has a barrel-shaped chest, pursed-lip breathing, and an audible prolonged expiratory wheeze. The home is cluttered with ashtrays throughout.",
+    "history": {"pmh": "COPD (severe, GOLD stage III), hypertension, osteoporosis", "meds": "Tiotropium, fluticasone/salmeterol (ran out 4 days ago), albuterol MDI, lisinopril, alendronate, home O2 at 2 LPM", "allergies": "Aspirin (bronchospasm)"},
+    "vitals": {"hr": 108, "bp": "152/88", "rr": 28, "spo2": 86, "gcs": 15, "temp": "99.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which set of findings is MOST indicative that this patient is experiencing a COPD exacerbation rather than another respiratory emergency?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Known COPD history, increased sputum production with purulence, prolonged expiratory wheeze, barrel chest, and worsening of baseline dyspnea",
+            "correct": true,
+            "critical": false,
+            "explanation": "COPD exacerbation is defined by worsening of baseline respiratory symptoms (dyspnea, cough, sputum production) beyond normal day-to-day variation. Increased purulent sputum suggests an infectious trigger. Barrel chest and pursed-lip breathing reflect chronic hyperinflation.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies; GOLD COPD Guidelines 2021"
+          },
+          {
+            "text": "Sudden onset of dyspnea with sharp pleuritic chest pain and unilateral decreased breath sounds",
+            "correct": false,
+            "critical": false,
+            "explanation": "Sudden onset with pleuritic pain and unilateral findings would suggest spontaneous pneumothorax, which COPD patients are at risk for but is a separate condition requiring different management.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Bilateral crackles, pink frothy sputum, and peripheral edema in a patient with cardiac history",
+            "correct": false,
+            "critical": false,
+            "explanation": "These findings suggest acute pulmonary edema from heart failure. While COPD and CHF can coexist, this patient's presentation with purulent sputum and prolonged expiratory wheeze points to a COPD exacerbation.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Acute dyspnea with high-pitched inspiratory stridor following a meal in a patient without respiratory history",
+            "correct": false,
+            "critical": false,
+            "explanation": "Inspiratory stridor after eating suggests upper airway obstruction (foreign body). This patient has expiratory wheeze consistent with lower airway disease.",
+            "guideline_ref": "National EMS Education Standards — Airway"
+          }
+        ],
+        "clinical_pearl": "The three cardinal symptoms of COPD exacerbation are increased dyspnea, increased sputum volume, and increased sputum purulence. The more of these present, the more severe the exacerbation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You are treating this COPD patient. Arrange the following interventions in correct order of priority.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Assist with or administer albuterol via MDI or nebulizer",
+          "Titrate supplemental oxygen to target SpO2 of 88-92%",
+          "Position patient upright and coach pursed-lip breathing",
+          "Prepare for transport with continuous monitoring"
+        ],
+        "correctOrder": [2, 1, 0, 3],
+        "explanation": "First, position the patient upright for optimal respiratory mechanics and coach pursed-lip breathing to reduce air trapping. Second, titrate oxygen carefully to 88-92%—COPD patients may lose hypoxic respiratory drive with excessive oxygen. Third, administer bronchodilator therapy (albuterol) to relieve bronchospasm. Fourth, prepare for transport with continuous SpO2 and respiratory monitoring.",
+        "guideline_ref": "National EMS Education Standards — Respiratory Emergencies; GOLD COPD Guidelines 2021",
+        "clinical_pearl": "While the hypoxic drive theory is debated, the practical guideline remains: titrate oxygen in COPD patients to SpO2 88-92%. Over-oxygenation can worsen V/Q mismatch and CO2 retention through the Haldane effect, not just suppression of respiratory drive."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient's condition worsens despite bronchodilator therapy. As a Paramedic, select ALL additional interventions that may be appropriate.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "After two albuterol nebulizer treatments, the patient remains severely dyspneic. His respiratory rate has increased to 34, SpO2 is 84% on 4 LPM nasal cannula, and he is becoming confused and drowsy. You note accessory muscle fatigue and diminished air movement bilaterally.",
+        "vitals_update": {"hr": 124, "bp": "168/96", "rr": 34, "spo2": 84, "gcs": 13, "temp": "100.1°F"},
+        "options": [
+          {
+            "text": "Apply CPAP at 5-10 cmH2O to reduce work of breathing and improve ventilation",
+            "correct": true,
+            "critical": false,
+            "explanation": "CPAP/BiPAP is a first-line intervention for severe COPD exacerbation not responding to bronchodilators. It splints airways open, reduces work of breathing, and can prevent intubation.",
+            "guideline_ref": "GOLD COPD Guidelines 2021; NAEMSP CPAP Position Statement"
+          },
+          {
+            "text": "Administer ipratropium bromide 0.5 mg via nebulizer in combination with albuterol",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ipratropium is an anticholinergic bronchodilator that works synergistically with albuterol. Combination therapy is recommended for moderate-to-severe COPD exacerbations.",
+            "guideline_ref": "GOLD COPD Guidelines 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Consider methylprednisolone 125 mg IV per medical direction to reduce airway inflammation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Systemic corticosteroids are recommended for COPD exacerbations to reduce airway inflammation. IV steroids can be initiated in the field per protocol/medical direction.",
+            "guideline_ref": "GOLD COPD Guidelines 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Increase supplemental oxygen to 15 LPM via non-rebreather mask to maximize oxygenation",
+            "correct": false,
+            "critical": false,
+            "explanation": "High-flow oxygen in severe COPD can suppress respiratory drive, worsen CO2 retention through the Haldane effect, and potentially cause respiratory failure. Oxygen should be titrated to target SpO2 88-92%.",
+            "guideline_ref": "GOLD COPD Guidelines 2021; National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Administer epinephrine 0.3 mg IM to the lateral thigh for bronchospasm",
+            "correct": false,
+            "critical": false,
+            "explanation": "Epinephrine is not indicated for COPD exacerbation. It is reserved for anaphylaxis and severe asthma as a last resort. In this elderly patient with hypertension and tachycardia, epinephrine could precipitate a cardiac event.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Worsening mental status in a COPD exacerbation (confusion, drowsiness) is an ominous sign of CO2 narcosis and impending respiratory failure. These patients need aggressive intervention with noninvasive positive pressure ventilation or intubation."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-15",
+    "title": "58M — Difficulty Breathing Through Neck Stoma",
+    "dispatch": "58-year-old male, difficulty breathing, has a tracheostomy",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 58, "sex": "M", "cc": "Acute respiratory distress with tracheostomy"},
+    "scene": "You are dispatched to a residential home for a 58-year-old male with difficulty breathing. His wife meets you at the door in a panic. The patient is found in the kitchen, seated at the table, with visible respiratory distress. He has a tracheostomy tube in place and is unable to speak. He communicates by pointing and gesturing urgently at his neck. You observe thick mucus and dried secretions around the tracheostomy site. There is audible gurgling from the stoma, and his chest rise is minimal despite obvious respiratory effort. His wife states he normally suctions the tube several times daily but the suction machine stopped working this morning.",
+    "history": {"pmh": "Laryngeal cancer (status post total laryngectomy 2 years ago), hypertension, GERD", "meds": "Omeprazole, amlodipine, humidified trach collar at home", "allergies": "Codeine (rash)"},
+    "vitals": {"hr": 126, "bp": "168/98", "rr": 30, "spo2": 78, "gcs": 14, "temp": "99.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient has a total laryngectomy. Which statement BEST describes why this is critical information for airway management?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "The stoma is the patient's only airway; there is no connection between the upper airway and the trachea, so oral/nasal ventilation is impossible",
+            "correct": true,
+            "critical": false,
+            "explanation": "In a total laryngectomy, the trachea is surgically separated from the pharynx and brought to the skin surface as a permanent stoma. The upper airway (mouth/nose) no longer connects to the lungs. All ventilation and oxygenation must occur through the stoma.",
+            "guideline_ref": "National EMS Education Standards — Airway Management; National Tracheostomy Safety Project Guidelines"
+          },
+          {
+            "text": "The stoma is a secondary airway and the patient can still be ventilated through the mouth and nose if the stoma is blocked",
+            "correct": false,
+            "critical": true,
+            "explanation": "This is dangerously incorrect for a total laryngectomy patient. Attempting oral/nasal ventilation will be futile because there is no anatomical connection to the lower airway. Precious time would be wasted on an ineffective intervention.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "The tracheostomy tube can be removed and the stoma will close within minutes, restoring normal airway anatomy",
+            "correct": false,
+            "critical": false,
+            "explanation": "A mature laryngectomy stoma is a permanent, surgically created opening. It will not close spontaneously. Removing the tracheostomy tube leaves an open stoma that can still be ventilated directly.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "The patient can be managed identically to any other respiratory distress patient with standard bag-valve-mask technique over the mouth and nose",
+            "correct": false,
+            "critical": true,
+            "explanation": "Standard BVM over the face will not ventilate a laryngectomy patient. The BVM must be sealed over the stoma, or a pediatric mask or specialized adapter must be used directly over the stoma opening.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          }
+        ],
+        "clinical_pearl": "Not all tracheostomy patients have had laryngectomies. Patients with tracheostomies for other reasons (prolonged ventilation, upper airway obstruction) may still have an intact upper airway. If unsure, attempt to ventilate via the stoma first."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order for managing this patient's obstructed tracheostomy tube.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Suction the tracheostomy tube using a soft suction catheter (limit to 10 seconds)",
+          "Apply supplemental oxygen directly to the stoma via trach mask or adapter",
+          "If suctioning fails to clear the obstruction, remove the inner cannula of the tracheostomy tube",
+          "If the tube remains obstructed after inner cannula removal, remove the entire tracheostomy tube and ventilate directly over the stoma",
+          "Reassess air movement, SpO2, and respiratory effort after each intervention"
+        ],
+        "correctOrder": [1, 0, 4, 2, 3],
+        "explanation": "First, apply oxygen to support the hypoxic patient. Second, suction the tracheostomy tube to attempt to clear the mucus plug (limit passes to 10 seconds to avoid worsening hypoxia). Third, reassess—if improved, continue monitoring. Fourth, if suctioning fails, remove the inner cannula (many tracheostomy tubes are dual-cannula and the inner lumen can be removed separately). Fifth, if still obstructed, remove the entire tube and ventilate over the bare stoma. Each step escalates only if the prior step fails.",
+        "guideline_ref": "National Tracheostomy Safety Project — Emergency Algorithm; National EMS Education Standards — Airway Management",
+        "clinical_pearl": "When suctioning a tracheostomy, instilling saline into the tube before suctioning is no longer recommended as routine practice. It does not effectively loosen secretions and may push mucus deeper or introduce bacteria."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have removed the obstructed tracheostomy tube and need to ventilate through the bare stoma. Select ALL correct techniques.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 2,
+        "narrative": "After removing the tracheostomy tube, you note a patent stoma with improved air movement, but the patient still requires assisted ventilation.",
+        "vitals_update": {"hr": 118, "bp": "156/92", "rr": 10, "spo2": 74, "gcs": 12},
+        "options": [
+          {
+            "text": "Seal a pediatric face mask or infant BVM mask over the stoma and ventilate with a bag-valve device",
+            "correct": true,
+            "critical": false,
+            "explanation": "A pediatric or infant BVM mask can form an effective seal over a stoma for ventilation. This is a commonly taught and practical field technique for stoma ventilation.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Insert a cuffed endotracheal tube (6.0 or smaller) directly into the stoma and ventilate",
+            "correct": true,
+            "critical": false,
+            "explanation": "A cuffed ETT can be carefully inserted into the stoma to establish a secure airway. Use a smaller size than normal (typically 6.0-7.0) and insert only 2-3 cm to avoid bronchial intubation.",
+            "guideline_ref": "National EMS Education Standards — Airway Management; National Tracheostomy Safety Project"
+          },
+          {
+            "text": "Place a standard adult BVM over the mouth and nose and ventilate normally",
+            "correct": false,
+            "critical": true,
+            "explanation": "This patient has had a total laryngectomy. There is no connection between the upper airway and the trachea. Oral/nasal ventilation is anatomically impossible and will waste critical time.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Insert a nasopharyngeal airway through the stoma and attach oxygen tubing",
+            "correct": false,
+            "critical": false,
+            "explanation": "An NPA is not designed for stoma ventilation. It would not provide an adequate airway or allow positive pressure ventilation. Purpose-specific equipment (ETT or BVM over stoma) is required.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          }
+        ],
+        "clinical_pearl": "Always bring a tracheostomy emergency kit to these calls: suction catheter, spare trach tube (or ETT 6.0), pediatric BVM mask, and water-soluble lubricant. Ask the family—they often have spare equipment at home."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-16",
+    "title": "34F — Pulled from House Fire",
+    "dispatch": "34-year-old female, pulled from structure fire, coughing and confused",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 34, "sex": "F", "cc": "Smoke inhalation with respiratory distress"},
+    "scene": "Firefighters have just extricated a 34-year-old female from a working structure fire in a two-story residential home. She was found semiconscious in a second-floor bedroom with the door closed. Estimated exposure time is 10-15 minutes. She is covered in soot, with significant carbonaceous deposits around her mouth and nares. You note singed nasal hairs and eyebrows. Her voice is hoarse and raspy. She is coughing productively with black-tinged sputum. Facial erythema and mild edema are present around the lips. She is confused and agitated, repeatedly asking where her children are (fire crews confirm all occupants are evacuated safely).",
+    "history": {"pmh": "Asthma (mild, well-controlled)", "meds": "Albuterol PRN", "allergies": "NKDA"},
+    "vitals": {"hr": 122, "bp": "138/82", "rr": 26, "spo2": 94, "gcs": 14, "temp": "99.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Select ALL findings that suggest significant inhalation injury and potential for airway compromise in this patient.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Carbonaceous sputum and soot deposits in the mouth and nares",
+            "correct": true,
+            "critical": false,
+            "explanation": "Carbonaceous material in the airway indicates direct exposure to combustion products. This is one of the most reliable predictors of inhalation injury and impending airway swelling.",
+            "guideline_ref": "PHTLS 9th Edition — Burns; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Singed nasal hairs and eyebrows",
+            "correct": true,
+            "critical": false,
+            "explanation": "Singed facial hair indicates exposure to superheated air or flame near the face, raising high suspicion for thermal injury to the upper airway.",
+            "guideline_ref": "PHTLS 9th Edition — Burns"
+          },
+          {
+            "text": "Hoarseness and voice changes",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hoarseness indicates laryngeal edema has already begun. This is an early warning sign that the airway is actively swelling and may progress to complete obstruction.",
+            "guideline_ref": "PHTLS 9th Edition — Burns; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Facial edema around the lips with erythema",
+            "correct": true,
+            "critical": false,
+            "explanation": "Facial burns and edema, especially around the mouth and lips, indicate thermal injury to the tissues surrounding the airway. Internal swelling often mirrors external findings.",
+            "guideline_ref": "PHTLS 9th Edition — Burns"
+          },
+          {
+            "text": "SpO2 reading of 94% on room air",
+            "correct": false,
+            "critical": false,
+            "explanation": "A SpO2 of 94% may appear reassuring but is misleading in smoke inhalation. Standard pulse oximetry cannot differentiate oxyhemoglobin from carboxyhemoglobin. The true oxygen saturation may be significantly lower.",
+            "guideline_ref": "PHTLS 9th Edition — Burns; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Patient is coughing productively, which indicates a protected airway",
+            "correct": false,
+            "critical": false,
+            "explanation": "While coughing shows current airway patency, it does not indicate a protected or stable airway. Airway edema from inhalation injury is progressive and can lead to complete obstruction over 12-24 hours.",
+            "guideline_ref": "PHTLS 9th Edition — Burns"
+          }
+        ],
+        "clinical_pearl": "Standard pulse oximetry is unreliable in carbon monoxide exposure—it reads carboxyhemoglobin as oxyhemoglobin, giving falsely normal readings. CO-oximetry or a dedicated CO monitor is needed for accurate assessment."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following treatment priorities in the correct order for this smoke inhalation patient.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Apply high-flow oxygen at 15 LPM via non-rebreather mask (100% FiO2)",
+          "Prepare for early intubation given signs of progressive airway edema",
+          "Establish two large-bore IV lines and begin fluid resuscitation",
+          "Continuously monitor airway for signs of worsening edema (stridor, increased hoarseness, difficulty swallowing)",
+          "Initiate rapid transport to a burn/trauma center"
+        ],
+        "correctOrder": [0, 3, 2, 1, 4],
+        "explanation": "First, apply 100% high-flow oxygen immediately—this is both treatment for hypoxia and therapy for carbon monoxide poisoning (reduces CO half-life from 4-6 hours to 60-90 minutes). Second, continuously monitor the airway for progression—inhalation injury airway edema is dynamic and can worsen rapidly. Third, establish IV access for fluid resuscitation (burn patients need aggressive hydration). Fourth, prepare for early intubation if airway deterioration is noted—intubating early is safer than attempting it through a critically swollen airway. Fifth, transport to an appropriate facility.",
+        "guideline_ref": "PHTLS 9th Edition — Burns; National EMS Education Standards — Trauma",
+        "clinical_pearl": "The decision to intubate a smoke inhalation patient should be made early. Once significant airway edema develops, intubation becomes extremely difficult or impossible, and a surgical airway may be the only option."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each of the following as either a concern related to 'Thermal/Upper Airway Injury' or 'Chemical/Lower Airway and Systemic Toxicity.'",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Supraglottic edema and airway obstruction",
+          "Carbon monoxide binding to hemoglobin reducing oxygen delivery",
+          "Singed nasal hairs and facial burns",
+          "Bronchospasm and chemical pneumonitis from inhaled toxins",
+          "Hydrogen cyanide poisoning from burning synthetic materials",
+          "Laryngeal swelling causing stridor"
+        ],
+        "categories": ["Thermal/Upper Airway Injury", "Chemical/Lower Airway and Systemic Toxicity"],
+        "correctCategories": [0, 1, 0, 1, 1, 0],
+        "explanation": "Thermal injury is largely limited to structures above the glottis (supraglottic edema, singed nasal hairs, laryngeal swelling) because the upper airway efficiently cools inhaled hot air. Chemical injury from combustion byproducts (CO, HCN, particulates, toxic gases) affects the lower airways and causes systemic toxicity—bronchospasm, chemical pneumonitis, CO poisoning, and cyanide toxicity.",
+        "guideline_ref": "PHTLS 9th Edition — Burns; National EMS Education Standards — Trauma",
+        "clinical_pearl": "Steam inhalation is the exception to the upper airway thermal injury rule. Steam carries 4,000 times more heat energy than dry air and can cause severe thermal injury to the lower airways and alveoli."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-17",
+    "title": "42M — Struck in Throat at Construction Site",
+    "dispatch": "42-year-old male, struck in the neck, difficulty breathing and swallowing",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 42, "sex": "M", "cc": "Blunt trauma to anterior neck with dyspnea and dysphonia"},
+    "scene": "You respond to an active construction site where a 42-year-old male was struck in the anterior neck by a swinging steel beam approximately 5 minutes ago. He was wearing a hard hat but no neck protection. Coworkers helped him sit down against a wall. He is alert but extremely anxious, holding his neck with both hands. His voice is barely audible and very hoarse. He is having difficulty swallowing his own saliva, with drool running down his chin. You observe swelling and bruising across the anterior neck at the level of the thyroid cartilage, and there is palpable crepitus (subcutaneous emphysema) over the anterior neck. He has mild stridor on inspiration.",
+    "history": {"pmh": "Gastric reflux", "meds": "Famotidine", "allergies": "Penicillin (hives)"},
+    "vitals": {"hr": 116, "bp": "148/90", "rr": 24, "spo2": 90, "gcs": 15, "temp": "98.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings raises the HIGHEST concern for a laryngeal fracture in this patient?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Subcutaneous emphysema over the anterior neck, hoarseness/dysphonia, stridor, dysphagia, and anterior neck tenderness following blunt trauma",
+            "correct": true,
+            "critical": false,
+            "explanation": "This combination is the hallmark of laryngeal fracture. Subcutaneous emphysema indicates air leaking from the disrupted airway into surrounding tissues. Hoarseness reflects vocal cord or laryngeal cartilage disruption. Stridor indicates partial airway obstruction. Dysphagia results from swelling and structural damage.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Expanding hematoma on the lateral neck, absent carotid pulse on one side, and contralateral neurological deficits",
+            "correct": false,
+            "critical": false,
+            "explanation": "These findings suggest vascular injury to the carotid artery (dissection or laceration) with expanding hematoma. While a serious neck injury, this pattern indicates vascular rather than laryngeal injury.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          },
+          {
+            "text": "Posterior neck pain with midline tenderness, limited range of motion, and paresthesias in all extremities",
+            "correct": false,
+            "critical": false,
+            "explanation": "These findings suggest cervical spine injury, not laryngeal fracture. The mechanism could cause both, but posterior midline tenderness with neurological deficits is characteristic of spinal column/cord injury.",
+            "guideline_ref": "PHTLS 9th Edition — Spinal Trauma"
+          },
+          {
+            "text": "Jugular venous distension, muffled heart sounds, and hypotension following neck trauma",
+            "correct": false,
+            "critical": false,
+            "explanation": "Beck's triad (JVD, muffled heart sounds, hypotension) suggests cardiac tamponade, which would not typically result from isolated anterior neck trauma at the laryngeal level.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "Laryngeal fractures are rare but potentially lethal injuries. They are most commonly caused by motor vehicle 'clothesline' injuries, direct blows, and strangulation. Maintain a high index of suspicion with any blunt anterior neck trauma."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital management principles for this patient with suspected laryngeal fracture.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Apply humidified high-flow oxygen and allow the patient to maintain a position of comfort",
+            "correct": true,
+            "critical": false,
+            "explanation": "Supplemental oxygen addresses hypoxia, and allowing the patient to maintain their position of comfort helps optimize the compromised airway. Forcing a supine position may worsen obstruction.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Avoid aggressive airway manipulation; prepare a surgical airway kit in case of complete obstruction",
+            "correct": true,
+            "critical": false,
+            "explanation": "In laryngeal fracture, endotracheal intubation can worsen the injury, create a false passage, or convert a partial obstruction to a complete one. Surgical cricothyrotomy may be the safest definitive airway if needed, though the anatomy may be distorted.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Initiate rapid transport to a trauma center with surgical airway capability",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient needs a trauma center with ENT/surgical capability. Definitive management may require operative repair, tracheostomy, or fiber-optic intubation—none available in the field.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Trauma"
+          },
+          {
+            "text": "Perform rapid sequence intubation with direct laryngoscopy to secure the airway prophylactically",
+            "correct": false,
+            "critical": true,
+            "explanation": "Blind or direct laryngoscopy in laryngeal fracture is extremely dangerous. The laryngoscope blade can displace fractured cartilage, the tube can create a false passage through the disrupted airway, and the procedure may convert a partial obstruction to complete obstruction.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; EAST Practice Management Guidelines for Laryngeal Trauma"
+          },
+          {
+            "text": "Apply a cervical collar tightly to immobilize the neck and stabilize the fracture",
+            "correct": false,
+            "critical": false,
+            "explanation": "While cervical spine immobilization may be indicated for the mechanism, a tightly applied cervical collar can compress the already compromised airway and worsen swelling. If used, it should be applied loosely or alternative immobilization should be considered.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          }
+        ],
+        "clinical_pearl": "If intubation is absolutely necessary in a laryngeal fracture patient, fiber-optic guided intubation is preferred. In the field, if the patient loses the airway completely, surgical cricothyrotomy below the level of the fracture may be the only option."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Arrange the following airway management escalation steps in the correct order for a patient with suspected laryngeal fracture whose airway is progressively deteriorating.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Allow the patient to maintain position of comfort with high-flow oxygen and continuous monitoring",
+          "Prepare equipment for surgical cricothyrotomy as the primary backup plan",
+          "If complete obstruction occurs and no other option exists, attempt gentle endotracheal intubation with the smallest effective tube",
+          "Perform surgical cricothyrotomy if intubation fails or is deemed too dangerous",
+          "Provide BVM ventilation through the cricothyrotomy site and confirm placement"
+        ],
+        "correctOrder": [0, 1, 2, 3, 4],
+        "explanation": "The management escalation progresses from least invasive to most invasive: First, support with oxygen and positioning while the patient is maintaining their own airway. Second, prepare surgical airway equipment proactively—this should be ready before it's needed. Third, if complete obstruction occurs, a gentle intubation attempt may be tried with the understanding that it carries significant risk. Fourth, if intubation fails or is too dangerous, proceed to surgical cricothyrotomy. Fifth, ventilate through the surgical airway and confirm placement. The key principle is to prepare for the worst while avoiding premature intervention.",
+        "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Airway Management",
+        "clinical_pearl": "Subcutaneous emphysema in the neck can spread rapidly and distort anatomy. Mark the cricothyroid membrane location early before swelling obscures landmarks—use a skin marker if available. This simple step can be life-saving if a surgical airway becomes necessary."
+      }
+    ]
+  }
+]

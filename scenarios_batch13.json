@@ -1,0 +1,937 @@
+[
+  {
+    "id": "nat-card-19",
+    "title": "16M — Collapse During Baseball Game",
+    "dispatch": "16-year-old male, collapsed on field, unresponsive",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 16,
+      "sex": "M",
+      "cc": "Sudden collapse, unresponsive"
+    },
+    "scene": "You arrive at a high school baseball field where a 16-year-old male player is lying supine near home plate. Witnesses report the batter was struck in the chest by a pitched ball and collapsed immediately. A coach began CPR approximately 2 minutes ago. An athletic trainer is on scene with an AED. The patient is unresponsive with no palpable pulse.",
+    "history": {
+      "pmh": "None — healthy athlete, passed pre-season physical",
+      "meds": "None",
+      "allergies": "NKDA"
+    },
+    "vitals": {
+      "hr": 0,
+      "bp": "0/0",
+      "rr": 0,
+      "spo2": null,
+      "gcs": 3,
+      "temp": "98.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the mechanism described, what is the MOST likely cause of this patient's cardiac arrest?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Ventricular fibrillation triggered by blunt chest impact during a vulnerable phase of the cardiac cycle",
+            "correct": true,
+            "critical": false,
+            "explanation": "Commotio cordis occurs when a blunt impact to the precordium strikes during the vulnerable period of repolarization (approximately 15-30 ms before the T-wave peak), triggering ventricular fibrillation. It is a leading cause of sudden cardiac death in young athletes.",
+            "guideline_ref": "AHA 2020 Guidelines — Cardiac Arrest in Special Situations; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Tension pneumothorax from rib fractures caused by the ball impact",
+            "correct": false,
+            "critical": false,
+            "explanation": "A baseball impact to the chest in a healthy teenager is unlikely to cause rib fractures and tension pneumothorax severe enough for immediate cardiac arrest. The immediate collapse after precordial impact is classic for commotio cordis.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Cardiac tamponade from myocardial rupture following the blunt impact",
+            "correct": false,
+            "critical": false,
+            "explanation": "Myocardial rupture (contusio cordis) requires much higher energy than a pitched baseball and would be extremely rare in this scenario. The immediate collapse pattern points to an electrical disturbance, not structural damage.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Vasovagal syncope from pain, which will resolve with supportive care",
+            "correct": false,
+            "critical": true,
+            "explanation": "This patient is pulseless and apneic — this is cardiac arrest, not syncope. Assuming vasovagal syncope in a pulseless patient would critically delay life-saving interventions.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Commotio cordis has the highest survival rates when defibrillation occurs within 3 minutes. Survival drops precipitously after that. This is why AEDs at athletic events are critical."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The AED is applied and advises a shock. After defibrillation, ROSC is achieved. Arrange the following post-ROSC interventions in order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "After one AED shock and 2 minutes of CPR, the patient regains a pulse. He remains unconscious with occasional agonal respirations.",
+        "vitals_update": {
+          "hr": 110,
+          "bp": "88/56",
+          "rr": 6,
+          "spo2": 89,
+          "gcs": 6
+        },
+        "items": [
+          "Provide bag-valve-mask ventilations with supplemental oxygen",
+          "Establish IV/IO access and administer a normal saline bolus",
+          "Obtain a 12-lead ECG",
+          "Prepare for rapid transport to a pediatric-capable cardiac center"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "First priority is airway management and ventilation given the agonal respirations and low SpO2. Next, establish vascular access and treat hypotension with fluid resuscitation. Obtain a 12-lead ECG to assess for underlying conduction abnormalities or ongoing dysrhythmia. Then arrange transport to a facility with pediatric cardiac capabilities for comprehensive post-arrest care.",
+        "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "Commotio cordis patients who achieve ROSC often have structurally normal hearts. However, a 12-lead ECG is essential to rule out underlying channelopathies (long QT, Brugada, WPW) that may have contributed."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL factors that are known to increase the risk of commotio cordis in this type of event.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Projectile impact directly over the cardiac silhouette",
+            "correct": true,
+            "critical": false,
+            "explanation": "Impact must occur directly over the precordium to transmit energy to the myocardium. Location is a key factor in commotio cordis.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Impact occurring during the vulnerable period of ventricular repolarization",
+            "correct": true,
+            "critical": false,
+            "explanation": "The impact must coincide with a narrow 15-30 ms window just before the T-wave peak during ventricular repolarization to trigger VF.",
+            "guideline_ref": "AHA 2020 Guidelines — Cardiac Arrest in Special Situations"
+          },
+          {
+            "text": "Younger age with a more compliant, less-developed chest wall",
+            "correct": true,
+            "critical": false,
+            "explanation": "Children and adolescents have more compliant chest walls, allowing greater energy transmission to the myocardium. Most commotio cordis victims are under 18.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Pre-existing hypertrophic cardiomyopathy",
+            "correct": false,
+            "critical": false,
+            "explanation": "Hypertrophic cardiomyopathy is a separate leading cause of sudden cardiac death in young athletes but is not a risk factor for commotio cordis, which occurs in structurally normal hearts.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Projectile velocity exceeding 100 mph",
+            "correct": false,
+            "critical": false,
+            "explanation": "Research shows commotio cordis is most likely at projectile velocities of 25-50 mph. Very high-speed impacts are actually less likely to trigger VF and more likely to cause structural injury.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Chest protectors used in youth sports have not been shown to reliably prevent commotio cordis. Early defibrillation remains the most effective strategy for survival."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-20",
+    "title": "34M — Fever and Weakness for Two Weeks",
+    "dispatch": "34-year-old male, fever, general weakness, requesting transport",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 34,
+      "sex": "M",
+      "cc": "Persistent fever, fatigue, and shortness of breath"
+    },
+    "scene": "You respond to a downtown apartment for a 34-year-old male sitting on his couch appearing fatigued and diaphoretic. He reports a low-grade fever for 2 weeks, worsening fatigue, night sweats, and new-onset exertional dyspnea. He has lost approximately 10 pounds. You note small, painless red spots on his palms and several splinter-like hemorrhages under his fingernails. A new-onset systolic murmur is auscultated at the left sternal border.",
+    "history": {
+      "pmh": "IV drug use (heroin), hepatitis C",
+      "meds": "None currently",
+      "allergies": "NKDA"
+    },
+    "vitals": {
+      "hr": 112,
+      "bp": "102/58",
+      "rr": 22,
+      "spo2": 94,
+      "gcs": 15,
+      "temp": "102.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following findings as either supporting a cardiac valvular infection or an unrelated finding in this patient.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "New systolic murmur at left sternal border",
+          "Janeway lesions on palms",
+          "Splinter hemorrhages in nail beds",
+          "Hepatitis C history",
+          "10-pound weight loss over 2 weeks"
+        ],
+        "categories": ["Suggestive of valvular infection", "Not specific to valvular infection"],
+        "correctCategories": [0, 0, 0, 1, 1],
+        "explanation": "A new murmur suggests valvular damage from vegetations. Janeway lesions (painless erythematous lesions on palms/soles) and splinter hemorrhages are classic peripheral stigmata of infective endocarditis from septic emboli. Hepatitis C is common in IV drug users but not specific to endocarditis. Weight loss is a nonspecific constitutional symptom seen in many chronic infections and malignancies.",
+        "guideline_ref": "National EMS Education Standards — Cardiology; AHA Infective Endocarditis Guidelines",
+        "clinical_pearl": "In IV drug users, infective endocarditis most commonly affects the tricuspid valve (right-sided), which can produce septic pulmonary emboli presenting as cough, pleuritic chest pain, and infiltrates on imaging."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, the patient develops increasing dyspnea, bibasilar crackles, and jugular venous distension. His SpO2 drops to 88%. What is the MOST appropriate interpretation and intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The patient's condition is deteriorating. He is now sitting upright, tripoding, and appears anxious.",
+        "vitals_update": {
+          "hr": 128,
+          "bp": "96/52",
+          "rr": 28,
+          "spo2": 88,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "Acute heart failure from valvular insufficiency; administer high-flow oxygen, establish IV access, and consider CPAP if available",
+            "correct": true,
+            "critical": false,
+            "explanation": "The new murmur with progressive crackles, JVD, and hypoxemia indicates acute valvular insufficiency leading to heart failure. CPAP can reduce preload and improve oxygenation. IV access is needed for potential vasopressor support given borderline hypotension.",
+            "guideline_ref": "AHA Heart Failure Guidelines; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Septic shock from systemic infection; administer a 2-liter normal saline bolus as rapidly as possible",
+            "correct": false,
+            "critical": false,
+            "explanation": "While sepsis is present, the crackles and JVD indicate volume overload from acute valvular insufficiency. Aggressive fluid resuscitation could worsen pulmonary edema. Careful fluid management is essential.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Tension pneumothorax from septic pulmonary emboli; perform needle decompression of the left chest",
+            "correct": false,
+            "critical": true,
+            "explanation": "There are no findings suggestive of tension pneumothorax (absent breath sounds, tracheal deviation, hyperresonance). Bibasilar crackles and JVD in this context point to heart failure, not pneumothorax.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Opioid withdrawal syndrome; administer naloxone 2 mg intranasal",
+            "correct": false,
+            "critical": false,
+            "explanation": "The findings of crackles, JVD, new murmur, and hypoxemia are not consistent with opioid withdrawal. This presentation indicates cardiac decompensation.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Endocarditis in IV drug users can rapidly progress to acute valvular regurgitation and fulminant heart failure. These patients need emergent surgical evaluation — transport to a facility with cardiothoracic surgery capabilities when possible."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL populations that are at increased risk for infective endocarditis.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Patients with prosthetic heart valves",
+            "correct": true,
+            "critical": false,
+            "explanation": "Prosthetic valves provide a surface for bacterial adhesion and are a major risk factor for endocarditis.",
+            "guideline_ref": "AHA Infective Endocarditis Guidelines"
+          },
+          {
+            "text": "Persons who inject drugs",
+            "correct": true,
+            "critical": false,
+            "explanation": "IV drug use introduces bacteria directly into the bloodstream. It is one of the most common risk factors for right-sided endocarditis.",
+            "guideline_ref": "AHA Infective Endocarditis Guidelines"
+          },
+          {
+            "text": "Patients with congenital heart defects or prior endocarditis",
+            "correct": true,
+            "critical": false,
+            "explanation": "Structural heart abnormalities create turbulent flow that predisposes to bacterial seeding. Prior endocarditis significantly increases recurrence risk.",
+            "guideline_ref": "AHA Infective Endocarditis Guidelines"
+          },
+          {
+            "text": "Patients taking daily low-dose aspirin for primary prevention",
+            "correct": false,
+            "critical": false,
+            "explanation": "Aspirin use does not increase risk for infective endocarditis. Antiplatelet therapy has no established relationship to valvular infection.",
+            "guideline_ref": "AHA Infective Endocarditis Guidelines"
+          },
+          {
+            "text": "Patients with well-controlled type 2 diabetes on oral medications only",
+            "correct": false,
+            "critical": false,
+            "explanation": "Well-controlled diabetes alone is not a major risk factor for endocarditis. While diabetes can impair immune function, it is not among the high-risk categories for endocarditis.",
+            "guideline_ref": "AHA Infective Endocarditis Guidelines"
+          }
+        ],
+        "clinical_pearl": "The classic 'Duke criteria' for diagnosing endocarditis include positive blood cultures, new valvular regurgitation, and peripheral stigmata. In the field, suspect endocarditis in any febrile IV drug user with a new murmur."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-21",
+    "title": "78F — Dizziness and Near-Syncope at Home",
+    "dispatch": "78-year-old female, dizzy, nearly passed out",
+    "category": "Cardiology",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 78,
+      "sex": "F",
+      "cc": "Dizziness and near-syncope"
+    },
+    "scene": "You arrive at a well-kept home where a 78-year-old female is seated in a chair looking pale. She states she felt lightheaded and nearly fainted while walking to the kitchen. Her daughter reports she had a permanent pacemaker placed 6 years ago for complete heart block. The patient says she has been feeling increasingly fatigued over the past week and has noticed intermittent palpitations. You observe a well-healed surgical scar below her left clavicle. Her pulse is slow and irregular.",
+    "history": {
+      "pmh": "Complete heart block (pacemaker placed 2019), hypertension, osteoarthritis",
+      "meds": "Amlodipine 5 mg daily, acetaminophen PRN",
+      "allergies": "Codeine"
+    },
+    "vitals": {
+      "hr": 38,
+      "bp": "86/50",
+      "rr": 18,
+      "spo2": 95,
+      "gcs": 15,
+      "temp": "97.9°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The cardiac monitor shows a ventricular rate of 38 bpm with intermittent pacing spikes not followed by QRS complexes. What does this finding MOST likely indicate?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Failure to capture — the pacemaker is firing but the myocardium is not responding to the electrical stimulus",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pacing spikes without subsequent QRS complexes indicate failure to capture. The pacemaker is generating an electrical impulse, but the myocardium is not depolarizing in response. Common causes include lead dislodgement, battery depletion, elevated capture thresholds, or lead fracture.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Failure to sense — the pacemaker is not detecting the patient's intrinsic cardiac activity",
+            "correct": false,
+            "critical": false,
+            "explanation": "Failure to sense (undersensing) would show pacing spikes occurring at inappropriate times relative to intrinsic beats, sometimes falling on T-waves. The key finding here is spikes WITHOUT capture, not inappropriate timing of spikes.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Normal pacemaker function with appropriate demand pacing in a patient with sinus bradycardia",
+            "correct": false,
+            "critical": false,
+            "explanation": "Normal demand pacing would show pacing spikes followed by wide QRS complexes. Spikes not followed by QRS complexes is abnormal and indicates device malfunction.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Electromagnetic interference from a household appliance causing artifact on the monitor",
+            "correct": false,
+            "critical": false,
+            "explanation": "While EMI can cause artifact, the clinical picture of symptomatic bradycardia in a pacemaker-dependent patient with visible pacing spikes failing to generate QRS complexes is consistent with true device malfunction, not artifact.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Pacemaker patients with complete heart block are 'pacemaker-dependent' — without a functioning device, they rely on a slow ventricular escape rhythm (often 20-40 bpm) that may be unreliable."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in order of priority for this symptomatic patient with pacemaker malfunction.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Apply transcutaneous pacing pads and initiate external pacing",
+          "Administer atropine 0.5 mg IV",
+          "Establish IV access and administer a fluid bolus",
+          "Contact medical control and arrange transport to a facility with cardiology services"
+        ],
+        "correctOrder": [2, 1, 0, 3],
+        "explanation": "First establish IV access and give a fluid bolus to support blood pressure. Atropine 0.5 mg IV is the initial pharmacologic intervention for symptomatic bradycardia but may be ineffective in complete heart block. If atropine fails, transcutaneous pacing is the definitive prehospital treatment. Contact medical control and arrange transport to a facility capable of pacemaker interrogation and management.",
+        "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "Atropine works by blocking vagal tone at the AV node — it is often ineffective in complete heart block and Mobitz Type II because the block is below the AV node. Be prepared to pace early in these patients."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You initiate transcutaneous pacing. Select ALL indicators of successful electrical and mechanical capture.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "You have placed the pacing pads and are adjusting the output. The rate is set to 70 bpm.",
+        "options": [
+          {
+            "text": "Each pacing spike on the monitor is followed by a wide QRS complex",
+            "correct": true,
+            "critical": false,
+            "explanation": "Electrical capture is confirmed when each pacing spike is followed by a QRS complex. The QRS will be wide because ventricular depolarization is initiated from the pacing electrode rather than the conduction system.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          },
+          {
+            "text": "A palpable pulse is present that corresponds to the paced rate",
+            "correct": true,
+            "critical": false,
+            "explanation": "Mechanical capture is confirmed by a palpable pulse at the paced rate. Electrical capture without a corresponding pulse (pulseless electrical activity) requires further intervention.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          },
+          {
+            "text": "Blood pressure improves toward a clinically acceptable range",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hemodynamic improvement with rising blood pressure indicates that transcutaneous pacing is effectively increasing cardiac output. This is the ultimate goal of pacing.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          },
+          {
+            "text": "Visible muscle twitching of the chest wall with each pacing impulse",
+            "correct": false,
+            "critical": false,
+            "explanation": "Skeletal muscle contraction is a side effect of transcutaneous pacing, not an indicator of cardiac capture. Muscle twitching occurs even without cardiac capture and should not be used to confirm effectiveness.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          },
+          {
+            "text": "The patient reports complete resolution of pain from the pacing impulses",
+            "correct": false,
+            "critical": false,
+            "explanation": "Transcutaneous pacing is painful for conscious patients. Pain resolution would be from sedation/analgesia, not an indicator of capture. Many patients require sedation during external pacing.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          }
+        ],
+        "clinical_pearl": "Always palpate a pulse on the right side (carotid or femoral) — palpating near the pacing pads on the left can produce a false sense of a pulse from the electrical stimulation causing muscle contraction."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-22",
+    "title": "62F — Rapid Heart Rate and Shortness of Breath",
+    "dispatch": "62-year-old female, rapid heartbeat, trouble breathing",
+    "category": "Cardiology",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 62,
+      "sex": "F",
+      "cc": "Palpitations and shortness of breath"
+    },
+    "scene": "You respond to a restaurant where a 62-year-old female is seated in a booth appearing distressed. She states her heart started racing suddenly about 30 minutes ago and she feels like she can't catch her breath. She is speaking in short sentences and appears pale and diaphoretic. The cardiac monitor reveals an irregularly irregular narrow-complex tachycardia at a rate of 168 bpm with no discernible P-waves. She reports mild chest pressure.",
+    "history": {
+      "pmh": "Hypothyroidism, hypertension, paroxysmal atrial fibrillation (not on anticoagulation)",
+      "meds": "Levothyroxine 100 mcg daily, losartan 50 mg daily, flecainide 100 mg BID (pill-in-pocket)",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 168,
+      "bp": "82/54",
+      "rr": 26,
+      "spo2": 91,
+      "gcs": 15,
+      "temp": "98.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The monitor shows an irregularly irregular narrow-complex tachycardia at 168 bpm with no P-waves. The patient is hypotensive and hypoxic. Which statement BEST describes this patient's clinical status?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Hemodynamically unstable atrial fibrillation with rapid ventricular response requiring emergent intervention",
+            "correct": true,
+            "critical": false,
+            "explanation": "The irregularly irregular rhythm without P-waves is atrial fibrillation. The ventricular rate of 168 with hypotension (82/54), hypoxemia (SpO2 91%), chest pressure, and respiratory distress indicate hemodynamic instability requiring urgent treatment.",
+            "guideline_ref": "AHA ACLS Tachycardia Algorithm 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Stable atrial fibrillation that can be managed with rate-control medications during transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "This patient has signs of hemodynamic instability: hypotension, hypoxemia, dyspnea, and chest pressure. This is not a stable presentation and pharmacologic rate control alone may be insufficient.",
+            "guideline_ref": "AHA ACLS Tachycardia Algorithm 2020"
+          },
+          {
+            "text": "Supraventricular tachycardia amenable to vagal maneuvers and adenosine",
+            "correct": false,
+            "critical": false,
+            "explanation": "SVT (such as AVNRT) is typically regular, not irregularly irregular. The irregularly irregular rhythm without P-waves is diagnostic of atrial fibrillation. Adenosine is not indicated for atrial fibrillation.",
+            "guideline_ref": "AHA ACLS Tachycardia Algorithm 2020"
+          },
+          {
+            "text": "Ventricular tachycardia requiring immediate defibrillation",
+            "correct": false,
+            "critical": false,
+            "explanation": "The rhythm is narrow-complex and irregularly irregular, which is inconsistent with ventricular tachycardia (typically wide-complex and regular). The rhythm characteristics are classic for atrial fibrillation with RVR.",
+            "guideline_ref": "AHA ACLS Tachycardia Algorithm 2020"
+          }
+        ],
+        "clinical_pearl": "The hallmark of atrial fibrillation is the irregularly irregular rhythm. When combined with hemodynamic instability (hypotension, AMS, chest pain, or acute heart failure), synchronized cardioversion is indicated."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order for managing this patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer supplemental oxygen to target SpO2 ≥ 94%",
+          "Establish IV access",
+          "Administer sedation (midazolam or etomidate per protocol)",
+          "Perform synchronized cardioversion starting at 120-200J biphasic"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "Begin with supplemental oxygen for the hypoxic patient. Establish IV access for medication administration. Provide procedural sedation if the patient is conscious and time permits — cardioversion is painful. Perform synchronized cardioversion at the appropriate energy level for atrial fibrillation (120-200J biphasic). Do not delay cardioversion in truly unstable patients if sedation is not immediately available.",
+        "guideline_ref": "AHA ACLS Tachycardia Algorithm 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "Always ensure the defibrillator is in SYNC mode before cardioverting. If the device does not detect R-waves reliably due to the rapid rate, reposition leads or adjust gain. Unsynchronized shocks in A-fib risk triggering VF."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After cardioversion, the patient converts to a normal sinus rhythm at 82 bpm and blood pressure improves to 118/72. Select ALL appropriate post-cardioversion actions.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "vitals_update": {
+          "hr": 82,
+          "bp": "118/72",
+          "rr": 18,
+          "spo2": 97,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "Continuous cardiac monitoring during transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "Continuous monitoring is essential post-cardioversion as atrial fibrillation may recur. Monitoring also allows early detection of other post-cardioversion dysrhythmias.",
+            "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Obtain a 12-lead ECG to document the post-conversion rhythm",
+            "correct": true,
+            "critical": false,
+            "explanation": "A 12-lead ECG documents the post-conversion rhythm, assesses for ST changes that may indicate ischemia, and provides a baseline for the receiving facility.",
+            "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Reassess vital signs frequently and monitor for recurrence of symptoms",
+            "correct": true,
+            "critical": false,
+            "explanation": "Frequent reassessment is critical as atrial fibrillation can recur. Monitor for return of palpitations, dyspnea, or hemodynamic changes.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Administer adenosine 6 mg rapid IV push to prevent recurrence of the dysrhythmia",
+            "correct": false,
+            "critical": false,
+            "explanation": "Adenosine is not indicated for atrial fibrillation prevention. It has an ultra-short half-life and works by transiently blocking AV nodal conduction — it has no role in maintaining sinus rhythm.",
+            "guideline_ref": "AHA ACLS 2020"
+          },
+          {
+            "text": "Immediately discontinue oxygen since SpO2 has normalized to 97%",
+            "correct": false,
+            "critical": false,
+            "explanation": "While titrating oxygen to avoid hyperoxia is appropriate, abrupt discontinuation immediately post-cardioversion is premature. Continue to monitor and wean oxygen gradually while the patient stabilizes.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Patients with atrial fibrillation who are not on anticoagulation are at elevated stroke risk during and after cardioversion. The receiving facility will need to address anticoagulation — relay this medication history clearly."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-23",
+    "title": "58M — Severe Breathing Difficulty After Heart Attack",
+    "dispatch": "58-year-old male, extreme difficulty breathing, history of recent heart attack",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 58,
+      "sex": "M",
+      "cc": "Severe dyspnea, chest pressure, weakness"
+    },
+    "scene": "You arrive at a home where a 58-year-old male is found sitting upright in a recliner in obvious respiratory distress. His wife states he had a heart attack 10 days ago with stent placement and was discharged from the hospital 4 days ago. Over the past 2 days, he has had increasing shortness of breath, can no longer lie flat, and has gained 8 pounds. He has cool, mottled extremities with delayed capillary refill. Bilateral crackles are heard on auscultation extending to the mid-lung fields. Jugular venous distension is prominent.",
+    "history": {
+      "pmh": "STEMI (LAD occlusion, stent placed 10 days ago), hypertension, type 2 diabetes, EF 25% at discharge",
+      "meds": "Aspirin 81 mg, clopidogrel 75 mg, metoprolol 25 mg BID, lisinopril 5 mg, atorvastatin 80 mg, furosemide 40 mg daily",
+      "allergies": "Morphine (nausea)"
+    },
+    "vitals": {
+      "hr": 118,
+      "bp": "78/52",
+      "rr": 32,
+      "spo2": 84,
+      "gcs": 14,
+      "temp": "97.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following findings as either a sign of inadequate cardiac output (forward failure) or a sign of venous congestion (backward failure) in this patient.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Hypotension (BP 78/52)",
+          "Cool, mottled extremities with delayed capillary refill",
+          "Bilateral pulmonary crackles to mid-lung fields",
+          "Jugular venous distension",
+          "Altered mental status (GCS 14)"
+        ],
+        "categories": ["Forward failure (inadequate output)", "Backward failure (congestion)"],
+        "correctCategories": [0, 0, 1, 1, 0],
+        "explanation": "Forward failure reflects the heart's inability to pump adequate blood forward: hypotension, poor perfusion (cool/mottled skin, delayed cap refill), and decreased cerebral perfusion (altered mental status). Backward failure reflects blood backing up behind the failing ventricle: pulmonary edema (crackles) from left-sided congestion and JVD from right-sided or biventricular congestion.",
+        "guideline_ref": "AHA Heart Failure Guidelines; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "Cardiogenic shock is defined by persistent hypotension (SBP < 90) with evidence of end-organ hypoperfusion despite adequate volume. It complicates 5-8% of STEMIs and carries mortality rates of 40-50% even with intervention."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "This patient is in cardiogenic shock with pulmonary edema. Which intervention is MOST appropriate for the prehospital management of this patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Apply CPAP at 5-10 cmH2O and establish IV access with a vasopressor infusion prepared per protocol",
+            "correct": true,
+            "critical": false,
+            "explanation": "CPAP improves oxygenation and reduces work of breathing in pulmonary edema while decreasing preload. In cardiogenic shock with hypotension, vasopressor support (norepinephrine or dopamine per protocol) is needed to maintain perfusion. This combination addresses both the respiratory failure and the hemodynamic collapse.",
+            "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Administer nitroglycerin 0.4 mg sublingual to reduce preload and improve pulmonary edema",
+            "correct": false,
+            "critical": true,
+            "explanation": "Nitroglycerin is contraindicated in hypotensive patients (SBP < 90). It causes vasodilation that would further reduce blood pressure in an already severely hypotensive patient, potentially worsening shock and causing cardiovascular collapse.",
+            "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Administer a 1-liter normal saline bolus to increase preload and improve cardiac output",
+            "correct": false,
+            "critical": false,
+            "explanation": "This patient already has signs of volume overload (crackles, JVD, weight gain). Additional IV fluids would worsen pulmonary edema. Cardiogenic shock is a pump failure problem, not a volume problem.",
+            "guideline_ref": "AHA Heart Failure Guidelines; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Administer furosemide 80 mg IV to rapidly reduce volume overload",
+            "correct": false,
+            "critical": false,
+            "explanation": "While this patient has volume overload, IV diuretics in the setting of SBP 78/52 could worsen hypotension. The priority is hemodynamic stabilization with vasopressors and respiratory support, not aggressive diuresis.",
+            "guideline_ref": "AHA Heart Failure Guidelines; National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "The key challenge in cardiogenic shock with pulmonary edema is that standard heart failure treatments (nitrates, diuretics) lower blood pressure, while standard shock treatments (fluids) worsen congestion. Vasopressors and CPAP thread this needle."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL findings that differentiate cardiogenic shock from hypovolemic shock.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Jugular venous distension",
+            "correct": true,
+            "critical": false,
+            "explanation": "JVD indicates elevated central venous pressure from blood backing up behind a failing heart. In hypovolemic shock, JVD is absent — the veins are flat due to volume depletion.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Pulmonary crackles (rales)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Crackles indicate pulmonary edema from elevated left ventricular end-diastolic pressure. Hypovolemic shock patients have clear lung sounds.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "History of recent myocardial infarction or cardiac disease",
+            "correct": true,
+            "critical": false,
+            "explanation": "A cardiac history provides critical context. Recent MI with reduced ejection fraction strongly suggests cardiogenic etiology for the shock state.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Tachycardia with weak, thready pulses",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tachycardia and weak pulses are present in both cardiogenic and hypovolemic shock. They reflect the body's compensatory response to inadequate perfusion regardless of etiology.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Cool, diaphoretic skin with pallor",
+            "correct": false,
+            "critical": false,
+            "explanation": "Cool, diaphoretic, pale skin is a common finding in all forms of shock due to sympathetic activation and peripheral vasoconstriction. It does not differentiate between types.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Remember: cardiogenic shock = 'wet and cold' (congested and poorly perfused). Hypovolemic shock = 'dry and cold' (volume depleted and poorly perfused). The presence or absence of congestion is the key differentiator."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-24",
+    "title": "31M — Syncopal Episode While Sleeping",
+    "dispatch": "31-year-old male, passed out in bed, now awake and confused",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 31,
+      "sex": "M",
+      "cc": "Syncope during sleep, chest discomfort"
+    },
+    "scene": "You arrive at an apartment where a 31-year-old male is sitting up in bed, appearing confused and anxious. His partner reports she was awakened by him making gurgling sounds and found him unresponsive with jerking movements that lasted about 20 seconds. He regained consciousness spontaneously. He now reports vague chest discomfort and feeling like his heart is racing. He denies exertion or drug use. He mentions his older brother died suddenly in his sleep at age 34. The 12-lead ECG shows a coved-type ST elevation in V1-V2 with a right bundle branch block pattern in sinus rhythm.",
+    "history": {
+      "pmh": "None previously diagnosed; family history of sudden cardiac death (brother, age 34)",
+      "meds": "None",
+      "allergies": "NKDA"
+    },
+    "vitals": {
+      "hr": 92,
+      "bp": "124/78",
+      "rr": 16,
+      "spo2": 98,
+      "gcs": 15,
+      "temp": "98.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The 12-lead ECG shows coved ST elevation in V1-V2 with an RBBB pattern. Combined with the patient's history, what is the MOST concerning interpretation?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "A pattern associated with inherited sodium channelopathy that predisposes to sudden cardiac death from ventricular dysrhythmias",
+            "correct": true,
+            "critical": false,
+            "explanation": "The Type 1 Brugada ECG pattern shows coved-type ST elevation ≥ 2mm in V1-V3 with T-wave inversion, often with an RBBB morphology. Combined with syncope during sleep and family history of sudden cardiac death, this is a high-risk presentation. Brugada syndrome causes VF, often during rest or sleep.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Acute right ventricular myocardial infarction requiring emergent cardiac catheterization",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ST elevation in V1-V2 can occur with RV infarction, the coved morphology with RBBB pattern, young age, no coronary risk factors, and family history of sudden death point to a channelopathy rather than acute coronary syndrome.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Benign early repolarization common in young males that requires no further evaluation",
+            "correct": false,
+            "critical": true,
+            "explanation": "Dismissing this ECG pattern as benign in a patient with nocturnal syncope and family sudden death history would be dangerous. The coved ST morphology in V1-V2 is pathological and associated with life-threatening arrhythmias.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          },
+          {
+            "text": "Pericarditis with diffuse ST elevation requiring anti-inflammatory treatment",
+            "correct": false,
+            "critical": false,
+            "explanation": "Pericarditis causes diffuse ST elevation with PR depression, not localized coved elevation in V1-V2 with RBBB morphology. The pattern and clinical presentation are inconsistent with pericarditis.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Brugada syndrome is more common in males and those of Southeast Asian descent. Arrhythmic events often occur during sleep, rest, or with fever. Some medications (sodium channel blockers, certain anesthetics) can unmask or worsen the pattern."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital management steps in order of priority for this patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Continuous cardiac monitoring with defibrillator pads applied prophylactically",
+          "Establish IV access",
+          "Transmit the 12-lead ECG to the receiving facility",
+          "Transport to a facility with electrophysiology capabilities"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "The highest priority is continuous monitoring with defibrillation capability immediately available — this patient is at high risk for VF. Establish IV access for potential medication or resuscitation needs. Transmit the 12-lead ECG early so the receiving facility can prepare. Transport to a center with electrophysiology services for definitive evaluation and likely ICD placement discussion.",
+        "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "If this patient arrests, standard ACLS applies. Isoproterenol may be used in recurrent VF/VT storm associated with Brugada syndrome — it increases heart rate and calcium channel activity, suppressing the arrhythmogenic substrate."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL factors that classify this patient as HIGH risk for sudden cardiac death with this ECG pattern.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Spontaneous Type 1 (coved) ECG pattern without provocation",
+            "correct": true,
+            "critical": false,
+            "explanation": "A spontaneous Type 1 Brugada pattern (not requiring drug provocation to appear) indicates a more severe phenotype with higher arrhythmia risk.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          },
+          {
+            "text": "History of syncope, especially nocturnal or at rest",
+            "correct": true,
+            "critical": false,
+            "explanation": "Syncope in a patient with a Brugada ECG pattern likely represents a self-terminating ventricular arrhythmia and is a strong predictor of future cardiac arrest.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          },
+          {
+            "text": "Family history of sudden cardiac death under age 45",
+            "correct": true,
+            "critical": false,
+            "explanation": "Family history of premature sudden death suggests a familial channelopathy and indicates higher risk. Brugada syndrome has an autosomal dominant inheritance pattern.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          },
+          {
+            "text": "Male sex",
+            "correct": false,
+            "critical": false,
+            "explanation": "While Brugada syndrome is more common and more often symptomatic in males, male sex alone is not used as a high-risk stratification factor in current guidelines for determining ICD placement.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          },
+          {
+            "text": "Resting heart rate above 90 bpm",
+            "correct": false,
+            "critical": false,
+            "explanation": "A mildly elevated resting heart rate is not a recognized risk stratification factor in Brugada syndrome. In fact, arrhythmic events are more common during bradycardia and vagal predominance.",
+            "guideline_ref": "AHA/ACC Ventricular Arrhythmia Guidelines"
+          }
+        ],
+        "clinical_pearl": "Patients with Brugada syndrome and syncope have up to a 10% annual risk of cardiac arrest. The only proven preventive therapy is an implantable cardioverter-defibrillator (ICD)."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-25",
+    "title": "45F — Weakness and Shortness of Breath Over Several Days",
+    "dispatch": "45-year-old female, progressive weakness, difficulty breathing, feels faint",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 45,
+      "sex": "F",
+      "cc": "Progressive dyspnea, chest pressure, lightheadedness"
+    },
+    "scene": "You arrive at an office building where a 45-year-old female is reclined in a desk chair, appearing pale and anxious. She reports worsening shortness of breath over the past 5 days with a feeling of chest heaviness that is worse when lying down. She was recently treated for a viral upper respiratory infection. She appears uncomfortable, with muffled heart sounds on auscultation, jugular venous distension, and distant heart tones. Her blood pressure drops noticeably during inspiration. The 12-lead ECG shows low-voltage QRS complexes with electrical alternans (beat-to-beat alternation in QRS amplitude).",
+    "history": {
+      "pmh": "Systemic lupus erythematosus, hypothyroidism",
+      "meds": "Hydroxychloroquine 200 mg BID, prednisone 10 mg daily, levothyroxine 75 mcg daily",
+      "allergies": "Sulfa drugs"
+    },
+    "vitals": {
+      "hr": 122,
+      "bp": "94/70",
+      "rr": 24,
+      "spo2": 93,
+      "gcs": 15,
+      "temp": "99.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The ECG shows low-voltage QRS complexes with electrical alternans. Combined with the physical findings, what is the MOST likely cause of this patient's presentation?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Large pericardial effusion with the heart swinging within the fluid-filled pericardial sac",
+            "correct": true,
+            "critical": false,
+            "explanation": "Electrical alternans (beat-to-beat QRS amplitude variation) is caused by the heart physically swinging back and forth in a large pericardial effusion. Combined with muffled heart sounds, JVD, and hypotension, this presentation strongly suggests cardiac tamponade physiology from a large effusion. SLE is a known cause of pericarditis and pericardial effusion.",
+            "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Acute myocardial infarction with resulting heart failure",
+            "correct": false,
+            "critical": false,
+            "explanation": "While AMI can cause low voltage from edema, electrical alternans is highly specific for large pericardial effusion. The muffled heart sounds and clinical context of SLE and recent viral illness point to pericardial disease, not ACS.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Wolff-Parkinson-White syndrome with alternating pre-excitation",
+            "correct": false,
+            "critical": false,
+            "explanation": "WPW shows a delta wave and short PR interval, not beat-to-beat QRS amplitude variation. The clinical findings of muffled heart sounds and JVD are not associated with WPW.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Lead placement error causing artifactual voltage changes",
+            "correct": false,
+            "critical": false,
+            "explanation": "While technical issues can cause ECG artifact, true electrical alternans with the consistent clinical picture of muffled sounds, JVD, and hypotension in an SLE patient is pathological and should not be dismissed as artifact.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Electrical alternans is highly specific for large pericardial effusion — it occurs because the heart literally swings like a pendulum in the fluid, changing its electrical axis with each beat. When you see it, think tamponade."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "Select ALL components of Beck's triad that are present in this patient's assessment.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Hypotension",
+            "correct": true,
+            "critical": false,
+            "explanation": "BP of 94/70 with tachycardia and signs of poor perfusion indicates hypotension. This is one of the three classic findings of cardiac tamponade.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Muffled (distant) heart sounds",
+            "correct": true,
+            "critical": false,
+            "explanation": "Fluid surrounding the heart attenuates sound transmission, producing muffled or distant heart sounds. This is the second component of Beck's triad.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Jugular venous distension",
+            "correct": true,
+            "critical": false,
+            "explanation": "JVD occurs because the compressed heart cannot accept venous return, causing blood to back up into the systemic venous system. This is the third component of Beck's triad.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Bilateral pulmonary crackles",
+            "correct": false,
+            "critical": false,
+            "explanation": "Pulmonary crackles are not part of Beck's triad. In tamponade, the lungs are often clear because the compressed right heart limits blood flow to the pulmonary circulation.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Widened pulse pressure",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tamponade causes a narrowed pulse pressure, not widened. The pericardial compression limits stroke volume, reducing systolic pressure while diastolic remains relatively maintained.",
+            "guideline_ref": "National EMS Education Standards — Cardiology"
+          }
+        ],
+        "clinical_pearl": "Beck's triad (hypotension, JVD, muffled heart sounds) is present in only about one-third of tamponade cases. Pulsus paradoxus (>10 mmHg drop in SBP during inspiration) is a more sensitive finding — use manual BP and listen carefully during respiratory cycles."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions in order of priority for this patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer supplemental oxygen via non-rebreather mask",
+          "Establish two large-bore IVs and administer a cautious fluid bolus (250-500 mL NS)",
+          "Maintain the patient in a position of comfort (avoid supine positioning if possible)",
+          "Rapid transport to a facility capable of emergency pericardiocentesis or surgical intervention"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "Oxygen first to address hypoxemia. IV fluid bolus to temporarily increase preload and improve cardiac filling — in tamponade, the heart needs increased venous pressure to overcome the external compression. Keep the patient positioned comfortably (upright or semi-reclined often preferred). Rapid transport is essential — definitive treatment is pericardiocentesis or surgical drainage, which cannot be performed in the field by most EMS systems.",
+        "guideline_ref": "AHA ACLS 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "In cardiac tamponade, avoid anything that decreases preload (nitroglycerin, diuretics, positive pressure ventilation if possible). The right heart needs maximal filling pressure to push blood past the compressing fluid. Fluids are a temporizing bridge to drainage."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each of the following conditions as a cause of either 'Acute Cardiac Tamponade' (rapid onset, often traumatic) or 'Subacute/Chronic Pericardial Effusion' (gradual accumulation).",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Penetrating chest trauma with cardiac injury",
+          "Systemic lupus erythematosus",
+          "Aortic dissection with retrograde extension into pericardium",
+          "Uremia from end-stage renal disease",
+          "Post-cardiac surgery hemorrhage"
+        ],
+        "categories": ["Acute tamponade", "Subacute/chronic effusion"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Acute tamponade: Penetrating trauma causes rapid hemorrhage into the pericardium — as little as 100-150 mL can cause tamponade acutely. Aortic dissection can rupture into the pericardium causing rapid hemopericardium. Post-surgical bleeding accumulates quickly in the rigid post-operative pericardium. Subacute/chronic: SLE causes inflammatory pericarditis with gradual fluid accumulation — the pericardium stretches over time and can accommodate large volumes (>1 L) before tamponade develops. Uremic pericarditis similarly causes gradual effusion.",
+        "guideline_ref": "National EMS Education Standards — Cardiology; AHA Guidelines",
+        "clinical_pearl": "The rate of fluid accumulation matters more than the volume. Acute hemorrhage of 150 mL can cause tamponade, while chronic effusions may reach 1-2 liters before becoming hemodynamically significant because the pericardium slowly stretches to accommodate."
+      }
+    ]
+  }
+]

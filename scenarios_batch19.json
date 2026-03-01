@@ -1,0 +1,1030 @@
+[
+  {
+    "id": "nat-med-23",
+    "title": "52M — Severe Abdominal Pain at Restaurant",
+    "dispatch": "52-year-old male, severe abdominal pain, unable to move",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 52,
+      "sex": "M",
+      "cc": "Severe abdominal pain with rigidity"
+    },
+    "scene": "You arrive at a restaurant where a 52-year-old male is lying on the floor near the bar area, knees drawn to his chest. Staff report he was drinking with friends when he suddenly doubled over in pain approximately 20 minutes ago. He is diaphoretic and pale. He reports the pain started in his mid-abdomen and has now spread across his entire belly. On palpation, his abdomen is rigid and board-like with diffuse tenderness. He last had abdominal surgery 3 years ago for a perforated ulcer.",
+    "history": {
+      "pmh": "Peptic ulcer disease (prior perforation with surgical repair), GERD, chronic NSAID use for back pain",
+      "meds": "Omeprazole 40 mg daily, ibuprofen 800 mg TID, occasional antacids",
+      "allergies": "Codeine (nausea)"
+    },
+    "vitals": {
+      "hr": 118,
+      "bp": "96/58",
+      "rr": 28,
+      "spo2": 97,
+      "gcs": 15,
+      "temp": "101.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of assessment findings is MOST suggestive of peritonitis in this patient?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Board-like abdominal rigidity, diffuse tenderness, tachycardia, and fever in a patient with a history of prior abdominal perforation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Peritonitis classically presents with involuntary guarding (board-like rigidity), diffuse abdominal tenderness, tachycardia, fever, and signs of systemic toxicity. This patient's history of prior perforation and chronic NSAID use places him at high risk for recurrent perforation.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies; NAEMSP Clinical Guidelines"
+          },
+          {
+            "text": "Localized right lower quadrant pain with rebound tenderness, low-grade fever, and anorexia beginning over the past 24 hours",
+            "correct": false,
+            "critical": false,
+            "explanation": "This pattern is more consistent with early appendicitis. Peritonitis from perforation typically presents with diffuse, not localized, abdominal findings and a more acute onset.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Colicky abdominal pain that comes and goes in waves with hyperactive bowel sounds and intermittent vomiting",
+            "correct": false,
+            "critical": false,
+            "explanation": "Colicky, intermittent pain with hyperactive bowel sounds is more suggestive of bowel obstruction or renal colic. Peritonitis typically presents with constant pain and diminished or absent bowel sounds.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Epigastric pain that radiates to the back with relief when leaning forward and a history of heavy alcohol use",
+            "correct": false,
+            "critical": false,
+            "explanation": "This presentation is more consistent with acute pancreatitis. While pancreatitis can lead to peritonitis, the classic positional relief and radiation pattern distinguishes it from primary peritonitis.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          }
+        ],
+        "clinical_pearl": "Involuntary guarding (board-like rigidity) is a key finding that differentiates peritonitis from other causes of abdominal pain. It represents an involuntary reflex and cannot be overcome by asking the patient to relax."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions for this patient in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Establish IV access and begin fluid resuscitation with normal saline bolus",
+          "Place patient in position of comfort (typically knees flexed)",
+          "Administer analgesic for pain management per protocol",
+          "Obtain serial vital signs and reassess abdomen",
+          "Initiate rapid transport to surgical-capable facility"
+        ],
+        "correctOrder": [1, 0, 4, 3, 2],
+        "explanation": "Position the patient for comfort first (knees flexed reduces peritoneal stretch). Establish IV access urgently given hypotension and tachycardia — this patient is showing early signs of septic shock. Initiate rapid transport to a surgical-capable facility since definitive care is operative. Continue serial assessments en route. Pain management is appropriate but should not delay transport — administer en route.",
+        "guideline_ref": "National EMS Education Standards — Abdominal Emergencies; NAEMSP Position Statement on Prehospital Pain Management",
+        "clinical_pearl": "Patients with acute abdomen and peritoneal signs require emergent surgical evaluation. Do not withhold analgesics based on outdated concerns about masking exam findings — modern evidence supports prehospital pain management."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate fluid resuscitation strategies for this patient showing signs of early septic shock.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "IV access is established. The patient remains tachycardic and hypotensive with BP 92/56.",
+        "options": [
+          {
+            "text": "Administer an initial bolus of 20 mL/kg isotonic crystalloid (normal saline or lactated Ringer's)",
+            "correct": true,
+            "critical": false,
+            "explanation": "An initial crystalloid bolus of 20 mL/kg is the standard approach for fluid resuscitation in suspected septic shock. This should be administered rapidly.",
+            "guideline_ref": "Surviving Sepsis Campaign Guidelines; National EMS Education Standards — Shock Management"
+          },
+          {
+            "text": "Reassess vital signs and perfusion status after each fluid bolus to guide further resuscitation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Serial reassessment after fluid boluses is essential to evaluate response and avoid fluid overload. Target improvement in blood pressure, heart rate, mental status, and capillary refill.",
+            "guideline_ref": "National EMS Education Standards — Shock Management"
+          },
+          {
+            "text": "Establish a second IV line for additional access in case of hemodynamic deterioration",
+            "correct": true,
+            "critical": false,
+            "explanation": "A second IV line provides redundancy for fluid administration and medication access, which is prudent in a patient with signs of shock and potential need for rapid volume resuscitation.",
+            "guideline_ref": "National EMS Education Standards — Shock Management"
+          },
+          {
+            "text": "Restrict fluid administration to 250 mL/hr to prevent pulmonary edema in this patient",
+            "correct": false,
+            "critical": false,
+            "explanation": "Restricting fluids to a slow drip rate is inappropriate in a patient with signs of septic shock. Aggressive early fluid resuscitation is a cornerstone of sepsis management.",
+            "guideline_ref": "Surviving Sepsis Campaign Guidelines"
+          },
+          {
+            "text": "Administer 5% dextrose in water (D5W) as the primary resuscitation fluid",
+            "correct": false,
+            "critical": false,
+            "explanation": "D5W is a hypotonic solution that distributes primarily into intracellular space and is ineffective as a volume expander. Isotonic crystalloids are the appropriate choice for volume resuscitation.",
+            "guideline_ref": "National EMS Education Standards — IV Fluid Therapy"
+          }
+        ],
+        "clinical_pearl": "In septic shock, the Surviving Sepsis Campaign recommends at least 30 mL/kg of crystalloid within the first 3 hours. Prehospital providers should begin this process early — every minute of hypotension increases mortality."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which underlying pathophysiology BEST explains why this patient developed peritonitis?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Chronic NSAID use inhibited prostaglandin-mediated mucosal protection, predisposing to recurrent ulcer perforation and spillage of GI contents into the peritoneal cavity",
+            "correct": true,
+            "critical": false,
+            "explanation": "NSAIDs inhibit cyclooxygenase (COX), reducing prostaglandin synthesis that normally maintains the gastric mucosal barrier. Chronic use significantly increases the risk of peptic ulcer recurrence and perforation, allowing GI contents to contaminate the peritoneum.",
+            "guideline_ref": "National EMS Education Standards — Pathophysiology of Abdominal Emergencies"
+          },
+          {
+            "text": "Bacterial translocation from the large intestine due to chronic constipation caused by opioid analgesic use",
+            "correct": false,
+            "critical": false,
+            "explanation": "While bacterial translocation can occur, this patient is not on opioid analgesics and his presentation is more consistent with a perforation given his surgical history and NSAID use.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Portal hypertension from underlying cirrhosis leading to spontaneous bacterial peritonitis",
+            "correct": false,
+            "critical": false,
+            "explanation": "Spontaneous bacterial peritonitis occurs in patients with ascites, typically from cirrhosis. There is no history suggesting liver disease or ascites in this patient.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Acute mesenteric ischemia from an arterial embolism causing bowel wall necrosis and peritoneal contamination",
+            "correct": false,
+            "critical": false,
+            "explanation": "While mesenteric ischemia can cause peritonitis, it typically presents in patients with atrial fibrillation or other embolic risk factors. This patient's history strongly points to NSAID-related ulcer perforation.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          }
+        ],
+        "clinical_pearl": "Chronic NSAID use is one of the leading risk factors for peptic ulcer disease and perforation. Always ask about NSAID use in patients with abdominal pain — many patients do not consider OTC medications worth mentioning."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-24",
+    "title": "68F — Weakness and Confusion at Dialysis Center",
+    "dispatch": "68-year-old female, generalized weakness, altered mental status",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 68,
+      "sex": "F",
+      "cc": "Generalized weakness and confusion"
+    },
+    "scene": "You arrive at an outpatient dialysis center where staff have called 911 for a 68-year-old female patient. She arrived for her scheduled dialysis session but was found to be confused and lethargic in the waiting room. Staff report she missed her last two dialysis sessions due to transportation issues. She has bilateral lower extremity edema and her skin appears sallow. She is oriented to person only and has notable muscle weakness, particularly in her lower extremities. She complains of tingling in her hands and feet and intermittent nausea.",
+    "history": {
+      "pmh": "End-stage renal disease on hemodialysis (MWF schedule), Type 2 diabetes, hypertension, heart failure (EF 35%)",
+      "meds": "Insulin glargine, amlodipine, sevelamer, epoetin alfa",
+      "allergies": "Penicillin (rash)"
+    },
+    "vitals": {
+      "hr": 52,
+      "bp": "178/104",
+      "rr": 22,
+      "spo2": 93,
+      "gcs": 13,
+      "temp": "97.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient presents with bradycardia, muscle weakness, and missed dialysis sessions. Which electrolyte abnormality should you be MOST concerned about?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Hyperkalemia from impaired renal potassium excretion",
+            "correct": true,
+            "critical": false,
+            "explanation": "Missed dialysis in ESRD patients leads to potassium accumulation. Hyperkalemia causes muscle weakness, paresthesias, bradycardia, and cardiac conduction abnormalities that can progress to fatal dysrhythmias.",
+            "guideline_ref": "National EMS Education Standards — Renal Emergencies; AHA ACLS Guidelines 2020"
+          },
+          {
+            "text": "Hyponatremia from excessive free water retention",
+            "correct": false,
+            "critical": false,
+            "explanation": "While hyponatremia can occur in renal failure, it typically presents with more prominent neurological symptoms (seizures, cerebral edema). The bradycardia and muscle weakness pattern is more characteristic of hyperkalemia.",
+            "guideline_ref": "National EMS Education Standards — Renal Emergencies"
+          },
+          {
+            "text": "Hypocalcemia from phosphate retention and vitamin D deficiency",
+            "correct": false,
+            "critical": false,
+            "explanation": "Hypocalcemia is common in ESRD but typically presents with muscle cramps, tetany, and Chvostek/Trousseau signs. The bradycardia in this case is more consistent with hyperkalemia.",
+            "guideline_ref": "National EMS Education Standards — Renal Emergencies"
+          },
+          {
+            "text": "Hypermagnesemia from inability to excrete magnesium",
+            "correct": false,
+            "critical": false,
+            "explanation": "Hypermagnesemia can cause weakness and bradycardia but is less common than hyperkalemia in missed dialysis patients. Hyperkalemia is the most immediately life-threatening electrolyte disturbance in this scenario.",
+            "guideline_ref": "National EMS Education Standards — Renal Emergencies"
+          }
+        ],
+        "clinical_pearl": "Hyperkalemia is the most immediately life-threatening complication of missed dialysis. The ECG progression: peaked T waves → PR prolongation → QRS widening → sine wave → cardiac arrest. Any ESRD patient with missed dialysis and bradycardia should be treated as hyperkalemic until proven otherwise."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You obtain a 12-lead ECG showing peaked T waves with a widened QRS complex. Arrange the following Paramedic-level interventions in the correct priority order for managing suspected severe hyperkalemia.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer calcium chloride 1g slow IV push for cardiac membrane stabilization",
+          "Administer sodium bicarbonate 50 mEq IV to shift potassium intracellularly",
+          "Administer albuterol 10-20 mg via continuous nebulization",
+          "Continuous cardiac monitoring with transcutaneous pacing pads applied",
+          "Establish large-bore IV access"
+        ],
+        "correctOrder": [4, 3, 0, 1, 2],
+        "explanation": "First, establish IV access for medication administration. Apply cardiac monitoring with TCP pads ready, as the patient may deteriorate to a lethal rhythm. Calcium chloride is the first medication priority — it stabilizes the cardiac membrane within minutes but does not lower potassium. Sodium bicarbonate shifts potassium intracellularly. Albuterol also drives potassium into cells and can be given simultaneously with other interventions.",
+        "guideline_ref": "AHA ACLS Guidelines 2020 — Hyperkalemia Management; National EMS Education Standards — Renal Emergencies",
+        "clinical_pearl": "Calcium does NOT lower serum potassium — it stabilizes the cardiac membrane to prevent dysrhythmias while other treatments (bicarb, albuterol) work to shift potassium intracellularly. Think of calcium as 'buying time.'"
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize each intervention by its mechanism in managing hyperkalemia.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Calcium chloride IV",
+          "Sodium bicarbonate IV",
+          "Nebulized albuterol",
+          "Insulin with dextrose IV",
+          "Kayexalate (sodium polystyrene sulfonate)"
+        ],
+        "categories": [
+          "Cardiac Membrane Stabilization",
+          "Intracellular Potassium Shift",
+          "Potassium Elimination"
+        ],
+        "correctCategories": [0, 1, 1, 1, 2],
+        "explanation": "Calcium chloride stabilizes the cardiac membrane but does not affect serum potassium levels. Sodium bicarbonate, albuterol, and insulin/dextrose all work by shifting potassium from extracellular to intracellular space, temporarily lowering serum levels. Kayexalate is a cation exchange resin that actually removes potassium from the body through the GI tract. Definitive treatment for ESRD patients is dialysis.",
+        "guideline_ref": "AHA ACLS Guidelines 2020 — Hyperkalemia; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "In the prehospital setting, calcium and sodium bicarbonate are the most readily available interventions. Insulin/dextrose and Kayexalate are typically hospital-based treatments, but understanding the mechanisms helps prioritize care."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient's cardiac rhythm changes to a wide-complex bradycardia at 34 bpm with loss of P waves. The patient becomes unresponsive. What is your MOST appropriate immediate action?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Three minutes into transport, the cardiac monitor alarms.",
+        "vitals_update": {
+          "hr": 34,
+          "bp": "72/40",
+          "rr": 8,
+          "spo2": 88,
+          "gcs": 6
+        },
+        "options": [
+          {
+            "text": "Initiate transcutaneous pacing while administering a repeat dose of calcium chloride",
+            "correct": true,
+            "critical": false,
+            "explanation": "In hyperkalemia-induced severe bradycardia with hemodynamic instability, transcutaneous pacing provides rate support while repeat calcium chloride further stabilizes the myocardium. This combination addresses both the rate and the underlying toxicity.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; ACLS Hyperkalemia Management"
+          },
+          {
+            "text": "Administer atropine 1 mg IV push and reassess rhythm in 3-5 minutes",
+            "correct": false,
+            "critical": false,
+            "explanation": "Atropine works by blocking vagal tone at the AV node, but hyperkalemia-induced bradycardia is caused by direct myocardial toxicity, not vagal excess. Atropine is often ineffective in this setting and should not delay more definitive interventions.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020"
+          },
+          {
+            "text": "Perform synchronized cardioversion at 100J to convert the wide-complex rhythm",
+            "correct": false,
+            "critical": true,
+            "explanation": "Synchronized cardioversion is used for tachydysrhythmias, not bradycardia. Attempting cardioversion on a bradycardic rhythm is inappropriate and could precipitate cardiac arrest.",
+            "guideline_ref": "AHA ACLS Guidelines 2020"
+          },
+          {
+            "text": "Withhold further interventions and increase transport speed since definitive care requires emergent dialysis",
+            "correct": false,
+            "critical": true,
+            "explanation": "Withholding treatment in an actively deteriorating patient is dangerous. The patient may arrest before reaching the hospital. Prehospital stabilization with pacing and calcium is critical bridge therapy.",
+            "guideline_ref": "National EMS Education Standards — Critical Thinking and Clinical Decision Making"
+          }
+        ],
+        "clinical_pearl": "Hyperkalemia-induced bradycardia may not respond to atropine because the mechanism is direct myocardial toxicity rather than increased vagal tone. Transcutaneous pacing and calcium administration are the mainstays of prehospital management."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-25",
+    "title": "24F — Collapsed Runner at Marathon",
+    "dispatch": "24-year-old female runner, collapsed at mile 22, altered mental status",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 24,
+      "sex": "F",
+      "cc": "Collapse during marathon with weakness and confusion"
+    },
+    "scene": "You respond to mile 22 of a spring marathon on a mild 62°F day. A 24-year-old female runner has collapsed and is being supported by bystanders. She is confused, weak, and complaining of severe nausea and dizziness. Her skin is notably hyperpigmented, particularly on her knuckles, elbows, and around her lips. She is wearing a medical alert bracelet that reads 'Adrenal Insufficiency — Steroid Dependent.' Her running partner states she has been 'off' for the last several miles, becoming increasingly lethargic and disoriented. She vomited twice before collapsing.",
+    "history": {
+      "pmh": "Primary adrenal insufficiency (Addison's disease), hypothyroidism",
+      "meds": "Hydrocortisone 20 mg AM / 10 mg PM, fludrocortisone 0.1 mg daily, levothyroxine 75 mcg daily",
+      "allergies": "No known allergies"
+    },
+    "vitals": {
+      "hr": 128,
+      "bp": "76/48",
+      "rr": 24,
+      "spo2": 98,
+      "gcs": 12,
+      "temp": "97.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Select ALL findings in this patient that are consistent with an acute adrenal crisis.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Hypotension refractory to the degree of physical exertion expected",
+            "correct": true,
+            "critical": false,
+            "explanation": "Adrenal crisis causes profound hypotension due to cortisol and aldosterone deficiency. Cortisol is essential for maintaining vascular tone and catecholamine responsiveness, while aldosterone regulates sodium and water retention.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Hyperpigmentation of skin creases, knuckles, and mucosal surfaces",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hyperpigmentation is pathognomonic for primary adrenal insufficiency (Addison's disease). It occurs because ACTH and melanocyte-stimulating hormone (MSH) share a precursor molecule — elevated ACTH from lack of cortisol feedback drives increased melanin production.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Medical alert bracelet identifying adrenal insufficiency and steroid dependence",
+            "correct": true,
+            "critical": false,
+            "explanation": "Medical identification confirming adrenal insufficiency strongly supports the diagnosis. Patients with known Addison's disease are at high risk for crisis during physiologic stress such as prolonged intense exercise.",
+            "guideline_ref": "National EMS Education Standards — Patient Assessment"
+          },
+          {
+            "text": "Nausea, vomiting, and progressive lethargy during physiologic stress",
+            "correct": true,
+            "critical": false,
+            "explanation": "GI symptoms (nausea, vomiting, abdominal pain) and progressive altered mental status are hallmark features of adrenal crisis. The physiologic stress of marathon running in a cortisol-deficient patient can precipitate crisis.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Oxygen saturation of 98% indicating adequate respiratory compensation",
+            "correct": false,
+            "critical": false,
+            "explanation": "A normal SpO2 is not a specific finding of adrenal crisis. Respiratory involvement in adrenal crisis is typically limited unless the patient develops severe shock with subsequent pulmonary compromise.",
+            "guideline_ref": "National EMS Education Standards — Patient Assessment"
+          },
+          {
+            "text": "Fever of 103.4°F with flushed, hot skin indicating heat stroke",
+            "correct": false,
+            "critical": false,
+            "explanation": "This patient's temperature is actually subnormal at 97.2°F. Hypothermia, not hyperthermia, is more common in adrenal crisis due to impaired thermoregulation from cortisol deficiency.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          }
+        ],
+        "clinical_pearl": "Adrenal crisis can mimic septic shock — both present with hypotension, tachycardia, and altered mental status. Always check for medical alert identification and ask about steroid use. The triad of hypotension, hypoglycemia, and hyperkalemia in a stressed patient should raise suspicion for adrenal crisis."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You suspect adrenal crisis in this patient. Arrange the following treatment steps in the correct order.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer stress-dose hydrocortisone 100 mg IV per protocol",
+          "Establish IV access and initiate aggressive normal saline fluid resuscitation",
+          "Check blood glucose level",
+          "Administer dextrose if hypoglycemia is confirmed",
+          "Initiate rapid transport to the emergency department"
+        ],
+        "correctOrder": [1, 2, 3, 0, 4],
+        "explanation": "Establish IV access first as the patient is hemodynamically unstable and needs rapid fluid resuscitation. Check glucose immediately — hypoglycemia is common in adrenal crisis and easily correctable. Treat hypoglycemia with dextrose. Administer stress-dose steroids (hydrocortisone 100 mg IV) — this is the definitive prehospital treatment for adrenal crisis. Transport rapidly for continued stabilization and monitoring.",
+        "guideline_ref": "National EMS Education Standards — Endocrine Emergencies; Endocrine Society Clinical Practice Guidelines",
+        "clinical_pearl": "Stress-dose steroids are the definitive treatment for adrenal crisis. If hydrocortisone is not available in your formulary, aggressive fluid resuscitation and glucose management are critical bridge therapies. Some EMS systems carry hydrocortisone or dexamethasone for this indication."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After establishing IV access, you check the patient's blood glucose and find it is 48 mg/dL. What is the MOST appropriate glucose management approach?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "IV access is established. NS bolus is running. Blood glucose reads 48 mg/dL.",
+        "vitals_update": {
+          "hr": 122,
+          "bp": "82/52",
+          "rr": 22,
+          "spo2": 98,
+          "gcs": 13
+        },
+        "options": [
+          {
+            "text": "Administer D10W 200 mL IV (or D50W 25g per protocol) and recheck glucose in 5-10 minutes",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hypoglycemia in adrenal crisis results from impaired gluconeogenesis due to cortisol deficiency. IV dextrose is the appropriate treatment, with repeat glucose checks to ensure resolution. D10W is preferred in many protocols for more controlled glucose correction.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies; NAEMSP Hypoglycemia Guidelines"
+          },
+          {
+            "text": "Administer oral glucose gel since the patient has a GCS of 13 and can protect her airway",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the patient has a GCS of 13, she has been vomiting and is at risk for aspiration. IV dextrose is preferred when IV access is already established, especially in a patient with active nausea and altered mentation.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Withhold glucose correction since the hypoglycemia will resolve once stress-dose steroids are administered",
+            "correct": false,
+            "critical": true,
+            "explanation": "Hypoglycemia requires immediate correction regardless of planned steroid administration. Steroids take time to restore gluconeogenesis, and persistent hypoglycemia can cause seizures and neurological damage.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Administer glucagon 1 mg IM since it will mobilize hepatic glycogen stores more effectively than IV dextrose",
+            "correct": false,
+            "critical": false,
+            "explanation": "Glucagon stimulates hepatic glycogenolysis and gluconeogenesis, both of which require cortisol. In adrenal crisis, glucagon may have a diminished or delayed response. IV dextrose is preferred when IV access is available.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          }
+        ],
+        "clinical_pearl": "Glucagon may be less effective in adrenal crisis because cortisol is required for normal hepatic gluconeogenesis. When IV access is available, direct IV dextrose administration bypasses this limitation entirely."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-26",
+    "title": "47M — Fever and Weakness After Chemotherapy",
+    "dispatch": "47-year-old male, high fever, extreme weakness, recent cancer treatment",
+    "category": "Medical Emergencies",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 47,
+      "sex": "M",
+      "cc": "High fever and profound weakness"
+    },
+    "scene": "You arrive at a suburban home where a 47-year-old male is lying on the couch under multiple blankets, shivering with rigors. His wife states he completed his third cycle of chemotherapy for lymphoma 10 days ago. He has had a fever since early this morning that has been climbing despite acetaminophen. He is pale and appears cachectic. He has a mediport (implanted venous access device) visible under the skin of his right upper chest. His wife reports he was told to call 911 if he ever had a fever above 100.4°F during treatment. He is alert but appears toxic.",
+    "history": {
+      "pmh": "Non-Hodgkin lymphoma (undergoing R-CHOP chemotherapy, cycle 3 of 6), mediport placed 4 months ago",
+      "meds": "Ondansetron PRN, dexamethasone (chemotherapy days only), filgrastim (completed 5-day course 3 days ago)",
+      "allergies": "Vancomycin (Red Man syndrome — infusion rate-related)"
+    },
+    "vitals": {
+      "hr": 116,
+      "bp": "94/58",
+      "rr": 22,
+      "spo2": 96,
+      "gcs": 15,
+      "temp": "103.1°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "What makes this patient's fever particularly dangerous compared to a fever in an otherwise healthy individual?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Chemotherapy-induced bone marrow suppression has likely reduced his white blood cell count, leaving him severely immunocompromised and unable to fight infection",
+            "correct": true,
+            "critical": false,
+            "explanation": "Febrile neutropenia occurs when chemotherapy destroys rapidly dividing bone marrow cells, causing dangerously low neutrophil counts (typically nadir at 7-14 days post-chemo). Without functional neutrophils, even minor infections can rapidly progress to overwhelming sepsis.",
+            "guideline_ref": "National EMS Education Standards — Immunologic Emergencies; ASCO Febrile Neutropenia Guidelines"
+          },
+          {
+            "text": "The chemotherapy agents have directly damaged his thermoregulatory center, causing uncontrolled hyperthermia requiring active cooling",
+            "correct": false,
+            "critical": false,
+            "explanation": "Chemotherapy does not typically damage the hypothalamic thermoregulatory center. The fever is from infection in an immunocompromised host, not thermoregulatory dysfunction.",
+            "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
+          },
+          {
+            "text": "His mediport is the definitive source of infection and must be accessed and flushed in the prehospital setting to deliver antibiotics",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the mediport is a potential infection source (line sepsis), it is not definitively the source and should not be accessed in the field unless protocols specifically authorize it. The concern is the patient's immunocompromised state, not specifically the port.",
+            "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
+          },
+          {
+            "text": "The lymphoma itself is causing tumor fever, which is an oncologic emergency requiring immediate chemotherapy dose adjustment",
+            "correct": false,
+            "critical": false,
+            "explanation": "While tumor fever exists, any fever in a post-chemotherapy patient must be presumed to be infectious in origin until proven otherwise. The timing (10 days post-chemo at expected neutrophil nadir) strongly suggests febrile neutropenia.",
+            "guideline_ref": "ASCO Febrile Neutropenia Guidelines"
+          }
+        ],
+        "clinical_pearl": "The '10-14 day rule': neutrophil counts typically reach their nadir 10-14 days after chemotherapy. This is the highest-risk window for febrile neutropenia. Any fever ≥100.4°F (38°C) in this window is a medical emergency."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this patient with suspected febrile neutropenia.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Apply supplemental oxygen to maintain SpO2 ≥94%",
+            "correct": true,
+            "critical": false,
+            "explanation": "Supplemental oxygen supports tissue oxygenation in a patient showing signs of early sepsis with tachycardia and borderline hypotension.",
+            "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
+          },
+          {
+            "text": "Establish IV access and administer a fluid bolus for hypotension",
+            "correct": true,
+            "critical": false,
+            "explanation": "IV fluid resuscitation is appropriate for this patient's borderline hypotension and tachycardia, which suggest early septic shock from infection in an immunocompromised host.",
+            "guideline_ref": "National EMS Education Standards — Shock Management; Surviving Sepsis Campaign"
+          },
+          {
+            "text": "Apply a surgical mask to the patient and use strict infection control precautions",
+            "correct": true,
+            "critical": false,
+            "explanation": "Immunocompromised patients are at risk for acquiring additional infections. A mask protects the patient from respiratory pathogens in the environment, and strict precautions protect both patient and providers.",
+            "guideline_ref": "National EMS Education Standards — Infection Control"
+          },
+          {
+            "text": "Transport emergently with early hospital notification specifying suspected febrile neutropenia",
+            "correct": true,
+            "critical": false,
+            "explanation": "Early hospital notification allows the ED to prepare for immediate blood cultures and empiric broad-spectrum IV antibiotics, which must be administered within 60 minutes of presentation. Time to antibiotics is the most critical factor in febrile neutropenia outcomes.",
+            "guideline_ref": "ASCO Febrile Neutropenia Guidelines; Surviving Sepsis Campaign"
+          },
+          {
+            "text": "Administer ibuprofen to reduce the fever and improve patient comfort",
+            "correct": false,
+            "critical": false,
+            "explanation": "NSAIDs are generally avoided in neutropenic patients due to risk of GI bleeding (platelets may also be suppressed) and because they can mask fever, which is the primary indicator of ongoing infection and treatment response.",
+            "guideline_ref": "ASCO Febrile Neutropenia Guidelines"
+          },
+          {
+            "text": "Access the mediport to draw blood cultures before transport to save time in the ED",
+            "correct": false,
+            "critical": false,
+            "explanation": "Accessing implanted ports requires specialized training, non-coring needles, and sterile technique. This is generally outside the prehospital scope of practice and risks introducing infection into an already compromised patient.",
+            "guideline_ref": "National EMS Education Standards — Vascular Access"
+          }
+        ],
+        "clinical_pearl": "In febrile neutropenia, every hour delay in antibiotic administration increases mortality. Your most impactful intervention is rapid transport with early hospital notification so the ED can have antibiotics ready on arrival."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize the following signs and symptoms into those that indicate the patient is developing septic shock versus those that suggest a stable febrile presentation.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Systolic blood pressure dropping below 90 mmHg despite fluid bolus",
+          "Fever of 101°F with stable vital signs and normal mentation",
+          "Mottled skin with delayed capillary refill greater than 4 seconds",
+          "Alert and oriented with mild tachycardia responding to antipyretics",
+          "Lactate level elevated on point-of-care testing (if available)",
+          "New-onset confusion with respiratory rate of 28"
+        ],
+        "categories": [
+          "Septic Shock Indicators",
+          "Stable Febrile Presentation"
+        ],
+        "correctCategories": [0, 1, 0, 1, 0, 0],
+        "explanation": "Septic shock indicators include refractory hypotension, mottled skin with poor perfusion, elevated lactate, and new confusion with tachypnea — all indicating end-organ hypoperfusion. A stable febrile presentation shows fever with maintained hemodynamics, normal mentation, and vital signs that respond to basic interventions.",
+        "guideline_ref": "Surviving Sepsis Campaign; National EMS Education Standards — Shock Assessment",
+        "clinical_pearl": "Use the qSOFA score in the prehospital setting: respiratory rate ≥22, altered mentation, and systolic BP ≤100. Two or more criteria suggest high risk for poor outcomes and should prompt aggressive resuscitation and emergent transport."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-27",
+    "title": "72M — Acute Reaction During Blood Transfusion at Nursing Facility",
+    "dispatch": "72-year-old male, acute distress during medical procedure, fever and back pain",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 72,
+      "sex": "M",
+      "cc": "Sudden back pain, fever, and dark urine during blood transfusion"
+    },
+    "scene": "You arrive at a skilled nursing facility where a 72-year-old male is receiving a packed red blood cell transfusion for chronic anemia. Approximately 15 minutes into the second unit, nursing staff noticed the patient became acutely agitated, complaining of severe low back pain and chills. He is flushed across his face and chest. His urine in the Foley catheter bag has turned dark reddish-brown since the transfusion began. The nursing staff have stopped the transfusion and clamped the line. The patient is anxious and states he feels like 'something terrible is happening.'",
+    "history": {
+      "pmh": "Myelodysplastic syndrome (transfusion-dependent), atrial fibrillation, chronic kidney disease stage 3, prostate cancer (treated)",
+      "meds": "Warfarin, apixaban (recently transitioned), furosemide, darbepoetin alfa",
+      "allergies": "Sulfa drugs (anaphylaxis)"
+    },
+    "vitals": {
+      "hr": 124,
+      "bp": "82/50",
+      "rr": 26,
+      "spo2": 94,
+      "gcs": 14,
+      "temp": "103.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the clinical presentation, which type of transfusion reaction is MOST likely occurring?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Acute hemolytic transfusion reaction from ABO incompatibility",
+            "correct": true,
+            "critical": false,
+            "explanation": "The triad of fever, flank/back pain, and dark (hemoglobinuric) urine during transfusion is classic for acute hemolytic transfusion reaction. This occurs when donor red cells are destroyed by recipient antibodies, most commonly from ABO mismatch. Hemoglobin released from lysed cells passes through the kidneys, causing the dark urine.",
+            "guideline_ref": "National EMS Education Standards — Hematologic Emergencies; AABB Transfusion Reaction Guidelines"
+          },
+          {
+            "text": "Febrile non-hemolytic transfusion reaction from cytokine release",
+            "correct": false,
+            "critical": false,
+            "explanation": "Febrile non-hemolytic reactions cause fever and chills but do NOT present with hemoglobinuria, severe back pain, or hypotension. The dark urine and hemodynamic instability point to a much more serious hemolytic reaction.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          },
+          {
+            "text": "Transfusion-related acute lung injury (TRALI) from donor antibodies",
+            "correct": false,
+            "critical": false,
+            "explanation": "TRALI presents primarily with acute respiratory distress, bilateral pulmonary infiltrates, and hypoxemia within 6 hours of transfusion. While this patient has some respiratory findings, the predominant back pain and hemoglobinuria are not characteristic of TRALI.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          },
+          {
+            "text": "Anaphylactic transfusion reaction from IgA deficiency",
+            "correct": false,
+            "critical": false,
+            "explanation": "Anaphylactic transfusion reactions present with urticaria, angioedema, bronchospasm, and cardiovascular collapse — similar to other anaphylaxis presentations. They do not cause hemoglobinuria or the specific back pain pattern seen here.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          }
+        ],
+        "clinical_pearl": "The classic triad of acute hemolytic transfusion reaction is fever, flank/back pain, and hemoglobinuria. In an unconscious or intubated patient, unexplained hypotension and hemoglobinuria during transfusion may be the only clues."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order for managing this acute hemolytic transfusion reaction.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Verify the transfusion has been stopped and the blood product is disconnected",
+          "Establish new IV access with new tubing and begin aggressive normal saline resuscitation",
+          "Administer high-flow oxygen and continuously monitor cardiac rhythm",
+          "Preserve the blood product bag and tubing for the hospital to analyze",
+          "Reassess vital signs and monitor urine output via the existing Foley catheter"
+        ],
+        "correctOrder": [0, 2, 1, 4, 3],
+        "explanation": "First, confirm the transfusion is stopped — no more incompatible blood should enter the patient. Immediately support oxygenation and establish monitoring for dysrhythmias (hemolysis releases potassium). Establish new IV access with new tubing (do not reuse the transfusion line) and begin aggressive crystalloid resuscitation to support blood pressure and maintain renal perfusion. Monitor urine output — maintaining renal blood flow helps prevent acute kidney injury from hemoglobin deposition. Preserve the blood product for hospital investigation.",
+        "guideline_ref": "National EMS Education Standards — Hematologic Emergencies; AABB Transfusion Reaction Management",
+        "clinical_pearl": "Use NEW IV tubing when starting fluids — the old tubing still contains incompatible blood. Aggressive fluid resuscitation serves a dual purpose: treating shock AND maintaining renal perfusion to prevent acute kidney injury from free hemoglobin deposition in the tubules."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL complications you should monitor for during transport of this patient with an acute hemolytic transfusion reaction.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The transfusion has been stopped. New IV access is established with NS running. The patient remains tachycardic and hypotensive.",
+        "options": [
+          {
+            "text": "Disseminated intravascular coagulation (DIC) with signs of diffuse bleeding",
+            "correct": true,
+            "critical": false,
+            "explanation": "Massive intravascular hemolysis activates the coagulation cascade, which can trigger DIC. Watch for oozing from IV sites, petechiae, or mucosal bleeding as signs of consumptive coagulopathy.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines; National EMS Education Standards — Hematologic Emergencies"
+          },
+          {
+            "text": "Acute kidney injury from hemoglobin deposition in the renal tubules",
+            "correct": true,
+            "critical": false,
+            "explanation": "Free hemoglobin from lysed red cells is directly nephrotoxic and can precipitate in the renal tubules, causing acute tubular necrosis. Maintaining urine output with aggressive fluid resuscitation is critical.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          },
+          {
+            "text": "Hyperkalemia from potassium released by lysed red blood cells",
+            "correct": true,
+            "critical": false,
+            "explanation": "Massive hemolysis releases intracellular potassium into the bloodstream. Combined with this patient's pre-existing CKD stage 3, hyperkalemia is a significant risk that can cause cardiac dysrhythmias.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines; AHA ACLS Guidelines"
+          },
+          {
+            "text": "Delayed allergic reaction requiring epinephrine administration",
+            "correct": false,
+            "critical": false,
+            "explanation": "Acute hemolytic reactions are antibody-mediated complement activation, not IgE-mediated allergic responses. Epinephrine is not a primary treatment for hemolytic transfusion reactions.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          },
+          {
+            "text": "Transfusion-associated circulatory overload (TACO) from the fluid resuscitation",
+            "correct": false,
+            "critical": false,
+            "explanation": "While fluid overload is always a consideration, this patient is acutely hypotensive from distributive and hypovolemic shock. Aggressive fluid resuscitation is indicated, and TACO is not the immediate concern compared to the active hemolytic process.",
+            "guideline_ref": "AABB Transfusion Reaction Guidelines"
+          }
+        ],
+        "clinical_pearl": "Acute hemolytic transfusion reactions can be fatal. The three deadly complications are DIC, acute renal failure, and hyperkalemia. This is why ABO verification at the bedside before every transfusion is the single most important safety step in transfusion medicine."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-28",
+    "title": "31M — Muscle Rigidity After Surgery at Outpatient Center",
+    "dispatch": "31-year-old male, post-surgical complication, high fever and muscle rigidity",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 31,
+      "sex": "M",
+      "cc": "Rapidly rising temperature, severe muscle rigidity, tachycardia post-anesthesia"
+    },
+    "scene": "You are called to a freestanding outpatient surgical center for a 31-year-old male who underwent arthroscopic knee surgery under general anesthesia. Approximately 45 minutes into the procedure, the anesthesiologist noticed rapidly increasing end-tidal CO2, tachycardia, and generalized muscle rigidity despite adequate anesthesia depth. The patient's temperature has risen from 98.6°F to 104.2°F in under 30 minutes. The surgical team has aborted the procedure. The anesthesiologist suspects malignant hyperthermia and has administered dantrolene from the facility's emergency supply. They are requesting ALS transport to the nearest hospital for ICU-level care. The patient is intubated and sedated.",
+    "history": {
+      "pmh": "No significant medical history. Family history notable for a cousin who 'had a bad reaction to anesthesia' (details unknown)",
+      "meds": "None daily; received succinylcholine and sevoflurane during induction",
+      "allergies": "No known allergies"
+    },
+    "vitals": {
+      "hr": 148,
+      "bp": "86/52",
+      "rr": "Ventilated at 18/min (ETCO2 62 mmHg)",
+      "spo2": 91,
+      "gcs": 3,
+      "temp": "104.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following findings as either an early sign or a late/severe complication of malignant hyperthermia.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Rapidly rising end-tidal CO2 despite adequate ventilation",
+          "Generalized skeletal muscle rigidity",
+          "Masseter muscle spasm (jaw rigidity) after succinylcholine",
+          "Dark cola-colored urine (myoglobinuria)",
+          "Disseminated intravascular coagulation with diffuse bleeding",
+          "Ventricular dysrhythmias progressing to cardiac arrest"
+        ],
+        "categories": [
+          "Early Signs",
+          "Late/Severe Complications"
+        ],
+        "correctCategories": [0, 0, 0, 1, 1, 1],
+        "explanation": "Early signs include rising ETCO2 (often the first indicator, reflecting hypermetabolism), muscle rigidity, and masseter spasm (especially after succinylcholine). Late complications include myoglobinuria (from massive rhabdomyolysis), DIC, and cardiac arrest from hyperkalemia and acidosis. Recognizing early signs is critical — mortality increases dramatically once late complications develop.",
+        "guideline_ref": "Malignant Hyperthermia Association of the United States (MHAUS) Guidelines; National EMS Education Standards — Special Considerations in Pharmacology",
+        "clinical_pearl": "Rising ETCO2 is often the FIRST sign of malignant hyperthermia — it may precede temperature elevation by 15-30 minutes. Anesthesiologists monitor ETCO2 continuously; in transport, capnography is equally valuable for detecting ongoing hypermetabolism."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You are transporting this intubated patient after initial dantrolene administration at the surgical center. Select ALL appropriate transport management priorities.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "narrative": "Dantrolene 2.5 mg/kg was administered at the surgical center. The anesthesiologist has transferred care to your team. Additional dantrolene vials are sent with the patient.",
+        "options": [
+          {
+            "text": "Hyperventilate with 100% FiO2 to manage hypercarbia and metabolic acidosis",
+            "correct": true,
+            "critical": false,
+            "explanation": "Malignant hyperthermia causes massive CO2 production from hypermetabolism. Increasing minute ventilation with 100% oxygen helps clear CO2 and combat the combined respiratory and metabolic acidosis.",
+            "guideline_ref": "MHAUS Treatment Protocol; National EMS Education Standards — Ventilation Management"
+          },
+          {
+            "text": "Initiate active cooling measures including cold IV fluids and ice packs to axillae and groin",
+            "correct": true,
+            "critical": false,
+            "explanation": "Active cooling is essential to prevent end-organ damage from hyperthermia. Cold IV normal saline, ice packs to major vascular areas, and evaporative cooling should all be employed aggressively during transport.",
+            "guideline_ref": "MHAUS Treatment Protocol"
+          },
+          {
+            "text": "Continuously monitor cardiac rhythm and prepare for treatment of hyperkalemia-related dysrhythmias",
+            "correct": true,
+            "critical": false,
+            "explanation": "Massive rhabdomyolysis releases potassium, which combined with acidosis-driven extracellular potassium shift, creates high risk for lethal dysrhythmias. Have calcium chloride and sodium bicarbonate readily available.",
+            "guideline_ref": "MHAUS Treatment Protocol; AHA ACLS Guidelines"
+          },
+          {
+            "text": "Be prepared to administer additional dantrolene doses (1 mg/kg) if signs of hypermetabolism recur",
+            "correct": true,
+            "critical": false,
+            "explanation": "Dantrolene may need to be redosed during transport if ETCO2 rises, rigidity returns, or temperature continues to climb. The initial dose may not fully control the crisis, and repeat dosing up to 10 mg/kg total may be necessary.",
+            "guideline_ref": "MHAUS Treatment Protocol"
+          },
+          {
+            "text": "Administer succinylcholine to treat the muscle rigidity and reduce heat production",
+            "correct": false,
+            "critical": true,
+            "explanation": "Succinylcholine is a TRIGGER for malignant hyperthermia and is absolutely contraindicated. It was likely one of the causative agents in this case. Administering it would be catastrophic.",
+            "guideline_ref": "MHAUS Treatment Protocol"
+          },
+          {
+            "text": "Administer calcium channel blockers to control tachycardia and reduce cardiac workload",
+            "correct": false,
+            "critical": true,
+            "explanation": "Calcium channel blockers combined with dantrolene can cause fatal hyperkalemia and cardiovascular collapse. This is a known dangerous drug interaction and calcium channel blockers are contraindicated in malignant hyperthermia.",
+            "guideline_ref": "MHAUS Treatment Protocol"
+          }
+        ],
+        "clinical_pearl": "NEVER give calcium channel blockers with dantrolene — the combination causes fatal hyperkalemia and cardiac arrest. This is a critical drug interaction that every provider transporting a malignant hyperthermia patient must know."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which anesthetic agents are known triggers for malignant hyperthermia and should be avoided in susceptible individuals?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Volatile inhaled anesthetics (sevoflurane, desflurane, isoflurane) and depolarizing neuromuscular blockers (succinylcholine)",
+            "correct": true,
+            "critical": false,
+            "explanation": "All volatile halogenated inhaled anesthetics and succinylcholine (the only depolarizing neuromuscular blocker in clinical use) are known triggers. This patient received both sevoflurane and succinylcholine, consistent with triggering malignant hyperthermia in a genetically susceptible individual.",
+            "guideline_ref": "MHAUS Guidelines; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Propofol, ketamine, and all benzodiazepines used for procedural sedation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Propofol, ketamine, and benzodiazepines are considered safe in malignant hyperthermia-susceptible patients. These are actually the preferred agents for anesthesia in known susceptible individuals.",
+            "guideline_ref": "MHAUS Guidelines"
+          },
+          {
+            "text": "Local anesthetics such as lidocaine and bupivacaine used for regional nerve blocks",
+            "correct": false,
+            "critical": false,
+            "explanation": "Amide and ester local anesthetics are safe in malignant hyperthermia-susceptible patients. Regional anesthesia is actually a preferred alternative to general anesthesia in these individuals.",
+            "guideline_ref": "MHAUS Guidelines"
+          },
+          {
+            "text": "Non-depolarizing neuromuscular blockers such as rocuronium and vecuronium",
+            "correct": false,
+            "critical": false,
+            "explanation": "Non-depolarizing neuromuscular blockers are safe in MH-susceptible patients. Only succinylcholine (a depolarizing agent) is a trigger. This distinction is clinically important.",
+            "guideline_ref": "MHAUS Guidelines"
+          }
+        ],
+        "clinical_pearl": "Malignant hyperthermia has autosomal dominant inheritance with variable penetrance. A family history of 'anesthesia problems' should always raise concern. Genetic testing and muscle biopsy (caffeine-halothane contracture test) are available for definitive diagnosis of susceptibility."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-29",
+    "title": "58F — Severe Epigastric Pain Radiating to Back",
+    "dispatch": "58-year-old female, severe abdominal pain, nausea and vomiting",
+    "category": "Medical Emergencies",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 58,
+      "sex": "F",
+      "cc": "Severe epigastric pain radiating to the back with nausea and vomiting"
+    },
+    "scene": "You arrive at a residence where a 58-year-old female is found in the bathroom, kneeling on the floor and leaning forward over the toilet. She has been vomiting for the past 3 hours and reports severe, constant epigastric pain that bores straight through to her back. She attended a family celebration last night where she ate a heavy, fatty meal and consumed several glasses of wine. She states the pain began around 2 AM and has been worsening steadily. She appears distressed and diaphoretic. Her abdomen is tender in the epigastric region with voluntary guarding but is not rigid. She notes the pain is somewhat better when she leans forward.",
+    "history": {
+      "pmh": "Gallstones (diagnosed 2 years ago, declined surgery), Type 2 diabetes, obesity (BMI 34), hyperlipidemia",
+      "meds": "Metformin 1000 mg BID, atorvastatin 40 mg daily, lisinopril 20 mg daily",
+      "allergies": "Morphine (itching)"
+    },
+    "vitals": {
+      "hr": 108,
+      "bp": "146/92",
+      "rr": 22,
+      "spo2": 97,
+      "gcs": 15,
+      "temp": "100.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of history and assessment findings is MOST consistent with acute pancreatitis in this patient?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Epigastric pain radiating to the back, relief with leaning forward, history of gallstones, onset after a fatty meal and alcohol consumption",
+            "correct": true,
+            "critical": false,
+            "explanation": "This is a classic pancreatitis presentation. Gallstones and alcohol are the two most common causes of acute pancreatitis. The epigastric-to-back radiation pattern, positional relief with forward lean, and onset after dietary triggers are characteristic findings.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies; American College of Gastroenterology Guidelines"
+          },
+          {
+            "text": "Right upper quadrant pain radiating to the right shoulder, fever, and jaundice after fatty food ingestion",
+            "correct": false,
+            "critical": false,
+            "explanation": "This pattern describes acute cholecystitis with possible Charcot's triad, not pancreatitis. While gallstones can cause both conditions, the pain location and radiation pattern differ significantly.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Periumbilical pain that migrated to the right lower quadrant with rebound tenderness and Rovsing's sign",
+            "correct": false,
+            "critical": false,
+            "explanation": "This is the classic presentation of acute appendicitis, not pancreatitis. The pain location, migration pattern, and specific examination findings are distinctly different.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          },
+          {
+            "text": "Diffuse abdominal pain with distension, high-pitched bowel sounds, and no passage of flatus for 48 hours",
+            "correct": false,
+            "critical": false,
+            "explanation": "This presentation is more consistent with small bowel obstruction. Pancreatitis typically presents with epigastric localization and back radiation rather than diffuse distension with obstructive features.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          }
+        ],
+        "clinical_pearl": "The mnemonic 'I GET SMASHED' lists causes of acute pancreatitis: Idiopathic, Gallstones, Ethanol, Trauma, Steroids, Mumps/infections, Autoimmune, Scorpion stings, Hyperlipidemia/Hypercalcemia/Hypothermia, ERCP, Drugs. Gallstones and alcohol account for approximately 80% of cases."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions in the correct order of priority for this patient.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Position the patient in a position of comfort (typically seated and leaning forward)",
+          "Establish IV access and begin fluid resuscitation",
+          "Administer antiemetic medication (ondansetron) for persistent vomiting",
+          "Administer analgesic medication per protocol for pain management",
+          "Obtain a 12-lead ECG to rule out cardiac etiology of epigastric pain"
+        ],
+        "correctOrder": [0, 1, 4, 2, 3],
+        "explanation": "Position the patient comfortably first — forward leaning reduces pain by decreasing pancreatic stretch. Establish IV access for fluid resuscitation, as pancreatitis causes significant third-spacing and dehydration, worsened by vomiting. Obtain a 12-lead ECG because epigastric pain in a 58-year-old diabetic female must be evaluated for atypical cardiac presentation. Treat nausea with antiemetics to reduce fluid losses and improve comfort. Provide analgesia — fentanyl or ketorolac may be preferred per protocol given the morphine allergy.",
+        "guideline_ref": "National EMS Education Standards — Abdominal Emergencies; NAEMSP Prehospital Pain Management Guidelines",
+        "clinical_pearl": "Always obtain a 12-lead ECG in patients with epigastric pain, especially in diabetic patients and women — inferior STEMI can present as epigastric pain mimicking an abdominal emergency. Don't let an obvious-seeming diagnosis create tunnel vision."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient reports a morphine allergy causing itching. Select ALL appropriate alternative analgesic strategies for this patient.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 2,
+        "narrative": "IV access is established. The 12-lead ECG shows sinus tachycardia without ST changes. The patient rates her pain as 9/10.",
+        "options": [
+          {
+            "text": "Fentanyl IV titrated to pain relief per protocol",
+            "correct": true,
+            "critical": false,
+            "explanation": "Fentanyl is a synthetic opioid that has minimal histamine release compared to morphine. Morphine-induced itching is typically a histamine-mediated side effect, not a true allergy. Fentanyl is generally safe in patients with morphine-induced pruritus and is an effective analgesic for severe pain.",
+            "guideline_ref": "NAEMSP Prehospital Pain Management Guidelines; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Ketorolac (Toradol) 15-30 mg IV per protocol as a non-opioid alternative",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ketorolac is an IV NSAID that provides effective analgesia for visceral pain. It can be used as a primary analgesic or adjunct in patients where opioid alternatives are preferred. Verify no contraindications (renal function, GI bleeding risk).",
+            "guideline_ref": "NAEMSP Prehospital Pain Management Guidelines"
+          },
+          {
+            "text": "Morphine 4 mg IV since itching is not a true allergy and can be managed with diphenhydramine",
+            "correct": false,
+            "critical": false,
+            "explanation": "While morphine-induced pruritus is indeed a histamine-mediated side effect rather than a true allergy, it is documented as an allergy in the patient's history. Best practice is to use alternative agents when available rather than challenge a documented adverse reaction in the field.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Nalbuphine (Nubain) 10 mg IV since it is an agonist-antagonist and cannot cause allergic reactions",
+            "correct": false,
+            "critical": false,
+            "explanation": "Nalbuphine is a mixed agonist-antagonist opioid. While it may be an option in some protocols, the claim that it cannot cause allergic reactions is incorrect — any medication can potentially cause adverse reactions. Additionally, it is not commonly carried in EMS systems.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Morphine-induced itching is caused by direct mast cell histamine release, not IgE-mediated allergy. True opioid allergy is extremely rare. However, in the field, respect documented allergies and use alternatives when available — fentanyl causes significantly less histamine release than morphine."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which of this patient's risk factors MOST likely precipitated the acute pancreatitis episode?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Pre-existing gallstones causing obstruction of the common bile duct or pancreatic duct, triggered by gallbladder contraction after the fatty meal",
+            "correct": true,
+            "critical": false,
+            "explanation": "Gallstone pancreatitis occurs when a stone migrates from the gallbladder and transiently or persistently obstructs the ampulla of Vater, blocking pancreatic enzyme drainage. A fatty meal stimulates cholecystokinin release, causing gallbladder contraction that can mobilize stones. This is the most likely mechanism given her known gallstones and dietary trigger.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies; American College of Gastroenterology Guidelines"
+          },
+          {
+            "text": "Metformin toxicity causing direct pancreatic cellular damage and inflammation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Metformin is not a known cause of pancreatitis. While some medications can cause drug-induced pancreatitis, metformin is not among them.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Acute alcohol intoxication causing direct toxic injury to the pancreas from a single evening of drinking",
+            "correct": false,
+            "critical": false,
+            "explanation": "While alcohol is a major cause of pancreatitis, alcohol-induced pancreatitis typically occurs after years of heavy drinking, not from a single episode of moderate consumption. Her known gallstones are the more likely precipitant.",
+            "guideline_ref": "American College of Gastroenterology Guidelines"
+          },
+          {
+            "text": "Uncontrolled diabetes causing autoimmune pancreatic destruction similar to Type 1 diabetes pathophysiology",
+            "correct": false,
+            "critical": false,
+            "explanation": "Autoimmune pancreatitis is a distinct entity from typical acute pancreatitis and is not caused by Type 2 diabetes. Her diabetes is a comorbidity, not the cause of this acute episode.",
+            "guideline_ref": "National EMS Education Standards — Abdominal Emergencies"
+          }
+        ],
+        "clinical_pearl": "Patients with known gallstones who decline cholecystectomy remain at significant risk for recurrent biliary events including gallstone pancreatitis. A history of gallstones plus dietary trigger (fatty meal) should immediately raise suspicion for biliary pancreatitis."
+      }
+    ]
+  }
+]

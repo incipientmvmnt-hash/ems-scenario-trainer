@@ -1,0 +1,421 @@
+[
+  {
+    "id": "nat-env-10",
+    "title": "34M — Found Down at Outdoor Concert",
+    "dispatch": "34-year-old male, unresponsive after lightning storm",
+    "category": "Environmental",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 34, "sex": "M", "cc": "Unresponsive after lightning storm"},
+    "scene": "You arrive at an outdoor music festival where severe thunderstorms moved through 15 minutes ago. A 34-year-old male is found supine in a grassy field approximately 30 feet from a large metal lighting tower. Bystanders report a nearby lightning strike during which the patient was knocked to the ground. He is unresponsive with singed hair on his left arm and a fern-like erythematous skin pattern across his left chest and flank. A second patient nearby is sitting up, alert, and complaining of leg tingling.",
+    "history": {"pmh": "None known", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 0, "bp": "0/0", "rr": 0, "spo2": null, "gcs": 3, "temp": "97.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Two patients are affected by the lightning strike. The unresponsive patient has no pulse and no breathing. The second patient is alert and oriented with tingling in both legs. Using reverse triage principles for lightning-strike mass casualty incidents, which patient should receive immediate treatment first?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "The unresponsive, pulseless, apneic patient", "correct": true, "critical": false, "explanation": "Lightning-strike triage uses 'reverse triage' — the apparently dead patients receive priority because cardiac arrest from lightning is often due to transient asystole that may respond to early resuscitation. Those who are conscious are unlikely to deteriorate.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Lightning Safety Guidelines"},
+          {"text": "The alert patient with leg tingling, as neurological complaints take priority", "correct": false, "critical": false, "explanation": "Leg tingling after a lightning strike is common from transient current passage and typically resolves. The pulseless patient has the greatest survivability with immediate intervention.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Both patients simultaneously with equal resource allocation", "correct": false, "critical": false, "explanation": "While treating both is ideal if resources allow, when resources are limited the pulseless patient takes priority under reverse triage principles specific to lightning injuries.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Neither patient until the scene is relocated to a covered structure", "correct": false, "critical": false, "explanation": "While scene safety is important during active storms, delaying resuscitation of a cardiac arrest patient for relocation is not appropriate. Initiate treatment while coordinating a move if the storm is ongoing.", "guideline_ref": "National EMS Education Standards — Scene Safety"}
+        ],
+        "clinical_pearl": "Lightning-strike cardiac arrest has a much higher survival rate than other causes of cardiac arrest when treated promptly. The concept of 'reverse triage' applies only to lightning MCI — prioritize those who appear dead, as they have the best chance of recovery with immediate CPR and defibrillation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You begin resuscitation on the pulseless patient. Arrange the following interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Begin high-quality chest compressions",
+          "Attach AED and analyze rhythm",
+          "Provide cervical spine stabilization given the mechanism of injury",
+          "Establish advanced airway and ventilate"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "In lightning-strike cardiac arrest, immediate CPR and early defibrillation are the highest priorities. Chest compressions should begin immediately, followed by AED application. Spinal precautions should be maintained given the blast/fall mechanism but should not delay resuscitation. Advanced airway management follows initial resuscitation efforts.",
+        "guideline_ref": "AHA BLS/ACLS Guidelines 2020; National EMS Education Standards — Environmental Emergencies",
+        "clinical_pearl": "Lightning can cause asystole, VF, or VT. The initial rhythm after a lightning strike may convert spontaneously, but prolonged respiratory arrest (due to medullary paralysis) can lead to secondary hypoxic cardiac arrest if ventilation is not supported."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After ROSC is achieved, select ALL findings you should specifically assess for in a lightning-strike patient.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "narrative": "After 4 minutes of CPR and one AED shock, the patient regains a pulse. HR 110, BP 100/68, RR 8 (assisted), SpO2 93% on BVM. GCS 6.",
+        "vitals_update": {"hr": 110, "bp": "100/68", "rr": 8, "spo2": 93, "gcs": 6},
+        "options": [
+          {"text": "Tympanic membrane rupture", "correct": true, "critical": false, "explanation": "The concussive blast from a lightning strike commonly causes tympanic membrane rupture. This should be assessed and documented.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Burns at entry and exit points", "correct": true, "critical": false, "explanation": "Lightning current can cause burns where it enters and exits the body. Common sites include the head, shoulders, and feet.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Long bone fractures from muscle contraction or fall", "correct": true, "critical": false, "explanation": "Violent tetanic muscle contractions during the strike or being thrown by the blast can cause fractures and dislocations.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; PHTLS"},
+          {"text": "Fixed and dilated pupils as a sign of brain death", "correct": false, "critical": false, "explanation": "Fixed dilated pupils after a lightning strike do NOT reliably indicate brain death. Autonomic dysfunction from the strike can cause transient mydriasis. Resuscitation should not be withheld based on pupil findings alone.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Corneal burns or ocular injury", "correct": true, "critical": false, "explanation": "Lightning can cause cataracts, corneal burns, hyphema, and retinal detachment. Eye injuries are common and should be assessed.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Radiation burns requiring decontamination", "correct": false, "critical": false, "explanation": "Lightning is an electrical injury, not a radiation event. There is no ionizing radiation exposure and no decontamination is needed.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"}
+        ],
+        "clinical_pearl": "Lichtenberg figures (ferning patterns on the skin) are pathognomonic for lightning strike. They are not true burns but rather cutaneous imprints of electron showers along the skin surface and typically fade within 24 hours."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-11",
+    "title": "4M — Pulled from Pond in Winter",
+    "dispatch": "4-year-old male, pulled from cold water, not breathing",
+    "category": "Environmental",
+    "difficulty": "Hard",
+    "level_min": "EMR",
+    "patient": {"age": 4, "sex": "M", "cc": "Submersion in cold water, unresponsive"},
+    "scene": "You respond to a rural residence in January. A 4-year-old male was discovered floating face-down in a partially frozen backyard pond by his mother. She estimates he was outside unsupervised for approximately 15-20 minutes. Water temperature is estimated at 38°F. The mother pulled him from the water and called 911. The child is cyanotic, unresponsive, and not breathing. His clothing is soaked and he feels ice-cold to touch. The ambient temperature is 28°F.",
+    "history": {"pmh": "None, healthy child", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 0, "bp": "0/0", "rr": 0, "spo2": null, "gcs": 3, "temp": "82.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You confirm the child is pulseless and apneic. His core temperature is estimated to be severely hypothermic. Which statement BEST guides your resuscitation decision for this patient?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Withhold resuscitation until the patient is rewarmed, as a pulse may be undetectable in severe hypothermia", "correct": false, "critical": true, "explanation": "CPR should never be withheld while waiting for rewarming. If no pulse is detected after a careful check (up to 60 seconds in hypothermia), CPR should be initiated immediately.", "guideline_ref": "AHA BLS/ACLS Guidelines 2020 — Hypothermia"},
+          {"text": "Begin CPR immediately; hypothermic patients should not be pronounced dead until they have been rewarmed and resuscitation has failed", "correct": true, "critical": false, "explanation": "The guiding principle is 'no one is dead until they are warm and dead.' Cold water submersion, especially in pediatric patients, can be neuroprotective. Full resuscitative efforts should continue until rewarming is achieved at the hospital.", "guideline_ref": "AHA ACLS 2020 — Hypothermia Algorithm; National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Initiate CPR only if submersion time was less than 10 minutes, as outcomes beyond that are universally fatal", "correct": false, "critical": false, "explanation": "Submersion time alone does not determine survivability in cold water drowning, especially in pediatric patients. Cold water immersion may provide neuroprotective effects, and survival with good neurological outcomes has been reported after prolonged submersion in very cold water.", "guideline_ref": "AHA ACLS 2020 — Drowning; National EMS Education Standards"},
+          {"text": "Provide rescue breathing only without chest compressions to avoid ventricular fibrillation in the hypothermic myocardium", "correct": false, "critical": false, "explanation": "In a pulseless patient, full CPR including chest compressions is indicated. While the hypothermic heart is irritable, withholding compressions in a pulseless patient is not recommended.", "guideline_ref": "AHA ACLS 2020 — Hypothermia Algorithm"}
+        ],
+        "clinical_pearl": "Pediatric patients have a higher surface-area-to-body-mass ratio, leading to faster cooling. Paradoxically, this rapid cooling may be neuroprotective by reducing cerebral metabolic demand before hypoxic injury becomes irreversible."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order of priority for this cold water drowning patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Remove all wet clothing and insulate with dry blankets and heat packs to axillae and groin",
+          "Begin CPR with age-appropriate compressions and ventilations",
+          "Limit AED to a maximum of three shocks if VF is identified until core temperature rises above 86°F (30°C)",
+          "Establish vascular access and administer warmed IV normal saline if available"
+        ],
+        "correctOrder": [1, 0, 2, 3],
+        "explanation": "Begin CPR immediately as the highest priority. Remove wet clothing and initiate passive/active rewarming concurrently. If the AED identifies a shockable rhythm, deliver up to three shocks but recognize that the severely hypothermic myocardium may not respond until rewarmed. Establish vascular access for warm IV fluids when feasible during transport.",
+        "guideline_ref": "AHA ACLS 2020 — Hypothermia Algorithm; National EMS Education Standards — Environmental Emergencies",
+        "clinical_pearl": "In severe hypothermia (<86°F/30°C), ACLS medications may be withheld or given at extended intervals because drug metabolism is severely impaired. Medications can accumulate to toxic levels if dosed at standard intervals."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, your partner questions whether ongoing resuscitation is futile. Categorize each of the following into either factors that FAVOR continued resuscitation or factors that suggest POOR prognosis in cold water submersion.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Water temperature below 41°F (5°C)",
+          "Submersion in warm water (>68°F/20°C) for greater than 25 minutes",
+          "Pediatric patient age",
+          "Initial serum potassium greater than 12 mEq/L at the hospital",
+          "Witnessed submersion with rapid rescue"
+        ],
+        "categories": ["Favors Continued Resuscitation", "Suggests Poor Prognosis"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Very cold water temperature is protective and favors continued efforts. Warm water submersion >25 min has very poor outcomes as there is no hypothermic neuroprotection. Pediatric patients have better outcomes than adults in cold water submersion. Serum potassium >12 mEq/L indicates prolonged cellular death and is associated with non-survivability. Witnessed submersion with rapid rescue improves outcomes significantly.",
+        "guideline_ref": "AHA ACLS 2020 — Drowning and Hypothermia; National EMS Education Standards — Environmental Emergencies",
+        "clinical_pearl": "The longest reported cold water submersion survival with good neurological outcome is over 60 minutes in a pediatric patient in ice water. Always err on the side of continued resuscitation in cold water pediatric drowning."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-12",
+    "title": "42M — Worker Down in Underground Space",
+    "dispatch": "42-year-old male, unconscious in underground utility vault",
+    "category": "Environmental",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 42, "sex": "M", "cc": "Found unconscious in confined space"},
+    "scene": "You respond to an industrial site where a 42-year-old male utility worker was found unconscious at the bottom of an underground vault approximately 12 feet deep. A coworker reports the patient descended into the vault to perform routine maintenance and stopped responding on radio after 5 minutes. A second worker who attempted rescue became dizzy at the top of the ladder and was pulled back by colleagues. The atmospheric monitoring equipment at the site is not functioning. The vault has limited ventilation and contains decomposing organic material.",
+    "history": {"pmh": "Hypertension", "meds": "Lisinopril", "allergies": "NKDA"},
+    "vitals": {"hr": 52, "bp": "80/50", "rr": 6, "spo2": 74, "gcs": 4, "temp": "98.0°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Before entering the vault, what is the MOST critical consideration?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Do not enter the confined space until it has been tested and ventilated by a trained confined-space rescue team with proper atmospheric monitoring equipment", "correct": true, "critical": false, "explanation": "Confined-space rescue requires specialized training and equipment. Atmospheric hazards (low O2, toxic gases, CO2 displacement) are invisible and can incapacitate rescuers within seconds. The second worker's dizziness confirms a hazardous atmosphere.", "guideline_ref": "OSHA Confined Space Standards (29 CFR 1910.146); National EMS Education Standards — Scene Safety"},
+          {"text": "Descend immediately with an SCBA if available, as the patient's declining vitals indicate he will not survive the wait for a specialized team", "correct": false, "critical": false, "explanation": "Even with SCBA, entering without proper training, equipment, and backup is extremely dangerous. Confined-space entry requires a complete entry team with attendant, entrant, and rescue capabilities.", "guideline_ref": "OSHA Confined Space Standards; NFPA 1670"},
+          {"text": "Send the patient's coworker back down since he is familiar with the space and can retrieve the patient quickly", "correct": false, "critical": true, "explanation": "The coworker already experienced symptoms upon approach. Sending an untrained, unequipped person into a confirmed hazardous atmosphere will likely create a second victim.", "guideline_ref": "OSHA Confined Space Standards; National EMS Education Standards — Scene Safety"},
+          {"text": "Lower an oxygen tank into the vault to displace the toxic gases before descending", "correct": false, "critical": false, "explanation": "Simply lowering an oxygen tank will not adequately ventilate the space. Confined-space ventilation requires forced-air mechanical ventilation and atmospheric monitoring to confirm safe conditions before entry.", "guideline_ref": "OSHA Confined Space Standards"}
+        ],
+        "clinical_pearl": "Confined-space incidents account for a disproportionate number of multiple-fatality workplace events. Over 60% of confined-space deaths are would-be rescuers. Never enter without proper training, equipment, and atmospheric monitoring."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The confined-space rescue team has extricated the patient. He is now at ground level. His respirations are 6/min and shallow, SpO2 74%, GCS 4. Arrange the following treatment steps in the correct order.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "The patient has been brought to the surface by the technical rescue team. He is breathing but barely.",
+        "vitals_update": {"hr": 58, "bp": "84/52", "rr": 6, "spo2": 74, "gcs": 4},
+        "items": [
+          "Provide high-flow oxygen via BVM with assisted ventilations",
+          "Move patient to fresh air away from the vault opening",
+          "Establish vascular access and administer IV fluid bolus",
+          "Continuously monitor cardiac rhythm for dysrhythmias"
+        ],
+        "correctOrder": [1, 0, 3, 2],
+        "explanation": "First, ensure the patient is in fresh air away from the hazardous atmosphere. Second, provide immediate high-flow oxygen with assisted ventilations to correct the profound hypoxia. Third, place the patient on continuous cardiac monitoring as hypoxia and CO2 narcosis predispose to dysrhythmias. Fourth, establish vascular access and provide fluid support for hypotension.",
+        "guideline_ref": "National EMS Education Standards — Environmental Emergencies; OSHA Confined Space Standards",
+        "clinical_pearl": "CO2 is heavier than air and accumulates in low-lying enclosed spaces. At concentrations above 10%, CO2 causes rapid unconsciousness. Unlike CO poisoning, pulse oximetry readings in CO2-rich environments reflect true hypoxia because oxygen is being physically displaced from the atmosphere."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL atmospheric hazards commonly found in confined spaces that could have contributed to this patient's presentation.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Oxygen-deficient atmosphere (<19.5% O2)", "correct": true, "critical": false, "explanation": "Decomposing organic material consumes oxygen. OSHA defines oxygen-deficient atmosphere as below 19.5%. Levels below 16% cause impaired judgment; below 10% cause unconsciousness.", "guideline_ref": "OSHA Confined Space Standards (29 CFR 1910.146)"},
+          {"text": "Elevated carbon dioxide from decomposition of organic material", "correct": true, "critical": false, "explanation": "Decomposing organic material produces CO2, which is heavier than air and accumulates in low-lying confined spaces. This directly displaces oxygen and acts as a respiratory depressant at high concentrations.", "guideline_ref": "OSHA Confined Space Standards"},
+          {"text": "Hydrogen sulfide from anaerobic decomposition", "correct": true, "critical": false, "explanation": "H2S is produced by anaerobic decomposition and is extremely toxic. It has a characteristic rotten-egg odor at low concentrations but causes olfactory fatigue at higher levels, making it undetectable before it reaches lethal concentrations.", "guideline_ref": "OSHA Confined Space Standards"},
+          {"text": "Elevated atmospheric pressure causing nitrogen narcosis", "correct": false, "critical": false, "explanation": "Nitrogen narcosis occurs at depth under increased atmospheric pressure (typically >100 feet underwater). A 12-foot underground vault does not generate sufficient pressure for this phenomenon.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Radioactive radon gas accumulation", "correct": false, "critical": false, "explanation": "While radon can accumulate in enclosed underground spaces, it does not cause acute incapacitation. Radon exposure is a chronic cancer risk, not an acute asphyxiation hazard in this context.", "guideline_ref": "EPA Radon Guidelines"}
+        ],
+        "clinical_pearl": "The 'deadly trio' in confined spaces is oxygen depletion, toxic gas accumulation, and flammable atmosphere. Always assume the atmosphere is IDLH (Immediately Dangerous to Life and Health) until proven otherwise by calibrated monitoring equipment."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-13",
+    "title": "55F — Snakebite While Gardening",
+    "dispatch": "55-year-old female, possible snakebite, hand swelling",
+    "category": "Environmental",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 55, "sex": "F", "cc": "Snakebite to right hand"},
+    "scene": "You arrive at a suburban home in central Florida. A 55-year-old female is sitting on the back patio holding her right hand. She was reaching into a garden bed to pull weeds when she felt a sharp bite on the dorsum of her right hand. She saw a small snake with red, yellow, and black bands slither away. There are two small fang marks on the dorsum of her right hand with minimal local swelling. She reports mild pain at the bite site but is otherwise feeling well. She is alert and oriented, speaking in full sentences, and in no acute distress.",
+    "history": {"pmh": "Osteoarthritis, GERD", "meds": "Ibuprofen, omeprazole", "allergies": "Penicillin"},
+    "vitals": {"hr": 88, "bp": "138/82", "rr": 16, "spo2": 98, "gcs": 15, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient describes a snake with red, yellow, and black bands. Which characteristic differentiates a venomous coral snake from a non-venomous mimic such as the scarlet kingsnake?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Red bands touching yellow bands", "correct": true, "critical": false, "explanation": "The mnemonic 'red touches yellow, kill a fellow; red touches black, friend of Jack' helps identify the Eastern coral snake. In coral snakes, red bands are adjacent to yellow bands. This patient should be treated as a coral snake envenomation.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Guidelines"},
+          {"text": "Red bands touching black bands", "correct": false, "critical": false, "explanation": "Red bands touching black bands is characteristic of non-venomous mimic species like the scarlet kingsnake. However, EMS providers should treat any suspected coral snake bite as a true envenomation.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "A triangular head shape and vertical pupils", "correct": false, "critical": false, "explanation": "Triangular head and vertical pupils are characteristic of pit vipers (rattlesnakes, copperheads, cottonmouths). Coral snakes have small, rounded heads and round pupils, making them harder to identify as venomous by head shape alone.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Large, obvious fang marks with immediate tissue necrosis", "correct": false, "critical": false, "explanation": "Coral snakes have small, fixed fangs and deliver venom through a chewing motion. Bite marks are often small and local tissue destruction is typically minimal, unlike pit viper envenomation.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"}
+        ],
+        "clinical_pearl": "Coral snake envenomation is uniquely dangerous because symptoms may be delayed 1-13 hours after the bite. The venom is primarily neurotoxic, and once symptoms appear they can progress rapidly to respiratory failure. Do not be falsely reassured by an asymptomatic patient."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this suspected coral snake envenomation.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Remove rings and jewelry from the affected hand", "correct": true, "critical": false, "explanation": "Any constricting items should be removed from the bitten extremity in case swelling develops.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Immobilize the affected extremity and keep it at or below heart level", "correct": true, "critical": false, "explanation": "Immobilization and positioning at or below heart level may slow systemic absorption of venom. Minimize movement of the bitten extremity.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society"},
+          {"text": "Transport to a facility capable of administering coral snake antivenom", "correct": true, "critical": false, "explanation": "Coral snake antivenom (CroFab is for pit vipers only — coral snake requires specific antivenom) should be administered before symptom onset due to delayed neurotoxic effects. Transport to an appropriate facility is critical.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Monitor airway and respiratory status closely during transport", "correct": true, "critical": false, "explanation": "Coral snake venom is a potent neurotoxin that can cause progressive respiratory paralysis. Continuous airway and breathing assessment is essential even in an asymptomatic patient.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Apply a tourniquet proximal to the bite to prevent systemic venom spread", "correct": false, "critical": true, "explanation": "Tourniquets are contraindicated for snakebites. They can concentrate venom locally, worsen tissue damage, and cause ischemic injury to the extremity.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society"},
+          {"text": "Incise the fang marks and apply suction to extract the venom", "correct": false, "critical": true, "explanation": "Incision and suction is ineffective and harmful. It does not remove significant venom and creates additional tissue injury and infection risk.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society"}
+        ],
+        "clinical_pearl": "Coral snake antivenom should ideally be administered prophylactically before neurological symptoms develop. Once respiratory failure occurs, it may be less effective. Always transport promptly even if the patient appears well."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient develops ptosis, difficulty swallowing, and slurred speech. Her respiratory rate drops to 10 with decreasing tidal volume. What is the MOST critical intervention at this point?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "Approximately 45 minutes after the bite, the patient develops progressive neurological symptoms. She has bilateral ptosis, dysarthria, and difficulty managing her secretions.",
+        "vitals_update": {"hr": 72, "bp": "130/78", "rr": 10, "spo2": 92, "gcs": 13},
+        "options": [
+          {"text": "Prepare for definitive airway management and assist ventilations with BVM and high-flow oxygen", "correct": true, "critical": false, "explanation": "Progressive bulbar symptoms (ptosis, dysarthria, dysphagia) indicate advancing neurotoxicity that will likely progress to respiratory paralysis. Proactive airway management with ventilatory support is the priority to prevent respiratory arrest.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; NAEMSP Guidelines"},
+          {"text": "Administer diphenhydramine 50 mg IV to counteract the neurotoxic effects", "correct": false, "critical": false, "explanation": "Diphenhydramine has no efficacy against coral snake neurotoxin. The venom blocks acetylcholine at the neuromuscular junction — antihistamines do not reverse this mechanism.", "guideline_ref": "National EMS Education Standards — Toxicology"},
+          {"text": "Apply ice packs to the bite site to slow further venom absorption", "correct": false, "critical": false, "explanation": "Ice application is not recommended for snakebites. It can worsen local tissue injury and is ineffective at slowing systemic absorption at this stage.", "guideline_ref": "Wilderness Medical Society Guidelines"},
+          {"text": "Administer naloxone 2 mg intranasal to reverse potential respiratory depression", "correct": false, "critical": false, "explanation": "Naloxone reverses opioid-mediated respiratory depression. Coral snake venom causes neuromuscular blockade, which is not reversible by naloxone.", "guideline_ref": "National EMS Education Standards — Toxicology"}
+        ],
+        "clinical_pearl": "Coral snake envenomation causes a descending paralysis similar to botulism. Watch for the progression: ptosis → dysphagia → dysarthria → respiratory failure. Have airway equipment ready for any patient with confirmed or suspected coral snake bite."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-14",
+    "title": "29M — Diver with Joint Pain After Surfacing",
+    "dispatch": "29-year-old male, severe joint pain and dizziness after scuba diving",
+    "category": "Environmental",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 29, "sex": "M", "cc": "Joint pain and dizziness after scuba dive"},
+    "scene": "You respond to a marina where a 29-year-old male recreational scuba diver is sitting on the dock complaining of severe bilateral shoulder and knee pain, dizziness, and skin mottling. His dive buddy reports they completed two dives today to approximately 100 feet, with the second dive ending 45 minutes ago. The patient ascended rapidly on the second dive when he became anxious about low air supply. He initially felt fine but developed progressive joint pain and a patchy, marbled rash across his torso about 20 minutes after surfacing. He now reports tingling in both feet.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 98, "bp": "132/78", "rr": 20, "spo2": 96, "gcs": 15, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following signs and symptoms as either Type I (musculoskeletal/skin) or Type II (neurological/cardiopulmonary) decompression sickness.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Bilateral shoulder and knee joint pain",
+          "Tingling in both feet",
+          "Patchy, marbled skin rash (cutis marmorata)",
+          "Dizziness and vertigo",
+          "Pruritus around the torso"
+        ],
+        "categories": ["Type I DCS", "Type II DCS"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Type I DCS ('the bends') involves musculoskeletal pain and skin manifestations (joint pain, rash, pruritus). Type II DCS involves the central nervous system, inner ear, or cardiopulmonary system (peripheral neuropathy/tingling, vertigo/dizziness). This patient has features of both types, making this a serious presentation requiring urgent hyperbaric treatment.",
+        "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Divers Alert Network (DAN) Guidelines",
+        "clinical_pearl": "The presence of ANY neurological symptoms (tingling, weakness, visual changes, vertigo) elevates the classification to Type II DCS, which carries significantly higher morbidity and requires emergent hyperbaric oxygen therapy."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST important prehospital treatment for this patient?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "High-flow oxygen at 100% via non-rebreather mask", "correct": true, "critical": false, "explanation": "100% oxygen is the single most important prehospital treatment for decompression sickness. It creates a maximum nitrogen gradient to accelerate nitrogen washout from tissues and bubbles. It should be administered continuously and not titrated down even if SpO2 is normal.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Divers Alert Network Guidelines"},
+          {"text": "Low-flow oxygen at 2 L/min via nasal cannula to avoid oxygen toxicity", "correct": false, "critical": false, "explanation": "Oxygen toxicity is not a concern at normobaric pressures over the transport timeframe. High-flow 100% oxygen is critical for nitrogen washout and should never be withheld or reduced in DCS.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Place the patient in Trendelenburg position to prevent cerebral air embolism", "correct": false, "critical": false, "explanation": "Trendelenburg positioning was previously recommended but is no longer advised. It can increase intracranial pressure and worsen cerebral edema. Supine positioning is preferred.", "guideline_ref": "Divers Alert Network Guidelines; National EMS Education Standards"},
+          {"text": "Administer ibuprofen for joint pain and begin rapid recompression by returning the patient to the water", "correct": false, "critical": true, "explanation": "In-water recompression is extremely dangerous and contraindicated for field treatment. It risks drowning, hypothermia, and worsening of symptoms. The patient needs controlled recompression in a hyperbaric chamber.", "guideline_ref": "Divers Alert Network Guidelines"}
+        ],
+        "clinical_pearl": "Contact the Divers Alert Network (DAN) emergency hotline for real-time guidance and to locate the nearest hyperbaric chamber. Transport should be by ground or low-altitude flight (cabin pressure at sea level or altitude <1,000 feet) to avoid worsening bubble expansion."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Arrange the following transport and coordination steps in the correct order.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Contact medical control and/or the Divers Alert Network (DAN) for hyperbaric chamber location and guidance",
+          "Maintain 100% high-flow oxygen continuously during transport",
+          "Position patient supine and administer IV fluids to maintain hydration",
+          "Coordinate transport via ground ambulance or low-altitude aircraft (cabin altitude <1,000 ft AGL)"
+        ],
+        "correctOrder": [0, 2, 1, 3],
+        "explanation": "First, contact medical control and DAN to identify the nearest available hyperbaric facility and receive treatment guidance. Establish IV access and begin fluid administration, as dehydration worsens DCS. Maintain 100% oxygen continuously throughout. Arrange appropriate transport, ensuring altitude restrictions are communicated to flight crews if air transport is used.",
+        "guideline_ref": "Divers Alert Network Guidelines; National EMS Education Standards — Environmental Emergencies",
+        "clinical_pearl": "DCS symptoms can worsen at altitude due to Boyle's law — decreased atmospheric pressure causes nitrogen bubbles to expand. Even pressurized aircraft cabins are typically set to 6,000-8,000 feet equivalent, which can exacerbate DCS. Request sea-level cabin pressurization or use ground transport."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-15",
+    "title": "Multiple Patients — Industrial Accident",
+    "dispatch": "Multiple patients, industrial radiation source exposed, request HazMat",
+    "category": "Environmental",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 0, "sex": "M", "cc": "Multiple patients with radiation exposure"},
+    "scene": "You respond to an industrial facility where a sealed Cesium-137 radiography source was inadvertently breached during equipment maintenance. Four workers were in the immediate area. The facility radiation safety officer reports the source was exposed for approximately 20 minutes before it was recognized and shielded. Worker A was handling the equipment directly and has nausea and vomiting. Worker B was 5 feet away and has a headache. Worker C was 15 feet away and is asymptomatic. Worker D was in the adjacent room behind a concrete wall and is asymptomatic. HazMat has established a perimeter and all workers have been moved to a decontamination area.",
+    "history": {"pmh": "Varied — see individual patients", "meds": "Varied", "allergies": "Varied"},
+    "vitals": {"hr": 0, "bp": "0/0", "rr": 0, "spo2": 0, "gcs": 15, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each worker by radiation triage priority based on their exposure history and current symptoms.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Worker A: Handled source directly, nausea and vomiting within 20 minutes",
+          "Worker B: 5 feet from source, headache only",
+          "Worker C: 15 feet from source, asymptomatic",
+          "Worker D: Adjacent room behind concrete wall, asymptomatic"
+        ],
+        "categories": ["Immediate (high exposure likely)", "Delayed (moderate exposure possible)", "Minimal (low exposure likely)"],
+        "correctCategories": [0, 1, 2, 2],
+        "explanation": "Worker A has the highest priority — direct handling of the source with rapid symptom onset (nausea/vomiting within minutes) suggests a very high dose and early prodromal phase of acute radiation syndrome. Worker B had proximity exposure with mild symptoms, warranting close monitoring. Workers C and D had increasing distance and shielding protection, making significant exposure less likely, though they should still be monitored.",
+        "guideline_ref": "REMM (Radiation Emergency Medical Management) Guidelines; National EMS Education Standards — Environmental Emergencies",
+        "clinical_pearl": "The speed of onset of nausea and vomiting after radiation exposure is one of the most reliable field indicators of dose severity. Onset within 1 hour suggests a potentially lethal dose (>2 Gy); onset within minutes suggests >6 Gy — a critical exposure."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "All four workers have been through HazMat decontamination. Worker A is now vomiting repeatedly with a heart rate of 112. Which statement about managing radiation-exposed patients is MOST accurate?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "After proper decontamination, patients do not pose a radiation risk to EMS providers and should receive standard medical care without delay", "correct": true, "critical": false, "explanation": "Once externally decontaminated, radiation-exposed patients are not radioactive and pose no risk to providers. Medical treatment should never be delayed due to radiation concerns in a decontaminated patient. Treat injuries and symptoms using standard protocols.", "guideline_ref": "REMM Guidelines; National EMS Education Standards — Environmental Emergencies"},
+          {"text": "All providers must wear lead-lined vests when treating radiation patients regardless of decontamination status", "correct": false, "critical": false, "explanation": "Standard lead aprons do not provide meaningful protection against gamma radiation from sources like Cs-137. After decontamination, no special protective equipment is needed for patient contact.", "guideline_ref": "REMM Guidelines"},
+          {"text": "Radiation patients should be isolated and transported in separate vehicles to prevent cross-contamination", "correct": false, "critical": false, "explanation": "After decontamination, patients are not a contamination source. They can be transported and treated alongside other patients without special isolation.", "guideline_ref": "REMM Guidelines"},
+          {"text": "Administer potassium iodide to all exposed workers immediately to block radiation absorption", "correct": false, "critical": false, "explanation": "Potassium iodide (KI) is specific to radioactive iodine exposure (I-131) and protects only the thyroid. It is not effective against Cesium-137 exposure. The appropriate medical countermeasure for Cs-137 is Prussian blue, which is a hospital intervention.", "guideline_ref": "REMM Guidelines; FDA KI Guidelines"}
+        ],
+        "clinical_pearl": "Remember: external radiation exposure (like an X-ray) does not make the patient radioactive. Contamination (radioactive material ON or IN the patient) is the concern. After decontamination, treat the patient, not the radiation."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Worker A's condition is worsening with persistent vomiting, diarrhea, and progressive weakness. Select ALL appropriate transport and notification actions.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Transport to a facility with radiation emergency medical expertise and hematology capabilities", "correct": true, "critical": false, "explanation": "Acute radiation syndrome primarily affects bone marrow, GI tract, and cardiovascular/CNS systems. A facility with hematology and radiation medicine expertise can provide appropriate monitoring and treatment.", "guideline_ref": "REMM Guidelines; National EMS Education Standards"},
+          {"text": "Provide IV fluid resuscitation and antiemetics per protocol during transport", "correct": true, "critical": false, "explanation": "Symptomatic treatment of radiation-exposed patients follows standard medical protocols. IV fluids for dehydration from vomiting/diarrhea and antiemetics are appropriate and should not be withheld.", "guideline_ref": "REMM Guidelines"},
+          {"text": "Notify the receiving facility of radiation exposure so they can prepare appropriate resources and monitoring", "correct": true, "critical": false, "explanation": "Early hospital notification allows activation of radiation emergency protocols, preparation of monitoring equipment, and consultation with radiation medicine specialists.", "guideline_ref": "REMM Guidelines; National EMS Education Standards"},
+          {"text": "Delay transport until a dosimetry reading confirms the exact radiation dose received", "correct": false, "critical": false, "explanation": "Dosimetry results may take hours to days to process. Clinical symptoms and timing of onset are used for initial dose estimation. Transport should never be delayed for dosimetry.", "guideline_ref": "REMM Guidelines"},
+          {"text": "Administer prophylactic antibiotics in the field to prevent infection from bone marrow suppression", "correct": false, "critical": false, "explanation": "Prophylactic antibiotics for radiation-induced immunosuppression are a hospital-level decision based on dose estimation and blood counts. This is not a prehospital intervention.", "guideline_ref": "REMM Guidelines"}
+        ],
+        "clinical_pearl": "Acute radiation syndrome progresses through four phases: prodromal (nausea, vomiting), latent (apparent improvement), manifest illness (bone marrow failure, GI damage), and recovery or death. The latent phase can create a false sense of security — patients may appear to improve before rapidly deteriorating."
+      }
+    ]
+  },
+  {
+    "id": "nat-env-16",
+    "title": "16M — Collapsed at Football Practice",
+    "dispatch": "16-year-old male, collapsed during outdoor practice, altered mental status",
+    "category": "Environmental",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 16, "sex": "M", "cc": "Collapsed during football practice, confusion"},
+    "scene": "You respond to a high school football field on an August afternoon. The heat index is 108°F. A 16-year-old male linebacker collapsed during the second hour of practice while wearing full pads and helmet. The athletic trainer reports the patient was lagging behind during drills and appeared confused before collapsing. He is now lying on the sideline with his equipment removed. His skin is hot, flushed, and notably dry despite the intense heat. He is mumbling incoherently and does not follow commands. Teammates report he skipped lunch and was trying to 'make weight' by limiting fluid intake.",
+    "history": {"pmh": "None, healthy athlete", "meds": "Creatine supplement", "allergies": "NKDA"},
+    "vitals": {"hr": 138, "bp": "96/58", "rr": 28, "spo2": 97, "gcs": 10, "temp": "105.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient's presentation is MOST consistent with which condition, and what single finding is most critical in differentiating it from heat exhaustion?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Exertional heat stroke; the altered mental status (GCS 10, confusion, inability to follow commands) is the critical differentiating finding", "correct": true, "critical": false, "explanation": "Altered mental status is the hallmark that distinguishes heat stroke from heat exhaustion. While elevated temperature is important, CNS dysfunction (confusion, combativeness, seizures, coma) defines heat stroke. Heat exhaustion patients maintain normal mentation.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; NATA Position Statement on Exertional Heat Illness"},
+          {"text": "Heat exhaustion; the dry skin and high temperature indicate severe dehydration requiring IV fluid bolus only", "correct": false, "critical": false, "explanation": "Dry skin with altered mental status and core temperature >104°F indicates heat stroke, not heat exhaustion. Heat exhaustion patients are typically diaphoretic and maintain normal mental status.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Exertional hyponatremia from overhydration during practice", "correct": false, "critical": false, "explanation": "The history specifically states limited fluid intake and weight-cutting behavior. Exertional hyponatremia typically occurs with excessive water intake. This presentation with hot, dry skin and extreme hyperthermia is classic for heat stroke.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Exertional rhabdomyolysis causing core temperature elevation and altered sensorium", "correct": false, "critical": false, "explanation": "While rhabdomyolysis may be a complication, the primary diagnosis driving the acute presentation is exertional heat stroke. The core temperature of 105.8°F with altered mental status requires immediate cooling as the priority treatment.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"}
+        ],
+        "clinical_pearl": "Classic heat stroke (in elderly/chronically ill) typically presents with dry skin, while exertional heat stroke (in young athletes) may present with sweating still intact. The absence of sweating is NOT required for the diagnosis — altered mental status with hyperthermia IS."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following cooling and treatment interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Begin aggressive whole-body cooling using cold water immersion or ice packs to neck, axillae, and groin",
+          "Remove all clothing and equipment",
+          "Establish IV access and administer a cooled normal saline bolus",
+          "Continuously monitor core temperature with goal of reducing to 102°F (38.9°C)"
+        ],
+        "correctOrder": [1, 0, 2, 3],
+        "explanation": "First, remove all clothing and equipment to expose skin for cooling. Second, initiate aggressive cooling immediately — cold water immersion is the gold standard, but if unavailable, apply ice packs to major vascular areas and use evaporative cooling. Third, establish IV access and administer cooled IV fluids. Fourth, monitor temperature continuously to guide cooling and prevent overshoot hypothermia. Cooling is the DEFINITIVE treatment — every minute of delay increases morbidity and mortality.",
+        "guideline_ref": "National EMS Education Standards — Environmental Emergencies; NATA Position Statement; Korey Stringer Institute Guidelines",
+        "clinical_pearl": "The goal is 'cool first, transport second' when possible. Research shows that rapid cooling within 30 minutes of collapse results in nearly 100% survival. Delayed cooling during transport significantly worsens outcomes. If cold water immersion is available on scene, use it before loading the patient."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL factors that increased this patient's risk for exertional heat stroke.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Exercising in full pads and helmet during high heat index conditions", "correct": true, "critical": false, "explanation": "Full equipment prevents evaporative cooling, the body's primary heat dissipation mechanism. Combined with a high heat index, this dramatically increases heat illness risk.", "guideline_ref": "NATA Position Statement on Exertional Heat Illness"},
+          {"text": "Voluntary dehydration from restricting fluids to make weight", "correct": true, "critical": false, "explanation": "Dehydration impairs thermoregulation by reducing blood volume available for heat transfer to the skin and reducing sweat production.", "guideline_ref": "NATA Position Statement on Exertional Heat Illness"},
+          {"text": "Skipping meals resulting in inadequate fuel and electrolyte intake", "correct": true, "critical": false, "explanation": "Fasting reduces glycogen stores and electrolyte availability, impairing exercise performance and thermoregulatory capacity.", "guideline_ref": "NATA Position Statement on Exertional Heat Illness"},
+          {"text": "Creatine supplementation", "correct": true, "critical": false, "explanation": "Creatine can increase water retention in muscles at the expense of plasma volume, and some studies suggest it may impair heat dissipation during high-intensity exercise in hot conditions.", "guideline_ref": "NATA Position Statement on Exertional Heat Illness"},
+          {"text": "Being 16 years old rather than an adult athlete", "correct": false, "critical": false, "explanation": "While adolescents may have slightly different thermoregulatory responses, age alone at 16 is not an independent major risk factor compared to the modifiable risk factors present in this scenario.", "guideline_ref": "American Academy of Pediatrics — Climate and Exercise"},
+          {"text": "Practicing in the afternoon rather than the morning", "correct": false, "critical": false, "explanation": "While morning practice in cooler conditions is recommended, time of day alone is less significant than the actual environmental conditions (heat index 108°F), which are the driving risk factor regardless of time.", "guideline_ref": "NATA Position Statement on Exertional Heat Illness"}
+        ],
+        "clinical_pearl": "Exertional heat stroke is the leading cause of preventable death in high school athletes. Many states now require wet bulb globe temperature (WBGT) monitoring and mandate activity modifications at specific thresholds. An ounce of prevention saves lives."
+      }
+    ]
+  }
+]

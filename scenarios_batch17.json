@@ -1,0 +1,1008 @@
+[
+  {
+    "id": "nat-tra-21",
+    "title": "34M — Unresponsive After Fall from Ladder",
+    "dispatch": "34-year-old male, fell from ladder, unresponsive",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 34,
+      "sex": "M",
+      "cc": "Unresponsive after fall"
+    },
+    "scene": "You arrive at a residential construction site where a 34-year-old male fell approximately 15 feet from a ladder onto concrete. Coworkers report he initially was conscious and complaining of a severe headache, but over the past 5 minutes he has become progressively unresponsive. He is supine on the ground with no cervical spine precautions in place. You note a large left temporoparietal hematoma. His left pupil is fixed and dilated at 6 mm; the right pupil is 3 mm and reactive. He demonstrates decorticate posturing to painful stimuli on the right side.",
+    "history": {
+      "pmh": "None known per coworkers",
+      "meds": "Unknown",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 58,
+      "bp": "192/110",
+      "rr": 8,
+      "spo2": 94,
+      "gcs": 6,
+      "temp": "98.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings in this patient is MOST indicative of uncal herniation?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Unilateral fixed and dilated pupil, contralateral posturing, and progressive decline in consciousness",
+            "correct": true,
+            "critical": false,
+            "explanation": "Uncal herniation classically presents with ipsilateral pupil dilation (CN III compression), contralateral motor posturing (cerebral peduncle compression), and declining consciousness (reticular activating system compression). This triad is a neurosurgical emergency.",
+            "guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury; National EMS Education Standards — Neurologic Trauma"
+          },
+          {
+            "text": "Bilateral pinpoint pupils, flaccid extremities, and apneic breathing pattern",
+            "correct": false,
+            "critical": false,
+            "explanation": "Bilateral pinpoint pupils suggest a pontine lesion or opioid toxicity, not uncal herniation. Uncal herniation produces unilateral pupil dilation ipsilateral to the lesion.",
+            "guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury"
+          },
+          {
+            "text": "Bilateral fixed and dilated pupils with absent corneal reflexes and flaccid tone",
+            "correct": false,
+            "critical": false,
+            "explanation": "Bilateral fixed and dilated pupils with absent brainstem reflexes suggest central or late-stage herniation with brainstem death — this represents a later, more ominous progression beyond uncal herniation.",
+            "guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury"
+          },
+          {
+            "text": "Cushing response alone (hypertension and bradycardia) without any pupil changes or motor findings",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the Cushing response indicates elevated ICP, it alone without pupillary or motor changes does not specifically localize uncal herniation. The pupil and motor findings are the hallmarks of uncal herniation.",
+            "guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury"
+          }
+        ],
+        "clinical_pearl": "The Cushing triad (hypertension, bradycardia, irregular respirations) is a late finding of critically elevated ICP. Don't wait for all three components — a unilateral blown pupil with declining GCS is enough to initiate herniation management."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions for this patient with signs of herniation in the correct order of priority.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Perform rapid sequence intubation and secure the airway",
+          "Maintain inline cervical spine stabilization and apply a cervical collar",
+          "Initiate controlled mild hyperventilation (ETCO2 target 30-35 mmHg) as a temporizing measure",
+          "Administer 3% hypertonic saline 250 mL IV bolus per protocol",
+          "Initiate rapid transport to a trauma center with neurosurgical capability"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "First, stabilize the cervical spine given the mechanism. Second, secure the airway via RSI — the patient has a GCS of 6 with an irregular respiratory pattern requiring definitive airway management. Third, initiate controlled mild hyperventilation only as a temporizing measure for active herniation (ETCO2 30-35 mmHg). Fourth, administer hypertonic saline to reduce cerebral edema per local protocol. Finally, initiate rapid transport — definitive treatment is neurosurgical intervention.",
+        "guideline_ref": "PHTLS 9th Edition — TBI Management; Brain Trauma Foundation Guidelines; National EMS Education Standards — Neurologic Trauma",
+        "clinical_pearl": "Routine hyperventilation in TBI is harmful — it causes cerebral vasoconstriction and worsens ischemia. It should ONLY be used as a brief temporizing measure when signs of active herniation are present. Target ETCO2 30-35 mmHg, not lower."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate targets for ongoing management of this patient during transport.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient has been intubated and is being ventilated. You have established IV access and are preparing for transport to a Level I trauma center 20 minutes away.",
+        "vitals_update": {
+          "hr": 62,
+          "bp": "178/98",
+          "rr": 14,
+          "spo2": 99,
+          "gcs": 3
+        },
+        "options": [
+          {
+            "text": "Maintain SpO2 ≥ 94% and avoid hypoxia",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hypoxia (SpO2 < 90%) in TBI patients is associated with a near doubling of mortality. Maintaining adequate oxygenation is a primary goal of TBI management.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Maintain systolic blood pressure ≥ 90 mmHg and avoid hypotension",
+            "correct": true,
+            "critical": false,
+            "explanation": "Even a single episode of hypotension (SBP < 90 mmHg) in TBI dramatically worsens outcomes. Aggressive fluid resuscitation should be used to maintain adequate cerebral perfusion pressure.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Maintain ETCO2 at 35-40 mmHg with normoventilation unless signs of herniation worsen",
+            "correct": true,
+            "critical": false,
+            "explanation": "Normoventilation (ETCO2 35-40 mmHg) is the standard target for TBI patients. Mild hyperventilation (30-35 mmHg) should only be used as a temporizing bridge when active herniation is occurring.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Target aggressive hyperventilation with ETCO2 of 20-25 mmHg to maximally reduce intracranial pressure",
+            "correct": false,
+            "critical": true,
+            "explanation": "Aggressive hyperventilation below 30 mmHg causes severe cerebral vasoconstriction, leading to cerebral ischemia and worse outcomes. This practice is contraindicated in TBI management.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Elevate the head of the stretcher to 45 degrees to promote intracranial venous drainage",
+            "correct": false,
+            "critical": false,
+            "explanation": "While head elevation can help reduce ICP, 45 degrees is excessive and may compromise cerebral perfusion pressure in a trauma patient. Head-of-bed elevation to 30 degrees with the body in neutral alignment and the c-collar not too tight is appropriate.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          }
+        ],
+        "clinical_pearl": "The two most preventable causes of secondary brain injury in the prehospital setting are hypoxia and hypotension. Preventing even a single episode of either is the most impactful intervention EMS can provide for TBI patients."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-22",
+    "title": "52M — Difficulty Breathing After MVC",
+    "dispatch": "52-year-old male, motor vehicle collision, chest pain, difficulty breathing",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 52,
+      "sex": "M",
+      "cc": "Chest pain and difficulty breathing after MVC"
+    },
+    "scene": "You respond to a two-vehicle head-on collision on a rural highway. A 52-year-old male was the unrestrained driver. Airbags did not deploy. He is found seated in the driver's seat, leaning forward and splinting his left chest. He is in obvious respiratory distress with rapid, shallow breathing. On inspection, you observe paradoxical movement of the left anterolateral chest wall involving ribs 4 through 8. There is significant crepitus on palpation. Breath sounds are markedly diminished on the left. Subcutaneous emphysema is noted along the left lateral chest wall.",
+    "history": {
+      "pmh": "COPD, former smoker (30 pack-years)",
+      "meds": "Tiotropium inhaler, albuterol PRN",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 118,
+      "bp": "102/68",
+      "rr": 32,
+      "spo2": 84,
+      "gcs": 14,
+      "temp": "97.9°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the physical examination findings, categorize each of the following clinical signs as associated with either flail chest or tension pneumothorax.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Paradoxical chest wall movement during respiration",
+          "Tracheal deviation away from the affected side",
+          "Crepitus over multiple adjacent rib fractures",
+          "Hypotension with distended neck veins",
+          "Subcutaneous emphysema extending from the chest wall",
+          "Absent breath sounds unilaterally with hyperresonance to percussion"
+        ],
+        "categories": ["Flail Chest", "Tension Pneumothorax"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "Flail chest signs: paradoxical movement (the flail segment moves inward on inspiration and outward on expiration), crepitus over fractured ribs, and subcutaneous emphysema from rib fractures communicating with soft tissue. Tension pneumothorax signs: tracheal deviation (late finding), hypotension with JVD (obstructive shock from impaired venous return), and absent breath sounds with hyperresonance. Note: flail chest and pneumothorax frequently coexist.",
+        "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; National EMS Education Standards — Chest Trauma",
+        "clinical_pearl": "Flail chest itself is not the primary threat — the underlying pulmonary contusion is what kills. The contused lung tissue causes progressive hypoxia over hours. Always suspect pulmonary contusion when you identify a flail segment."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient's condition is deteriorating with worsening hypoxia despite high-flow oxygen. You note distended neck veins and absent left-sided breath sounds. What is the MOST appropriate immediate intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Despite high-flow oxygen via non-rebreather mask, the patient's SpO2 has dropped to 78%. He is now confused, with JVD and tracheal deviation to the right noted on reassessment.",
+        "vitals_update": {
+          "hr": 134,
+          "bp": "82/50",
+          "rr": 36,
+          "spo2": 78,
+          "gcs": 12
+        },
+        "options": [
+          {
+            "text": "Needle thoracostomy at the 2nd intercostal space, midclavicular line on the left side",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient has developed a tension pneumothorax as evidenced by absent breath sounds, JVD, tracheal deviation, and hemodynamic compromise. Needle decompression at the 2nd ICS MCL (or 4th-5th ICS anterior axillary line) on the affected side is the immediate life-saving intervention.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; NAEMSP Position Statement on Needle Thoracostomy"
+          },
+          {
+            "text": "Stabilize the flail segment with a bulky dressing and tape on three sides",
+            "correct": false,
+            "critical": false,
+            "explanation": "While flail chest stabilization is part of management, the acute decompensation with JVD, tracheal deviation, and hemodynamic instability indicates tension pneumothorax, which requires immediate decompression. Addressing the tension pneumothorax takes priority.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Perform endotracheal intubation with positive pressure ventilation to splint the flail segment internally",
+            "correct": false,
+            "critical": false,
+            "explanation": "While positive pressure ventilation can internally splint a flail segment, intubating this patient without first decompressing the tension pneumothorax would be dangerous. Positive pressure ventilation will worsen the tension pneumothorax.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Initiate a 1-liter normal saline bolus to address the hypotension before any chest intervention",
+            "correct": false,
+            "critical": false,
+            "explanation": "The hypotension is caused by obstructive shock from tension pneumothorax. Fluid resuscitation will not correct the underlying problem — the mediastinal shift compressing the heart and great vessels must be relieved first.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "In larger patients, the standard 2nd ICS MCL site may not reach the pleural space with a standard 14-gauge angiocatheter. The 4th-5th ICS at the anterior axillary line is an alternative site with thinner chest wall tissue and higher success rates."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After successful needle decompression, select ALL components of continued management for this patient.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "narrative": "Following needle decompression, you hear a rush of air. The patient's condition improves with JVD resolving and breath sounds slightly improved on the left.",
+        "vitals_update": {
+          "hr": 112,
+          "bp": "96/64",
+          "rr": 28,
+          "spo2": 90,
+          "gcs": 14
+        },
+        "options": [
+          {
+            "text": "Continue high-flow oxygen and monitor for recurrence of tension pneumothorax",
+            "correct": true,
+            "critical": false,
+            "explanation": "Needle decompression is a temporizing measure. The catheter can kink, clot, or become dislodged. Continuous monitoring for re-accumulation of tension is essential.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Establish IV access and administer judicious fluid resuscitation for hemorrhagic shock",
+            "correct": true,
+            "critical": false,
+            "explanation": "With multiple rib fractures and a significant mechanism, hemorrhagic shock from intercostal artery bleeding or associated injuries should be anticipated. IV access and careful fluid administration are indicated.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; National EMS Education Standards"
+          },
+          {
+            "text": "Provide analgesia per protocol to improve respiratory effort and tidal volume",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pain from multiple rib fractures causes splinting and shallow breathing, worsening hypoxia. Adequate analgesia improves tidal volume and ventilation. Fentanyl or ketamine are preferred in trauma due to hemodynamic stability.",
+            "guideline_ref": "PHTLS 9th Edition — Pain Management in Trauma"
+          },
+          {
+            "text": "Initiate rapid transport to a Level I or II trauma center",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient has a flail chest with underlying pulmonary contusion and tension pneumothorax — these are criteria for transport to a trauma center. Definitive management requires chest tube placement and surgical evaluation.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma Triage; CDC Field Triage Guidelines"
+          },
+          {
+            "text": "Remove the decompression needle and seal the site with an occlusive dressing",
+            "correct": false,
+            "critical": true,
+            "explanation": "Removing the decompression catheter will allow the tension pneumothorax to re-accumulate. The catheter should remain in place and be secured until a chest tube can be placed at the hospital.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Apply a circumferential chest wrap to stabilize all rib fractures",
+            "correct": false,
+            "critical": true,
+            "explanation": "Circumferential chest wrapping restricts chest wall expansion and worsens ventilation — it is contraindicated. Flail segments may be stabilized with positioning (injured side down) or by the positive pressure of mechanical ventilation.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "Position the flail chest patient with the injured side down when possible — gravity splints the flail segment and allows the uninjured lung to expand fully. This simple positioning maneuver can significantly improve ventilation."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-23",
+    "title": "19M — Industrial Machinery Injury to Arm",
+    "dispatch": "19-year-old male, arm caught in machinery, severe bleeding",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 19,
+      "sex": "M",
+      "cc": "Traumatic amputation of left forearm"
+    },
+    "scene": "You arrive at a manufacturing plant where a 19-year-old male had his left forearm caught in a hydraulic press. Coworkers activated the emergency stop and freed him approximately 5 minutes ago. The patient's left arm has a complete amputation at the mid-forearm level. A coworker is applying direct pressure to the stump with shop towels that are soaked through with blood. The amputated part has been recovered by a coworker and is sitting on the floor nearby. The patient is alert but pale, diaphoretic, and visibly terrified. There is a large pool of blood at the workstation.",
+    "history": {
+      "pmh": "None",
+      "meds": "None",
+      "allergies": "NKDA"
+    },
+    "vitals": {
+      "hr": 128,
+      "bp": "94/62",
+      "rr": 24,
+      "spo2": 97,
+      "gcs": 15,
+      "temp": "98.2°F"
+    },
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions for hemorrhage control and management of this traumatic amputation in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Apply a commercial tourniquet proximal to the amputation site on the left upper arm",
+          "Establish large-bore IV access and initiate fluid resuscitation",
+          "Properly preserve the amputated part (wrap in saline-moistened gauze, place in plastic bag, then on ice)",
+          "Dress the stump with bulky sterile dressings after tourniquet application",
+          "Administer analgesia per protocol"
+        ],
+        "correctOrder": [0, 3, 1, 4, 2],
+        "explanation": "Priority one is tourniquet application to control life-threatening hemorrhage — this is the most immediately life-saving intervention. Next, dress the stump for wound protection. Then establish IV access for fluid resuscitation given signs of hemorrhagic shock. Provide analgesia — pain management is important but follows hemorrhage control and vascular access. Finally, properly preserve the amputated part for potential reimplantation. Limb preservation is important but never before patient stabilization.",
+        "guideline_ref": "PHTLS 9th Edition — Hemorrhage Control; CoTCCC Tourniquet Guidelines; National EMS Education Standards — Soft Tissue Trauma",
+        "clinical_pearl": "A properly applied tourniquet should completely occlude arterial flow. If the stump continues to bleed after application, the tourniquet is not tight enough or is positioned too distally. Apply a second tourniquet proximal to the first if bleeding continues."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "A coworker asks you about the amputated forearm. Which statement BEST describes proper preservation of an amputated part?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Wrap the part in saline-moistened sterile gauze, seal in a plastic bag, and place the bag on a bed of ice — do not submerge the part directly in water or ice",
+            "correct": true,
+            "critical": false,
+            "explanation": "The amputated part should be gently rinsed of gross contamination, wrapped in moist sterile gauze, placed in a sealed plastic bag, and then placed on ice. Direct contact with ice or submersion in water causes tissue damage from freezing or osmotic injury.",
+            "guideline_ref": "PHTLS 9th Edition — Amputations; National EMS Education Standards — Soft Tissue Trauma"
+          },
+          {
+            "text": "Place the amputated part directly on ice to achieve the lowest possible temperature as quickly as possible",
+            "correct": false,
+            "critical": false,
+            "explanation": "Direct contact with ice causes frostbite and cellular destruction of the amputated tissue, which can prevent successful reimplantation. The part must be insulated from direct ice contact.",
+            "guideline_ref": "PHTLS 9th Edition — Amputations"
+          },
+          {
+            "text": "Submerge the part in a container of cold sterile saline for transport to preserve tissue viability",
+            "correct": false,
+            "critical": false,
+            "explanation": "Submersion in saline causes tissue waterlogging and osmotic damage that can make reimplantation impossible. The part should be wrapped in moist gauze but not submerged.",
+            "guideline_ref": "PHTLS 9th Edition — Amputations"
+          },
+          {
+            "text": "Wrap the part in dry sterile dressings and transport at room temperature to avoid thermal injury",
+            "correct": false,
+            "critical": false,
+            "explanation": "While avoiding freezing is important, cooling the part extends viability. A cooled amputated part is viable for up to 18 hours versus only 4-6 hours at warm temperature. Moist gauze and cool environment are both necessary.",
+            "guideline_ref": "PHTLS 9th Edition — Amputations"
+          }
+        ],
+        "clinical_pearl": "Cool ischemia time is the key factor in reimplantation success. A properly cooled amputated digit or limb is viable for up to 18 hours; an uncooled part only 4-6 hours. Always transport the part with the patient — never delay patient transport to retrieve it."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL signs that would indicate this patient is progressing into Class III hemorrhagic shock.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "The tourniquet is in place and bleeding is controlled. You have established IV access and are administering NS. During reassessment, you note changes in the patient's condition.",
+        "vitals_update": {
+          "hr": 136,
+          "bp": "84/58",
+          "rr": 28,
+          "spo2": 96,
+          "gcs": 14
+        },
+        "options": [
+          {
+            "text": "Heart rate of 136 with narrowing pulse pressure",
+            "correct": true,
+            "critical": false,
+            "explanation": "Class III hemorrhage (30-40% blood volume loss) is characterized by tachycardia >120 and narrowing pulse pressure as the diastolic rises due to catecholamine-mediated vasoconstriction while systolic falls from decreased cardiac output.",
+            "guideline_ref": "PHTLS 9th Edition — Hemorrhagic Shock Classification; ATLS 10th Edition"
+          },
+          {
+            "text": "Increasing confusion and anxiety despite reassurance",
+            "correct": true,
+            "critical": false,
+            "explanation": "Altered mental status (confusion, anxiety) in Class III hemorrhage reflects inadequate cerebral perfusion. This is a critical sign indicating the patient is decompensating and needs aggressive intervention.",
+            "guideline_ref": "PHTLS 9th Edition — Hemorrhagic Shock Classification"
+          },
+          {
+            "text": "Systolic blood pressure declining to 84 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hypotension with SBP <90 mmHg in a young adult represents failure of compensatory mechanisms and is typically not seen until Class III hemorrhage (30-40% volume loss). Young patients compensate well and may not become hypotensive until significant blood loss has occurred.",
+            "guideline_ref": "PHTLS 9th Edition — Hemorrhagic Shock Classification"
+          },
+          {
+            "text": "Warm, flushed skin with bounding peripheral pulses",
+            "correct": false,
+            "critical": false,
+            "explanation": "Warm, flushed skin with bounding pulses is associated with distributive/vasodilatory shock (sepsis, neurogenic), not hemorrhagic shock. Hemorrhagic shock produces cool, pale, diaphoretic skin with weak, thready pulses.",
+            "guideline_ref": "PHTLS 9th Edition — Hemorrhagic Shock Classification"
+          },
+          {
+            "text": "Urine output greater than 30 mL/hour with clear urine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Adequate urine output (>30 mL/hr) indicates preserved renal perfusion. In Class III hemorrhage, urine output drops to 5-15 mL/hr as the kidneys are underperfused due to hypovolemia and shunting.",
+            "guideline_ref": "PHTLS 9th Edition — Hemorrhagic Shock Classification"
+          }
+        ],
+        "clinical_pearl": "In young, healthy patients, compensatory mechanisms can maintain near-normal blood pressure until 30% or more of blood volume is lost. Tachycardia and narrowing pulse pressure are earlier and more reliable indicators of hemorrhage than hypotension."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-24",
+    "title": "27M — Stabbing to the Neck",
+    "dispatch": "27-year-old male, stab wound to neck, bleeding",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 27,
+      "sex": "M",
+      "cc": "Stab wound to the right lateral neck"
+    },
+    "scene": "You respond to a bar parking lot for a stabbing. A 27-year-old male is found sitting against a car holding a blood-soaked towel against the right side of his neck. He has a single stab wound to the right lateral neck at the level of the thyroid cartilage, approximately 3 cm in length, actively bleeding with dark blood. The wound is producing a gurgling sound with each respiration. He speaks in a hoarse voice and reports difficulty swallowing. There is moderate subcutaneous emphysema palpable around the wound. No other injuries are apparent. Law enforcement has secured the scene.",
+    "history": {
+      "pmh": "None",
+      "meds": "None",
+      "allergies": "NKDA"
+    },
+    "vitals": {
+      "hr": 110,
+      "bp": "108/72",
+      "rr": 22,
+      "spo2": 93,
+      "gcs": 14,
+      "temp": "98.0°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This wound is located in Zone II of the neck. Categorize each of the following anatomical landmarks into the correct zone of penetrating neck trauma.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Cricoid cartilage to the angle of the mandible",
+          "Sternal notch to the cricoid cartilage",
+          "Angle of the mandible to the base of the skull",
+          "Contains the carotid bifurcation and jugular vein",
+          "Contains the vertebral artery as it enters the skull",
+          "Contains the subclavian vessels and lung apices"
+        ],
+        "categories": ["Zone I", "Zone II", "Zone III"],
+        "correctCategories": [1, 0, 2, 1, 2, 0],
+        "explanation": "Zone I extends from the sternal notch/clavicles to the cricoid cartilage and contains the great vessels, trachea, esophagus, and lung apices. Zone II extends from the cricoid cartilage to the angle of the mandible and contains the carotid bifurcation, jugular veins, pharynx, and larynx. Zone III extends from the angle of the mandible to the base of the skull and contains the distal carotid, vertebral arteries, and pharynx. Zone II injuries are the most surgically accessible.",
+        "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Head, Face, and Neck Trauma",
+        "clinical_pearl": "While the zone classification system is primarily used for surgical decision-making, prehospital providers should document wound location relative to anatomical landmarks to assist receiving surgeons in rapid triage and operative planning."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The wound is producing a gurgling/sucking sound and you are concerned about air embolism and expanding hematoma. What is the MOST appropriate initial wound management?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Apply an occlusive dressing to the wound and maintain direct pressure to control hemorrhage",
+            "correct": true,
+            "critical": false,
+            "explanation": "A penetrating neck wound with air entrainment poses a risk of venous air embolism through the injured jugular vein. Applying an occlusive dressing prevents air entrainment while direct pressure controls hemorrhage. Never probe or pack a neck wound that is communicating with the airway or major vessels.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Soft Tissue Trauma"
+          },
+          {
+            "text": "Pack the wound with hemostatic gauze and apply a circumferential pressure dressing",
+            "correct": false,
+            "critical": true,
+            "explanation": "Circumferential pressure dressings around the neck are extremely dangerous — they can compress the airway and impede venous drainage from the brain. Additionally, wound packing in the neck risks compressing the airway or great vessels. Use direct pressure over the wound only.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          },
+          {
+            "text": "Apply a tourniquet to the neck proximal to the wound as you would for extremity hemorrhage",
+            "correct": false,
+            "critical": true,
+            "explanation": "A tourniquet cannot be applied to the neck — it would occlude the airway and bilateral carotid/vertebral blood flow, causing immediate death. Neck hemorrhage requires direct pressure or surgical intervention.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          },
+          {
+            "text": "Leave the wound open to air to allow drainage and prevent a tension hematoma from developing",
+            "correct": false,
+            "critical": false,
+            "explanation": "Leaving the wound open allows continued hemorrhage and risk of air embolism through the low-pressure venous system. An occlusive dressing with direct pressure addresses both of these life threats.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          }
+        ],
+        "clinical_pearl": "Venous air embolism can occur with as little as 50 mL of air entering the venous system. Position the patient with the wound site dependent (below the heart) when possible to reduce the pressure gradient that draws air into injured veins."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following management priorities for this patient in the correct sequence.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Seal the wound with an occlusive dressing and apply direct pressure",
+          "Prepare for advanced airway management given expanding subcutaneous emphysema and hoarseness",
+          "Establish bilateral large-bore IV access and prepare blood tubing if available",
+          "Initiate rapid transport to a Level I trauma center with surgical capability"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "First, address the immediate life threat by sealing the wound to prevent air embolism and control hemorrhage. Second, prepare for airway compromise — hoarseness, subcutaneous emphysema, and wound proximity to the larynx suggest evolving airway injury that may require emergent intubation. Third, establish bilateral IV access (in case one side's venous return is compromised). Fourth, initiate rapid transport — penetrating neck trauma with airway compromise requires surgical intervention.",
+        "guideline_ref": "PHTLS 9th Edition — Neck Trauma; National EMS Education Standards — Head, Face, and Neck Trauma",
+        "clinical_pearl": "Intubation of a patient with penetrating neck trauma and expanding hematoma is extremely high risk. Have a surgical airway kit immediately available as a backup. The airway can distort rapidly, making even one attempt at laryngoscopy the last opportunity for oral intubation."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which finding during transport would MOST urgently indicate the patient requires immediate surgical airway intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "You are 10 minutes from the trauma center. The patient has been stable with the wound dressed and IV access established. He suddenly becomes more agitated.",
+        "vitals_update": {
+          "hr": 124,
+          "bp": "98/66",
+          "rr": 30,
+          "spo2": 86,
+          "gcs": 13
+        },
+        "options": [
+          {
+            "text": "Rapidly expanding neck hematoma with stridor, inability to speak, and SpO2 falling despite high-flow oxygen",
+            "correct": true,
+            "critical": false,
+            "explanation": "An expanding hematoma compressing the airway with stridor and loss of voice indicates imminent complete airway obstruction. If oral intubation fails or the anatomy is too distorted, a surgical cricothyrotomy is the definitive prehospital rescue airway.",
+            "guideline_ref": "PHTLS 9th Edition — Surgical Airway; National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Mild increase in heart rate from 110 to 124 with stable blood pressure and unchanged wound appearance",
+            "correct": false,
+            "critical": false,
+            "explanation": "A mild increase in heart rate without airway compromise or wound changes may reflect pain, anxiety, or mild ongoing hemorrhage — it does not specifically indicate the need for a surgical airway.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          },
+          {
+            "text": "Patient reports increased pain at the wound site with unchanged voice quality and stable oxygen saturation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Increased pain without airway compromise does not necessitate a surgical airway. While concerning, this finding requires analgesia and monitoring, not immediate airway intervention.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          },
+          {
+            "text": "Wound dressing becomes saturated requiring replacement with continued slow oozing underneath",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ongoing hemorrhage requires attention and additional dressing/pressure, slow oozing without airway compromise is a hemorrhage control issue, not an indication for surgical airway.",
+            "guideline_ref": "PHTLS 9th Edition — Neck Trauma"
+          }
+        ],
+        "clinical_pearl": "In penetrating neck trauma, the decision to intubate should be made early — before the airway is lost. A 'wait and see' approach in a patient with expanding hematoma, subcutaneous emphysema, and voice changes often results in a 'can't intubate, can't oxygenate' emergency."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-25",
+    "title": "78F — Fall at Assisted Living Facility",
+    "dispatch": "78-year-old female, fall, hip pain, unable to stand",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 78,
+      "sex": "F",
+      "cc": "Right hip pain after fall"
+    },
+    "scene": "You arrive at an assisted living facility where a 78-year-old female tripped over a rug and fell onto her right side approximately 30 minutes ago. She is lying on the floor of her room in moderate distress. Her right leg appears shortened and externally rotated. She has tenderness and ecchymosis over the right greater trochanter. She denies head strike, loss of consciousness, or other injuries. Staff report she has been on blood thinners since having a stroke last year. A medication list from her chart is available.",
+    "history": {
+      "pmh": "Atrial fibrillation, prior CVA (1 year ago with residual left-sided weakness), hypertension, osteoporosis, hypothyroidism",
+      "meds": "Apixaban (Eliquis) 5 mg BID, metoprolol 50 mg daily, amlodipine 5 mg daily, levothyroxine 75 mcg daily, calcium/vitamin D supplement",
+      "allergies": "Codeine (nausea)"
+    },
+    "vitals": {
+      "hr": 82,
+      "bp": "148/86",
+      "rr": 18,
+      "spo2": 96,
+      "gcs": 15,
+      "temp": "97.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient is on apixaban (Eliquis) for atrial fibrillation. Select ALL concerns related to anticoagulation that are relevant to her current injury.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Increased risk of significant hemorrhage into the hip and thigh compartment from the fracture",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hip fractures can cause 500-1500 mL of blood loss into the surrounding tissue. Anticoagulation with apixaban impairs the ability to form clots, increasing the risk and extent of hemorrhage. These patients may develop occult hemorrhagic shock.",
+            "guideline_ref": "PHTLS 9th Edition — Geriatric Trauma; National EMS Education Standards — Geriatric Assessment"
+          },
+          {
+            "text": "Even a minor mechanism in an anticoagulated patient warrants concern for occult intracranial hemorrhage",
+            "correct": true,
+            "critical": false,
+            "explanation": "Although the patient denies head strike, occult intracranial hemorrhage can occur in anticoagulated patients with even trivial mechanisms. Subdural hematomas in elderly anticoagulated patients can present with delayed symptoms. Hospital evaluation should include this consideration.",
+            "guideline_ref": "PHTLS 9th Edition — Geriatric Trauma; ACS TQIP Geriatric Trauma Guidelines"
+          },
+          {
+            "text": "The receiving facility will need to know the specific anticoagulant for potential reversal agent selection",
+            "correct": true,
+            "critical": false,
+            "explanation": "Apixaban is a direct factor Xa inhibitor. Andexanet alfa (Andexxa) is the specific reversal agent for factor Xa inhibitors. Communicating the exact medication, dose, and time of last dose to the receiving facility is critical for surgical planning and hemorrhage management.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACS TQIP Geriatric Trauma Guidelines"
+          },
+          {
+            "text": "Apixaban should be reversed in the field by administering vitamin K 10 mg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Vitamin K reverses warfarin (a vitamin K antagonist), NOT direct oral anticoagulants like apixaban. Apixaban requires andexanet alfa or 4-factor PCC for reversal, which is performed in the hospital setting, not in the field.",
+            "guideline_ref": "ACS TQIP Geriatric Trauma Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Anticoagulation has no effect on fracture hemorrhage since bone bleeding is primarily from rigid vessels that cannot be compressed",
+            "correct": false,
+            "critical": false,
+            "explanation": "While some bone bleeding comes from rigid intraosseous vessels, the majority of hip fracture hemorrhage comes from the surrounding soft tissue, muscle, and periosteal vessels — all of which are affected by anticoagulation. The risk of significant hemorrhage is substantially increased.",
+            "guideline_ref": "PHTLS 9th Edition — Geriatric Trauma"
+          }
+        ],
+        "clinical_pearl": "Geriatric patients on anticoagulants may not mount a normal tachycardic response to hemorrhage due to beta-blockers (like this patient's metoprolol) masking compensatory tachycardia. A 'normal' heart rate in a bleeding geriatric patient on beta-blockers may actually represent occult shock."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST appropriate method of immobilizing this patient's suspected hip fracture for transport?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Place padding between the legs, secure the legs together with cravats, and immobilize on a long backboard or scoop stretcher in the position of comfort",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hip fracture immobilization involves padding between the legs to prevent further displacement, securing the legs together, and placing the patient on a rigid device for transfer. The patient should be moved as a unit. Avoid traction splinting — it is contraindicated for femoral neck/hip fractures.",
+            "guideline_ref": "PHTLS 9th Edition — Musculoskeletal Trauma; National EMS Education Standards — Orthopedic Injuries"
+          },
+          {
+            "text": "Apply a traction splint to the right leg with 15 pounds of traction to realign the fracture and reduce pain",
+            "correct": false,
+            "critical": true,
+            "explanation": "Traction splints are contraindicated for hip and femoral neck fractures. Traction can displace the fracture further, disrupt blood supply to the femoral head (risking avascular necrosis), and cause significant additional pain.",
+            "guideline_ref": "PHTLS 9th Edition — Musculoskeletal Trauma"
+          },
+          {
+            "text": "Manually reduce the external rotation and shortening before splinting to restore anatomical alignment",
+            "correct": false,
+            "critical": true,
+            "explanation": "Prehospital reduction of hip fractures is not performed. Attempting to force the leg into anatomical position can cause further injury to the femoral head blood supply, worsen hemorrhage, and cause severe pain. Splint in the position found.",
+            "guideline_ref": "PHTLS 9th Edition — Musculoskeletal Trauma"
+          },
+          {
+            "text": "No immobilization is necessary — simply assist the patient to a sitting position on the stretcher with pillows for comfort",
+            "correct": false,
+            "critical": false,
+            "explanation": "An unstable hip fracture requires immobilization during transport. Allowing the patient to sit unsupported risks fracture displacement, increased hemorrhage, and significant pain with any movement.",
+            "guideline_ref": "PHTLS 9th Edition — Musculoskeletal Trauma"
+          }
+        ],
+        "clinical_pearl": "Hip fractures in geriatric patients carry a 30-day mortality rate of approximately 10% and a 1-year mortality rate of 20-30%. Early surgical fixation (within 24-48 hours) significantly improves outcomes — communicate the urgency to the receiving facility."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, you notice the patient seems more confused than on initial contact and her blood pressure has dropped. Considering her medication history, what factor is MOST likely masking the severity of her hemorrhage?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The patient, who was initially alert and oriented, is now confused about where she is. She appears paler than on initial contact.",
+        "vitals_update": {
+          "hr": 78,
+          "bp": "106/68",
+          "rr": 20,
+          "spo2": 95,
+          "gcs": 14
+        },
+        "options": [
+          {
+            "text": "Metoprolol is blunting the expected tachycardic response to hemorrhage",
+            "correct": true,
+            "critical": false,
+            "explanation": "Beta-blockers like metoprolol prevent the compensatory tachycardia that normally accompanies hemorrhage. This patient's heart rate of 78 may represent significant blood loss that would otherwise produce a heart rate of 110+. The declining blood pressure and altered mental status in the absence of tachycardia should raise high suspicion for occult hemorrhagic shock.",
+            "guideline_ref": "PHTLS 9th Edition — Geriatric Trauma; ACS TQIP Geriatric Trauma Guidelines"
+          },
+          {
+            "text": "Apixaban is preventing platelet aggregation at the fracture site, causing rapid blood loss",
+            "correct": false,
+            "critical": false,
+            "explanation": "Apixaban is a factor Xa inhibitor — it does not affect platelet aggregation. While apixaban does impair coagulation and increase bleeding, the question asks what is masking the severity of hemorrhage, not what is causing it. Platelet function is preserved with factor Xa inhibitors.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Amlodipine is causing vasodilation that is counteracting the hypotensive effects of hemorrhage",
+            "correct": false,
+            "critical": false,
+            "explanation": "While amlodipine (a calcium channel blocker) does cause vasodilation, it would actually worsen hypotension during hemorrhage rather than mask it. Amlodipine may impair compensatory vasoconstriction, but the heart rate response is a more reliable early indicator that is specifically blunted by beta-blockers.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Levothyroxine is elevating her metabolic rate, which maintains blood pressure despite volume loss",
+            "correct": false,
+            "critical": false,
+            "explanation": "Levothyroxine at replacement doses in a hypothyroid patient normalizes metabolism — it does not create a hypermetabolic state that would mask hemorrhage. This medication is not relevant to the hemodynamic assessment.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "In geriatric trauma patients, tachycardia and hypotension may be absent even with significant hemorrhage due to beta-blockers, pacemakers, and decreased physiologic reserve. Mental status changes are often the earliest reliable indicator of shock in the elderly."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-26",
+    "title": "29F — Restrained Passenger in High-Speed MVC",
+    "dispatch": "29-year-old female, MVC, pregnant, abdominal pain",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 29,
+      "sex": "F",
+      "cc": "Abdominal pain and vaginal bleeding after MVC"
+    },
+    "scene": "You arrive at a T-bone collision where the passenger side of a sedan was struck by an SUV at approximately 45 mph. A 29-year-old female who is approximately 32 weeks pregnant was the restrained front-seat passenger on the impact side. She is alert and complaining of severe abdominal pain, right-sided chest wall tenderness, and cramping. She reports the seatbelt was worn across her lap. You note the abdomen is rigid and tender, with the uterus palpably firm and 'board-like.' There is a moderate amount of vaginal bleeding noted. Fetal movement was present after the crash but the patient states she has not felt the baby move for the last few minutes.",
+    "history": {
+      "pmh": "G2P1, uncomplicated pregnancy, gestational diabetes controlled with diet",
+      "meds": "Prenatal vitamins, no insulin",
+      "allergies": "Latex"
+    },
+    "vitals": {
+      "hr": 122,
+      "bp": "100/68",
+      "rr": 24,
+      "spo2": 96,
+      "gcs": 15,
+      "temp": "98.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The rigid, board-like uterus with vaginal bleeding after trauma is MOST consistent with which condition?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Placental abruption",
+            "correct": true,
+            "critical": false,
+            "explanation": "Placental abruption — the premature separation of the placenta from the uterine wall — is the most common cause of fetal death in maternal trauma. The classic presentation is a rigid, board-like uterus (due to uterine tetany from blood irritation), vaginal bleeding, abdominal pain, and fetal distress. The mechanism of sudden deceleration causes shearing at the placental-uterine interface.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Practice Bulletin — Trauma in Pregnancy; National EMS Education Standards — Obstetric Emergencies"
+          },
+          {
+            "text": "Uterine rupture",
+            "correct": false,
+            "critical": false,
+            "explanation": "Uterine rupture presents with sudden loss of uterine contour, palpable fetal parts outside the uterus, and severe hemorrhage. While possible in high-energy trauma, the intact uterine contour with board-like rigidity is more consistent with abruption.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Placenta previa",
+            "correct": false,
+            "critical": false,
+            "explanation": "Placenta previa is painless vaginal bleeding in the third trimester caused by a low-lying placenta covering the cervical os. It is not caused by trauma and does not present with uterine rigidity or abdominal pain.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Preterm labor triggered by the collision",
+            "correct": false,
+            "critical": false,
+            "explanation": "While trauma can trigger preterm labor, it presents with rhythmic contractions and cervical changes — not a constantly rigid, board-like uterus. The tetanic uterus and vaginal bleeding pattern is characteristic of abruption, not labor.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          }
+        ],
+        "clinical_pearl": "Up to 20% of placental abruptions have concealed hemorrhage with no visible vaginal bleeding. A rigid, painful uterus after trauma should be treated as abruption until proven otherwise, even without external bleeding."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following management priorities for this pregnant trauma patient in the correct order.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Position the patient with left uterine displacement (manual displacement or 15-30° left tilt)",
+          "Establish two large-bore IVs and initiate aggressive crystalloid resuscitation",
+          "Apply high-flow oxygen via non-rebreather mask",
+          "Initiate rapid transport to a trauma center with obstetric and neonatal surgical capability",
+          "Notify the receiving facility early with emphasis on the gestational age and suspected abruption"
+        ],
+        "correctOrder": [2, 0, 1, 4, 3],
+        "explanation": "First, apply high-flow oxygen — maternal oxygenation directly supports fetal oxygenation and the fetus is extremely sensitive to hypoxia. Second, position with left uterine displacement to relieve aortocaval compression by the gravid uterus, improving maternal cardiac output by up to 30%. Third, establish large-bore IV access and begin aggressive fluid resuscitation — the pregnant patient can lose 30-35% of blood volume before showing vital sign changes. Fourth, notify the receiving facility early so OB and neonatal teams can mobilize. Fifth, initiate rapid transport — definitive care is emergent cesarean delivery if the fetus is viable and maternal stabilization.",
+        "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Practice Bulletin; National EMS Education Standards — Obstetric Emergencies",
+        "clinical_pearl": "The best treatment for the fetus is aggressive resuscitation of the mother. The pregnant patient's expanded blood volume (40-50% increase) means she can lose a significant amount of blood before becoming symptomatic — by the time she shows signs of shock, the fetus may already be in severe distress."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL physiologic changes of pregnancy that affect your assessment and management of this trauma patient.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Increased blood volume (40-50%) may mask hemorrhage until greater blood loss has occurred",
+            "correct": true,
+            "critical": false,
+            "explanation": "The pregnant patient's blood volume increases by 40-50% by the third trimester. This expanded volume allows compensation for a larger absolute volume of blood loss before vital signs deteriorate, making hemorrhage detection more difficult.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Supine hypotension syndrome from aortocaval compression by the gravid uterus after 20 weeks",
+            "correct": true,
+            "critical": false,
+            "explanation": "After 20 weeks gestation, the gravid uterus can compress the inferior vena cava when supine, reducing venous return by up to 30%. Left uterine displacement is essential in any pregnant trauma patient to maintain cardiac output.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Practice Bulletin"
+          },
+          {
+            "text": "Physiologic tachycardia of pregnancy (HR increases 15-20 bpm above baseline) may confound shock assessment",
+            "correct": true,
+            "critical": false,
+            "explanation": "Normal pregnancy increases resting heart rate by 15-20 bpm. A heart rate of 100 may be normal in late pregnancy, making tachycardia a less reliable indicator of hemorrhage. This must be considered when assessing for shock.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Elevated diaphragm alters chest tube placement landmarks and increases aspiration risk",
+            "correct": true,
+            "critical": false,
+            "explanation": "The diaphragm is displaced upward 4 cm in late pregnancy, changing the location of abdominal organs relative to the thorax. This increases the risk of abdominal organ injury with thoracic trauma. Progesterone-mediated decreased gastric motility also increases aspiration risk.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Decreased white blood cell count in pregnancy makes the patient immunocompromised",
+            "correct": false,
+            "critical": false,
+            "explanation": "Pregnancy actually increases the white blood cell count (normal WBC in pregnancy can be 12,000-18,000). This physiologic leukocytosis can confound the interpretation of lab values but does not represent immunocompromise.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Decreased blood volume in the third trimester makes pregnant patients more sensitive to hemorrhage",
+            "correct": false,
+            "critical": false,
+            "explanation": "Blood volume is increased, not decreased, in pregnancy. The 40-50% increase in blood volume is one of the key physiologic adaptations that masks hemorrhage in the pregnant trauma patient.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          }
+        ],
+        "clinical_pearl": "Rh status matters in pregnant trauma patients. All Rh-negative pregnant patients with abdominal trauma should receive RhoGAM (Rh immunoglobulin) to prevent isoimmunization from fetal-maternal hemorrhage. Communicate Rh status concerns to the receiving facility."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-27",
+    "title": "16M — Pulled from Lake Unresponsive",
+    "dispatch": "16-year-old male, pulled from water, not breathing",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 16,
+      "sex": "M",
+      "cc": "Submersion, unresponsive"
+    },
+    "scene": "You respond to a lake beach where a 16-year-old male was pulled from the water by lifeguards after being found face-down approximately 3-4 minutes ago. Witnesses say he was diving from a floating dock and did not resurface. The submersion time is estimated at 5-7 minutes. Lifeguards initiated rescue breathing and he has just been placed on shore. He is unresponsive with slow, gasping respirations at approximately 6 breaths per minute. He has a weak, rapid pulse. There is no obvious external trauma visible, but cervical spine injury must be considered given the diving mechanism. Water temperature is approximately 68°F (20°C).",
+    "history": {
+      "pmh": "None known per friends on scene",
+      "meds": "None",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 52,
+      "bp": "78/50",
+      "rr": 6,
+      "spo2": 68,
+      "gcs": 4,
+      "temp": "95.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Arrange the following initial interventions for this submersion patient in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Open the airway with jaw thrust (maintaining cervical spine precautions) and provide BVM ventilations with high-flow oxygen",
+          "Maintain inline cervical spine stabilization given the diving mechanism",
+          "Suction the airway if vomitus or water is present",
+          "Remove wet clothing and begin passive rewarming measures",
+          "Establish vascular access"
+        ],
+        "correctOrder": [1, 2, 0, 4, 3],
+        "explanation": "First, stabilize the cervical spine given the diving mechanism — this takes priority as a concurrent action during all subsequent interventions. Second, suction the airway to clear any water or vomitus that would impede ventilation. Third, open the airway with a jaw thrust and begin ventilations — the primary pathology in drowning is hypoxia, and restoring oxygenation is the most critical intervention. Fourth, establish vascular access for fluid and medication administration. Fifth, address hypothermia with wet clothing removal and passive rewarming — important but secondary to oxygenation and perfusion.",
+        "guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation; National EMS Education Standards — Submersion/Drowning Emergencies; PHTLS 9th Edition — Environmental Emergencies",
+        "clinical_pearl": "Drowning is fundamentally a hypoxic event. Unlike cardiac arrest from a cardiac cause, drowning resuscitation should prioritize airway and breathing (A-B-C approach) rather than the C-A-B approach used in standard cardiac arrest. Early ventilation is the key to survival."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After 2 minutes of assisted ventilations with BVM, the patient remains bradycardic at 48 bpm with poor perfusion. Select ALL appropriate next interventions.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "You have been ventilating the patient with BVM and high-flow O2 for 2 minutes. SpO2 has improved slightly to 78% but the patient remains bradycardic and hypotensive.",
+        "vitals_update": {
+          "hr": 48,
+          "bp": "72/44",
+          "rr": 6,
+          "spo2": 78,
+          "gcs": 4
+        },
+        "options": [
+          {
+            "text": "Continue aggressive oxygenation and ventilation — the bradycardia is likely hypoxia-driven and may resolve with improved oxygenation",
+            "correct": true,
+            "critical": false,
+            "explanation": "In drowning, bradycardia is predominantly caused by severe hypoxia. The most effective treatment for hypoxia-driven bradycardia is oxygenation and ventilation. Many drowning-related bradyarrhythmias will resolve with aggressive airway management alone.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation"
+          },
+          {
+            "text": "Consider advanced airway placement (endotracheal intubation) for more effective ventilation and airway protection",
+            "correct": true,
+            "critical": false,
+            "explanation": "Submersion patients are at high risk for aspiration, gastric distention from swallowed water, and pulmonary edema. An advanced airway allows more effective ventilation, continuous PEEP application, and airway protection in this unresponsive patient.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation; National EMS Education Standards"
+          },
+          {
+            "text": "Administer IV/IO normal saline bolus to address hypotension from combined hypothermia and volume depletion",
+            "correct": true,
+            "critical": false,
+            "explanation": "Submersion patients may have relative hypovolemia from third-spacing, hypothermia-induced diuresis, and poor cardiac output. Warmed IV fluids (if available) serve double duty by supporting perfusion and assisting with rewarming.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation; PHTLS 9th Edition"
+          },
+          {
+            "text": "Perform the Heimlich maneuver to expel water from the lungs before continuing resuscitation",
+            "correct": false,
+            "critical": true,
+            "explanation": "Abdominal thrusts (Heimlich maneuver) are not recommended for removing water from the lungs in drowning patients. They are ineffective at removing pulmonary water, delay ventilation, increase aspiration risk by inducing vomiting, and may cause abdominal organ injury.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation"
+          },
+          {
+            "text": "Immediately begin chest compressions since the heart rate is below 60",
+            "correct": false,
+            "critical": false,
+            "explanation": "In adults and adolescents, a heart rate below 60 alone is not an indication for chest compressions if a pulse is present. Compressions are indicated for pulselessness or, in pediatric patients, for bradycardia with poor perfusion unresponsive to oxygenation and ventilation. This patient still has a pulse — prioritize oxygenation first.",
+            "guideline_ref": "AHA Guidelines 2020 — Bradycardia Algorithm"
+          }
+        ],
+        "clinical_pearl": "Drowning victims frequently swallow large amounts of water, leading to gastric distention that impedes ventilation and increases vomiting risk. Early nasogastric or orogastric tube placement can decompress the stomach and improve ventilatory compliance."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "The patient has been intubated and is being ventilated. His oxygen saturation improves to 92% but you note persistent bilateral crackles and frothy secretions in the endotracheal tube. What is the MOST likely cause of these findings?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The patient is intubated, with improving vital signs. However, you note significant bilateral crackles on auscultation and frequent suctioning of frothy, pink-tinged secretions from the ET tube.",
+        "vitals_update": {
+          "hr": 72,
+          "bp": "92/58",
+          "rr": 16,
+          "spo2": 92,
+          "gcs": 5
+        },
+        "options": [
+          {
+            "text": "Non-cardiogenic pulmonary edema from surfactant washout and alveolar membrane damage",
+            "correct": true,
+            "critical": false,
+            "explanation": "Aspirated water damages the alveolar-capillary membrane and washes out surfactant, causing alveolar collapse and non-cardiogenic pulmonary edema. This results in persistent hypoxia, bilateral crackles, and frothy secretions despite airway management. PEEP (positive end-expiratory pressure) is the key ventilatory strategy to recruit collapsed alveoli.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning; National EMS Education Standards — Submersion Emergencies"
+          },
+          {
+            "text": "Cardiogenic pulmonary edema from acute heart failure caused by hypothermia",
+            "correct": false,
+            "critical": false,
+            "explanation": "While hypothermia can cause cardiac dysfunction, a 16-year-old without cardiac history developing acute heart failure at 95.2°F (mild hypothermia) is unlikely. The mechanism of aspiration with surfactant washout is a far more likely explanation for the pulmonary edema.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning"
+          },
+          {
+            "text": "Tension pneumothorax from overaggressive positive pressure ventilation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tension pneumothorax would present with absent breath sounds on the affected side, not bilateral crackles. Frothy secretions are characteristic of pulmonary edema, not pneumothorax.",
+            "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma"
+          },
+          {
+            "text": "Aspiration pneumonia developing within minutes of the submersion event",
+            "correct": false,
+            "critical": false,
+            "explanation": "Aspiration pneumonia is an infectious process that develops over hours to days, not minutes. The immediate post-submersion findings of crackles and frothy secretions represent non-cardiogenic pulmonary edema and chemical pneumonitis, not bacterial pneumonia.",
+            "guideline_ref": "AHA Guidelines 2020 — Drowning"
+          }
+        ],
+        "clinical_pearl": "All submersion patients — even those who appear to fully recover at the scene — should be transported for hospital evaluation. Delayed pulmonary edema can develop hours after the event. The concept of 'dry drowning' and 'secondary drowning' are outdated terms, but the risk of delayed respiratory deterioration is real."
+      }
+    ]
+  }
+]

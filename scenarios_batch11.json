@@ -1,0 +1,992 @@
+[
+  {
+    "id": "nat-beh-11",
+    "title": "32M — Agitated Male at Gas Station",
+    "dispatch": "32-year-old male, extremely agitated, violent behavior, possible drug use",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {
+      "age": 32,
+      "sex": "M",
+      "cc": "Extreme agitation, violent behavior"
+    },
+    "scene": "You arrive at a gas station parking lot with law enforcement already on scene. A 32-year-old male is pacing rapidly, sweating profusely, and shouting incoherently. He has removed his shirt despite 40°F weather. Store employees report he was breaking items inside and exhibited superhuman strength when two officers attempted to restrain him. He appears to have no awareness of pain, as evidenced by bleeding lacerations on his hands from punching a glass display case. His skin is hot and diaphoretic.",
+    "history": {
+      "pmh": "Unknown — patient unable to provide history",
+      "meds": "Unknown",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 162,
+      "bp": "198/114",
+      "rr": 32,
+      "spo2": 94,
+      "gcs": 10,
+      "temp": "104.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient is displaying signs of a time-sensitive, life-threatening condition. Select ALL clinical findings that support this assessment.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Hyperthermia with a temperature of 104.2°F",
+            "correct": true,
+            "critical": false,
+            "explanation": "Severe hyperthermia in the setting of extreme agitation indicates a hypermetabolic state that can rapidly progress to multi-organ failure, rhabdomyolysis, and cardiac arrest if not aggressively managed.",
+            "guideline_ref": "NAEMSP Position Statement on Excited Delirium; National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Extreme agitation with apparent insensitivity to pain",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pain insensitivity combined with extreme agitation is a hallmark of excited delirium syndrome and indicates significant CNS dysfunction with high risk of sudden cardiac arrest.",
+            "guideline_ref": "ACEP White Paper on Excited Delirium 2009; National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Tachycardia at 162 beats per minute",
+            "correct": true,
+            "critical": false,
+            "explanation": "Severe tachycardia reflects the hypermetabolic and hypercatecholamine state. Sustained tachycardia at this rate increases myocardial oxygen demand and risk of cardiac dysrhythmias.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Diaphoresis and undressing despite cold ambient temperature",
+            "correct": true,
+            "critical": false,
+            "explanation": "Paradoxical undressing in cold weather with profuse diaphoresis indicates severe thermoregulatory dysfunction, a key feature of excited delirium syndrome.",
+            "guideline_ref": "NAEMSP Position Statement on Excited Delirium"
+          },
+          {
+            "text": "Bleeding lacerations on the patient's hands from punching glass",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the lacerations require attention, they are a consequence of the agitated behavior rather than a distinguishing indicator of the underlying life-threatening condition. The systemic findings are more diagnostically significant.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          }
+        ],
+        "clinical_pearl": "Excited delirium is a medical emergency, not simply a behavioral problem. These patients are at high risk for sudden cardiac arrest. Rapid sedation, cooling, and transport are priorities — prolonged physical restraint increases metabolic demand and death risk."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order of priority for this patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer ketamine 4 mg/kg IM for rapid chemical sedation",
+          "Coordinate with law enforcement for safe patient access while preparing sedation",
+          "Apply continuous cardiac monitoring and assess for dysrhythmias",
+          "Initiate active cooling measures including cold IV fluids and exposure",
+          "Establish IV/IO access and prepare for potential cardiac arrest"
+        ],
+        "correctOrder": [1, 0, 2, 4, 3],
+        "explanation": "First, coordinate a safe approach with law enforcement while drawing up sedation — crew safety is always the priority. Second, administer chemical sedation as rapidly as possible to reduce the hypermetabolic state. Third, apply cardiac monitoring as these patients are at extreme risk for lethal dysrhythmias. Fourth, establish vascular access. Fifth, initiate cooling measures. Chemical sedation is the cornerstone of treatment — it reduces metabolic demand, lowers temperature, and decreases cardiac arrest risk.",
+        "guideline_ref": "NAEMSP Position Statement on Excited Delirium; National EMS Education Standards — Behavioral Emergencies",
+        "clinical_pearl": "Ketamine is preferred in excited delirium because it provides rapid, reliable sedation via IM route without requiring IV access, has a favorable hemodynamic profile, and is less likely to cause respiratory depression than benzodiazepines at sedation doses."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After chemical sedation, what is the MOST important positional consideration for this patient?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "narrative": "The patient has been chemically sedated and is no longer combative. He is now obtunded with sonorous respirations. Restraints remain in place.",
+        "vitals_update": {
+          "hr": 138,
+          "bp": "172/98",
+          "rr": 14,
+          "spo2": 96,
+          "gcs": 8
+        },
+        "options": [
+          {
+            "text": "Place in a lateral recumbent position and continuously monitor airway and respirations",
+            "correct": true,
+            "critical": false,
+            "explanation": "Once sedated, the patient must be immediately repositioned from prone to a lateral recumbent or supine position with continuous airway monitoring. Prone positioning with restraints significantly increases the risk of positional asphyxia and death.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint; National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Keep the patient prone with hands restrained behind the back to prevent re-agitation",
+            "correct": false,
+            "critical": true,
+            "explanation": "Prone positioning with hands behind the back is associated with positional asphyxia and sudden death, especially after chemical sedation when the patient cannot protect their own airway. This position must be avoided.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint"
+          },
+          {
+            "text": "Sit the patient upright in a stair chair to maximize respiratory effort during transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "An obtunded patient with a GCS of 8 should not be placed upright in a stair chair due to aspiration risk and inability to maintain their own airway. Lateral positioning is preferred.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Place supine with bilateral soft wrist restraints secured to opposite stretcher rails",
+            "correct": false,
+            "critical": false,
+            "explanation": "While supine with restraints is acceptable for an alert patient, this obtunded patient with sonorous respirations needs lateral positioning to protect the airway. Supine positioning increases aspiration risk in patients with altered mental status.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint"
+          }
+        ],
+        "clinical_pearl": "Any restrained patient who becomes sedated or loses consciousness must be immediately reassessed and repositioned. Positional asphyxia can occur in minutes. Never leave a sedated patient prone or hobble-restrained."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-12",
+    "title": "19M — Behavioral Crisis at Group Home",
+    "dispatch": "19-year-old male, behavioral emergency, staff requesting assistance",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {
+      "age": 19,
+      "sex": "M",
+      "cc": "Severe agitation and self-injurious behavior"
+    },
+    "scene": "You respond to a group home for adults with developmental disabilities. Staff reports that a 19-year-old male resident with autism spectrum disorder became severely agitated after an unexpected fire alarm test 30 minutes ago. He is in his room, rocking back and forth, repeatedly hitting his head against the wall, and screaming. Staff attempted to calm him but physical touch made him more agitated. He is wearing noise-canceling headphones that were knocked off during the episode. The room lights are fluorescent and flickering. A caregiver provides his communication board and medical binder.",
+    "history": {
+      "pmh": "Autism spectrum disorder (level 2 support needs), sensory processing disorder, epilepsy (controlled)",
+      "meds": "Levetiracetam 500 mg BID, risperidone 1 mg BID",
+      "allergies": "No known allergies"
+    },
+    "vitals": {
+      "hr": 118,
+      "bp": "138/86",
+      "rr": 24,
+      "spo2": 98,
+      "gcs": 14,
+      "temp": "98.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following approaches as either 'Appropriate' or 'Inappropriate' for this patient during initial contact.",
+        "type": "categorize",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Reduce sensory stimulation by turning off fluorescent lights and silencing radio chatter",
+          "Firmly grab the patient's arms to prevent further self-injury",
+          "Use the communication board provided by staff to attempt interaction",
+          "Introduce multiple crew members simultaneously to establish rapport quickly",
+          "Allow the patient space and time; approach slowly with predictable movements",
+          "Offer the patient his noise-canceling headphones"
+        ],
+        "categories": ["Appropriate", "Inappropriate"],
+        "correctCategories": [0, 1, 0, 1, 0, 0],
+        "explanation": "Reducing sensory input (lights, noise), using familiar communication tools, allowing space, and restoring comfort items (headphones) are all appropriate strategies for autistic patients in crisis. Unexpected physical contact and overwhelming the patient with multiple new people will escalate agitation. Patients with ASD are often hypersensitive to sensory stimuli, and crisis management focuses on reducing environmental triggers.",
+        "guideline_ref": "National EMS Education Standards — Patients with Special Challenges; NAEMSP Guidelines on Special Populations",
+        "clinical_pearl": "Autism is not a behavioral disorder — it is a neurological difference. Sensory overload is a common trigger for crisis. The EMS approach should prioritize environmental modification before pharmacological intervention."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After 10 minutes of environmental modifications, the patient has stopped hitting his head but remains highly distressed and is now hyperventilating. Staff reports he has a PRN medication in his care plan for crisis situations. As an EMT, what is your MOST appropriate next step?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "The flickering light has been turned off and replaced with a flashlight pointed at the ceiling. The patient accepted his headphones. He is sitting on the floor, rocking, and hyperventilating but no longer self-injuring.",
+        "vitals_update": {
+          "hr": 104,
+          "bp": "128/80",
+          "rr": 28,
+          "spo2": 99,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "Assist the patient in taking his prescribed PRN medication per his care plan with staff assistance",
+            "correct": true,
+            "critical": false,
+            "explanation": "Many patients with ASD in residential settings have individualized crisis plans that include PRN medications. Facilitating administration of prescribed medications with caregiver assistance is appropriate and within EMT scope when the patient has the medication prescribed and available.",
+            "guideline_ref": "National EMS Education Standards — Patients with Special Challenges"
+          },
+          {
+            "text": "Physically restrain the patient to the stretcher for immediate transport to the emergency department",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient is improving with environmental modifications and is no longer self-injuring. Physical restraint in an ASD patient is likely to dramatically escalate the crisis and should only be used when there is an immediate threat to life.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Coach the patient through breathing exercises using visual hand gestures to manage the hyperventilation",
+            "correct": false,
+            "critical": false,
+            "explanation": "While coaching breathing can be helpful, introducing new abstract concepts during an active crisis may not be effective for this patient. The PRN medication from his established care plan is a more reliable intervention.",
+            "guideline_ref": "National EMS Education Standards — Patients with Special Challenges"
+          },
+          {
+            "text": "Request ALS intercept for chemical sedation due to the patient's continued agitation",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient is improving — he stopped self-injury and accepted his headphones. Chemical sedation by ALS is not indicated when de-escalation is working and the patient has a care plan with PRN medications available.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          }
+        ],
+        "clinical_pearl": "Always ask caregivers of patients with developmental disabilities about individualized care plans, crisis protocols, preferred communication methods, and sensory triggers. Caregivers are your best resource and should be included in the care team."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "The patient has calmed significantly and staff requests transport for evaluation of the head-banging injury. Which considerations are MOST important for transporting this patient?",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Allow a familiar caregiver to ride in the ambulance with the patient",
+            "correct": true,
+            "critical": false,
+            "explanation": "A familiar face provides comfort and can assist with communication and de-escalation during transport. This is particularly important for patients with ASD who may become re-agitated in the unfamiliar ambulance environment.",
+            "guideline_ref": "National EMS Education Standards — Patients with Special Challenges"
+          },
+          {
+            "text": "Minimize sirens and unnecessary lights during transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "Auditory and visual stimulation from sirens and lights can re-trigger sensory overload in ASD patients. Non-emergent transport with reduced stimulation is appropriate given the patient's current stability.",
+            "guideline_ref": "National EMS Education Standards — Patients with Special Challenges"
+          },
+          {
+            "text": "Bring the patient's communication board and comfort items",
+            "correct": true,
+            "critical": false,
+            "explanation": "Communication tools and comfort items are essential for continuity of care. Without them, the patient may be unable to communicate needs or distress at the hospital, potentially leading to a recurrence of the crisis.",
+            "guideline_ref": "National EMS Education Standards — Patients with Special Challenges"
+          },
+          {
+            "text": "Apply bilateral soft wrist restraints prophylactically in case of re-agitation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Prophylactic restraints are not indicated for a patient who is currently calm and cooperative. Restraints should only be applied when there is an active, immediate threat. Prophylactic restraints in ASD patients often cause escalation.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint"
+          },
+          {
+            "text": "Administer supplemental oxygen via non-rebreather mask to prevent hypoxia during transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient's SpO2 is 99% and there is no clinical indication for supplemental oxygen. Placing a mask on the face of a patient with sensory processing disorder is likely to cause distress and re-escalation.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          }
+        ],
+        "clinical_pearl": "For patients with ASD, the ambulance itself can be a sensory nightmare — confined space, unfamiliar smells, vibrations, and bright lights. Pre-planning the transport environment can prevent a secondary crisis."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-13",
+    "title": "81F — Confused Elderly Female, Welfare Check",
+    "dispatch": "81-year-old female, welfare check requested by neighbor, possible neglect",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {
+      "age": 81,
+      "sex": "F",
+      "cc": "Confusion, poor hygiene, possible neglect"
+    },
+    "scene": "You respond to a welfare check at a single-family home. A neighbor called stating she hasn't seen the resident in two weeks and noticed a foul odor. Law enforcement has made entry. Inside, you find an 81-year-old female seated in a recliner in a darkened living room. The home is in severe disrepair with spoiled food on the counter, no running water, and feces on the floor. The patient is emaciated, wearing soiled clothing, and has a large stage III pressure ulcer on her sacrum visible when she shifts position. Her live-in son is present and becomes hostile when questioned, stating 'She's fine, she doesn't want to go to the hospital.' The patient appears frightened and avoids eye contact with her son.",
+    "history": {
+      "pmh": "Dementia, hypertension, osteoarthritis, type 2 diabetes",
+      "meds": "Unknown — multiple empty pill bottles on the counter with refill dates months overdue",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 102,
+      "bp": "96/58",
+      "rr": 20,
+      "spo2": 94,
+      "gcs": 12,
+      "temp": "96.1°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Select ALL findings at this scene that are indicators of elder abuse or neglect.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 5,
+        "options": [
+          {
+            "text": "Stage III pressure ulcer on the sacrum indicating prolonged immobility without repositioning",
+            "correct": true,
+            "critical": false,
+            "explanation": "A stage III pressure ulcer in a patient with a caregiver present indicates neglect — the caregiver has failed to reposition the patient, provide wound care, or seek medical attention for an advanced wound.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect; Elder Justice Act"
+          },
+          {
+            "text": "Severely emaciated appearance with evidence of malnutrition and dehydration",
+            "correct": true,
+            "critical": false,
+            "explanation": "Malnutrition and dehydration in a dependent adult with a live-in caregiver is a hallmark of neglect. The caregiver has a duty to ensure basic nutritional needs are met.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          },
+          {
+            "text": "Multiple overdue medication refills suggesting medical neglect",
+            "correct": true,
+            "critical": false,
+            "explanation": "Failure to maintain prescribed medications for a dependent adult with dementia constitutes medical neglect. The empty, unrefilled bottles indicate the caregiver has not ensured continuity of medical care.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          },
+          {
+            "text": "Unsanitary living conditions with no running water and spoiled food",
+            "correct": true,
+            "critical": false,
+            "explanation": "Deplorable living conditions in the home of a dependent adult with an identified caregiver represent environmental neglect.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          },
+          {
+            "text": "The patient appears frightened and avoids eye contact with her son",
+            "correct": true,
+            "critical": false,
+            "explanation": "Fearful behavior toward a caregiver is a behavioral indicator of abuse. The patient may be afraid of repercussions for disclosing mistreatment.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          },
+          {
+            "text": "The patient's age of 81 years and diagnosis of dementia",
+            "correct": false,
+            "critical": false,
+            "explanation": "While advanced age and dementia are risk factors for abuse and neglect, they are not themselves indicators. Many elderly patients with dementia receive excellent care. The indicators are the objective findings of neglect in the presence of a responsible caregiver.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          }
+        ],
+        "clinical_pearl": "Document findings objectively and thoroughly — your documentation may be the first medical record in an elder abuse investigation. Note the environment, the patient's condition, caregiver behavior, and any statements made, using direct quotes when possible."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient's son refuses to allow transport, stating he has power of attorney. The patient whispers 'Please help me' when her son steps out of the room. What is the MOST appropriate action?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Coordinate with law enforcement on scene to ensure the patient is transported; report suspected abuse per mandatory reporting requirements",
+            "correct": true,
+            "critical": false,
+            "explanation": "EMS providers are mandatory reporters of suspected abuse and neglect in all 50 states. The patient has expressed a desire for help, there is clear evidence of neglect, and the patient's medical condition requires treatment. Law enforcement can intervene to ensure patient safety. Power of attorney does not authorize a caregiver to deny emergency medical care to a patient who is requesting help.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect; Mandatory Reporting Laws"
+          },
+          {
+            "text": "Honor the son's power of attorney and leave the patient at home with a refusal form",
+            "correct": false,
+            "critical": true,
+            "explanation": "Power of attorney does not override a patient's own expressed wishes when the patient demonstrates capacity to request help. Additionally, EMS providers cannot leave a patient in a clearly unsafe environment with evidence of active neglect and abuse.",
+            "guideline_ref": "National EMS Education Standards — Consent and Refusal; Abuse and Neglect"
+          },
+          {
+            "text": "Contact medical control for permission to transport against the son's wishes",
+            "correct": false,
+            "critical": false,
+            "explanation": "While contacting medical control can be helpful, it is not required to transport a patient who is requesting help. The patient herself has expressed a desire for assistance, and law enforcement is already on scene to manage the son's objections.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          },
+          {
+            "text": "Provide treatment on scene but leave the patient at home and file a report with Adult Protective Services later",
+            "correct": false,
+            "critical": true,
+            "explanation": "Treating and leaving the patient in this environment exposes her to continued harm. The patient has a stage III pressure ulcer, is hypothermic, hypotensive, and dehydrated — she requires emergency department evaluation. Leaving her would be unconscionable.",
+            "guideline_ref": "National EMS Education Standards — Abuse and Neglect"
+          }
+        ],
+        "clinical_pearl": "Power of attorney grants authority to make decisions when a patient cannot. It does not give a caregiver the right to deny care to a patient who is expressing their own wishes. When there is suspected abuse, the patient's safety always comes first."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, you assess the patient more thoroughly. Arrange the following treatment priorities in order.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Passive rewarming with blankets and warmed ambulance compartment",
+          "Establish IV access and begin warm normal saline infusion at 250 mL/hr",
+          "Cover the sacral pressure ulcer with a sterile moist dressing",
+          "Perform a blood glucose check given her diabetic history and missed medications",
+          "Continuous cardiac monitoring given hypothermia and electrolyte concerns"
+        ],
+        "correctOrder": [3, 0, 4, 1, 2],
+        "explanation": "First, check blood glucose — hypoglycemia in a diabetic who has been neglected and is not eating is an immediately life-threatening and easily treatable condition. Second, begin passive rewarming as hypothermia contributes to hemodynamic instability. Third, apply cardiac monitoring as hypothermic patients are prone to dysrhythmias. Fourth, establish IV access and administer warm fluids for dehydration and continued rewarming (AEMT/Paramedic). Fifth, dress the wound — while important, this is less time-critical than the metabolic and thermoregulatory concerns.",
+        "guideline_ref": "National EMS Education Standards — Geriatric Emergencies; Environmental Emergencies",
+        "clinical_pearl": "Elderly neglect patients often present with a cascade of problems: dehydration, malnutrition, hypothermia, infection, and medication non-compliance. Treat the most immediately lethal conditions first while being vigilant for sepsis from the infected pressure ulcer."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-14",
+    "title": "38F — Anxious Female After Traffic Accident",
+    "dispatch": "38-year-old female, panic attack, bystander at minor MVA scene",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Easy",
+    "level_min": "EMR",
+    "patient": {
+      "age": 38,
+      "sex": "F",
+      "cc": "Severe anxiety, trembling, dissociative symptoms"
+    },
+    "scene": "You are on scene at a minor fender-bender on a residential street. A bystander flags you down and says a woman sitting on the curb is 'freaking out.' The 38-year-old female was not involved in the crash but was walking nearby when it occurred. She is trembling uncontrollably, hyperventilating, and staring blankly. When you approach, she flinches and says 'I can't be here, the explosion — I need to get out.' She then becomes oriented and tearfully explains she is an Army veteran and the sound of the crash triggered memories. She is clutching her purse tightly and appears terrified but is not aggressive.",
+    "history": {
+      "pmh": "PTSD (combat-related), generalized anxiety disorder, chronic insomnia",
+      "meds": "Sertraline 100 mg daily, prazosin 2 mg at bedtime, alprazolam 0.5 mg PRN",
+      "allergies": "No known drug allergies"
+    },
+    "vitals": {
+      "hr": 112,
+      "bp": "148/92",
+      "rr": 26,
+      "spo2": 99,
+      "gcs": 15,
+      "temp": "98.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "What is the MOST appropriate initial approach when making contact with this patient?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Approach from the front at eye level, identify yourself calmly, ask permission before any physical contact, and offer to move to a quieter location",
+            "correct": true,
+            "critical": false,
+            "explanation": "Patients experiencing PTSD-triggered crisis may be hypervigilant and easily startled. Approaching from the front prevents triggering a startle response, asking permission respects autonomy and establishes trust, and moving away from the triggering stimulus (crash scene) reduces ongoing stimulation.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; SAMHSA Trauma-Informed Care Guidelines"
+          },
+          {
+            "text": "Quickly assess her vital signs and perform a rapid physical exam to rule out injuries from the accident",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient was not involved in the accident. Rushing to perform physical assessment without establishing rapport could be perceived as threatening and worsen the crisis. A trauma-informed approach prioritizes psychological safety before physical assessment.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Place a hand on her shoulder reassuringly while telling her she is safe and the crash is over",
+            "correct": false,
+            "critical": false,
+            "explanation": "Unsolicited physical contact with a patient experiencing a PTSD flashback can be perceived as a threat and may trigger a fight-or-flight response or escalate distress. Always ask before touching.",
+            "guideline_ref": "SAMHSA Trauma-Informed Care Guidelines"
+          },
+          {
+            "text": "Ask detailed questions about her military service to help her process the triggering event",
+            "correct": false,
+            "critical": false,
+            "explanation": "Asking about traumatic experiences during an acute crisis is inappropriate and can worsen symptoms. The goal is stabilization and grounding, not trauma processing. That is the role of mental health professionals in a therapeutic setting.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          }
+        ],
+        "clinical_pearl": "Trauma-informed care means recognizing that many patients have experienced trauma, and our standard EMS practices (uniforms, confined spaces, loss of control) can be re-traumatizing. Simple adjustments — asking permission, explaining actions, providing choices — make a significant difference."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have moved the patient to the back of the ambulance, away from the crash scene. She is still hyperventilating and trembling but is oriented and cooperative. Categorize each intervention as either 'Appropriate for This Patient' or 'Not Appropriate for This Patient.'",
+        "type": "categorize",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Guide grounding techniques: ask her to name 5 things she can see, 4 she can touch",
+          "Administer high-flow oxygen via non-rebreather mask at 15 LPM",
+          "Offer to assist her with her prescribed PRN alprazolam if she has it with her",
+          "Use calm, steady voice to coach slow breathing techniques",
+          "Apply a paper bag over her mouth and nose to correct hyperventilation"
+        ],
+        "categories": ["Appropriate for This Patient", "Not Appropriate for This Patient"],
+        "correctCategories": [0, 1, 0, 0, 1],
+        "explanation": "Grounding techniques (5-4-3-2-1 method) are evidence-based interventions for acute PTSD episodes. Coaching breathing is effective and non-invasive. Assisting with a prescribed PRN anxiolytic is appropriate. High-flow oxygen is unnecessary with SpO2 of 99% and may increase anxiety (mask on face). Paper bag rebreathing is dangerous and outdated — it can cause hypoxia and is contraindicated.",
+        "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; SAMHSA Guidelines",
+        "clinical_pearl": "The 5-4-3-2-1 grounding technique helps patients with PTSD reconnect with the present moment: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. It interrupts the dissociative flashback cycle."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After 15 minutes, the patient's symptoms have largely resolved. She is calm, oriented, and her vitals have normalized. She thanks you and states she does not want to go to the hospital. What is the MOST appropriate disposition?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "vitals_update": {
+          "hr": 82,
+          "bp": "124/78",
+          "rr": 16,
+          "spo2": 99,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "The patient has capacity to refuse; obtain informed refusal, encourage follow-up with her mental health provider, and provide crisis hotline information",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient is alert, oriented, has capacity, and her acute crisis has resolved with normal vitals. She has the right to refuse transport. Providing mental health follow-up resources and crisis line information is an important part of the disposition.",
+            "guideline_ref": "National EMS Education Standards — Consent and Refusal; Behavioral Emergencies"
+          },
+          {
+            "text": "Transport the patient involuntarily because PTSD flashbacks indicate she is a danger to herself",
+            "correct": false,
+            "critical": false,
+            "explanation": "A PTSD flashback that has resolved does not meet criteria for involuntary commitment. The patient is oriented, calm, has capacity, and is not expressing suicidal or homicidal ideation. Involuntary transport is not warranted.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; Involuntary Commitment Criteria"
+          },
+          {
+            "text": "Leave the scene without documentation since no medical treatment was provided",
+            "correct": false,
+            "critical": true,
+            "explanation": "All patient contacts require documentation, including refusals. The assessment, interventions (grounding, de-escalation), and informed refusal must be documented.",
+            "guideline_ref": "National EMS Education Standards — Documentation"
+          },
+          {
+            "text": "Contact law enforcement to place the patient on an involuntary psychiatric hold",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient's crisis has resolved and she does not meet criteria for involuntary commitment (imminent danger to self or others, or gravely disabled). Law enforcement involvement is not indicated.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          }
+        ],
+        "clinical_pearl": "Veterans with PTSD who experience acute crisis episodes often have established mental health care and coping strategies. Connecting them with the Veterans Crisis Line (988, press 1) and encouraging follow-up with their existing provider is more valuable than a potentially re-traumatizing ED visit."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-15",
+    "title": "54M — Confused Male, Tremors, Found by Family",
+    "dispatch": "54-year-old male, confusion, shaking, family requesting assistance",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {
+      "age": 54,
+      "sex": "M",
+      "cc": "Confusion, tremors, visual hallucinations"
+    },
+    "scene": "You arrive at an apartment where the patient's sister called 911. A 54-year-old male is sitting on the couch, visibly tremorous with coarse bilateral hand tremors. He is diaphoretic and keeps swatting at things that aren't there, yelling 'Get them off me!' His sister states he is a heavy daily drinker and was admitted to the hospital last week for pancreatitis. He was discharged 3 days ago and she believes he has not had any alcohol since admission — roughly 10 days total. She found multiple empty liquor bottles during a visit yesterday but he insists he hasn't been drinking. He had a witnessed seizure approximately 2 hours ago lasting about 90 seconds.",
+    "history": {
+      "pmh": "Alcohol use disorder (severe), chronic pancreatitis, alcoholic hepatitis, prior alcohol withdrawal seizure (2 years ago)",
+      "meds": "Prescribed thiamine and folate at discharge — bottles unopened",
+      "allergies": "No known allergies"
+    },
+    "vitals": {
+      "hr": 128,
+      "bp": "168/104",
+      "rr": 22,
+      "spo2": 96,
+      "gcs": 13,
+      "temp": "101.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the clinical presentation, arrange the following assessment findings from MOST concerning to LEAST concerning in terms of immediate life threat.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "History of witnessed seizure 2 hours ago",
+          "Visual hallucinations with agitation",
+          "Heart rate of 128 with blood pressure 168/104",
+          "Temperature of 101.8°F",
+          "Coarse bilateral tremors"
+        ],
+        "correctOrder": [0, 1, 3, 2, 4],
+        "explanation": "The seizure history is most concerning because it indicates severe withdrawal with risk of recurrent seizures and status epilepticus. Visual hallucinations with agitation indicate delirium tremens, which carries 5-15% mortality without treatment. Fever suggests significant autonomic dysfunction and possible concurrent infection. Tachycardia and hypertension reflect autonomic hyperactivity. Tremors, while characteristic, are the least immediately life-threatening finding.",
+        "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse; CIWA-Ar Assessment Scale",
+        "clinical_pearl": "Alcohol withdrawal exists on a spectrum: mild (6-12h: tremors, anxiety), moderate (12-48h: hallucinations, seizures), and severe/DTs (48-96h: delirium, autonomic instability, hyperthermia). DTs represent the most dangerous phase with significant mortality if untreated."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, what is the MOST appropriate pharmacological intervention for this patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Midazolam 5 mg IM or IV with repeat dosing as needed to control agitation and prevent seizures",
+            "correct": true,
+            "critical": false,
+            "explanation": "Benzodiazepines are the first-line treatment for alcohol withdrawal and delirium tremens. They address the underlying GABA deficit, control agitation, prevent seizures, and reduce autonomic hyperactivity. Midazolam IM provides rapid onset when IV access is difficult in agitated patients.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse; ASAM Guidelines for Alcohol Withdrawal Management"
+          },
+          {
+            "text": "Haloperidol 5 mg IM for management of hallucinations and psychotic symptoms",
+            "correct": false,
+            "critical": true,
+            "explanation": "Haloperidol and other antipsychotics lower the seizure threshold and do not address the underlying pathophysiology of alcohol withdrawal. In DTs, antipsychotics can precipitate seizures and worsen the clinical course. Benzodiazepines are the appropriate first-line treatment.",
+            "guideline_ref": "ASAM Guidelines for Alcohol Withdrawal Management"
+          },
+          {
+            "text": "Ketamine 4 mg/kg IM for rapid sedation of the agitated patient",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ketamine is useful for excited delirium and acute agitation from other causes, benzodiazepines are specifically indicated for alcohol withdrawal because they directly address the GABA-receptor deficit that causes the withdrawal syndrome.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          },
+          {
+            "text": "Diphenhydramine 50 mg IV for sedation and control of agitation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Diphenhydramine is not appropriate for alcohol withdrawal management. It has anticholinergic properties that can worsen delirium and does not address the underlying pathophysiology or seizure risk.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          }
+        ],
+        "clinical_pearl": "Patients in DTs often require very large doses of benzodiazepines — far more than typical dosing. Repeat dosing should target clinical effect: reduction in agitation, tremor, and autonomic hyperactivity. Under-dosing is a common and dangerous mistake."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL additional interventions appropriate for this patient during transport.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Establish IV access and administer a normal saline fluid bolus for dehydration",
+            "correct": true,
+            "critical": false,
+            "explanation": "Patients in alcohol withdrawal are typically significantly dehydrated from poor oral intake, diaphoresis, and vomiting. IV fluid resuscitation is important.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          },
+          {
+            "text": "Administer thiamine 100 mg IV before any dextrose-containing fluids",
+            "correct": true,
+            "critical": false,
+            "explanation": "Chronic alcoholics are thiamine-depleted. Thiamine should be administered to prevent or treat Wernicke's encephalopathy. While the traditional teaching of giving thiamine before dextrose is debated, administering thiamine is essential.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          },
+          {
+            "text": "Continuous cardiac monitoring for dysrhythmia detection",
+            "correct": true,
+            "critical": false,
+            "explanation": "Autonomic instability in DTs combined with electrolyte abnormalities (particularly hypomagnesemia and hypokalemia common in chronic alcoholics) creates significant dysrhythmia risk.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          },
+          {
+            "text": "Check blood glucose level",
+            "correct": true,
+            "critical": false,
+            "explanation": "Chronic alcoholics are at high risk for hypoglycemia due to impaired hepatic gluconeogenesis and poor nutritional intake. Altered mental status in this population always warrants glucose assessment.",
+            "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
+          },
+          {
+            "text": "Administer activated charcoal for possible alcohol ingestion",
+            "correct": false,
+            "critical": false,
+            "explanation": "Activated charcoal does not adsorb alcohol and is not indicated. Additionally, the patient's issue is withdrawal from alcohol, not acute intoxication.",
+            "guideline_ref": "National EMS Education Standards — Toxicology"
+          },
+          {
+            "text": "Apply physical restraints to all four extremities for safety during transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "Chemical sedation with benzodiazepines should be the primary intervention to manage agitation in DTs. Physical restraints increase metabolic demand and can worsen hyperthermia. If needed, use the minimum restraint necessary after adequate sedation.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint"
+          }
+        ],
+        "clinical_pearl": "The triad of confusion, ataxia, and ophthalmoplegia suggests Wernicke's encephalopathy — but all three findings are present in less than 30% of cases. Administer thiamine to all chronic alcohol users with altered mental status, regardless of the full triad."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-16",
+    "title": "27M — Agitated Male, Body Aches, Motel Room",
+    "dispatch": "27-year-old male, altered behavior, body aches, motel room",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {
+      "age": 27,
+      "sex": "M",
+      "cc": "Severe body aches, agitation, nausea, anxiety"
+    },
+    "scene": "You respond to a motel room where the manager called 911 after hearing screaming. A 27-year-old male is found sitting on the bathroom floor, agitated and restless. He is alternately pacing and lying in the fetal position. He is yawning excessively, has rhinorrhea, and his clothes are soaked with sweat. He states he ran out of his 'medicine' two days ago and 'can't take this anymore.' You notice pinpoint pupils, gooseflesh on his arms, and track marks on the antecubital fossae bilaterally. He is tearful and states he wants help but becomes irritable when touched. There is no drug paraphernalia visible.",
+    "history": {
+      "pmh": "Opioid use disorder, hepatitis C, depression",
+      "meds": "Was prescribed buprenorphine/naloxone — ran out of prescription",
+      "allergies": "No known allergies"
+    },
+    "vitals": {
+      "hr": 108,
+      "bp": "152/94",
+      "rr": 20,
+      "spo2": 97,
+      "gcs": 15,
+      "temp": "100.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each finding as either a sign of 'Opioid Withdrawal' or 'Opioid Overdose.'",
+        "type": "categorize",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Pinpoint pupils",
+          "Hypertension (152/94)",
+          "Tachycardia (108 bpm)",
+          "Excessive yawning and rhinorrhea",
+          "Piloerection (gooseflesh)",
+          "Diaphoresis with restless agitation"
+        ],
+        "categories": ["Opioid Withdrawal", "Opioid Overdose"],
+        "correctCategories": [1, 0, 0, 0, 0, 0],
+        "explanation": "Pinpoint pupils (miosis) are associated with opioid overdose/intoxication — they are a parasympathetic effect of opioid use. All other findings are characteristic of withdrawal: sympathetic nervous system hyperactivation causes hypertension, tachycardia, and diaphoresis. Yawning, rhinorrhea, piloerection, and restlessness are classic withdrawal symptoms. Note: pinpoint pupils can transiently persist into early withdrawal but are classically an intoxication finding.",
+        "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse; COWS (Clinical Opiate Withdrawal Scale)",
+        "clinical_pearl": "Opioid withdrawal, unlike alcohol or benzodiazepine withdrawal, is rarely life-threatening in otherwise healthy adults. However, it causes extreme subjective distress and is a major driver of relapse. Treat the patient with empathy and dignity."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient asks you for help and agrees to transport. What is the MOST appropriate approach for this patient?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Provide supportive care including IV fluids for dehydration, ondansetron for nausea, and compassionate transport to an ED with addiction medicine resources",
+            "correct": true,
+            "critical": false,
+            "explanation": "Opioid withdrawal management in the prehospital setting is primarily supportive. IV fluids address dehydration from diaphoresis and vomiting, antiemetics improve comfort, and transport to a facility with addiction medicine services facilitates continuity of care and potential re-initiation of medication-assisted treatment.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse; SAMHSA Treatment Guidelines"
+          },
+          {
+            "text": "Administer naloxone 2 mg intranasal to manage the patient's opioid-related symptoms",
+            "correct": false,
+            "critical": true,
+            "explanation": "Naloxone is an opioid antagonist used for opioid overdose. Administering naloxone to a patient in opioid withdrawal will dramatically worsen symptoms and could precipitate a severe withdrawal crisis. Naloxone is absolutely contraindicated in withdrawal.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          },
+          {
+            "text": "Refuse transport since opioid withdrawal is not a medical emergency and advise the patient to contact his prescriber",
+            "correct": false,
+            "critical": false,
+            "explanation": "While opioid withdrawal is rarely life-threatening, the patient is requesting help and has a right to emergency medical evaluation. Additionally, this is an opportunity to connect the patient with addiction medicine resources. Refusing transport is inappropriate.",
+            "guideline_ref": "National EMS Education Standards — Consent; Behavioral Emergencies"
+          },
+          {
+            "text": "Administer morphine or fentanyl IV to alleviate the withdrawal symptoms",
+            "correct": false,
+            "critical": false,
+            "explanation": "Administering opioid agonists to treat withdrawal in the prehospital setting is outside standard protocols and would reinforce the addiction cycle. Treatment for opioid use disorder requires structured medication-assisted treatment with buprenorphine or methadone in an appropriate clinical setting.",
+            "guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
+          }
+        ],
+        "clinical_pearl": "EMS encounters with patients experiencing opioid withdrawal are critical touchpoints for the healthcare system. Treating these patients with compassion and connecting them to treatment resources can be life-changing. Stigmatizing language and attitudes are barriers to care."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient becomes tearful and states 'What's the point, I'm just going to use again and die.' How should you respond?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Take the statement seriously as potential suicidal ideation; ask directly about suicidal thoughts while maintaining a nonjudgmental, empathetic tone",
+            "correct": true,
+            "critical": false,
+            "explanation": "Any statement suggesting hopelessness or death should be taken seriously, especially in the context of substance use disorder and depression. Directly asking about suicidal ideation does not increase risk — it opens communication and allows appropriate risk assessment.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; Columbia Suicide Severity Rating Scale"
+          },
+          {
+            "text": "Reassure him that things will get better and change the subject to avoid encouraging suicidal thoughts",
+            "correct": false,
+            "critical": false,
+            "explanation": "Dismissive reassurance invalidates the patient's experience and closes communication. Avoiding the topic does not reduce suicidal risk — it prevents assessment and may leave the patient feeling unheard.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Explain that opioid withdrawal is not fatal and his symptoms will improve in a few days",
+            "correct": false,
+            "critical": false,
+            "explanation": "While medically accurate, this response ignores the patient's emotional distress and potential suicidal ideation. The patient's statement is about hopelessness and fatalism, not a question about withdrawal prognosis.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Document the statement but avoid direct questioning to prevent escalation of negative emotions",
+            "correct": false,
+            "critical": false,
+            "explanation": "Documentation is important, but failing to directly address potential suicidal ideation is a missed opportunity for intervention. Asking about suicidal thoughts does not cause suicidal behavior.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          }
+        ],
+        "clinical_pearl": "Patients with opioid use disorder have a suicide rate 13 times higher than the general population. Always screen for suicidal ideation during encounters, especially during withdrawal when hopelessness and despair peak."
+      }
+    ]
+  },
+  {
+    "id": "nat-beh-17",
+    "title": "45F — Threatening Female, Locked in Bathroom",
+    "dispatch": "45-year-old female, threatening self-harm, family requesting help",
+    "category": "Behavioral/Psychiatric",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {
+      "age": 45,
+      "sex": "F",
+      "cc": "Suicidal threats, self-harm, refusing to come out"
+    },
+    "scene": "You arrive at a suburban home with law enforcement. The patient's husband meets you at the door, visibly distressed. He reports his 45-year-old wife locked herself in the master bathroom 45 minutes ago after a verbal argument. She has been yelling that she wants to die and he heard glass breaking. He states she has a history of bipolar disorder and stopped taking her medications two weeks ago because 'she felt fine.' Through the bathroom door, you can hear the patient alternating between sobbing and shouting. Law enforcement has established verbal contact — she states she has cut her wrists with a broken mirror and 'doesn't want help from anyone.' She refuses to open the door. There is blood visible under the door.",
+    "history": {
+      "pmh": "Bipolar I disorder, previous suicide attempt (overdose, 3 years ago), borderline personality disorder",
+      "meds": "Lithium 900 mg daily, quetiapine 200 mg nightly — both discontinued 2 weeks ago",
+      "allergies": "Codeine"
+    },
+    "vitals": {
+      "hr": null,
+      "bp": null,
+      "rr": null,
+      "spo2": null,
+      "gcs": null,
+      "temp": null
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "While law enforcement works to gain access, you assess the situation. Select ALL factors that indicate HIGH risk for completed suicide in this patient.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Previous suicide attempt by overdose 3 years ago",
+            "correct": true,
+            "critical": false,
+            "explanation": "Prior suicide attempt is the single strongest predictor of future completed suicide. A previous attempt increases lifetime suicide risk by 30-40 times.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; CDC Suicide Risk Factors"
+          },
+          {
+            "text": "Active self-harm with a method capable of significant blood loss",
+            "correct": true,
+            "critical": false,
+            "explanation": "The patient has already escalated from threats to action by cutting her wrists with broken glass. Active self-harm with a method that can cause life-threatening hemorrhage indicates high immediate risk.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Abrupt discontinuation of psychiatric medications (lithium and quetiapine)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Abrupt discontinuation of mood stabilizers and antipsychotics, particularly lithium, is associated with rapid mood destabilization and increased suicide risk. Lithium itself has anti-suicidal properties, and its discontinuation removes that protective effect.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; APA Practice Guidelines"
+          },
+          {
+            "text": "Isolation behind a locked door with refusal of help",
+            "correct": true,
+            "critical": false,
+            "explanation": "Self-isolation, barricading, and refusing help indicate intent and planning. The patient has created a barrier to intervention, which increases the lethality of any attempt.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Verbal argument with husband immediately preceding the crisis",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the argument was a precipitating event, interpersonal conflict alone is not a high-risk factor for completed suicide. It is the combination of the argument with the patient's psychiatric history, medication discontinuation, and active self-harm that creates the high-risk profile.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Patient is female and 45 years old",
+            "correct": false,
+            "critical": false,
+            "explanation": "While middle age is a risk period, and females attempt suicide more frequently, gender and age alone are demographic risk factors, not high-risk clinical indicators in an individual assessment.",
+            "guideline_ref": "CDC Suicide Risk Factors"
+          }
+        ],
+        "clinical_pearl": "Use the mnemonic 'IS PATH WARM' for suicide risk assessment: Ideation, Substance abuse, Purposelessness, Anxiety, Trapped feeling, Hopelessness, Withdrawal, Anger, Recklessness, Mood changes. Multiple positive factors indicate escalating risk."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Law enforcement has gained entry. The patient is found sitting on the floor with superficial to moderate lacerations on both wrists. She is screaming and swinging the broken mirror shard. Verbal de-escalation has been attempted for 10 minutes without success. She is becoming increasingly agitated. As a Paramedic, what is the MOST appropriate next step?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Law enforcement has opened the door. The patient has multiple lacerations on both forearms — some are superficial, but two appear deep with steady bleeding. She is holding a large mirror shard and threatening anyone who approaches. She is pale and diaphoretic. Your verbal de-escalation attempts have been unsuccessful — she screams louder when anyone speaks to her.",
+        "vitals_update": {
+          "hr": 124,
+          "bp": "102/68",
+          "rr": 24,
+          "spo2": 97,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "Coordinate with law enforcement for physical containment while simultaneously administering ketamine IM for chemical restraint",
+            "correct": true,
+            "critical": false,
+            "explanation": "When verbal de-escalation has failed and the patient poses an imminent danger to herself and others (armed with a sharp weapon, actively bleeding), coordinated physical containment with rapid chemical sedation is appropriate. This allows wound assessment and hemorrhage control. Ketamine IM provides rapid sedation without requiring IV access.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint; National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Continue verbal de-escalation indefinitely because the patient has the right to refuse treatment",
+            "correct": false,
+            "critical": true,
+            "explanation": "While patients have rights, this patient is actively self-harming with signs of hemodynamic compromise (tachycardia, hypotension, pallor). She poses an immediate threat to her own life. Continued delay in treatment when de-escalation has failed for 10+ minutes puts the patient at risk of life-threatening hemorrhage.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; Involuntary Commitment Criteria"
+          },
+          {
+            "text": "Retreat and wait for a specialized crisis intervention team before taking any action",
+            "correct": false,
+            "critical": false,
+            "explanation": "While crisis teams are valuable, the patient is actively bleeding with signs of hemodynamic instability. Delayed intervention for a specialized team that may take 30+ minutes to arrive is not appropriate when the patient's life is at immediate risk.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
+          },
+          {
+            "text": "Have law enforcement tase the patient to gain immediate control and begin wound care",
+            "correct": false,
+            "critical": true,
+            "explanation": "Conducted electrical weapons in a patient with a sharp object can cause uncontrolled muscle contractions that worsen self-inflicted injuries. Additionally, the patient is in a bathroom with water and hard surfaces, creating additional injury risk. Chemical sedation is the preferred approach.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint"
+          }
+        ],
+        "clinical_pearl": "Chemical restraint is not punishment — it is a medical intervention to protect the patient. When verbal de-escalation fails and there is imminent danger, timely chemical sedation is more humane and safer than prolonged physical struggle."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient has been sedated and restrained. You can now assess her injuries. Arrange the following interventions in order of priority.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "The patient is now sedated with a GCS of 8. She has two deep lacerations on the left wrist with steady bleeding and multiple superficial lacerations on both forearms. She is pale, diaphoretic, with weak radial pulses.",
+        "vitals_update": {
+          "hr": 132,
+          "bp": "88/56",
+          "rr": 12,
+          "spo2": 96,
+          "gcs": 8
+        },
+        "items": [
+          "Apply direct pressure with hemostatic dressing to deep wrist lacerations",
+          "Secure airway with appropriate adjunct — patient is now obtunded",
+          "Establish large-bore IV access and begin rapid fluid resuscitation",
+          "Continuous cardiac monitoring and reassess sedation level",
+          "Rapid transport to the nearest appropriate facility — notify receiving hospital"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "First, secure the airway — with a GCS of 8 post-sedation, the patient cannot reliably protect her own airway. Second, control hemorrhage from the deep lacerations as this is the primary threat. Third, establish IV access and resuscitate — the patient shows signs of hemorrhagic shock (tachycardia, hypotension, pallor). Fourth, apply monitoring and reassess sedation. Fifth, transport rapidly — this patient needs surgical evaluation, blood products, and psychiatric admission.",
+        "guideline_ref": "National EMS Education Standards — Hemorrhage Control; Behavioral Emergencies; Airway Management",
+        "clinical_pearl": "Psychiatric patients can have surgical emergencies. Never let the behavioral presentation distract from life-threatening medical or traumatic conditions. Treat the whole patient: stabilize the medical emergency while planning for the psychiatric needs."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which legal and documentation considerations are MOST important for this call?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Document the criteria met for involuntary transport: imminent danger to self, inability to make rational decisions regarding own safety",
+            "correct": true,
+            "critical": false,
+            "explanation": "Involuntary psychiatric transport requires documentation of specific criteria — typically imminent danger to self or others, or grave disability. This patient clearly meets the danger-to-self criterion based on active self-harm with hemodynamic compromise.",
+            "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; Involuntary Commitment Laws"
+          },
+          {
+            "text": "Document the failed verbal de-escalation attempts and the medical necessity for chemical restraint",
+            "correct": true,
+            "critical": false,
+            "explanation": "Chemical restraint documentation should include the attempts at less-restrictive alternatives (verbal de-escalation), the specific threat that necessitated chemical restraint, the medication/dose/route/time, and ongoing reassessment. This protects both the patient and the provider.",
+            "guideline_ref": "NAEMSP Position Statement on Patient Restraint; National EMS Education Standards — Documentation"
+          },
+          {
+            "text": "Document all injuries with detailed descriptions including location, size, depth, and bleeding characteristics",
+            "correct": true,
+            "critical": false,
+            "explanation": "Detailed wound documentation is essential both for continuity of medical care and for the psychiatric and legal record. Description of self-inflicted injuries may be important for psychiatric disposition and any subsequent legal proceedings.",
+            "guideline_ref": "National EMS Education Standards — Documentation; Behavioral Emergencies"
+          },
+          {
+            "text": "Obtain a signed refusal form from the patient's husband since the patient cannot sign",
+            "correct": false,
+            "critical": false,
+            "explanation": "No refusal is being generated — the patient is being transported involuntarily under emergency commitment criteria. A refusal form is not applicable in this scenario.",
+            "guideline_ref": "National EMS Education Standards — Consent and Refusal"
+          },
+          {
+            "text": "Document the husband's account of events but omit the argument details to protect patient privacy",
+            "correct": false,
+            "critical": false,
+            "explanation": "Precipitating events are clinically relevant and should be documented. The argument is part of the clinical picture that helps receiving providers understand the context of the crisis. Omitting relevant clinical information is not appropriate.",
+            "guideline_ref": "National EMS Education Standards — Documentation"
+          }
+        ],
+        "clinical_pearl": "Involuntary commitment criteria vary by state but generally include: imminent danger to self, imminent danger to others, or gravely disabled (unable to provide for basic needs). Know your state's specific criteria and required documentation — it is your legal authority to transport without consent."
+      }
+    ]
+  }
+]

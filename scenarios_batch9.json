@@ -1,0 +1,816 @@
+[
+  {
+    "id": "nat-pharm-10",
+    "title": "62M — Altered Mental Status at Assisted Living",
+    "dispatch": "62-year-old male, confused, slurred speech",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 62, "sex": "M", "cc": "Confusion and slurred speech"},
+    "scene": "You arrive at an assisted living facility where staff reports a 62-year-old male became increasingly confused over the past two hours. He was found sitting in his wheelchair with slurred speech and difficulty staying awake. Staff provides a medication list showing he was recently started on a new prescription. His pill organizer is on the table with multiple medication bottles nearby. The patient is arousable but disoriented to time and place.",
+    "history": {"pmh": "Atrial fibrillation, chronic pain syndrome, anxiety disorder, CKD stage 3", "meds": "Warfarin 5 mg daily, oxycodone 10 mg q6h, diazepam 5 mg TID, gabapentin 300 mg TID, metoprolol 50 mg BID", "allergies": "Codeine (nausea)"},
+    "vitals": {"hr": 54, "bp": "98/58", "rr": 8, "spo2": 88, "gcs": 11, "temp": "97.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient is on multiple medications with CNS depressant properties. Which combination of his current medications poses the greatest risk for the respiratory depression and sedation you are observing?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Oxycodone and diazepam",
+            "correct": true,
+            "critical": false,
+            "explanation": "The combination of an opioid (oxycodone) and a benzodiazepine (diazepam) produces synergistic CNS and respiratory depression. The FDA has issued black box warnings about concurrent use. In a patient with CKD, impaired clearance of both drugs further compounds the risk.",
+            "guideline_ref": "FDA Black Box Warning — Opioid-Benzodiazepine Concurrent Use; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Warfarin and metoprolol",
+            "correct": false,
+            "critical": false,
+            "explanation": "Warfarin is an anticoagulant and metoprolol is a beta-blocker. While metoprolol can contribute to bradycardia and hypotension, this combination does not cause significant respiratory depression or sedation.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Gabapentin and warfarin",
+            "correct": false,
+            "critical": false,
+            "explanation": "While gabapentin can cause sedation (especially in renal impairment), its combination with warfarin does not produce the synergistic respiratory depression seen with opioid-benzodiazepine combinations.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Metoprolol and gabapentin",
+            "correct": false,
+            "critical": false,
+            "explanation": "Metoprolol may cause bradycardia and hypotension, and gabapentin can cause sedation, but together they do not produce the degree of respiratory depression and CNS depression observed in this patient.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "CKD significantly affects drug clearance. Both diazepam's active metabolites and gabapentin are renally eliminated. Always consider renal function when evaluating medication-related emergencies."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Given the patient's respiratory depression (RR 8, SpO2 88%), arrange the following interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Assist ventilations with BVM and supplemental oxygen",
+          "Administer naloxone 0.4 mg IV/IN to reverse opioid effects",
+          "Establish IV access",
+          "Continuously monitor respiratory status and prepare for repeat naloxone dosing",
+          "Obtain a 12-lead ECG to evaluate bradycardia"
+        ],
+        "correctOrder": [0, 2, 1, 3, 4],
+        "explanation": "Priority is airway and breathing support first — assist ventilations with BVM to correct hypoxia. Then establish IV access for medication administration. Administer naloxone to reverse the opioid component of respiratory depression. Monitor closely as naloxone has a shorter duration than oxycodone, and the benzodiazepine component will not be reversed by naloxone. ECG evaluation of bradycardia follows after life threats are addressed.",
+        "guideline_ref": "AHA/ACLS Opioid-Associated Emergency Algorithm; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "Naloxone only reverses opioid effects — it will not reverse benzodiazepine-induced CNS depression. In mixed overdoses, patients may improve partially with naloxone but still require ventilatory support."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After administering naloxone 0.4 mg IV, the patient's respiratory rate improves to 14 and SpO2 rises to 96%. However, he remains significantly drowsy with a GCS of 12. Select ALL correct statements about ongoing management.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "Naloxone was administered 3 minutes ago. The patient is now breathing adequately but remains very drowsy.",
+        "vitals_update": {"hr": 58, "bp": "104/62", "rr": 14, "spo2": 96, "gcs": 12},
+        "options": [
+          {
+            "text": "The persistent drowsiness may be due to benzodiazepine effects that naloxone cannot reverse",
+            "correct": true,
+            "critical": false,
+            "explanation": "Naloxone is an opioid antagonist only. Diazepam-induced CNS depression will persist despite naloxone administration. Flumazenil is the benzodiazepine antagonist but is generally not recommended in the prehospital setting due to seizure risk.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "The patient should be monitored for recurrent respiratory depression as naloxone's duration is shorter than oxycodone's",
+            "correct": true,
+            "critical": false,
+            "explanation": "Naloxone's duration of action is 30-90 minutes, while oxycodone's effects last 4-6 hours. Renarcotization is a significant risk, and repeat dosing or continuous monitoring is essential.",
+            "guideline_ref": "AHA Opioid-Associated Emergency Algorithm; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Transport to an appropriate facility is indicated for continued monitoring and evaluation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Patients with polypharmacy-related CNS depression require in-hospital monitoring, lab evaluation of renal function and drug levels, and potentially prolonged observation for renarcotization.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions"
+          },
+          {
+            "text": "Administer flumazenil 0.2 mg IV to reverse the benzodiazepine component",
+            "correct": false,
+            "critical": true,
+            "explanation": "Flumazenil is contraindicated in patients with chronic benzodiazepine use due to the risk of precipitating life-threatening seizures. This patient takes diazepam TID, indicating chronic use and likely physical dependence.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACMT Position Statement on Flumazenil"
+          },
+          {
+            "text": "Administer additional naloxone 2 mg IV to fully reverse all sedation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Respiratory depression has been adequately reversed. Higher doses of naloxone will not address benzodiazepine-induced sedation and may precipitate acute opioid withdrawal with vomiting, agitation, and sympathetic surge in a chronic opioid user.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "In chronic opioid users, titrate naloxone to restore adequate respiration, not to full alertness. The goal is RR >12 and SpO2 >94%, not complete arousal. Aggressive naloxone dosing causes acute withdrawal."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-11",
+    "title": "34F — Medication Error at Daycare",
+    "dispatch": "34-year-old female, accidental medication mix-up, feeling unwell",
+    "category": "Pharmacology",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 34, "sex": "F", "cc": "Dizziness and feeling faint after taking wrong medication"},
+    "scene": "You respond to a daycare facility where a 34-year-old female employee reports she accidentally took her elderly mother's medication instead of her own ibuprofen about 45 minutes ago. She grabbed the wrong bottle from her purse. She now feels dizzy, lightheaded, and her heart feels like it's 'beating slow.' She is sitting in a chair, alert but pale. The medication bottle is identified as metoprolol succinate 200 mg extended-release.",
+    "history": {"pmh": "Migraine headaches", "meds": "Ibuprofen PRN, sumatriptan PRN", "allergies": "NKDA"},
+    "vitals": {"hr": 44, "bp": "82/50", "rr": 16, "spo2": 97, "gcs": 15, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient ingested metoprolol 200 mg, a beta-blocker, approximately 45 minutes ago. Which assessment findings are consistent with beta-blocker toxicity?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Heart rate of 44 bpm",
+            "correct": true,
+            "critical": false,
+            "explanation": "Beta-blockers reduce heart rate by blocking beta-1 adrenergic receptors in the heart. Symptomatic bradycardia is a hallmark of beta-blocker toxicity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; AACT Guidelines on Beta-Blocker Poisoning"
+          },
+          {
+            "text": "Blood pressure of 82/50 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hypotension results from beta-blocker toxicity through decreased heart rate, reduced cardiac contractility, and diminished cardiac output.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Dizziness and lightheadedness",
+            "correct": true,
+            "critical": false,
+            "explanation": "Dizziness and lightheadedness are symptoms of decreased cerebral perfusion from the combined bradycardia and hypotension caused by beta-blocker toxicity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Respiratory rate of 16 with SpO2 of 97%",
+            "correct": false,
+            "critical": false,
+            "explanation": "A normal respiratory rate and oxygen saturation are not indicative of beta-blocker toxicity. Beta-blockers primarily affect the cardiovascular system; respiratory depression is not a typical finding.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Dilated pupils with photophobia",
+            "correct": false,
+            "critical": false,
+            "explanation": "Dilated pupils are not characteristic of beta-blocker toxicity. Pupil dilation is more associated with sympathomimetic agents or anticholinergic toxicity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Extended-release beta-blockers like metoprolol succinate may have a delayed peak and prolonged duration of toxicity. Patients may worsen hours after ingestion, so early transport and monitoring are critical."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the most appropriate initial treatment for this patient at the EMT level?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Position the patient supine, administer oxygen, monitor closely, and initiate rapid transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "At the EMT level, supportive care is the priority: positioning to optimize perfusion, supplemental oxygen, close monitoring, and rapid transport to a facility capable of managing beta-blocker toxicity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; Toxicological Emergencies"
+          },
+          {
+            "text": "Administer activated charcoal 50 g orally to prevent further drug absorption",
+            "correct": false,
+            "critical": false,
+            "explanation": "While activated charcoal may be considered within 1-2 hours of ingestion for certain poisonings, it is typically not within EMT scope and requires medical direction. Additionally, charcoal may be less effective with extended-release formulations.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Induce vomiting to remove the medication from the stomach",
+            "correct": false,
+            "critical": true,
+            "explanation": "Inducing vomiting is no longer recommended as a decontamination strategy. It can cause aspiration, delays definitive treatment, and is contraindicated in patients with altered mental status or diminished gag reflex.",
+            "guideline_ref": "American Academy of Clinical Toxicology Position Statement"
+          },
+          {
+            "text": "Apply the AED pads and prepare for cardiac arrest since the heart rate is dangerously low",
+            "correct": false,
+            "critical": false,
+            "explanation": "While cardiac monitoring is appropriate, the patient has a pulse and is conscious. AED application for monitoring may be reasonable, but the focus should be on supportive care and transport, not cardiac arrest preparation as the primary intervention.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Always bring the medication container to the hospital. Knowing the exact drug, dose, formulation (immediate vs. extended-release), and time of ingestion is critical for emergency department management."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "ALS has arrived. As a Paramedic, which pharmacological intervention is first-line for symptomatic bradycardia with hypotension caused by beta-blocker toxicity?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The patient's heart rate has dropped to 38 bpm and blood pressure is now 76/44. She is becoming more lethargic.",
+        "vitals_update": {"hr": 38, "bp": "76/44", "rr": 14, "spo2": 95, "gcs": 14},
+        "options": [
+          {
+            "text": "Atropine 1 mg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Atropine is a first-line agent for symptomatic bradycardia in general but is often ineffective in beta-blocker toxicity because the bradycardia is caused by beta-receptor blockade, not vagal tone. It may be attempted but often fails.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm; AACT Beta-Blocker Poisoning Guidelines"
+          },
+          {
+            "text": "Glucagon 3-5 mg IV",
+            "correct": true,
+            "critical": false,
+            "explanation": "Glucagon activates cardiac adenylyl cyclase through a non-adrenergic pathway, bypassing blocked beta receptors. It increases heart rate and contractility independent of beta-receptor stimulation, making it the specific antidote for beta-blocker toxicity.",
+            "guideline_ref": "AACT Guidelines on Beta-Blocker Poisoning; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Epinephrine 1 mg IV push",
+            "correct": false,
+            "critical": false,
+            "explanation": "Cardiac arrest dose epinephrine (1 mg IV push) is not appropriate in a patient with a pulse. While epinephrine infusion may be used for refractory beta-blocker toxicity, high-dose IV push in a non-arrest patient risks dangerous hypertension and dysrhythmias.",
+            "guideline_ref": "AHA ACLS Guidelines; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Calcium chloride 1 g IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Calcium is the first-line treatment for calcium channel blocker toxicity, not beta-blocker toxicity. While it may provide some benefit in severe cases, glucagon is the specific antidote for beta-blocker poisoning.",
+            "guideline_ref": "AACT Poisoning Guidelines; National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Glucagon commonly causes vomiting — have suction ready before administration. The initial dose is 3-5 mg IV over 1 minute, with onset in 1-3 minutes. It can be followed by an infusion of 2-5 mg/hr if effective."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-12",
+    "title": "78F — Weakness and Nausea at Home",
+    "dispatch": "78-year-old female, generalized weakness, nausea, visual changes",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 78, "sex": "F", "cc": "Weakness, nausea, and seeing yellow-tinted halos"},
+    "scene": "You respond to a private residence where a 78-year-old female is sitting on the couch looking pale and fatigued. Her daughter called 911 after her mother complained of worsening nausea, loss of appetite for two days, and now reports seeing yellow halos around lights. She says her heart feels like it's 'skipping beats.' She recently had a dose change on one of her medications. Multiple prescription bottles are on the kitchen counter.",
+    "history": {"pmh": "Heart failure (EF 30%), atrial fibrillation, CKD stage 3, hypothyroidism", "meds": "Digoxin 0.25 mg daily (recently increased from 0.125 mg), furosemide 40 mg BID, potassium chloride 20 mEq daily, levothyroxine 75 mcg daily, apixaban 5 mg BID", "allergies": "Penicillin"},
+    "vitals": {"hr": 48, "bp": "106/68", "rr": 18, "spo2": 96, "gcs": 15, "temp": "97.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on this patient's history, recent medication change, and presenting symptoms, which medication is most likely responsible for her current presentation?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Digoxin",
+            "correct": true,
+            "critical": false,
+            "explanation": "This is a classic presentation of digoxin toxicity: nausea, anorexia, visual disturbances (yellow halos — xanthopsia), and bradycardia. The recent dose increase in a patient with CKD (which reduces renal clearance of digoxin) makes toxicity highly likely.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; AHA Guidelines on Digitalis Toxicity"
+          },
+          {
+            "text": "Furosemide",
+            "correct": false,
+            "critical": false,
+            "explanation": "While furosemide can cause electrolyte imbalances (particularly hypokalemia, which can worsen digoxin toxicity), it does not directly cause yellow visual changes, nausea, or bradycardia in this pattern.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Levothyroxine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Levothyroxine toxicity typically presents with tachycardia, anxiety, tremor, and heat intolerance — the opposite of this patient's bradycardic presentation.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Apixaban",
+            "correct": false,
+            "critical": false,
+            "explanation": "Apixaban is an anticoagulant. Its primary toxicity concern is bleeding, not bradycardia, nausea, or visual changes.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "The classic triad of digoxin toxicity is GI symptoms (nausea, vomiting, anorexia), cardiac disturbances (bradycardia, heart blocks, ventricular dysrhythmias), and visual changes (xanthopsia — yellow-green halos). Elderly patients and those with renal impairment are at highest risk."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "Categorize the following factors as either increasing or not significantly affecting this patient's risk of digoxin toxicity.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "CKD stage 3 reducing renal clearance",
+          "Recent dose increase from 0.125 mg to 0.25 mg",
+          "Concurrent furosemide use potentially causing hypokalemia",
+          "Hypothyroidism",
+          "Taking apixaban concurrently"
+        ],
+        "categories": ["Increases Risk of Digoxin Toxicity", "Does Not Significantly Affect Risk"],
+        "correctCategories": [0, 0, 0, 0, 1],
+        "explanation": "CKD reduces digoxin clearance (digoxin is primarily renally eliminated). The dose doubling directly increases serum levels. Furosemide-induced hypokalemia increases digoxin sensitivity at the Na+/K+-ATPase pump. Hypothyroidism increases sensitivity to digoxin by slowing its metabolism. Apixaban does not have a clinically significant interaction with digoxin.",
+        "guideline_ref": "National EMS Education Standards — Pharmacology; AHA Digitalis Toxicity Guidelines",
+        "clinical_pearl": "Hypokalemia is the most common electrolyte abnormality that potentiates digoxin toxicity. Digoxin and potassium compete for the same binding site on the Na+/K+-ATPase pump — low potassium means more digoxin binding and greater toxicity."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient's cardiac monitor shows a bradycardic rhythm with frequent PVCs. Select ALL appropriate prehospital interventions for suspected digoxin toxicity.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Establish IV access and administer a normal saline bolus for hypotension support",
+            "correct": true,
+            "critical": false,
+            "explanation": "IV access is essential for medication administration and fluid resuscitation. While the patient is not severely hypotensive, vascular access should be established early in case of deterioration.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Continuous cardiac monitoring with 12-lead ECG acquisition",
+            "correct": true,
+            "critical": false,
+            "explanation": "Digoxin toxicity can cause virtually any dysrhythmia. Continuous monitoring is essential to detect deterioration, and a 12-lead ECG may show characteristic findings such as the 'digoxin effect' or identify dangerous rhythms.",
+            "guideline_ref": "AHA Guidelines; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Rapid transport to an ED capable of administering digoxin-specific antibody fragments (Digibind/DigiFab)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Digoxin-specific antibody fragments are the definitive treatment for significant digoxin toxicity. This is a hospital-based treatment, and transport should not be delayed.",
+            "guideline_ref": "AHA Guidelines on Digitalis Toxicity; National EMS Education Standards — Transport Decisions"
+          },
+          {
+            "text": "Administer atropine 0.5 mg IV for the bradycardia and repeat as needed",
+            "correct": false,
+            "critical": false,
+            "explanation": "While atropine may be considered for symptomatic bradycardia, in digoxin toxicity it carries risk of worsening ventricular dysrhythmias. It should be used cautiously and only if hemodynamically unstable with medical direction.",
+            "guideline_ref": "AHA ACLS Bradycardia Algorithm; Toxicology Guidelines"
+          },
+          {
+            "text": "Administer amiodarone 150 mg IV to suppress the PVCs",
+            "correct": false,
+            "critical": true,
+            "explanation": "Amiodarone is generally avoided in digoxin toxicity because it increases digoxin serum levels and can worsen toxicity. Additionally, treating PVCs in digoxin toxicity without addressing the underlying cause is not appropriate.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "In digoxin toxicity, avoid cardioversion unless absolutely necessary for unstable rhythms — electrical cardioversion can trigger refractory ventricular fibrillation in digitalized patients. Digoxin-specific antibodies are the treatment of choice."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-13",
+    "title": "22M — Found Unresponsive at Party",
+    "dispatch": "22-year-old male, unconscious, unknown substance ingestion",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 22, "sex": "M", "cc": "Unresponsive, suspected overdose"},
+    "scene": "You arrive at a college apartment where a party was taking place. A 22-year-old male is found on the bathroom floor, unresponsive. Friends are distraught and report he was drinking heavily and they believe he also took 'pills' but are unsure what kind. He was last seen conscious about 30 minutes ago. Empty beer cans and a partially dissolved powder residue in a cup are noted nearby. His breathing is slow and shallow with intermittent snoring respirations. Vomitus is present near his face.",
+    "history": {"pmh": "None known", "meds": "None known", "allergies": "Unknown"},
+    "vitals": {"hr": 52, "bp": "90/56", "rr": 6, "spo2": 82, "gcs": 5, "temp": "96.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Arrange the following initial assessment and intervention steps in the correct order of priority for this unresponsive patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Suction the airway to clear vomitus",
+          "Position the patient to protect the airway (recovery position or log-roll)",
+          "Assess responsiveness and call for additional resources",
+          "Assist ventilations with BVM and supplemental oxygen",
+          "Administer naloxone via intranasal route"
+        ],
+        "correctOrder": [2, 1, 0, 3, 4],
+        "explanation": "First, assess responsiveness and activate additional resources. Second, position the patient to protect the airway given visible vomitus — preventing aspiration is critical. Third, suction the airway to clear vomitus. Fourth, assist ventilations with BVM and oxygen since the respiratory rate is 6 with SpO2 of 82%. Fifth, administer naloxone — but only after ensuring adequate airway management and oxygenation are in progress.",
+        "guideline_ref": "AHA Opioid-Associated Emergency Algorithm; National EMS Education Standards — Airway Management",
+        "clinical_pearl": "In suspected overdose patients with vomitus present, always have suction immediately available. Aspiration pneumonia is a leading cause of morbidity and mortality in overdose patients."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After initial airway management and naloxone 4 mg IN, the patient's respiratory rate improves to 12 but he remains obtunded with a GCS of 8. Categorize the following toxidrome findings based on the likely substances involved.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "narrative": "You note pinpoint pupils, decreased bowel sounds, and the patient's skin is cool and dry. Friends now confirm he took 'pressed pills' that may have contained fentanyl.",
+        "vitals_update": {"hr": 64, "bp": "100/62", "rr": 12, "spo2": 94, "gcs": 8},
+        "items": [
+          "Pinpoint pupils (miosis)",
+          "Respiratory depression",
+          "Hypothermia (96.8°F)",
+          "Slurred speech reported before unresponsiveness",
+          "Decreased bowel sounds",
+          "Hypotension"
+        ],
+        "categories": ["Opioid Toxidrome", "Sedative-Hypnotic/Alcohol Toxidrome", "Shared Finding"],
+        "correctCategories": [0, 2, 2, 1, 0, 2],
+        "explanation": "Miosis is classic for opioid toxidrome. Decreased bowel sounds result from opioid effects on GI motility. Respiratory depression, hypothermia, and hypotension are shared findings seen in both opioid and sedative-hypnotic/alcohol toxidromes. Slurred speech prior to unresponsiveness is more characteristic of sedative-hypnotic/alcohol intoxication. Recognizing overlapping toxidromes is essential in polysubstance exposure.",
+        "guideline_ref": "National EMS Education Standards — Toxicology; ACMT Toxidrome Recognition",
+        "clinical_pearl": "Fentanyl-containing pressed pills are a leading cause of overdose deaths. Illicitly manufactured fentanyl is 50-100x more potent than morphine, and carfentanil is 10,000x more potent. Multiple doses of naloxone may be required."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Despite naloxone improving respiratory status, the patient remains obtunded. Which of the following BEST explains the limited response to naloxone?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Concurrent alcohol and/or non-opioid sedative ingestion is contributing to CNS depression that naloxone cannot reverse",
+            "correct": true,
+            "critical": false,
+            "explanation": "Naloxone only reverses opioid-mediated effects. If the patient also ingested alcohol or other sedative-hypnotics (benzodiazepines, barbiturates), those will continue to cause CNS depression unaffected by naloxone. The drinking history and party setting support polysubstance exposure.",
+            "guideline_ref": "National EMS Education Standards — Toxicology; AHA Opioid Emergency Algorithm"
+          },
+          {
+            "text": "The intranasal naloxone dose was too low and 8 mg is required for any clinical effect",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient did show partial improvement (respiratory rate improved from 6 to 12), indicating the naloxone had clinical effect. Persistent obtundation despite respiratory improvement suggests a non-opioid co-ingestant rather than inadequate naloxone dosing.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Naloxone is ineffective against synthetic opioids and a different reversal agent is needed",
+            "correct": false,
+            "critical": false,
+            "explanation": "Naloxone is effective against synthetic opioids including fentanyl. Higher or repeated doses may be needed for potent synthetics, but naloxone does work. The partial response confirms opioid involvement.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "The patient is postictal from an overdose-related seizure, which will resolve on its own",
+            "correct": false,
+            "critical": false,
+            "explanation": "While seizures can occur with certain overdoses, there is no history or evidence of seizure activity. Assuming postictal state without evidence could lead to missed interventions for ongoing CNS depression from polysubstance use.",
+            "guideline_ref": "National EMS Education Standards — Neurology"
+          }
+        ],
+        "clinical_pearl": "Always consider polysubstance ingestion in overdose patients, especially in party or social settings. Partial response to naloxone is a strong clue that non-opioid substances are contributing to the clinical picture."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-14",
+    "title": "45M — Severe Leg Pain After Industrial Accident",
+    "dispatch": "45-year-old male, severe leg pain, machinery injury",
+    "category": "Pharmacology",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {"age": 45, "sex": "M", "cc": "Severe right leg pain from crush injury"},
+    "scene": "You respond to an industrial warehouse where a 45-year-old male worker had a heavy pallet fall on his right lower leg approximately 20 minutes ago. Coworkers have already freed his leg. He is sitting on the ground, screaming in pain, with an obvious closed deformity of the right tibia/fibula. The leg is splinted by coworkers with a makeshift cardboard splint. There is significant swelling but no external bleeding. The patient rates his pain as 10/10 and is diaphoretic and tachycardic from pain.",
+    "history": {"pmh": "GERD, lumbar disc disease", "meds": "Omeprazole 20 mg daily, ibuprofen PRN", "allergies": "Morphine (hives)"},
+    "vitals": {"hr": 118, "bp": "156/94", "rr": 22, "spo2": 98, "gcs": 15, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "The patient requires pain management. Given his documented morphine allergy (hives), which analgesic would be the MOST appropriate first-line choice?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Fentanyl 1 mcg/kg IV or IN",
+            "correct": true,
+            "critical": false,
+            "explanation": "Fentanyl is a synthetic opioid that has very low cross-reactivity with morphine allergies. True allergic cross-reactivity between natural (morphine, codeine) and synthetic (fentanyl) opioids is extremely rare. Fentanyl provides rapid, potent analgesia with good hemodynamic stability.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; NAEMSP Pain Management Position Statement"
+          },
+          {
+            "text": "Morphine 4 mg IV administered slowly",
+            "correct": false,
+            "critical": true,
+            "explanation": "The patient has a documented morphine allergy causing hives. Administering morphine is contraindicated regardless of dose or rate of administration.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Ketorolac 30 mg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ketorolac is a potent NSAID that can help with pain, it is inadequate as a sole agent for severe pain rated 10/10 from a fracture. Additionally, it should not be the first-line agent for acute trauma pain of this severity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Hydromorphone 1 mg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Hydromorphone is a semi-synthetic opioid derived from morphine. While cross-reactivity is debated, it carries a higher risk of allergic reaction in morphine-allergic patients compared to truly synthetic opioids like fentanyl. It is not the safest first-line choice.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Opioid allergies are often mislabeled. True immunologic opioid allergy is rare — most 'allergies' are predictable side effects (nausea, itching from histamine release). However, in the field, always respect documented allergies and choose the safest alternative."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You administer fentanyl 100 mcg IN. Arrange the following steps of pain reassessment and management in the correct order.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Reassess pain score 5-10 minutes after administration",
+          "Document initial pain score, medication, dose, route, and time given",
+          "Monitor vital signs including respiratory rate, SpO2, and level of consciousness",
+          "Consider repeat dose if pain remains greater than 4/10 after reassessment",
+          "Properly splint the injured extremity and assess distal neurovascular status"
+        ],
+        "correctOrder": [1, 4, 2, 0, 3],
+        "explanation": "After drug administration: (1) Document the intervention immediately. (2) Properly splint the extremity — mechanical stabilization is a key component of pain management. (3) Monitor vital signs, especially respiratory status after opioid administration. (4) Reassess the pain score after appropriate onset time for the route used. (5) Consider additional dosing based on reassessment. Pain management is an ongoing process, not a single intervention.",
+        "guideline_ref": "NAEMSP Pain Management Position Statement; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "Intranasal fentanyl has an onset of 5-10 minutes with good bioavailability. It is an excellent option when IV access is not yet established. Use a mucosal atomizer device (MAD) and limit volume to 1 mL per nostril for optimal absorption."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient becomes drowsy with a respiratory rate of 10. His pain is now 3/10. Select ALL appropriate actions.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "vitals_update": {"hr": 84, "bp": "128/78", "rr": 10, "spo2": 96, "gcs": 14},
+        "options": [
+          {
+            "text": "Continue monitoring respiratory rate, SpO2, and level of consciousness closely",
+            "correct": true,
+            "critical": false,
+            "explanation": "A respiratory rate of 10 after opioid administration requires close monitoring. While not critically depressed, the trend toward decreased respirations and drowsiness warrants vigilance.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Withhold any additional fentanyl doses at this time",
+            "correct": true,
+            "critical": false,
+            "explanation": "With pain controlled at 3/10 and signs of mild CNS/respiratory depression (drowsiness, RR 10), additional opioid dosing is not indicated and could worsen respiratory depression.",
+            "guideline_ref": "NAEMSP Pain Management Position Statement; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Ensure naloxone is readily accessible in case of further respiratory decline",
+            "correct": true,
+            "critical": false,
+            "explanation": "Having naloxone immediately available is a prudent safety measure when a patient shows early signs of opioid-related respiratory depression. This allows rapid intervention if the patient deteriorates.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Administer naloxone 2 mg IV immediately to reverse all opioid effects",
+            "correct": false,
+            "critical": false,
+            "explanation": "The patient is still breathing adequately (RR 10, SpO2 96%) with controlled pain. Full-dose naloxone would reverse all analgesia, causing severe pain recurrence and potentially acute opioid-related sympathetic surge. Naloxone should be reserved for significant respiratory depression.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Administer an additional 100 mcg fentanyl to keep the patient comfortable during transport",
+            "correct": false,
+            "critical": true,
+            "explanation": "The patient's pain is adequately controlled at 3/10 and he is already showing signs of oversedation. Additional opioid could precipitate dangerous respiratory depression.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "The goal of prehospital pain management is to reduce pain to a tolerable level, not necessarily to zero. Titrate opioids to effect — pain score, respiratory rate, and level of consciousness should all be reassessed after each dose."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-15",
+    "title": "8F — Agitated Child Needing Procedure",
+    "dispatch": "8-year-old female, arm injury, extremely combative with pain",
+    "category": "Pharmacology",
+    "difficulty": "Medium",
+    "level_min": "Paramedic",
+    "patient": {"age": 8, "sex": "F", "cc": "Displaced forearm fracture with severe agitation"},
+    "scene": "You arrive at a playground where an 8-year-old female fell from monkey bars. She has an obvious displaced fracture of her right forearm with significant angulation. The child is screaming, thrashing, and will not allow anyone to touch her arm. Her mother is present and consenting to treatment. The limb shows tenting of the skin over the fracture site with diminished radial pulse distally, suggesting vascular compromise requiring realignment in the field.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 132, "bp": "108/70", "rr": 24, "spo2": 99, "gcs": 15, "temp": "98.4°F"},
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "This child requires procedural sedation for fracture reduction due to vascular compromise. Which agent is most appropriate for prehospital procedural sedation in a pediatric patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Ketamine 1-2 mg/kg IV or 4 mg/kg IM",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ketamine is the preferred agent for prehospital procedural sedation in pediatric patients. It provides dissociative anesthesia with analgesia while maintaining airway reflexes and respiratory drive. It has a wide therapeutic margin and is well-studied in children.",
+            "guideline_ref": "NAEMSP Position Statement on Prehospital Ketamine; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Midazolam 0.1 mg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Midazolam provides anxiolysis and amnesia but has no analgesic properties. For a painful procedure like fracture reduction, an agent with both sedative and analgesic properties is preferred. Midazolam also has a higher risk of respiratory depression.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Propofol 1 mg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Propofol requires careful titration, causes significant respiratory depression and hypotension, provides no analgesia, and is not typically available or appropriate for prehospital procedural sedation.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Fentanyl 2 mcg/kg IV alone",
+            "correct": false,
+            "critical": false,
+            "explanation": "Fentanyl provides analgesia but not the dissociative state needed for fracture manipulation. At doses sufficient for procedural tolerance, respiratory depression becomes a significant concern, especially in pediatric patients.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Ketamine's dissociative state is unique — the patient appears awake with eyes open but is disconnected from pain and surroundings. Emergence reactions are less common in children than adults. Have suction ready as increased salivation is common."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You are preparing to administer ketamine IM to this 25 kg child. Arrange the following preparation and administration steps in the correct order.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Calculate the weight-based dose (4 mg/kg IM = 100 mg for 25 kg)",
+          "Prepare suction, BVM with appropriately sized mask, and oxygen at bedside",
+          "Administer the medication into the lateral thigh (vastus lateralis) muscle",
+          "Assign a dedicated team member to continuously monitor airway and respirations",
+          "Begin continuous monitoring of SpO2, ETCO2 (if available), and heart rate"
+        ],
+        "correctOrder": [0, 1, 4, 2, 3],
+        "explanation": "Proper sequence: (1) Calculate the correct weight-based dose to avoid errors. (2) Prepare all airway rescue equipment before administering the sedative — this is non-negotiable. (3) Initiate monitoring before drug administration. (4) Administer the medication. (5) Assign continuous airway monitoring. Safety preparation before drug administration is the critical principle.",
+        "guideline_ref": "NAEMSP Prehospital Ketamine Position Statement; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "Medication dose errors are more common in pediatric patients. Always use weight-based dosing with a Broselow tape or verified weight. Double-check calculations and have a second provider verify the dose before administration."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Following ketamine administration and successful fracture reduction, the child develops laryngospasm. Select ALL appropriate immediate interventions.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "Two minutes after ketamine administration, you successfully reduce the fracture with improved distal pulse. However, the child suddenly develops stridor, chest wall retractions, and SpO2 begins dropping.",
+        "vitals_update": {"hr": 144, "bp": "112/74", "rr": 28, "spo2": 88, "gcs": 7},
+        "options": [
+          {
+            "text": "Perform jaw thrust maneuver to open the airway and attempt to break the spasm",
+            "correct": true,
+            "critical": false,
+            "explanation": "Jaw thrust with positive pressure ventilation via BVM is the first intervention for laryngospasm. The jaw thrust opens the airway while positive pressure may force air past the vocal cords and break the spasm.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Apply positive pressure ventilation with BVM and 100% oxygen",
+            "correct": true,
+            "critical": false,
+            "explanation": "Positive pressure ventilation with 100% oxygen supports oxygenation and the positive pressure may help break the laryngospasm. This is a core initial intervention.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Prepare succinylcholine (1-2 mg/kg IV) in case BVM ventilation fails to relieve the spasm",
+            "correct": true,
+            "critical": false,
+            "explanation": "Succinylcholine at a low dose (0.1-0.5 mg/kg up to full dose) is the definitive pharmacological treatment for refractory laryngospasm. It relaxes the vocal cord muscles, breaking the spasm. Having it prepared while attempting BVM is appropriate.",
+            "guideline_ref": "National EMS Education Standards — Airway Management; Anesthesia Laryngospasm Protocols"
+          },
+          {
+            "text": "Administer additional ketamine to deepen sedation and relax the laryngeal muscles",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ketamine does have bronchodilatory properties, additional ketamine during active laryngospasm could worsen the situation by further suppressing airway reflexes without directly addressing the vocal cord spasm. BVM and succinylcholine are the appropriate interventions.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Perform immediate cricothyrotomy to bypass the vocal cord obstruction",
+            "correct": false,
+            "critical": false,
+            "explanation": "Surgical airway is a last resort after all other measures fail. Laryngospasm typically responds to positive pressure ventilation and/or succinylcholine. Cricothyrotomy in a pediatric patient carries significant risk and is rarely indicated for laryngospasm.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          }
+        ],
+        "clinical_pearl": "Laryngospasm is a rare but serious complication of ketamine (incidence ~0.3%). Risk factors include active upper respiratory infection, airway manipulation, and young age. Having suction, BVM, and paralytics immediately available is essential whenever using ketamine."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-16",
+    "title": "58M — Persistent Hypotension After Fluid Resuscitation",
+    "dispatch": "58-year-old male, weakness, low blood pressure unresponsive to fluids",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {"age": 58, "sex": "M", "cc": "Hypotension, altered mental status, fever"},
+    "scene": "You are transporting a 58-year-old male from a rural clinic to a tertiary care center. The clinic physician reports the patient presented with three days of worsening urinary symptoms, now with fever, confusion, and refractory hypotension despite 2 liters of normal saline. The patient appears flushed with warm extremities. A urinary catheter shows cloudy, foul-smelling urine. The clinic physician requests you initiate vasopressor therapy during transport.",
+    "history": {"pmh": "Type 2 diabetes, benign prostatic hyperplasia, coronary artery disease (prior stent 2 years ago)", "meds": "Metformin 1000 mg BID, tamsulosin 0.4 mg daily, aspirin 81 mg daily, atorvastatin 40 mg daily", "allergies": "Sulfa drugs (rash)"},
+    "vitals": {"hr": 112, "bp": "78/42", "rr": 24, "spo2": 94, "gcs": 13, "temp": "102.8°F"},
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "The patient has septic shock from a urinary source and requires vasopressor support. Which vasopressor is the recommended first-line agent for septic shock?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Norepinephrine",
+            "correct": true,
+            "critical": false,
+            "explanation": "Norepinephrine is the first-line vasopressor for septic shock per the Surviving Sepsis Campaign guidelines. It provides potent alpha-1 mediated vasoconstriction to increase SVR and MAP, with moderate beta-1 effects supporting cardiac output. It is preferred over dopamine due to fewer dysrhythmias.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Dopamine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Dopamine is no longer recommended as the first-line vasopressor for septic shock. Studies show it is associated with higher rates of tachyarrhythmias and increased mortality compared to norepinephrine. It may be considered as an alternative only when norepinephrine is unavailable.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Phenylephrine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Phenylephrine is a pure alpha-1 agonist with no beta activity. While it raises blood pressure through vasoconstriction, it can decrease cardiac output and is not recommended as first-line in septic shock. It may be considered if the patient has significant tachyarrhythmias.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Epinephrine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Epinephrine is a second-line agent in septic shock, typically added when norepinephrine alone is insufficient. Its strong beta-1 and beta-2 effects can cause significant tachycardia, increased myocardial oxygen demand, and lactic acidosis from beta-2 stimulation.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Norepinephrine is ideally administered via central line, but in emergencies it can be given through a large-bore peripheral IV or IO for short durations. Monitor the IV site closely for extravasation, which can cause tissue necrosis."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize the following vasopressors and inotropes by their PRIMARY mechanism of action in the management of shock.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Norepinephrine",
+          "Vasopressin",
+          "Dobutamine",
+          "Phenylephrine",
+          "Epinephrine"
+        ],
+        "categories": ["Predominantly Vasopressor (increases SVR)", "Predominantly Inotrope (increases contractility)", "Mixed Vasopressor and Inotrope"],
+        "correctCategories": [2, 0, 1, 0, 2],
+        "explanation": "Norepinephrine has strong alpha-1 (vasoconstriction) and moderate beta-1 (inotropy) effects — mixed. Vasopressin acts on V1 receptors to cause vasoconstriction with no direct cardiac effects — predominantly vasopressor. Dobutamine is primarily a beta-1 agonist that increases contractility with some vasodilation — predominantly inotrope. Phenylephrine is a pure alpha-1 agonist — predominantly vasopressor. Epinephrine has strong alpha-1, beta-1, and beta-2 effects — mixed vasopressor and inotrope.",
+        "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "Vasopressin works through a non-adrenergic mechanism (V1 receptors), making it useful as an adjunct when catecholamine vasopressors are reaching maximum doses. It is typically added as a second agent at 0.03 units/min, not titrated."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You initiate norepinephrine at 2 mcg/min via peripheral IV. Arrange the following monitoring and titration steps in the correct order during vasopressor administration.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Reassess blood pressure every 2-5 minutes during titration",
+          "Titrate the infusion rate targeting MAP ≥ 65 mmHg",
+          "Verify the infusion rate and concentration with a second provider",
+          "Monitor the IV site for signs of extravasation (blanching, swelling, pain)",
+          "Assess end-organ perfusion markers (mental status, capillary refill, urine output if catheterized)"
+        ],
+        "correctOrder": [2, 0, 1, 3, 4],
+        "explanation": "First, verify the infusion rate and drug concentration to prevent medication errors — vasopressor dosing errors can be rapidly fatal. Second, reassess blood pressure frequently to guide titration. Third, titrate to the MAP target of ≥65 mmHg per sepsis guidelines. Fourth, monitor the peripheral IV site for extravasation, which is a constant risk with peripheral vasopressor administration. Fifth, assess end-organ perfusion as the ultimate goal of vasopressor therapy.",
+        "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "MAP is calculated as: (SBP + 2×DBP) ÷ 3. For this patient, initial MAP is (78 + 2×42) ÷ 3 = 54 mmHg. The target is ≥65 mmHg. MAP better reflects organ perfusion than systolic pressure alone."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, despite norepinephrine at 12 mcg/min, the patient's MAP remains 58 mmHg. Select ALL appropriate next steps.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "vitals_update": {"hr": 118, "bp": "74/50", "rr": 26, "spo2": 93, "gcs": 11},
+        "options": [
+          {
+            "text": "Add vasopressin 0.03 units/min as a second vasopressor agent",
+            "correct": true,
+            "critical": false,
+            "explanation": "Vasopressin is recommended as an adjunct to norepinephrine in refractory septic shock. Its non-adrenergic mechanism (V1 receptor agonism) complements catecholamine vasopressors and may reduce the norepinephrine dose required.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Administer an additional 500 mL-1 L crystalloid bolus while continuing vasopressors",
+            "correct": true,
+            "critical": false,
+            "explanation": "Patients in septic shock may require additional fluid resuscitation beyond initial volumes. Vasopressors work best on an adequately filled vascular bed. Dynamic fluid responsiveness assessment should guide additional boluses.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Shock Management"
+          },
+          {
+            "text": "Contact medical control or the receiving facility for guidance on escalating care",
+            "correct": true,
+            "critical": false,
+            "explanation": "Refractory septic shock requiring multiple vasopressors during prehospital transport warrants consultation with medical direction. The receiving facility should be alerted to prepare for a critically ill patient requiring ICU-level care.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions; EMS Medical Direction"
+          },
+          {
+            "text": "Switch from norepinephrine to high-dose dopamine as a more potent alternative",
+            "correct": false,
+            "critical": false,
+            "explanation": "Switching to dopamine is not recommended. Dopamine is associated with worse outcomes in septic shock compared to norepinephrine. The appropriate strategy is to add a second vasopressor, not replace the first-line agent.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Discontinue vasopressors and focus solely on rapid transport since the medications aren't working",
+            "correct": false,
+            "critical": true,
+            "explanation": "Discontinuing vasopressors in refractory shock would worsen hypotension and potentially cause cardiovascular collapse. Even if the current dose is insufficient, the vasopressor is providing some hemodynamic support. Escalation, not discontinuation, is appropriate.",
+            "guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Refractory septic shock (requiring >0.5 mcg/kg/min norepinephrine equivalent) carries a mortality rate exceeding 50%. Early identification, aggressive fluid resuscitation, timely antibiotics (hospital-based), and appropriate vasopressor escalation are all critical links in the chain of survival."
+      }
+    ]
+  }
+]

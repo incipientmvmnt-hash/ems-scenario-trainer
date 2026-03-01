@@ -1,0 +1,862 @@
+[
+  {
+    "id": "nat-pharm-17",
+    "title": "34M — Unresponsive After MVA, Requires Intubation",
+    "dispatch": "34-year-old male, unresponsive, head injury from motor vehicle accident",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {"age": 34, "sex": "M", "cc": "Unresponsive after MVC with head injury"},
+    "scene": "You arrive at the scene of a single-vehicle crash on a rural highway. A 34-year-old male has been extricated from the driver's seat. He is unresponsive with sonorous respirations and a GCS of 6. Blood is visible from a large scalp laceration. BVM ventilation is being performed by first responders. The patient is not tolerating an OPA and has intermittent gag reflex. Your medical director authorizes RSI.",
+    "history": {"pmh": "None known", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 110, "bp": "148/92", "rr": 8, "spo2": 88, "gcs": 6, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "You are preparing for rapid sequence intubation. Arrange the following medication steps in the correct order.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer a sedative/induction agent (e.g., etomidate 0.3 mg/kg IV)",
+          "Preoxygenate the patient with 100% FiO2 for 3 minutes or until SpO2 is maximized",
+          "Administer a neuromuscular blocking agent (e.g., succinylcholine 1.5 mg/kg IV)",
+          "Confirm placement with waveform capnography and secure the tube",
+          "Perform laryngoscopy and place the endotracheal tube"
+        ],
+        "correctOrder": [1, 0, 2, 4, 3],
+        "explanation": "The correct RSI sequence is: (1) Preoxygenate to build an oxygen reserve and maximize SpO2 before apnea, (2) Administer the induction/sedation agent to render the patient unconscious, (3) Administer the neuromuscular blocker to achieve paralysis, (4) Perform laryngoscopy and intubate once fasciculations cease and jaw relaxes, (5) Confirm tube placement with waveform capnography. Preoxygenation must precede all medications.",
+        "guideline_ref": "National EMS Education Standards — Airway Management/Pharmacology; NAEMSP RSI Position Statement",
+        "clinical_pearl": "Never administer a paralytic without first giving a sedative — awake paralysis is one of the most terrifying experiences a patient can have and constitutes a medication error."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Which induction agent is MOST appropriate for this patient with a suspected traumatic brain injury and borderline hypertension?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Etomidate 0.3 mg/kg IV",
+            "correct": true,
+            "critical": false,
+            "explanation": "Etomidate provides rapid onset sedation with minimal hemodynamic effects. It does not lower intracranial pressure-raising mean arterial pressure and maintains cerebral perfusion pressure, making it well-suited for patients with suspected TBI.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; NAEMSP RSI Guidelines"
+          },
+          {
+            "text": "Ketamine 2 mg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Ketamine is an acceptable RSI induction agent and recent evidence suggests it does not raise ICP as previously believed. However, etomidate remains the most commonly recommended first-line agent for RSI in the prehospital setting due to its hemodynamic stability profile.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Midazolam 0.3 mg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Midazolam at induction doses can cause significant hypotension, which would compromise cerebral perfusion pressure in a TBI patient. It also has a slower, less predictable onset compared to etomidate.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Fentanyl 3 mcg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "Fentanyl alone does not reliably produce unconsciousness for intubation. It may be used as an adjunct during RSI preparation but is not an appropriate sole induction agent.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Etomidate's key advantage in the prehospital RSI setting is its rapid onset (15-30 seconds), short duration (3-5 minutes), and cardiovascular stability. Its main limitation is transient adrenal suppression, which is rarely clinically significant for a single dose."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After successful intubation, you must initiate post-intubation sedation. Select ALL medications that are appropriate for ongoing sedation in a mechanically ventilated patient.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 2,
+        "narrative": "The ETT is confirmed in place with bilateral breath sounds and continuous waveform capnography reading 38 mmHg. The patient is now paralyzed and apneic on the ventilator.",
+        "vitals_update": {"hr": 98, "bp": "136/84", "rr": 14, "spo2": 98, "gcs": 3},
+        "options": [
+          {
+            "text": "Midazolam 2-5 mg IV, titrated to sedation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Midazolam is a commonly used benzodiazepine for post-intubation sedation. It provides anxiolysis, amnesia, and sedation and can be titrated in small increments.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Ketamine 1-2 mg/kg IV followed by infusion",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ketamine provides dissociative sedation and analgesia, making it an excellent choice for post-intubation sedation. It maintains hemodynamic stability and provides both sedation and pain control.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Naloxone 2 mg IV to maintain consciousness",
+            "correct": false,
+            "critical": true,
+            "explanation": "Naloxone is an opioid antagonist and would not provide sedation. Administering it to an intubated patient serves no purpose for post-intubation sedation management.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Succinylcholine 1.5 mg/kg IV repeat dose for continued paralysis",
+            "correct": false,
+            "critical": true,
+            "explanation": "Repeating succinylcholine for ongoing paralysis without sedation would leave the patient paralyzed but potentially aware — this is dangerous and constitutes a critical medication safety issue. Paralysis is not sedation.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; Patient Safety"
+          }
+        ],
+        "clinical_pearl": "Post-intubation sedation is mandatory — the effects of RSI induction agents wear off quickly, and patients may regain awareness while still paralyzed. Always sedate before re-paralyzing if long-acting paralytics are needed."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-18",
+    "title": "62F — Found Unresponsive at Home with Pill Bottles",
+    "dispatch": "62-year-old female, unresponsive, multiple medication bottles at scene",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 62, "sex": "F", "cc": "Unresponsive with bradycardia"},
+    "scene": "You arrive at a small apartment where a 62-year-old female is found supine on the couch by her daughter. She is unresponsive to voice but withdraws to pain. Several empty pill bottles are scattered on the coffee table, including metoprolol 100 mg, atenolol 50 mg, and propranolol 40 mg. The daughter states her mother has been depressed since her husband's death two months ago. An empty bottle of wine is also noted nearby. The patient's skin is cool and pale.",
+    "history": {"pmh": "Hypertension, atrial fibrillation, depression", "meds": "Metoprolol 100 mg BID, atenolol 50 mg daily, lisinopril 20 mg daily, sertraline 100 mg daily", "allergies": "Penicillin"},
+    "vitals": {"hr": 36, "bp": "72/40", "rr": 10, "spo2": 93, "gcs": 8, "temp": "96.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the scene findings and vital signs, which clinical syndrome is MOST consistent with this patient's presentation?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Beta-adrenergic blocker toxicity causing symptomatic bradycardia and hypotension",
+            "correct": true,
+            "critical": false,
+            "explanation": "The combination of profound bradycardia (HR 36), hypotension (72/40), altered mental status, and multiple empty beta-blocker bottles is classic for beta-blocker overdose. Beta-blockers block cardiac beta-1 receptors, reducing heart rate and contractility.",
+            "guideline_ref": "National EMS Education Standards — Toxicology/Pharmacology; ACMT Guidelines"
+          },
+          {
+            "text": "Acute alcohol intoxication with incidental bradycardia from normal beta-blocker use",
+            "correct": false,
+            "critical": false,
+            "explanation": "While alcohol may be contributing to CNS depression, a heart rate of 36 with severe hypotension is not explained by alcohol intoxication alone. The empty medication bottles suggest intentional overdose.",
+            "guideline_ref": "National EMS Education Standards — Toxicology"
+          },
+          {
+            "text": "Acute stroke causing autonomic dysregulation with secondary bradycardia",
+            "correct": false,
+            "critical": false,
+            "explanation": "While stroke can cause bradycardia (Cushing reflex), this typically presents with hypertension and bradycardia. The scene findings of empty pill bottles strongly suggest overdose as the primary etiology.",
+            "guideline_ref": "National EMS Education Standards — Neurology"
+          },
+          {
+            "text": "Hypothermia as the primary cause given low body temperature",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the patient's temperature is mildly low (96.8°F), this is likely secondary to poor perfusion from cardiogenic shock rather than primary hypothermia. The scene is an indoor apartment, and the empty pill bottles point to overdose.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          }
+        ],
+        "clinical_pearl": "Beta-blocker overdose can be lethal. The triad of bradycardia, hypotension, and altered mental status with a known or suspected ingestion should prompt aggressive treatment and rapid transport."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize each intervention as either 'Appropriate for Beta-Blocker Overdose' or 'Not Indicated for Beta-Blocker Overdose.'",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Atropine 1 mg IV for symptomatic bradycardia",
+          "Glucagon 3-5 mg IV bolus",
+          "Transcutaneous pacing for refractory bradycardia",
+          "Flumazenil 0.2 mg IV to reverse CNS depression",
+          "IV fluid bolus of normal saline for hypotension",
+          "Activated charcoal if within 1-2 hours of ingestion and airway is protected"
+        ],
+        "categories": ["Appropriate for Beta-Blocker Overdose", "Not Indicated for Beta-Blocker Overdose"],
+        "correctCategories": [0, 0, 0, 1, 0, 0],
+        "explanation": "Atropine is first-line for symptomatic bradycardia but may have limited efficacy in severe beta-blocker OD. Glucagon is the specific antidote — it stimulates cardiac contractility via a non-adrenergic pathway. Transcutaneous pacing may be needed for refractory bradycardia. IV fluids support blood pressure. Activated charcoal may reduce absorption if given early with a protected airway. Flumazenil is a benzodiazepine antagonist and has no role in beta-blocker toxicity — it could also precipitate seizures if co-ingestants include seizure-threshold-lowering drugs.",
+        "guideline_ref": "National EMS Education Standards — Pharmacology/Toxicology; AHA ACLS Bradycardia Algorithm; ACMT Guidelines",
+        "clinical_pearl": "Glucagon works by stimulating adenylyl cyclase through the glucagon receptor, bypassing the blocked beta-adrenergic pathway entirely. It can cause vomiting — have suction ready and protect the airway."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After administering atropine 1 mg IV with no improvement in heart rate, you administer glucagon. What is the correct initial IV dose of glucagon for beta-blocker toxicity in adults?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Atropine 1 mg IV was given 3 minutes ago. Heart rate remains 38 with BP 70/42. You have glucagon available.",
+        "vitals_update": {"hr": 38, "bp": "70/42", "rr": 10, "spo2": 94, "gcs": 8},
+        "options": [
+          {
+            "text": "3-5 mg IV over 1 minute",
+            "correct": true,
+            "critical": false,
+            "explanation": "The recommended initial dose of glucagon for beta-blocker toxicity is 3-5 mg IV administered over 1 minute. This can be repeated if no response is seen within 5-10 minutes. A continuous infusion may follow at 3-5 mg/hour.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACMT Beta-Blocker Toxicity Guidelines"
+          },
+          {
+            "text": "1 mg IV push",
+            "correct": false,
+            "critical": false,
+            "explanation": "While 1 mg is the standard glucagon dose for hypoglycemia, beta-blocker toxicity requires significantly higher doses (3-5 mg) to achieve the cardiac stimulatory effect needed to overcome beta-receptor blockade.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "0.5 mg IV followed by 0.5 mg every 5 minutes",
+            "correct": false,
+            "critical": false,
+            "explanation": "This dose is far too low for beta-blocker toxicity. Glucagon for poisoning requires 3-5 mg initially — much higher than doses used for hypoglycemia.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "10 mg IV rapid bolus",
+            "correct": false,
+            "critical": false,
+            "explanation": "While high-dose glucagon may be needed in severe cases, the initial recommended bolus is 3-5 mg. A 10 mg bolus exceeds standard initial dosing and increases the risk of vomiting and aspiration.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Stock multiple glucagon vials — treating beta-blocker overdose requires much more glucagon than treating hypoglycemia. A single patient may need 10-20 mg total. Reconstitution takes time, so prepare extra vials early."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient's heart rate drops to 28 and she becomes pulseless. You initiate CPR and transcutaneous pacing. Select ALL statements that are correct regarding cardiac arrest from beta-blocker overdose.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "vitals_update": {"hr": 28, "bp": "0/0", "rr": 0, "spo2": null, "gcs": 3},
+        "options": [
+          {
+            "text": "High-dose epinephrine (higher than standard 1 mg) may be needed due to beta-receptor blockade",
+            "correct": true,
+            "critical": false,
+            "explanation": "Standard epinephrine doses may be insufficient when beta-receptors are blocked. Higher doses may be required to achieve hemodynamic effect, though this should be guided by medical direction.",
+            "guideline_ref": "ACMT Toxicology Guidelines; AHA ACLS"
+          },
+          {
+            "text": "Prolonged resuscitation efforts are recommended as these patients may respond to sustained interventions",
+            "correct": true,
+            "critical": false,
+            "explanation": "Cardiac arrest from beta-blocker overdose may be reversible with prolonged resuscitation. These patients can have favorable outcomes even after extended CPR if the drug is metabolized or extracorporeal support is initiated.",
+            "guideline_ref": "AHA ACLS 2020 — Special Circumstances; ACMT Guidelines"
+          },
+          {
+            "text": "IV lipid emulsion (Intralipid 20%) may be considered as a rescue therapy",
+            "correct": true,
+            "critical": false,
+            "explanation": "Intravenous lipid emulsion therapy has been used as a rescue treatment for severe beta-blocker toxicity refractory to standard therapy. It works by creating a 'lipid sink' that sequesters lipophilic drugs.",
+            "guideline_ref": "ACMT Guidelines; AACT Lipid Emulsion Therapy Position Statement"
+          },
+          {
+            "text": "Sodium bicarbonate 1 mEq/kg IV is the primary antidote for beta-blocker cardiac arrest",
+            "correct": false,
+            "critical": false,
+            "explanation": "Sodium bicarbonate is the primary treatment for sodium channel blocker toxicity (tricyclic antidepressants, cocaine), not beta-blocker overdose. It may be given for metabolic acidosis in prolonged arrest but is not the specific antidote.",
+            "guideline_ref": "AHA ACLS 2020 — Toxicology"
+          },
+          {
+            "text": "Standard ACLS protocols alone are sufficient and no toxicology-specific modifications are needed",
+            "correct": false,
+            "critical": false,
+            "explanation": "Beta-blocker cardiac arrest requires toxicology-specific modifications to standard ACLS, including high-dose vasopressors, glucagon, lipid emulsion, and consideration of extracorporeal membrane oxygenation (ECMO).",
+            "guideline_ref": "AHA ACLS 2020 — Special Circumstances"
+          }
+        ],
+        "clinical_pearl": "Always bring the pill bottles to the hospital. Exact identification of the ingested beta-blocker (lipophilic vs hydrophilic, duration of action) helps guide hospital treatment including the potential role of lipid emulsion and dialysis."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-19",
+    "title": "71M — Weakness and Dizziness After Taking New Medication",
+    "dispatch": "71-year-old male, generalized weakness, near-syncope",
+    "category": "Pharmacology",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {"age": 71, "sex": "M", "cc": "Weakness, dizziness, near-syncope"},
+    "scene": "You respond to a retirement community for a 71-year-old male complaining of progressive weakness and dizziness over the past 4 hours. He is sitting in a recliner, alert but pale. His wife reports he was recently started on diltiazem for atrial fibrillation with rapid ventricular response three days ago. He states he feels like his heart is 'barely beating.' His ankles are mildly edematous. A medication organizer on the kitchen counter shows diltiazem 240 mg ER, amlodipine 10 mg, and lisinopril 40 mg.",
+    "history": {"pmh": "Atrial fibrillation, hypertension, heart failure (EF 40%)", "meds": "Diltiazem 240 mg ER daily (new), amlodipine 10 mg daily, lisinopril 40 mg daily, furosemide 40 mg daily", "allergies": "Codeine"},
+    "vitals": {"hr": 42, "bp": "82/50", "rr": 18, "spo2": 94, "gcs": 14, "temp": "97.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient is taking two calcium channel blockers simultaneously. Which mechanism BEST explains his symptomatic bradycardia and hypotension?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Excessive blockade of L-type calcium channels in cardiac and vascular smooth muscle, reducing heart rate, contractility, and peripheral vascular resistance",
+            "correct": true,
+            "critical": false,
+            "explanation": "Diltiazem (non-dihydropyridine CCB) primarily slows cardiac conduction and rate, while amlodipine (dihydropyridine CCB) causes peripheral vasodilation. Together, they produce additive effects: bradycardia from diltiazem plus vasodilation from amlodipine, resulting in profound hypotension. In a patient with reduced EF, the negative inotropy further worsens cardiac output.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACC/AHA Guidelines"
+          },
+          {
+            "text": "Beta-adrenergic receptor blockade causing reduced sympathetic stimulation to the heart",
+            "correct": false,
+            "critical": false,
+            "explanation": "This patient is not on beta-blockers. His medications are calcium channel blockers. While the clinical presentation may look similar, the mechanism involves calcium channel blockade, not beta-receptor antagonism.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "ACE inhibitor-induced angioedema causing reduced cardiac output",
+            "correct": false,
+            "critical": false,
+            "explanation": "Lisinopril (an ACE inhibitor) can cause angioedema, but that presents with swelling of the face, lips, and airway — not bradycardia. ACE inhibitors can contribute to hypotension but do not cause bradycardia.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Diuretic-induced hypovolemia as the sole cause of the hypotension and compensatory bradycardia",
+            "correct": false,
+            "critical": false,
+            "explanation": "While furosemide can cause volume depletion, hypovolemia typically causes reflex tachycardia, not bradycardia. The heart rate of 42 points to a medication effect on cardiac conduction, not volume depletion.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Combining a non-dihydropyridine CCB (diltiazem, verapamil) with other negative chronotropes or inotropes is high-risk, especially in patients with reduced ejection fraction. Always assess the entire medication list for additive effects."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following treatment steps in the correct order for this patient with calcium channel blocker toxicity and symptomatic bradycardia.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Administer calcium chloride 1 g IV over 5 minutes (or calcium gluconate 3 g IV)",
+          "Place the patient supine and establish IV access with normal saline bolus",
+          "Administer atropine 0.5 mg IV for symptomatic bradycardia",
+          "Prepare for transcutaneous pacing if pharmacologic interventions fail",
+          "Apply cardiac monitor and obtain 12-lead ECG"
+        ],
+        "correctOrder": [4, 1, 2, 0, 3],
+        "explanation": "The correct sequence: (1) Apply the cardiac monitor and obtain a 12-lead to assess the rhythm, (2) Position supine, establish IV access, and start a fluid bolus for hypotension, (3) Administer atropine for symptomatic bradycardia per ACLS guidelines, (4) Administer calcium as the specific antidote for CCB toxicity — calcium directly counteracts the channel blockade, (5) Prepare transcutaneous pacing as a backup if medications fail to improve rate and perfusion.",
+        "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; National EMS Education Standards — Pharmacology; ACMT CCB Toxicity Guidelines",
+        "clinical_pearl": "Calcium chloride provides three times more elemental calcium than calcium gluconate per gram but requires a central or large-bore peripheral IV due to tissue necrosis risk with extravasation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You administer atropine 0.5 mg IV with minimal improvement. Your medical director orders calcium chloride. Which statement regarding IV calcium administration in CCB toxicity is correct?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Atropine 0.5 mg IV was given 2 minutes ago. HR is now 44, BP 80/48. Medical direction orders calcium.",
+        "vitals_update": {"hr": 44, "bp": "80/48", "rr": 18, "spo2": 95, "gcs": 14},
+        "options": [
+          {
+            "text": "Calcium overcomes CCB toxicity by increasing the extracellular calcium concentration gradient, promoting calcium entry through unblocked channels",
+            "correct": true,
+            "critical": false,
+            "explanation": "IV calcium works by increasing the concentration gradient of calcium across cell membranes. By raising extracellular calcium levels, more calcium flows through the channels that are not blocked, partially overcoming the competitive blockade and improving cardiac contractility and vascular tone.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACMT CCB Toxicity Guidelines"
+          },
+          {
+            "text": "Calcium directly displaces the CCB molecule from the calcium channel receptor site, immediately reversing the blockade",
+            "correct": false,
+            "critical": false,
+            "explanation": "Calcium does not directly displace CCB molecules from their binding sites. Rather, it works by increasing the extracellular calcium gradient to drive more calcium through available channels — a mass action effect, not competitive displacement.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Calcium is only effective for dihydropyridine CCB overdose and has no role in non-dihydropyridine toxicity",
+            "correct": false,
+            "critical": false,
+            "explanation": "IV calcium is indicated for toxicity from both classes of CCBs. It may improve blood pressure in dihydropyridine toxicity and both rate and blood pressure in non-dihydropyridine (diltiazem/verapamil) toxicity.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Calcium administration is contraindicated when the patient is taking digoxin or any other cardiac glycoside",
+            "correct": false,
+            "critical": false,
+            "explanation": "While IV calcium should be used cautiously in patients on digoxin (due to risk of worsening digoxin-related dysrhythmias), it is not absolutely contraindicated in life-threatening CCB toxicity. The risk-benefit favors administration in severe toxicity. This patient is not on digoxin.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; ACMT Guidelines"
+          }
+        ],
+        "clinical_pearl": "In severe CCB toxicity refractory to atropine and calcium, high-dose insulin therapy (1 unit/kg bolus with dextrose) is an emerging treatment that improves cardiac contractility and hemodynamics — though this is typically initiated in the ED."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-20",
+    "title": "78F — Bleeding That Won't Stop After a Fall",
+    "dispatch": "78-year-old female, fall with laceration, uncontrolled bleeding",
+    "category": "Pharmacology",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 78, "sex": "F", "cc": "Uncontrolled scalp bleeding after fall"},
+    "scene": "You arrive at an assisted living facility where a 78-year-old female slipped on a wet floor and struck her head on a doorframe. She has a 6 cm scalp laceration that is bleeding profusely despite facility staff applying direct pressure for 15 minutes. The blood has soaked through multiple towels. She is alert and oriented, sitting in a wheelchair, but appears pale. Staff reports she takes 'blood thinners' but are unsure of the specific medication. Her daughter arrives and provides a medication list showing apixaban (Eliquis) 5 mg twice daily.",
+    "history": {"pmh": "Atrial fibrillation, DVT history 2 years ago, osteoporosis, hypertension", "meds": "Apixaban 5 mg BID, metoprolol 25 mg BID, alendronate 70 mg weekly, calcium/vitamin D supplement", "allergies": "Aspirin (GI upset)"},
+    "vitals": {"hr": 96, "bp": "108/68", "rr": 18, "spo2": 97, "gcs": 15, "temp": "97.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient takes apixaban (Eliquis). Categorize each of the following anticoagulant medications as either a 'Direct Oral Anticoagulant (DOAC)' or a 'Non-DOAC Anticoagulant.'",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Apixaban (Eliquis)",
+          "Warfarin (Coumadin)",
+          "Rivaroxaban (Xarelto)",
+          "Enoxaparin (Lovenox)",
+          "Dabigatran (Pradaxa)",
+          "Heparin (unfractionated)"
+        ],
+        "categories": ["Direct Oral Anticoagulant (DOAC)", "Non-DOAC Anticoagulant"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "DOACs include apixaban, rivaroxaban, and dabigatran — these directly inhibit specific clotting factors (Xa or thrombin) and are taken orally. Non-DOAC anticoagulants include warfarin (vitamin K antagonist), enoxaparin (low-molecular-weight heparin, injected), and unfractionated heparin (injected). Knowing the class helps determine reversal strategies in the ED.",
+        "guideline_ref": "National EMS Education Standards — Pharmacology; AHA/ACC Anticoagulation Guidelines",
+        "clinical_pearl": "DOACs have largely replaced warfarin for atrial fibrillation. Unlike warfarin, standard coagulation tests (PT/INR) are unreliable for assessing DOAC effect. Specific reversal agents exist: andexanet alfa for factor Xa inhibitors and idarucizumab for dabigatran."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Which prehospital considerations are MOST important when managing bleeding in this anticoagulated patient? Select ALL that apply.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Apply sustained direct pressure with hemostatic gauze if available, as clotting will be significantly delayed",
+            "correct": true,
+            "critical": false,
+            "explanation": "Anticoagulated patients have impaired clot formation. Prolonged, firm direct pressure and hemostatic agents are essential because the body's ability to form a stable clot is pharmacologically impaired.",
+            "guideline_ref": "National EMS Education Standards — Hemorrhage Control; PHTLS 9th Edition"
+          },
+          {
+            "text": "Communicate the specific anticoagulant name and dose to the receiving facility so reversal agents can be prepared",
+            "correct": true,
+            "critical": false,
+            "explanation": "Identifying the specific anticoagulant is critical because reversal agents are drug-specific. Apixaban requires andexanet alfa or prothrombin complex concentrate (PCC), while dabigatran requires idarucizumab. Early notification allows the ED to prepare.",
+            "guideline_ref": "National EMS Education Standards — Communications/Pharmacology"
+          },
+          {
+            "text": "Maintain a high index of suspicion for occult internal hemorrhage even if external bleeding is controlled",
+            "correct": true,
+            "critical": false,
+            "explanation": "Anticoagulated patients are at significant risk for internal hemorrhage, especially intracranial bleeding after head trauma. Even with a GCS of 15, this patient needs CT imaging. Signs of intracranial hemorrhage may be delayed.",
+            "guideline_ref": "National EMS Education Standards — Trauma/Pharmacology; PHTLS 9th Edition"
+          },
+          {
+            "text": "Administer vitamin K 10 mg IV in the field as a universal anticoagulant reversal agent",
+            "correct": false,
+            "critical": false,
+            "explanation": "Vitamin K reverses warfarin but has no effect on DOACs like apixaban. It is not a universal anticoagulant reversal agent. DOAC reversal requires specific agents available in the hospital.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Apply a tourniquet to the head to control scalp bleeding",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tourniquets cannot be applied to the head or scalp. Scalp bleeding is managed with direct pressure, pressure dressings, and in severe cases wound closure or hemostatic agents.",
+            "guideline_ref": "National EMS Education Standards — Hemorrhage Control"
+          }
+        ],
+        "clinical_pearl": "Head trauma in anticoagulated patients is a high-risk situation. Current guidelines recommend CT imaging for all anticoagulated patients with head trauma, regardless of symptoms. Transport these patients to a facility capable of managing intracranial hemorrhage."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient develops a severe headache and left-sided weakness. Her GCS drops to 12. What is the MOST likely complication?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "En route to the hospital, the patient becomes confused and complains of a severe headache. You notice her left arm is weak and she has difficulty speaking clearly.",
+        "vitals_update": {"hr": 62, "bp": "178/96", "rr": 16, "spo2": 96, "gcs": 12},
+        "options": [
+          {
+            "text": "Intracranial hemorrhage secondary to head trauma compounded by anticoagulation therapy",
+            "correct": true,
+            "critical": false,
+            "explanation": "New-onset focal neurological deficits (unilateral weakness, speech difficulty), headache, declining mental status, and Cushing response (hypertension with bradycardia) after head trauma in an anticoagulated patient is highly concerning for expanding intracranial hemorrhage. Anticoagulation dramatically increases the risk and severity of traumatic intracranial bleeding.",
+            "guideline_ref": "National EMS Education Standards — Neurology/Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Hypertensive crisis unrelated to the fall, causing the neurological symptoms",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the blood pressure is elevated, the hypertension in this context is more likely a Cushing response to rising intracranial pressure from hemorrhage. The temporal relationship to head trauma and anticoagulation makes intracranial hemorrhage the primary concern.",
+            "guideline_ref": "National EMS Education Standards — Neurology"
+          },
+          {
+            "text": "Delayed concussion syndrome causing transient neurological symptoms",
+            "correct": false,
+            "critical": false,
+            "explanation": "Concussion does not typically cause focal neurological deficits like unilateral weakness. Focal findings indicate structural pathology — in this anticoagulated trauma patient, hemorrhage must be ruled out emergently.",
+            "guideline_ref": "National EMS Education Standards — Neurology/Trauma"
+          },
+          {
+            "text": "Vasovagal syncope from pain and anxiety during transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "Vasovagal syncope causes transient loss of consciousness with recovery, not progressive focal neurological deficits. The unilateral weakness and speech difficulty indicate a structural brain pathology, not a vagal response.",
+            "guideline_ref": "National EMS Education Standards — Neurology"
+          }
+        ],
+        "clinical_pearl": "Anticoagulated patients with head trauma should be treated as high-priority transports to stroke/trauma centers, even if initially asymptomatic. Intracranial hemorrhage can expand rapidly when the coagulation cascade is impaired."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-21",
+    "title": "4M — Possible Medication Error by Caregiver",
+    "dispatch": "4-year-old male, drowsy, possible accidental medication ingestion",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 4, "sex": "M", "cc": "Excessive drowsiness, possible medication error"},
+    "scene": "You arrive at a home daycare where a 4-year-old male (approximately 18 kg) has become progressively drowsy over the past hour. The caregiver admits she gave the child 'a spoonful' of his prescribed liquid diphenhydramine for allergies but may have used the wrong measuring spoon. She also gave him a dose of his prescribed liquid albuterol. The child is lying on a mat, rousable to voice but lethargic. His skin is flushed and dry. He has dilated pupils and his heart rate is elevated. His parents are en route to the hospital.",
+    "history": {"pmh": "Seasonal allergies, mild intermittent asthma", "meds": "Diphenhydramine 12.5 mg/5 mL liquid PRN, albuterol 2.5 mg/3 mL nebulizer solution PRN", "allergies": "NKDA"},
+    "vitals": {"hr": 138, "bp": "94/60", "rr": 20, "spo2": 98, "gcs": 13, "temp": "100.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The child presents with flushed dry skin, tachycardia, dilated pupils, drowsiness, and mild fever. Which toxidrome does this presentation BEST represent?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Anticholinergic toxidrome",
+            "correct": true,
+            "critical": false,
+            "explanation": "The classic anticholinergic toxidrome is remembered by: 'Hot as a hare (fever), dry as a bone (dry skin), red as a beet (flushed), blind as a bat (mydriasis), mad as a hatter (altered mental status), full as a flask (urinary retention).' Diphenhydramine has significant anticholinergic properties, and overdose produces this characteristic presentation.",
+            "guideline_ref": "National EMS Education Standards — Toxicology/Pharmacology"
+          },
+          {
+            "text": "Sympathomimetic toxidrome",
+            "correct": false,
+            "critical": false,
+            "explanation": "Sympathomimetic toxidrome presents with tachycardia, hypertension, diaphoresis (wet skin), and mydriasis. While some features overlap, this child's dry, flushed skin and lethargy are more consistent with anticholinergic toxicity. Sympathomimetic patients are typically agitated and diaphoretic.",
+            "guideline_ref": "National EMS Education Standards — Toxicology"
+          },
+          {
+            "text": "Cholinergic toxidrome",
+            "correct": false,
+            "critical": false,
+            "explanation": "Cholinergic toxidrome (SLUDGEM) presents with salivation, lacrimation, urination, defecation, GI distress, emesis, and miosis — essentially the opposite of this patient's presentation.",
+            "guideline_ref": "National EMS Education Standards — Toxicology"
+          },
+          {
+            "text": "Opioid toxidrome",
+            "correct": false,
+            "critical": false,
+            "explanation": "Opioid toxidrome presents with CNS depression, respiratory depression, and miosis (pinpoint pupils). This child has mydriasis (dilated pupils), tachycardia, and dry/flushed skin — inconsistent with opioid toxicity.",
+            "guideline_ref": "National EMS Education Standards — Toxicology"
+          }
+        ],
+        "clinical_pearl": "Diphenhydramine is one of the most common causes of anticholinergic toxicity in children due to its widespread availability and liquid formulations that make dosing errors easy. Seizures and dysrhythmias can occur in severe overdose."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You need to establish vascular access and administer a fluid bolus. What is the correct weight-based fluid bolus for this 18 kg child?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "360 mL normal saline (20 mL/kg)",
+            "correct": true,
+            "critical": false,
+            "explanation": "The standard pediatric fluid bolus is 20 mL/kg of isotonic crystalloid (normal saline or lactated Ringer's). For an 18 kg child: 20 mL/kg × 18 kg = 360 mL. This can be repeated if needed based on clinical response.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics; PALS Guidelines"
+          },
+          {
+            "text": "180 mL normal saline (10 mL/kg)",
+            "correct": false,
+            "critical": false,
+            "explanation": "A 10 mL/kg bolus is used in specific situations such as suspected cardiogenic shock or DKA, but the standard initial pediatric fluid bolus for most indications is 20 mL/kg.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics"
+          },
+          {
+            "text": "500 mL normal saline (standard adult bolus)",
+            "correct": false,
+            "critical": true,
+            "explanation": "Using an adult standard volume rather than weight-based dosing in a pediatric patient risks fluid overload. Pediatric fluid resuscitation must always be weight-based at 20 mL/kg. For an 18 kg child, 500 mL represents approximately 28 mL/kg — exceeding the standard bolus.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics"
+          },
+          {
+            "text": "90 mL normal saline (5 mL/kg)",
+            "correct": false,
+            "critical": false,
+            "explanation": "A 5 mL/kg bolus is insufficient for meaningful volume resuscitation in most clinical scenarios. The standard pediatric fluid bolus is 20 mL/kg.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics"
+          }
+        ],
+        "clinical_pearl": "Weight-based dosing errors are the most common medication errors in pediatric EMS care. Always use a length-based resuscitation tape (Broselow tape) or confirmed weight. When in doubt, use the formula: weight (kg) ≈ (age in years + 4) × 2 for children 1-10 years old."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize each of the following medication safety practices as either 'Prevents Pediatric Dosing Errors' or 'Increases Risk of Pediatric Dosing Errors.'",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Using a length-based resuscitation tape for weight estimation and drug dosing",
+          "Administering adult-concentration medications to children without recalculating volume",
+          "Confirming drug dose with a partner before administration (closed-loop communication)",
+          "Estimating weight by visual appearance rather than measurement",
+          "Using pre-calculated dose charts specific to the drug concentrations carried on the unit"
+        ],
+        "categories": ["Prevents Pediatric Dosing Errors", "Increases Risk of Pediatric Dosing Errors"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Error prevention strategies include: length-based tape (validated weight estimation), closed-loop communication (two-person verification), and pre-calculated dose charts (reduce math errors under stress). Risk-increasing behaviors include: using adult concentrations without volume adjustment (10-fold overdose risk) and visual weight estimation (highly inaccurate, especially with obesity or clothing).",
+        "guideline_ref": "National EMS Education Standards — Pediatrics/Patient Safety; NAEMSP Medication Safety Position Statement",
+        "clinical_pearl": "The 'five rights' of medication administration apply doubly in pediatrics: right patient, right drug, right dose, right route, right time. A 10-fold dosing error is the most common life-threatening medication error in pediatric patients."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the child develops a brief generalized tonic-clonic seizure lasting approximately 45 seconds. What is the appropriate weight-based dose of midazolam for this 18 kg child via the intranasal route?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The child has a 45-second generalized seizure. It self-resolves but you want to have a benzodiazepine ready in case of recurrence. The child does not have IV access established at this time.",
+        "vitals_update": {"hr": 152, "bp": "96/64", "rr": 24, "spo2": 95, "gcs": 10},
+        "options": [
+          {
+            "text": "3.6 mg intranasal (0.2 mg/kg IN)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Intranasal midazolam for seizures is dosed at 0.2 mg/kg (max 10 mg). For an 18 kg child: 0.2 mg/kg × 18 kg = 3.6 mg IN. This is split between both nares. Intranasal administration is a rapid, effective alternative when IV access is not established.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics/Pharmacology; NAEMSP Seizure Guidelines"
+          },
+          {
+            "text": "0.9 mg intranasal (0.05 mg/kg IN)",
+            "correct": false,
+            "critical": false,
+            "explanation": "0.05 mg/kg is the IV sedation dose of midazolam, not the intranasal seizure dose. The IN seizure dose is 0.2 mg/kg, which is higher to account for incomplete mucosal absorption.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "5 mg intranasal (standard adult dose)",
+            "correct": false,
+            "critical": false,
+            "explanation": "Using a standard adult dose rather than weight-based calculation in a 4-year-old is inappropriate. The correct approach is 0.2 mg/kg IN, which yields 3.6 mg for this child. Using 5 mg would be approximately 0.28 mg/kg — a significant overdose.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics"
+          },
+          {
+            "text": "18 mg intranasal (1 mg/kg IN)",
+            "correct": false,
+            "critical": true,
+            "explanation": "1 mg/kg is five times the correct intranasal dose and could cause severe respiratory depression, apnea, or cardiovascular collapse. This represents the type of tenfold error that occurs when decimal points are misplaced in pediatric dosing.",
+            "guideline_ref": "National EMS Education Standards — Pediatrics/Patient Safety"
+          }
+        ],
+        "clinical_pearl": "Intranasal midazolam is absorbed rapidly through the nasal mucosa and achieves seizure control comparable to IV diazepam. Use the concentrated formulation (5 mg/mL) to minimize the volume delivered intranasally — no more than 1 mL per nare."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-22",
+    "title": "55M — Chest Pain with Complicated Medication List",
+    "dispatch": "55-year-old male, chest pain, requesting EMS",
+    "category": "Pharmacology",
+    "difficulty": "Easy",
+    "level_min": "EMT",
+    "patient": {"age": 55, "sex": "M", "cc": "Substernal chest pain"},
+    "scene": "You arrive at a warehouse office where a 55-year-old male is sitting at his desk clutching his chest. He describes substernal pressure that started 30 minutes ago while he was carrying boxes. He rates the pain 7/10 with radiation to his left arm. He appears diaphoretic and mildly short of breath. He has a large bag of medications on his desk and tells you he takes 'a lot of pills' but cannot remember all of them. His wife has texted you a photo of his medication list showing: aspirin 81 mg, atorvastatin, metformin, sildenafil (Viagra, took it last night), nitroglycerin 0.4 mg SL PRN, metoprolol 50 mg, lisinopril 10 mg.",
+    "history": {"pmh": "CAD with prior stent placement 2 years ago, Type 2 diabetes, hypertension, erectile dysfunction", "meds": "Aspirin 81 mg daily, atorvastatin 40 mg daily, metformin 1000 mg BID, sildenafil 50 mg PRN (last dose approximately 14 hours ago), nitroglycerin 0.4 mg SL PRN, metoprolol 50 mg BID, lisinopril 10 mg daily", "allergies": "Morphine (nausea)"},
+    "vitals": {"hr": 88, "bp": "142/88", "rr": 20, "spo2": 96, "gcs": 15, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient has nitroglycerin prescribed. He states he took sildenafil (Viagra) last night. What is the significance of this regarding nitroglycerin administration?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Nitroglycerin is contraindicated within 24 hours of sildenafil use due to risk of severe, refractory hypotension",
+            "correct": true,
+            "critical": false,
+            "explanation": "Sildenafil (Viagra) and other PDE-5 inhibitors potentiate the hypotensive effects of nitrates. Combining these medications can cause profound, life-threatening hypotension that may be refractory to treatment. Nitroglycerin is contraindicated within 24 hours of sildenafil or vardenafil use, and within 48 hours of tadalafil (Cialis) use.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020; National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Sildenafil enhances the effectiveness of nitroglycerin, so a lower dose should be used",
+            "correct": false,
+            "critical": false,
+            "explanation": "The interaction between PDE-5 inhibitors and nitrates is not merely an enhanced therapeutic effect — it can cause dangerous, unpredictable hypotension. The contraindication is absolute within the specified timeframes, regardless of dose adjustment.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020"
+          },
+          {
+            "text": "There is no significant interaction between sildenafil and nitroglycerin",
+            "correct": false,
+            "critical": true,
+            "explanation": "This is incorrect and potentially dangerous. The interaction between PDE-5 inhibitors and nitrates is one of the most important drug contraindications in emergency cardiovascular care.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020"
+          },
+          {
+            "text": "The interaction only applies if sildenafil was taken within 4 hours of nitroglycerin",
+            "correct": false,
+            "critical": false,
+            "explanation": "The contraindication window for sildenafil is 24 hours, not 4 hours. Sildenafil has an elimination half-life of approximately 4 hours, but active metabolites and PDE-5 inhibition persist much longer.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020; National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Always ask about erectile dysfunction medications before administering nitrates — patients may not volunteer this information due to embarrassment. PDE-5 inhibitors are also prescribed for pulmonary hypertension, so check medication lists carefully."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Given that nitroglycerin is contraindicated, arrange the following prehospital interventions for this chest pain patient in the correct priority order.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Administer aspirin 324 mg (chewed) if not already taken today and no true allergy",
+          "Apply supplemental oxygen only if SpO2 is below 94%",
+          "Obtain a 12-lead ECG and transmit to the receiving facility",
+          "Establish IV access and administer a fluid bolus if hypotensive",
+          "Position of comfort and provide calm reassurance"
+        ],
+        "correctOrder": [4, 0, 2, 1, 3],
+        "explanation": "Priority sequence: (1) Position of comfort and reassurance to reduce oxygen demand, (2) Aspirin 324 mg chewed — this is the single most important medication for suspected ACS and should be given early, (3) 12-lead ECG to identify STEMI and guide transport decision, (4) Oxygen only if SpO2 < 94% — routine supplemental oxygen is not beneficial and may be harmful in normoxic ACS patients, (5) IV access as needed. Nitroglycerin is withheld due to PDE-5 inhibitor use.",
+        "guideline_ref": "AHA ACLS ACS Guidelines 2020; National EMS Education Standards — Cardiovascular Emergencies",
+        "clinical_pearl": "Aspirin works by irreversibly inhibiting cyclooxygenase in platelets, preventing thromboxane A2 production and platelet aggregation. Chewing rather than swallowing achieves therapeutic blood levels 5-10 minutes faster."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient reports his chest pain is worsening to 9/10. Without nitroglycerin available as an option, what is the MOST appropriate analgesic intervention at the EMT level?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Continue reassurance, positioning, and rapid transport; pain management with medications beyond aspirin requires advanced-level providers",
+            "correct": true,
+            "critical": false,
+            "explanation": "At the EMT level, with nitroglycerin contraindicated, the primary interventions are aspirin, positioning, oxygen if needed, and rapid transport. EMTs do not carry analgesics like fentanyl or morphine. Keeping the patient calm and minimizing exertion reduces myocardial oxygen demand.",
+            "guideline_ref": "National EMS Education Standards — EMT Scope of Practice; AHA ACS Guidelines"
+          },
+          {
+            "text": "Administer ibuprofen 400 mg orally for pain relief",
+            "correct": false,
+            "critical": true,
+            "explanation": "NSAIDs other than aspirin (including ibuprofen and naproxen) are contraindicated in acute coronary syndromes. They increase the risk of cardiovascular events, interfere with aspirin's antiplatelet effect, and can promote fluid retention.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020; National EMS Education Standards"
+          },
+          {
+            "text": "Administer half the standard nitroglycerin dose since the sildenafil was taken over 12 hours ago",
+            "correct": false,
+            "critical": true,
+            "explanation": "Dose reduction does not mitigate the interaction. The contraindication is absolute within 24 hours of sildenafil regardless of the nitrate dose. There is no safe reduced dose when PDE-5 inhibitor is still active.",
+            "guideline_ref": "AHA ACLS ACS Guidelines 2020"
+          },
+          {
+            "text": "Administer oral glucose to improve cardiac energy substrate availability",
+            "correct": false,
+            "critical": false,
+            "explanation": "Oral glucose is indicated for hypoglycemia, not chest pain. While this patient is diabetic, there is no indication of hypoglycemia, and oral glucose has no role in ACS management.",
+            "guideline_ref": "National EMS Education Standards"
+          }
+        ],
+        "clinical_pearl": "When patients cannot receive nitroglycerin, AEMT and Paramedic providers may administer fentanyl (1-2 mcg/kg IV) for ACS pain. Pain itself increases myocardial oxygen demand, so adequate analgesia is therapeutic — not just for comfort."
+      }
+    ]
+  },
+  {
+    "id": "nat-pharm-23",
+    "title": "58F — Cardiac Arrest During ACS Treatment",
+    "dispatch": "58-year-old female, cardiac arrest, ALS crew on scene",
+    "category": "Pharmacology",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {"age": 58, "sex": "F", "cc": "Cardiac arrest during ACS treatment"},
+    "scene": "You arrive to assist a two-Paramedic crew managing a 58-year-old female in cardiac arrest. The crew reports the patient initially presented with acute chest pain and a 12-lead showing anterior STEMI. During treatment, she developed ventricular fibrillation and became pulseless. CPR is in progress with compressions by a mechanical CPR device. She has been defibrillated twice with no change. An IV is established and the crew is preparing medications. They report the first dose of epinephrine was given 1 minute after the second shock.",
+    "history": {"pmh": "Hypertension, hyperlipidemia, family history of sudden cardiac death", "meds": "Amlodipine 5 mg daily, rosuvastatin 20 mg daily", "allergies": "NKDA"},
+    "vitals": {"hr": 0, "bp": "0/0", "rr": 0, "spo2": null, "gcs": 3, "temp": "98.0°F"},
+    "questions": [
+      {
+        "phase": "treatment",
+        "prompt": "The patient remains in ventricular fibrillation after the second defibrillation and first dose of epinephrine. Arrange the next ACLS interventions in the correct sequence.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Resume CPR immediately for 2 minutes",
+          "Defibrillate (3rd shock) at end of CPR cycle",
+          "Administer amiodarone 300 mg IV/IO bolus",
+          "Reassess rhythm at end of 2-minute CPR cycle",
+          "Continue CPR; administer second dose of epinephrine 1 mg IV/IO (3-5 minutes after first dose)"
+        ],
+        "correctOrder": [0, 3, 1, 2, 4],
+        "explanation": "After the 2nd shock and epinephrine: (1) Resume CPR for 2 minutes — never interrupt compressions unnecessarily, (2) Reassess rhythm at the end of the 2-minute cycle, (3) If still in VF, deliver the 3rd shock, (4) Administer amiodarone 300 mg IV/IO — the first antiarrhythmic is given after the 3rd shock, (5) Continue CPR and give the second epinephrine dose when the 3-5 minute interval from the first dose has elapsed. Timing medications to CPR cycles minimizes compression interruptions.",
+        "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm; National EMS Education Standards — Pharmacology",
+        "clinical_pearl": "Amiodarone 300 mg IV is given as the first dose after the 3rd shock in refractory VF/pVT. A second dose of 150 mg may be given if VF persists. Lidocaine (1-1.5 mg/kg) is an alternative if amiodarone is unavailable."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Regarding ACLS medication timing during cardiac arrest, select ALL statements that are correct.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Epinephrine 1 mg IV/IO should be repeated every 3-5 minutes throughout the resuscitation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Per AHA ACLS 2020 guidelines, epinephrine 1 mg IV/IO is administered every 3-5 minutes during cardiac arrest. Consistent timing is important — use a timer or assign a team member to track medication intervals.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest Algorithm"
+          },
+          {
+            "text": "The first dose of epinephrine in VF/pVT should be given after the second shock and CPR cycle",
+            "correct": true,
+            "critical": false,
+            "explanation": "In shockable rhythms (VF/pVT), epinephrine is given after the 2nd shock during the subsequent CPR cycle. This differs from non-shockable rhythms (asystole/PEA) where epinephrine is given as soon as IV/IO access is obtained.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Amiodarone or lidocaine should be considered after the 3rd defibrillation attempt for refractory VF/pVT",
+            "correct": true,
+            "critical": false,
+            "explanation": "Antiarrhythmic medications (amiodarone 300 mg or lidocaine 1-1.5 mg/kg) are introduced after the 3rd shock for VF/pVT that is refractory to defibrillation and epinephrine. These drugs help stabilize the myocardial membrane.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Epinephrine dose should be escalated to 3 mg after the third unsuccessful round if standard dosing fails",
+            "correct": false,
+            "critical": false,
+            "explanation": "High-dose epinephrine is not recommended in current ACLS guidelines. The standard dose remains 1 mg IV/IO every 3-5 minutes. Studies have shown that high-dose epinephrine does not improve survival to hospital discharge and may worsen neurological outcomes.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest Pharmacology"
+          },
+          {
+            "text": "Vasopressin 40 units IV can replace the first or second dose of epinephrine in the VF algorithm",
+            "correct": false,
+            "critical": false,
+            "explanation": "Vasopressin has been removed from the ACLS cardiac arrest algorithm as of the 2015/2020 AHA guidelines. It was found to offer no advantage over epinephrine and its removal simplifies the algorithm.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest Algorithm Update"
+          }
+        ],
+        "clinical_pearl": "Medication timing in ACLS is tied to 2-minute CPR cycles. A practical approach: epinephrine with every other rhythm check, amiodarone after the 3rd shock. Assign one team member solely to track drug timing — it prevents dose stacking and missed intervals."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After 20 minutes of resuscitation, the patient achieves ROSC with a sinus tachycardia at 110. BP is 86/52. Select ALL post-ROSC medication considerations that are appropriate.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient has a palpable pulse with sinus tachycardia on the monitor. She remains unresponsive. ETCO2 reads 42 mmHg. The 12-lead still shows anterior ST elevation.",
+        "vitals_update": {"hr": 110, "bp": "86/52", "rr": 12, "spo2": 94, "gcs": 4},
+        "options": [
+          {
+            "text": "Consider a norepinephrine or epinephrine infusion to maintain MAP ≥ 65 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Post-ROSC hypotension (MAP < 65 mmHg) should be treated with vasopressors after adequate fluid resuscitation. Norepinephrine or epinephrine infusions are recommended to maintain organ perfusion. This patient's MAP is approximately 63 mmHg and requires intervention.",
+            "guideline_ref": "AHA ACLS 2020 — Post-Cardiac Arrest Care"
+          },
+          {
+            "text": "Initiate an amiodarone maintenance infusion at 1 mg/min for 6 hours if amiodarone was used during arrest",
+            "correct": true,
+            "critical": false,
+            "explanation": "If amiodarone was administered during the resuscitation and contributed to achieving ROSC, a maintenance infusion (1 mg/min for 6 hours, then 0.5 mg/min for 18 hours) is recommended to prevent recurrent dysrhythmias.",
+            "guideline_ref": "AHA ACLS 2020 — Post-Cardiac Arrest Care"
+          },
+          {
+            "text": "Transport emergently to a PCI-capable facility given the STEMI on 12-lead ECG",
+            "correct": true,
+            "critical": false,
+            "explanation": "Emergent cardiac catheterization is recommended for post-cardiac arrest patients with STEMI on 12-lead ECG. Coronary reperfusion addresses the underlying cause and improves survival. Do not delay transport for additional on-scene interventions.",
+            "guideline_ref": "AHA ACLS 2020 — Post-Cardiac Arrest Care; STEMI Guidelines"
+          },
+          {
+            "text": "Administer a prophylactic lidocaine bolus to prevent recurrent VF even if the current rhythm is stable",
+            "correct": false,
+            "critical": false,
+            "explanation": "Prophylactic lidocaine is not routinely recommended post-ROSC if the rhythm is stable. Antiarrhythmic prophylaxis should only continue if the drug was used during arrest and appeared effective. Unnecessary antiarrhythmics can cause proarrhythmia and hemodynamic compromise.",
+            "guideline_ref": "AHA ACLS 2020 — Post-Cardiac Arrest Care"
+          },
+          {
+            "text": "Administer sodium bicarbonate 1 mEq/kg IV push to correct presumed acidosis from the arrest",
+            "correct": false,
+            "critical": false,
+            "explanation": "Routine sodium bicarbonate is not recommended post-ROSC. Metabolic acidosis from cardiac arrest typically self-corrects with restoration of adequate perfusion and ventilation. Bicarbonate may cause paradoxical intracellular acidosis and worsen outcomes.",
+            "guideline_ref": "AHA ACLS 2020 — Post-Cardiac Arrest Care"
+          }
+        ],
+        "clinical_pearl": "The post-ROSC period is a critical window. Key priorities: hemodynamic optimization (MAP ≥ 65), ventilation targeting normoxia/normocarbia, emergent PCI for STEMI, and targeted temperature management for comatose patients. Think of post-ROSC care as a resuscitation unto itself."
+      }
+    ]
+  }
+]

@@ -1,0 +1,464 @@
+[
+  {
+    "id": "nat-tra-14",
+    "title": "34M — Explosion at Construction Site",
+    "dispatch": "34-year-old male, explosion injury, bleeding from multiple sites",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 34, "sex": "M", "cc": "Multiple injuries from explosion"},
+    "scene": "You arrive at an active construction site where a gas line rupture caused an explosion approximately 5 minutes ago. The scene has been declared safe by fire. A 34-year-old male is found seated against a concrete wall approximately 15 feet from the blast epicenter. He has obvious bleeding from both ears, multiple shrapnel wounds across his anterior torso and upper extremities, and a dazed appearance. His clothing is partially burned and shredded. Coworkers report he was thrown backward by the blast wave. He is conscious but confused, repeatedly asking what happened.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 132, "bp": "86/52", "rr": 30, "spo2": 88, "gcs": 13, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following blast injury findings into the appropriate mechanism category.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Bilateral tympanic membrane rupture",
+          "Shrapnel penetration wounds to the chest and arms",
+          "Patient thrown 15 feet into a concrete wall",
+          "Inhalation of superheated gases and dust",
+          "Crush injury from structural debris landing on the patient's leg"
+        ],
+        "categories": ["Primary blast injury", "Secondary blast injury", "Tertiary blast injury", "Quaternary blast injury"],
+        "correctCategories": [0, 1, 2, 3, 2],
+        "explanation": "Primary blast injuries result from the overpressure wave itself (TM rupture, blast lung, GI injury). Secondary injuries come from flying debris/shrapnel. Tertiary injuries occur when the victim is physically displaced and impacts a surface. Quaternary injuries encompass all other blast-related injuries including burns, inhalation, and crush injuries from structural collapse. The crush injury from falling debris is classified as tertiary (body in motion or objects set in motion impacting the body).",
+        "guideline_ref": "PHTLS 9th Ed — Explosions and Blast Injuries; National EMS Education Standards — Trauma: Blast Injuries",
+        "clinical_pearl": "The tympanic membrane is the most sensitive organ to blast overpressure. TM rupture suggests significant blast exposure, but its absence does NOT rule out primary blast lung injury. Always assess for occult primary blast injuries in anyone near an explosion."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "Given the mechanism and current vital signs, which assessment finding would be MOST concerning for primary blast lung injury?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Hemoptysis with diminished breath sounds bilaterally and progressive dyspnea", "correct": true, "critical": false, "explanation": "Blast lung injury (BLI) results from the overpressure wave causing alveolar hemorrhage and disruption. Hemoptysis, bilateral diminished breath sounds, dyspnea, and hypoxemia are hallmark findings. BLI is the most common fatal primary blast injury among initial survivors.", "guideline_ref": "PHTLS 9th Ed — Blast Lung Injury; TCCC Guidelines"},
+          {"text": "Paradoxical chest wall movement over the right lateral thorax with crepitus", "correct": false, "critical": false, "explanation": "Paradoxical movement with crepitus suggests a flail segment from blunt traumatic rib fractures — this would be a tertiary blast injury from impact, not a primary blast wave injury to the lung parenchyma.", "guideline_ref": "PHTLS 9th Ed — Chest Trauma"},
+          {"text": "A large open wound on the anterior chest with visible bubbling during respiration", "correct": false, "critical": false, "explanation": "An open (sucking) chest wound is a penetrating injury from shrapnel — a secondary blast injury. While critical, it is not a primary blast lung injury.", "guideline_ref": "PHTLS 9th Ed — Chest Trauma"},
+          {"text": "Subcutaneous emphysema isolated to the left neck with tracheal deviation to the right", "correct": false, "critical": false, "explanation": "These findings suggest a tension pneumothorax, which can occur from blast injury but is a specific complication rather than the hallmark presentation of primary blast lung injury. BLI classically presents as bilateral alveolar hemorrhage.", "guideline_ref": "PHTLS 9th Ed — Blast Injuries"}
+        ],
+        "clinical_pearl": "Blast lung injury patients are at high risk for air embolism, especially with positive pressure ventilation. Use the lowest effective pressures if ventilating a suspected BLI patient. Avoid high tidal volumes and excessive PEEP in the prehospital setting."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order of priority for this blast-injured patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Apply direct pressure and hemostatic gauze to actively hemorrhaging shrapnel wounds",
+          "Administer high-flow oxygen via non-rebreather mask",
+          "Perform a rapid full-body trauma assessment looking for additional injuries",
+          "Initiate rapid transport to a trauma center with notification of blast mechanism",
+          "Establish bilateral large-bore IV access and begin crystalloid resuscitation"
+        ],
+        "correctOrder": [0, 1, 2, 4, 3],
+        "explanation": "In blast trauma, hemorrhage control is the immediate priority (C-ABC approach per PHTLS). Next, address airway/breathing with high-flow O2. Perform a rapid full-body survey to identify all injuries — blast victims frequently have occult injuries. Establish IV access for resuscitation. Initiate rapid transport to a trauma center with early notification of the blast mechanism, as these patients frequently decompensate rapidly.",
+        "guideline_ref": "PHTLS 9th Ed — Blast Injuries; TECC Guidelines; National EMS Education Standards — Multi-System Trauma",
+        "clinical_pearl": "Blast injury patients often appear stable initially and then rapidly deteriorate. The combination of primary blast lung, hemorrhage from secondary injuries, and blunt trauma from tertiary mechanisms creates a 'triple threat' that demands aggressive monitoring during transport."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, the patient becomes increasingly dyspneic with SpO2 dropping to 82% despite high-flow oxygen. You note absent breath sounds on the left with jugular venous distension. As a Paramedic, what is the MOST appropriate immediate intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "En route, the patient's respiratory status has acutely worsened. He is now extremely anxious, diaphoretic, with labored breathing.",
+        "vitals_update": {"hr": 142, "bp": "78/40", "rr": 36, "spo2": 82, "gcs": 12},
+        "options": [
+          {"text": "Perform needle thoracostomy at the second intercostal space, midclavicular line on the left", "correct": true, "critical": false, "explanation": "The presentation — absent breath sounds unilaterally, JVD, hypotension, tachycardia, and acute respiratory deterioration — is classic for tension pneumothorax. Needle decompression is the immediate life-saving intervention. In blast injury patients, this may result from primary blast lung injury or penetrating secondary blast injury.", "guideline_ref": "PHTLS 9th Ed — Tension Pneumothorax; NAEMSP Position Statement on Needle Thoracostomy"},
+          {"text": "Assist ventilations with a BVM at 20 breaths per minute to improve oxygenation", "correct": false, "critical": true, "explanation": "Positive pressure ventilation in an undecompressed tension pneumothorax will worsen the condition by forcing more air into the pleural space. Additionally, aggressive positive pressure ventilation in blast lung injury increases the risk of air embolism.", "guideline_ref": "PHTLS 9th Ed — Tension Pneumothorax"},
+          {"text": "Establish a second IV line and administer a 2-liter normal saline bolus for volume replacement", "correct": false, "critical": false, "explanation": "While the patient is hypotensive, the cause is obstructive shock from tension pneumothorax, not hypovolemia alone. IV fluids will not resolve the underlying problem. Needle decompression must occur first.", "guideline_ref": "PHTLS 9th Ed — Shock Management"},
+          {"text": "Administer epinephrine 0.3 mg IM for suspected anaphylaxis from debris exposure", "correct": false, "critical": false, "explanation": "This presentation is not consistent with anaphylaxis. The unilateral absent breath sounds, JVD, and acute deterioration in a blast-injured patient clearly point to tension pneumothorax, not an allergic reaction.", "guideline_ref": "PHTLS 9th Ed — Differential Diagnosis in Trauma"}
+        ],
+        "clinical_pearl": "In blast-injured patients, tension pneumothorax can develop from primary blast lung disruption or from penetrating shrapnel. Always reassess breath sounds frequently during transport — decompensation can be sudden and fatal."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-15",
+    "title": "52F — Pedestrian Struck by Vehicle",
+    "dispatch": "52-year-old female, struck by vehicle, severe hip pain, heavy bleeding",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 52, "sex": "F", "cc": "Severe pelvic pain and bleeding after being struck by vehicle"},
+    "scene": "You arrive at an intersection where a 52-year-old female pedestrian was struck by a sedan traveling approximately 35 mph. She is lying supine on the road. The patient is alert but pale, diaphoretic, and in extreme distress. She reports excruciating pain in her hips and lower abdomen. Her pelvis appears asymmetric on visual inspection, and her left leg appears shortened and externally rotated. There is no obvious external hemorrhage from the pelvis, but she has a large abrasion across her left flank. She is unable to move her lower extremities due to pain.",
+    "history": {"pmh": "Osteoporosis, hypothyroidism", "meds": "Levothyroxine, calcium/vitamin D supplement", "allergies": "Codeine"},
+    "vitals": {"hr": 128, "bp": "82/48", "rr": 28, "spo2": 96, "gcs": 15, "temp": "97.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient has signs of hemorrhagic shock with a suspected unstable pelvic fracture. Select ALL findings that support this assessment.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Tachycardia at 128 bpm with hypotension at 82/48 mmHg", "correct": true, "critical": false, "explanation": "Tachycardia and hypotension are classic signs of hemorrhagic shock. In pelvic fractures, internal hemorrhage from disrupted pelvic vasculature can produce rapid, life-threatening blood loss of 1-4 liters into the retroperitoneal space.", "guideline_ref": "PHTLS 9th Ed — Musculoskeletal Trauma: Pelvic Fractures"},
+          {"text": "Pelvic asymmetry on visual inspection with leg-length discrepancy and external rotation", "correct": true, "critical": false, "explanation": "Visible pelvic asymmetry, shortened extremity, and external rotation are clinical indicators of significant pelvic ring disruption. These findings should prompt immediate stabilization without further manipulation.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Assessment"},
+          {"text": "Pale, cool, diaphoretic skin consistent with sympathetic nervous system compensation", "correct": true, "critical": false, "explanation": "Pale, cool, diaphoretic skin reflects peripheral vasoconstriction mediated by the sympathetic nervous system as the body attempts to compensate for blood loss. This is an early indicator of shock.", "guideline_ref": "PHTLS 9th Ed — Hemorrhagic Shock; National EMS Education Standards — Shock"},
+          {"text": "High-energy mechanism with a pedestrian struck at approximately 35 mph", "correct": true, "critical": false, "explanation": "Pedestrian-versus-vehicle collisions at speeds greater than 20 mph carry a high risk of pelvic fractures. The mechanism alone should raise the index of suspicion for significant pelvic injury.", "guideline_ref": "PHTLS 9th Ed — Kinematics of Trauma"},
+          {"text": "SpO2 of 96% on room air, indicating adequate oxygen delivery to tissues", "correct": false, "critical": false, "explanation": "SpO2 measures oxygen saturation of hemoglobin, not oxygen delivery to tissues. In hemorrhagic shock, the total hemoglobin available to carry oxygen is reduced. A normal SpO2 can be falsely reassuring — oxygen delivery depends on cardiac output and hemoglobin concentration, both of which are compromised in hemorrhage.", "guideline_ref": "PHTLS 9th Ed — Shock Pathophysiology"}
+        ],
+        "clinical_pearl": "Never perform a rocking or compression test (springing the pelvis) in the field — this can disrupt clot formation and worsen hemorrhage. If pelvic fracture is suspected based on mechanism and visual inspection, proceed directly to stabilization."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST appropriate method to stabilize this patient's suspected unstable pelvic fracture in the prehospital setting?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Apply a commercial pelvic binder at the level of the greater trochanters", "correct": true, "critical": false, "explanation": "A commercial pelvic binder (or improvised circumferential wrap such as a folded sheet) applied at the level of the greater trochanters reduces pelvic volume, approximates fracture fragments, and provides tamponade to reduce hemorrhage. This is the standard prehospital intervention for suspected unstable pelvic fractures.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Management; NAEMSP Position Statement on Pelvic Binders"},
+          {"text": "Apply bilateral traction splints to realign the pelvis through longitudinal traction on both legs", "correct": false, "critical": false, "explanation": "Traction splints are indicated for mid-shaft femur fractures, not pelvic fractures. Applying traction to a disrupted pelvic ring could worsen fracture displacement and increase hemorrhage.", "guideline_ref": "PHTLS 9th Ed — Musculoskeletal Trauma"},
+          {"text": "Immobilize the patient on a long backboard with bilateral leg straps tightened firmly", "correct": false, "critical": false, "explanation": "A backboard alone does not provide circumferential compression to reduce pelvic volume. While the patient will need spinal motion restriction, a pelvic binder is specifically needed to address the pelvic fracture hemorrhage.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Management"},
+          {"text": "Position the patient in a lateral recumbent position on the uninjured side to reduce pelvic stress", "correct": false, "critical": false, "explanation": "Lateral positioning does not stabilize the pelvic ring or reduce hemorrhage. The patient with hemorrhagic shock should be maintained supine, and the pelvis needs circumferential compression.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Management"}
+        ],
+        "clinical_pearl": "Correct pelvic binder placement is critical — too high (at the iliac crests) is ineffective. The binder must be centered at the greater trochanters to properly reduce the pelvic ring. Check placement by palpating the trochanters after application."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, you apply a pelvic binder and prepare for transport. Arrange the following resuscitation steps in the correct priority order.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Administer tranexamic acid (TXA) 1 g IV over 10 minutes",
+          "Establish two large-bore IV lines and initiate crystalloid resuscitation targeting SBP 80-90 mmHg",
+          "Administer high-flow oxygen via non-rebreather mask",
+          "Contact the receiving trauma center with early activation notification",
+          "Consider push-dose vasopressors if hypotension persists despite fluid resuscitation"
+        ],
+        "correctOrder": [2, 1, 0, 3, 4],
+        "explanation": "Begin with high-flow oxygen to maximize available hemoglobin saturation. Establish IV access and begin permissive hypotension resuscitation (target SBP 80-90 in penetrating/hemorrhagic trauma). TXA should be administered within 3 hours of injury to inhibit fibrinolysis and reduce hemorrhage-related mortality. Notify the trauma center early for resource mobilization. Push-dose vasopressors are a last resort when fluids are insufficient.",
+        "guideline_ref": "PHTLS 9th Ed — Hemorrhagic Shock Resuscitation; CRASH-2 Trial; National EMS Education Standards — Shock Management",
+        "clinical_pearl": "Permissive hypotension (SBP 80-90 mmHg) in hemorrhagic shock avoids disrupting early clot formation. However, this strategy is contraindicated in traumatic brain injury — in combined TBI + hemorrhagic shock, target SBP ≥ 90 mmHg to maintain cerebral perfusion."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which of the following BEST describes why pelvic fractures with hemorrhage carry such a high mortality rate in trauma patients?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "The pelvic vasculature is extensive and low-pressure, making hemorrhage difficult to control, with the retroperitoneal space capable of holding several liters of blood before external signs appear", "correct": true, "critical": false, "explanation": "The pelvis contains a rich venous plexus and branches of the internal iliac arteries. The retroperitoneal space can accommodate 3-4 liters of blood with minimal external evidence. Venous bleeding is difficult to tamponade, and arterial disruption can produce exsanguination. This makes pelvic hemorrhage particularly insidious.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Hemorrhage; National EMS Education Standards — Hemorrhagic Shock"},
+          {"text": "Pelvic fractures cause an immediate inflammatory response that leads to DIC in all cases within 30 minutes", "correct": false, "critical": false, "explanation": "While pelvic fractures and massive hemorrhage can eventually contribute to coagulopathy as part of the lethal triad (hypothermia, acidosis, coagulopathy), DIC does not universally develop within 30 minutes of injury.", "guideline_ref": "PHTLS 9th Ed — Coagulopathy in Trauma"},
+          {"text": "The pelvic bones are extremely vascular, and fracture fragments always lacerate the femoral arteries bilaterally", "correct": false, "critical": false, "explanation": "While the pelvic bones are cancellous and bleed from fracture surfaces, the femoral arteries are not typically lacerated by pelvic fractures. The internal iliac vessels and the pelvic venous plexus are the primary sources of hemorrhage in pelvic fractures.", "guideline_ref": "PHTLS 9th Ed — Pelvic Anatomy"},
+          {"text": "Pelvic fractures universally require surgical repair within 1 hour, and prehospital interventions have no impact on outcomes", "correct": false, "critical": false, "explanation": "While many pelvic fractures require definitive surgical or interventional management, prehospital pelvic binding significantly reduces hemorrhage and improves outcomes. Prehospital care directly impacts survival.", "guideline_ref": "PHTLS 9th Ed — Pelvic Fracture Management"}
+        ],
+        "clinical_pearl": "The 'lethal triad' of trauma — hypothermia, acidosis, and coagulopathy — develops rapidly in pelvic hemorrhage patients. Aggressively prevent hypothermia in the field by removing wet clothing, using blankets, and warming IV fluids when possible."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-16",
+    "title": "19M — Diving Injury at Lake",
+    "dispatch": "19-year-old male, dove into shallow water, unable to move extremities",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 19, "sex": "M", "cc": "Inability to move arms and legs after diving into shallow water"},
+    "scene": "You arrive at a lakeside recreational area. Bystanders have carefully moved a 19-year-old male from the water onto a dock, maintaining inline stabilization. Friends report he dove headfirst into shallow water approximately 10 minutes ago and immediately cried out that he could not feel or move his arms or legs. He is supine on the dock, alert and oriented, speaking clearly but appearing terrified. He has a visible laceration on his forehead. His skin is warm and dry, and his extremities are flaccid bilaterally. He reports no sensation below his shoulders. His heart rate is 54 and blood pressure is 84/50.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "Penicillin"},
+    "vitals": {"hr": 54, "bp": "84/50", "rr": 18, "spo2": 97, "gcs": 15, "temp": "97.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient is bradycardic and hypotensive with warm, dry skin and flaccid paralysis. What type of shock is MOST consistent with this presentation?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Neurogenic shock from loss of sympathetic vascular tone below the level of spinal cord injury", "correct": true, "critical": false, "explanation": "Neurogenic shock results from disruption of the sympathetic nervous system due to spinal cord injury, typically at T6 or above. Loss of sympathetic tone causes vasodilation (warm, dry skin and hypotension) and unopposed vagal activity (bradycardia). This triad — hypotension, bradycardia, and warm/dry skin — distinguishes neurogenic shock from hemorrhagic shock.", "guideline_ref": "PHTLS 9th Ed — Spinal Cord Injury and Neurogenic Shock; National EMS Education Standards — Shock"},
+          {"text": "Hemorrhagic shock from internal bleeding associated with a concurrent cervical spine fracture", "correct": false, "critical": false, "explanation": "Hemorrhagic shock presents with tachycardia (not bradycardia) and cool, pale, diaphoretic skin from sympathetic activation. This patient's warm, dry skin and bradycardia are inconsistent with hemorrhagic shock.", "guideline_ref": "PHTLS 9th Ed — Hemorrhagic Shock"},
+          {"text": "Cardiogenic shock from blunt cardiac injury sustained during the diving impact", "correct": false, "critical": false, "explanation": "Cardiogenic shock from blunt cardiac injury is extremely unlikely from a headfirst diving mechanism. Additionally, cardiogenic shock typically presents with JVD, pulmonary edema, and skin findings of poor perfusion — not warm, dry extremities.", "guideline_ref": "PHTLS 9th Ed — Cardiogenic Shock"},
+          {"text": "Psychogenic shock from emotional response to the traumatic event and fear of paralysis", "correct": false, "critical": false, "explanation": "Psychogenic (vasovagal) shock is transient and self-resolving. This patient has objective neurological deficits (quadriplegia, loss of sensation) with sustained hemodynamic compromise — this is a true distributive shock state, not a psychogenic response.", "guideline_ref": "PHTLS 9th Ed — Types of Shock"}
+        ],
+        "clinical_pearl": "Neurogenic shock can coexist with hemorrhagic shock in trauma patients. If a spinal cord-injured patient fails to improve with fluids, consider concurrent hemorrhage. Always perform a thorough trauma assessment — do not attribute all hemodynamic instability to the spinal cord injury alone."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in order of priority for this patient.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Apply a cervical collar and maintain strict spinal motion restriction",
+          "Administer high-flow oxygen via non-rebreather mask",
+          "Monitor respiratory effort closely for signs of diaphragmatic fatigue",
+          "Keep the patient warm to prevent hypothermia",
+          "Initiate rapid transport to a trauma center with spinal surgery capability"
+        ],
+        "correctOrder": [0, 1, 2, 3, 4],
+        "explanation": "First, secure the cervical spine — this patient has a high cervical spinal cord injury with a dangerous mechanism. Next, administer high-flow O2 as high cervical injuries can compromise respiratory function. Monitor respiratory effort closely because injuries at C3-C5 can impair diaphragm function and patients may fatigue and decompensate. Prevent hypothermia since vasodilation from neurogenic shock promotes heat loss. Transport rapidly to a facility with neurosurgical capability.",
+        "guideline_ref": "PHTLS 9th Ed — Spinal Cord Injury Management; National EMS Education Standards — Spinal Trauma",
+        "clinical_pearl": "The diaphragm is innervated by the phrenic nerve (C3-C5). Patients with high cervical injuries may initially breathe adequately using diaphragmatic effort alone but can fatigue and develop respiratory failure during transport. Have airway equipment immediately accessible."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, the patient's blood pressure remains 78/44 despite position optimization and a 500 mL NS bolus. Select ALL appropriate next interventions.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 2,
+        "narrative": "You have applied a cervical collar, administered high-flow O2, initiated an IV, and given a 500 mL NS bolus. Blood pressure remains critically low.",
+        "vitals_update": {"hr": 50, "bp": "78/44", "rr": 20, "spo2": 96, "gcs": 15},
+        "options": [
+          {"text": "Administer a vasopressor infusion (norepinephrine or phenylephrine) to restore vascular tone", "correct": true, "critical": false, "explanation": "In neurogenic shock refractory to fluid resuscitation, vasopressors are indicated to restore sympathetic vascular tone. Norepinephrine is preferred as it provides both alpha-1 (vasoconstriction) and beta-1 (chronotropic) effects, addressing both hypotension and bradycardia.", "guideline_ref": "PHTLS 9th Ed — Neurogenic Shock Pharmacotherapy; NAEMSP Position Statement"},
+          {"text": "Administer atropine 0.5 mg IV for symptomatic bradycardia contributing to hypotension", "correct": true, "critical": false, "explanation": "Atropine blocks vagal tone to increase heart rate. In neurogenic shock, the bradycardia results from unopposed parasympathetic activity, and atropine can improve cardiac output by increasing heart rate.", "guideline_ref": "PHTLS 9th Ed — Neurogenic Shock; AHA ACLS Bradycardia Algorithm"},
+          {"text": "Administer epinephrine 1 mg IV push as a cardiac arrest dose to stimulate the heart", "correct": false, "critical": true, "explanation": "A full cardiac arrest dose of epinephrine (1 mg IV push) is inappropriate in a patient with a pulse. This dose can cause severe hypertension, tachyarrhythmias, and myocardial ischemia. Vasopressor dosing must be titrated.", "guideline_ref": "PHTLS 9th Ed — Pharmacology in Shock"},
+          {"text": "Apply the pneumatic anti-shock garment (PASG/MAST) inflated to maximum pressure", "correct": false, "critical": false, "explanation": "PASG/MAST use has been largely abandoned in modern EMS practice due to lack of evidence for benefit and potential for complications including compartment syndrome and respiratory compromise from abdominal inflation.", "guideline_ref": "PHTLS 9th Ed — Shock Management; NAEMSP Position Statement on PASG"},
+          {"text": "Administer an additional 3 liters of normal saline to fill the expanded vascular space", "correct": false, "critical": false, "explanation": "Aggressive crystalloid resuscitation in neurogenic shock can cause fluid overload and pulmonary edema without addressing the underlying problem of lost vascular tone. Vasopressors are more appropriate than large-volume crystalloid administration.", "guideline_ref": "PHTLS 9th Ed — Neurogenic Shock Resuscitation"}
+        ],
+        "clinical_pearl": "Remember that spinal shock and neurogenic shock are different entities. Spinal shock is the temporary loss of spinal cord function below the injury (flaccidity, areflexia) that may last days to weeks. Neurogenic shock is the hemodynamic instability from loss of sympathetic tone. They frequently coexist but are distinct concepts."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-17",
+    "title": "7F — House Fire Victim",
+    "dispatch": "7-year-old female, rescued from house fire, burns to body",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 7, "sex": "F", "cc": "Burns and smoke inhalation from house fire"},
+    "scene": "You arrive at a residential structure fire where firefighters have just extracted a 7-year-old female from a second-floor bedroom. The child is conscious, crying, and in severe distress. She has circumferential deep partial-thickness and full-thickness burns to both lower extremities (front and back), her entire anterior trunk, and her left upper extremity. Her face has superficial partial-thickness burns with singed nasal hairs and eyebrows. She has a hoarse voice and is producing carbonaceous sputum. The fire reportedly started approximately 20 minutes ago, and the child was trapped in an enclosed bedroom with heavy smoke.",
+    "history": {"pmh": "Asthma", "meds": "Albuterol inhaler PRN", "allergies": "NKDA"},
+    "vitals": {"hr": 156, "bp": "94/60", "rr": 32, "spo2": 93, "gcs": 14, "temp": "99.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Using the Rule of Nines modified for pediatric patients, categorize each burned body region into its correct percentage of total body surface area (TBSA).",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Entire left lower extremity (front and back)",
+          "Entire right lower extremity (front and back)",
+          "Entire anterior trunk",
+          "Entire left upper extremity (front and back)",
+          "Face (anterior head)"
+        ],
+        "categories": ["9% TBSA", "13.5-14% TBSA", "18% TBSA"],
+        "correctCategories": [1, 1, 2, 0, 0],
+        "explanation": "In the pediatric Rule of Nines (modified Lund-Browder), each lower extremity is approximately 13.5-14% (larger relative proportion than adults' 18%). The anterior trunk is 18%. Each upper extremity remains 9%. The head is proportionally larger in children (18% total, with the face representing approximately 9%). This patient has approximately 63-64% TBSA burns — a critical, life-threatening injury.",
+        "guideline_ref": "PHTLS 9th Ed — Burns: Pediatric Rule of Nines; American Burn Association Guidelines; National EMS Education Standards — Burns",
+        "clinical_pearl": "The pediatric Rule of Nines differs from adults: the child's head is proportionally larger (18% vs 9%) and each leg is smaller (14% vs 18%). For children under 10, consider using the Lund-Browder chart for most accurate TBSA estimation."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "Select ALL findings that indicate this patient is at HIGH risk for inhalation injury requiring aggressive airway management.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Carbonaceous sputum production", "correct": true, "critical": false, "explanation": "Carbonaceous (sooty) sputum indicates direct exposure of the airway to combustion products and is a strong predictor of inhalation injury.", "guideline_ref": "PHTLS 9th Ed — Inhalation Injury Assessment"},
+          {"text": "Hoarse voice with facial burns", "correct": true, "critical": false, "explanation": "Hoarseness indicates supraglottic edema from heat and chemical irritation. Combined with facial burns, this suggests significant upper airway thermal injury that can progress to complete obstruction.", "guideline_ref": "PHTLS 9th Ed — Inhalation Injury"},
+          {"text": "Singed nasal hairs and eyebrows", "correct": true, "critical": false, "explanation": "Singed nasal hairs and eyebrows indicate exposure of the face and upper airway to direct flame or superheated gases, increasing the risk of progressive airway edema.", "guideline_ref": "PHTLS 9th Ed — Burn Assessment"},
+          {"text": "Enclosed-space exposure for approximately 20 minutes", "correct": true, "critical": false, "explanation": "Enclosed-space fires produce high concentrations of toxic gases (CO, cyanide, other combustion products) and superheated air. Prolonged enclosed-space exposure is a major risk factor for inhalation injury.", "guideline_ref": "PHTLS 9th Ed — Inhalation Injury Risk Factors"},
+          {"text": "Burns limited to the extremities and trunk without neck involvement", "correct": false, "critical": false, "explanation": "While extremity and trunk burns contribute to TBSA, their location alone does not indicate inhalation injury risk. The concerning findings are those involving the face, airway, and enclosed-space exposure.", "guideline_ref": "PHTLS 9th Ed — Inhalation Injury Assessment"}
+        ],
+        "clinical_pearl": "Airway edema from inhalation injury can progress rapidly over the first 12-24 hours. In the prehospital setting, if you suspect inhalation injury, prepare for early intubation — waiting until the airway is visibly swelling may make intubation impossible."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, you establish IV access and prepare for fluid resuscitation using the Parkland formula. For this 25 kg child with approximately 63% TBSA burns, what is the correct fluid resuscitation approach for the first 8 hours?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {"text": "4 mL × 25 kg × 63% = 6,300 mL total for 24 hours; give half (3,150 mL) in the first 8 hours from time of burn, using lactated Ringer's solution", "correct": true, "critical": false, "explanation": "The Parkland formula is 4 mL × weight (kg) × %TBSA. For this patient: 4 × 25 × 63 = 6,300 mL over 24 hours. Half (3,150 mL) is given in the first 8 hours from the time of the burn (not from EMS arrival), and the remaining half over the next 16 hours. Lactated Ringer's is the preferred crystalloid.", "guideline_ref": "PHTLS 9th Ed — Burn Resuscitation; American Burn Association Parkland Formula; National EMS Education Standards — Burns"},
+          {"text": "2 mL × 25 kg × 63% = 3,150 mL total for 24 hours; give half (1,575 mL) in the first 8 hours from time of burn, using normal saline", "correct": false, "critical": false, "explanation": "This uses 2 mL/kg/%TBSA, which is the modified Brooke formula, not the Parkland formula. The Parkland formula uses 4 mL/kg/%TBSA. Additionally, lactated Ringer's is preferred over normal saline to avoid hyperchloremic acidosis with large-volume resuscitation.", "guideline_ref": "PHTLS 9th Ed — Burn Resuscitation Formulas"},
+          {"text": "4 mL × 25 kg × 63% = 6,300 mL; give the entire volume in the first 8 hours to prevent renal failure, using any available crystalloid", "correct": false, "critical": false, "explanation": "Giving the entire 24-hour volume in 8 hours would result in massive fluid overload, potentially causing compartment syndrome, pulmonary edema, and abdominal compartment syndrome. The Parkland formula specifies half in the first 8 hours and half over the subsequent 16 hours.", "guideline_ref": "PHTLS 9th Ed — Burn Resuscitation"},
+          {"text": "20 mL/kg bolus of normal saline repeated until blood pressure normalizes, with no TBSA-based calculation needed in the prehospital setting", "correct": false, "critical": false, "explanation": "While initial boluses may be needed for hemodynamic instability, burn resuscitation is specifically guided by TBSA-based formulas to prevent both under- and over-resuscitation. The Parkland formula should guide prehospital fluid administration rates.", "guideline_ref": "PHTLS 9th Ed — Burn Resuscitation"}
+        ],
+        "clinical_pearl": "In pediatric burn resuscitation, add maintenance fluids containing dextrose (D5LR or D5NS) to the Parkland formula for children under 20 kg, as they have limited glycogen reserves and are prone to hypoglycemia. Monitor blood glucose frequently."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following burn management interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Cover burns with dry, sterile dressings and prevent hypothermia",
+          "Secure the airway with endotracheal intubation before edema progresses",
+          "Remove smoldering clothing and jewelry while stopping the burning process",
+          "Initiate IV fluid resuscitation per Parkland formula",
+          "Administer 100% oxygen via non-rebreather mask for suspected CO and cyanide exposure"
+        ],
+        "correctOrder": [2, 4, 1, 3, 0],
+        "explanation": "First, stop the burning process by removing smoldering clothing (do not remove adherent material). Administer 100% O2 immediately — CO has 200-250x the affinity for hemoglobin as oxygen, and SpO2 readings are unreliable with CO exposure. Secure the airway early before edema makes intubation impossible. Initiate fluid resuscitation to address the massive fluid shifts from burn injury. Finally, cover burns with sterile dressings and aggressively prevent hypothermia — burned patients lose thermoregulation rapidly.",
+        "guideline_ref": "PHTLS 9th Ed — Burn Management; American Burn Association Guidelines; National EMS Education Standards — Burns",
+        "clinical_pearl": "Do NOT apply ice or cold water to burns exceeding 10% TBSA — this dramatically increases hypothermia risk, especially in pediatric patients. Cool water can be used briefly for small burns (<10% TBSA) but must be followed by warming measures."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-18",
+    "title": "45M — Building Collapse, Trapped Worker",
+    "dispatch": "45-year-old male, trapped under debris for 4 hours, being extricated now",
+    "category": "Trauma",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 45, "sex": "M", "cc": "Prolonged entrapment with crush injury to bilateral lower extremities"},
+    "scene": "You arrive at a partially collapsed warehouse where a 45-year-old male construction worker has been trapped under a heavy concrete slab across both thighs for approximately 4 hours. The rescue team has established access to the patient and is preparing for extrication. The patient is alert, oriented, and remarkably calm. He reports severe pain in both legs but states the pain has actually lessened over the past hour. His legs are dusky, swollen, and cool distal to the compression point. Pedal pulses are absent bilaterally. The rescue team estimates they can lift the debris in approximately 15 minutes. You have time to establish treatment prior to release.",
+    "history": {"pmh": "Hypertension", "meds": "Amlodipine 5 mg daily", "allergies": "NKDA"},
+    "vitals": {"hr": 98, "bp": "148/92", "rr": 20, "spo2": 98, "gcs": 15, "temp": "97.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient is at risk for crush syndrome upon release of the compressive force. Which of the following BEST describes the pathophysiology that makes the moment of extrication the most dangerous?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Release of the compressive force allows accumulated potassium, myoglobin, lactic acid, and phosphorus from necrotic muscle to enter systemic circulation, causing hyperkalemia-induced cardiac arrest, renal failure, and metabolic acidosis", "correct": true, "critical": false, "explanation": "During prolonged compression, muscle tissue undergoes rhabdomyolysis. Cellular contents (potassium, myoglobin, phosphorus, lactic acid) accumulate locally. Upon release, this toxic load washes into the systemic circulation. Hyperkalemia is the most immediately life-threatening component, capable of causing fatal cardiac arrhythmias within minutes of extrication.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome; National EMS Education Standards — Trauma: Crush Injuries"},
+          {"text": "Sudden reperfusion of crushed tissue causes massive arterial bleeding from damaged vessels that were previously tamponaded by the compressive force", "correct": false, "critical": false, "explanation": "While some hemorrhage can occur upon release, the primary danger of crush syndrome is not external hemorrhage. The life-threatening components are the systemic effects of released intracellular contents, particularly hyperkalemia and myoglobinuria.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome"},
+          {"text": "The compressed limbs develop high-pressure compartment syndrome that immediately causes fat embolism to the lungs upon release", "correct": false, "critical": false, "explanation": "Fat embolism syndrome is associated with long bone fractures, not crush syndrome specifically. While compartment syndrome may develop, the critical danger at the moment of extrication is the systemic release of toxic intracellular contents.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome vs Compartment Syndrome"},
+          {"text": "Sudden restoration of blood flow causes massive histamine release triggering anaphylactoid shock and distributive cardiovascular collapse", "correct": false, "critical": false, "explanation": "Histamine-mediated anaphylactoid reactions are not the mechanism of crush syndrome. The cardiovascular collapse seen in crush syndrome is primarily driven by hyperkalemia-induced arrhythmias and third-spacing of fluids into damaged tissue.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome Pathophysiology"}
+        ],
+        "clinical_pearl": "The '1-1-1 rule' is a useful guideline: crush syndrome should be suspected when a compressive force involves a mass of muscle (limb or trunk), compression time exceeds 1 hour, and compromised circulation is present in the compressed region."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have 15 minutes before extrication. Arrange the following pre-release interventions in the correct order.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Establish two large-bore IV lines and begin aggressive normal saline infusion (1-1.5 L/hr)",
+          "Place the patient on continuous cardiac monitoring and obtain a baseline 12-lead ECG",
+          "Prepare calcium chloride (or calcium gluconate) at the bedside for immediate hyperkalemia treatment",
+          "Administer sodium bicarbonate 1 mEq/kg IV to alkalinize the blood prior to release",
+          "Apply tourniquets proximal to the crush site (ready to tighten if cardiac arrest occurs upon release)"
+        ],
+        "correctOrder": [0, 1, 3, 2, 4],
+        "explanation": "Aggressive pre-hydration with normal saline is the single most important pre-release intervention — it dilutes the toxic washout and protects the kidneys from myoglobin precipitation. Cardiac monitoring is essential to detect hyperkalemia-induced ECG changes. Sodium bicarbonate alkalinizes blood to reduce potassium's cardiac toxicity and alkalinize urine to prevent myoglobin precipitation in renal tubules. Calcium should be prepared for immediate use as it directly antagonizes hyperkalemia's cardiac effects. Tourniquets should be staged as a last resort.",
+        "guideline_ref": "PHTLS 9th Ed — Crush Syndrome Pre-Hospital Management; NAEMSP Crush Injury Guidelines; National EMS Education Standards — Crush Injuries",
+        "clinical_pearl": "Normal saline is specifically preferred over lactated Ringer's for crush syndrome resuscitation because LR contains potassium (4 mEq/L). In a patient at risk for lethal hyperkalemia, even small additional potassium loads should be avoided."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The debris is removed. Within 3 minutes, the cardiac monitor shows peaked T waves, widened QRS complexes, and the patient reports tingling in his hands. As a Paramedic, what is the MOST critical immediate intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The concrete slab has been lifted. The patient's legs are severely swollen, mottled, and insensate. His cardiac rhythm is changing rapidly.",
+        "vitals_update": {"hr": 52, "bp": "78/40", "rr": 24, "spo2": 96, "gcs": 15},
+        "options": [
+          {"text": "Administer calcium chloride 1 g (10 mL of 10%) IV push over 2-3 minutes to stabilize the cardiac membrane", "correct": true, "critical": false, "explanation": "Peaked T waves, widened QRS, and bradycardia indicate severe hyperkalemia. Calcium chloride directly antagonizes the cardiotoxic effects of potassium by stabilizing the myocardial cell membrane. It acts within 1-3 minutes and buys time for definitive potassium-lowering treatments. This is the highest-priority intervention in hyperkalemia with ECG changes.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome: Hyperkalemia Management; AHA ACLS — Hyperkalemia Protocol"},
+          {"text": "Administer albuterol 10-20 mg via continuous nebulization to drive potassium intracellularly", "correct": false, "critical": false, "explanation": "Albuterol can help shift potassium intracellularly via beta-2 stimulation, and it is a secondary intervention. However, with active ECG changes indicating imminent cardiac arrest, calcium chloride must be given first to stabilize the myocardium.", "guideline_ref": "AHA ACLS — Hyperkalemia Management"},
+          {"text": "Apply bilateral tourniquets above the crush sites to prevent further potassium washout into systemic circulation", "correct": false, "critical": false, "explanation": "While tourniquets are sometimes discussed as a desperation measure, applying them after the crush has already been released and toxic contents have entered circulation does not address the potassium that is already causing cardiac toxicity. Membrane stabilization with calcium is the priority.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome"},
+          {"text": "Increase the normal saline infusion rate to 2 L/hr and administer furosemide 40 mg IV to flush the kidneys", "correct": false, "critical": false, "explanation": "While aggressive hydration is important for renal protection, it does not address the immediately life-threatening hyperkalemia causing ECG changes. Furosemide is a later consideration and can worsen hypovolemia. Cardiac membrane stabilization with calcium chloride is the immediate priority.", "guideline_ref": "PHTLS 9th Ed — Crush Syndrome Renal Protection"}
+        ],
+        "clinical_pearl": "The ECG progression of hyperkalemia follows a predictable pattern: peaked T waves → prolonged PR → widened QRS → sine wave → asystole/VF. Once you see peaked T waves with a crush injury patient, treat immediately — you may have only minutes before cardiac arrest."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-19",
+    "title": "28M — Motorcycle Crash, Facial Injuries",
+    "dispatch": "28-year-old male, motorcycle accident, severe facial trauma, difficulty breathing",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 28, "sex": "M", "cc": "Severe facial trauma with airway compromise after motorcycle crash"},
+    "scene": "You arrive at a rural two-lane highway where a 28-year-old male has crashed his motorcycle into a guardrail at approximately 50 mph. He was wearing a helmet, which is now cracked and removed by bystanders. The patient is seated upright on the roadside, leaning forward and actively drooling blood and secretions. His midface appears flattened and mobile, with massive swelling of both orbits and cheeks. He has bilateral periorbital ecchymosis and blood draining from both nostrils and mouth. His mandible appears displaced, and several teeth are missing. He is conscious, agitated, making gurgling sounds with each breath, and unable to speak clearly. He is using accessory muscles to breathe.",
+    "history": {"pmh": "None", "meds": "None", "allergies": "NKDA"},
+    "vitals": {"hr": 118, "bp": "136/88", "rr": 28, "spo2": 86, "gcs": 12, "temp": "98.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient has severe maxillofacial trauma with airway compromise. Select ALL immediate threats to this patient's airway.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Blood and secretions pooling in the oropharynx causing obstruction", "correct": true, "critical": false, "explanation": "Active hemorrhage from facial fractures produces large volumes of blood that pool in the oropharynx, creating a direct obstruction and aspiration risk. Continuous suctioning will be required.", "guideline_ref": "PHTLS 9th Ed — Maxillofacial Trauma: Airway Management"},
+          {"text": "Loss of structural support from midface fractures causing posterior displacement of the tongue and soft palate", "correct": true, "critical": false, "explanation": "Le Fort-type midface fractures can cause the maxilla to displace posteriorly, pushing the soft palate and tongue base backward against the posterior pharyngeal wall. This creates a mechanical upper airway obstruction.", "guideline_ref": "PHTLS 9th Ed — Maxillofacial Trauma"},
+          {"text": "Avulsed teeth and bone fragments as foreign body aspiration hazards", "correct": true, "critical": false, "explanation": "Missing teeth and fractured bone fragments are aspiration hazards that can cause airway obstruction if inhaled into the trachea or bronchi. These should be located and removed if visible during airway management.", "guideline_ref": "PHTLS 9th Ed — Airway Obstruction: Foreign Bodies"},
+          {"text": "Massive soft tissue swelling of the tongue, floor of mouth, and pharynx progressively narrowing the airway", "correct": true, "critical": false, "explanation": "Edema from direct trauma to the oral and pharyngeal soft tissues will progressively worsen over time, potentially converting a partially patent airway into a complete obstruction. This makes early definitive airway management critical.", "guideline_ref": "PHTLS 9th Ed — Maxillofacial Trauma: Progressive Airway Compromise"},
+          {"text": "Cervical spine fracture causing direct compression of the trachea from anterior vertebral displacement", "correct": false, "critical": false, "explanation": "While cervical spine injury must be considered in this mechanism, direct tracheal compression from vertebral displacement is rare and is not the immediate airway threat in this presentation. The threats here are all above the larynx.", "guideline_ref": "PHTLS 9th Ed — Cervical Spine and Airway Assessment"}
+        ],
+        "clinical_pearl": "The patient who is sitting upright and leaning forward is maintaining their own airway through positioning. Laying this patient supine for spinal immobilization can cause complete airway obstruction. Always secure the airway BEFORE changing the patient's position."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST appropriate initial airway management strategy for this patient at the EMT level?",
+        "type": "mc",
+        "level_filter": "EMR-EMT",
+        "options": [
+          {"text": "Allow the patient to maintain a seated, forward-leaning position; suction the oropharynx aggressively; administer high-flow oxygen; and prepare for rapid transport", "correct": true, "critical": false, "explanation": "The patient is currently protecting his own airway in a forward-leaning position that allows blood to drain anteriorly. Aggressive suctioning, high-flow oxygen, and allowing the patient to maintain this position of comfort is the most appropriate EMT-level approach. Placing the patient supine could cause complete obstruction.", "guideline_ref": "PHTLS 9th Ed — Maxillofacial Trauma: Positional Airway Management; National EMS Education Standards — Airway Management"},
+          {"text": "Immediately place the patient supine on a backboard with a cervical collar and attempt insertion of an oropharyngeal airway", "correct": false, "critical": true, "explanation": "Placing this patient supine will cause blood, secretions, and displaced tissue to obstruct the airway completely. An OPA may not be placeable due to the mandibular and midface fractures, and it could cause further hemorrhage. Airway management takes priority over spinal immobilization.", "guideline_ref": "PHTLS 9th Ed — Airway Priorities in Maxillofacial Trauma"},
+          {"text": "Insert a nasopharyngeal airway in both nostrils to bypass the oral cavity obstruction", "correct": false, "critical": true, "explanation": "Nasopharyngeal airways are contraindicated in the presence of significant midface trauma. The disrupted bony anatomy can allow the NPA to enter the cranial vault or create a false passage, causing catastrophic complications.", "guideline_ref": "PHTLS 9th Ed — Contraindications for NPA; National EMS Education Standards — Airway Adjuncts"},
+          {"text": "Perform a head-tilt chin-lift maneuver to open the airway, then insert an OPA and ventilate with a BVM", "correct": false, "critical": false, "explanation": "Head-tilt chin-lift is contraindicated in trauma patients due to potential cervical spine injury. Additionally, the mandibular fracture makes chin-lift and BVM mask seal extremely difficult. Forcing the patient supine for BVM ventilation will worsen obstruction.", "guideline_ref": "PHTLS 9th Ed — Trauma Airway Management"}
+        ],
+        "clinical_pearl": "In severe maxillofacial trauma, nasopharyngeal airways are contraindicated due to the risk of intracranial placement through disrupted cribriform plate or ethmoid fractures. This is one of the few absolute contraindications for NPA use."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, the patient's airway continues to deteriorate. SpO2 has dropped to 78% despite suctioning and positioning. Oral intubation is impossible due to massive hemorrhage and distorted anatomy. What is the MOST appropriate next airway intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "You have been aggressively suctioning but cannot keep up with the hemorrhage. The patient is becoming obtunded. GCS has dropped to 8. Oral visualization is impossible due to blood and swelling.",
+        "vitals_update": {"hr": 134, "bp": "106/72", "rr": 10, "spo2": 78, "gcs": 8},
+        "options": [
+          {"text": "Perform a surgical cricothyrotomy to establish a definitive infraglottic airway", "correct": true, "critical": false, "explanation": "When both oral intubation and BVM ventilation fail in a 'can't intubate, can't oxygenate' scenario, surgical cricothyrotomy is the definitive rescue airway. In severe maxillofacial trauma with uncontrollable hemorrhage obscuring the upper airway, going below the obstruction via cricothyrotomy is the life-saving intervention.", "guideline_ref": "PHTLS 9th Ed — Surgical Airway; NAEMSP Difficult Airway Guidelines; National EMS Education Standards — Advanced Airway Management"},
+          {"text": "Attempt blind nasotracheal intubation to bypass the oral cavity", "correct": false, "critical": true, "explanation": "Nasotracheal intubation is contraindicated with midface fractures due to risk of intracranial placement. Additionally, blind NTI requires the patient to be breathing spontaneously with a predictable airflow pattern, which is not present here.", "guideline_ref": "PHTLS 9th Ed — Contraindications for NTI"},
+          {"text": "Insert a supraglottic airway device (King LT or i-gel) as a bridge to definitive airway", "correct": false, "critical": false, "explanation": "Supraglottic airways require intact upper airway anatomy for proper seating. In severe maxillofacial trauma with massive edema and hemorrhage, supraglottic devices are unlikely to seat properly or maintain a seal, and they do not protect against aspiration of blood from above.", "guideline_ref": "PHTLS 9th Ed — Supraglottic Airways in Trauma"},
+          {"text": "Attempt video laryngoscopy with aggressive suctioning for direct oral intubation", "correct": false, "critical": false, "explanation": "While video laryngoscopy improves visualization, the volume of hemorrhage overwhelming suctioning makes visual oral intubation impractical. The distorted mandibular anatomy also prevents effective mouth opening and blade placement. Further attempts delay definitive airway management.", "guideline_ref": "PHTLS 9th Ed — Failed Airway Management"}
+        ],
+        "clinical_pearl": "The decision to perform a surgical cricothyrotomy should not be delayed by repeated failed oral intubation attempts. In the 'can't intubate, can't oxygenate' scenario, mortality increases with each minute of hypoxia. Recognize the failed airway early and proceed to the surgical airway."
+      }
+    ]
+  },
+  {
+    "id": "nat-tra-20",
+    "title": "3M — Unresponsive Toddler, Called for Fall",
+    "dispatch": "3-year-old male, unresponsive, reported fall from couch",
+    "category": "Trauma",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 3, "sex": "M", "cc": "Unresponsiveness after reported fall"},
+    "scene": "You arrive at a second-floor apartment and are met by a 22-year-old male who identifies himself as the child's mother's boyfriend. He states the 3-year-old boy 'fell off the couch about an hour ago' and has been 'sleeping a lot' since. The child is found lying on a mattress on the floor. He is lethargic, moaning, and withdrawing to pain but not opening his eyes spontaneously. You note multiple bruises in various stages of healing on his torso, upper arms, and back. There is a large, boggy swelling over the left parietal region. The child has bilateral periorbital ecchymosis without an obvious nasal bridge injury. His abdomen is distended and tender. His arms show what appear to be loop-shaped bruises. The apartment is in disarray, and the child's mother is not present.",
+    "history": {"pmh": "The boyfriend reports 'he falls a lot' and has been to the ER before for 'clumsiness'", "meds": "None", "allergies": "Unknown"},
+    "vitals": {"hr": 68, "bp": "142/90", "rr": 14, "spo2": 97, "gcs": 8, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Several findings in this scenario are inconsistent with the reported mechanism (fall from couch) and suggestive of non-accidental trauma. Select ALL concerning findings.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Bruises in various stages of healing across the torso, arms, and back", "correct": true, "critical": false, "explanation": "Multiple bruises in different stages of healing indicate injuries sustained at different times, which is inconsistent with a single fall event. This pattern is a hallmark of repeated non-accidental trauma.", "guideline_ref": "National EMS Education Standards — Special Populations: Child Abuse; PHTLS 9th Ed — Pediatric Trauma: Non-Accidental Injury"},
+          {"text": "Loop-shaped bruises on the arms", "correct": true, "critical": false, "explanation": "Patterned injuries such as loop marks (from cords, belts, or similar objects) are pathognomonic for inflicted injury. Accidental injuries do not produce geometric or patterned marks.", "guideline_ref": "National EMS Education Standards — Child Abuse Recognition"},
+          {"text": "Bilateral periorbital ecchymosis (raccoon eyes) without nasal injury suggesting basilar skull fracture", "correct": true, "critical": false, "explanation": "Bilateral periorbital ecchymosis without direct nasal trauma suggests an anterior basilar skull fracture — an injury requiring significant force far exceeding a couch-height fall. In a toddler, this is highly suspicious for inflicted head trauma.", "guideline_ref": "PHTLS 9th Ed — Pediatric Head Trauma; National EMS Education Standards — Pediatric Assessment"},
+          {"text": "Mechanism inconsistent with injury severity: a couch-height fall causing altered consciousness, skull swelling, and abdominal distension", "correct": true, "critical": false, "explanation": "Low-height falls from furniture rarely cause significant traumatic brain injury or abdominal organ damage. The severity of this child's injuries — altered mental status, possible skull fracture, abdominal distension — is inconsistent with the reported mechanism.", "guideline_ref": "National EMS Education Standards — Child Abuse: Mechanism vs Injury Pattern"},
+          {"text": "The child is 3 years old and lethargic, which is expected given it is naptime", "correct": false, "critical": false, "explanation": "A GCS of 8 with moaning, withdrawal to pain, and no eye opening is not 'napping.' This level of unresponsiveness in a toddler after reported minor trauma is profoundly abnormal and suggests serious traumatic brain injury.", "guideline_ref": "National EMS Education Standards — Pediatric Assessment"}
+        ],
+        "clinical_pearl": "EMS providers are mandatory reporters of suspected child abuse in all 50 states. Document objective findings factually — do not accuse or confront the caregiver. Your role is to provide emergency care, document findings, and report to the receiving facility and appropriate authorities."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "The child has a heart rate of 68, blood pressure of 142/90, and respiratory rate of 14 with a GCS of 8. This combination of vital signs is MOST suggestive of which condition?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Cushing's triad indicating increased intracranial pressure from traumatic brain injury", "correct": true, "critical": false, "explanation": "Cushing's triad — hypertension, bradycardia, and irregular respirations — is a late and ominous sign of critically elevated intracranial pressure. In this child with head trauma and altered mental status, these vital signs suggest impending brainstem herniation and require immediate intervention.", "guideline_ref": "PHTLS 9th Ed — Traumatic Brain Injury: Cushing's Response; National EMS Education Standards — Neurological Emergencies"},
+          {"text": "Neurogenic shock from an occult spinal cord injury sustained during the fall", "correct": false, "critical": false, "explanation": "Neurogenic shock presents with hypotension and bradycardia, not hypertension. This child's elevated blood pressure distinguishes this presentation from neurogenic shock.", "guideline_ref": "PHTLS 9th Ed — Neurogenic Shock"},
+          {"text": "Normal pediatric vital signs for a sleeping 3-year-old child", "correct": false, "critical": false, "explanation": "Normal heart rate for a 3-year-old is approximately 80-120 bpm, and normal systolic blood pressure is approximately 80-100 mmHg. A heart rate of 68 (bradycardic for age) with hypertension is abnormal and concerning.", "guideline_ref": "National EMS Education Standards — Pediatric Vital Signs"},
+          {"text": "Compensated hemorrhagic shock from internal abdominal bleeding causing reflex bradycardia", "correct": false, "critical": false, "explanation": "Pediatric hemorrhagic shock causes tachycardia and hypotension, not bradycardia and hypertension. Children compensate for hemorrhage through tachycardia and vasoconstriction. The combination seen here points to a central neurological cause.", "guideline_ref": "PHTLS 9th Ed — Pediatric Shock"}
+        ],
+        "clinical_pearl": "Cushing's triad is a LATE sign of increased ICP — by the time it develops, the patient is at imminent risk of brainstem herniation. In pediatric TBI, do not wait for Cushing's triad to initiate aggressive management. Any decline in GCS should prompt immediate intervention."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following interventions in the correct order of priority for this patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Assist ventilations with BVM at age-appropriate rate, maintaining SpO2 > 94% and ETCO2 35-40 mmHg",
+          "Elevate the head of the stretcher to 30 degrees (if no spinal injury concern) to facilitate venous drainage",
+          "Maintain cervical spine stabilization and prepare for rapid transport to a pediatric trauma center",
+          "Document all injuries objectively and notify the receiving facility of suspected non-accidental trauma",
+          "Establish IV/IO access and prepare for potential seizure management"
+        ],
+        "correctOrder": [0, 2, 1, 4, 3],
+        "explanation": "First priority is airway and ventilation — GCS of 8 requires assisted ventilations. Avoid hyperventilation as it causes cerebral vasoconstriction and worsens brain injury; target ETCO2 35-40 mmHg. Maintain spinal precautions and prepare for immediate transport. Elevate the head 30° to reduce ICP (if no spinal concerns). Establish vascular access for potential seizures or deterioration. Document findings and notify the receiving hospital of the clinical picture.",
+        "guideline_ref": "PHTLS 9th Ed — Pediatric Traumatic Brain Injury; National EMS Education Standards — Pediatric Trauma; National EMS Education Standards — Mandatory Reporting",
+        "clinical_pearl": "In pediatric TBI, maintain normoventilation (ETCO2 35-40 mmHg). Routine prophylactic hyperventilation is harmful. Brief hyperventilation (ETCO2 30-35) should only be used as a temporizing measure if there are signs of active herniation (unilateral pupil dilation, posturing, progressive bradycardia)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,457 @@
+[
+  {
+    "id": "nat-ob-08",
+    "title": "32F — Difficulty Delivering Baby at Home",
+    "dispatch": "32-year-old female, active labor, difficulty with delivery",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 32, "sex": "F", "cc": "Active labor with delivery complication"},
+    "scene": "You arrive at a suburban home where a 32-year-old G3P2 female is in active labor on the bedroom floor. Her husband states the baby's head delivered approximately 3 minutes ago but the body has not followed. The infant's head is visible, face down, with the chin retracting tightly against the perineum. The mother is screaming and pushing but making no progress. The amniotic fluid was clear.",
+    "history": {"pmh": "Gestational diabetes, previous uncomplicated vaginal deliveries", "meds": "Prenatal vitamins, insulin", "allergies": "No known allergies"},
+    "vitals": {"hr": 112, "bp": "138/88", "rr": 24, "spo2": 97, "gcs": 15, "temp": "98.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The infant's head has delivered but the shoulders have not followed after 60 seconds of gentle downward traction. Which finding BEST characterizes this delivery complication?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "The infant's head retracts against the perineum after delivery, and gentle downward traction on the head fails to deliver the anterior shoulder", "correct": true, "critical": false, "explanation": "This describes the 'turtle sign' — retraction of the fetal head against the perineum — which is the hallmark of shoulder dystocia. The anterior shoulder is impacted behind the maternal pubic symphysis.", "guideline_ref": "NAEMSP Prehospital OB Guidelines; ACOG Practice Bulletin — Shoulder Dystocia"},
+          {"text": "The umbilical cord is visible wrapped tightly around the infant's neck, preventing further descent of the body", "correct": false, "critical": false, "explanation": "A nuchal cord can complicate delivery but is managed differently — by attempting to slip it over the head or clamping and cutting. This is not the presentation described.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "The infant's presenting part is a foot rather than the head, indicating a breech presentation requiring immediate repositioning", "correct": false, "critical": false, "explanation": "Breech presentation involves a foot or buttocks presenting first. In this scenario, the head has already delivered normally.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "The mother's cervix has not fully dilated, trapping the infant's body and requiring manual cervical dilation by the provider", "correct": false, "critical": false, "explanation": "If the head has delivered, the cervix is fully dilated. Incomplete cervical dilation would prevent head delivery. Manual cervical dilation is not within EMS scope.", "guideline_ref": "National EMS Education Standards — OB Emergencies"}
+        ],
+        "clinical_pearl": "Shoulder dystocia occurs in approximately 0.6-1.4% of vaginal deliveries. Risk factors include fetal macrosomia, gestational diabetes, and maternal obesity, but it can occur without any risk factors."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following maneuvers in the correct order for managing this delivery complication.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Call for additional resources and clearly communicate the emergency",
+          "Apply gentle downward traction on the fetal head while an assistant applies suprapubic pressure",
+          "Perform the McRoberts maneuver — hyperflexing the mother's thighs against her abdomen",
+          "If unsuccessful, attempt delivery of the posterior arm by sweeping it across the infant's chest",
+          "Position the mother on all fours (Gaskin maneuver) if supine maneuvers fail"
+        ],
+        "correctOrder": [0, 2, 1, 3, 4],
+        "explanation": "The sequence is: (1) Call for help immediately. (2) McRoberts maneuver — hyperflexion of hips widens the pelvic outlet and is the first physical intervention. (3) Suprapubic pressure combined with gentle traction attempts to dislodge the anterior shoulder. (4) Deliver the posterior arm if McRoberts and suprapubic pressure fail. (5) Gaskin (all-fours) maneuver as a last resort changes pelvic geometry.",
+        "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia; NAEMSP Prehospital OB Guidelines",
+        "clinical_pearl": "Never apply fundal pressure during shoulder dystocia — it can worsen impaction and cause uterine rupture. Suprapubic pressure (not fundal) is applied just above the pubic bone to push the anterior shoulder downward."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL actions that should be avoided during management of this delivery complication.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Applying fundal pressure to force the infant downward through the birth canal", "correct": true, "critical": true, "explanation": "Fundal pressure worsens shoulder impaction and increases risk of uterine rupture, brachial plexus injury, and fetal fractures. It is absolutely contraindicated.", "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia"},
+          {"text": "Pulling forcefully on the infant's head and neck to extract the body", "correct": true, "critical": true, "explanation": "Excessive traction on the fetal head can cause brachial plexus injuries (Erb's palsy), cervical spine injury, or clavicle fracture. Only gentle, controlled traction is appropriate.", "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia"},
+          {"text": "Hyperflexing the mother's thighs tightly against her abdomen", "correct": false, "critical": false, "explanation": "This is the McRoberts maneuver and is the recommended first-line intervention. It straightens the sacrum and rotates the pubic symphysis cephalad, increasing the functional pelvic diameter.", "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia"},
+          {"text": "Instructing the mother to push forcefully while twisting the infant's head 90 degrees laterally", "correct": true, "critical": false, "explanation": "Aggressive twisting of the head risks cervical spine injury. Rotational maneuvers (Rubin or Woods screw) involve rotating the shoulders, not the head, and are typically performed by experienced obstetric providers.", "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia"},
+          {"text": "Applying suprapubic pressure with a downward and lateral force", "correct": false, "critical": false, "explanation": "Suprapubic pressure is an appropriate intervention that helps dislodge the anterior shoulder from behind the pubic symphysis.", "guideline_ref": "ACOG Practice Bulletin — Shoulder Dystocia"}
+        ],
+        "clinical_pearl": "Document the time from delivery of the head to delivery of the body (head-to-body delivery interval). This is a critical medicolegal time point in shoulder dystocia documentation."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "The infant is successfully delivered after McRoberts maneuver and suprapubic pressure. The infant is limp with weak respiratory effort. Assign APGAR scoring categories: categorize each finding as scoring 0, 1, or 2.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Heart rate 110 bpm",
+          "Limp muscle tone with no flexion",
+          "Weak, irregular respiratory effort",
+          "Grimace only with stimulation, no cry",
+          "Body pink, extremities blue"
+        ],
+        "categories": ["Score 0", "Score 1", "Score 2"],
+        "correctCategories": [2, 0, 1, 1, 1],
+        "explanation": "Heart rate >100 = 2 points. Limp/flaccid tone = 0 points. Weak/irregular respirations = 1 point. Grimace only (no cry) = 1 point. Acrocyanosis (pink body, blue extremities) = 1 point. Total APGAR = 5, indicating need for continued resuscitative interventions.",
+        "guideline_ref": "NRP 8th Edition — APGAR Scoring; National EMS Education Standards — Neonatal Care",
+        "clinical_pearl": "APGAR scores should not delay resuscitation. Begin neonatal resuscitation based on the clinical picture (tone, breathing, heart rate) — do not wait for a formal 1-minute APGAR score."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-09",
+    "title": "29F — Abdominal Pain and Vaginal Bleeding, 34 Weeks Pregnant",
+    "dispatch": "29-year-old female, pregnant, abdominal pain and bleeding",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 29, "sex": "F", "cc": "Severe abdominal pain and vaginal bleeding at 34 weeks gestation"},
+    "scene": "You arrive at an apartment where a 29-year-old female at 34 weeks gestation is lying on the couch, clutching her abdomen. She reports sudden onset of severe, constant abdominal pain approximately 20 minutes ago, accompanied by dark red vaginal bleeding. She states the pain is unlike normal contractions — it is unrelenting and does not come and go. Her abdomen is rigid and tender to palpation. The fetal heart tones via Doppler are 100 bpm (normal 110-160).",
+    "history": {"pmh": "Chronic hypertension, previous cesarean section", "meds": "Labetalol 200 mg BID, prenatal vitamins", "allergies": "Codeine"},
+    "vitals": {"hr": 118, "bp": "92/58", "rr": 28, "spo2": 96, "gcs": 15, "temp": "98.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the clinical presentation, which combination of findings is MOST concerning and differentiates this from other causes of third-trimester bleeding?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Constant severe abdominal pain, rigid tender uterus, dark vaginal bleeding, and signs of maternal hemodynamic compromise with fetal bradycardia", "correct": true, "critical": false, "explanation": "This presentation — painful rigid uterus, dark bleeding, maternal shock, and fetal distress — is the classic presentation of placental abruption. The constant pain (vs. intermittent contractions) and board-like uterine rigidity are key differentiators.", "guideline_ref": "National EMS Education Standards — OB Emergencies; ACOG Practice Bulletin — Placental Abruption"},
+          {"text": "Painless bright red vaginal bleeding with a soft, non-tender uterus and normal fetal heart tones in a patient with prior cesarean section", "correct": false, "critical": false, "explanation": "Painless bright red bleeding with a soft uterus describes placenta previa, not the presentation in this scenario. The presence of severe pain and rigid uterus differentiates abruption from previa.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Intermittent cramping abdominal pain with scant pink-tinged mucus discharge and cervical dilation consistent with preterm labor", "correct": false, "critical": false, "explanation": "Preterm labor presents with regular intermittent contractions and cervical change, not the constant severe pain, rigid uterus, and hemorrhagic shock seen here.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Right lower quadrant pain with vaginal spotting and a positive pregnancy test at approximately 8 weeks gestation", "correct": false, "critical": false, "explanation": "This describes an ectopic pregnancy presentation, which occurs in the first trimester, not at 34 weeks gestation.", "guideline_ref": "National EMS Education Standards — OB Emergencies"}
+        ],
+        "clinical_pearl": "Up to 20% of placental abruptions are concealed — blood accumulates behind the placenta without external bleeding. A rigid, enlarging uterus with hemodynamic instability may be the only signs."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions in the correct order of priority for this patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Position the patient in left lateral decubitus position",
+          "Administer high-flow oxygen via non-rebreather mask",
+          "Establish two large-bore IV lines and begin aggressive fluid resuscitation",
+          "Initiate rapid transport to the closest facility with obstetric and surgical capabilities",
+          "Continuously monitor fetal heart tones and maternal vitals during transport"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "First, administer high-flow O2 to maximize oxygen delivery to both mother and fetus. Second, position left lateral to relieve aortocaval compression and improve venous return. Third, establish large-bore IV access for volume resuscitation. Fourth, initiate rapid transport — definitive treatment is emergent cesarean delivery. Fifth, continuous monitoring during transport to detect deterioration.",
+        "guideline_ref": "National EMS Education Standards — OB Emergencies; NAEMSP Prehospital OB Guidelines",
+        "clinical_pearl": "In suspected placental abruption with hemodynamic instability, do not delay transport for interventions. This patient needs emergent surgical delivery — time to OR is the critical factor for both maternal and fetal survival."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, you are managing fluid resuscitation en route. Select ALL appropriate interventions for this patient.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "En route, the patient's BP has dropped to 84/50. She is becoming increasingly confused. Fetal heart rate is now 90 bpm.",
+        "vitals_update": {"hr": 130, "bp": "84/50", "rr": 30, "spo2": 94, "gcs": 14},
+        "options": [
+          {"text": "Administer warmed isotonic crystalloid (normal saline or lactated Ringer's) via pressure infuser through both IVs", "correct": true, "critical": false, "explanation": "Aggressive volume resuscitation with warmed crystalloid is essential for treating hemorrhagic shock. Pressure infusers and bilateral large-bore IVs maximize flow rates.", "guideline_ref": "National EMS Education Standards — OB Emergencies; PHTLS 9th Edition"},
+          {"text": "Administer tranexamic acid (TXA) 1 g IV over 10 minutes if within protocol and available", "correct": true, "critical": false, "explanation": "TXA is an antifibrinolytic that reduces hemorrhage-related mortality when given early. Some EMS systems include TXA in OB hemorrhage protocols, particularly for suspected abruption.", "guideline_ref": "WOMAN Trial; NAEMSP Position Statement on TXA"},
+          {"text": "Provide early notification to the receiving facility with request for activation of massive transfusion protocol and OB surgical team", "correct": true, "critical": false, "explanation": "Early hospital notification allows activation of massive transfusion protocol and preparation of the surgical team for emergent cesarean delivery, reducing time to definitive care.", "guideline_ref": "NAEMSP Prehospital OB Guidelines"},
+          {"text": "Administer oxytocin 10 units IV to contract the uterus and reduce bleeding from the abruption site", "correct": false, "critical": false, "explanation": "Oxytocin is used for postpartum uterine atony, not for placental abruption with an undelivered fetus. The definitive treatment is emergent cesarean delivery.", "guideline_ref": "ACOG Practice Bulletin — Placental Abruption"},
+          {"text": "Pack the vagina with sterile gauze to tamponade the source of external bleeding", "correct": false, "critical": true, "explanation": "Vaginal packing is contraindicated in pregnancy-related hemorrhage. It does not address the source (placental separation), may conceal ongoing blood loss, and can introduce infection.", "guideline_ref": "National EMS Education Standards — OB Emergencies"}
+        ],
+        "clinical_pearl": "Pregnant patients can lose up to 35% of blood volume before showing signs of hemodynamic compromise due to the physiologic hypervolemia of pregnancy. By the time hypotension develops, blood loss is often severe."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-10",
+    "title": "Newborn — Not Breathing After Delivery",
+    "dispatch": "Newborn infant, just delivered, not crying or breathing",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 0, "sex": "M", "cc": "Newborn not breathing after delivery with meconium-stained amniotic fluid"},
+    "scene": "You assisted with a field delivery of a full-term newborn male. The amniotic fluid was thick, dark green (meconium-stained). The infant has been delivered and is limp, not crying, and not breathing. The skin is cyanotic with poor muscle tone. You note thick meconium coating the infant's face and mouth. The mother is a 26-year-old G1P1 who had a prolonged labor at home. The umbilical cord has been clamped and cut.",
+    "history": {"pmh": "Mother — no prenatal care, prolonged labor >24 hours", "meds": "None", "allergies": "No known allergies"},
+    "vitals": {"hr": 70, "bp": "N/A", "rr": 0, "spo2": null, "gcs": null, "temp": "N/A"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You have just delivered this newborn with thick meconium-stained fluid. The infant is limp and not breathing. Arrange the initial steps of neonatal resuscitation in the correct order.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Provide warmth — dry the infant and place on a warm surface, remove wet linens",
+          "Position the airway — place in sniffing position with slight neck extension",
+          "Suction the mouth then nose — clear visible meconium from the airway",
+          "Stimulate — flick the soles of the feet or rub the back",
+          "Assess heart rate and respiratory effort after initial steps"
+        ],
+        "correctOrder": [0, 1, 2, 3, 4],
+        "explanation": "The initial steps of neonatal resuscitation follow a specific sequence: (1) Provide warmth to prevent hypothermia. (2) Position the airway in sniffing position. (3) Suction — mouth first, then nose — to clear the airway. (4) Stimulate breathing with tactile stimulation. (5) Assess response. Per current NRP guidelines, routine intubation for tracheal suctioning of meconium is no longer recommended — initial steps are the same regardless of meconium presence.",
+        "guideline_ref": "NRP 8th Edition; 2020 AHA Neonatal Resuscitation Guidelines",
+        "clinical_pearl": "The 2020 NRP guidelines no longer recommend routine intubation and tracheal suctioning for non-vigorous meconium-stained infants. Focus on the initial steps and proceed to PPV if the infant does not respond."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After completing initial steps, the infant remains apneic with a heart rate of 70 bpm. What is your next intervention?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "You have dried, positioned, suctioned, and stimulated the infant. Thirty seconds have elapsed. The infant remains limp, apneic, and cyanotic with a heart rate of 70 bpm by auscultation.",
+        "options": [
+          {"text": "Begin positive pressure ventilation (PPV) at 40-60 breaths per minute with room air or blended oxygen", "correct": true, "critical": false, "explanation": "An apneic neonate with HR <100 bpm requires immediate PPV. The ventilation rate is 40-60 breaths/min. Current guidelines recommend starting with 21% oxygen (room air) for term infants, titrating up based on pulse oximetry.", "guideline_ref": "NRP 8th Edition; 2020 AHA Neonatal Resuscitation Guidelines"},
+          {"text": "Begin chest compressions at a rate of 120 per minute using the two-thumb encircling technique", "correct": false, "critical": false, "explanation": "Chest compressions are not indicated until PPV has been provided for 30 seconds and the heart rate remains below 60 bpm. The heart rate is 70 bpm — ventilation is the priority.", "guideline_ref": "NRP 8th Edition"},
+          {"text": "Administer epinephrine 0.01 mg/kg IV via umbilical venous catheter to increase heart rate", "correct": false, "critical": false, "explanation": "Epinephrine is reserved for neonates whose heart rate remains below 60 bpm despite 60 seconds of effective ventilation AND chest compressions. This infant has not yet received PPV.", "guideline_ref": "NRP 8th Edition"},
+          {"text": "Continue vigorous stimulation and suctioning for an additional 60 seconds before initiating any ventilation", "correct": false, "critical": false, "explanation": "If an infant is apneic with HR <100 after initial steps, prolonged stimulation delays critical ventilation. PPV should be initiated within 60 seconds of birth (the 'Golden Minute').", "guideline_ref": "NRP 8th Edition"}
+        ],
+        "clinical_pearl": "Ventilation is the single most important intervention in neonatal resuscitation. Most neonates who require resuscitation will respond to effective ventilation alone."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have been providing PPV for 30 seconds. The heart rate is now 50 bpm. Select ALL correct interventions at this point.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "After 30 seconds of PPV at 40-60 breaths/min, the infant's heart rate has dropped to 50 bpm. There is minimal chest rise. The infant remains limp and cyanotic.",
+        "vitals_update": {"hr": 50, "rr": 0, "spo2": null},
+        "options": [
+          {"text": "Ensure effective ventilation — reposition the head, check mask seal, suction if needed, and increase pressure if no chest rise (MR SOPA)", "correct": true, "critical": false, "explanation": "Before initiating compressions, ensure ventilation is effective. The corrective steps (MR SOPA: Mask adjustment, Reposition, Suction, Open mouth, Pressure increase, Alternative airway) should be assessed.", "guideline_ref": "NRP 8th Edition — MR SOPA Corrective Steps"},
+          {"text": "Begin chest compressions using the two-thumb encircling hands technique at a 3:1 compression-to-ventilation ratio", "correct": true, "critical": false, "explanation": "With HR <60 bpm despite 30 seconds of effective PPV, chest compressions are indicated. The neonatal ratio is 3:1 (3 compressions to 1 ventilation) at a rate of 120 events per minute.", "guideline_ref": "NRP 8th Edition; 2020 AHA Neonatal Resuscitation Guidelines"},
+          {"text": "Increase supplemental oxygen concentration to 100% FiO2 when initiating chest compressions", "correct": true, "critical": false, "explanation": "When chest compressions are initiated for a neonate, FiO2 should be increased to 100%. Oxygen concentration is then weaned based on pulse oximetry after heart rate recovery.", "guideline_ref": "NRP 8th Edition"},
+          {"text": "Administer naloxone 0.1 mg/kg IV to reverse potential maternal opioid effects on the neonate", "correct": false, "critical": false, "explanation": "Naloxone is no longer recommended as part of neonatal resuscitation in the delivery room. Effective ventilation is the appropriate treatment for respiratory depression, regardless of suspected opioid exposure.", "guideline_ref": "NRP 8th Edition"},
+          {"text": "Stop ventilation efforts and begin compressions-only resuscitation at 100-120 compressions per minute", "correct": false, "critical": true, "explanation": "Compressions-only resuscitation is never appropriate for neonates. Neonatal cardiac arrest is almost always due to respiratory failure — ventilation is essential and must continue throughout resuscitation.", "guideline_ref": "NRP 8th Edition"}
+        ],
+        "clinical_pearl": "The neonatal compression-to-ventilation ratio of 3:1 is unique and reflects the respiratory etiology of most neonatal arrests. This differs from the 15:2 pediatric ratio and 30:2 adult ratio."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each of the following neonatal resuscitation interventions as appropriate for 'EMT Scope' or 'Paramedic Scope.'",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Drying, warming, positioning, and stimulating the newborn",
+          "Suctioning the mouth and nose with a bulb syringe",
+          "Providing positive pressure ventilation with a BVM",
+          "Intubation and placement of an endotracheal tube",
+          "Establishing umbilical venous access and administering epinephrine",
+          "Applying a pulse oximeter to the right hand (pre-ductal)"
+        ],
+        "categories": ["EMT Scope", "Paramedic Scope"],
+        "correctCategories": [0, 0, 0, 1, 1, 0],
+        "explanation": "EMT scope includes initial resuscitation steps (warm, dry, stimulate, suction), BVM ventilation, and pulse oximetry. Paramedic scope includes advanced airway management (intubation) and vascular access with medication administration (UVC, epinephrine). Scope varies by state protocol.",
+        "guideline_ref": "National EMS Education Standards; NRP 8th Edition; National EMS Scope of Practice Model",
+        "clinical_pearl": "Place the pulse oximeter on the right hand or wrist (pre-ductal) for the most accurate reading in a neonate. Pre-ductal saturations are higher than post-ductal due to the patent ductus arteriosus."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-11",
+    "title": "35F — Seizure at 38 Weeks Pregnant",
+    "dispatch": "35-year-old female, pregnant, seizure activity",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 35, "sex": "F", "cc": "Seizure at 38 weeks gestation"},
+    "scene": "You arrive at a residence where a 35-year-old female at 38 weeks gestation is found postictal on the living room floor. Her partner reports she complained of a severe headache and blurred vision for the past hour, then had a generalized tonic-clonic seizure lasting approximately 2 minutes. He caught her as she fell and lowered her to the ground. She is now responsive to voice but confused and moaning. You note significant bilateral lower extremity edema and facial puffiness. There is no history of seizure disorder.",
+    "history": {"pmh": "First pregnancy, diagnosed with preeclampsia at 36 weeks, missed last two OB appointments", "meds": "Prenatal vitamins (was prescribed labetalol but reports not taking it)", "allergies": "Penicillin"},
+    "vitals": {"hr": 104, "bp": "182/114", "rr": 22, "spo2": 95, "gcs": 11, "temp": "99.1°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings in this patient is MOST consistent with progression from preeclampsia to eclampsia?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "New-onset tonic-clonic seizure in a patient with known preeclampsia, severe hypertension, headache, visual changes, and significant edema", "correct": true, "critical": false, "explanation": "Eclampsia is defined as the new onset of seizures in a patient with preeclampsia that cannot be attributed to other causes. The prodromal symptoms (severe headache, visual disturbances) combined with severe hypertension and the seizure confirm the diagnosis.", "guideline_ref": "ACOG Practice Bulletin — Hypertensive Disorders of Pregnancy; National EMS Education Standards — OB Emergencies"},
+          {"text": "Seizure activity in a pregnant patient with normal blood pressure and no prior medical history, suggesting new-onset epilepsy unrelated to pregnancy", "correct": false, "critical": false, "explanation": "This patient has severe hypertension (182/114) and a known history of preeclampsia. New-onset epilepsy would not explain the hypertension, edema, or preeclampsia history.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Hypoglycemic seizure secondary to inadequate nutrition during the third trimester of pregnancy", "correct": false, "critical": false, "explanation": "While hypoglycemia can cause seizures in pregnancy, the severe hypertension, preeclampsia history, and classic prodromal symptoms point strongly to eclampsia. Blood glucose should still be checked.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Febrile seizure caused by an underlying infection, as indicated by the mildly elevated temperature of 99.1°F", "correct": false, "critical": false, "explanation": "A temperature of 99.1°F is not a significant fever and would not typically cause seizures in an adult. Febrile seizures occur in young children, not adults.", "guideline_ref": "National EMS Education Standards — OB Emergencies"}
+        ],
+        "clinical_pearl": "Warning signs of impending eclampsia include severe persistent headache, visual disturbances (scotomata, blurred vision), epigastric or right upper quadrant pain, and hyperreflexia. These symptoms warrant emergent evaluation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, you are preparing to manage this patient. Arrange the following interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Protect the airway — suction as needed, position in left lateral decubitus, provide supplemental oxygen",
+          "Administer magnesium sulfate 4-6 g IV over 15-20 minutes for seizure prophylaxis and treatment",
+          "Establish IV access with a large-bore catheter",
+          "Check blood glucose to rule out hypoglycemia as a contributing cause",
+          "Initiate rapid transport to a facility with obstetric and neonatal intensive care capabilities"
+        ],
+        "correctOrder": [0, 3, 2, 1, 4],
+        "explanation": "First priority is airway management and positioning (left lateral to prevent aspiration and relieve aortocaval compression). Check glucose to rule out hypoglycemia. Establish IV access, then administer magnesium sulfate — the definitive treatment for eclamptic seizures. Rapid transport to a high-acuity OB facility is essential as definitive treatment is delivery.",
+        "guideline_ref": "ACOG Practice Bulletin — Hypertensive Disorders of Pregnancy; National EMS Education Standards — OB Emergencies",
+        "clinical_pearl": "Magnesium sulfate is superior to diazepam and phenytoin for both treatment and prevention of eclamptic seizures. Have calcium gluconate available as an antidote in case of magnesium toxicity (respiratory depression, loss of DTRs)."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL signs that would indicate magnesium sulfate toxicity during administration.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Loss of deep tendon reflexes (patellar reflex absent)", "correct": true, "critical": false, "explanation": "Loss of DTRs is the earliest sign of magnesium toxicity and occurs at serum levels of 7-10 mEq/L. DTRs should be checked frequently during magnesium infusion.", "guideline_ref": "ACOG Practice Bulletin — Magnesium Sulfate Administration"},
+          {"text": "Respiratory rate falling below 12 breaths per minute", "correct": true, "critical": false, "explanation": "Respiratory depression occurs at magnesium levels of 10-13 mEq/L and is a serious sign of toxicity requiring immediate intervention. Monitor respiratory rate closely.", "guideline_ref": "ACOG Practice Bulletin — Magnesium Sulfate Administration"},
+          {"text": "Hypotension with systolic blood pressure dropping below 90 mmHg", "correct": true, "critical": false, "explanation": "Magnesium causes vasodilation and can produce significant hypotension at toxic levels. While some blood pressure reduction is expected and desired in eclampsia, severe hypotension indicates toxicity.", "guideline_ref": "ACOG Practice Bulletin — Magnesium Sulfate Administration"},
+          {"text": "Mild flushing and sensation of warmth during initial bolus infusion", "correct": false, "critical": false, "explanation": "Flushing and warmth are expected side effects of magnesium sulfate infusion due to its vasodilatory properties. These are normal and do not indicate toxicity.", "guideline_ref": "ACOG Practice Bulletin — Magnesium Sulfate Administration"},
+          {"text": "Blood pressure decreasing from 182/114 to 150/95 mmHg after treatment", "correct": false, "critical": false, "explanation": "A moderate reduction in severely elevated blood pressure is a desired therapeutic effect, not a sign of toxicity. The goal is to reduce severe hypertension to prevent end-organ damage.", "guideline_ref": "ACOG Practice Bulletin — Hypertensive Disorders of Pregnancy"}
+        ],
+        "clinical_pearl": "The antidote for magnesium toxicity is calcium gluconate 1 g IV slow push over 3 minutes. Always have it drawn up and ready when administering magnesium sulfate."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-12",
+    "title": "3-Year-Old — Barking Cough and Noisy Breathing",
+    "dispatch": "3-year-old male, difficulty breathing, barking cough",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Easy",
+    "level_min": "EMR",
+    "patient": {"age": 3, "sex": "M", "cc": "Barking cough and stridor"},
+    "scene": "You arrive at a home at 2 AM where parents are holding their 3-year-old son who is crying with a distinctive seal-like barking cough. The parents report he went to bed with a mild runny nose and low-grade fever, then woke up with the barking cough and noisy breathing approximately 30 minutes ago. He is sitting upright in his mother's arms, alert, and crying intermittently. You note inspiratory stridor that worsens when the child becomes agitated. There is no drooling. He had a similar episode last winter that resolved with cool night air.",
+    "history": {"pmh": "Previous episode of barking cough last winter, no hospitalizations", "meds": "Children's acetaminophen given tonight", "allergies": "No known allergies"},
+    "vitals": {"hr": 128, "bp": "90/60", "rr": 32, "spo2": 96, "gcs": 15, "temp": "100.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize each of the following clinical features as more consistent with 'Croup' or 'Epiglottitis.'",
+        "type": "categorize",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Gradual onset with preceding upper respiratory symptoms over 1-2 days",
+          "Abrupt onset of high fever (>104°F), toxic appearance, and drooling",
+          "Seal-like barking cough with inspiratory stridor",
+          "Child sitting in tripod position, refusing to swallow, with muffled voice",
+          "Symptoms that improve with cool mist or night air exposure",
+          "Rapidly progressive airway obstruction over hours"
+        ],
+        "categories": ["Croup", "Epiglottitis"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "Croup features: gradual onset with URI prodrome, barking cough, stridor worse with agitation, improvement with cool air. Epiglottitis features: abrupt onset, high fever, toxic appearance, drooling (inability to swallow secretions), tripod positioning, muffled voice, rapid progression. Epiglottitis is a life-threatening emergency requiring immediate advanced airway management.",
+        "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies; AAP Clinical Practice Guidelines",
+        "clinical_pearl": "Epiglottitis has become rare since Hib vaccination but still occurs. Never attempt to visualize the airway in suspected epiglottitis — agitation and manipulation can cause complete airway obstruction."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Based on this patient's presentation, which approach to management is MOST appropriate?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Keep the child calm and in a position of comfort with the parent, minimize interventions that cause agitation, and allow the child to breathe cool night air during transport", "correct": true, "critical": false, "explanation": "For mild to moderate croup, keeping the child calm is paramount. Agitation worsens stridor and airway obstruction. Allow the parent to hold the child, minimize scary procedures, and cool air exposure may provide symptom relief.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"},
+          {"text": "Immediately separate the child from the parent, place supine on the stretcher, and apply a tight-fitting non-rebreather mask at 15 LPM", "correct": false, "critical": false, "explanation": "Separating the child from the parent and forcing a supine position would cause significant agitation, worsening the stridor and potentially causing complete airway obstruction.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"},
+          {"text": "Perform an oropharyngeal exam with a tongue depressor to directly visualize the airway and assess for epiglottic swelling", "correct": false, "critical": true, "explanation": "Direct visualization of the airway with a tongue depressor is dangerous in pediatric upper airway obstruction. In epiglottitis, this can precipitate complete obstruction and arrest. Even in croup, it causes agitation and worsening symptoms.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"},
+          {"text": "Insert a nasopharyngeal airway to bypass the obstruction and secure the airway for transport", "correct": false, "critical": false, "explanation": "An NPA is not indicated for croup. The obstruction is subglottic (below the vocal cords) and an NPA would not bypass it. This intervention would cause significant agitation.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"}
+        ],
+        "clinical_pearl": "The most important treatment for croup in the prehospital setting is keeping the child calm. Blow-by oxygen held near the face by a parent is better tolerated than a mask. A crying child with croup sounds worse than they often are."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As an AEMT or Paramedic, which medication intervention is MOST appropriate for this patient if authorized by protocol?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Nebulized racemic epinephrine (0.5 mL of 2.25% solution in 3 mL NS) delivered via blow-by nebulization", "correct": true, "critical": false, "explanation": "Nebulized racemic epinephrine causes mucosal vasoconstriction, reducing subglottic edema and improving airflow. Blow-by delivery is preferred over a tight mask to minimize agitation. Effects begin within minutes but may wear off in 1-2 hours (rebound).", "guideline_ref": "National EMS Education Standards — Pediatric Pharmacology; AAP Croup Guidelines"},
+          {"text": "Albuterol 2.5 mg via nebulizer to treat the bronchospasm causing the stridor and cough", "correct": false, "critical": false, "explanation": "Albuterol is a bronchodilator that acts on lower airways. Croup involves subglottic edema of the upper airway, not bronchospasm. Albuterol is not effective for croup.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"},
+          {"text": "Diphenhydramine 1 mg/kg IM to reduce airway swelling from the presumed allergic reaction", "correct": false, "critical": false, "explanation": "Croup is a viral infection, not an allergic reaction. Diphenhydramine (an antihistamine) has no role in croup management and would cause sedation, potentially worsening airway compromise.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"},
+          {"text": "Epinephrine 0.01 mg/kg IM (1:1000) in the lateral thigh for presumed anaphylaxis causing upper airway edema", "correct": false, "critical": false, "explanation": "This presentation is not consistent with anaphylaxis — there are no hives, no allergen exposure, and the onset was gradual with URI symptoms. IM epinephrine at anaphylaxis doses is not indicated for croup.", "guideline_ref": "National EMS Education Standards — Pediatric Respiratory Emergencies"}
+        ],
+        "clinical_pearl": "After nebulized epinephrine for croup, the child must be transported and monitored for at least 2-3 hours due to risk of rebound worsening. Never treat with nebulized epinephrine and release on scene."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-13",
+    "title": "24F — Sudden Abdominal Pain and Dizziness",
+    "dispatch": "24-year-old female, severe abdominal pain, feeling faint",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 24, "sex": "F", "cc": "Sudden lower abdominal pain and dizziness"},
+    "scene": "You arrive at a workplace break room where a 24-year-old female is lying on the floor, pale and diaphoretic. Coworkers report she suddenly doubled over with severe left lower abdominal pain and nearly fainted. She states the pain began suddenly about 15 minutes ago and is sharp, constant, and radiates to her left shoulder. She reports her last menstrual period was approximately 7 weeks ago and admits it was lighter than usual. She denies knowledge of pregnancy. She has had mild vaginal spotting for the past 2 days.",
+    "history": {"pmh": "History of pelvic inflammatory disease, previous chlamydia infection", "meds": "None currently", "allergies": "Ibuprofen"},
+    "vitals": {"hr": 122, "bp": "86/52", "rr": 24, "spo2": 98, "gcs": 15, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings is MOST suggestive of a ruptured ectopic pregnancy in this patient?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Sudden unilateral lower abdominal pain with referred shoulder pain, missed menstrual period, vaginal spotting, tachycardia, and hypotension in a patient with PID history", "correct": true, "critical": false, "explanation": "This is the classic presentation of ruptured ectopic pregnancy: sudden onset unilateral abdominal pain, referred shoulder pain (Kehr's sign from diaphragmatic irritation by free blood), missed/abnormal period, vaginal spotting, and hemorrhagic shock. History of PID is a major risk factor due to tubal scarring.", "guideline_ref": "National EMS Education Standards — OB Emergencies; ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "Bilateral lower abdominal cramping with heavy vaginal bleeding, passage of tissue, and an open cervical os at 7 weeks gestation", "correct": false, "critical": false, "explanation": "This describes a spontaneous abortion (miscarriage), which typically presents with bilateral cramping and heavier bleeding with tissue passage, not the unilateral pain, shoulder pain, and hemorrhagic shock seen here.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Right lower quadrant pain with fever, nausea, and localized peritoneal signs in a young female consistent with acute appendicitis", "correct": false, "critical": false, "explanation": "While appendicitis is a differential, the missed period, vaginal spotting, referred shoulder pain, and hemodynamic instability make ectopic pregnancy far more likely. Always consider ectopic pregnancy in reproductive-age females with abdominal pain.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Diffuse abdominal pain with high fever, purulent vaginal discharge, and cervical motion tenderness indicating acute pelvic inflammatory disease", "correct": false, "critical": false, "explanation": "Acute PID presents with bilateral pain, fever, and vaginal discharge — not the sudden unilateral pain, hemodynamic instability, and referred shoulder pain seen in this patient.", "guideline_ref": "National EMS Education Standards — OB Emergencies"}
+        ],
+        "clinical_pearl": "Kehr's sign — referred pain to the shoulder tip — occurs when free intraperitoneal blood irritates the diaphragm. In a reproductive-age female with abdominal pain and shoulder pain, think ruptured ectopic until proven otherwise."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Place the patient supine and elevate the lower extremities (Trendelenburg or shock position)",
+          "Administer high-flow oxygen via non-rebreather mask",
+          "Establish two large-bore IV lines and initiate normal saline bolus",
+          "Keep the patient warm — apply blankets to prevent hypothermia",
+          "Initiate rapid transport to a surgical-capable facility and provide early hospital notification"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "High-flow oxygen first to maximize O2 delivery in the setting of hemorrhagic shock. Position supine with legs elevated to improve venous return. Establish bilateral large-bore IVs for volume resuscitation. Prevent hypothermia (part of the lethal triad). Rapid transport is critical — definitive treatment is surgical.",
+        "guideline_ref": "National EMS Education Standards — OB Emergencies; PHTLS 9th Edition — Hemorrhagic Shock",
+        "clinical_pearl": "Ruptured ectopic pregnancy is a surgical emergency. No prehospital intervention can stop the internal hemorrhage — time to the operating room is the most critical factor. Do not delay transport for additional interventions."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Select ALL risk factors that increase a patient's likelihood of having an ectopic pregnancy.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "History of pelvic inflammatory disease or sexually transmitted infections", "correct": true, "critical": false, "explanation": "PID and STIs (especially chlamydia and gonorrhea) cause tubal scarring and adhesions, which is the leading risk factor for ectopic pregnancy.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "Previous ectopic pregnancy", "correct": true, "critical": false, "explanation": "A prior ectopic pregnancy increases the risk of recurrence to 10-25%, due to underlying tubal pathology.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "Current intrauterine device (IUD) use", "correct": true, "critical": false, "explanation": "While IUDs prevent intrauterine pregnancy effectively, if pregnancy occurs with an IUD in place, there is a higher proportion of ectopic implantation.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "History of tubal surgery or tubal ligation", "correct": true, "critical": false, "explanation": "Prior tubal surgery (including tubal ligation) alters tubal anatomy and increases ectopic risk if pregnancy occurs.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "Multiparity with five or more prior uncomplicated vaginal deliveries", "correct": false, "critical": false, "explanation": "Multiparity with uncomplicated pregnancies is not a risk factor for ectopic pregnancy. The risk factors are related to tubal damage or abnormal anatomy.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"},
+          {"text": "Family history of gestational diabetes in the patient's mother", "correct": false, "critical": false, "explanation": "Family history of gestational diabetes is a risk factor for GDM but has no association with ectopic pregnancy.", "guideline_ref": "ACOG Practice Bulletin — Ectopic Pregnancy"}
+        ],
+        "clinical_pearl": "Always consider ectopic pregnancy in ANY reproductive-age female presenting with abdominal pain, syncope, or hypotension — even if she denies the possibility of pregnancy. A prehospital pregnancy test, where available, can be invaluable."
+      }
+    ]
+  },
+  {
+    "id": "nat-ob-14",
+    "title": "31F — Heavy Bleeding After Home Delivery",
+    "dispatch": "31-year-old female, just delivered baby at home, heavy bleeding",
+    "category": "OB/Peds/Neonatal",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 31, "sex": "F", "cc": "Heavy vaginal bleeding after delivery"},
+    "scene": "You arrive at a home where a 31-year-old female delivered a healthy baby approximately 20 minutes ago with the assistance of a midwife. The placenta delivered intact 10 minutes ago. The midwife called 911 because the mother is bleeding heavily — you observe blood-soaked towels and estimate at least 500 mL of blood loss. The mother appears pale and states she feels lightheaded and cold. The uterine fundus, when palpated, feels soft and boggy above the umbilicus rather than firm and contracted. The newborn is wrapped in blankets and appears healthy with good color and cry.",
+    "history": {"pmh": "G4P4, previous postpartum hemorrhage with third delivery, uterine fibroids", "meds": "Prenatal vitamins, iron supplements", "allergies": "Latex"},
+    "vitals": {"hr": 116, "bp": "94/60", "rr": 22, "spo2": 97, "gcs": 15, "temp": "98.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The most common cause of postpartum hemorrhage is uterine atony. Which finding on your assessment BEST confirms uterine atony as the cause of this patient's bleeding?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "A soft, boggy uterine fundus palpated above the umbilicus that does not firm with massage, with continued heavy vaginal bleeding", "correct": true, "critical": false, "explanation": "A soft, boggy uterus that fails to contract is the hallmark of uterine atony. After delivery, the uterus should contract firmly to compress the spiral arteries at the placental site. When it fails to contract, hemorrhage results.", "guideline_ref": "National EMS Education Standards — OB Emergencies; ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "A firm, contracted uterus with continued heavy vaginal bleeding and visible perineal laceration", "correct": false, "critical": false, "explanation": "If the uterus is firm and well-contracted but bleeding continues, the source is likely a genital tract laceration rather than atony. This requires hospital evaluation and repair.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "Incomplete delivery of the placenta with visible retained fragments and continued moderate bleeding", "correct": false, "critical": false, "explanation": "Retained placental fragments can cause hemorrhage, but the scenario states the placenta delivered intact. Additionally, the soft boggy uterus points to atony.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "Heavy bleeding with rapidly expanding abdominal distension and rigid abdomen suggesting concealed internal hemorrhage", "correct": false, "critical": false, "explanation": "This would suggest uterine rupture or intra-abdominal hemorrhage, not atony. The patient has a palpable boggy uterus without signs of peritoneal irritation.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"}
+        ],
+        "clinical_pearl": "The 'Four T's' of postpartum hemorrhage are Tone (atony — 70% of cases), Trauma (lacerations), Tissue (retained placenta), and Thrombin (coagulopathy). Atony is by far the most common and most treatable cause."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this patient with postpartum hemorrhage due to uterine atony.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Perform uterine fundal massage — firmly massage the uterine fundus in a circular motion to stimulate contraction", "correct": true, "critical": false, "explanation": "Fundal massage is the first-line treatment for uterine atony and can be performed by any EMS provider. Firm, continuous massage stimulates uterine contraction and can significantly reduce hemorrhage.", "guideline_ref": "National EMS Education Standards — OB Emergencies; ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "Encourage the infant to breastfeed or stimulate the nipples to promote endogenous oxytocin release", "correct": true, "critical": false, "explanation": "Nipple stimulation triggers endogenous oxytocin release from the posterior pituitary, promoting uterine contraction. This is a simple intervention that can be performed alongside other treatments.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Establish IV access and begin fluid resuscitation with isotonic crystalloid for hemorrhagic shock", "correct": true, "critical": false, "explanation": "Volume resuscitation is essential in hemorrhagic shock. Large-bore IV access with crystalloid infusion supports perfusion while treating the underlying cause.", "guideline_ref": "National EMS Education Standards — OB Emergencies; PHTLS 9th Edition"},
+          {"text": "Initiate rapid transport to an obstetric facility while continuing fundal massage and fluid resuscitation", "correct": true, "critical": false, "explanation": "Rapid transport is essential as the patient may need uterotonics (oxytocin, methylergonovine), transfusion, or surgical intervention if hemorrhage is not controlled by field measures.", "guideline_ref": "National EMS Education Standards — OB Emergencies"},
+          {"text": "Apply direct pressure packing into the vaginal canal with sterile gauze to tamponade the bleeding", "correct": false, "critical": false, "explanation": "Vaginal packing does not address the source of bleeding in uterine atony — the bleeding originates from the uterine cavity at the placental site. Fundal massage and uterotonics are the appropriate treatments.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "Place the patient in Trendelenburg position and apply the PASG/MAST trousers to the lower extremities and abdomen", "correct": false, "critical": false, "explanation": "PASG/MAST are not recommended for routine hemorrhage management. Abdominal compartment inflation in a postpartum patient is contraindicated as it can impede uterine contraction and mask ongoing blood loss.", "guideline_ref": "NAEMSP Position Statement; National EMS Education Standards"}
+        ],
+        "clinical_pearl": "Postpartum hemorrhage is defined as blood loss ≥500 mL after vaginal delivery or ≥1000 mL after cesarean delivery. Quantitative blood loss measurement (weighing pads and collecting blood) is more accurate than visual estimation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, which medication is the FIRST-LINE uterotonic agent for postpartum hemorrhage due to uterine atony?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "Despite 5 minutes of continuous fundal massage, the uterus remains boggy and bleeding continues. You have IV access established and the patient's BP is now 88/54.",
+        "vitals_update": {"hr": 124, "bp": "88/54", "rr": 24, "spo2": 96},
+        "options": [
+          {"text": "Oxytocin (Pitocin) 10-40 units in 1000 mL NS, infused IV per protocol", "correct": true, "critical": false, "explanation": "Oxytocin is the first-line uterotonic for postpartum hemorrhage. It directly stimulates uterine smooth muscle contraction. It is typically administered as an IV infusion (10-40 units in 1L crystalloid) rather than IV push to avoid hypotension.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage; WHO Recommendations for PPH"},
+          {"text": "Methylergonovine (Methergine) 0.2 mg IM for sustained uterine contraction", "correct": false, "critical": false, "explanation": "Methylergonovine is a second-line agent used when oxytocin fails. It is contraindicated in patients with hypertension due to its vasoconstrictive properties. While effective, oxytocin remains the first-line agent.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"},
+          {"text": "Tranexamic acid (TXA) 1 g IV over 10 minutes to prevent clot breakdown", "correct": false, "critical": false, "explanation": "TXA is an antifibrinolytic adjunct used alongside uterotonics for PPH, but it is not a uterotonic and does not address the underlying atony. It should be given in addition to, not instead of, oxytocin.", "guideline_ref": "WOMAN Trial; WHO Recommendations for PPH"},
+          {"text": "Magnesium sulfate 4 g IV to relax the uterus and facilitate clot formation at the placental site", "correct": false, "critical": true, "explanation": "Magnesium sulfate is a tocolytic (uterine relaxant) and would worsen postpartum hemorrhage by further inhibiting uterine contraction. It is used for eclampsia and preterm labor prevention, not PPH.", "guideline_ref": "ACOG Practice Bulletin — Postpartum Hemorrhage"}
+        ],
+        "clinical_pearl": "If oxytocin is unavailable or ineffective, the Paramedic should be familiar with second-line uterotonics: methylergonovine (Methergine) 0.2 mg IM, misoprostol (Cytotec) 800-1000 mcg rectal/sublingual, and carboprost (Hemabate) 250 mcg IM. Availability varies by EMS protocol."
+      }
+    ]
+  }
+]

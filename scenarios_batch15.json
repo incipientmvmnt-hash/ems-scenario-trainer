@@ -1,0 +1,951 @@
+[
+  {
+    "id": "nat-air-18",
+    "title": "34M — Unresponsive After Bar Fight",
+    "dispatch": "34-year-old male, facial trauma, difficulty breathing, becoming unresponsive",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 34,
+      "sex": "M",
+      "cc": "Facial trauma with inability to ventilate"
+    },
+    "scene": "You arrive outside a bar where a 34-year-old male is found supine on the sidewalk. Bystanders report he was punched multiple times in the face and fell, striking a curb. He has massive facial swelling, bilateral periorbital ecchymosis, blood pooling in his oropharynx, and teeth fragments visible. He is making gurgling, snoring respirations and is only responsive to painful stimuli. Initial BVM ventilation attempts are failing to produce adequate chest rise despite jaw thrust and repositioning. An OPA causes gagging but an NPA is in place with minimal improvement.",
+    "history": {
+      "pmh": "None known",
+      "meds": "None",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 132,
+      "bp": "158/94",
+      "rr": 8,
+      "spo2": 74,
+      "gcs": 6,
+      "temp": "98.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are unable to ventilate this patient with BVM despite optimal positioning and adjuncts. Your first intubation attempt with direct laryngoscopy fails due to blood and edema obscuring landmarks. A second attempt with a bougie also fails. According to the difficult airway algorithm, what is the correct sequence of actions at this point?",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Attempt placement of a supraglottic airway device (King LT or i-gel)",
+          "Reattempt BVM ventilation with two-person technique and adjuncts",
+          "Perform surgical cricothyrotomy",
+          "Confirm the 'cannot intubate, cannot oxygenate' (CICO) situation"
+        ],
+        "correctOrder": [3, 1, 0, 2],
+        "explanation": "After two failed intubation attempts: (1) Confirm the CICO situation by recognizing failed intubation, (2) Return to BVM with two-person technique as a rescue attempt, (3) Attempt a supraglottic airway as a rescue device, (4) If all fail and the patient cannot be oxygenated, perform surgical cricothyrotomy as the final rescue. Cric is the definitive intervention for a true CICO emergency.",
+        "guideline_ref": "National EMS Education Standards — Airway Management; Difficult Airway Society Guidelines; NAEMSP Position Statement on Prehospital Airway Management",
+        "clinical_pearl": "The failed airway algorithm is time-critical. Each rescue attempt should take no more than 30 seconds. Do not make more than 2-3 laryngoscopy attempts — repeated attempts worsen edema, bleeding, and hypoxia."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "A supraglottic airway fails to provide adequate ventilation. You must perform a surgical cricothyrotomy. Select ALL correct steps for performing this procedure.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "narrative": "SpO2 has dropped to 62%. The supraglottic airway is not sealing. You have declared a CICO emergency and prepared your surgical cric kit.",
+        "vitals_update": {
+          "hr": 144,
+          "bp": "170/100",
+          "rr": 4,
+          "spo2": 62,
+          "gcs": 4
+        },
+        "options": [
+          {
+            "text": "Identify the cricothyroid membrane between the thyroid and cricoid cartilages by palpation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Accurate landmark identification is the essential first step. The cricothyroid membrane lies between the inferior border of the thyroid cartilage and the superior border of the cricoid cartilage.",
+            "guideline_ref": "National EMS Education Standards — Surgical Airway"
+          },
+          {
+            "text": "Make a vertical skin incision followed by a horizontal stab through the cricothyroid membrane",
+            "correct": true,
+            "critical": false,
+            "explanation": "A vertical skin incision allows identification of landmarks in a bloody field. The horizontal stab through the membrane itself minimizes risk of posterior tracheal wall injury.",
+            "guideline_ref": "National EMS Education Standards — Surgical Airway; ATLS 10th Edition"
+          },
+          {
+            "text": "Insert a tracheal hook or bougie to maintain the tract, then place a cuffed 6.0 tracheostomy or ETT tube",
+            "correct": true,
+            "critical": false,
+            "explanation": "Maintaining tract access with a hook or bougie prevents loss of the airway. A cuffed 6.0 tube (tracheostomy tube or ETT) provides a secure, ventilatable airway.",
+            "guideline_ref": "National EMS Education Standards — Surgical Airway"
+          },
+          {
+            "text": "Confirm placement with ETCO2 waveform capnography and auscultation of bilateral breath sounds",
+            "correct": true,
+            "critical": false,
+            "explanation": "Waveform capnography is the gold standard for confirming tracheal placement of any advanced airway. Bilateral breath sounds and chest rise further support correct positioning.",
+            "guideline_ref": "National EMS Education Standards — Airway Confirmation; AHA Guidelines 2020"
+          },
+          {
+            "text": "Perform the incision through the first and second tracheal rings below the cricoid cartilage",
+            "correct": false,
+            "critical": true,
+            "explanation": "A cricothyrotomy is performed through the cricothyroid membrane, NOT the tracheal rings. Cutting through tracheal rings is a tracheostomy, which is a surgical procedure not appropriate for emergent field use.",
+            "guideline_ref": "National EMS Education Standards — Surgical Airway"
+          },
+          {
+            "text": "Inflate the cuff and ventilate while leaving the original supraglottic airway in place as a backup",
+            "correct": false,
+            "critical": false,
+            "explanation": "The supraglottic airway should be removed once the surgical airway is confirmed to be functioning. Leaving it in place can obstruct ventilation through the cricothyrotomy and impede assessment.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          }
+        ],
+        "clinical_pearl": "In a CICO emergency, do not hesitate to perform a surgical cricothyrotomy. Cognitive paralysis and delayed decision-making are the biggest killers. Practice the procedure regularly on simulation models."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After successfully placing a surgical airway and stabilizing the patient, which of the following is the MOST appropriate transport decision?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The surgical cricothyrotomy is in place with confirmed ETCO2 waveform. SpO2 is improving. The patient remains unresponsive.",
+        "vitals_update": {
+          "hr": 118,
+          "bp": "142/88",
+          "rr": 14,
+          "spo2": 94,
+          "gcs": 5
+        },
+        "options": [
+          {
+            "text": "Transport to the nearest Level I or Level II trauma center capable of definitive airway management and facial reconstruction",
+            "correct": true,
+            "critical": false,
+            "explanation": "This patient has significant facial trauma, a surgical airway, and likely needs operative intervention. A trauma center with surgical specialists is the most appropriate destination.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions; ACS Committee on Trauma Field Triage Guidelines"
+          },
+          {
+            "text": "Transport to the closest emergency department for stabilization and then arrange interfacility transfer",
+            "correct": false,
+            "critical": false,
+            "explanation": "Direct transport to a trauma center avoids delays from interfacility transfer. If the trauma center is within a reasonable distance, bypassing closer facilities improves outcomes.",
+            "guideline_ref": "ACS Committee on Trauma Field Triage Guidelines"
+          },
+          {
+            "text": "Remain on scene to perform a secondary survey and obtain additional IV access before transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "Scene time should be minimized for critical trauma patients. Secondary survey and additional interventions can be performed en route.",
+            "guideline_ref": "PHTLS 9th Edition — Golden Period"
+          },
+          {
+            "text": "Request aeromedical transport regardless of distance to the nearest trauma center",
+            "correct": false,
+            "critical": false,
+            "explanation": "Aeromedical transport is indicated when ground transport time to an appropriate facility would be excessive. It is not automatically indicated for all critical patients, especially when a trauma center is nearby.",
+            "guideline_ref": "NAEMSP Position Statement on Aeromedical Transport"
+          }
+        ],
+        "clinical_pearl": "A surgical cricothyrotomy is a temporizing measure. These patients need definitive airway management (typically conversion to a formal tracheostomy) in the OR. Communicate clearly with the receiving facility about the surgical airway."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-19",
+    "title": "58F — Difficulty Breathing During Interfacility Transport",
+    "dispatch": "Interfacility transfer: 58-year-old female, intubated, ventilator-dependent, being transferred to tertiary ICU",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 58,
+      "sex": "F",
+      "cc": "Ventilated patient with worsening oxygenation during transport"
+    },
+    "scene": "You are performing a critical care interfacility transport of a 58-year-old female who was intubated 6 hours ago for acute hypoxic respiratory failure secondary to pneumonia. She is on a transport ventilator set to AC mode, rate 16, tidal volume 380 mL (6 mL/kg IBW), FiO2 0.80, PEEP 10 cmH2O. Twenty minutes into transport, the high-pressure alarm begins sounding repeatedly. The patient appears to be bucking the ventilator, SpO2 is dropping, and peak airway pressures have risen from 28 to 48 cmH2O.",
+    "history": {
+      "pmh": "COPD, obesity (BMI 38), hypertension, Type 2 diabetes",
+      "meds": "Tiotropium, metformin, lisinopril, propofol infusion, fentanyl infusion",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 118,
+      "bp": "152/96",
+      "rr": 24,
+      "spo2": 84,
+      "gcs": 3,
+      "temp": "101.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The transport ventilator is alarming with high peak pressures and the patient's SpO2 is dropping. Arrange the troubleshooting steps in the correct order using the DOPE mnemonic.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Check for ETT Displacement — verify tube depth, listen for bilateral breath sounds, check ETCO2 waveform",
+          "Disconnect from ventilator and manually ventilate with BVM to determine if obstruction is in the circuit or patient",
+          "Check for Obstruction — suction ETT, assess for mucus plugging or kinking of the tube",
+          "Consider Pneumothorax — auscultate for unilateral absent breath sounds, assess for tracheal deviation, JVD",
+          "Check Equipment — verify ventilator settings, check circuit connections, assess oxygen supply"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "The first action when a ventilator alarms is to disconnect and bag the patient — this immediately tells you if the problem is the ventilator/circuit or the patient. Then work through DOPE: Displacement (tube position), Obstruction (suction, kinking), Pneumothorax (physical exam), Equipment (ventilator and circuit check). This systematic approach prevents missing life-threatening causes.",
+        "guideline_ref": "National EMS Education Standards — Ventilator Management; Critical Care Transport Curriculum",
+        "clinical_pearl": "When in doubt, disconnect and bag. A transport ventilator malfunction is an equipment problem with a simple solution. A tension pneumothorax is a patient problem that kills. Always assess the patient first."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You identify thick mucus plugging after suctioning the ETT. After clearing the obstruction, the patient remains dyssynchronous with the ventilator. Which of the following is the MOST appropriate next intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "After suctioning, SpO2 has improved to 89% but the patient continues to fight the ventilator with high peak pressures. ETCO2 waveform is present and consistent.",
+        "vitals_update": {
+          "hr": 112,
+          "bp": "146/90",
+          "rr": 26,
+          "spo2": 89,
+          "gcs": 3
+        },
+        "options": [
+          {
+            "text": "Increase sedation with a propofol bolus and assess adequacy of the fentanyl infusion for pain control",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ventilator dyssynchrony is commonly caused by inadequate sedation and analgesia. Addressing patient comfort and synchrony with the ventilator is the appropriate first step before changing ventilator settings.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; Society of Critical Care Medicine PADIS Guidelines"
+          },
+          {
+            "text": "Increase the ventilator rate to 24 breaths per minute to match the patient's spontaneous rate",
+            "correct": false,
+            "critical": false,
+            "explanation": "Increasing the ventilator rate to match a tachypneic patient can lead to breath stacking, auto-PEEP, and hemodynamic compromise. The cause of dyssynchrony should be addressed rather than trying to match the patient's agitation-driven rate.",
+            "guideline_ref": "National EMS Education Standards — Ventilator Management"
+          },
+          {
+            "text": "Switch from assist-control to CPAP mode to allow the patient full control of breathing",
+            "correct": false,
+            "critical": false,
+            "explanation": "Switching an acutely hypoxic, dyssynchronous patient to a purely spontaneous mode risks hypoventilation and further desaturation. The patient needs adequate ventilatory support.",
+            "guideline_ref": "National EMS Education Standards — Ventilator Management"
+          },
+          {
+            "text": "Administer a neuromuscular blocking agent without adjusting sedation",
+            "correct": false,
+            "critical": true,
+            "explanation": "Paralyzing a patient without ensuring adequate sedation is extremely harmful — the patient would be aware but unable to move or communicate. Sedation must always be verified and optimized before paralysis.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; PADIS Guidelines"
+          }
+        ],
+        "clinical_pearl": "In ARDS management, low tidal volume ventilation (6 mL/kg IBW) is lung-protective but can feel uncomfortable to the patient, increasing dyssynchrony. Adequate sedation and sometimes paralysis are needed to maintain protective settings."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize the following ventilator alarm scenarios into their likely cause.",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "High peak pressure with normal plateau pressure",
+          "High peak pressure with high plateau pressure",
+          "Low pressure alarm with absent ETCO2 waveform",
+          "Low pressure alarm with ETCO2 waveform present but diminishing",
+          "Low tidal volume alarm with cuff pressure reading zero"
+        ],
+        "categories": [
+          "Airway/Circuit Resistance Problem",
+          "Lung Compliance Problem",
+          "Circuit Disconnect or Leak"
+        ],
+        "correctCategories": [0, 1, 2, 2, 2],
+        "explanation": "High peak with normal plateau = resistance issue (kinked tube, bronchospasm, secretions). High peak with high plateau = compliance issue (pneumothorax, pulmonary edema, abdominal distension). Low pressure with absent ETCO2 = complete disconnect. Low pressure with diminishing ETCO2 = partial leak or cuff issue. Low tidal volume with zero cuff pressure = cuff deflation causing leak around the ETT.",
+        "guideline_ref": "National EMS Education Standards — Ventilator Management; Critical Care Paramedic Curriculum",
+        "clinical_pearl": "Peak pressure reflects both airway resistance AND lung compliance. Plateau pressure (measured during an inspiratory hold) isolates lung compliance. The difference between peak and plateau tells you where the problem is."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which of the following parameters should be communicated to the receiving ICU team during handoff for this ventilated patient?",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Current ventilator settings including mode, rate, tidal volume, FiO2, and PEEP",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ventilator settings are essential for the receiving team to continue appropriate mechanical ventilation without interruption.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          },
+          {
+            "text": "Sedation and analgesic medications, doses, and any boluses given during transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "Accurate medication reconciliation prevents oversedation or undersedation during the transition of care.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Any complications during transport including the mucus plugging event and management",
+            "correct": true,
+            "critical": false,
+            "explanation": "Transport complications inform the receiving team of potential ongoing issues and guide their reassessment priorities.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          },
+          {
+            "text": "Trending vitals including SpO2, ETCO2, and peak airway pressures throughout transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "Vital sign trends give the receiving team a dynamic picture of the patient's trajectory rather than a single snapshot.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          },
+          {
+            "text": "The patient's insurance information and advance directive status",
+            "correct": false,
+            "critical": false,
+            "explanation": "While important for hospital administration, insurance information is not a clinical handoff priority. Advance directives may be relevant but are typically transferred via documentation, not verbal clinical handoff.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          }
+        ],
+        "clinical_pearl": "Use a structured handoff tool like I-SBAR or MIST for critical care transfers. Include: ventilator settings, airway details (tube size, depth, cuff pressure), sedation plan, hemodynamic support, and any transport complications."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-20",
+    "title": "22F — Severe Breathing Difficulty at Home",
+    "dispatch": "22-year-old female, extreme difficulty breathing, unable to speak",
+    "category": "Airway & Breathing",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 22,
+      "sex": "F",
+      "cc": "Severe respiratory distress, unable to speak"
+    },
+    "scene": "You arrive at an apartment where a 22-year-old female is found sitting upright on the edge of her bed in a tripod position. She is diaphoretic, using accessory muscles aggressively, and can only mouth single words. Her lips appear cyanotic. Her roommate reports the patient has been sick with an upper respiratory infection for 3 days and her breathing has been getting progressively worse despite using her inhaler repeatedly. Multiple empty albuterol MDI canisters are on the nightstand. Bilateral wheezing is barely audible with poor air movement throughout all lung fields. The room is silent despite her obvious respiratory effort.",
+    "history": {
+      "pmh": "Asthma since childhood, 3 prior ICU admissions for asthma, 1 prior intubation at age 17",
+      "meds": "Albuterol MDI, fluticasone/salmeterol, montelukast, prednisone (started 2 days ago by PCP)",
+      "allergies": "Aspirin (bronchospasm)"
+    },
+    "vitals": {
+      "hr": 138,
+      "bp": "90/64",
+      "rr": 34,
+      "spo2": 82,
+      "gcs": 14,
+      "temp": "99.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings in this patient indicates a near-fatal asthma exacerbation requiring immediate aggressive intervention?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Silent chest despite respiratory effort, prior intubation history, inability to speak, hypotension, and cyanosis",
+            "correct": true,
+            "critical": false,
+            "explanation": "A 'silent chest' (absent wheezing despite respiratory effort) indicates such severe bronchospasm that minimal air is moving — this is an ominous sign. Combined with prior intubation, inability to speak, hemodynamic compromise, and cyanosis, this represents a near-fatal asthma presentation requiring immediate aggressive treatment and preparation for intubation.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies; GINA 2021 — Severe/Life-Threatening Asthma"
+          },
+          {
+            "text": "Bilateral wheezing, tachycardia, tachypnea, and a history of asthma with recent URI trigger",
+            "correct": false,
+            "critical": false,
+            "explanation": "While these findings confirm an asthma exacerbation, audible wheezing actually indicates some air movement. This combination alone doesn't identify the critical severity markers of near-fatal disease.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "SpO2 of 82% with tachypnea, indicating the need for supplemental oxygen but a manageable exacerbation",
+            "correct": false,
+            "critical": false,
+            "explanation": "An SpO2 of 82% in a young asthmatic is profoundly abnormal and indicates severe disease, not a manageable exacerbation. Hypoxemia in asthma is a late and ominous finding.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Use of accessory muscles and tripod positioning, which are typical findings in any moderate asthma exacerbation",
+            "correct": false,
+            "critical": false,
+            "explanation": "While accessory muscle use occurs in moderate exacerbations, the full clinical picture here (silent chest, hemodynamic instability, cyanosis) far exceeds moderate severity.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          }
+        ],
+        "clinical_pearl": "Beware the 'quiet asthmatic.' Improvement in wheezing can mean either the patient is getting better (more air movement) or critically worse (no air movement). Always correlate auscultation findings with the patient's overall clinical picture."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the treatment interventions for this near-fatal asthma patient in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Administer continuous nebulized albuterol with ipratropium bromide",
+          "Apply high-flow oxygen via non-rebreather mask immediately",
+          "Establish IV access and administer magnesium sulfate 2g IV over 20 minutes",
+          "Administer epinephrine 0.3 mg IM (1:1,000)",
+          "Prepare for advanced airway management including RSI medications"
+        ],
+        "correctOrder": [1, 0, 3, 2, 4],
+        "explanation": "Priority sequence: (1) High-flow oxygen — address life-threatening hypoxemia first, (2) Continuous nebulized albuterol/ipratropium — primary bronchodilator therapy, (3) Epinephrine IM — for severe/near-fatal asthma with hemodynamic instability and poor response to inhaled agents, (4) Magnesium sulfate IV — adjunctive bronchodilator for severe cases, (5) Prepare for intubation — this patient has multiple indicators suggesting possible respiratory failure.",
+        "guideline_ref": "National EMS Education Standards — Respiratory Pharmacology; NAEMSP Asthma Guidelines; GINA 2021",
+        "clinical_pearl": "IM epinephrine is underutilized in severe asthma. In near-fatal exacerbations with poor air movement, inhaled bronchodilators may not reach distal airways. Systemic epinephrine provides both bronchodilation and hemodynamic support."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Despite aggressive treatment, the patient becomes obtunded with a GCS of 8 and CO2 narcosis is suspected. You must perform RSI. Which induction agent is MOST appropriate for this patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "After 10 minutes of aggressive treatment, the patient's wheezing has slightly improved but she is now lethargic and difficult to arouse. ETCO2 by nasal cannula reads 72 mmHg. SpO2 remains at 86% on high-flow oxygen.",
+        "vitals_update": {
+          "hr": 128,
+          "bp": "84/58",
+          "rr": 12,
+          "spo2": 86,
+          "gcs": 8
+        },
+        "options": [
+          {
+            "text": "Ketamine",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ketamine is the preferred induction agent for asthma patients because it provides bronchodilation through catecholamine release and direct smooth muscle relaxation while preserving hemodynamic stability. This is critical in a hypotensive patient.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; NAEMSP RSI Position Statement"
+          },
+          {
+            "text": "Etomidate",
+            "correct": false,
+            "critical": false,
+            "explanation": "While etomidate is hemodynamically neutral and commonly used for RSI, it offers no bronchodilatory properties. Ketamine provides both hemodynamic stability and active bronchodilation in status asthmaticus.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Propofol",
+            "correct": false,
+            "critical": false,
+            "explanation": "Propofol has some bronchodilatory properties but causes significant vasodilation and hypotension. In a patient already hypotensive at 84/58, propofol could precipitate cardiovascular collapse.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Midazolam",
+            "correct": false,
+            "critical": false,
+            "explanation": "Midazolam is not a first-line induction agent for RSI. It has unpredictable onset, no bronchodilatory effects, and can cause hypotension. It is inferior to ketamine for this clinical scenario.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Post-intubation management of severe asthma requires careful ventilator settings: low respiratory rate (8-10/min), prolonged expiratory time (I:E ratio 1:4 or 1:5), and permissive hypercapnia. Avoid breath stacking and auto-PEEP, which can cause hemodynamic collapse."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After intubation, the patient develops sudden hypotension with a BP of 60/40 and bilateral decreased breath sounds. What should you consider and assess?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "vitals_update": {
+          "hr": 150,
+          "bp": "60/40",
+          "rr": 14,
+          "spo2": 80,
+          "gcs": 3
+        },
+        "options": [
+          {
+            "text": "Auto-PEEP from breath stacking — disconnect the ventilator circuit and allow prolonged passive exhalation",
+            "correct": true,
+            "critical": false,
+            "explanation": "In severe asthma, air trapping and auto-PEEP (intrinsic PEEP) are common after intubation, especially if the ventilator rate is too high or expiratory time too short. This creates high intrathoracic pressure that impedes venous return, causing hypotension. Disconnecting the circuit allows trapped air to escape and is both diagnostic and therapeutic.",
+            "guideline_ref": "National EMS Education Standards — Ventilator Management; Critical Care Paramedic Curriculum"
+          },
+          {
+            "text": "Right mainstem intubation causing unilateral ventilation — withdraw the ETT by 2 cm",
+            "correct": false,
+            "critical": false,
+            "explanation": "Right mainstem intubation would cause unilateral absent breath sounds (left side), not bilateral decreased sounds. While tube position should be checked, this does not explain the bilateral findings and acute hemodynamic collapse.",
+            "guideline_ref": "National EMS Education Standards — Airway Management"
+          },
+          {
+            "text": "Anaphylaxis to RSI medications requiring immediate epinephrine administration",
+            "correct": false,
+            "critical": false,
+            "explanation": "While drug allergy is possible, the timing and clinical picture (bilateral decreased breath sounds post-intubation in a severe asthmatic) are most consistent with auto-PEEP. Anaphylaxis would more likely present with skin findings and bronchospasm.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Cardiogenic shock from myocardial depression requiring vasopressor initiation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Acute cardiogenic shock would be unusual in a 22-year-old without cardiac history. The clinical context of severe asthma with sudden post-intubation hypotension strongly suggests auto-PEEP or tension pneumothorax as the cause.",
+            "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"
+          }
+        ],
+        "clinical_pearl": "The 'breath stacking test': disconnect the circuit and push on the chest — if you hear a prolonged rush of air and the blood pressure immediately improves, auto-PEEP was the cause. This takes seconds and can be life-saving."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-21",
+    "title": "45M — Chest Pain After Car Accident",
+    "dispatch": "45-year-old male, MVC, chest pain, difficulty breathing",
+    "category": "Airway & Breathing",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 45,
+      "sex": "M",
+      "cc": "Left-sided chest pain and shortness of breath after MVC"
+    },
+    "scene": "You respond to a two-vehicle MVC on a rural highway. A 45-year-old male was the restrained driver of a sedan struck on the driver's side by a pickup truck at approximately 40 mph. He is found seated in the vehicle, alert but anxious, complaining of sharp left-sided chest pain that worsens with breathing. He has obvious left chest wall contusions and tenderness over the 5th through 9th ribs laterally. Breath sounds are diminished on the left with dullness to percussion at the left base. The patient's skin is pale and diaphoretic. There is no tracheal deviation or JVD noted.",
+    "history": {
+      "pmh": "Hypertension, on warfarin for atrial fibrillation",
+      "meds": "Warfarin, metoprolol, lisinopril",
+      "allergies": "Codeine"
+    },
+    "vitals": {
+      "hr": 116,
+      "bp": "94/68",
+      "rr": 28,
+      "spo2": 91,
+      "gcs": 15,
+      "temp": "97.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the mechanism of injury, physical exam findings, and the patient's medication history, which clinical presentation is MOST consistent with this patient's condition?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Hemothorax — blunt chest trauma with rib fractures, diminished breath sounds with dullness to percussion, hypotension, and anticoagulant use increasing bleeding risk",
+            "correct": true,
+            "critical": false,
+            "explanation": "The combination of blunt lateral chest trauma, multiple rib fractures, diminished breath sounds with dullness to percussion (indicating fluid, not air), hypotension, and warfarin use strongly suggests hemothorax. Dullness to percussion differentiates fluid (blood) from air (pneumothorax, which produces hyperresonance).",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Tension pneumothorax — air accumulating under pressure in the left pleural space causing cardiovascular compromise",
+            "correct": false,
+            "critical": false,
+            "explanation": "Tension pneumothorax produces hyperresonance to percussion, not dullness. It also typically presents with tracheal deviation and JVD, which are absent in this patient. The dullness to percussion is a key differentiating finding.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Pulmonary contusion — bruising of the lung parenchyma causing impaired gas exchange without significant bleeding",
+            "correct": false,
+            "critical": false,
+            "explanation": "While pulmonary contusion is likely present given the mechanism, it does not adequately explain the dullness to percussion, hypotension, and tachycardia. These findings suggest significant intrathoracic hemorrhage.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma"
+          },
+          {
+            "text": "Flail chest — paradoxical chest wall movement causing respiratory failure from mechanical ventilatory impairment",
+            "correct": false,
+            "critical": false,
+            "explanation": "Flail chest requires segmental rib fractures (two or more fractures per rib in two or more consecutive ribs) creating a free-floating segment. The scenario does not describe paradoxical movement, and flail chest alone doesn't explain the dullness to percussion or hemodynamic instability.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma"
+          }
+        ],
+        "clinical_pearl": "Percussion is an underutilized skill in prehospital care. Dullness = fluid (blood, effusion). Hyperresonance = air (pneumothorax). In a noisy environment, perform percussion before moving the patient to the ambulance when possible."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this patient.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Apply high-flow oxygen via non-rebreather mask",
+            "correct": true,
+            "critical": false,
+            "explanation": "High-flow oxygen addresses hypoxemia from reduced lung capacity due to hemothorax and possible pulmonary contusion.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Establish two large-bore IV lines and initiate fluid resuscitation targeting permissive hypotension (SBP 80-90 mmHg)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Two large-bore IVs are indicated for potential hemorrhagic shock. Permissive hypotension (SBP 80-90) is the current standard for hemorrhagic trauma to avoid dilutional coagulopathy and clot disruption.",
+            "guideline_ref": "National EMS Education Standards — Shock Management; PHTLS 9th Edition"
+          },
+          {
+            "text": "Splint the chest wall with a bulky dressing and position the patient with the injured side down",
+            "correct": true,
+            "critical": false,
+            "explanation": "Positioning with the injured side down (if spinal precautions allow) uses gravity to optimize ventilation of the uninjured lung and may limit expansion of the hemothorax.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma"
+          },
+          {
+            "text": "Provide analgesia for rib fracture pain to improve ventilatory effort",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pain from rib fractures causes splinting and shallow breathing, worsening hypoxemia. Appropriate analgesia (per protocol) improves tidal volume and oxygenation.",
+            "guideline_ref": "National EMS Education Standards — Pain Management; PHTLS 9th Edition"
+          },
+          {
+            "text": "Perform needle decompression of the left chest at the 2nd intercostal space, midclavicular line",
+            "correct": false,
+            "critical": true,
+            "explanation": "Needle decompression is indicated for tension pneumothorax (hyperresonance, tracheal deviation, JVD), not hemothorax (dullness to percussion). Needle decompression of a hemothorax would not drain the blood and could introduce air, creating a hemopneumothorax.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Administer tranexamic acid (TXA) 1g IV over 10 minutes if within 3 hours of injury",
+            "correct": false,
+            "critical": false,
+            "explanation": "While TXA may be considered per some protocols for hemorrhagic trauma, its use in this scenario is complicated by the patient's warfarin therapy. TXA is not universally part of AEMT or standard paramedic protocols and varies by system. The question asks for universally appropriate interventions.",
+            "guideline_ref": "CRASH-2 Trial; Local Protocol Dependent"
+          }
+        ],
+        "clinical_pearl": "Patients on anticoagulants (warfarin, DOACs) are at significantly higher risk for massive hemothorax from what might otherwise be a self-limiting bleed. Communicate anticoagulant use early to the receiving facility — they may need reversal agents."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient's respiratory status deteriorates. Breath sounds are now absent on the left, SpO2 drops to 83%, and BP falls to 78/50. He remains alert but is increasingly anxious. What is the MOST likely cause of this deterioration?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "vitals_update": {
+          "hr": 134,
+          "bp": "78/50",
+          "rr": 32,
+          "spo2": 83,
+          "gcs": 15
+        },
+        "options": [
+          {
+            "text": "Expanding hemothorax with progressive blood loss into the left pleural space",
+            "correct": true,
+            "critical": false,
+            "explanation": "Progressive deterioration in a patient with known hemothorax and anticoagulant use indicates ongoing hemorrhage into the pleural space. The expanding blood collection compresses the lung (worsening hypoxemia) and causes hypovolemic shock (progressive hypotension and tachycardia). This patient needs definitive surgical management.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma; PHTLS 9th Edition"
+          },
+          {
+            "text": "Development of tension pneumothorax requiring immediate needle decompression",
+            "correct": false,
+            "critical": false,
+            "explanation": "While a pneumothorax can develop alongside a hemothorax, the progressive nature of the decline with continued dullness to percussion (not hyperresonance) and absence of JVD/tracheal deviation makes expanding hemothorax more likely.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma"
+          },
+          {
+            "text": "Cardiac tamponade from associated myocardial injury",
+            "correct": false,
+            "critical": false,
+            "explanation": "Cardiac tamponade from blunt trauma is rare and would present with Beck's triad (JVD, muffled heart sounds, hypotension). The lateral mechanism and chest wall findings point to thoracic hemorrhage rather than cardiac injury.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Trauma"
+          },
+          {
+            "text": "Neurogenic shock from occult spinal cord injury",
+            "correct": false,
+            "critical": false,
+            "explanation": "Neurogenic shock presents with hypotension and bradycardia (loss of sympathetic tone), not tachycardia. This patient's tachycardia is consistent with hemorrhagic, not neurogenic, shock.",
+            "guideline_ref": "National EMS Education Standards — Spinal Trauma"
+          }
+        ],
+        "clinical_pearl": "A hemothorax can hold 2-3 liters of blood in each pleural space. In patients on anticoagulants, what begins as a small hemothorax can rapidly become massive. Rapid transport to a surgical facility is critical — the definitive treatment is a chest tube or thoracotomy, not field intervention."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-22",
+    "title": "72F — Progressive Breathing Difficulty at Nursing Facility",
+    "dispatch": "72-year-old female, worsening shortness of breath over 2 days, oxygen not helping",
+    "category": "Airway & Breathing",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 72,
+      "sex": "F",
+      "cc": "Progressive dyspnea and orthopnea worsening over 48 hours"
+    },
+    "scene": "You are called to a skilled nursing facility for a 72-year-old female with worsening shortness of breath. Nursing staff report she has had increasing dyspnea over 48 hours, now unable to lie flat. She is found sitting upright in bed on 4 L/min nasal cannula with labored breathing. Auscultation reveals markedly diminished breath sounds over the entire right lung field with dullness to percussion from the base to the mid-scapular line. The left lung has scattered crackles at the base. She has a known history of ovarian cancer with recent CT showing right-sided pleural effusion. Her legs are edematous bilaterally.",
+    "history": {
+      "pmh": "Stage IIIC ovarian cancer (diagnosed 18 months ago, on chemotherapy), CHF, hypothyroidism, anemia",
+      "meds": "Furosemide, levothyroxine, carboplatin/paclitaxel (last cycle 2 weeks ago), ondansetron PRN",
+      "allergies": "Morphine (nausea)"
+    },
+    "vitals": {
+      "hr": 108,
+      "bp": "138/82",
+      "rr": 30,
+      "spo2": 86,
+      "gcs": 15,
+      "temp": "98.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize the following assessment findings as either consistent with pleural effusion or inconsistent with this diagnosis.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Dullness to percussion over the right lower and mid-lung fields",
+          "Diminished breath sounds over the right hemithorax",
+          "Hyperresonance to percussion on the affected side",
+          "Orthopnea that worsens when lying on the left side",
+          "Tracheal deviation toward the affected side",
+          "Known malignancy with history of pleural effusion on imaging"
+        ],
+        "categories": [
+          "Consistent with Pleural Effusion",
+          "Inconsistent with Pleural Effusion"
+        ],
+        "correctCategories": [0, 0, 1, 0, 1, 0],
+        "explanation": "Dullness to percussion and diminished breath sounds over the affected side are hallmarks of pleural effusion (fluid). Hyperresonance indicates air (pneumothorax), not fluid. Orthopnea worsening when lying on the unaffected side is classic for large effusion (fluid shifts compress the good lung). Tracheal deviation toward the affected side suggests atelectasis or volume loss, not effusion — a large effusion pushes the trachea AWAY from the affected side. Known malignancy is a major risk factor for malignant pleural effusion.",
+        "guideline_ref": "National EMS Education Standards — Respiratory Assessment; BTS Pleural Disease Guidelines",
+        "clinical_pearl": "Tracheal deviation direction matters: TOWARD the affected side = atelectasis/volume loss; AWAY from the affected side = tension pneumothorax or massive effusion. This simple assessment can distinguish between very different pathologies."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST appropriate prehospital management for this patient's respiratory failure from pleural effusion?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Position upright, high-flow oxygen via non-rebreather, establish IV access, and transport for thoracentesis at the emergency department",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pleural effusion causing respiratory failure requires definitive drainage (thoracentesis or chest tube), which is a hospital procedure. Prehospital care focuses on optimizing oxygenation with positioning and high-flow O2, establishing IV access, and rapid transport. Upright positioning allows gravity to keep fluid at the lung bases.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies; BTS Pleural Disease Guidelines"
+          },
+          {
+            "text": "Administer CPAP at 10 cmH2O to recruit collapsed alveoli and improve oxygenation",
+            "correct": false,
+            "critical": false,
+            "explanation": "CPAP is less effective for pleural effusion because the issue is extrinsic compression of the lung by fluid, not alveolar collapse from pulmonary edema. While CPAP may provide marginal benefit, it cannot overcome the mechanical compression and may increase patient discomfort.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          },
+          {
+            "text": "Perform needle decompression of the right chest to relieve the fluid accumulation",
+            "correct": false,
+            "critical": true,
+            "explanation": "Needle decompression is for tension pneumothorax (air under pressure), not pleural effusion. A 14-gauge needle cannot effectively drain pleural fluid (which is viscous compared to air). This would be an inappropriate and potentially harmful intervention.",
+            "guideline_ref": "National EMS Education Standards — Thoracic Interventions"
+          },
+          {
+            "text": "Administer furosemide 40 mg IV to reduce fluid overload and pleural effusion volume",
+            "correct": false,
+            "critical": false,
+            "explanation": "While this patient also has CHF, her primary problem is a malignant pleural effusion from ovarian cancer. Diuretics may help with transudative effusions from heart failure but are largely ineffective for malignant (exudative) effusions, which require mechanical drainage.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Pharmacology"
+          }
+        ],
+        "clinical_pearl": "Malignant pleural effusions are exudative (protein-rich) and will not respond to diuretics. They frequently reaccumulate after drainage. Many patients with recurrent malignant effusions have indwelling pleural catheters that can be drained at home or in skilled nursing facilities."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, you consider the patient's overall clinical picture. Select ALL factors that should be communicated to the receiving facility as relevant to her care.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Recent chemotherapy 2 weeks ago with potential immunosuppression",
+            "correct": true,
+            "critical": false,
+            "explanation": "Recent chemotherapy places the patient at risk for neutropenia and infection. The receiving team needs to consider infection as a contributing factor and may need to check a CBC urgently.",
+            "guideline_ref": "National EMS Education Standards — Oncologic Emergencies"
+          },
+          {
+            "text": "Known right-sided pleural effusion on recent imaging with progressive respiratory failure",
+            "correct": true,
+            "critical": false,
+            "explanation": "Known effusion with worsening symptoms suggests reaccumulation or growth. This information helps the ED prioritize imaging and prepare for emergent thoracentesis.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          },
+          {
+            "text": "Concurrent CHF history that may be contributing to bilateral fluid overload",
+            "correct": true,
+            "critical": false,
+            "explanation": "The bilateral leg edema and left basilar crackles suggest concomitant CHF exacerbation. This dual diagnosis (malignant effusion + CHF) affects treatment decisions at the hospital.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          },
+          {
+            "text": "The patient's morphine allergy, as this will prevent all forms of pain management in the ED",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the morphine allergy should be communicated, it does not prevent pain management. Many alternative analgesics are available. The characterization that it prevents 'all forms' of pain management is incorrect.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "The nursing facility's staffing level, as this is relevant to the patient's outcome",
+            "correct": false,
+            "critical": false,
+            "explanation": "Facility staffing is not clinically relevant information for ED handoff. Focus on patient-centered clinical data that impacts acute management decisions.",
+            "guideline_ref": "National EMS Education Standards — Communication and Documentation"
+          }
+        ],
+        "clinical_pearl": "Cancer patients with pleural effusions often have complex, multi-system disease. Always inquire about advance directives, oncologist contact information, and goals of care. Some patients may have DNR/POLST orders that affect your management decisions."
+      }
+    ]
+  },
+  {
+    "id": "nat-air-23",
+    "title": "31M — Breathing Difficulty at Mountain Campsite",
+    "dispatch": "31-year-old male, difficulty breathing, confusion, at high-altitude campsite (11,500 feet)",
+    "category": "Airway & Breathing",
+    "difficulty": "Medium",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 31,
+      "sex": "M",
+      "cc": "Progressive dyspnea, productive cough, confusion at high altitude"
+    },
+    "scene": "You respond via SAR team to a campsite at 11,500 feet elevation where a 31-year-old male from sea level arrived 36 hours ago for a hiking trip. His companions report he developed a headache and fatigue yesterday, which they attributed to mild altitude sickness. This morning he became progressively short of breath with a persistent cough producing pink, frothy sputum. He is now confused and sitting upright, unable to lie down. You note bilateral crackles audible without a stethoscope, tachypnea, and mild cyanosis of the lips and nail beds. The temperature is 28°F and the campsite is at the end of a 2-mile trail accessible only by foot or helicopter.",
+    "history": {
+      "pmh": "None — healthy, athletic, no prior altitude exposure above 5,000 feet",
+      "meds": "None (did not take prophylactic acetazolamide)",
+      "allergies": "None known"
+    },
+    "vitals": {
+      "hr": 122,
+      "bp": "146/92",
+      "rr": 34,
+      "spo2": 68,
+      "gcs": 13,
+      "temp": "97.0°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings is MOST diagnostic of this patient's condition?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Rapid ascent from sea level to 11,500 feet, progressive symptoms over 36 hours, pink frothy sputum, bilateral crackles, and severe hypoxemia in a previously healthy person",
+            "correct": true,
+            "critical": false,
+            "explanation": "This presentation is classic for high-altitude pulmonary edema (HAPE). Key diagnostic features include: rapid ascent without acclimatization, symptom onset 24-96 hours after arrival at altitude, non-cardiogenic pulmonary edema (pink frothy sputum, bilateral crackles), severe hypoxemia disproportionate to altitude alone, and absence of underlying cardiopulmonary disease.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society HAPE Guidelines 2019"
+          },
+          {
+            "text": "Bilateral crackles and pink frothy sputum indicating acute decompensated heart failure exacerbated by cold exposure",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the presentation mimics CHF (pulmonary edema), this is a 31-year-old healthy male with no cardiac history. The altitude context and timeline are critical — HAPE produces non-cardiogenic pulmonary edema through altitude-induced pulmonary vasoconstriction and capillary leak.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Hypothermia causing respiratory distress and altered mental status from cold mountain environment exposure",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the patient's temperature is mildly low (97.0°F), this is not in the hypothermic range that would cause this degree of respiratory compromise. The temp finding is more consistent with peripheral vasoconstriction from altitude stress. The predominant pathology is altitude-related.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Severe pneumonia with rapid onset causing bilateral infiltrates and sepsis at altitude",
+            "correct": false,
+            "critical": false,
+            "explanation": "While pneumonia is in the differential, the timeline (36 hours post-ascent in a previously healthy person), pink frothy sputum (not purulent), and altitude context make HAPE far more likely. HAPE can predispose to secondary infection but the acute presentation is altitude-mediated.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          }
+        ],
+        "clinical_pearl": "HAPE is the leading cause of death from altitude illness. SpO2 values are normally lower at altitude (expect ~90% at 10,000 ft in healthy individuals), but readings below 75-80% at any altitude indicate severe pathology. An SpO2 of 68% at 11,500 feet is profoundly abnormal."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the treatment priorities for this patient in the correct order.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Administer supplemental oxygen to maintain SpO2 above 90%",
+          "Initiate descent to lower altitude as rapidly as safely possible",
+          "Administer nifedipine 30 mg extended-release PO if available and per protocol",
+          "Place the patient in a portable hyperbaric chamber (Gamow bag) if descent is delayed",
+          "Keep the patient warm and minimize physical exertion"
+        ],
+        "correctOrder": [0, 4, 1, 3, 2],
+        "explanation": "Priority: (1) Oxygen — immediate, life-saving intervention for severe hypoxemia, (2) Keep warm and minimize exertion — exertion worsens HAPE and hypothermia compounds the problem, (3) Descent — the definitive treatment for all altitude illness; even 1,000-3,000 feet of descent can be dramatic, (4) Gamow bag — simulates descent by increasing ambient pressure; used when descent is impossible, (5) Nifedipine — reduces pulmonary artery pressure; adjunct when descent and oxygen are insufficient or delayed.",
+        "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Practice Guidelines for HAPE 2019",
+        "clinical_pearl": "Descent is the definitive treatment for HAPE. Even 1,000 feet of descent can produce dramatic improvement. Never delay descent waiting for medications to work. If helicopter evacuation is available, it simultaneously provides descent and rapid hospital access."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You begin high-flow oxygen and prepare for descent/evacuation. Which of the following medications would be appropriate adjuncts for this patient's condition?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "After 15 minutes on high-flow O2, SpO2 has improved to 78%. The patient remains confused. Helicopter ETA is 45 minutes. You are preparing pharmacologic adjuncts.",
+        "vitals_update": {
+          "hr": 116,
+          "bp": "140/88",
+          "rr": 30,
+          "spo2": 78,
+          "gcs": 13
+        },
+        "options": [
+          {
+            "text": "Nifedipine to reduce pulmonary artery pressure and decrease transudation of fluid into the alveoli",
+            "correct": true,
+            "critical": false,
+            "explanation": "Nifedipine is the primary pharmacologic treatment for HAPE. It acts as a pulmonary vasodilator, reducing the exaggerated hypoxic pulmonary vasoconstriction that drives HAPE pathophysiology. This decreases pulmonary capillary pressure and reduces alveolar fluid leak.",
+            "guideline_ref": "National EMS Education Standards — Environmental Pharmacology; Wilderness Medical Society HAPE Guidelines 2019"
+          },
+          {
+            "text": "Furosemide to remove excess fluid from the lungs through diuresis",
+            "correct": false,
+            "critical": false,
+            "explanation": "HAPE is non-cardiogenic pulmonary edema caused by increased pulmonary vascular permeability, not fluid overload. Diuretics can worsen dehydration (common at altitude) and hypovolemia without addressing the underlying pathophysiology.",
+            "guideline_ref": "Wilderness Medical Society HAPE Guidelines 2019"
+          },
+          {
+            "text": "Nitroglycerin sublingual to reduce preload and pulmonary congestion",
+            "correct": false,
+            "critical": false,
+            "explanation": "Nitroglycerin reduces systemic preload and is used for cardiogenic pulmonary edema. In HAPE, the issue is pulmonary vasoconstriction, not systemic volume overload. Nitroglycerin could cause dangerous systemic hypotension at altitude.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Dexamethasone to reduce cerebral edema and inflammation in the lungs",
+            "correct": false,
+            "critical": false,
+            "explanation": "Dexamethasone is the treatment for high-altitude cerebral edema (HACE), not HAPE. While HACE and HAPE can coexist, dexamethasone has not been shown to be effective as primary HAPE treatment. If HACE is also suspected (ataxia, severe AMS), dexamethasone would be added.",
+            "guideline_ref": "Wilderness Medical Society Practice Guidelines — Altitude Illness 2019"
+          }
+        ],
+        "clinical_pearl": "HAPE and HACE can coexist. If a HAPE patient develops ataxia (unable to walk heel-to-toe), severe confusion, or obtundation, suspect concurrent HACE and add dexamethasone 8 mg IV/IM/PO to the treatment plan. Both conditions require urgent descent."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "The helicopter arrives. During evacuation and descent to 6,000 feet, which of the following changes would you expect to see if the patient is responding to treatment?",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient is loaded into the helicopter with continuous oxygen. Descent has begun from 11,500 feet to a hospital at 6,000 feet elevation.",
+        "options": [
+          {
+            "text": "Improvement in SpO2 from 78% toward 90% or above",
+            "correct": true,
+            "critical": false,
+            "explanation": "As ambient oxygen pressure increases with descent, gas exchange improves. Combined with supplemental oxygen, SpO2 should rise significantly with even moderate descent.",
+            "guideline_ref": "Wilderness Medical Society HAPE Guidelines 2019"
+          },
+          {
+            "text": "Decreasing respiratory rate as the work of breathing lessens",
+            "correct": true,
+            "critical": false,
+            "explanation": "As oxygenation improves and pulmonary edema begins to resolve, the hypoxic ventilatory drive decreases and respiratory rate normalizes.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Assessment"
+          },
+          {
+            "text": "Improvement in mental status with increasing alertness and orientation",
+            "correct": true,
+            "critical": false,
+            "explanation": "Confusion in HAPE is primarily driven by severe hypoxemia. As oxygenation improves with descent, cerebral oxygen delivery increases and mental status should improve.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Immediate clearing of all bilateral crackles within the first 15 minutes of descent",
+            "correct": false,
+            "critical": false,
+            "explanation": "While clinical improvement begins quickly with descent, complete resolution of pulmonary edema takes hours to days. Crackles will gradually diminish but are unlikely to completely resolve during a short helicopter transport.",
+            "guideline_ref": "Wilderness Medical Society HAPE Guidelines 2019"
+          },
+          {
+            "text": "Drop in heart rate to below 60 bpm as the altitude stress resolves",
+            "correct": false,
+            "critical": false,
+            "explanation": "While heart rate should decrease as the patient improves, a drop to bradycardia would be unexpected and potentially concerning. A gradual decrease toward normal (70-90 range) is expected, not bradycardia.",
+            "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"
+          }
+        ],
+        "clinical_pearl": "HAPE patients can improve dramatically with descent — it is sometimes called the 'miracle of descent.' However, patients should still be evaluated at a hospital as reascent without acclimatization will likely cause recurrence. Recommend a minimum 2-3 day rest at lower altitude before any further ascent."
+      }
+    ]
+  }
+]

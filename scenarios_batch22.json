@@ -1,0 +1,901 @@
+[
+  {
+    "id": "nat-ops-11",
+    "title": "32M — Shooting Incident at Shopping Mall",
+    "dispatch": "32-year-old male, gunshot wound, active law enforcement operation",
+    "category": "EMS Operations",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {
+      "age": 32,
+      "sex": "M",
+      "cc": "Gunshot wound to right thigh with heavy bleeding"
+    },
+    "scene": "Law enforcement has established a warm zone at a shopping mall after an active shooter incident. You are directed by tactical officers into the warm zone where a 32-year-old male is found prone behind a concrete planter. He has a gunshot wound to the right thigh with significant hemorrhage pooling beneath him. The threat has been neutralized per law enforcement, but the scene remains a warm zone. Multiple additional casualties are reported in the food court. You are wearing ballistic PPE as per your agency's active threat protocol.",
+    "history": {
+      "pmh": "None known",
+      "meds": "None",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 128,
+      "bp": "86/52",
+      "rr": 24,
+      "spo2": 96,
+      "gcs": 14,
+      "temp": "98.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are operating in the warm zone during an active threat incident. Arrange the following TECC/THREAT actions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Apply a tourniquet proximal to the right thigh wound",
+          "Confirm with law enforcement that the warm zone remains secure",
+          "Move the patient to the casualty collection point in the cold zone",
+          "Perform a rapid hemorrhage assessment (MARCH sequence)",
+          "Establish IV access and begin fluid resuscitation"
+        ],
+        "correctOrder": [1, 3, 0, 2, 4],
+        "explanation": "In TECC warm zone care: (1) Confirm security with law enforcement — your safety is paramount. (2) Perform rapid hemorrhage assessment using the MARCH mnemonic (Massive hemorrhage, Airway, Respiration, Circulation, Hypothermia). (3) Apply tourniquet to control life-threatening hemorrhage — the primary killer in penetrating trauma. (4) Move the patient to the cold zone CCP for further care. (5) IV access and fluids are cold zone interventions. Warm zone care focuses on hemorrhage control and rapid extraction.",
+        "guideline_ref": "C-TECC Guidelines 2021; NAEMT TECC Course; Hartford Consensus",
+        "clinical_pearl": "In the warm zone, limit interventions to massive hemorrhage control (tourniquets, wound packing) and rapid movement to the cold zone. Extended assessment and treatment happen in the cold zone."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have moved the patient to the cold zone casualty collection point. His tourniquet is in place and hemorrhage is controlled. Which interventions are appropriate at this phase? Select ALL that apply.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient is now in the cold zone CCP. The tourniquet has been effective and bleeding has stopped. He is alert but confused, with pale and diaphoretic skin.",
+        "vitals_update": {
+          "hr": 132,
+          "bp": "82/48",
+          "rr": 26,
+          "spo2": 97,
+          "gcs": 14
+        },
+        "options": [
+          {
+            "text": "Establish bilateral large-bore IV access and administer a crystalloid bolus targeting SBP of 80-90 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Permissive hypotension (SBP 80-90 mmHg) is the resuscitation target in penetrating trauma with hemorrhagic shock. Aggressive fluid resuscitation to normal BP can worsen bleeding by disrupting clot formation.",
+            "guideline_ref": "PHTLS 9th Edition; C-TECC Guidelines 2021"
+          },
+          {
+            "text": "Administer tranexamic acid (TXA) 1g IV if within 3 hours of injury",
+            "correct": true,
+            "critical": false,
+            "explanation": "TXA is indicated within 3 hours of injury in trauma patients with significant hemorrhage or at risk of significant hemorrhage. It inhibits fibrinolysis and reduces mortality from bleeding.",
+            "guideline_ref": "CRASH-2 Trial; C-TECC Guidelines 2021"
+          },
+          {
+            "text": "Assess for additional wounds by performing a secondary survey now that the patient is in the cold zone",
+            "correct": true,
+            "critical": false,
+            "explanation": "The cold zone allows for a more thorough secondary survey to identify additional injuries that may have been missed during the rapid warm zone intervention.",
+            "guideline_ref": "C-TECC Guidelines 2021; PHTLS 9th Edition"
+          },
+          {
+            "text": "Remove the tourniquet and convert to a pressure dressing since the patient is now in the cold zone",
+            "correct": false,
+            "critical": true,
+            "explanation": "Tourniquet conversion should only be attempted by trained personnel in a controlled environment when transport time exceeds 2 hours and specific criteria are met. In the field CCP with imminent transport, leave the effective tourniquet in place.",
+            "guideline_ref": "C-TECC Guidelines 2021; CoTCCC Tourniquet Guidelines"
+          },
+          {
+            "text": "Aggressively warm IV fluids and infuse 2 liters of normal saline as rapidly as possible to restore normal blood pressure",
+            "correct": false,
+            "critical": false,
+            "explanation": "Aggressive fluid resuscitation targeting normal blood pressure in penetrating hemorrhagic trauma increases bleeding, dilutes clotting factors, and worsens outcomes. Permissive hypotension is the standard of care.",
+            "guideline_ref": "PHTLS 9th Edition; C-TECC Guidelines 2021"
+          }
+        ],
+        "clinical_pearl": "The MARCH mnemonic guides tactical trauma care: Massive hemorrhage, Airway, Respiration, Circulation, Hypothermia/Head injury. Hemorrhage control takes priority over airway in penetrating trauma — a departure from traditional ABCDE."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After the incident, your agency is conducting a hot debrief. Categorize each of the following items as either an 'Operational Success' or an 'Area for Improvement' based on TECC best practices.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "EMS staged in the cold zone and waited for law enforcement to establish the warm zone before entering",
+          "A provider entered the hot zone without ballistic PPE to reach a critically injured patient",
+          "Tourniquets were applied in the warm zone and the patient was rapidly moved to the CCP",
+          "EMS and law enforcement used separate radio channels with no unified command",
+          "Time of tourniquet application was marked on the tourniquet and documented"
+        ],
+        "categories": ["Operational Success", "Area for Improvement"],
+        "correctCategories": [0, 1, 0, 1, 0],
+        "explanation": "Staging and awaiting law enforcement clearance, applying tourniquets in the warm zone with rapid extraction, and documenting tourniquet time are all best practices. Entering the hot zone without ballistic PPE is a critical safety violation. Operating on separate radio channels without unified command leads to communication failures and is a known problem in active threat responses.",
+        "guideline_ref": "C-TECC Guidelines 2021; Hartford Consensus; NIMS/ICS Principles",
+        "clinical_pearl": "Unified command and interoperable communications between EMS and law enforcement are critical in active threat incidents. Train together, plan together, and establish communication protocols before incidents occur."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-12",
+    "title": "45F — Request for Helicopter Transport from Rural Scene",
+    "dispatch": "45-year-old female, MVC with rollover, rural highway",
+    "category": "EMS Operations",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {
+      "age": 45,
+      "sex": "F",
+      "cc": "Chest and abdominal pain after MVC rollover"
+    },
+    "scene": "You respond to a single-vehicle rollover on a rural two-lane highway, 35 minutes by ground to the nearest Level I trauma center. A 45-year-old female has self-extricated and is sitting on the roadside. She complains of left-sided chest pain and left upper quadrant abdominal tenderness. She has seatbelt bruising across her chest and abdomen. The area is a flat, open field adjacent to the roadway. It is dusk with winds at approximately 12 mph. Your medical director authorizes HEMS activation and you are tasked with establishing a landing zone.",
+    "history": {
+      "pmh": "Hypertension, GERD",
+      "meds": "Amlodipine, omeprazole",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 112,
+      "bp": "98/64",
+      "rr": 22,
+      "spo2": 95,
+      "gcs": 15,
+      "temp": "97.6°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are establishing a helicopter landing zone (LZ) in the field adjacent to the highway. Which of the following describes the correct minimum LZ setup?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "100 × 100 foot area that is flat, free of debris and obstructions, marked with lights at each corner, with a designated LZ officer communicating with the aircraft on the assigned frequency",
+            "correct": true,
+            "critical": false,
+            "explanation": "The standard daytime LZ is a minimum 100 × 100 feet (some agencies require 150 × 150 for night operations). It must be flat, free of debris, wires, and obstructions. Corner lights aid in identification, and a dedicated LZ officer provides wind direction, hazards, and landing confirmation to the pilot.",
+            "guideline_ref": "Air Medical Resource Management; FAA Advisory Circular 00-34A; NAEMSP HEMS Position Statements"
+          },
+          {
+            "text": "50 × 50 foot area with a single flare placed upwind of the landing spot and communication handled by the crew chief on scene",
+            "correct": false,
+            "critical": false,
+            "explanation": "50 × 50 feet is too small for most HEMS helicopters. Single flares are a fire hazard and do not adequately mark the LZ boundary. A dedicated LZ officer should manage aircraft communications.",
+            "guideline_ref": "Air Medical Resource Management; NAEMSP HEMS Position Statements"
+          },
+          {
+            "text": "200 × 200 foot area on a slight slope with emergency vehicles using overhead lights to illuminate the zone and guide the pilot",
+            "correct": false,
+            "critical": false,
+            "explanation": "While a larger LZ is acceptable, a sloped surface creates hazards for the aircraft. Emergency vehicle overhead lights (especially rotating lights) can disorient the pilot through 'flicker vertigo.' Use vehicle headlights directed at the ground if illumination is needed.",
+            "guideline_ref": "Air Medical Resource Management; FAA Advisory Circular"
+          },
+          {
+            "text": "Any open area large enough for the helicopter, with EMS personnel standing at the center waving the aircraft in for final approach",
+            "correct": false,
+            "critical": true,
+            "explanation": "Personnel should never stand in the LZ or attempt to wave the aircraft in. The rotor wash creates a dangerous environment, and standing in the LZ risks injury or death. All personnel should be positioned at the perimeter.",
+            "guideline_ref": "Air Medical Resource Management; FAA Advisory Circular"
+          }
+        ],
+        "clinical_pearl": "Never approach the helicopter until the pilot or flight crew signals you to do so. Always approach from the front (within the pilot's line of sight) and never from the rear near the tail rotor."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The helicopter has landed and the flight crew is approaching. Arrange the following safety practices in the correct order as you prepare to transfer the patient to the flight crew.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Wait for the flight crew to signal that it is safe to approach the aircraft",
+          "Secure all loose equipment, sheets, and clothing on the patient and stretcher",
+          "Approach the aircraft from the downhill/front side, staying low and in the pilot's field of vision",
+          "Provide a patient care handoff report to the flight crew using a structured format",
+          "Ensure all non-essential personnel are at least 200 feet from the aircraft"
+        ],
+        "correctOrder": [4, 1, 0, 2, 3],
+        "explanation": "Safety sequence: (1) Clear all non-essential personnel from the area first. (2) Secure all loose items that could become projectiles in rotor wash. (3) Wait for the flight crew's signal — never approach on your own. (4) Approach from the front/downhill side, staying low. (5) Provide your handoff report. Safety precautions occur before patient contact/transfer activities.",
+        "guideline_ref": "Air Medical Resource Management; NAEMSP HEMS Safety Position Statements",
+        "clinical_pearl": "On sloped terrain, ALWAYS approach and depart the helicopter from the downhill side. The rotor clearance is lowest on the uphill side, creating a decapitation risk. When in doubt, wait for the flight crew to come to you."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Which of the following are valid criteria that support the decision to request HEMS for this patient? Select ALL that apply.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Prolonged ground transport time (>30 minutes) to a Level I trauma center with a potentially time-sensitive injury",
+            "correct": true,
+            "critical": false,
+            "explanation": "Transport time is a primary consideration for HEMS activation. When ground transport to the appropriate facility significantly exceeds HEMS response and transport time, air medical transport may improve outcomes for time-sensitive conditions.",
+            "guideline_ref": "NAEMSP HEMS Utilization Guidelines; CDC Field Triage Decision Scheme"
+          },
+          {
+            "text": "Mechanism of injury (rollover MVC) combined with clinical signs of possible intra-abdominal hemorrhage (tachycardia, hypotension, LUQ tenderness)",
+            "correct": true,
+            "critical": false,
+            "explanation": "Significant mechanism combined with clinical signs of hemorrhagic shock suggests a time-critical surgical condition. Splenic injury with ongoing hemorrhage requires rapid surgical intervention that a trauma center provides.",
+            "guideline_ref": "CDC Field Triage Decision Scheme 2011; NAEMSP HEMS Utilization Guidelines"
+          },
+          {
+            "text": "The patient's condition may require interventions beyond the ground crew's scope of practice during a prolonged transport",
+            "correct": true,
+            "critical": false,
+            "explanation": "HEMS crews typically operate at a critical care level and can provide blood products, RSI, surgical airways, and other advanced interventions that may be needed during transport if the patient deteriorates.",
+            "guideline_ref": "NAEMSP HEMS Utilization Guidelines; CAMTS Standards"
+          },
+          {
+            "text": "The patient specifically requested helicopter transport and has adequate insurance coverage for air medical services",
+            "correct": false,
+            "critical": false,
+            "explanation": "Patient preference and insurance status are never valid clinical criteria for HEMS activation. Medical necessity and potential patient benefit drive this decision.",
+            "guideline_ref": "NAEMSP Position Statement on HEMS Utilization"
+          },
+          {
+            "text": "The helicopter is currently available and has a short estimated response time, regardless of patient acuity",
+            "correct": false,
+            "critical": false,
+            "explanation": "Aircraft availability alone does not justify activation. HEMS carries inherent risks to flight crews and should only be utilized when clinical indications support it and patient benefit outweighs the operational risk.",
+            "guideline_ref": "NAEMSP Position Statement on HEMS Utilization; NAEMSP Risk-Benefit Analysis"
+          }
+        ],
+        "clinical_pearl": "HEMS overutilization is a patient safety and crew safety concern. Use validated criteria (mechanism, physiology, transport time, access) to guide requests. Remember: HEMS crews have the highest on-duty fatality rate of any medical profession."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-13",
+    "title": "3F — Pediatric Fever with Transport Decision",
+    "dispatch": "3-year-old female, high fever, parents requesting transport to children's hospital",
+    "category": "EMS Operations",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {
+      "age": 3,
+      "sex": "F",
+      "cc": "Fever and irritability for 2 days"
+    },
+    "scene": "You arrive at a single-family home where concerned parents have called 911 for their 3-year-old daughter. She has had a fever for 2 days with poor oral intake. She is sitting in her mother's lap, crying but consolable, with flushed skin and dry lips. The parents are requesting transport to a pediatric specialty hospital located 40 minutes away, bypassing the community hospital 8 minutes away. The child has no signs of respiratory distress, no rash, and no altered mental status. She cried when you approached but makes eye contact and clings to her mother appropriately.",
+    "history": {
+      "pmh": "Born full-term, immunizations up to date, one prior febrile seizure at age 18 months",
+      "meds": "Acetaminophen given 2 hours ago by parents",
+      "allergies": "None"
+    },
+    "vitals": {
+      "hr": 142,
+      "bp": "88/56",
+      "rr": 28,
+      "spo2": 98,
+      "gcs": 15,
+      "temp": "103.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are evaluating this pediatric patient for transport destination. Which tool is MOST appropriate for rapidly assessing the severity of this child's illness in the prehospital setting?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Pediatric Assessment Triangle (PAT) evaluating appearance, work of breathing, and circulation to skin",
+            "correct": true,
+            "critical": false,
+            "explanation": "The PAT is a rapid, across-the-room assessment tool that evaluates three components without touching the child: appearance (muscle tone, interactiveness, consolability, look/gaze, speech/cry), work of breathing, and circulation to skin. It provides a rapid general impression of the child's acuity.",
+            "guideline_ref": "National EMS Education Standards — Pediatric Assessment; PEPP/APLS"
+          },
+          {
+            "text": "Glasgow Coma Scale modified for pediatric patients to determine neurological baseline",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the pediatric GCS is a useful tool, it assesses only neurological function. The PAT provides a broader initial assessment of the child's overall physiologic status including respiratory and circulatory function.",
+            "guideline_ref": "National EMS Education Standards — Pediatric Assessment"
+          },
+          {
+            "text": "Broselow tape measurement to determine appropriate medication dosing and equipment sizing",
+            "correct": false,
+            "critical": false,
+            "explanation": "The Broselow tape is used for length-based weight estimation for medication dosing and equipment sizing. It is not an illness severity assessment tool.",
+            "guideline_ref": "National EMS Education Standards — Pediatric Assessment"
+          },
+          {
+            "text": "APGAR scoring system to rate the child's overall health and need for intervention",
+            "correct": false,
+            "critical": false,
+            "explanation": "APGAR scoring is used exclusively for neonatal assessment in the first minutes after birth. It is not applicable to a 3-year-old child.",
+            "guideline_ref": "National EMS Education Standards — Neonatal Resuscitation"
+          }
+        ],
+        "clinical_pearl": "The PAT is designed to be performed in seconds from the doorway. A child who is alert, interactive, consolable, with normal work of breathing and good skin color is unlikely to be critically ill — even with an impressive fever."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The parents insist on transport to the pediatric hospital 40 minutes away. Based on the clinical presentation, which of the following is the MOST appropriate transport decision?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Transport to the closer community hospital because the child's history of febrile seizures creates a time-sensitive risk that requires the nearest facility",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the history of febrile seizures warrants monitoring, the child is currently stable with no seizure activity. A prior febrile seizure alone does not mandate transport to the closest facility if the child is stable.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions"
+          },
+          {
+            "text": "Transport to the pediatric hospital per parental preference, as the child is currently stable, and document the informed transport decision and ongoing monitoring plan",
+            "correct": true,
+            "critical": false,
+            "explanation": "When a pediatric patient is hemodynamically stable without signs of critical illness, parental preference for a pediatric specialty facility can be honored. The child has a reassuring PAT, stable vitals appropriate for her age and fever, and no red flags. Document the decision, maintain monitoring, and have a plan to divert if the child's status changes.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions; NAEMSP Position Statement on EMS Destination"
+          },
+          {
+            "text": "Refuse to transport to the farther hospital under any circumstances because EMS protocol always requires transport to the nearest appropriate facility",
+            "correct": false,
+            "critical": false,
+            "explanation": "While transporting to the nearest appropriate facility is the general default, many EMS systems allow patient/family preference when the patient is stable. Rigidly refusing parental input without clinical justification can damage the provider-patient relationship and may not be supported by local protocol.",
+            "guideline_ref": "National EMS Education Standards — Transport Decisions"
+          },
+          {
+            "text": "Allow the parents to drive the child to the pediatric hospital themselves since she appears stable enough not to need an ambulance",
+            "correct": false,
+            "critical": false,
+            "explanation": "Once EMS has been activated for a pediatric patient, recommending private vehicle transport abdicates responsibility. The child has a fever and a history of febrile seizures — she should be transported with monitoring capability.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal Considerations"
+          }
+        ],
+        "clinical_pearl": "Transport decisions in pediatrics involve balancing clinical acuity, specialty resource needs, transport time, and family preference. A stable child does not automatically require the closest hospital, but always have a diversion plan if the patient decompensates en route."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each of the following findings as either a 'Red Flag — Transport to Nearest Facility' or 'Reassuring — Supports Longer Transport' for this pediatric patient.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Child is interactive, makes eye contact, and is consolable by parent",
+          "Non-blanching petechial or purpuric rash developing on the trunk",
+          "SpO2 of 98% on room air with no increased work of breathing",
+          "Bulging fontanelle with high-pitched inconsolable crying",
+          "Age-appropriate vital signs when adjusted for fever"
+        ],
+        "categories": ["Red Flag — Transport to Nearest Facility", "Reassuring — Supports Longer Transport"],
+        "correctCategories": [1, 0, 1, 0, 1],
+        "explanation": "Interactive/consolable behavior, normal SpO2 without respiratory distress, and age-appropriate vitals are reassuring findings. A non-blanching petechial/purpuric rash suggests possible meningococcemia or other serious bacterial infection requiring immediate ED evaluation. Bulging fontanelle (in children where it's still open) with inconsolable crying suggests raised intracranial pressure — both are red flags requiring the nearest appropriate facility.",
+        "guideline_ref": "PEPP — Pediatric Assessment; National EMS Education Standards — Pediatric Emergencies",
+        "clinical_pearl": "Note: a bulging fontanelle finding would be relevant in younger infants (typically <18 months). For a 3-year-old, the anterior fontanelle is usually closed. Always consider age-appropriate anatomy when interpreting physical findings."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-14",
+    "title": "58M — Crew Disagrees on Treatment for Chest Pain Patient",
+    "dispatch": "58-year-old male, chest pain, at workplace",
+    "category": "EMS Operations",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {
+      "age": 58,
+      "sex": "M",
+      "cc": "Substernal chest pain radiating to left arm"
+    },
+    "scene": "You and your partner respond to an office building for a 58-year-old male with chest pain. He is diaphoretic with substernal pressure radiating to his left arm that began 20 minutes ago. Your 12-lead ECG shows ST elevation in leads II, III, and aVF. The nearest PCI-capable facility is 25 minutes away; a non-PCI community hospital is 7 minutes away. Your partner, a senior paramedic, states firmly that you should transport to the closer hospital because the patient 'looks like he could code any second.' You believe the patient meets criteria for direct PCI transport per your protocol. Your partner dismisses your concern and begins packaging the patient for the closer facility.",
+    "history": {
+      "pmh": "Hypertension, hyperlipidemia, 40-pack-year smoker",
+      "meds": "Lisinopril, atorvastatin",
+      "allergies": "Morphine"
+    },
+    "vitals": {
+      "hr": 56,
+      "bp": "92/58",
+      "rr": 18,
+      "spo2": 96,
+      "gcs": 15,
+      "temp": "98.0°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This scenario involves a breakdown in crew resource management (CRM). Which CRM principle is MOST directly being violated by the senior paramedic's behavior?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Closed-loop communication and shared mental model — the senior partner is not acknowledging input or ensuring both crew members have the same understanding of the clinical situation and plan",
+            "correct": true,
+            "critical": false,
+            "explanation": "CRM requires a shared mental model where all team members have the same understanding of the situation and plan. The senior paramedic is dismissing input from a team member who has identified a valid clinical concern. Effective CRM involves active listening, acknowledging concerns, and collaborative decision-making regardless of rank.",
+            "guideline_ref": "National EMS Education Standards — Crew Resource Management; NAEMSP CRM Position Statement"
+          },
+          {
+            "text": "Patient advocacy — the senior partner is prioritizing transport speed over the patient's family preferences for hospital destination",
+            "correct": false,
+            "critical": false,
+            "explanation": "While patient advocacy is important, the core issue here is the breakdown in team communication and decision-making. The patient's family preference has not been discussed in this scenario.",
+            "guideline_ref": "National EMS Education Standards — Crew Resource Management"
+          },
+          {
+            "text": "Documentation standards — the disagreement should be documented before making any transport decision to protect both providers",
+            "correct": false,
+            "critical": false,
+            "explanation": "Documentation is important but is not a CRM principle. The immediate issue is the communication breakdown that may result in a suboptimal patient care decision.",
+            "guideline_ref": "National EMS Education Standards — Crew Resource Management"
+          },
+          {
+            "text": "Scene time management — the discussion between partners is creating an unacceptable delay in transport for a time-sensitive patient",
+            "correct": false,
+            "critical": false,
+            "explanation": "While prolonged scene time is a concern in STEMI, the CRM violation is the dismissal of a valid clinical concern, not the time spent discussing it. Appropriate CRM should resolve disagreements efficiently, not by suppressing valid input.",
+            "guideline_ref": "National EMS Education Standards — Crew Resource Management"
+          }
+        ],
+        "clinical_pearl": "Authority gradients in EMS can be deadly. Junior providers must feel empowered to speak up using assertive communication techniques (like CUS: 'I'm Concerned, I'm Uncomfortable, this is a Safety issue') when they identify a patient care concern."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You need to advocate for the patient while maintaining crew effectiveness. Arrange the following escalation steps in the correct order based on CRM assertive communication principles.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "State your concern clearly using objective clinical findings: 'I see ST elevation in the inferior leads — our protocol directs us to the PCI center'",
+          "If your partner still disagrees, invoke the two-challenge rule: restate your concern a second time with increased urgency",
+          "Contact medical control/online medical direction for guidance on the transport destination disagreement",
+          "Use an attention-getting statement: 'I need you to stop and listen — I believe this decision may harm our patient'"
+        ],
+        "correctOrder": [0, 1, 3, 2],
+        "explanation": "CRM assertive communication follows an escalation pathway: (1) State your concern with objective data. (2) If dismissed, use the two-challenge rule — restate with more urgency. (3) Use an attention-getting statement that makes the severity clear. (4) If the disagreement is unresolved, escalate to medical control. This preserves the team dynamic while ensuring patient safety.",
+        "guideline_ref": "National EMS Education Standards — CRM; TeamSTEPPS Framework; AHRQ Patient Safety",
+        "clinical_pearl": "The two-challenge rule states that if a concern is raised twice and not acknowledged, the person raising the concern should escalate to the next level of authority. In EMS, this typically means contacting medical control."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After the call, you want to address the CRM failure. Select ALL appropriate post-incident actions.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "Participate in a formal debrief discussing the communication breakdown and identifying strategies to prevent recurrence",
+            "correct": true,
+            "critical": false,
+            "explanation": "Formal debriefing is essential for addressing CRM failures. It should be conducted in a non-punitive, learning-focused environment where both team members can discuss the communication breakdown objectively.",
+            "guideline_ref": "National EMS Education Standards — Quality Improvement; NAEMSP CRM Position Statement"
+          },
+          {
+            "text": "Report the incident through your agency's quality improvement or safety reporting system",
+            "correct": true,
+            "critical": false,
+            "explanation": "CRM failures are patient safety events and should be reported through the agency's QI system. This allows for system-level analysis and improvement, not just individual correction.",
+            "guideline_ref": "National EMS Education Standards — Quality Improvement"
+          },
+          {
+            "text": "Review the STEMI protocol with your partner and medical director to ensure shared understanding of transport criteria",
+            "correct": true,
+            "critical": false,
+            "explanation": "Protocol review ensures both providers have a shared understanding of the clinical guidelines. Involving the medical director provides authoritative guidance and reinforces evidence-based practice.",
+            "guideline_ref": "National EMS Education Standards — Quality Improvement; AHA STEMI Systems of Care"
+          },
+          {
+            "text": "Post details of the disagreement on a professional EMS social media forum to get peer feedback on who was correct",
+            "correct": false,
+            "critical": true,
+            "explanation": "Posting call details on social media, even without patient identifiers, is unprofessional and potentially violates patient privacy. Internal resolution through debriefing and QI processes is the appropriate pathway.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal; HIPAA"
+          },
+          {
+            "text": "Avoid addressing the issue to maintain a good working relationship with your partner",
+            "correct": false,
+            "critical": false,
+            "explanation": "Avoiding the issue perpetuates the CRM failure and puts future patients at risk. A culture of safety requires honest, respectful communication about errors and near-misses.",
+            "guideline_ref": "National EMS Education Standards — Crew Resource Management"
+          }
+        ],
+        "clinical_pearl": "A just culture distinguishes between human error (console), at-risk behavior (coach), and reckless behavior (punish). Most CRM failures are at-risk behaviors that respond well to coaching and system redesign."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-15",
+    "title": "22M — EMT Shares Patient Photo on Social Media",
+    "dispatch": "N/A — Post-call scenario involving privacy and legal considerations",
+    "category": "EMS Operations",
+    "difficulty": "Easy",
+    "level_min": "EMR",
+    "patient": {
+      "age": 22,
+      "sex": "M",
+      "cc": "Dramatic vehicle entrapment with extrication (call completed)"
+    },
+    "scene": "You have just completed a challenging vehicle extrication call involving a 22-year-old male who was entrapped for 45 minutes. The patient was transported with serious but non-life-threatening injuries. Back at the station, you notice your partner took several photos during the extrication and has posted one to their personal Instagram account. The photo shows the patient's face clearly, the mangled vehicle with a visible license plate, and the fire department performing the extrication. The caption reads: 'Crazy call tonight! This is why I love this job. #EMSlife #extrication.' Your partner has 1,200 followers, including other EMS providers and community members.",
+    "history": {
+      "pmh": "N/A — post-call scenario",
+      "meds": "N/A",
+      "allergies": "N/A"
+    },
+    "vitals": {
+      "hr": 0,
+      "bp": "N/A",
+      "rr": 0,
+      "spo2": 0,
+      "gcs": 0,
+      "temp": "N/A"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which elements of your partner's social media post constitute potential HIPAA violations or privacy concerns? Select ALL that apply.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {
+            "text": "The patient's face is clearly identifiable in the photograph",
+            "correct": true,
+            "critical": false,
+            "explanation": "A photograph showing the patient's face is protected health information (PHI) as it directly identifies the individual. Sharing identifiable patient images without explicit written consent violates HIPAA privacy rules.",
+            "guideline_ref": "HIPAA Privacy Rule — 45 CFR §164.502; National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "The vehicle license plate is visible, which can be used to identify the patient",
+            "correct": true,
+            "critical": false,
+            "explanation": "Vehicle license plates are considered individually identifiable information under HIPAA's 18 identifiers. Combined with the context of an EMS call, the plate can be used to identify the patient and constitutes PHI.",
+            "guideline_ref": "HIPAA Privacy Rule — 45 CFR §164.514(b)(2); 18 HIPAA Identifiers"
+          },
+          {
+            "text": "The photo reveals the patient was receiving emergency medical care, disclosing their health information to the public",
+            "correct": true,
+            "critical": false,
+            "explanation": "The photograph discloses that the identifiable individual was receiving emergency medical treatment, which constitutes protected health information. Even without specific medical details, the context of EMS care reveals health-related information.",
+            "guideline_ref": "HIPAA Privacy Rule — Definition of PHI; National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "The hashtag #EMSlife could attract attention from people outside the EMS community",
+            "correct": false,
+            "critical": false,
+            "explanation": "While using public hashtags increases visibility, the hashtag itself is not a HIPAA violation. The violations stem from the identifiable patient information in the photo, not the reach of the post.",
+            "guideline_ref": "HIPAA Privacy Rule"
+          },
+          {
+            "text": "The caption mentions it was a 'crazy call,' which constitutes unprofessional commentary about the patient's condition",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the caption may be unprofessional, casual commentary alone does not constitute a HIPAA violation. The privacy violations are the identifiable patient information in the photograph.",
+            "guideline_ref": "HIPAA Privacy Rule; National EMS Education Standards — Medical-Legal"
+          }
+        ],
+        "clinical_pearl": "HIPAA applies to all forms of communication including social media. Even a photo with no caption can violate HIPAA if the patient is identifiable. When in doubt, don't post it."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the MOST appropriate immediate action you should take regarding your partner's social media post?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "Privately ask your partner to delete the post immediately and explain that it contains identifiable patient information that violates HIPAA",
+            "correct": true,
+            "critical": false,
+            "explanation": "The immediate priority is to minimize harm by having the post removed as quickly as possible. A direct, private conversation gives your partner the opportunity to act immediately. This should be followed by reporting through appropriate channels.",
+            "guideline_ref": "HIPAA Privacy Rule; National EMS Education Standards — Medical-Legal; EMS Code of Ethics"
+          },
+          {
+            "text": "Report your partner directly to the state EMS licensing board without discussing it with them first",
+            "correct": false,
+            "critical": false,
+            "explanation": "While the violation may ultimately require reporting, the immediate priority is getting the post removed to limit the privacy breach. Skipping the direct conversation and going straight to the licensing board delays post removal and does not follow a progressive approach.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "Comment on the post telling your partner to take it down so there is a public record that you objected",
+            "correct": false,
+            "critical": false,
+            "explanation": "Commenting publicly on the post draws more attention to the privacy violation, potentially increasing harm. It also creates a public spectacle rather than addressing the issue professionally.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "Ignore the post because your partner is responsible for their own social media activity and it's not your obligation to intervene",
+            "correct": false,
+            "critical": false,
+            "explanation": "EMS providers have an ethical obligation to protect patient privacy and to address violations they observe. Ignoring a known HIPAA violation may also expose you to liability, particularly if the agency determines you were aware and failed to act.",
+            "guideline_ref": "HIPAA Privacy Rule; EMS Code of Ethics; National EMS Education Standards — Medical-Legal"
+          }
+        ],
+        "clinical_pearl": "HIPAA violations can result in fines ranging from $100 to $50,000 per violation (up to $1.5 million annually), criminal penalties including imprisonment, state EMS license discipline, and termination. Social media posts are the most common source of EMS HIPAA violations."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After the post is deleted, which additional steps should be taken? Arrange them in the appropriate order.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Report the incident to your agency's supervisor or compliance officer",
+          "Document what was posted, when it was posted, and when it was removed",
+          "Participate in remedial HIPAA training if offered by your agency",
+          "The agency determines if the breach requires notification to HHS and the affected patient"
+        ],
+        "correctOrder": [1, 0, 3, 2],
+        "explanation": "After immediate removal: (1) Document the details of the breach for the investigation record. (2) Report to your agency supervisor/compliance officer. (3) The agency assesses whether the breach triggers HHS notification requirements (breaches affecting <500 individuals are reported annually; ≥500 require notification within 60 days) and patient notification. (4) Participate in remedial training to prevent recurrence.",
+        "guideline_ref": "HIPAA Breach Notification Rule — 45 CFR §§164.400-414; National EMS Education Standards — Medical-Legal",
+        "clinical_pearl": "Screenshots of social media posts can persist even after deletion — others may have saved, shared, or cached the content. The damage from a social media HIPAA violation often cannot be fully undone, which is why prevention through education is critical."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-16",
+    "title": "67F — Interfacility Transfer with Deterioration En Route",
+    "dispatch": "67-year-old female, interfacility transfer, community hospital to tertiary center for cardiac catheterization",
+    "category": "EMS Operations",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {
+      "age": 67,
+      "sex": "F",
+      "cc": "STEMI requiring PCI — interfacility transfer"
+    },
+    "scene": "You are a paramedic crew accepting an interfacility transfer of a 67-year-old female with an inferior STEMI from a rural community hospital to a PCI-capable tertiary center, estimated 45 minutes by ground. The sending physician reports the patient has been stable on a heparin drip and has received aspirin, clopidogrel, and sublingual nitroglycerin. She is currently chest-pain free with the vitals below. Her IV is in the right AC. The sending nurse hands you a transfer packet and medication list. You load the patient into the ambulance and depart.",
+    "history": {
+      "pmh": "Type 2 diabetes, hypertension, CKD stage 3, right knee replacement 2019",
+      "meds": "Metformin, glipizide, amlodipine, lisinopril",
+      "allergies": "Codeine (nausea)"
+    },
+    "vitals": {
+      "hr": 62,
+      "bp": "104/68",
+      "rr": 16,
+      "spo2": 97,
+      "gcs": 15,
+      "temp": "98.4°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Fifteen minutes into transport, the patient becomes acutely diaphoretic, complains of severe nausea, and her monitor shows the following changes. Arrange the following interventions in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The patient suddenly becomes pale, diaphoretic, and complains of nausea. She states 'I feel like I'm going to pass out.' You note her cardiac monitor shows a new third-degree heart block with a ventricular rate of 34 bpm.",
+        "vitals_update": {
+          "hr": 34,
+          "bp": "72/40",
+          "rr": 22,
+          "spo2": 93,
+          "gcs": 14
+        },
+        "items": [
+          "Administer atropine 0.5 mg IV push",
+          "Prepare for transcutaneous pacing and apply pacing pads if not already in place",
+          "Notify the receiving facility of the patient's deterioration and request direct cath lab activation upon arrival",
+          "Administer a 500 mL normal saline fluid bolus",
+          "Contact medical control for additional orders and consider diversion if a closer PCI center exists"
+        ],
+        "correctOrder": [0, 3, 1, 4, 2],
+        "explanation": "For symptomatic bradycardia with hemodynamic instability: (1) Atropine 0.5 mg IV is the first-line pharmacologic intervention. (2) Fluid bolus supports blood pressure while awaiting atropine effect. (3) Prepare for transcutaneous pacing as the backup if atropine fails (note: atropine may be less effective in third-degree block below the His bundle). (4) Contact medical control for additional guidance and assess diversion options. (5) Notify the receiving facility so the cath lab is ready. The inferior STEMI is likely causing the AV block (RCA typically supplies the AV node).",
+        "guideline_ref": "AHA ACLS Bradycardia Algorithm 2020; National EMS Education Standards — Cardiology",
+        "clinical_pearl": "Inferior STEMIs frequently cause AV blocks because the right coronary artery typically supplies the AV node. Third-degree heart block complicating inferior MI often resolves with reperfusion, making emergent PCI even more critical."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Atropine has been ineffective after two doses. You initiate transcutaneous pacing. Which of the following describes correct transcutaneous pacing technique?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Set the rate to 60-80 bpm, increase milliamperes until electrical capture is confirmed by a wide QRS following each pacing spike, then verify mechanical capture by palpating a pulse",
+            "correct": true,
+            "critical": false,
+            "explanation": "Transcutaneous pacing requires both electrical capture (consistent QRS complex after each pacing spike) and mechanical capture (palpable pulse corresponding to the paced rhythm). Set rate at 60-80 bpm, start at minimum output, and increase until capture. Then set mA at 10% above the capture threshold for a safety margin.",
+            "guideline_ref": "AHA ACLS 2020 — Transcutaneous Pacing; National EMS Education Standards"
+          },
+          {
+            "text": "Set the rate to 100 bpm to ensure adequate cardiac output, fix the milliamperes at maximum output to guarantee capture, and monitor only the SpO2 for perfusion",
+            "correct": false,
+            "critical": false,
+            "explanation": "Maximum output causes unnecessary pain and skeletal muscle contraction. A rate of 100 is unnecessarily high and increases myocardial oxygen demand. Capture must be verified by both ECG and pulse palpation, not SpO2 alone.",
+            "guideline_ref": "AHA ACLS 2020 — Transcutaneous Pacing"
+          },
+          {
+            "text": "Place pads in an anterior-posterior position, set rate to 40 bpm to match the patient's intrinsic rate, and titrate output to patient comfort",
+            "correct": false,
+            "critical": false,
+            "explanation": "Pacing at 40 bpm does not improve the patient's hemodynamic status — the goal is to pace faster than the inadequate intrinsic rate. Patient comfort is secondary to adequate capture and hemodynamic improvement.",
+            "guideline_ref": "AHA ACLS 2020 — Transcutaneous Pacing"
+          },
+          {
+            "text": "Begin pacing only after establishing a second IV line and administering sedation, as pacing without sedation is considered a contraindication",
+            "correct": false,
+            "critical": false,
+            "explanation": "In hemodynamically unstable bradycardia, transcutaneous pacing should not be delayed for sedation. While sedation/analgesia is preferred for conscious patients if time permits, hemodynamic instability takes priority.",
+            "guideline_ref": "AHA ACLS 2020 — Transcutaneous Pacing"
+          }
+        ],
+        "clinical_pearl": "Skeletal muscle contraction from transcutaneous pacing can mimic electrical capture on the monitor. Always verify mechanical capture by palpating a pulse — preferably the femoral artery, as upper extremity pulses may be difficult to assess during pacing."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After transferring the patient to the cath lab, you reflect on the interfacility transfer process. Select ALL elements that represent best practices for accepting and conducting interfacility transfers.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Obtaining a thorough verbal report from the sending physician and nurse, including current treatment, recent changes, and anticipated complications",
+            "correct": true,
+            "critical": false,
+            "explanation": "A comprehensive handoff from the sending facility is essential. This should include the clinical history, current interventions, recent vital sign trends, and potential complications to anticipate during transport.",
+            "guideline_ref": "EMTALA; National EMS Education Standards — Interfacility Transport"
+          },
+          {
+            "text": "Verifying all IV medications, drip rates, and infusion pump settings before departing the sending facility",
+            "correct": true,
+            "critical": false,
+            "explanation": "Medication verification prevents errors during transport. Confirm all drips, rates, concentrations, and pump settings. Ensure you have the ability to manage all infusions with your equipment and protocols.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology; Interfacility Transport Standards"
+          },
+          {
+            "text": "Ensuring the transport crew's scope of practice and equipment are adequate for the patient's acuity and potential complications",
+            "correct": true,
+            "critical": false,
+            "explanation": "The transport crew must be able to manage the patient's current condition AND foreseeable deterioration. If the patient's needs exceed the crew's capabilities, a higher-level transport team should be requested.",
+            "guideline_ref": "EMTALA — Appropriate Transfer Requirements; CAMTS Standards"
+          },
+          {
+            "text": "Establishing clear communication with the receiving facility before departure, including estimated arrival time and patient condition",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pre-departure notification ensures the receiving facility is prepared for the patient. For time-sensitive conditions like STEMI, advance notification allows cath lab activation to minimize door-to-balloon time.",
+            "guideline_ref": "AHA STEMI Systems of Care; EMTALA; National EMS Education Standards"
+          },
+          {
+            "text": "Relying exclusively on the sending facility's assessment and not performing your own patient evaluation before departure",
+            "correct": false,
+            "critical": true,
+            "explanation": "The transport crew must perform their own independent assessment before departure. The patient's condition may have changed since the sending team's last evaluation, and the transport crew needs their own baseline for comparison during transport.",
+            "guideline_ref": "National EMS Education Standards — Patient Assessment; Interfacility Transport Standards"
+          },
+          {
+            "text": "Departing immediately upon arrival at the sending facility to minimize total transport time, completing paperwork en route",
+            "correct": false,
+            "critical": false,
+            "explanation": "Rushing departure increases the risk of errors, missed information, and inadequate preparation. A few minutes spent on thorough assessment, handoff, and equipment checks at the sending facility can prevent life-threatening problems en route.",
+            "guideline_ref": "National EMS Education Standards — Interfacility Transport"
+          }
+        ],
+        "clinical_pearl": "The EMTALA-required elements of an appropriate transfer include: medical benefits outweigh risks, sending physician certification, receiving facility acceptance, copies of medical records, and qualified personnel with appropriate equipment during transport."
+      }
+    ]
+  },
+  {
+    "id": "nat-ops-17",
+    "title": "19M — Collapse at Outdoor Music Festival",
+    "dispatch": "19-year-old male, unconscious at outdoor concert venue, event medical tent requesting ALS",
+    "category": "EMS Operations",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {
+      "age": 19,
+      "sex": "M",
+      "cc": "Syncope with altered mental status at outdoor concert"
+    },
+    "scene": "You respond as the ALS unit to a mass gathering event — an outdoor music festival with approximately 15,000 attendees. The event medical team at the on-site medical tent has requested ALS backup for a 19-year-old male who collapsed in the crowd approximately 15 minutes ago. Event staff extracted him and brought him to the medical tent on a golf cart. He is lying on a cot, awake but confused. His friends report he has been in the sun all day, has been drinking alcohol, and they suspect he may have taken 'molly' (MDMA). He is hot to the touch with flushed skin. The ambient temperature is 92°F with high humidity. The medical tent has basic first aid supplies, oral rehydration, and a misting fan.",
+    "history": {
+      "pmh": "None known",
+      "meds": "None prescribed",
+      "allergies": "None known"
+    },
+    "vitals": {
+      "hr": 138,
+      "bp": "96/58",
+      "rr": 24,
+      "spo2": 97,
+      "gcs": 13,
+      "temp": "104.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are evaluating this patient at a mass gathering event. Which factors make this presentation HIGH RISK and support a decision to transport to the emergency department rather than treat and release from the event medical tent?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {
+            "text": "Core temperature of 104.2°F, which meets criteria for heat stroke",
+            "correct": true,
+            "critical": false,
+            "explanation": "A core temperature ≥104°F (40°C) with altered mental status meets the clinical definition of heat stroke, a life-threatening emergency requiring aggressive cooling and hospital-based management.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Altered mental status (GCS 13) indicating end-organ dysfunction",
+            "correct": true,
+            "critical": false,
+            "explanation": "Altered mental status in the setting of hyperthermia is the hallmark that distinguishes heat stroke from heat exhaustion. It indicates CNS dysfunction and is a medical emergency.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies"
+          },
+          {
+            "text": "Suspected MDMA ingestion, which can cause serotonin syndrome and exacerbate hyperthermia",
+            "correct": true,
+            "critical": false,
+            "explanation": "MDMA impairs thermoregulation and can cause serotonin syndrome with life-threatening hyperthermia. The combination of MDMA, heat exposure, physical activity, and dehydration creates a particularly dangerous clinical scenario that requires hospital-level monitoring and treatment.",
+            "guideline_ref": "National EMS Education Standards — Toxicology; Environmental Emergencies"
+          },
+          {
+            "text": "Hypotension and tachycardia suggesting significant volume depletion or distributive shock",
+            "correct": true,
+            "critical": false,
+            "explanation": "The combination of tachycardia and hypotension indicates significant hemodynamic compromise from volume loss, peripheral vasodilation, or both. This patient needs IV fluid resuscitation and monitoring beyond what the medical tent can provide.",
+            "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Shock"
+          },
+          {
+            "text": "The patient is 19 years old and therefore cannot consent to treatment at the event medical tent",
+            "correct": false,
+            "critical": false,
+            "explanation": "At 19 years old, the patient is a legal adult and can consent to or refuse treatment. Age alone is not a transport criterion in this case.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "The fact that the patient was drinking alcohol at the festival, which requires mandatory police involvement and hospital evaluation",
+            "correct": false,
+            "critical": false,
+            "explanation": "Alcohol consumption alone does not mandate hospital transport or police involvement for a 19-year-old (legal adult in most states for medical decision-making). The transport decision is based on clinical presentation, not the legal status of alcohol use.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal"
+          }
+        ],
+        "clinical_pearl": "MDMA-related hyperthermia can be refractory to standard cooling methods and may require dantrolene or cyproheptadine in the ED. Aggressive cooling should begin immediately — cold water immersion is the gold standard if available."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You decide to transport. Which cooling interventions should you initiate during transport? Categorize each as 'Effective — Initiate' or 'Ineffective/Harmful — Avoid'.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Apply ice packs to the neck, axillae, and groin (areas of large blood vessels)",
+          "Administer room-temperature IV normal saline bolus",
+          "Remove excess clothing and apply cool wet sheets with fan-assisted evaporation",
+          "Administer antipyretic medications (acetaminophen or ibuprofen)",
+          "Maximize air conditioning in the ambulance patient compartment"
+        ],
+        "categories": ["Effective — Initiate", "Ineffective/Harmful — Avoid"],
+        "correctCategories": [0, 0, 0, 1, 0],
+        "explanation": "Effective cooling measures: ice packs to vascular areas, IV fluids (addresses volume depletion and provides some internal cooling), evaporative cooling with wet sheets and fan, and cold ambulance compartment all help reduce core temperature. Antipyretics (acetaminophen/ibuprofen) are INEFFECTIVE in heat stroke because the hyperthermia is not caused by a raised hypothalamic set point — they target fever mechanisms, not environmental/toxicologic hyperthermia, and may cause harm (hepatotoxicity, renal injury) in heat stroke patients.",
+        "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society Heat Illness Guidelines",
+        "clinical_pearl": "Antipyretics do not work in heat stroke. Fever is a regulated rise in the hypothalamic set point (infection/inflammation). Heat stroke is an unregulated rise in core temperature that overwhelms cooling mechanisms. Different mechanisms require different treatments."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "As part of the mass gathering medical planning team, you are reviewing preparedness for future events. Which of the following is MOST important for effective mass gathering medical operations?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {
+            "text": "A comprehensive medical action plan that includes patient presentation rate estimates, staffing ratios, transport agreements, communication plans, and hospital notification protocols",
+            "correct": true,
+            "critical": false,
+            "explanation": "Effective mass gathering medicine requires a comprehensive medical action plan developed before the event. This includes estimating patient volume (typically 1-2 patients per 1,000 attendees for outdoor concerts), establishing staffing, identifying transport corridors, pre-coordinating with receiving hospitals, and planning for surge scenarios.",
+            "guideline_ref": "NAEMSP Mass Gathering Position Statement; National EMS Education Standards — EMS Operations"
+          },
+          {
+            "text": "Positioning the maximum number of ambulances at the venue to ensure the fastest possible transport times for any patient",
+            "correct": false,
+            "critical": false,
+            "explanation": "While ambulance staging is important, it is just one component of mass gathering planning. Over-committing ambulances to the venue depletes system resources for the rest of the community. A balanced approach with mutual aid agreements is more effective.",
+            "guideline_ref": "NAEMSP Mass Gathering Position Statement"
+          },
+          {
+            "text": "Requiring all attendees to sign medical waivers that limit EMS liability during the event",
+            "correct": false,
+            "critical": false,
+            "explanation": "Medical waivers do not negate the duty to provide appropriate emergency medical care and are not a substitute for adequate medical planning. Liability concerns should be addressed through proper medical direction, protocols, and documentation.",
+            "guideline_ref": "National EMS Education Standards — Medical-Legal"
+          },
+          {
+            "text": "Relying on the venue's existing security team to triage patients and determine who needs EMS transport",
+            "correct": false,
+            "critical": false,
+            "explanation": "Medical triage decisions should be made by trained medical personnel, not security staff. Security plays a vital role in access, crowd management, and patient extraction, but clinical decision-making must remain with medical providers.",
+            "guideline_ref": "NAEMSP Mass Gathering Position Statement; National EMS Education Standards"
+          }
+        ],
+        "clinical_pearl": "Mass gathering medicine is its own subspecialty. Patient presentation rates vary by event type: outdoor concerts in heat (highest), sporting events (moderate), indoor concerts (lower). Plan for the worst-case scenario and scale down, not the reverse."
+      }
+    ]
+  }
+]

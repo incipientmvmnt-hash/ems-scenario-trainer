@@ -1,0 +1,455 @@
+[
+  {
+    "id": "nat-card-12",
+    "title": "4F — Rapid Heart Rate at Daycare",
+    "dispatch": "4-year-old female, fast heart rate, pale and fussy",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 4, "sex": "F", "cc": "Rapid heart rate and pallor"},
+    "scene": "You arrive at a daycare center where staff reports a 4-year-old girl suddenly became pale and lethargic during playtime. She is sitting in a teacher's lap, crying intermittently but appearing fatigued. Staff report she was running and playing normally 20 minutes ago. She has no fever and has not been ill recently. Her skin is pale and slightly diaphoretic. You can see visible pulsations in her neck.",
+    "history": {"pmh": "None known per daycare records", "meds": "None", "allergies": "None known"},
+    "vitals": {"hr": 260, "bp": "78/50", "rr": 30, "spo2": 96, "gcs": 14, "temp": "98.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The cardiac monitor shows a narrow-complex tachycardia at a rate of 260 bpm with no discernible P waves. Which assessment findings would help you differentiate this rhythm from sinus tachycardia in this pediatric patient?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Heart rate exceeds 220 bpm, which is above the expected maximum sinus rate for this age group", "correct": true, "critical": false, "explanation": "In children, sinus tachycardia rarely exceeds 220 bpm. A rate of 260 bpm in a 4-year-old strongly suggests SVT rather than sinus tachycardia.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "The rhythm is abrupt in onset with a fixed, regular rate and no beat-to-beat variability", "correct": true, "critical": false, "explanation": "SVT characteristically has an abrupt onset and a fixed rate without the normal variability seen in sinus tachycardia. Sinus tachycardia tends to vary with activity and stimulation.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "P waves are absent, with a narrow QRS complex on the monitor", "correct": true, "critical": false, "explanation": "Absent P waves with a narrow QRS complex at this rate is characteristic of SVT. In sinus tachycardia, P waves are typically present even if difficult to identify at high rates.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "The child has a fever of 103°F, suggesting the tachycardia is compensatory", "correct": false, "critical": false, "explanation": "This patient is afebrile. Fever-driven sinus tachycardia is a common cause of pediatric tachycardia but does not apply here. The absence of an identifiable physiologic cause further supports SVT.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "The child has signs of dehydration including poor skin turgor and dry mucous membranes", "correct": false, "critical": false, "explanation": "There are no signs of dehydration in this patient. Dehydration-induced sinus tachycardia would show gradual onset and beat-to-beat variability, not this abrupt presentation.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse Algorithm"}
+        ],
+        "clinical_pearl": "In pediatric patients, the key differentiators between SVT and sinus tachycardia are: rate (SVT typically >220 in infants, >180 in children), abrupt onset vs. gradual, fixed rate vs. variable, and presence or absence of P waves."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient is hemodynamically stable with adequate perfusion. Arrange the following interventions in the correct order of priority for managing this rhythm.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Apply ice pack or cold wet washcloth to the face for 15-20 seconds (vagal maneuver)",
+          "Administer adenosine 0.1 mg/kg rapid IV push followed by rapid saline flush",
+          "Establish IV/IO access",
+          "If no conversion, administer adenosine 0.2 mg/kg rapid IV push"
+        ],
+        "correctOrder": [0, 2, 1, 3],
+        "explanation": "For hemodynamically stable pediatric SVT: (1) Attempt vagal maneuvers first — in young children, applying ice or a cold washcloth to the face (diving reflex) is preferred over carotid massage. (2) Establish IV/IO access. (3) Adenosine 0.1 mg/kg rapid IV push (max first dose 6 mg). (4) If no conversion, repeat adenosine at 0.2 mg/kg (max 12 mg). Vagal maneuvers are attempted first as they are non-invasive and can be effective.",
+        "guideline_ref": "AHA PALS 2020 — SVT Management; National EMS Education Standards — Pediatric Cardiology",
+        "clinical_pearl": "The diving reflex (cold stimulus to the face) is the preferred vagal maneuver in infants and young children. Never apply ocular pressure in pediatric patients. If using ice, wrap it in a cloth and apply for no more than 15-20 seconds."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "While preparing for adenosine, the child becomes unresponsive with a thready pulse and BP drops to 60/40. The monitor still shows narrow-complex tachycardia at 260 bpm. What is the most appropriate next intervention?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The patient has deteriorated. She is now limp, pale, and minimally responsive. Capillary refill is greater than 4 seconds.",
+        "vitals_update": {"hr": 260, "bp": "60/40", "rr": 12, "spo2": 88, "gcs": 8},
+        "options": [
+          {"text": "Perform synchronized cardioversion starting at 0.5-1 J/kg", "correct": true, "critical": false, "explanation": "When SVT causes hemodynamic instability (hypotension, altered mental status, signs of shock), synchronized cardioversion is indicated. Start at 0.5-1 J/kg. If ineffective, increase to 2 J/kg. Do not delay electrical therapy for unstable patients.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse and Poor Perfusion"},
+          {"text": "Administer adenosine 0.1 mg/kg rapid IV push as originally planned", "correct": false, "critical": false, "explanation": "While adenosine can still be attempted in unstable SVT if IV access is immediately available and cardioversion would be delayed, this patient is acutely decompensating and electrical cardioversion should not be delayed.", "guideline_ref": "AHA PALS 2020 — Tachycardia with a Pulse and Poor Perfusion"},
+          {"text": "Administer amiodarone 5 mg/kg IV over 20-60 minutes", "correct": false, "critical": false, "explanation": "Amiodarone is not first-line for SVT and is inappropriate for an acutely unstable patient. Its slow administration time makes it unsuitable for emergent rhythm conversion.", "guideline_ref": "AHA PALS 2020 — Tachycardia Algorithm"},
+          {"text": "Perform unsynchronized defibrillation at 2 J/kg", "correct": false, "critical": true, "explanation": "Unsynchronized defibrillation in a patient with a pulse and an organized rhythm risks inducing ventricular fibrillation. Synchronized cardioversion is required for unstable SVT to ensure the shock is delivered on the R wave.", "guideline_ref": "AHA PALS 2020 — Cardioversion vs. Defibrillation"}
+        ],
+        "clinical_pearl": "Always use synchronized mode for cardioversion of SVT. If the device will not synchronize (sometimes with very high rates), the benefit of unsynchronized shock in a critically unstable patient may outweigh the risk — but always attempt synchronization first."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-13",
+    "title": "58M — Headache and Nosebleed at Office",
+    "dispatch": "58-year-old male, severe headache, nosebleed that won't stop",
+    "category": "Cardiology",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 58, "sex": "M", "cc": "Severe headache with epistaxis"},
+    "scene": "You arrive at a corporate office building where coworkers have called 911 for a 58-year-old male executive. He is sitting at his desk holding tissues to his nose for an active nosebleed. He reports a sudden, severe occipital headache that started 30 minutes ago, described as the worst headache of his life. He appears anxious and flushed. Coworkers report he has been under significant work stress and skipped his doctor's appointment last week.",
+    "history": {"pmh": "Hypertension (poorly controlled), obesity, chronic kidney disease stage 2", "meds": "Amlodipine 10mg daily, lisinopril 40mg daily — admits to missing doses frequently", "allergies": "ACE inhibitor cough (tolerates lisinopril)"},
+    "vitals": {"hr": 102, "bp": "248/142", "rr": 20, "spo2": 97, "gcs": 15, "temp": "98.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient's blood pressure is 248/142 mmHg with a severe headache. Which additional findings would indicate end-organ damage consistent with a hypertensive emergency rather than hypertensive urgency?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Visual disturbances such as blurred vision or complaints of seeing spots", "correct": true, "critical": false, "explanation": "Visual disturbances suggest hypertensive retinopathy or posterior reversible encephalopathy, indicating end-organ damage to the eyes/brain — a hallmark of hypertensive emergency.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA Hypertension Guidelines"},
+          {"text": "Altered level of consciousness or confusion", "correct": true, "critical": false, "explanation": "Altered mental status indicates hypertensive encephalopathy — cerebral edema from severely elevated blood pressure — confirming end-organ damage and hypertensive emergency.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"},
+          {"text": "Chest pain or shortness of breath suggesting acute cardiac involvement", "correct": true, "critical": false, "explanation": "Chest pain or dyspnea may indicate acute heart failure, aortic dissection, or acute coronary syndrome precipitated by severe hypertension — all end-organ damage requiring emergent treatment.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"},
+          {"text": "Blood pressure above 180/120 mmHg on repeated measurements", "correct": false, "critical": false, "explanation": "Severely elevated blood pressure alone defines hypertensive urgency. It becomes a hypertensive emergency only when accompanied by signs of end-organ damage (neurologic, cardiac, renal, or vascular).", "guideline_ref": "AHA/ACC Hypertension Guidelines 2017"},
+          {"text": "Patient reports non-compliance with prescribed antihypertensive medications", "correct": false, "critical": false, "explanation": "Medication non-compliance explains the elevated blood pressure but does not itself indicate end-organ damage. The distinction between urgency and emergency depends on target organ involvement, not the cause of the hypertension.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"}
+        ],
+        "clinical_pearl": "Hypertensive emergency = severely elevated BP + end-organ damage. Hypertensive urgency = severely elevated BP without end-organ damage. Treatment approach differs significantly — emergencies require IV antihypertensives and rapid transport; urgencies may be managed with oral medications and outpatient follow-up."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Categorize the following interventions as appropriate for the 'Prehospital Setting' or 'Hospital Setting Only' for this hypertensive emergency patient.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Maintain calm, quiet environment; keep patient seated comfortably",
+          "Administer IV nitroprusside infusion titrated to target BP",
+          "Establish IV access and administer a small fluid bolus if indicated",
+          "Obtain a CT scan to rule out intracranial hemorrhage",
+          "Control epistaxis with direct pressure while monitoring airway",
+          "Administer IV labetalol or nicardipine per local protocol"
+        ],
+        "categories": ["Prehospital Setting", "Hospital Setting Only"],
+        "correctCategories": [0, 1, 0, 1, 0, 0],
+        "explanation": "Prehospital: Keep patient calm and positioned comfortably, establish IV access, control epistaxis, and administer IV antihypertensives per protocol (labetalol/nicardipine are common prehospital options). Hospital only: Nitroprusside requires arterial line monitoring and is not a prehospital medication; CT imaging requires hospital facilities.",
+        "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; NAEMSP Position Statements",
+        "clinical_pearl": "In hypertensive emergencies, the goal is to reduce MAP by no more than 25% in the first hour. Rapid, excessive blood pressure reduction can cause watershed infarction, especially in patients with chronic hypertension whose autoregulation curve has shifted rightward."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, the patient develops slurred speech and right-sided facial droop. His BP is now 232/138. What is the most critical change to your management?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "narrative": "The patient was alert and conversant. Over the past 3 minutes, he has developed new neurological deficits.",
+        "vitals_update": {"hr": 96, "bp": "232/138", "rr": 18, "spo2": 97, "gcs": 13},
+        "options": [
+          {"text": "Activate a stroke alert and divert to the nearest comprehensive stroke center", "correct": true, "critical": false, "explanation": "New focal neurological deficits (slurred speech, facial droop) in the setting of severely elevated blood pressure suggest either hemorrhagic stroke or hypertensive encephalopathy. Activating a stroke alert ensures the receiving facility is prepared for emergent imaging and intervention.", "guideline_ref": "AHA/ASA Stroke Guidelines 2019; National EMS Education Standards — Neurologic Emergencies"},
+          {"text": "Aggressively reduce blood pressure to below 140/90 immediately to prevent further brain damage", "correct": false, "critical": true, "explanation": "Aggressive blood pressure reduction in acute stroke can worsen cerebral ischemia. If hemorrhagic stroke is present, target SBP <140 may be appropriate, but if ischemic, BP should generally not be lowered unless >220/120 or thrombolysis is planned. This decision requires imaging first.", "guideline_ref": "AHA/ASA Stroke Guidelines 2019"},
+          {"text": "Administer aspirin 324 mg to treat a possible ischemic stroke", "correct": false, "critical": true, "explanation": "Aspirin should not be given in the prehospital setting for suspected stroke. If the stroke is hemorrhagic (likely given the severely elevated BP), aspirin would worsen bleeding. Aspirin is given only after CT imaging rules out hemorrhage.", "guideline_ref": "AHA/ASA Stroke Guidelines 2019"},
+          {"text": "Continue current management without changes since the patient's GCS is still above 8", "correct": false, "critical": false, "explanation": "New neurological deficits represent a significant change in patient condition requiring immediate re-evaluation of transport destination and hospital notification. A GCS above 8 does not mean the patient is stable.", "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"}
+        ],
+        "clinical_pearl": "Approximately 10-15% of strokes are hemorrhagic, and severe hypertension is the leading risk factor. In the prehospital setting, treat any new focal neurological deficit as a stroke until proven otherwise — time is brain."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-14",
+    "title": "45M — Shortness of Breath After Car Accident",
+    "dispatch": "45-year-old male, difficulty breathing, chest trauma from steering wheel",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 45, "sex": "M", "cc": "Dyspnea and chest pain after blunt trauma"},
+    "scene": "You respond to a two-vehicle MVC on a rural highway. A 45-year-old male driver was unrestrained and struck the steering wheel with his chest. He is sitting upright in the driver's seat, leaning forward with his hands braced on his knees. He is pale, anxious, and complaining of chest tightness and difficulty breathing. You notice distended neck veins despite his sitting position. Heart sounds are muffled on auscultation. There is bruising visible across his anterior chest.",
+    "history": {"pmh": "Mitral valve prolapse, anxiety disorder", "meds": "Sertraline 100mg daily", "allergies": "Penicillin"},
+    "vitals": {"hr": 128, "bp": "82/68", "rr": 28, "spo2": 93, "gcs": 14, "temp": "97.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient presents with JVD, muffled heart sounds, and hypotension after blunt chest trauma. What clinical triad do these findings represent, and what condition should you suspect?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Beck's triad — suggestive of cardiac tamponade", "correct": true, "critical": false, "explanation": "Beck's triad consists of jugular venous distension (JVD), muffled/distant heart sounds, and hypotension. In the setting of blunt chest trauma, this is highly suggestive of cardiac tamponade from blood accumulating in the pericardial sac, compressing the heart and impairing filling.", "guideline_ref": "National EMS Education Standards — Cardiovascular Trauma; PHTLS 9th Edition"},
+          {"text": "Cushing's triad — suggestive of increased intracranial pressure", "correct": false, "critical": false, "explanation": "Cushing's triad consists of hypertension, bradycardia, and irregular respirations, indicating increased ICP. This patient has hypotension and tachycardia, which is inconsistent with Cushing's triad.", "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"},
+          {"text": "Virchow's triad — suggestive of pulmonary embolism", "correct": false, "critical": false, "explanation": "Virchow's triad (stasis, endothelial injury, hypercoagulability) describes risk factors for venous thromboembolism, not a clinical presentation. It is not applicable to this acute trauma scenario.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"},
+          {"text": "Widal's triad — suggestive of aortic aneurysm rupture", "correct": false, "critical": false, "explanation": "Widal's triad is not a recognized cardiovascular clinical triad. The combination of JVD, muffled heart sounds, and hypotension specifically points to Beck's triad and cardiac tamponade.", "guideline_ref": "National EMS Education Standards — Cardiovascular Trauma"}
+        ],
+        "clinical_pearl": "Beck's triad is the classic presentation of cardiac tamponade, but all three findings are present in only 10-40% of cases. JVD may be absent in hypovolemic patients. Maintain a high index of suspicion in any patient with blunt chest trauma and unexplained hypotension."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "You are evaluating for pulsus paradoxus. Which finding would confirm its presence in this patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {"text": "A systolic blood pressure drop greater than 10 mmHg during spontaneous inspiration", "correct": true, "critical": false, "explanation": "Pulsus paradoxus is defined as a decrease in systolic BP of more than 10 mmHg during inspiration. In cardiac tamponade, the fluid-filled pericardium restricts cardiac filling, and inspiratory increases in right ventricular volume further compress the left ventricle, reducing stroke volume and systolic pressure.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment; PHTLS 9th Edition"},
+          {"text": "An irregular pulse that becomes regular during expiration", "correct": false, "critical": false, "explanation": "This describes sinus arrhythmia, a normal physiologic variation. Pulsus paradoxus refers specifically to an exaggerated drop in systolic blood pressure with inspiration, not a rhythm change.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"},
+          {"text": "Alternating strong and weak pulse beats unrelated to the respiratory cycle", "correct": false, "critical": false, "explanation": "This describes pulsus alternans, which is associated with severe left ventricular failure, not cardiac tamponade. Pulsus paradoxus is specifically respiratory-cycle dependent.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"},
+          {"text": "A bounding pulse that increases in amplitude with each beat during a Valsalva maneuver", "correct": false, "critical": false, "explanation": "This does not describe any recognized clinical finding. Pulsus paradoxus is assessed during normal quiet breathing, not during Valsalva maneuver.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"}
+        ],
+        "clinical_pearl": "Pulsus paradoxus can be assessed in the field by noting whether the radial pulse weakens or disappears during inspiration. This is a practical bedside assessment when formal BP cuff measurement is difficult in a moving ambulance."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital management steps for this patient in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Establish two large-bore IVs and administer a 500mL NS fluid bolus",
+          "Provide high-flow oxygen via non-rebreather mask",
+          "Initiate rapid transport to a trauma center capable of emergency thoracotomy or pericardiocentesis",
+          "Perform a thorough secondary assessment to identify additional injuries",
+          "Provide early notification to the receiving trauma center"
+        ],
+        "correctOrder": [1, 0, 4, 2, 3],
+        "explanation": "Priority sequence: (1) High-flow O2 to maximize oxygen delivery. (2) Establish large-bore IV access and administer a judicious fluid bolus — volume loading can temporarily improve cardiac output in tamponade by increasing preload. (3) Provide early hospital notification so the trauma team can prepare. (4) Initiate rapid transport — definitive treatment (pericardiocentesis or surgical drainage) is only available at the hospital. (5) Complete secondary assessment en route, not delaying transport.",
+        "guideline_ref": "PHTLS 9th Edition — Thoracic Trauma; National EMS Education Standards — Cardiovascular Trauma",
+        "clinical_pearl": "Cardiac tamponade from blunt trauma is a load-and-go situation. Prehospital treatment is limited to supportive care and rapid transport. IV fluids can temporarily improve hemodynamics by increasing right heart filling pressure, but definitive treatment requires pericardiocentesis or surgical intervention."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize each of the following conditions into either causes of 'Obstructive Shock' or causes of 'Cardiogenic Shock.'",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Cardiac tamponade",
+          "Acute myocardial infarction with pump failure",
+          "Tension pneumothorax",
+          "Severe cardiomyopathy",
+          "Massive pulmonary embolism",
+          "Acute valvular rupture"
+        ],
+        "categories": ["Obstructive Shock", "Cardiogenic Shock"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "Obstructive shock results from mechanical obstruction to blood flow: cardiac tamponade (pericardial fluid compresses the heart), tension pneumothorax (mediastinal shift compresses great vessels), and massive PE (clot obstructs pulmonary vasculature). Cardiogenic shock results from intrinsic pump failure: MI with pump failure, severe cardiomyopathy, and acute valvular rupture all directly impair the heart's pumping ability.",
+        "guideline_ref": "National EMS Education Standards — Shock and Resuscitation; PHTLS 9th Edition",
+        "clinical_pearl": "Distinguishing obstructive from cardiogenic shock in the field is critical because treatments differ. Obstructive shock requires relieving the obstruction (needle decompression, pericardiocentesis), while cardiogenic shock requires supporting the pump (vasopressors, fluids cautiously). JVD is present in both but for different reasons."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-15",
+    "title": "72M — Tearing Back Pain at Restaurant",
+    "dispatch": "72-year-old male, sudden severe back pain, feeling faint",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 72, "sex": "M", "cc": "Sudden tearing chest and back pain"},
+    "scene": "You arrive at an upscale restaurant where a 72-year-old male is lying on the floor between tables. Bystanders helped him down after he cried out in pain and nearly collapsed. He is clutching his chest and back, describing a sudden, severe 'tearing' or 'ripping' pain that started between his shoulder blades and radiates to his anterior chest. He is pale, diaphoretic, and appears to be in significant distress. A dinner companion states he has a history of high blood pressure.",
+    "history": {"pmh": "Hypertension (30+ years), Marfan syndrome, bicuspid aortic valve, former smoker (40 pack-years)", "meds": "Losartan 100mg daily, atenolol 50mg daily, aspirin 81mg daily", "allergies": "Codeine"},
+    "vitals": {"hr": 110, "bp": "Right arm: 198/108, Left arm: 152/90", "rr": 24, "spo2": 95, "gcs": 15, "temp": "97.9°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You obtain blood pressure readings in both arms and find a significant discrepancy (Right: 198/108, Left: 152/90). Combined with the patient's presentation, which additional findings would MOST increase your suspicion for the condition you are considering?",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Pain described as tearing or ripping in quality with sudden, maximal onset", "correct": true, "critical": false, "explanation": "Tearing or ripping pain with sudden, maximum-intensity onset is the hallmark description of aortic dissection. Unlike MI, which typically builds gradually, dissection pain is classically worst at onset.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA/ACC Aortic Dissection Guidelines"},
+          {"text": "Blood pressure difference greater than 20 mmHg between arms", "correct": true, "critical": false, "explanation": "A systolic BP difference >20 mmHg between arms suggests that the dissection flap is partially occluding flow to one subclavian artery. This is a classic and highly concerning finding in aortic dissection.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"},
+          {"text": "History of connective tissue disorder and long-standing hypertension", "correct": true, "critical": false, "explanation": "Marfan syndrome weakens the aortic media, and chronic hypertension adds hemodynamic stress — together they are major risk factors for aortic dissection. This history significantly increases pretest probability.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"},
+          {"text": "ST-segment elevation in leads II, III, and aVF on 12-lead ECG", "correct": false, "critical": false, "explanation": "While ST elevation may occur if the dissection involves the coronary ostia, this finding alone would more commonly suggest acute MI. In fact, treating a dissection patient with thrombolytics or anticoagulants based on STEMI findings could be catastrophic.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"},
+          {"text": "Positive troponin result on point-of-care testing", "correct": false, "critical": false, "explanation": "Troponin may be elevated if the dissection compromises coronary flow, but a positive troponin does not specifically suggest dissection. It could mislead the team toward ACS management, potentially delaying appropriate surgical treatment.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"}
+        ],
+        "clinical_pearl": "Aortic dissection can mimic acute MI when the dissection flap occludes a coronary ostium. Always consider dissection before administering thrombolytics, anticoagulants, or antiplatelet therapy to patients with chest/back pain and significantly elevated blood pressure."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You suspect aortic dissection. Which prehospital intervention is MOST critical for this patient?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Provide gentle handling, keep the patient still, control pain, and initiate rapid transport to a facility with cardiothoracic surgery capability", "correct": true, "critical": false, "explanation": "The priorities in suspected aortic dissection are: minimize hemodynamic stress (keep the patient calm and still), control pain (which also helps reduce sympathetic drive and BP), and rapidly transport to a facility capable of definitive surgical repair.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA/ACC Aortic Dissection Guidelines"},
+          {"text": "Administer aspirin 324 mg and nitroglycerin 0.4 mg sublingual for suspected acute coronary syndrome", "correct": false, "critical": true, "explanation": "Aspirin and nitroglycerin are contraindicated in suspected aortic dissection. Aspirin impairs platelet function which could worsen hemorrhage if the dissection ruptures. Nitroglycerin can cause reflex tachycardia, increasing aortic wall shear stress.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"},
+          {"text": "Administer a 1L normal saline bolus to support blood pressure", "correct": false, "critical": false, "explanation": "This patient is hypertensive, not hypotensive. Aggressive fluid resuscitation would further increase blood pressure and aortic wall stress, potentially worsening the dissection or causing rupture.", "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010"},
+          {"text": "Apply bilateral lower extremity traction splints to improve venous return", "correct": false, "critical": false, "explanation": "Traction splints are indicated for femur fractures, not cardiovascular emergencies. There is no indication for this intervention, and manipulation of the patient increases sympathetic response.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"}
+        ],
+        "clinical_pearl": "The two pillars of aortic dissection management are heart rate control (target <60 bpm) and blood pressure reduction (target SBP 100-120). Beta-blockers are first-line. Rate control should be achieved BEFORE vasodilators to prevent reflex tachycardia."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "As a Paramedic, you are preparing pharmacologic management for this patient. Arrange the following in the correct treatment priority.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer IV beta-blocker (esmolol or labetalol per protocol) targeting HR <60",
+          "Provide IV analgesic (fentanyl preferred) for pain management",
+          "Consider IV vasodilator (nitroprusside or nicardipine) only after adequate heart rate control",
+          "Obtain bilateral arm BPs and 12-lead ECG for baseline documentation"
+        ],
+        "correctOrder": [3, 0, 1, 2],
+        "explanation": "Sequence: (1) Document baseline bilateral BPs and obtain 12-lead ECG for the receiving facility. (2) IV beta-blocker first to reduce heart rate and aortic wall shear stress — this is the cornerstone of dissection management. (3) Pain control with IV opioids reduces sympathetic drive, further lowering HR and BP. (4) Vasodilators ONLY after heart rate is controlled to avoid reflex tachycardia, which increases aortic shear stress.",
+        "guideline_ref": "AHA/ACC Thoracic Aortic Disease Guidelines 2010; National EMS Education Standards — Cardiovascular Emergencies",
+        "clinical_pearl": "Esmolol is preferred in the prehospital setting because of its ultra-short half-life (~9 minutes), allowing rapid titration. If the patient decompensates, the drug effect wears off quickly. Labetalol is an alternative with combined alpha and beta blockade."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-16",
+    "title": "63M — Chest Pain and Nausea After Yard Work",
+    "dispatch": "63-year-old male, chest pain, nausea, sweating",
+    "category": "Cardiology",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 63, "sex": "M", "cc": "Chest pain with nausea and diaphoresis"},
+    "scene": "You arrive at a suburban home where a 63-year-old male is sitting on the porch steps. He was doing yard work when he developed substernal chest pressure radiating to his jaw, accompanied by nausea and profuse sweating. His wife brought him a nitroglycerin tablet which he took about 5 minutes ago with no relief. He appears pale and diaphoretic. His wife notes he looks 'gray.' He denies taking any erectile dysfunction medications.",
+    "history": {"pmh": "Coronary artery disease (2-vessel, managed medically), hypertension, type 2 diabetes, hyperlipidemia", "meds": "Nitroglycerin PRN, metoprolol 50mg BID, clopidogrel 75mg daily, atorvastatin 80mg daily, metformin 1000mg BID", "allergies": "NKDA"},
+    "vitals": {"hr": 54, "bp": "86/58", "rr": 20, "spo2": 94, "gcs": 15, "temp": "97.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The 12-lead ECG shows ST elevation in leads II, III, and aVF with reciprocal ST depression in leads I and aVL. The patient is bradycardic and hypotensive. Based on these findings, which additional lead(s) should you obtain and why?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Right-sided leads, particularly V4R, to evaluate for right ventricular involvement", "correct": true, "critical": false, "explanation": "Inferior STEMI with bradycardia and hypotension should raise immediate suspicion for right ventricular infarction. V4R is the most sensitive single lead for detecting RV involvement and should be obtained on all inferior STEMIs.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes; National EMS Education Standards — Cardiovascular Emergencies"},
+          {"text": "Posterior leads V7-V9 to evaluate for posterior wall extension", "correct": false, "critical": false, "explanation": "While posterior leads are valuable in some inferior MIs, the immediate priority with bradycardia and hypotension is evaluating for RV involvement, as this dramatically changes fluid management strategy.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"},
+          {"text": "Repeat standard 12-lead in 15 minutes to monitor for ST evolution", "correct": false, "critical": false, "explanation": "While serial ECGs are valuable, the immediate clinical question is whether RV involvement is present, which requires right-sided leads — not simply repeating the standard 12-lead.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"},
+          {"text": "Lewis lead configuration to better evaluate the bradycardic rhythm", "correct": false, "critical": false, "explanation": "Lewis lead placement enhances P-wave visibility for arrhythmia analysis, but the rhythm etiology is likely ischemic (inferior MI commonly involves the SA and AV nodes). Identifying RV involvement takes clinical priority.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"}
+        ],
+        "clinical_pearl": "Up to 50% of inferior MIs involve the right ventricle. RV infarction patients are preload-dependent — treatments that reduce preload (nitroglycerin, morphine, diuretics) can cause precipitous cardiovascular collapse."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "V4R confirms ST elevation indicating right ventricular infarction. Which interventions are appropriate for this patient? Select ALL that apply.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 3,
+        "options": [
+          {"text": "Administer a 250-500 mL normal saline fluid bolus and reassess", "correct": true, "critical": false, "explanation": "RV infarction patients are preload-dependent. Judicious IV fluid boluses can improve right ventricular filling and cardiac output. Administer in 250-500 mL increments while monitoring lung sounds and blood pressure response.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes; National EMS Education Standards"},
+          {"text": "Administer aspirin 324 mg chewed if not already given", "correct": true, "critical": false, "explanation": "Aspirin remains indicated for STEMI regardless of RV involvement. Chewed aspirin provides faster platelet inhibition. This patient is on clopidogrel but has not received aspirin today.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"},
+          {"text": "Activate STEMI alert and transport to a PCI-capable facility", "correct": true, "critical": false, "explanation": "Early activation of the cardiac catheterization lab and transport to a PCI-capable facility is the standard of care for STEMI. Door-to-balloon time directly impacts myocardial salvage and patient outcomes.", "guideline_ref": "AHA ACLS 2020 — STEMI Systems of Care"},
+          {"text": "Administer nitroglycerin 0.4 mg sublingual for chest pain", "correct": false, "critical": true, "explanation": "Nitroglycerin is contraindicated in right ventricular infarction. It reduces preload through venodilation, which the preload-dependent right ventricle cannot tolerate, potentially causing severe hypotension or cardiovascular collapse.", "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"},
+          {"text": "Position the patient in high Fowler's position to ease breathing", "correct": false, "critical": false, "explanation": "High Fowler's position reduces venous return (preload), which is detrimental in RV infarction. Keep the patient supine or in a position of comfort with legs slightly elevated to augment preload.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"}
+        ],
+        "clinical_pearl": "The triad of inferior STEMI + hypotension + clear lung fields should make you think 'right ventricular infarction' until proven otherwise. These patients need volume, not vasodilators."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize the following medications as either 'Safe in RV Infarction' or 'Avoid in RV Infarction.'",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Normal saline fluid bolus",
+          "Nitroglycerin",
+          "Aspirin",
+          "Morphine",
+          "Dopamine for persistent hypotension after fluids",
+          "Furosemide"
+        ],
+        "categories": ["Safe in RV Infarction", "Avoid in RV Infarction"],
+        "correctCategories": [0, 1, 0, 1, 0, 1],
+        "explanation": "Safe: Normal saline (improves preload), aspirin (antiplatelet therapy for STEMI), dopamine (vasopressor for persistent hypotension after adequate fluid resuscitation). Avoid: Nitroglycerin (venodilator — reduces preload), morphine (venodilator — reduces preload), furosemide (diuretic — reduces preload). The common thread: avoid anything that reduces preload in the preload-dependent right ventricle.",
+        "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes; National EMS Education Standards — Cardiovascular Emergencies",
+        "clinical_pearl": "Remember: the right ventricle is a volume pump, not a pressure pump. When it's injured, it needs volume to maintain output. Any medication that reduces venous return can be catastrophic."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-17",
+    "title": "22M — Racing Heart and Dizziness at Gym",
+    "dispatch": "22-year-old male, rapid heart rate, dizzy, nearly fainted",
+    "category": "Cardiology",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 22, "sex": "M", "cc": "Palpitations and near-syncope"},
+    "scene": "You arrive at a gym where a 22-year-old male is sitting on a bench near the weight area. He reports that while lifting weights, he suddenly felt his heart 'racing out of control' and became lightheaded and dizzy. He nearly passed out but was caught by his workout partner. He has no chest pain but feels 'fluttering' in his chest and mild shortness of breath. He appears anxious but is alert and oriented. His skin is warm and slightly flushed.",
+    "history": {"pmh": "Episodes of 'racing heart' since age 16, told he has a 'heart condition' but never followed up. No surgeries.", "meds": "Pre-workout supplement containing caffeine 300mg (taken 45 minutes ago)", "allergies": "NKDA"},
+    "vitals": {"hr": 210, "bp": "104/72", "rr": 22, "spo2": 97, "gcs": 15, "temp": "98.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The 12-lead ECG shows a wide-complex tachycardia at 210 bpm. You notice a short PR interval and a slurred upstroke (delta wave) at the onset of the QRS complex. What underlying condition do these ECG findings suggest?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Wolff-Parkinson-White (WPW) syndrome with an accessory pathway", "correct": true, "critical": false, "explanation": "A short PR interval with a delta wave (slurred QRS upstroke) is the hallmark of WPW syndrome, indicating an accessory pathway (Bundle of Kent) that allows impulses to bypass the AV node. During tachycardia, this pathway can conduct rapidly and produce a wide-complex rhythm.", "guideline_ref": "AHA ACLS 2020 — Wide-Complex Tachycardia; National EMS Education Standards — Cardiovascular Emergencies"},
+          {"text": "Ventricular tachycardia from exercise-induced ischemia", "correct": false, "critical": false, "explanation": "While wide-complex tachycardia should always raise concern for VT, the presence of a short PR interval and delta wave specifically identifies an accessory pathway. VT in a 22-year-old without structural heart disease is less likely, though it should remain in the differential.", "guideline_ref": "AHA ACLS 2020 — Wide-Complex Tachycardia"},
+          {"text": "Atrial fibrillation with rapid ventricular response", "correct": false, "critical": false, "explanation": "While WPW patients can develop atrial fibrillation with rapid conduction over the accessory pathway, the regular rhythm and delta waves point to WPW as the underlying condition. The specific ECG findings described are diagnostic of pre-excitation.", "guideline_ref": "AHA ACLS 2020 — Atrial Fibrillation"},
+          {"text": "Bundle branch block with sinus tachycardia from stimulant use", "correct": false, "critical": false, "explanation": "Bundle branch block would show a widened QRS but with a normal or prolonged PR interval, not a short PR with delta waves. The combination of short PR and delta wave is specific to accessory pathway conduction.", "guideline_ref": "National EMS Education Standards — Cardiovascular Assessment"}
+        ],
+        "clinical_pearl": "WPW affects approximately 1-3 per 1,000 people. Many are asymptomatic until a triggering event (exercise, caffeine, stress) initiates a re-entrant tachycardia. Young patients with recurrent 'palpitation episodes' starting in adolescence should raise suspicion for accessory pathway syndromes."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You suspect WPW with a wide-complex tachycardia. Which medication is specifically CONTRAINDICATED in this patient and why?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {"text": "Adenosine — it blocks the AV node but may accelerate conduction through the accessory pathway, potentially causing ventricular fibrillation", "correct": true, "critical": false, "explanation": "In WPW with antidromic conduction or atrial fibrillation, adenosine blocks the AV node, which may preferentially direct all conduction through the uncontrolled accessory pathway at dangerously rapid rates, potentially degenerating into ventricular fibrillation.", "guideline_ref": "AHA ACLS 2020 — Wide-Complex Tachycardia; Pre-Excitation Syndromes"},
+          {"text": "Amiodarone — it slows all conduction pathways equally and causes dangerous bradycardia in young patients", "correct": false, "critical": false, "explanation": "Amiodarone actually slows conduction through both the AV node and accessory pathways, making it one of the acceptable pharmacologic options for WPW with wide-complex tachycardia. It does not preferentially enhance accessory pathway conduction.", "guideline_ref": "AHA ACLS 2020 — Wide-Complex Tachycardia"},
+          {"text": "Procainamide — it prolongs refractory period in the accessory pathway causing bidirectional block", "correct": false, "critical": false, "explanation": "Procainamide is actually a preferred antiarrhythmic for WPW because it slows conduction through the accessory pathway. It prolongs the refractory period of the bypass tract, making it harder for impulses to conduct through it.", "guideline_ref": "AHA ACLS 2020 — Pre-Excitation Syndromes"},
+          {"text": "Normal saline — IV fluids increase preload and may worsen the tachycardia through increased atrial stretch", "correct": false, "critical": false, "explanation": "Normal saline is not contraindicated. IV fluid administration does not meaningfully affect accessory pathway conduction. Maintaining adequate hydration is appropriate supportive care.", "guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies"}
+        ],
+        "clinical_pearl": "The dangerous medications in WPW are those that block the AV node without affecting the accessory pathway: adenosine, calcium channel blockers (verapamil, diltiazem), and beta-blockers. These can all paradoxically increase ventricular rate by forcing conduction through the uncontrolled bypass tract."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient becomes diaphoretic and his BP drops to 78/50. He is now confused and has difficulty speaking. The monitor still shows wide-complex tachycardia at 210 bpm. What is the most appropriate next step?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The patient has rapidly deteriorated over the past 2 minutes.",
+        "vitals_update": {"hr": 210, "bp": "78/50", "rr": 28, "spo2": 91, "gcs": 12},
+        "options": [
+          {"text": "Perform synchronized cardioversion starting at 100J biphasic", "correct": true, "critical": false, "explanation": "This patient is now hemodynamically unstable (hypotension, altered mental status) with a wide-complex tachycardia. Synchronized cardioversion is the treatment of choice for unstable tachycardia with a pulse, regardless of whether the rhythm is VT or WPW-related.", "guideline_ref": "AHA ACLS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "Administer amiodarone 150 mg IV over 10 minutes", "correct": false, "critical": false, "explanation": "While amiodarone is acceptable for stable wide-complex tachycardia in WPW, this patient is hemodynamically unstable. Pharmacologic therapy should not delay electrical cardioversion in unstable patients.", "guideline_ref": "AHA ACLS 2020 — Tachycardia with a Pulse Algorithm"},
+          {"text": "Attempt vagal maneuvers including carotid sinus massage", "correct": false, "critical": false, "explanation": "Vagal maneuvers may have limited or unpredictable effects in WPW and should not be attempted in an hemodynamically unstable patient. They primarily affect the AV node, which is not the primary conduction pathway in antidromic WPW.", "guideline_ref": "AHA ACLS 2020 — Tachycardia Algorithm"},
+          {"text": "Administer adenosine 6 mg rapid IV push", "correct": false, "critical": true, "explanation": "Adenosine is contraindicated in WPW with wide-complex tachycardia. It could accelerate conduction through the accessory pathway and precipitate ventricular fibrillation, especially in an already unstable patient.", "guideline_ref": "AHA ACLS 2020 — Pre-Excitation Syndromes"}
+        ],
+        "clinical_pearl": "When in doubt about the etiology of an unstable wide-complex tachycardia, electrical cardioversion is always appropriate. Don't delay definitive treatment trying to determine if the rhythm is VT vs. WPW vs. SVT with aberrancy — the treatment for all unstable tachycardias is the same."
+      }
+    ]
+  },
+  {
+    "id": "nat-card-18",
+    "title": "56F — Found Unresponsive, Just Regained Pulse",
+    "dispatch": "56-year-old female, cardiac arrest with CPR in progress by fire department",
+    "category": "Cardiology",
+    "difficulty": "Hard",
+    "level_min": "AEMT",
+    "patient": {"age": 56, "sex": "F", "cc": "Return of spontaneous circulation after cardiac arrest"},
+    "scene": "You arrive to find the fire department has been performing CPR on a 56-year-old female who collapsed at home. As you approach, the fire captain reports they just achieved ROSC approximately 1 minute ago after 14 minutes of resuscitation including 3 defibrillations for ventricular fibrillation. The patient is supine on the living room floor with an OPA in place. She is making occasional gasping respirations at about 6 per minute. She withdraws to pain but does not open her eyes or verbalize. Her husband states she complained of crushing chest pain before collapsing.",
+    "history": {"pmh": "Type 2 diabetes, hypertension, hyperlipidemia, obesity (BMI 36), family history of sudden cardiac death (father, age 52)", "meds": "Metformin 1000mg BID, lisinopril 20mg daily, atorvastatin 40mg daily, glipizide 10mg daily", "allergies": "Sulfa drugs (rash)"},
+    "vitals": {"hr": 94, "bp": "88/52", "rr": 6, "spo2": 88, "gcs": 5, "temp": "96.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Arrange the following post-ROSC assessment priorities in the correct sequence.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Secure a definitive airway and provide mechanical ventilations at 10 breaths/min",
+          "Verify pulse and assess blood pressure — prepare for re-arrest",
+          "Obtain 12-lead ECG to evaluate for STEMI",
+          "Assess neurological status (GCS, pupil reactivity, motor response)",
+          "Establish IV/IO access if not already obtained"
+        ],
+        "correctOrder": [1, 0, 4, 3, 2],
+        "explanation": "Post-ROSC assessment sequence: (1) Confirm pulse and BP — ROSC can be transient and the patient may re-arrest at any moment. (2) Secure the airway — this patient has inadequate respirations (6/min) and needs assisted ventilation. (3) Establish vascular access for medications and fluids. (4) Assess neurological status as a baseline. (5) Obtain 12-lead ECG to evaluate for STEMI as the likely cause of arrest.",
+        "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020; National EMS Education Standards — Resuscitation",
+        "clinical_pearl": "Post-ROSC patients are in a precarious state. Approximately 30-50% will re-arrest in the prehospital setting. Have defibrillator pads on and ready, and be prepared to resume CPR immediately."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have achieved a secure airway and are ventilating the patient. Which ventilation and oxygenation targets are recommended in the post-ROSC period?",
+        "type": "mc",
+        "level_filter": "AEMT-Paramedic",
+        "options": [
+          {"text": "Ventilate at 10 breaths/min, titrate FiO2 to maintain SpO2 94-99%, and target end-tidal CO2 of 35-45 mmHg", "correct": true, "critical": false, "explanation": "Post-ROSC ventilation goals: normoxia (SpO2 94-99%) to avoid hyperoxia-mediated reperfusion injury, normocarbia (ETCO2 35-45 mmHg) to optimize cerebral blood flow, and a controlled rate of 10 breaths/min to avoid hyperventilation.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Ventilate at 20 breaths/min with 100% oxygen to rapidly correct the acidosis from the cardiac arrest", "correct": false, "critical": true, "explanation": "Hyperventilation is harmful post-ROSC. It decreases PaCO2, causing cerebral vasoconstriction and reduced cerebral perfusion. Excessive oxygen delivery (hyperoxia) generates free radicals that worsen reperfusion injury to ischemic brain tissue.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Ventilate at 6 breaths/min with room air to allow permissive hypercapnia and prevent barotrauma", "correct": false, "critical": false, "explanation": "While permissive hypercapnia is used in some ventilation strategies (e.g., ARDS), it is not recommended post-cardiac arrest. A rate of 6/min with room air would provide inadequate oxygenation and ventilation for this patient.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Maintain 100% oxygen at all times post-arrest because any reduction risks secondary brain injury", "correct": false, "critical": false, "explanation": "Prolonged hyperoxia (PaO2 >300 mmHg) has been associated with worse neurological outcomes post-cardiac arrest. Current guidelines recommend titrating oxygen to SpO2 94-99% once a reliable SpO2 reading is obtainable.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"}
+        ],
+        "clinical_pearl": "The post-ROSC brain is exquisitely vulnerable. Both hyperoxia and hypoxia are harmful. Both hyperventilation and hypoventilation worsen outcomes. Target the 'Goldilocks zone': SpO2 94-99% and ETCO2 35-45 mmHg."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The 12-lead ECG shows ST elevation in V1-V4. The patient's BP is 88/52 and she remains comatose. Select ALL appropriate interventions for this patient.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "narrative": "The 12-lead ECG confirms anterior STEMI. The patient remains unresponsive with GCS 5.",
+        "options": [
+          {"text": "Activate STEMI alert and transport to the nearest PCI-capable facility", "correct": true, "critical": false, "explanation": "Emergent coronary angiography and PCI is recommended for post-cardiac arrest patients with STEMI, regardless of neurological status. Coma is NOT a contraindication to cardiac catheterization.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020 — Coronary Reperfusion"},
+          {"text": "Administer a normal saline fluid bolus targeting SBP ≥90 mmHg or MAP ≥65 mmHg", "correct": true, "critical": false, "explanation": "Post-ROSC hypotension is common and should be treated aggressively. IV fluids are first-line, with vasopressors if needed. Target SBP ≥90 or MAP ≥65 to maintain organ perfusion.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Initiate a vasopressor infusion (norepinephrine or epinephrine) if hypotension persists despite fluid bolus", "correct": true, "critical": false, "explanation": "If hypotension is refractory to IV fluid resuscitation, vasopressor infusion should be initiated. Norepinephrine or epinephrine drips are appropriate choices to maintain adequate perfusion pressure.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Avoid active warming — allow the patient to remain at current temperature of 96.8°F", "correct": true, "critical": false, "explanation": "Current guidelines recommend targeted temperature management for comatose post-cardiac arrest patients. The patient's current mild hypothermia (96.8°F) is acceptable and should not be actively corrected. Preventing hyperthermia (fever) is the key priority.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020 — Temperature Management"},
+          {"text": "Administer 1 mg/kg lidocaine prophylactically to prevent recurrent ventricular fibrillation", "correct": false, "critical": false, "explanation": "Routine prophylactic antiarrhythmic therapy post-ROSC is not recommended by current guidelines. If the patient received amiodarone during the arrest, a maintenance infusion may be reasonable, but prophylactic lidocaine is not standard of care.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"},
+          {"text": "Delay transport until the patient regains consciousness to determine code status preferences", "correct": false, "critical": true, "explanation": "Delaying definitive care for a comatose post-arrest STEMI patient is inappropriate. Neurological prognostication should not occur in the field — most patients require at least 72 hours before reliable prognostication is possible.", "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020 — Neuroprognostication"}
+        ],
+        "clinical_pearl": "Post-cardiac arrest care is a bundle: optimize oxygenation/ventilation, treat hypotension aggressively, obtain emergent coronary reperfusion for STEMI, and implement targeted temperature management. All components work synergistically to improve survival and neurological outcomes."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "Categorize the following into components of the 'Post-Cardiac Arrest Care Bundle' versus interventions that are 'NOT Recommended Post-ROSC.'",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Titrate oxygen to SpO2 94-99%",
+          "Hyperventilate at 20 breaths/min to correct acidosis",
+          "IV fluid bolus and vasopressors for hypotension",
+          "Immediate neurological prognostication in the field",
+          "12-lead ECG and emergent PCI for STEMI",
+          "Prevent hyperthermia; consider targeted temperature management"
+        ],
+        "categories": ["Post-Cardiac Arrest Care Bundle", "NOT Recommended Post-ROSC"],
+        "correctCategories": [0, 1, 0, 1, 0, 0],
+        "explanation": "Care bundle components: Titrate O2 to 94-99% (avoid hyperoxia), IV fluids/vasopressors for hemodynamic support, 12-lead ECG with emergent PCI for STEMI, and temperature management. NOT recommended: Hyperventilation (worsens cerebral perfusion and outcomes), and immediate neuroprognostication (unreliable before 72 hours; premature withdrawal of care worsens outcomes).",
+        "guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020; National EMS Education Standards — Resuscitation",
+        "clinical_pearl": "The chain of survival doesn't end with ROSC. Post-cardiac arrest care is the 5th link, and it's where many patients are lost. Systematic, protocol-driven post-ROSC care significantly improves both survival and neurological outcomes."
+      }
+    ]
+  }
+]

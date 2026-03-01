@@ -1,0 +1,850 @@
+[
+  {
+    "id": "nat-multi-01",
+    "title": "35F — Pregnant Passenger in High-Speed MVC",
+    "dispatch": "35-year-old female, restrained passenger, high-speed motor vehicle collision, 35 weeks pregnant",
+    "category": "Mixed (complex multi-system)",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 35,
+      "sex": "F",
+      "cc": "Multiple trauma following high-speed MVC"
+    },
+    "scene": "You arrive at a two-vehicle head-on collision on a rural highway. Speed estimated at 55+ mph. A 35-year-old female, restrained front-seat passenger, is found in the vehicle with significant passenger compartment intrusion. She is moaning, confused, and has a large scalp laceration with active bleeding. Her gravid abdomen is visible. A bystander reports she was initially talking but has become progressively less responsive over the past 5 minutes. Airbags deployed. The driver is ambulatory with minor injuries.",
+    "history": {
+      "pmh": "Gestational diabetes (diet-controlled), G3P2 at 35 weeks gestation",
+      "meds": "Prenatal vitamins, iron supplement",
+      "allergies": "Penicillin"
+    },
+    "vitals": {
+      "hr": 128,
+      "bp": "96/68",
+      "rr": 28,
+      "spo2": 93,
+      "gcs": 11,
+      "temp": "98.2°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You are performing your primary assessment of this patient. Categorize each of the following findings as either an indicator of 'Traumatic Brain Injury' or an indicator of 'Hemorrhagic Shock.'",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Unequal pupils with the left pupil 6mm and sluggishly reactive",
+          "Tachycardia with weak, thready radial pulses",
+          "Delayed capillary refill greater than 4 seconds with cool, pale extremities",
+          "Repetitive questioning and confusion disproportionate to apparent pain level",
+          "Narrowing pulse pressure with progressive drop in systolic blood pressure"
+        ],
+        "categories": [
+          "Traumatic Brain Injury",
+          "Hemorrhagic Shock"
+        ],
+        "correctCategories": [1, 0, 0, 1, 0],
+        "explanation": "Unequal pupils (anisocoria) with sluggish reactivity is a classic sign of uncal herniation from rising intracranial pressure — a TBI indicator. Tachycardia with weak pulses, delayed capillary refill with cool/pale skin, and narrowing pulse pressure with dropping BP are all indicators of hemorrhagic shock from blood loss. Repetitive questioning and disproportionate confusion suggest altered mentation from TBI rather than pure hypovolemia, as hemorrhagic shock patients typically remain oriented until late stages.",
+        "guideline_ref": "PHTLS 9th Edition — Traumatic Brain Injury and Hemorrhagic Shock; National EMS Education Standards — Trauma",
+        "clinical_pearl": "In pregnancy, physiologic changes mask hemorrhage — the mother can lose up to 30-35% of blood volume before showing classic shock signs. A 'normal' heart rate in a 35-week pregnant patient is already elevated to 90-100, so a rate of 128 is highly concerning."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have extricated the patient with spinal motion restriction. She is now on the stretcher. Arrange the following interventions in order of priority for this polytrauma patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Tilt the backboard 15-30° to the left or manually displace the uterus leftward",
+          "Establish two large-bore IVs and initiate crystalloid fluid resuscitation",
+          "Perform rapid trauma assessment and apply direct pressure to scalp laceration",
+          "Administer high-flow oxygen via non-rebreather mask and prepare for intubation if GCS continues to decline",
+          "Contact medical control to request trauma center activation with OB notification"
+        ],
+        "correctOrder": [3, 2, 0, 1, 4],
+        "explanation": "Priority sequence: (1) Oxygenation is critical — the patient has two lives dependent on oxygen delivery, and hypoxia worsens TBI outcomes. Prepare airway management. (2) Rapid trauma assessment with hemorrhage control — identify and address life-threatening bleeding. (3) Left uterine displacement — aortocaval compression by the gravid uterus significantly reduces cardiac output and worsens shock; this must be done early. (4) IV access with fluid resuscitation to support perfusion. (5) Early notification of the trauma center with OB allows preparation for potential emergent cesarean delivery.",
+        "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Committee Opinion — Trauma in Pregnancy; National EMS Education Standards — Special Considerations in Trauma",
+        "clinical_pearl": "Aortocaval compression by the gravid uterus after 20 weeks can reduce cardiac output by up to 30%. Left lateral tilt or manual uterine displacement is a critical and often forgotten intervention that can dramatically improve maternal hemodynamics."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, the patient's GCS drops from 11 to 8 (E2V2M4). She is no longer protecting her airway and has vomited once. You decide to perform RSI. Which induction agent is MOST appropriate for this patient?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The patient's mental status has deteriorated. She now has a GCS of 8 with extensor posturing to painful stimuli. Her left pupil is now 7mm and fixed. Vomitus is noted in the oropharynx. Vitals have changed.",
+        "vitals_update": {
+          "hr": 138,
+          "bp": "84/58",
+          "rr": 8,
+          "spo2": 88,
+          "gcs": 8
+        },
+        "options": [
+          {
+            "text": "Ketamine 1-2 mg/kg IV",
+            "correct": true,
+            "critical": false,
+            "explanation": "Ketamine provides hemodynamic stability through sympathomimetic effects, making it ideal for hypotensive trauma patients. It maintains respiratory drive and airway reflexes better than other agents. Current evidence has largely refuted the historical concern about ketamine raising ICP in trauma patients, and it is now considered safe and preferred in the setting of TBI with hemodynamic compromise.",
+            "guideline_ref": "NAEMSP Position Statement — Drug-Assisted Intubation in the Prehospital Setting; PHTLS 9th Edition — Airway Management"
+          },
+          {
+            "text": "Etomidate 0.3 mg/kg IV",
+            "correct": false,
+            "critical": false,
+            "explanation": "While etomidate is hemodynamically neutral and commonly used for RSI, it causes adrenal suppression which may worsen outcomes in critically ill patients. In a patient with hemorrhagic shock and multiple system involvement, ketamine's sympathomimetic properties provide a hemodynamic advantage.",
+            "guideline_ref": "NAEMSP Position Statement — Drug-Assisted Intubation in the Prehospital Setting"
+          },
+          {
+            "text": "Midazolam 0.1 mg/kg IV",
+            "correct": false,
+            "critical": true,
+            "explanation": "Midazolam causes significant vasodilation and myocardial depression. In a hypotensive patient with hemorrhagic shock, midazolam can precipitate cardiovascular collapse. It is a poor choice for induction in hemodynamically unstable patients.",
+            "guideline_ref": "PHTLS 9th Edition — Airway Management in Trauma"
+          },
+          {
+            "text": "Propofol 2 mg/kg IV",
+            "correct": false,
+            "critical": true,
+            "explanation": "Propofol causes profound hypotension through vasodilation and myocardial depression. Administering a standard induction dose to this hypotensive patient could be fatal. Propofol should be avoided in hemodynamically unstable patients.",
+            "guideline_ref": "PHTLS 9th Edition — Airway Management in Trauma"
+          }
+        ],
+        "clinical_pearl": "When intubating a pregnant patient, use a smaller endotracheal tube (6.0-6.5) due to airway edema common in the third trimester. Preoxygenation is critical as pregnant patients desaturate rapidly due to decreased functional residual capacity and increased oxygen consumption."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You have successfully intubated the patient. During transport, your partner reports dark vaginal bleeding and palpates a rigid, board-like abdomen. Fetal heart tones via Doppler are 90 bpm (baseline was 155 bpm). Select ALL interventions that are appropriate at this time.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "narrative": "The patient's abdomen has become rigid and tender. There is moderate dark vaginal bleeding. Fetal heart tones have dropped from 155 to 90 bpm. These findings are consistent with placental abruption. The receiving facility is 12 minutes away.",
+        "vitals_update": {
+          "hr": 145,
+          "bp": "76/50",
+          "rr": 14,
+          "spo2": 96,
+          "gcs": 6
+        },
+        "options": [
+          {
+            "text": "Increase IV fluid rate and consider second crystalloid bolus to target SBP above 90 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Aggressive fluid resuscitation is critical in suspected placental abruption with hemorrhagic shock. Maintaining maternal perfusion is essential for both maternal and fetal survival. Target SBP ≥ 90 mmHg.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Practice Bulletin — Placental Abruption"
+          },
+          {
+            "text": "Confirm left uterine displacement is maintained and ensure no compression of the vena cava",
+            "correct": true,
+            "critical": false,
+            "explanation": "Left uterine displacement is even more critical now with worsening hemodynamics. Aortocaval compression will further compromise an already deteriorating cardiovascular status.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Provide an updated report to the receiving facility including suspected abruption and fetal bradycardia so the surgical and OB teams can prepare",
+            "correct": true,
+            "critical": false,
+            "explanation": "Early notification with specific findings (abruption, fetal distress, maternal hemorrhagic shock, TBI) allows the trauma center to mobilize the surgical team, OB team, blood bank, and OR simultaneously. Perimortem cesarean may be needed within minutes of arrival.",
+            "guideline_ref": "ACOG Committee Opinion — Trauma in Pregnancy; National EMS Education Standards — Communication"
+          },
+          {
+            "text": "Administer tranexamic acid (TXA) 1g IV over 10 minutes if available and within 3 hours of injury",
+            "correct": true,
+            "critical": false,
+            "explanation": "TXA has been shown to reduce mortality in hemorrhaging trauma patients when given within 3 hours. It is not contraindicated in pregnancy and may help mitigate the coagulopathy that often accompanies placental abruption and massive hemorrhage.",
+            "guideline_ref": "CRASH-2 Trial; WOMAN Trial; NAEMSP Position Statement on TXA in Trauma"
+          },
+          {
+            "text": "Apply the pneumatic anti-shock garment (PASG/MAST) and inflate all compartments including the abdominal section",
+            "correct": false,
+            "critical": true,
+            "explanation": "Inflation of the abdominal compartment of PASG/MAST is contraindicated in pregnancy as it compresses the uterus, worsens aortocaval compression, and can further compromise uteroplacental blood flow. PASG use in general has fallen out of favor in modern trauma care.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; NAEMSP Position Statements"
+          },
+          {
+            "text": "Slow IV fluids to prevent dilutional coagulopathy and target permissive hypotension with SBP of 70 mmHg",
+            "correct": false,
+            "critical": true,
+            "explanation": "While permissive hypotension is used in some penetrating trauma scenarios, it is NOT appropriate in pregnant patients. The fetus is exquisitely sensitive to maternal hypoperfusion, and the placenta has no autoregulation. Aggressive resuscitation targeting SBP ≥ 90 is recommended in pregnant trauma patients.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy; ACOG Committee Opinion — Trauma in Pregnancy"
+          }
+        ],
+        "clinical_pearl": "The fetus is the best 'vital sign' for assessing maternal perfusion. Fetal bradycardia (<110 bpm) indicates significant maternal compromise, often before maternal vitals deteriorate. The definitive treatment for placental abruption with fetal distress is emergent delivery."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "You have delivered the patient to the trauma center. In your post-call review, which statement BEST describes the physiologic rationale for aggressive maternal resuscitation over permissive hypotension in this case?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "The uteroplacental circulation lacks autoregulation, so fetal perfusion is directly dependent on maternal blood pressure — any reduction in maternal perfusion causes proportional reduction in fetal oxygen delivery",
+            "correct": true,
+            "critical": false,
+            "explanation": "The uteroplacental vascular bed is maximally dilated in normal pregnancy and cannot compensate for decreased perfusion pressure. Unlike cerebral or coronary circulation, there is no autoregulatory mechanism. Fetal oxygenation drops linearly with maternal blood pressure, making aggressive resuscitation essential.",
+            "guideline_ref": "ACOG Committee Opinion — Trauma in Pregnancy; PHTLS 9th Edition — Trauma in Pregnancy"
+          },
+          {
+            "text": "Pregnant patients have a smaller total blood volume than non-pregnant patients, making them less tolerant of blood loss and requiring more aggressive replacement",
+            "correct": false,
+            "critical": false,
+            "explanation": "This is incorrect — pregnant patients actually have an expanded blood volume (up to 50% increase by the third trimester). This is protective and allows them to compensate for blood loss longer. However, it also means that by the time vital signs deteriorate, significantly more blood has been lost.",
+            "guideline_ref": "ACOG Committee Opinion — Maternal Physiology"
+          },
+          {
+            "text": "Permissive hypotension is never used in any trauma patient and has been abandoned in all current trauma guidelines regardless of pregnancy status",
+            "correct": false,
+            "critical": false,
+            "explanation": "Permissive hypotension remains a valid strategy in certain non-pregnant trauma populations, particularly penetrating torso trauma with uncontrolled hemorrhage. It is specifically in pregnancy where this strategy is contraindicated due to the unique physiology of uteroplacental circulation.",
+            "guideline_ref": "PHTLS 9th Edition — Shock and Fluid Resuscitation"
+          },
+          {
+            "text": "The physiologic anemia of pregnancy means the patient's oxygen-carrying capacity is already reduced, so transfusion rather than crystalloid should be the sole resuscitation strategy",
+            "correct": false,
+            "critical": false,
+            "explanation": "While physiologic anemia of pregnancy (dilutional) does reduce hematocrit, crystalloid resuscitation is still the appropriate prehospital intervention. Blood products are preferred when available, but crystalloid should not be withheld pending blood availability. The key issue is perfusion pressure to the placenta, not solely oxygen-carrying capacity.",
+            "guideline_ref": "PHTLS 9th Edition — Trauma in Pregnancy"
+          }
+        ],
+        "clinical_pearl": "Remember 'two patients, one resuscitation' — the best treatment for the fetus is optimal resuscitation of the mother. In the prehospital setting, focus all efforts on maternal stabilization. Perimortem cesarean delivery (resuscitative hysterotomy) may be performed within 4-5 minutes of maternal cardiac arrest if the fetus is viable (>23 weeks)."
+      }
+    ]
+  },
+  {
+    "id": "nat-multi-02",
+    "title": "62M — Chest Pain with Breathing Difficulty at Restaurant",
+    "dispatch": "62-year-old male, severe chest pain, difficulty breathing, diaphoretic",
+    "category": "Mixed (complex multi-system)",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 62,
+      "sex": "M",
+      "cc": "Crushing chest pain and severe shortness of breath"
+    },
+    "scene": "You arrive at an upscale restaurant where a 62-year-old male is sitting upright in a chair, visibly in severe distress. He is diaphoretic, pale, and tripoding. Staff report he clutched his chest during dinner approximately 20 minutes ago and has become progressively worse. He is speaking in 2-3 word sentences between labored breaths. You hear audible crackles without a stethoscope. Pink, frothy sputum is noted at the corners of his mouth. His wife states he has been complaining of increasing fatigue and exertional dyspnea for the past week.",
+    "history": {
+      "pmh": "Hypertension, Type 2 diabetes, prior CABG (×3) 8 years ago, CHF (EF 35%), atrial fibrillation",
+      "meds": "Warfarin, metoprolol, lisinopril, furosemide, metformin, insulin glargine",
+      "allergies": "Morphine (nausea/vomiting)"
+    },
+    "vitals": {
+      "hr": 112,
+      "bp": "78/52",
+      "rr": 34,
+      "spo2": 82,
+      "gcs": 14,
+      "temp": "98.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "You acquire a 12-lead ECG which shows ST elevation in leads II, III, aVF, and V5-V6 with reciprocal ST depression in I and aVL. The patient has bilateral rales to the apices, JVD, and an S3 gallop. Which combination of findings BEST represents the clinical picture?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Acute inferior and lateral STEMI complicated by acute cardiogenic shock with pulmonary edema",
+            "correct": true,
+            "critical": false,
+            "explanation": "ST elevation in II, III, aVF indicates inferior MI; V5-V6 indicates lateral extension. Hypotension (SBP <90), tachycardia, bilateral rales to apices, JVD, S3 gallop, and pink frothy sputum all indicate cardiogenic shock with acute pulmonary edema. This is a large territory infarction causing acute pump failure.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes; National EMS Education Standards — Cardiology"
+          },
+          {
+            "text": "Acute inferior STEMI with right ventricular infarction requiring aggressive fluid resuscitation",
+            "correct": false,
+            "critical": true,
+            "explanation": "While inferior STEMI can involve the right ventricle (and right-sided leads should be obtained), the presence of bilateral pulmonary edema and pulmonary congestion indicates left-sided failure. Aggressive fluid resuscitation in this patient with overt pulmonary edema would be catastrophic, worsening respiratory failure.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          },
+          {
+            "text": "Decompensated CHF exacerbation unrelated to acute coronary event, likely triggered by dietary indiscretion at dinner",
+            "correct": false,
+            "critical": false,
+            "explanation": "While CHF exacerbation is possible, the 12-lead ECG shows clear ST elevation meeting STEMI criteria. This cannot be attributed to simple dietary indiscretion. The acute MI is the primary event driving the cardiogenic shock.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          },
+          {
+            "text": "Acute pulmonary embolism causing right heart strain and mimicking STEMI on the 12-lead ECG",
+            "correct": false,
+            "critical": false,
+            "explanation": "While massive PE can cause right heart strain, it typically shows right heart strain patterns (S1Q3T3, right axis deviation, RBBB) rather than regional ST elevation in a coronary artery distribution with reciprocal changes. The pattern described is classic for acute MI.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          }
+        ],
+        "clinical_pearl": "Cardiogenic shock complicates 5-8% of STEMIs and carries mortality exceeding 50%. The combination of STEMI + shock + pulmonary edema represents a time-critical emergency requiring simultaneous management of multiple competing priorities."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "This patient is in cardiogenic shock with acute pulmonary edema and respiratory failure. Arrange the following interventions in order of priority.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Apply CPAP at 5-10 cmH2O if the patient can tolerate it and is maintaining consciousness",
+          "Establish IV access — administer a judicious 250 mL NS bolus and prepare a vasopressor infusion",
+          "Administer aspirin 324 mg (chewed) and obtain IV access for heparin if per protocol",
+          "Transmit 12-lead ECG and activate cardiac catheterization lab at the receiving STEMI center",
+          "Prepare for endotracheal intubation if CPAP fails or mental status deteriorates"
+        ],
+        "correctOrder": [0, 2, 1, 3, 4],
+        "explanation": "Priority: (1) CPAP addresses life-threatening hypoxemia and pulmonary edema — it reduces preload, afterload, and work of breathing and can be a bridge to definitive care. (2) Aspirin is a critical ACS intervention that should not be delayed; antiplatelet therapy improves outcomes. (3) IV access with judicious fluid challenge and vasopressor preparation — cardiogenic shock requires pressors (norepinephrine or dopamine) more than volume, but a small fluid challenge may be appropriate. (4) ECG transmission and cath lab activation — early notification dramatically reduces door-to-balloon time. (5) Intubation preparation as a backup if non-invasive measures fail.",
+        "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes and Cardiogenic Shock; NAEMSP Position Statement — CPAP in the Prehospital Setting",
+        "clinical_pearl": "CPAP in cardiogenic pulmonary edema has strong evidence for reducing intubation rates and mortality. Even in hypotensive patients, CPAP may improve cardiac output by reducing afterload. However, monitor closely — if BP drops further, discontinue and prepare for intubation."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After CPAP application, the patient's SpO2 improves to 89% but his blood pressure drops to 70/44. He is becoming more confused. You need to initiate vasopressor support. Which vasopressor is MOST appropriate as the first-line agent for cardiogenic shock?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "CPAP is in place at 7.5 cmH2O. SpO2 has improved slightly but remains critically low. The patient is now only responding to verbal stimuli. Skin is cold, mottled, and diaphoretic.",
+        "vitals_update": {
+          "hr": 118,
+          "bp": "70/44",
+          "rr": 30,
+          "spo2": 89,
+          "gcs": 12
+        },
+        "options": [
+          {
+            "text": "Norepinephrine infusion starting at 2-4 mcg/min, titrated to MAP ≥ 65 mmHg",
+            "correct": true,
+            "critical": false,
+            "explanation": "Norepinephrine is the current first-line vasopressor for cardiogenic shock per AHA guidelines. The SOAP II trial demonstrated lower mortality with norepinephrine compared to dopamine in cardiogenic shock patients, with fewer arrhythmic events.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiogenic Shock Management; SOAP II Trial"
+          },
+          {
+            "text": "Dopamine infusion starting at 10-20 mcg/kg/min for combined inotropic and vasopressor effects",
+            "correct": false,
+            "critical": false,
+            "explanation": "While dopamine has both inotropic and vasopressor properties, the SOAP II trial showed significantly higher rates of arrhythmias and a trend toward increased mortality with dopamine compared to norepinephrine in the cardiogenic shock subgroup. It is no longer considered first-line.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiogenic Shock; SOAP II Trial"
+          },
+          {
+            "text": "Phenylephrine infusion at 40-60 mcg/min for pure vasopressor effect",
+            "correct": false,
+            "critical": true,
+            "explanation": "Phenylephrine is a pure alpha-1 agonist with no inotropic properties. In cardiogenic shock where the heart is failing as a pump, a pure vasoconstrictor without inotropic support would increase afterload on an already failing ventricle, potentially worsening cardiac output and pulmonary edema.",
+            "guideline_ref": "AHA ACLS 2020 — Shock Management"
+          },
+          {
+            "text": "Epinephrine infusion at 2-10 mcg/min for maximum combined alpha and beta effect",
+            "correct": false,
+            "critical": false,
+            "explanation": "While epinephrine has both alpha and beta effects, it significantly increases myocardial oxygen demand and causes tachycardia, which is particularly harmful in the setting of acute MI. It also increases the risk of arrhythmias. Norepinephrine provides better hemodynamic support with less myocardial oxygen demand increase.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiogenic Shock"
+          }
+        ],
+        "clinical_pearl": "In cardiogenic shock from acute MI, the goal is to maintain perfusion pressure (MAP ≥ 65) without dramatically increasing myocardial oxygen demand. Norepinephrine provides good afterload support with mild inotropic effect and less tachycardia than alternatives."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "During transport, the patient becomes unresponsive and the monitor shows a wide-complex tachycardia at 180 bpm with no palpable pulse. Select ALL appropriate immediate interventions.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient suddenly becomes unresponsive. The cardiac monitor shows a wide-complex tachycardia at a rate of 180 bpm. No pulse is palpable. This is pulseless ventricular tachycardia.",
+        "vitals_update": {
+          "hr": 180,
+          "bp": "0/0",
+          "rr": 0,
+          "spo2": null,
+          "gcs": 3
+        },
+        "options": [
+          {
+            "text": "Immediately defibrillate at 200J biphasic and resume CPR",
+            "correct": true,
+            "critical": false,
+            "explanation": "Pulseless ventricular tachycardia is a shockable rhythm. Immediate defibrillation is the highest priority intervention. Resume high-quality CPR immediately after the shock.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Begin high-quality CPR with a 30:2 compression-to-ventilation ratio (or continuous compressions with advanced airway)",
+            "correct": true,
+            "critical": false,
+            "explanation": "High-quality CPR is essential and should continue between defibrillation attempts. With an advanced airway in place, continuous compressions with asynchronous ventilations at 10/min are appropriate.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Administer amiodarone 300 mg IV bolus after the first unsuccessful defibrillation attempt and a 2-minute CPR cycle",
+            "correct": true,
+            "critical": false,
+            "explanation": "Per ACLS guidelines, amiodarone 300 mg IV/IO is administered for refractory VF/pVT after the third shock. However, given this patient's known cardiac history, compromised myocardium, and ongoing STEMI, early antiarrhythmic administration is appropriate as the rhythm is likely to be refractory.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Administer synchronized cardioversion at 100J since the monitor shows an organized wide-complex rhythm",
+            "correct": false,
+            "critical": true,
+            "explanation": "Synchronized cardioversion is for unstable patients WITH a pulse. This patient is pulseless — synchronized cardioversion in a pulseless patient may fail to deliver a shock if the device cannot identify a synchronization point. Unsynchronized defibrillation is indicated for pulseless VT.",
+            "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
+          },
+          {
+            "text": "Administer adenosine 6 mg rapid IV push to differentiate SVT with aberrancy from ventricular tachycardia",
+            "correct": false,
+            "critical": true,
+            "explanation": "Adenosine is used for narrow-complex tachycardia diagnosis/treatment in patients WITH a pulse. In a pulseless patient, there is no role for adenosine. This patient needs immediate defibrillation and CPR.",
+            "guideline_ref": "AHA ACLS 2020 — Tachycardia Algorithm"
+          }
+        ],
+        "clinical_pearl": "Patients with acute STEMI and cardiogenic shock are at extremely high risk for lethal arrhythmias. Keep defibrillator pads on the patient throughout transport. Time from rhythm deterioration to first shock is the strongest predictor of survival in witnessed VF/pVT arrest."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After achieving ROSC, you arrive at the STEMI center. In your post-call review, which factor in this patient's presentation makes him the HIGHEST risk for mortality?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "The combination of STEMI with cardiogenic shock — this carries the highest mortality of any acute coronary syndrome presentation even with optimal treatment",
+            "correct": true,
+            "critical": false,
+            "explanation": "STEMI complicated by cardiogenic shock carries mortality of 40-60% even with emergent PCI. The combination of large territory infarction, pump failure, and hemodynamic collapse represents the highest-risk ACS presentation. Early revascularization (PCI) is the only intervention proven to improve survival in this population.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes; SHOCK Trial"
+          },
+          {
+            "text": "His history of prior CABG — re-do surgery patients uniformly have worse outcomes regardless of any other clinical factors",
+            "correct": false,
+            "critical": false,
+            "explanation": "While prior CABG increases procedural complexity and may affect outcomes, it is not the dominant mortality predictor. Many post-CABG patients undergo successful PCI of native vessels or grafts. The cardiogenic shock itself is the strongest predictor of mortality.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          },
+          {
+            "text": "The cardiac arrest during transport — witnessed VF/pVT arrest with rapid defibrillation in a monitored patient actually has a relatively favorable prognosis",
+            "correct": false,
+            "critical": false,
+            "explanation": "Witnessed VF/pVT with immediate CPR and defibrillation has the best survival rates of any cardiac arrest rhythm, approaching 50-70% in monitored settings. While the arrest adds complexity, the cardiogenic shock is the dominant mortality driver.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest"
+          },
+          {
+            "text": "His baseline reduced ejection fraction of 35% — patients with pre-existing systolic dysfunction never survive acute STEMI events",
+            "correct": false,
+            "critical": false,
+            "explanation": "While reduced baseline EF worsens prognosis, the statement that such patients 'never survive' is false. Many patients with reduced EF survive acute coronary events with appropriate treatment. The cardiogenic shock, not the baseline EF alone, is the primary mortality driver.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          }
+        ],
+        "clinical_pearl": "The SHOCK trial demonstrated that early revascularization (PCI or CABG within 6 hours) significantly reduces 6-month and 1-year mortality in cardiogenic shock complicating acute MI. Do not delay transport to a PCI-capable facility for any reason."
+      }
+    ]
+  },
+  {
+    "id": "nat-multi-03",
+    "title": "3M — Child with Prolonged Seizure at Daycare",
+    "dispatch": "3-year-old male, active seizure lasting more than 10 minutes, fever",
+    "category": "Mixed (complex multi-system)",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 3,
+      "sex": "M",
+      "cc": "Prolonged generalized seizure with fever"
+    },
+    "scene": "You arrive at a daycare center where a 3-year-old male is actively seizing on the floor. Staff report the seizure began approximately 12 minutes ago and has been continuous. They placed him on his side and moved furniture away. The child was reportedly fussy and refusing to eat this morning, and his mother mentioned he had a fever and headache since yesterday. He vomited twice earlier today. You note generalized tonic-clonic activity, cyanosis around the lips, and the child feels very hot to the touch. There is no evidence of trauma. His immunization status is unknown as the daycare cannot reach his parents.",
+    "history": {
+      "pmh": "Previously healthy per daycare records, no known seizure history",
+      "meds": "Children's ibuprofen given by mother this morning per daycare staff",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 168,
+      "bp": "82/50",
+      "rr": 8,
+      "spo2": 84,
+      "gcs": 3,
+      "temp": "104.9°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This child has been seizing for more than 12 minutes. Which combination of findings raises concern for bacterial meningitis BEYOND a simple febrile seizure?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Prolonged seizure duration beyond 5 minutes, high fever of 104.9°F, preceding headache and vomiting, and age of 3 years with unknown immunization status",
+            "correct": true,
+            "critical": false,
+            "explanation": "Simple febrile seizures are brief (<5 minutes), generalized, and occur once in 24 hours. This presentation — prolonged seizure (status epilepticus), high fever, headache, vomiting, and unknown immunization status — raises significant concern for CNS infection. The combination of meningeal irritation symptoms (headache, vomiting) with high fever and status epilepticus should prompt presumptive treatment for meningitis.",
+            "guideline_ref": "National EMS Education Standards — Pediatric Emergencies; AAP Clinical Practice Guideline — Febrile Seizures"
+          },
+          {
+            "text": "The presence of fever alone in a seizing child, as any febrile seizure in a 3-year-old requires empiric antibiotic treatment in the prehospital setting",
+            "correct": false,
+            "critical": false,
+            "explanation": "Fever in a seizing child does not automatically indicate meningitis. Simple febrile seizures are common (2-5% of children ages 6 months to 5 years) and are benign. It is the combination of prolonged seizure, systemic toxicity, and meningeal symptoms that raises the concern.",
+            "guideline_ref": "AAP Clinical Practice Guideline — Febrile Seizures"
+          },
+          {
+            "text": "The tonic-clonic nature of the seizure activity, since meningitis only presents with tonic-clonic seizures while febrile seizures are always absence-type",
+            "correct": false,
+            "critical": false,
+            "explanation": "This is incorrect. Both febrile seizures and meningitis-related seizures can present as generalized tonic-clonic activity. The seizure type alone does not differentiate the etiology.",
+            "guideline_ref": "National EMS Education Standards — Pediatric Emergencies"
+          },
+          {
+            "text": "The child's age of 3 years, since simple febrile seizures never occur in children older than 2 years of age",
+            "correct": false,
+            "critical": false,
+            "explanation": "Simple febrile seizures can occur in children from 6 months to 5 years of age. A 3-year-old is well within the typical age range. Age alone does not differentiate simple febrile seizure from meningitis.",
+            "guideline_ref": "AAP Clinical Practice Guideline — Febrile Seizures"
+          }
+        ],
+        "clinical_pearl": "The classic triad of meningitis (fever, neck stiffness, altered mental status) is unreliable in young children. Irritability, poor feeding, vomiting, and bulging fontanelle (in infants) may be the only signs. Maintain a high index of suspicion in any child with prolonged seizure and fever."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The seizure has now been ongoing for 15 minutes. Arrange the following interventions in order of priority for this patient.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer benzodiazepine — midazolam 0.2 mg/kg IM (if no IV) or 0.1 mg/kg IV to terminate the seizure",
+          "Position the child, suction the airway, and apply high-flow oxygen via blow-by or non-rebreather mask",
+          "Obtain vascular access (IV or IO) and check point-of-care blood glucose",
+          "Begin active cooling measures — remove excess clothing, apply lukewarm compresses to axillae and groin",
+          "Prepare for advanced airway management if seizure terminates but respiratory depression persists"
+        ],
+        "correctOrder": [1, 0, 2, 3, 4],
+        "explanation": "Priority: (1) Airway and oxygenation first — position, suction, oxygen. The child is hypoxic (SpO2 84%) and addressing oxygenation is critical. (2) Terminate the seizure with benzodiazepine — IM midazolam if no IV access (equally effective per RAMPART trial). Status epilepticus causes progressive neuronal injury. (3) Obtain vascular access and check glucose — hypoglycemia is a reversible cause and must be ruled out. IV/IO also provides a route for additional medications. (4) Active cooling — high fever increases metabolic demand and worsens neuronal injury during status epilepticus. (5) Prepare for advanced airway — benzodiazepines cause respiratory depression, and post-ictal children may not protect their airway.",
+        "guideline_ref": "National EMS Education Standards — Pediatric Emergencies; RAMPART Trial; Pediatric Status Epilepticus Guidelines",
+        "clinical_pearl": "The RAMPART trial demonstrated that IM midazolam is non-inferior to IV lorazepam for prehospital status epilepticus, with faster time to administration. Don't delay seizure treatment to establish IV access — give IM midazolam or intranasal midazolam immediately."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You administered midazolam 0.2 mg/kg IM. After 5 minutes, the seizure continues. You have established IO access and glucose is 68 mg/dL. You administer a second dose of midazolam 0.1 mg/kg IV. The seizure finally stops after this second dose. On reassessment, you note a non-blanching petechial rash on the trunk and extremities. Select ALL findings that suggest impending uncal herniation.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The seizure has terminated after two doses of midazolam. The child is post-ictal and unresponsive. You now note a non-blanching purpuric/petechial rash across the trunk and extremities that was not previously visible under the child's clothing. The child's breathing is irregular.",
+        "vitals_update": {
+          "hr": 62,
+          "bp": "148/90",
+          "rr": 10,
+          "spo2": 91,
+          "gcs": 5
+        },
+        "options": [
+          {
+            "text": "Bradycardia with hypertension (Cushing's response) — HR 62 with BP 148/90 in a 3-year-old",
+            "correct": true,
+            "critical": false,
+            "explanation": "Cushing's triad (hypertension, bradycardia, irregular respirations) is a late and ominous sign of critically elevated intracranial pressure with impending herniation. Normal HR for a 3-year-old is 80-120, and normal SBP is approximately 80-90. A HR of 62 with SBP of 148 represents a dramatic Cushing's response.",
+            "guideline_ref": "PHTLS 9th Edition — Pediatric Trauma and TBI; National EMS Education Standards — Neurologic Emergencies"
+          },
+          {
+            "text": "Irregular respiratory pattern with a rate of 10 breaths per minute",
+            "correct": true,
+            "critical": false,
+            "explanation": "Irregular respirations are the third component of Cushing's triad. A respiratory rate of 10 in a 3-year-old (normal 20-30) with an irregular pattern suggests brainstem compression affecting the respiratory centers.",
+            "guideline_ref": "PHTLS 9th Edition — Pediatric TBI"
+          },
+          {
+            "text": "GCS of 5 (E1V2M2) with no improvement 10 minutes after seizure termination",
+            "correct": true,
+            "critical": false,
+            "explanation": "While post-ictal depression is expected, a GCS of 5 that does not improve after seizure termination and benzodiazepine clearance suggests ongoing neurologic deterioration from rising ICP rather than simple post-ictal state. This is concerning for herniation.",
+            "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"
+          },
+          {
+            "text": "The non-blanching petechial rash on the trunk and extremities",
+            "correct": false,
+            "critical": false,
+            "explanation": "A non-blanching petechial/purpuric rash in a febrile, seizing child is highly suggestive of meningococcemia (Neisseria meningitidis) with disseminated intravascular coagulation. While this is an extremely ominous finding, it indicates sepsis/DIC rather than being a direct sign of herniation.",
+            "guideline_ref": "National EMS Education Standards — Infectious Disease Emergencies"
+          },
+          {
+            "text": "Oxygen saturation of 91% on high-flow oxygen",
+            "correct": false,
+            "critical": false,
+            "explanation": "While concerning, persistent hypoxemia may reflect benzodiazepine-induced respiratory depression, aspiration, or pneumonia rather than herniation specifically. Hypoxemia is a systemic finding rather than a specific indicator of herniation.",
+            "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"
+          }
+        ],
+        "clinical_pearl": "Cushing's triad is a LATE finding — by the time it appears, herniation is often already occurring. In children, the combination of meningitis + cerebral edema + herniation can progress with terrifying speed. This is a 'load and go' patient requiring immediate transport to a pediatric tertiary care center."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You recognize signs of impending herniation in this child with suspected meningitis. Which intervention is MOST appropriate to temporize elevated intracranial pressure during transport?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The child shows clear Cushing's triad. You have an IO in place and the child is being bag-valve-mask ventilated. Transport time to the pediatric center is 18 minutes.",
+        "options": [
+          {
+            "text": "Mild hyperventilation targeting an ETCO2 of 30-35 mmHg as a temporizing bridge to definitive neurosurgical intervention",
+            "correct": true,
+            "critical": false,
+            "explanation": "Brief, controlled mild hyperventilation (ETCO2 30-35 mmHg) is appropriate as a temporizing measure for signs of active herniation. It reduces ICP through cerebral vasoconstriction. This should only be used when herniation signs are present — routine hyperventilation in TBI without herniation signs is harmful.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition — Pediatric TBI; National EMS Education Standards — Neurologic Emergencies"
+          },
+          {
+            "text": "Aggressive hyperventilation targeting an ETCO2 below 25 mmHg to maximally reduce intracranial pressure",
+            "correct": false,
+            "critical": true,
+            "explanation": "Aggressive hyperventilation (ETCO2 <25 mmHg) causes excessive cerebral vasoconstriction, leading to cerebral ischemia and worsened outcomes. This is harmful even in the setting of herniation. Only MILD hyperventilation (ETCO2 30-35) is appropriate as a temporizing measure.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          },
+          {
+            "text": "Administer mannitol 1 g/kg IV as a rapid bolus to osmotically reduce cerebral edema",
+            "correct": false,
+            "critical": false,
+            "explanation": "While mannitol is used in the hospital setting for elevated ICP, prehospital administration is generally not part of standard EMS protocols. Additionally, mannitol causes osmotic diuresis which can worsen hypotension in a potentially septic child. Hypertonic saline (3%) would be preferred if available per protocol, but mild hyperventilation is the most universally available temporizing intervention.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; National EMS Education Standards"
+          },
+          {
+            "text": "Maintain normoventilation at an ETCO2 of 35-45 mmHg and elevate the head of the stretcher to 30 degrees only",
+            "correct": false,
+            "critical": false,
+            "explanation": "Head elevation to 30° and normoventilation are appropriate general ICP management strategies, but in the setting of ACTIVE herniation (Cushing's triad), mild hyperventilation is indicated as a temporizing measure. Normoventilation alone is insufficient when herniation is occurring.",
+            "guideline_ref": "Brain Trauma Foundation Guidelines; PHTLS 9th Edition"
+          }
+        ],
+        "clinical_pearl": "Remember: hyperventilation for herniation is a BRIDGE, not a destination. It buys time (minutes to an hour) for definitive intervention. Target ETCO2 30-35, not lower. Elevate the head 30° and keep the head midline to optimize venous drainage."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During your post-call review, you discuss the significance of the petechial rash. Which statement BEST explains the pathophysiology of the purpuric rash in the context of this child's presentation?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "The rash represents disseminated intravascular coagulation triggered by meningococcal sepsis, where endotoxin-mediated activation of the coagulation cascade causes widespread microvascular thrombosis and consumption of clotting factors",
+            "correct": true,
+            "critical": false,
+            "explanation": "Meningococcemia triggers massive endotoxin release, activating the coagulation cascade and complement system. This leads to DIC with diffuse microvascular thrombosis, consumption of platelets and clotting factors, and subsequent hemorrhage into the skin (purpura). The purpuric rash indicates severe sepsis with DIC and carries high mortality.",
+            "guideline_ref": "National EMS Education Standards — Infectious Disease Emergencies; Surviving Sepsis Campaign — Pediatric Guidelines"
+          },
+          {
+            "text": "The rash is a direct result of the seizure activity causing capillary damage from increased venous pressure during prolonged tonic-clonic activity",
+            "correct": false,
+            "critical": false,
+            "explanation": "While brief petechiae can occur on the face/upper chest from increased venous pressure during seizures or Valsalva, a diffuse non-blanching purpuric rash on the trunk and extremities is NOT caused by seizure activity. This pattern is pathognomonic for a systemic process such as DIC.",
+            "guideline_ref": "National EMS Education Standards — Infectious Disease"
+          },
+          {
+            "text": "The rash is an allergic reaction to the midazolam administered to terminate the seizure",
+            "correct": false,
+            "critical": false,
+            "explanation": "Benzodiazepine allergy presenting as purpura is exceedingly rare. The timing, distribution, and non-blanching nature of the rash combined with the clinical picture of fever, meningeal signs, and sepsis clearly point to meningococcemia with DIC, not a drug reaction.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "The rash represents thrombocytopenia from the child's bone marrow being suppressed by the viral infection causing the fever",
+            "correct": false,
+            "critical": false,
+            "explanation": "While viral illnesses can cause thrombocytopenia, the acute onset of widespread purpura in a critically ill child with high fever, seizures, and signs of herniation is most consistent with bacterial meningococcemia and DIC, not viral bone marrow suppression.",
+            "guideline_ref": "National EMS Education Standards — Infectious Disease"
+          }
+        ],
+        "clinical_pearl": "The classic presentation of meningococcemia — fever, altered mental status, and petechial/purpuric rash — progresses from initial symptoms to death in as little as 12-24 hours. This is one of the true time-critical medical emergencies in pediatrics. Any febrile child with a non-blanching rash should be treated as meningococcemia until proven otherwise."
+      }
+    ]
+  },
+  {
+    "id": "nat-multi-04",
+    "title": "27M — Agitated Male Found at Music Festival",
+    "dispatch": "27-year-old male, extremely agitated, altered mental status, hyperthermia at outdoor event",
+    "category": "Mixed (complex multi-system)",
+    "difficulty": "Hard",
+    "level_min": "Paramedic",
+    "patient": {
+      "age": 27,
+      "sex": "M",
+      "cc": "Severe agitation, confusion, and hyperthermia"
+    },
+    "scene": "You are called to a medical tent at an outdoor music festival for a 27-year-old male who is extremely agitated and combative. Security is restraining him with difficulty. Friends report he ingested 'bath salts' approximately 2 hours ago and has been increasingly erratic. He is diaphoretic, hyperthermic, and has been exerting himself violently against restraints. He is screaming incoherently, has torn off most of his clothing, and appears to have superhuman strength. You note mydriasis, profuse diaphoresis, and involuntary muscle rigidity. His skin is hot and flushed. There is dark brown urine in his underwear. His friends deny any other substance use but state he has been awake for over 48 hours.",
+    "history": {
+      "pmh": "None known per friends",
+      "meds": "None known",
+      "allergies": "Unknown"
+    },
+    "vitals": {
+      "hr": 162,
+      "bp": "198/120",
+      "rr": 36,
+      "spo2": 92,
+      "gcs": 9,
+      "temp": "105.8°F"
+    },
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient presents with a sympathomimetic toxidrome. Categorize each of the following clinical findings as primarily related to 'Sympathomimetic Toxidrome' or 'Rhabdomyolysis Complication.'",
+        "type": "categorize",
+        "level_filter": "Paramedic",
+        "items": [
+          "Mydriasis with profuse diaphoresis and severe hypertension",
+          "Dark brown (tea-colored) urine indicating myoglobinuria",
+          "Diffuse involuntary muscle rigidity and sustained violent exertion",
+          "Severe hyperthermia of 105.8°F",
+          "Risk of acute renal failure from myoglobin deposition in renal tubules"
+        ],
+        "categories": [
+          "Sympathomimetic Toxidrome",
+          "Rhabdomyolysis Complication"
+        ],
+        "correctCategories": [0, 1, 0, 0, 1],
+        "explanation": "Mydriasis, diaphoresis, and hypertension are classic sympathomimetic toxidrome findings from excessive catecholamine and serotonin activity. Dark brown urine indicates myoglobinuria from muscle breakdown (rhabdomyolysis). Muscle rigidity and violent exertion are the sympathomimetic-driven mechanisms CAUSING the rhabdomyolysis. Hyperthermia is a direct sympathomimetic effect from impaired thermoregulation. Acute renal failure is a downstream complication of rhabdomyolysis when myoglobin precipitates in renal tubules.",
+        "guideline_ref": "National EMS Education Standards — Toxicology; ACMT Position Statement — Synthetic Cathinones",
+        "clinical_pearl": "Synthetic cathinones ('bath salts') are potent sympathomimetic agents that inhibit catecholamine reuptake and stimulate release of norepinephrine, dopamine, and serotonin. They produce a more intense and prolonged toxidrome than cocaine or methamphetamine, with higher rates of rhabdomyolysis and death."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "The patient is violently agitated, hyperthermic, tachycardic, and hypertensive with evidence of rhabdomyolysis. Arrange the following interventions in order of priority.",
+        "type": "order",
+        "level_filter": "Paramedic",
+        "items": [
+          "Administer benzodiazepine (midazolam 5-10 mg IM or IV) for chemical sedation — repeat as needed",
+          "Initiate aggressive cooling measures — remove clothing, cold packs to axillae/groin/neck, mist and fan",
+          "Establish IV access and begin aggressive normal saline infusion (1-2 L bolus)",
+          "Obtain point-of-care blood glucose and apply cardiac monitor with 12-lead ECG",
+          "Avoid physical restraint prone positioning — transition to chemical restraint as rapidly as possible"
+        ],
+        "correctOrder": [4, 0, 1, 2, 3],
+        "explanation": "Priority: (1) Address restraint safety immediately — prone restraint in excited delirium/sympathomimetic toxicity is associated with sudden death. Transition to chemical restraint urgently. (2) Benzodiazepine sedation is THE critical intervention — it reduces agitation, muscle activity (reducing rhabdomyolysis), lowers temperature, decreases heart rate and BP, and prevents sudden cardiac death. Large and repeated doses may be needed. (3) Aggressive cooling — hyperthermia above 104°F causes multi-organ damage and death. (4) IV fluids — aggressive crystalloid helps prevent renal failure from myoglobin and addresses dehydration. (5) Monitor and glucose — identify hyperkalemia (peaked T waves, widened QRS) and hypoglycemia.",
+        "guideline_ref": "NAEMSP Position Statement — Excited Delirium; ACMT Guidelines — Sympathomimetic Toxicity; National EMS Education Standards — Toxicology",
+        "clinical_pearl": "In sympathomimetic toxicity with excited delirium, sedation with benzodiazepines is the single most important intervention. It addresses nearly every pathologic process simultaneously — agitation, hyperthermia, tachycardia, hypertension, and ongoing muscle damage. Don't underestimate the doses needed — these patients may require 20-40+ mg of midazolam."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After 15 mg of midazolam IM, the patient is less combative but still agitated. You establish IV access. His cardiac monitor shows sinus tachycardia at 158 with peaked T waves and a widened QRS of 0.14 seconds. What does this ECG finding MOST likely indicate, and what is the appropriate treatment?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "narrative": "The patient is sedated enough to allow IV placement. You attach the cardiac monitor. The rhythm is sinus tachycardia at 158 bpm with tall, peaked T waves and QRS widening to 0.14 seconds.",
+        "vitals_update": {
+          "hr": 158,
+          "bp": "180/112",
+          "rr": 28,
+          "spo2": 94,
+          "gcs": 8,
+          "temp": "105.2°F"
+        },
+        "options": [
+          {
+            "text": "Hyperkalemia from rhabdomyolysis — administer calcium chloride 1g (or calcium gluconate 3g) IV slow push to stabilize the myocardium, followed by sodium bicarbonate 1 mEq/kg IV",
+            "correct": true,
+            "critical": false,
+            "explanation": "Peaked T waves with QRS widening in the setting of rhabdomyolysis strongly suggests hyperkalemia. Massive muscle breakdown releases intracellular potassium into the bloodstream. Calcium stabilizes the cardiac membrane (does not lower potassium). Sodium bicarbonate shifts potassium intracellularly and helps alkalinize the urine (protecting kidneys from myoglobin). This is a life-threatening emergency — hyperkalemia can progress to fatal dysrhythmias.",
+            "guideline_ref": "AHA ACLS 2020 — Hyperkalemia Management; National EMS Education Standards — Toxicology and Electrolyte Emergencies"
+          },
+          {
+            "text": "Acute STEMI from cocaine-like coronary vasospasm — administer nitroglycerin 0.4 mg sublingual and aspirin 324 mg",
+            "correct": false,
+            "critical": false,
+            "explanation": "While synthetic cathinones can cause coronary vasospasm, peaked T waves with QRS widening is the classic pattern of hyperkalemia, not acute STEMI. STEMI would show ST elevation in a coronary distribution. Additionally, nitroglycerin in a hyperstimulated cardiovascular system carries risk, though it can be considered for proven cocaine-related ACS.",
+            "guideline_ref": "AHA ACLS 2020 — Acute Coronary Syndromes"
+          },
+          {
+            "text": "Sodium channel blockade from the synthetic cathinone — administer amiodarone 150 mg IV to stabilize the rhythm",
+            "correct": false,
+            "critical": true,
+            "explanation": "Amiodarone would worsen the situation. While some sympathomimetics have sodium channel blocking properties, the peaked T waves point to hyperkalemia as the primary cause of QRS widening. Amiodarone itself has potassium channel blocking properties that could further destabilize the rhythm in a hyperkalemic patient.",
+            "guideline_ref": "AHA ACLS 2020 — Toxicology"
+          },
+          {
+            "text": "Benzodiazepine-induced cardiac conduction delay — withhold further sedation and observe the rhythm",
+            "correct": false,
+            "critical": true,
+            "explanation": "Benzodiazepines do not cause QRS widening or peaked T waves. Withholding further sedation in this patient would be dangerous — ongoing agitation and muscle rigidity will worsen rhabdomyolysis, hyperkalemia, and hyperthermia. The ECG changes are from hyperkalemia, not benzodiazepine effect.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "The ECG progression of hyperkalemia: peaked T waves → PR prolongation → QRS widening → sine wave → asystole/VF. QRS widening represents a cardiac emergency — death can occur within minutes. Calcium chloride (or gluconate) stabilizes the myocardium within 1-3 minutes and buys time for potassium-lowering interventions."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Despite your interventions, the patient suddenly develops ventricular fibrillation. You begin CPR and defibrillate. Select ALL factors that make resuscitation of this patient particularly challenging compared to a standard cardiac arrest.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 4,
+        "narrative": "The patient's rhythm deteriorates from wide-complex tachycardia to ventricular fibrillation. You immediately begin CPR and defibrillate.",
+        "vitals_update": {
+          "hr": 0,
+          "bp": "0/0",
+          "rr": 0,
+          "spo2": null,
+          "gcs": 3
+        },
+        "options": [
+          {
+            "text": "Hyperkalemia causes refractory VF that may not respond to standard defibrillation until the potassium level is corrected",
+            "correct": true,
+            "critical": false,
+            "explanation": "Hyperkalemia-induced VF is often refractory to electrical defibrillation because the underlying electrolyte abnormality perpetuates myocardial instability. Calcium, sodium bicarbonate, and potassium-lowering measures must be administered concurrently with standard ACLS to address the reversible cause.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest in Special Situations; H's and T's"
+          },
+          {
+            "text": "Severe hyperthermia reduces defibrillation success and accelerates neuronal injury during the arrest period",
+            "correct": true,
+            "critical": false,
+            "explanation": "Core temperature above 104°F impairs myocardial response to defibrillation and dramatically accelerates ischemic brain injury. Aggressive cooling should continue during resuscitation. Hyperthermia increases metabolic rate and oxygen consumption, further shortening the window for meaningful neurologic recovery.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest in Special Situations"
+          },
+          {
+            "text": "Rhabdomyolysis with myoglobin release creates a profound metabolic acidosis that reduces the effectiveness of vasopressors and antiarrhythmics",
+            "correct": true,
+            "critical": false,
+            "explanation": "Severe rhabdomyolysis causes metabolic acidosis from muscle cell lysis, lactic acid production, and phosphoric acid release. Profound acidosis reduces myocardial contractility, impairs response to catecholamines, and decreases the efficacy of antiarrhythmics. Sodium bicarbonate addresses both the acidosis and the hyperkalemia.",
+            "guideline_ref": "AHA ACLS 2020 — Cardiac Arrest in Special Situations"
+          },
+          {
+            "text": "The sympathomimetic toxidrome creates a catecholamine-saturated myocardium that is resistant to exogenous epinephrine and predisposed to recurrent arrhythmias",
+            "correct": true,
+            "critical": false,
+            "explanation": "The myocardium is already flooded with endogenous catecholamines from the sympathomimetic toxidrome. Exogenous epinephrine may have diminished effect on an already maximally stimulated heart, and the catecholamine excess predisposes to recurrent VF even after successful defibrillation.",
+            "guideline_ref": "ACMT Guidelines — Sympathomimetic Toxicity; AHA ACLS 2020"
+          },
+          {
+            "text": "The patient's young age of 27 makes defibrillation less effective compared to older patients due to lower transthoracic impedance",
+            "correct": false,
+            "critical": false,
+            "explanation": "Young age does not reduce defibrillation effectiveness. In fact, younger patients typically have better outcomes from cardiac arrest overall. Lower transthoracic impedance actually improves energy delivery to the myocardium. The challenges in this arrest are related to the metabolic derangements, not the patient's age.",
+            "guideline_ref": "AHA ACLS 2020 — Defibrillation"
+          },
+          {
+            "text": "The outdoor festival environment makes high-quality CPR impossible due to ambient noise preventing team communication",
+            "correct": false,
+            "critical": false,
+            "explanation": "While a noisy environment can complicate communication, it does not make CPR impossible. Standard crew resource management techniques and non-verbal communication can maintain resuscitation quality in any environment. This is a logistical challenge, not a pathophysiologic one affecting resuscitation success.",
+            "guideline_ref": "National EMS Education Standards — EMS Operations"
+          }
+        ],
+        "clinical_pearl": "In toxicologic cardiac arrest, you are treating MULTIPLE reversible causes simultaneously. Use the H's and T's framework: Hyperkalemia (calcium, bicarb), Hyperthermia (active cooling), Hydrogen ion/acidosis (bicarb, ventilation), and Toxins (benzodiazepines). Standard ACLS alone will fail if you don't address the underlying toxidrome."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "In your post-call debriefing, which concept BEST explains why aggressive benzodiazepine dosing early in this patient's presentation might have prevented the cardiac arrest?",
+        "type": "mc",
+        "level_filter": "Paramedic",
+        "options": [
+          {
+            "text": "Benzodiazepines break the cycle of psychomotor agitation → muscle rigidity → rhabdomyolysis → hyperkalemia → fatal dysrhythmia by reducing the sympathomimetic-driven muscle hyperactivity that is the upstream cause of all downstream complications",
+            "correct": true,
+            "critical": false,
+            "explanation": "In sympathomimetic toxicity, the pathologic cascade flows from agitation/muscle hyperactivity → hyperthermia + rhabdomyolysis → myoglobinuria + hyperkalemia + metabolic acidosis → renal failure + cardiac dysrhythmia → death. Benzodiazepines interrupt this cascade at its origin by reducing psychomotor agitation and muscle activity. Early, aggressive dosing can prevent the entire downstream cascade from developing.",
+            "guideline_ref": "ACMT Position Statement — Sympathomimetic Toxicity; NAEMSP Guidelines — Excited Delirium"
+          },
+          {
+            "text": "Benzodiazepines directly lower serum potassium levels through a GABA-mediated renal excretion mechanism, preventing the hyperkalemia that caused the arrest",
+            "correct": false,
+            "critical": false,
+            "explanation": "Benzodiazepines do not directly affect serum potassium or renal potassium excretion. They reduce hyperkalemia INDIRECTLY by reducing the muscle activity that causes rhabdomyolysis and potassium release. The mechanism is GABA-mediated sedation and muscle relaxation, not a direct renal effect.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          },
+          {
+            "text": "Benzodiazepines are direct antidotes to synthetic cathinones that competitively bind to the same receptor sites and reverse the toxidrome completely",
+            "correct": false,
+            "critical": false,
+            "explanation": "Benzodiazepines are NOT direct antidotes to synthetic cathinones. They work through a completely different receptor system (GABA-A). There is no competitive binding or direct reversal. Benzodiazepines manage the SYMPTOMS of the toxidrome (agitation, seizures, hyperthermia) but do not reverse the drug's mechanism of action.",
+            "guideline_ref": "ACMT Position Statement — Synthetic Cathinones"
+          },
+          {
+            "text": "Benzodiazepines prevent cardiac arrest specifically by their anti-arrhythmic properties that stabilize cardiac sodium channels similar to lidocaine",
+            "correct": false,
+            "critical": false,
+            "explanation": "Benzodiazepines have no significant direct anti-arrhythmic or sodium channel stabilizing properties. Their cardiac benefit in sympathomimetic toxicity is entirely indirect — by reducing agitation, lowering catecholamine drive, decreasing heart rate, and preventing the metabolic derangements that lead to dysrhythmias.",
+            "guideline_ref": "National EMS Education Standards — Pharmacology"
+          }
+        ],
+        "clinical_pearl": "The mantra in sympathomimetic toxicity: 'Sedate early, sedate aggressively.' Underdosing benzodiazepines is the most common and most dangerous error. These patients may require 10-20x normal sedation doses. If IM midazolam isn't working, escalate to IV and consider ketamine as an adjunct. Every minute of ongoing agitation generates more rhabdomyolysis, more heat, and more potassium."
+      }
+    ]
+  }
+]

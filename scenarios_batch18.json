@@ -1,0 +1,457 @@
+[
+  {
+    "id": "nat-med-16",
+    "title": "34F — Weakness and Confusion After Flu",
+    "dispatch": "34-year-old female, weakness, confusion, vomiting",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 34, "sex": "F", "cc": "Weakness, confusion, vomiting"},
+    "scene": "You arrive at a small apartment. A 34-year-old female is lying on the couch, appearing profoundly weak and lethargic. Her roommate states the patient has had the flu for the past three days and stopped taking her 'steroid medication' because she couldn't keep anything down. The patient is oriented to person only, has dry mucous membranes, and her skin appears noticeably darkened on her knuckles and elbows. She is hypotensive and complains of severe abdominal pain.",
+    "history": {"pmh": "Addison's disease (primary adrenal insufficiency), hypothyroidism", "meds": "Hydrocortisone 20 mg daily, levothyroxine 75 mcg daily", "allergies": "No known allergies"},
+    "vitals": {"hr": 128, "bp": "74/42", "rr": 22, "spo2": 96, "gcs": 13, "temp": "101.2°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "This patient has a history of Addison's disease and has been unable to take her medications during an illness. Which set of clinical findings is MOST consistent with the underlying endocrine emergency?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Hypotension refractory to position changes, hyperpigmentation, abdominal pain, and altered mental status in the setting of physiologic stress", "correct": true, "critical": false, "explanation": "Adrenal crisis presents with severe hypotension (often refractory to fluids alone), nausea/vomiting, abdominal pain, and altered mentation. Hyperpigmentation is a hallmark of chronic primary adrenal insufficiency (Addison's disease). Physiologic stress such as illness triggers crisis when cortisol replacement is interrupted.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies; Endocrine Society Clinical Practice Guidelines"},
+          {"text": "Hypertension, bradycardia, facial puffiness, and hypothermia in a patient who missed thyroid medication", "correct": false, "critical": false, "explanation": "These findings would be more consistent with severe hypothyroidism or myxedema coma, not adrenal crisis. The patient's tachycardia and hypotension point away from this diagnosis.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "Tachycardia, hypertension, diaphoresis, and severe headache suggesting catecholamine excess", "correct": false, "critical": false, "explanation": "These findings suggest pheochromocytoma or sympathomimetic toxicity. Adrenal crisis causes hypotension, not hypertension, due to loss of cortisol-mediated vascular tone.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "Polyuria, polydipsia, Kussmaul respirations, and fruity breath odor in a dehydrated patient", "correct": false, "critical": false, "explanation": "These are classic findings of diabetic ketoacidosis (DKA), not adrenal crisis. While both can present with dehydration and altered mental status, the key distinguishing features differ.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"}
+        ],
+        "clinical_pearl": "Patients with known adrenal insufficiency should have 'stress dose' steroids during illness. If they cannot take oral medications, this is a medical emergency requiring parenteral corticosteroids."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following prehospital interventions for this patient in the correct order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Establish IV access and initiate aggressive normal saline fluid resuscitation",
+          "Administer hydrocortisone 100 mg IV (or dexamethasone 4 mg IV if available per protocol)",
+          "Obtain a point-of-care blood glucose level",
+          "Initiate rapid transport to the closest appropriate facility",
+          "Apply continuous cardiac monitoring"
+        ],
+        "correctOrder": [0, 2, 4, 1, 3],
+        "explanation": "First, establish IV access and begin aggressive fluid resuscitation — these patients are profoundly volume depleted. Second, check blood glucose as hypoglycemia is common in adrenal crisis and easily treatable. Third, apply cardiac monitoring as electrolyte abnormalities (hyperkalemia) may cause dysrhythmias. Fourth, administer stress-dose corticosteroids if within protocol — this is the definitive prehospital treatment. Fifth, initiate rapid transport as definitive care requires emergency department management.",
+        "guideline_ref": "National EMS Education Standards — Endocrine Emergencies; Endocrine Society Adrenal Crisis Guidelines",
+        "clinical_pearl": "Adrenal crisis patients may be profoundly hyperkalemic and hyponatremic. Aggressive NS resuscitation addresses both volume depletion and dilutes potassium. Monitor for ECG changes of hyperkalemia."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "After 500 mL of normal saline, the patient's blood pressure remains 78/46. Select ALL appropriate next steps in management.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "You have established IV access and administered 500 mL NS. Blood glucose is 54 mg/dL. The patient remains hypotensive and increasingly drowsy.",
+        "vitals_update": {"hr": 132, "bp": "78/46", "rr": 24, "spo2": 95, "gcs": 12},
+        "options": [
+          {"text": "Continue aggressive IV normal saline fluid resuscitation with a second liter bolus", "correct": true, "critical": false, "explanation": "These patients often require several liters of IV fluids. Continue aggressive resuscitation targeting improved hemodynamics.", "guideline_ref": "National EMS Education Standards — Shock Management"},
+          {"text": "Administer dextrose IV to correct the documented hypoglycemia", "correct": true, "critical": false, "explanation": "Blood glucose of 54 mg/dL requires treatment. Hypoglycemia in adrenal crisis occurs due to loss of cortisol's gluconeogenic effects and can worsen altered mental status.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "Administer stress-dose corticosteroids per protocol if available", "correct": true, "critical": false, "explanation": "Parenteral corticosteroids are the definitive treatment for adrenal crisis. Hydrocortisone 100 mg IV or dexamethasone 4 mg IV should be administered when available and within protocol.", "guideline_ref": "Endocrine Society Clinical Practice Guidelines — Adrenal Crisis"},
+          {"text": "Administer sodium bicarbonate 1 mEq/kg IV push to correct metabolic acidosis", "correct": false, "critical": false, "explanation": "Routine bicarbonate administration is not indicated. Volume resuscitation and corticosteroid replacement address the underlying cause. Bicarbonate may be considered only for specific indications such as severe hyperkalemia with ECG changes.", "guideline_ref": "National EMS Education Standards — Acid-Base Disorders"},
+          {"text": "Reduce IV fluid rate to keep-vein-open to avoid fluid overload in this young patient", "correct": false, "critical": true, "explanation": "Reducing fluids in a profoundly hypotensive, volume-depleted patient is dangerous. Adrenal crisis patients are severely dehydrated due to loss of aldosterone-mediated sodium and water retention.", "guideline_ref": "National EMS Education Standards — Shock Management"}
+        ],
+        "clinical_pearl": "Hypoglycemia in adrenal crisis may not respond well to dextrose alone without corticosteroid replacement. Cortisol is essential for maintaining blood glucose through gluconeogenesis."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-17",
+    "title": "52F — Agitation and Rapid Heart Rate",
+    "dispatch": "52-year-old female, agitated, racing heart, fever",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 52, "sex": "F", "cc": "Agitation, palpitations, fever"},
+    "scene": "You arrive at an office building where coworkers called 911. A 52-year-old female is pacing restlessly, diaphoretic, and extremely agitated. Coworkers report she has been increasingly anxious and irritable over the past week and today became confused and combative. She has visible tremors in both hands, and her skin is flushed and hot to the touch. A coworker found a medication bottle in her purse labeled methimazole. The patient is speaking rapidly but incoherently.",
+    "history": {"pmh": "Graves' disease, atrial fibrillation (rate-controlled), anxiety", "meds": "Methimazole 10 mg daily, metoprolol 50 mg BID — coworker reports patient stopped taking medications 2 weeks ago", "allergies": "Iodine contrast"},
+    "vitals": {"hr": 168, "bp": "182/88", "rr": 28, "spo2": 97, "gcs": 13, "temp": "104.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the clinical presentation and history, categorize the following findings as either 'Expected with this condition' or 'Atypical — consider alternative diagnosis'.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Heart rate of 168 with irregular rhythm",
+          "Core temperature of 104.8°F",
+          "Bilateral hand tremors with psychomotor agitation",
+          "Pinpoint pupils with decreased respiratory rate",
+          "Systolic hypertension with widened pulse pressure"
+        ],
+        "categories": ["Expected with this condition", "Atypical — consider alternative diagnosis"],
+        "correctCategories": [0, 0, 0, 1, 0],
+        "explanation": "Thyroid storm presents with severe tachycardia (often atrial fibrillation with rapid ventricular response), hyperthermia, tremor, agitation, and hypertension with widened pulse pressure due to excessive thyroid hormone effects on the cardiovascular system. Pinpoint pupils with respiratory depression are NOT features of thyroid storm — they suggest opioid toxicity or pontine pathology and should prompt consideration of alternative diagnoses.",
+        "guideline_ref": "National EMS Education Standards — Endocrine Emergencies; Burch-Wartofsky Thyroid Storm Scoring",
+        "clinical_pearl": "Thyroid storm is a clinical diagnosis. The Burch-Wartofsky Point Scale uses temperature, CNS effects, GI-hepatic dysfunction, heart rate, heart failure, and atrial fibrillation to score severity."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Which prehospital intervention is the HIGHEST priority for this patient given her presentation?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Active cooling measures and rapid transport to an emergency department", "correct": true, "critical": false, "explanation": "Thyroid storm produces life-threatening hyperthermia and cardiovascular instability. Prehospital priorities include cooling (ice packs, cool IV fluids if available), supportive care, and rapid transport. Definitive treatment requires medications not typically carried in the field.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "Administer oral glucose in case altered mental status is due to hypoglycemia", "correct": false, "critical": false, "explanation": "While checking blood glucose is appropriate, the overall presentation (extreme tachycardia, hyperthermia, known thyroid disease, medication non-compliance) strongly suggests thyroid storm. Oral glucose would not address the primary problem.", "guideline_ref": "National EMS Education Standards — Altered Mental Status"},
+          {"text": "Apply warming blankets to prevent shivering and further metabolic demand", "correct": false, "critical": true, "explanation": "This patient is dangerously hyperthermic at 104.8°F. Applying warming blankets would worsen hyperthermia and could be fatal. Active cooling is needed.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Withhold all treatment and transport non-emergently since this appears to be an anxiety attack", "correct": false, "critical": true, "explanation": "This patient has life-threatening vital sign abnormalities including dangerous tachycardia and hyperthermia. Dismissing this as anxiety could be fatal. Thyroid storm has mortality rates of 10-30% even with treatment.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"}
+        ],
+        "clinical_pearl": "Do NOT administer aspirin for fever in suspected thyroid storm — aspirin displaces thyroid hormone from binding proteins, increasing free T3/T4 and worsening the crisis. Use external cooling instead."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You are a Paramedic managing this patient. The cardiac monitor shows atrial fibrillation with a ventricular rate of 168. Select ALL appropriate prehospital interventions.",
+        "type": "mr",
+        "level_filter": "Paramedic",
+        "selectCount": 3,
+        "narrative": "The patient remains agitated and tachycardic. You have established IV access and are preparing for transport.",
+        "options": [
+          {"text": "Apply ice packs to the neck, axillae, and groin for active external cooling", "correct": true, "critical": false, "explanation": "Active cooling is critical. Ice packs to areas of large blood vessel proximity help reduce core temperature. Hyperthermia drives metabolic demand and worsens cardiovascular instability.", "guideline_ref": "National EMS Education Standards — Hyperthermia Management"},
+          {"text": "Administer IV normal saline bolus for volume resuscitation and cooling", "correct": true, "critical": false, "explanation": "These patients are often significantly dehydrated due to increased metabolic rate, diaphoresis, and insensible losses. IV fluid resuscitation supports hemodynamics and room-temperature fluids provide mild cooling.", "guideline_ref": "National EMS Education Standards — Shock Management"},
+          {"text": "Continuous cardiac monitoring with 12-lead ECG acquisition", "correct": true, "critical": false, "explanation": "Continuous monitoring is essential given the rapid atrial fibrillation. A 12-lead ECG helps identify the rhythm and assess for ischemia from the extreme heart rate and metabolic demand.", "guideline_ref": "National EMS Education Standards — Cardiac Monitoring"},
+          {"text": "Synchronized cardioversion at 100J for the rapid atrial fibrillation", "correct": false, "critical": false, "explanation": "Cardioversion is unlikely to be effective while the underlying thyroid storm is untreated — the rhythm will recur. Rate control with beta-blockers in the ED and treatment of the underlying cause are preferred. Cardioversion should be reserved for hemodynamically unstable patients failing medical therapy.", "guideline_ref": "AHA ACLS — Tachycardia Algorithm; Thyroid Storm Management Guidelines"},
+          {"text": "Administer adenosine 6 mg rapid IV push to convert the rhythm", "correct": false, "critical": true, "explanation": "Adenosine is used for regular narrow-complex tachycardias (SVT), not atrial fibrillation. Adenosine will not convert atrial fibrillation and is not indicated here.", "guideline_ref": "AHA ACLS — Tachycardia Algorithm"}
+        ],
+        "clinical_pearl": "Beta-blockers are the cornerstone of heart rate control in thyroid storm, but in the field, focus on cooling, fluids, and rapid transport. Propranolol is preferred in-hospital because it also inhibits peripheral T4-to-T3 conversion."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient has a generalized tonic-clonic seizure lasting 90 seconds. Arrange your interventions in the correct order.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Protect the patient from injury and ensure the airway is maintained",
+          "Administer benzodiazepine per seizure protocol (midazolam or diazepam)",
+          "Reassess airway, breathing, and circulation after seizure terminates",
+          "Check blood glucose level",
+          "Continue cooling measures and notify the receiving facility of status change"
+        ],
+        "correctOrder": [0, 1, 2, 3, 4],
+        "explanation": "During a seizure: protect from injury and maintain airway first. Administer benzodiazepines to terminate the seizure. After cessation, reassess ABCs as post-ictal airway compromise is common. Check blood glucose to rule out hypoglycemia as a contributing cause. Finally, continue treating the underlying condition and update the receiving hospital.",
+        "guideline_ref": "National EMS Education Standards — Neurologic Emergencies; Seizure Management",
+        "clinical_pearl": "Seizures in thyroid storm indicate severe CNS involvement and carry a worse prognosis. This finding should increase the urgency of transport and receiving facility notification."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-18",
+    "title": "22M — Severe Pain and Difficulty Breathing",
+    "dispatch": "22-year-old male, severe chest and abdominal pain, difficulty breathing",
+    "category": "Medical Emergencies",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 22, "sex": "M", "cc": "Severe chest pain, abdominal pain, shortness of breath"},
+    "scene": "You arrive at a college dormitory. A 22-year-old male is sitting upright on his bed, appearing acutely distressed. He is clutching his chest and abdomen, rating his pain 9/10. His roommate states the patient has sickle cell disease and gets 'pain crises' but this one seems worse than usual. The patient says his pain started several hours ago and has been progressively worsening. He appears jaundiced, is tachypneic, and has cool extremities despite a warm room. He took ibuprofen without relief.",
+    "history": {"pmh": "Sickle cell disease (HbSS), prior vaso-occlusive crises (multiple hospitalizations), cholecystectomy age 19", "meds": "Hydroxyurea 1000 mg daily, folic acid 1 mg daily, oxycodone PRN for pain crises", "allergies": "Morphine (severe itching)"},
+    "vitals": {"hr": 118, "bp": "136/82", "rr": 26, "spo2": 89, "gcs": 15, "temp": "101.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "The patient has sickle cell disease with severe chest pain and an SpO2 of 89%. Which complication should you be MOST concerned about?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Acute chest syndrome — characterized by chest pain, fever, respiratory symptoms, and hypoxemia in a sickle cell patient", "correct": true, "critical": false, "explanation": "Acute chest syndrome (ACS) is the leading cause of death in sickle cell disease and is defined by a new pulmonary infiltrate plus one of: chest pain, fever, or respiratory symptoms. This patient's chest pain, fever, tachypnea, and hypoxemia are classic for ACS. This requires aggressive treatment and emergent transport.", "guideline_ref": "National EMS Education Standards — Hematologic Emergencies; NHLBI Sickle Cell Guidelines"},
+          {"text": "Simple vaso-occlusive pain crisis limited to the musculoskeletal system requiring pain management only", "correct": false, "critical": false, "explanation": "While vaso-occlusive crisis is the most common complication, the combination of chest pain, hypoxemia, fever, and tachypnea suggests a more dangerous complication involving the pulmonary system that requires more than pain management alone.", "guideline_ref": "National EMS Education Standards — Hematologic Emergencies"},
+          {"text": "Spontaneous pneumothorax due to bullous lung disease from chronic sickling", "correct": false, "critical": false, "explanation": "While pneumothorax can occur, it is uncommon in sickle cell disease. The bilateral symptoms, fever, and overall presentation are more consistent with acute chest syndrome.", "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"},
+          {"text": "Anxiety-related hyperventilation triggered by the pain of a routine crisis episode", "correct": false, "critical": false, "explanation": "An SpO2 of 89% is a significant finding that cannot be attributed to hyperventilation, which typically causes a normal or elevated SpO2. Hypoxemia in a sickle cell patient with chest symptoms demands serious evaluation.", "guideline_ref": "National EMS Education Standards — Respiratory Assessment"}
+        ],
+        "clinical_pearl": "Acute chest syndrome can rapidly progress to ARDS and multi-organ failure. Baseline SpO2 in sickle cell patients may be lower than the general population (typically 94-98%), so any significant drop from their baseline is concerning."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this patient.",
+        "type": "mr",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Apply high-flow oxygen via non-rebreather mask targeting SpO2 above 95%", "correct": true, "critical": false, "explanation": "Supplemental oxygen is critical in sickle cell crisis with hypoxemia. Hypoxia promotes further sickling of red blood cells, worsening the crisis. Target SpO2 above 95% to reduce sickling.", "guideline_ref": "National EMS Education Standards — Hematologic Emergencies; NHLBI Sickle Cell Guidelines"},
+          {"text": "Establish IV access and administer a normal saline fluid bolus", "correct": true, "critical": false, "explanation": "Dehydration promotes sickling by increasing blood viscosity. IV hydration is a cornerstone of sickle cell crisis management and helps prevent further vaso-occlusion.", "guideline_ref": "National EMS Education Standards — Hematologic Emergencies"},
+          {"text": "Provide appropriate pain management per protocol, avoiding morphine per documented allergy", "correct": true, "critical": false, "explanation": "Aggressive pain management is essential in sickle cell crisis. Pain causes splinting, hypoventilation, and further hypoxemia — worsening the cycle. Note the morphine allergy and use alternative analgesics.", "guideline_ref": "National EMS Education Standards — Pain Management; NHLBI Sickle Cell Guidelines"},
+          {"text": "Initiate rapid transport to a facility capable of managing sickle cell complications", "correct": true, "critical": false, "explanation": "Acute chest syndrome requires emergent hospital management including possible exchange transfusion, antibiotics, and ICU-level care. Rapid transport is essential.", "guideline_ref": "National EMS Education Standards — Transport Decisions"},
+          {"text": "Apply cold packs to the chest and abdomen to reduce inflammation and pain", "correct": false, "critical": true, "explanation": "Cold exposure causes vasoconstriction and promotes further sickling of red blood cells. Cold application is contraindicated in sickle cell crisis. Use warm compresses if anything.", "guideline_ref": "NHLBI Sickle Cell Disease Guidelines — Pain Management"},
+          {"text": "Encourage incentive spirometry or coached deep breathing exercises", "correct": false, "critical": false, "explanation": "While incentive spirometry is important in-hospital management of acute chest syndrome, it is not a standard prehospital intervention. Focus on oxygen, fluids, pain control, and transport.", "guideline_ref": "NHLBI Sickle Cell Guidelines — Acute Chest Syndrome"}
+        ],
+        "clinical_pearl": "Never apply cold to a sickle cell patient — cold triggers vasoconstriction and promotes sickling. Warmth, hydration, oxygenation, and pain control are the pillars of prehospital sickle cell management."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient's SpO2 drops to 82% despite high-flow oxygen. He is becoming increasingly drowsy. Arrange your interventions in order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Prepare for advanced airway management if respiratory failure progresses",
+          "Assist ventilations with BVM and high-flow oxygen",
+          "Notify the receiving facility of deterioration and request blood bank standby",
+          "Reassess the airway and breathing — auscultate lung sounds bilaterally"
+        ],
+        "correctOrder": [3, 1, 0, 2],
+        "explanation": "First, reassess ABCs and auscultate lungs to determine the cause of deterioration. Second, assist ventilations with BVM and oxygen to address the critical hypoxemia. Third, prepare for advanced airway management if the patient continues to decline. Fourth, notify the receiving facility so they can prepare for emergent interventions including possible exchange transfusion.",
+        "guideline_ref": "National EMS Education Standards — Respiratory Failure Management; NHLBI Sickle Cell Guidelines",
+        "clinical_pearl": "Acute chest syndrome can progress rapidly to respiratory failure. Exchange transfusion is the definitive treatment for severe ACS — early hospital notification allows the blood bank to prepare type-matched sickle-negative blood."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-19",
+    "title": "19F — College Student with Headache and Rash",
+    "dispatch": "19-year-old female, severe headache, fever, rash",
+    "category": "Medical Emergencies",
+    "difficulty": "Medium",
+    "level_min": "EMR",
+    "patient": {"age": 19, "sex": "F", "cc": "Severe headache, fever, neck stiffness, rash"},
+    "scene": "You arrive at a college dormitory. A 19-year-old female is lying in bed with the lights off. Her roommate called 911 because the patient has had a worsening headache for 12 hours, vomited three times, and now has a rash that 'appeared out of nowhere.' The patient is curled on her side, eyes closed, shielding from your flashlight. She has a non-blanching petechial and purpuric rash on her trunk and lower extremities. She resists passive neck flexion and cries out in pain when you attempt to flex her chin to her chest.",
+    "history": {"pmh": "No significant medical history, up to date on vaccinations except did not receive meningococcal booster", "meds": "Oral contraceptive pills", "allergies": "Amoxicillin (rash as a child)"},
+    "vitals": {"hr": 122, "bp": "94/58", "rr": 24, "spo2": 96, "gcs": 14, "temp": "103.6°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Which combination of findings in this patient is MOST concerning for a life-threatening infectious process?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Non-blanching petechial/purpuric rash, nuchal rigidity, fever, and hypotension in a college-aged student", "correct": true, "critical": false, "explanation": "This constellation is classic for meningococcemia with meningitis. Non-blanching purpura indicates disseminated intravascular coagulation (DIC) and is an ominous sign. Nuchal rigidity suggests meningeal irritation. College dormitory living is a high-risk environment for meningococcal disease. Hypotension indicates sepsis and possible progression to septic shock.", "guideline_ref": "National EMS Education Standards — Infectious Disease Emergencies; CDC Meningococcal Disease Guidelines"},
+          {"text": "Headache with photophobia and vomiting, likely representing migraine with aura in a young woman on oral contraceptives", "correct": false, "critical": false, "explanation": "While migraine can cause headache, photophobia, and vomiting, the presence of fever, non-blanching rash, nuchal rigidity, and hypotension makes migraine an inappropriate and dangerous diagnosis to consider here.", "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"},
+          {"text": "Fever and rash consistent with a common viral exanthem that will resolve with supportive care and outpatient follow-up", "correct": false, "critical": true, "explanation": "A non-blanching petechial/purpuric rash with fever, altered mental status, and hemodynamic instability is never a benign viral illness. This rash indicates coagulopathy and potential meningococcemia, which has rapid mortality without treatment.", "guideline_ref": "National EMS Education Standards — Infectious Disease Emergencies"},
+          {"text": "Allergic reaction to a new medication causing urticaria, headache, and mild hypotension requiring antihistamine treatment", "correct": false, "critical": false, "explanation": "Petechiae and purpura are NOT urticaria. Urticaria are raised, blanching wheals. Non-blanching lesions indicate bleeding under the skin — a fundamentally different and far more dangerous process.", "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"}
+        ],
+        "clinical_pearl": "The 'glass test': press a clear glass against the rash. If it does NOT fade (non-blanching), suspect purpura from meningococcemia or other serious conditions. This simple test can be life-saving."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital management steps for this patient.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Don appropriate PPE including mask and gloves for droplet precautions", "correct": true, "critical": false, "explanation": "Meningococcal disease is transmitted via respiratory droplets. Droplet precautions (surgical mask within 3 feet, gloves, eye protection) protect the crew from potential exposure.", "guideline_ref": "National EMS Education Standards — Infectious Disease Precautions; CDC Meningococcal Disease Guidelines"},
+          {"text": "Establish IV access and initiate normal saline fluid resuscitation for hypotension", "correct": true, "critical": false, "explanation": "The patient is hypotensive (BP 94/58) indicating developing septic shock. IV fluid resuscitation is critical to maintain perfusion while transporting to definitive care.", "guideline_ref": "National EMS Education Standards — Shock Management; Surviving Sepsis Campaign"},
+          {"text": "Initiate rapid transport to the closest appropriate emergency department", "correct": true, "critical": false, "explanation": "Meningococcemia is rapidly fatal without IV antibiotics. Time to antibiotic administration is the most critical factor in survival. Rapid transport is essential.", "guideline_ref": "National EMS Education Standards — Transport Decisions; Surviving Sepsis Campaign"},
+          {"text": "Apply supplemental oxygen and monitor airway status closely", "correct": true, "critical": false, "explanation": "The patient has a decreased GCS and is at risk for airway compromise from altered mental status or seizures. Supplemental oxygen and close airway monitoring are essential.", "guideline_ref": "National EMS Education Standards — Airway Management"},
+          {"text": "Administer oral antibiotics found in the patient's medicine cabinet to begin treatment early", "correct": false, "critical": true, "explanation": "Never administer a patient's own medications without proper protocol. Oral antibiotics are inadequate for meningococcemia — IV antibiotics at appropriate doses are required. Additionally, this patient has a documented amoxicillin allergy.", "guideline_ref": "National EMS Education Standards — Medication Administration"},
+          {"text": "Delay transport to perform a detailed physical exam and collect a thorough SAMPLE history", "correct": false, "critical": false, "explanation": "While history is important, this patient requires rapid transport for life-saving antibiotic therapy. Gather essential history en route. Do not delay transport for a comprehensive exam.", "guideline_ref": "National EMS Education Standards — Transport Decisions"}
+        ],
+        "clinical_pearl": "EMS providers exposed to confirmed meningococcal disease (close contact without PPE) should receive post-exposure prophylaxis — typically ciprofloxacin or rifampin. Notify your service's infection control officer."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "After transferring care, you need to complete post-call actions. Arrange the following steps in the correct order.",
+        "type": "order",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "items": [
+          "Notify your supervisor and infection control officer of potential meningococcal exposure",
+          "Decontaminate the ambulance and all equipment per infectious disease protocols",
+          "Complete thorough documentation including exposure details and PPE used",
+          "Monitor yourself for symptoms (fever, headache, rash) over the following 10 days"
+        ],
+        "correctOrder": [0, 1, 2, 3],
+        "explanation": "Immediately notify your supervisor and infection control officer — they will coordinate with public health for prophylaxis decisions. Next, thoroughly decontaminate the ambulance and equipment. Then complete detailed documentation including what PPE was used and any potential exposure moments. Finally, self-monitor for the incubation period (up to 10 days) and seek immediate medical attention if symptoms develop.",
+        "guideline_ref": "National EMS Education Standards — Infectious Disease Exposure; CDC Meningococcal Disease Guidelines",
+        "clinical_pearl": "The incubation period for meningococcal disease is 2-10 days (average 3-4 days). Post-exposure prophylaxis is most effective when given within 24 hours of exposure."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-20",
+    "title": "26M — Confusion After Marathon",
+    "dispatch": "26-year-old male, confused, possible seizure at marathon finish line",
+    "category": "Medical Emergencies",
+    "difficulty": "Easy",
+    "level_min": "EMR",
+    "patient": {"age": 26, "sex": "M", "cc": "Confusion, nausea, reported seizure"},
+    "scene": "You are working the medical tent at a marathon on a cool, overcast day (58°F). A 26-year-old male is brought in by bystanders who report he finished the marathon approximately 20 minutes ago, became increasingly confused, and then had a brief generalized seizure lasting about 30 seconds. He is now post-ictal, responding to voice but disoriented. Friends report he drank 'tons of water' during the race — they estimate over 2 gallons — and did not use any electrolyte drinks. He vomited twice. His hands and feet appear puffy and swollen.",
+    "history": {"pmh": "No significant medical history, first-time marathon runner", "meds": "Ibuprofen 600 mg taken before and during the race", "allergies": "No known allergies"},
+    "vitals": {"hr": 88, "bp": "142/86", "rr": 18, "spo2": 98, "gcs": 12, "temp": "97.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on this patient's presentation, which condition is MOST likely the cause of his symptoms?",
+        "type": "mc",
+        "level_filter": "EMR-EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Exercise-associated hyponatremia from excessive water intake without electrolyte replacement", "correct": true, "critical": false, "explanation": "This presentation is classic for exercise-associated hyponatremia (EAH): marathon runner who over-hydrated with plain water, confusion, seizure, nausea/vomiting, and peripheral edema (puffy hands/feet). The cool weather makes heat illness unlikely. NSAID use (ibuprofen) further impairs free water excretion, increasing risk.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies; Wilderness Medical Society EAH Guidelines"},
+          {"text": "Exertional heat stroke causing altered mental status and seizures", "correct": false, "critical": false, "explanation": "Heat stroke typically presents with hyperthermia (core temp >104°F), hot/dry or diaphoretic skin, and altered mental status. This patient's temperature is 97.8°F on a cool day, making heat stroke very unlikely. The peripheral edema and excessive water intake history point elsewhere.", "guideline_ref": "National EMS Education Standards — Environmental Emergencies"},
+          {"text": "Hypoglycemia from glycogen depletion during prolonged exercise", "correct": false, "critical": false, "explanation": "While exercise-induced hypoglycemia is possible, the peripheral edema, excessive water intake history, and normal-to-low body temperature more strongly suggest a fluid and electrolyte imbalance. Blood glucose should still be checked.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "New-onset epilepsy unrelated to the marathon, requiring standard seizure management only", "correct": false, "critical": false, "explanation": "While new-onset seizures can occur at any time, the clinical context — marathon, excessive water intake, peripheral edema, and confusion — strongly suggests a provoked seizure from an electrolyte abnormality rather than primary epilepsy.", "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"}
+        ],
+        "clinical_pearl": "NSAIDs (ibuprofen) during endurance exercise significantly increase the risk of hyponatremia by impairing renal free water clearance. Educate athletes to avoid NSAIDs during prolonged exercise."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Arrange the following management steps in the correct order of priority for this patient.",
+        "type": "order",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Restrict all further fluid intake — do not allow the patient to drink water",
+          "Establish IV access and prepare for transport to an emergency department",
+          "Obtain a point-of-care blood glucose level to rule out hypoglycemia",
+          "Place the patient on continuous monitoring with seizure precautions"
+        ],
+        "correctOrder": [0, 2, 3, 1],
+        "explanation": "First and most critical: stop all water intake immediately — further water ingestion will worsen hyponatremia and can be fatal. Second, check blood glucose to rule out a concurrent or alternative cause. Third, place on monitoring with seizure precautions as hyponatremic seizures can recur. Fourth, establish IV access and transport — definitive treatment is hypertonic saline (3% NaCl) which requires hospital-level care and lab monitoring.",
+        "guideline_ref": "National EMS Education Standards — Electrolyte Emergencies; Wilderness Medical Society EAH Guidelines",
+        "clinical_pearl": "In suspected exercise-associated hyponatremia, the single most important prehospital intervention is fluid restriction. Giving IV normal saline (0.9% NaCl) is relatively hypotonic compared to severely hyponatremic serum and may not help — hypertonic saline (3%) is the definitive treatment."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "A well-meaning bystander suggests giving the patient salt packets from the medical tent supplies. As the treating provider, which statement is MOST accurate regarding this approach?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Oral concentrated salt solutions may be considered for mild, alert cases of EAH but are inappropriate for patients with altered mental status or seizures due to aspiration risk and unreliable absorption", "correct": true, "critical": false, "explanation": "For mild EAH (alert, oriented, no neurological symptoms), concentrated oral salt solutions can be helpful. However, this patient has altered mental status (GCS 12) and has had a seizure — oral administration carries aspiration risk and absorption is unreliable. He needs IV hypertonic saline in the hospital.", "guideline_ref": "Wilderness Medical Society — Exercise-Associated Hyponatremia Guidelines"},
+          {"text": "Salt administration in any form is contraindicated in hyponatremia because rapid sodium correction causes permanent brain damage", "correct": false, "critical": false, "explanation": "While overly rapid correction of chronic hyponatremia risks osmotic demyelination syndrome, exercise-associated hyponatremia is acute (developing over hours). Acute hyponatremia can and should be corrected more rapidly, especially with neurological symptoms.", "guideline_ref": "Wilderness Medical Society — EAH Guidelines"},
+          {"text": "Oral salt packets dissolved in a liter of water should be given immediately regardless of mental status to begin sodium correction", "correct": false, "critical": false, "explanation": "Adding salt to a large volume of water dilutes it significantly and provides minimal sodium correction. More importantly, giving any oral intake to an altered, seizing patient creates serious aspiration risk.", "guideline_ref": "National EMS Education Standards — Airway Management"},
+          {"text": "The patient should receive large-volume IV normal saline (0.9% NaCl) instead, which will rapidly correct the sodium deficit", "correct": false, "critical": false, "explanation": "Normal saline (0.9% NaCl, sodium 154 mEq/L) may actually worsen hyponatremia in severe cases because the patient's kidneys may excrete the sodium while retaining the water. Hypertonic saline (3% NaCl, sodium 513 mEq/L) is the treatment for symptomatic hyponatremia.", "guideline_ref": "Wilderness Medical Society — EAH Guidelines"}
+        ],
+        "clinical_pearl": "Exercise-associated hyponatremia is ACUTE — it develops over hours, not days. This means the brain has not had time to adapt, making it more dangerous acutely but safer to correct quickly compared to chronic hyponatremia."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-21",
+    "title": "28M — Unable to Move After Workout",
+    "dispatch": "28-year-old male, severe muscle pain, dark urine, unable to stand",
+    "category": "Medical Emergencies",
+    "difficulty": "Medium",
+    "level_min": "EMT",
+    "patient": {"age": 28, "sex": "M", "cc": "Severe muscle pain, weakness, dark brown urine"},
+    "scene": "You arrive at a gym. A 28-year-old male is sitting on the floor of the locker room, unable to stand due to severe bilateral thigh and arm pain. He completed an intense CrossFit-style workout 36 hours ago after a 6-month break from exercise. He reports progressive muscle swelling, stiffness, and pain over the past day. Most concerning to him is that his urine has turned dark brown, 'like cola.' His thighs are visibly swollen and extremely tender to palpation. He reports he has been drinking protein shakes but minimal water.",
+    "history": {"pmh": "No significant medical history, recently started creatine supplement", "meds": "Creatine monohydrate supplement, protein powder, multivitamin", "allergies": "No known allergies"},
+    "vitals": {"hr": 104, "bp": "148/88", "rr": 20, "spo2": 98, "gcs": 15, "temp": "99.4°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Categorize the following findings as either 'Consistent with rhabdomyolysis' or 'Not typical of rhabdomyolysis'.",
+        "type": "categorize",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "items": [
+          "Dark brown (cola-colored) urine",
+          "Severe bilateral muscle pain and swelling after intense exercise",
+          "Sharp, tearing pain localized to a single joint with deformity",
+          "Tachycardia with mild hypertension",
+          "Unilateral lower extremity swelling with pitting edema and calf tenderness"
+        ],
+        "categories": ["Consistent with rhabdomyolysis", "Not typical of rhabdomyolysis"],
+        "correctCategories": [0, 0, 1, 0, 1],
+        "explanation": "Dark (cola-colored) urine from myoglobinuria is a hallmark finding. Bilateral muscle pain and swelling after intense exercise is the classic mechanism. Tachycardia and mild hypertension can result from pain, volume depletion, and electrolyte disturbances. A sharp tearing pain with joint deformity suggests fracture or dislocation, not rhabdomyolysis. Unilateral pitting edema with calf tenderness is more suggestive of deep vein thrombosis.",
+        "guideline_ref": "National EMS Education Standards — Musculoskeletal and Renal Emergencies",
+        "clinical_pearl": "The classic triad of rhabdomyolysis is muscle pain, weakness, and dark urine — but only about 10% of patients present with all three. A high index of suspicion is needed after intense exercise, crush injuries, prolonged immobilization, or drug/toxin exposure."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "What is the PRIMARY concern and treatment priority for rhabdomyolysis in the prehospital setting?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Preventing acute kidney injury through aggressive IV fluid resuscitation to maintain renal perfusion and myoglobin clearance", "correct": true, "critical": false, "explanation": "The greatest threat from rhabdomyolysis is acute kidney injury (AKI) caused by myoglobin precipitation in the renal tubules. Aggressive IV normal saline (targeting urine output of 200-300 mL/hr in-hospital) is the cornerstone of treatment. Prehospital fluid resuscitation should begin immediately.", "guideline_ref": "National EMS Education Standards — Renal Emergencies; ACMT Rhabdomyolysis Guidelines"},
+          {"text": "Immobilizing the affected muscle groups with splints to prevent further muscle breakdown", "correct": false, "critical": false, "explanation": "Splinting does not prevent ongoing rhabdomyolysis — muscle damage has already occurred. While resting the affected muscles is reasonable, formal splinting is not the treatment priority. Fluid resuscitation is far more critical.", "guideline_ref": "National EMS Education Standards — Musculoskeletal Emergencies"},
+          {"text": "Administering NSAIDs for pain control to reduce muscle inflammation and prevent further cellular damage", "correct": false, "critical": true, "explanation": "NSAIDs are relatively contraindicated in rhabdomyolysis — they further compromise renal blood flow and can worsen the kidney injury. Pain management should use non-nephrotoxic alternatives.", "guideline_ref": "National EMS Education Standards — Pain Management; Nephrology Guidelines"},
+          {"text": "Applying ice packs to the swollen muscles to reduce inflammation and compartment pressures", "correct": false, "critical": false, "explanation": "While ice may seem logical for swelling, it does not address the systemic threat of myoglobinuria and renal injury. Cold application may also impair perfusion to already damaged tissue. IV fluids are the priority.", "guideline_ref": "National EMS Education Standards — Musculoskeletal Emergencies"}
+        ],
+        "clinical_pearl": "Rhabdomyolysis can cause life-threatening hyperkalemia from massive potassium release from damaged muscle cells. Monitor for ECG changes (peaked T waves, widened QRS) and be prepared for cardiac dysrhythmia management."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "You establish IV access and begin a normal saline bolus. Select ALL potential complications of rhabdomyolysis that you should monitor for during transport.",
+        "type": "mr",
+        "level_filter": "AEMT-Paramedic",
+        "selectCount": 3,
+        "narrative": "IV NS is running wide open. The patient's pain remains severe. Transport time is approximately 20 minutes.",
+        "options": [
+          {"text": "Cardiac dysrhythmias from hyperkalemia", "correct": true, "critical": false, "explanation": "Massive muscle cell destruction releases intracellular potassium into the bloodstream. Hyperkalemia can cause life-threatening cardiac dysrhythmias including peaked T waves, widened QRS, sine wave pattern, and cardiac arrest.", "guideline_ref": "National EMS Education Standards — Electrolyte Emergencies"},
+          {"text": "Acute kidney injury from myoglobin deposition in renal tubules", "correct": true, "critical": false, "explanation": "Myoglobin released from damaged muscle is filtered by the kidneys and precipitates in the renal tubules, especially in acidic, concentrated urine. This is the most common serious complication of rhabdomyolysis, occurring in up to 33% of cases.", "guideline_ref": "National EMS Education Standards — Renal Emergencies"},
+          {"text": "Compartment syndrome in severely swollen muscle groups", "correct": true, "critical": false, "explanation": "Significant muscle swelling can increase intracompartmental pressure, compromising circulation to the affected limb. Compartment syndrome requires emergent surgical fasciotomy and is a serious complication of severe rhabdomyolysis.", "guideline_ref": "National EMS Education Standards — Musculoskeletal Emergencies"},
+          {"text": "Disseminated intravascular coagulation from acute blood loss anemia", "correct": false, "critical": false, "explanation": "While DIC can occur in severe rhabdomyolysis, it is not caused by blood loss anemia. Rhabdomyolysis does not typically cause hemorrhage. DIC in rhabdomyolysis is related to the massive tissue injury and inflammatory response.", "guideline_ref": "National EMS Education Standards — Hematologic Emergencies"},
+          {"text": "Spontaneous pneumothorax from elevated creatine kinase levels", "correct": false, "critical": false, "explanation": "Elevated CK levels do not cause pneumothorax. There is no pathophysiologic connection between muscle breakdown products and lung parenchymal damage leading to pneumothorax.", "guideline_ref": "National EMS Education Standards — Respiratory Emergencies"}
+        ],
+        "clinical_pearl": "The degree of CK elevation correlates with risk of AKI — levels above 15,000 U/L carry significant risk, and levels above 100,000 U/L carry very high risk. In the field, dark urine is your best indicator of severity."
+      }
+    ]
+  },
+  {
+    "id": "nat-med-22",
+    "title": "62M — Unusual Behavior and Confusion",
+    "dispatch": "62-year-old male, acting strangely, confused, family concerned",
+    "category": "Medical Emergencies",
+    "difficulty": "Hard",
+    "level_min": "EMT",
+    "patient": {"age": 62, "sex": "M", "cc": "Confusion, unusual behavior, tremors"},
+    "scene": "You arrive at a residence where the patient's daughter called 911. A 62-year-old male is sitting in a recliner, appearing disheveled and confused. His daughter reports he has been 'acting strange' for two days — forgetting where he is, putting shoes in the refrigerator, and sleeping excessively. Today she found him difficult to arouse and his speech became slurred. She notes he has advanced liver disease and normally takes lactulose but ran out four days ago. He has a distended abdomen with visible collateral veins. You notice a distinctive sweet, musty odor on his breath. He has a coarse, flapping tremor of his outstretched hands.",
+    "history": {"pmh": "Alcoholic liver cirrhosis (Child-Pugh Class C), history of esophageal varices, portal hypertension, prior episodes of confusion requiring hospitalization", "meds": "Lactulose 30 mL TID (ran out 4 days ago), spironolactone 100 mg daily, furosemide 40 mg daily, propranolol 20 mg BID, rifaximin 550 mg BID", "allergies": "Penicillin (anaphylaxis)"},
+    "vitals": {"hr": 94, "bp": "108/62", "rr": 20, "spo2": 95, "gcs": 11, "temp": "98.8°F"},
+    "questions": [
+      {
+        "phase": "assessment",
+        "prompt": "Based on the clinical presentation, which finding is MOST specific to the suspected condition in this patient?",
+        "type": "mc",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "options": [
+          {"text": "Asterixis — a coarse, flapping tremor of the outstretched hands — in a patient with known liver disease who stopped taking lactulose", "correct": true, "critical": false, "explanation": "Asterixis (flapping tremor) is highly characteristic of hepatic encephalopathy. Combined with known cirrhosis, the sweet/musty breath odor (fetor hepaticus), progressive confusion, and discontinuation of lactulose (which removes ammonia from the gut), this presentation is classic for hepatic encephalopathy.", "guideline_ref": "National EMS Education Standards — GI/GU Emergencies; AASLD Hepatic Encephalopathy Guidelines"},
+          {"text": "Slurred speech and difficulty arousing, which confirms the patient is having an acute ischemic stroke", "correct": false, "critical": false, "explanation": "While slurred speech and altered consciousness can suggest stroke, the gradual onset over days, bilateral flapping tremor, known liver disease, and lactulose non-compliance make hepatic encephalopathy far more likely. However, stroke should still be considered and screened for.", "guideline_ref": "National EMS Education Standards — Neurologic Emergencies"},
+          {"text": "Distended abdomen with visible collateral veins, confirming acute appendicitis requiring surgical evaluation", "correct": false, "critical": false, "explanation": "Abdominal distension with collateral veins (caput medusae) indicates portal hypertension from cirrhosis, not appendicitis. This is a chronic finding in advanced liver disease.", "guideline_ref": "National EMS Education Standards — GI Emergencies"},
+          {"text": "Sweet musty breath odor consistent with diabetic ketoacidosis in an undiagnosed diabetic", "correct": false, "critical": false, "explanation": "DKA produces a fruity (acetone) breath odor, which differs from the musty/sweet odor of fetor hepaticus. Additionally, DKA typically presents with Kussmaul respirations, polyuria, and polydipsia, none of which are described here.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"}
+        ],
+        "clinical_pearl": "Fetor hepaticus — the sweet, musty breath odor — is caused by dimethyl sulfide accumulating when the liver cannot metabolize mercaptans. It is a distinctive clinical finding that can help identify hepatic encephalopathy in the field."
+      },
+      {
+        "phase": "assessment",
+        "prompt": "Categorize the following potential precipitants as either 'Common triggers for hepatic encephalopathy' or 'Unrelated to hepatic encephalopathy'.",
+        "type": "categorize",
+        "level_filter": "AEMT-Paramedic",
+        "items": [
+          "Discontinuation of lactulose therapy",
+          "Gastrointestinal bleeding from esophageal varices",
+          "Dietary non-compliance with increased protein intake",
+          "Exposure to cold temperatures during outdoor activity",
+          "Constipation leading to increased ammonia absorption",
+          "Recent long-haul airline flight"
+        ],
+        "categories": ["Common trigger for hepatic encephalopathy", "Unrelated to hepatic encephalopathy"],
+        "correctCategories": [0, 0, 0, 1, 0, 1],
+        "explanation": "Lactulose discontinuation removes the primary mechanism for ammonia clearance from the gut, a well-known precipitant. GI bleeding provides a protein load in the gut that bacteria convert to ammonia. Excessive dietary protein increases ammonia production. Constipation increases contact time for ammonia absorption. Cold exposure and airline flights are not recognized triggers for hepatic encephalopathy.",
+        "guideline_ref": "National EMS Education Standards — GI/GU Emergencies; AASLD Practice Guidelines — Hepatic Encephalopathy",
+        "clinical_pearl": "When assessing patients with known liver disease and altered mental status, always ask about lactulose compliance, recent GI bleeding (check stool color), constipation, infection, and new medications — these are the most common precipitants."
+      },
+      {
+        "phase": "treatment",
+        "prompt": "Select ALL appropriate prehospital interventions for this patient.",
+        "type": "mr",
+        "level_filter": "EMT-AEMT-Paramedic",
+        "selectCount": 4,
+        "options": [
+          {"text": "Position the patient to protect the airway given his decreased level of consciousness", "correct": true, "critical": false, "explanation": "With a GCS of 11 and declining mental status, airway protection is a priority. Position the patient laterally or with the head of the stretcher elevated to reduce aspiration risk.", "guideline_ref": "National EMS Education Standards — Airway Management"},
+          {"text": "Obtain a point-of-care blood glucose to rule out hypoglycemia as a contributing factor", "correct": true, "critical": false, "explanation": "Patients with advanced liver cirrhosis are at high risk for hypoglycemia due to impaired hepatic gluconeogenesis and glycogen storage. Hypoglycemia can mimic or worsen hepatic encephalopathy and is easily treatable.", "guideline_ref": "National EMS Education Standards — Endocrine Emergencies"},
+          {"text": "Apply supplemental oxygen and monitor respiratory status during transport", "correct": true, "critical": false, "explanation": "SpO2 of 95% with a declining mental status warrants supplemental oxygen. Monitor closely as hepatic encephalopathy can progress to coma with loss of protective airway reflexes.", "guideline_ref": "National EMS Education Standards — Airway/Oxygen Management"},
+          {"text": "Transport to a facility capable of managing hepatic emergencies and provide a detailed report including medication non-compliance", "correct": true, "critical": false, "explanation": "This patient needs hospital-level intervention including lactulose administration, ammonia level assessment, evaluation for precipitating factors (infection, bleeding), and potentially ICU-level monitoring. Communicating the lactulose non-compliance is critical for receiving providers.", "guideline_ref": "National EMS Education Standards — Transport Decisions"},
+          {"text": "Administer activated charcoal orally to absorb toxins causing the altered mental status", "correct": false, "critical": true, "explanation": "Activated charcoal is not indicated for hepatic encephalopathy — ammonia is produced endogenously by gut bacteria, not ingested as a toxin. Additionally, administering anything orally to a patient with GCS of 11 creates significant aspiration risk.", "guideline_ref": "National EMS Education Standards — Toxicology"},
+          {"text": "Administer naloxone IV to reverse potential opioid contribution to altered mental status", "correct": false, "critical": false, "explanation": "There is no indication of opioid use or exposure in this presentation. The clinical picture is explained by hepatic encephalopathy. Naloxone should be reserved for presentations consistent with opioid toxicity (respiratory depression, pinpoint pupils).", "guideline_ref": "National EMS Education Standards — Toxicology"}
+        ],
+        "clinical_pearl": "Patients with cirrhosis and altered mental status should be evaluated for GI bleeding — even occult bleeding. Blood in the GI tract is a massive protein load that gut bacteria convert to ammonia, precipitating or worsening hepatic encephalopathy."
+      },
+      {
+        "phase": "postScene",
+        "prompt": "During transport, the patient's GCS drops to 7 and he begins vomiting. Arrange the following interventions in order of priority.",
+        "type": "order",
+        "level_filter": "AEMT-Paramedic",
+        "narrative": "The patient has become increasingly obtunded. He suddenly vomits a large amount of dark, coffee-ground emesis.",
+        "vitals_update": {"hr": 112, "bp": "92/54", "rr": 14, "spo2": 90, "gcs": 7},
+        "items": [
+          "Suction the airway immediately and position to prevent aspiration",
+          "Prepare for advanced airway management (intubation or supraglottic device)",
+          "Establish or confirm large-bore IV access and initiate fluid resuscitation for suspected GI hemorrhage",
+          "Notify the receiving facility of clinical deterioration and possible variceal bleeding",
+          "Apply supplemental oxygen via BVM with assisted ventilations"
+        ],
+        "correctOrder": [0, 4, 1, 2, 3],
+        "explanation": "First, immediately suction the airway — vomiting with a GCS of 7 creates imminent aspiration risk. Second, provide BVM ventilations with oxygen as the SpO2 has dropped to 90%. Third, secure the airway with an advanced device as this patient can no longer protect his own airway. Fourth, address the likely GI hemorrhage (coffee-ground emesis in a cirrhotic patient suggests variceal or portal hypertensive bleeding) with aggressive IV fluid resuscitation. Fifth, notify the receiving facility so they can prepare blood products and potentially activate a GI consult.",
+        "guideline_ref": "National EMS Education Standards — Airway Management; GI Emergencies; Shock Management",
+        "clinical_pearl": "Coffee-ground emesis in a cirrhotic patient suggests upper GI bleeding, likely from esophageal or gastric varices. This is a life-threatening emergency — variceal bleeding carries mortality rates of 15-20% per episode. Early hospital notification allows preparation of blood products and endoscopy."
+      }
+    ]
+  }
+]
