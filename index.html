@@ -764,7 +764,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
                                         },
                                         {
-                                                "text": "Patient report of throat tightness alone, which by itself is always diagnostic of anaphylaxis regardless of any other presenting symptoms",
+                                                "text": "Patient report of throat tightness alone, which is consistent with an anaphylaxis diagnosis",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Throat tightness alone is not diagnostic of anaphylaxis. While concerning, it can be caused by anxiety, vocal cord dysfunction, or other conditions. Anaphylaxis requires a pattern of multi-system involvement.",
@@ -1007,7 +1007,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "PHTLS 10th Edition — Airway Management in Trauma; 2021 National EMS Education Standards — Paramedic Airway"
                                         },
                                         {
-                                                "text": "Continue BVM ventilation with OPA for the entire 25-minute transport since SpO2 has improved to 91% with current management",
+                                                "text": "Continue BVM ventilation with OPA for the entire 25-minute transport given the SpO2 improvement to 91%",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "While BVM is temporizing, 91% with assisted ventilations in a patient who cannot protect his airway with blood pooling in the oropharynx is not adequate for a 25-minute transport. Aspiration risk is high and ongoing BVM in a moving ambulance is unreliable.",
@@ -1306,7 +1306,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; NAEMSP Position Statement on EMS Provider Safety"
                                         },
                                         {
-                                                "text": "Approach immediately with restraints ready since the patient is actively injuring himself and needs rapid intervention",
+                                                "text": "Approach immediately with restraints ready to prevent further self-injury",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Rushing toward an agitated patient with restraints is dangerous and escalatory. Premature physical contact with an agitated patient increases the risk of injury to both the patient and providers. De-escalation should always be attempted first.",
@@ -1437,7 +1437,7 @@ const SCENARIOS = [
                                 "phase": "assessment",
                                 "prompt": "You encounter a confused, diaphoretic 55-year-old male with a diabetes medical alert bracelet. What is the MOST important initial assessment to determine the cause of his altered mental status?",
                                 "type": "mc",
-                                "level_filter": "EMR-EMT-AEMT-Paramedic",
+                                "level_filter": "EMT-AEMT-Paramedic",
                                 "options": [
                                         {
                                                 "text": "Obtain a blood glucose reading using a point-of-care glucometer",
@@ -1474,7 +1474,7 @@ const SCENARIOS = [
                                 "phase": "treatment",
                                 "prompt": "The glucometer reads 38 mg/dL. Arrange the following treatment steps in the correct order for managing this hypoglycemic patient.",
                                 "type": "order",
-                                "level_filter": "EMR-EMT",
+                                "level_filter": "EMT",
                                 "items": [
                                         "If the patient can swallow safely, administer oral glucose gel",
                                         "Reassess blood glucose in 5 minutes and reassess mental status",
@@ -1576,7 +1576,7 @@ const SCENARIOS = [
                                 ],
                                 "correctCategories": [
                                         1,
-                                        3,
+                                        2,
                                         2,
                                         0
                                 ]
@@ -1603,7 +1603,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "ADA Standards of Medical Care — Hypoglycemia Management"
                                         },
                                         {
-                                                "text": "Glucagon 1 mg IM should replace further IV dextrose administration since the IV line is already established and functioning properly for medication delivery",
+                                                "text": "Glucagon 1 mg IM should replace further IV dextrose administration as the preferred glucose correction method",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "With a functioning IV, dextrose is far superior to glucagon. Glucagon works by stimulating hepatic glycogenolysis — it takes 10-15 minutes to work, may be ineffective in malnourished or glycogen-depleted patients, and commonly causes nausea and vomiting. Reserve glucagon for when IV/IO access cannot be obtained.",
@@ -1617,7 +1617,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines; ADA Standards of Medical Care"
                                         },
                                         {
-                                                "text": "The patient can be safely released on scene if glucose normalizes above 80 mg/dL since the cause is clearly identified as a simple missed meal event",
+                                                "text": "Release the patient on scene if glucose normalizes above 80 mg/dL with a missed meal identified as the likely cause",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Patients on long-acting insulin who become hypoglycemic are at high risk for recurrent hypoglycemia and should be transported. The duration of insulin glargine far exceeds the duration of administered dextrose. Refusal of transport requires thorough informed consent with clear return precautions.",
@@ -1750,7 +1750,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA/ASA 2019 Guidelines for Early Management of Acute Ischemic Stroke"
                                         },
                                         {
-                                                "text": "Transport to the closest hospital 8 minutes away since it can stabilize the patient and transfer later",
+                                                "text": "Transport to the closest hospital 8 minutes away for initial stabilization and subsequent transfer",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "The 'drip and ship' model adds significant delays. When a stroke center is within reasonable transport time, direct transport is preferred.",
@@ -2006,7 +2006,7 @@ const SCENARIOS = [
                                 "phase": "treatment",
                                 "prompt": "Place the following ACS management steps in the correct sequence:",
                                 "type": "order",
-                                "level_filter": "EMT-AEMT-Paramedic",
+                                "level_filter": "AEMT-Paramedic",
                                 "items": [
                                         "Administer aspirin 162–325 mg chewed if not already given",
                                         "Acquire right-sided 12-lead ECG (V4R) to evaluate for right ventricular involvement",
@@ -2413,7 +2413,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Position Statement on Prehospital Pain Management; 2021 National EMS Education Standards — Paramedic Pharmacology"
                                         },
                                         {
-                                                "text": "Withhold all opioid analgesics entirely because the patient has a documented allergy to codeine listed in her medical history",
+                                                "text": "Withhold all opioid analgesics entirely given the patient's documented codeine allergy",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Codeine-induced nausea is a common side effect, not a true allergy. Fentanyl is structurally dissimilar to codeine. Withholding pain relief based on this history is inappropriate and causes unnecessary suffering.",
@@ -2659,14 +2659,14 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA 2020 Opioid-Associated Emergency Guidelines; NAEMSP Naloxone Infusion Guidance"
                                         },
                                         {
-                                                "text": "Perform immediate endotracheal intubation since the patient's current GCS remains below 8 and meets the standard intubation threshold",
+                                                "text": "Perform immediate endotracheal intubation based on the patient's current GCS score",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "While GCS <8 is often cited as an intubation threshold, this patient is currently breathing adequately (RR 14, SpO2 96%) and improving. Intubation carries risks and is not indicated when ventilation is adequate and the clinical trajectory is improving with naloxone.",
                                                 "guideline_ref": "NAEMSP Airway Management Position Statement"
                                         },
                                         {
-                                                "text": "Insert a nasopharyngeal airway as a temporizing measure and discontinue all monitoring since naloxone has achieved adequate clinical effect",
+                                                "text": "Insert a nasopharyngeal airway as a temporizing measure and transition to monitoring at reduced frequency following naloxone administration",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Discontinuing monitoring after naloxone reversal is dangerous. Naloxone has a shorter duration than most opioids. Re-narcotization can occur suddenly, causing respiratory arrest. Continuous monitoring is mandatory.",
@@ -3044,7 +3044,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "2021 National EMS Education Standards — Toxicology; ACMT Position Statement on Sympathomimetic Toxicity"
                                         },
                                         {
-                                                "text": "Administer activated charcoal orally to decontaminate the GI tract since MDMA ingestion occurred only approximately 3 hours ago and may still be partially unabsorbed",
+                                                "text": "Administer activated charcoal orally to decontaminate the GI tract given the approximately 3-hour ingestion window",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Activated charcoal is not indicated here. MDMA has likely been fully absorbed after 3 hours, and administering charcoal to a patient with altered mental status risks aspiration, which could be fatal.",
@@ -3949,14 +3949,14 @@ const SCENARIOS = [
                                                 "guideline_ref": "NIMS/ICS; 2021 National EMS Education Standards"
                                         },
                                         {
-                                                "text": "Transport all RED-tagged patients to the closest community hospital since it is only 5 minutes away and can provide the fastest initial stabilization",
+                                                "text": "Transport all RED-tagged patients to the closest community hospital 5 minutes away for initial stabilization",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Sending all critical patients to one hospital risks overwhelming that facility. In an MCI, patients should be distributed based on both hospital capability and capacity.",
                                                 "guideline_ref": "NIMS/ICS; NAEMSP MCI Guidelines"
                                         },
                                         {
-                                                "text": "Transport the BLACK-tagged patient first since they technically have the most severe overall condition and may still have a chance of survival",
+                                                "text": "Transport the BLACK-tagged patient first given the severity of their condition",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "BLACK (Expectant/Deceased) patients are not transported until all RED and YELLOW patients have been managed. Transporting deceased patients wastes ambulance resources needed for salvageable patients.",
@@ -4275,7 +4275,7 @@ const SCENARIOS = [
                                 "clinical_pearl": "Patients with chronic lung disease may rely on hypoxic drive, but acute hypoxia is always dangerous. The priority is correcting life-threatening hypoxemia. Titrate oxygen to achieve an SpO2 of 88-92% in known chronic lung disease patients, but never withhold oxygen from a hypoxic patient.",
                                 "options": [
                                         {
-                                                "text": "Keep the nasal cannula at 2 LPM since he has chronic lung disease and you don't want to eliminate his hypoxic drive",
+                                                "text": "Keep the nasal cannula at 2 LPM to avoid suppressing hypoxic drive in the setting of chronic lung disease",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Withholding oxygen from a hypoxic patient is dangerous. The 'hypoxic drive' concern does not justify allowing an SpO2 of 86%. Acute hypoxia kills faster than any theoretical respiratory drive suppression.",
@@ -4654,7 +4654,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA BLS/ACLS Guidelines — Post-ROSC Ventilation"
                                         },
                                         {
-                                                "text": "Remove the AED pads since a shock is no longer advised",
+                                                "text": "Remove the AED pads and prepare for transport",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "AED pads must remain in place after ROSC. Post-arrest patients are at very high risk of re-arrest, and the AED will be needed for immediate rhythm analysis if the pulse is lost.",
@@ -4667,7 +4667,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA BLS Guidelines — Post-Cardiac Arrest Care"
                                         },
                                         {
-                                                "text": "Resume chest compressions since the heart rate is only 60",
+                                                "text": "Resume chest compressions at a rate of 100-120 per minute",
                                                 "correct": false,
                                                 "explanation": "A heart rate of 60 bpm with a palpable pulse indicates ROSC — CPR is not indicated when a perfusing pulse is present. A rate of 60 bpm is adequate for adults. Continue to monitor closely and resume CPR only if the pulse is lost.",
                                                 "guideline_ref": "AHA BLS Guidelines — Pulse Check and ROSC Recognition"
@@ -4715,7 +4715,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines — Systems of Care / Post-Arrest Destination"
                                         },
                                         {
-                                                "text": "Place patient in the recovery position since she has a pulse",
+                                                "text": "Place the patient in the recovery position and prepare for transport",
                                                 "correct": false,
                                                 "explanation": "The recovery position is for unresponsive patients who are breathing adequately on their own. This patient is apneic and requires ongoing assisted ventilations — the supine position with airway management is appropriate.",
                                                 "guideline_ref": "AHA BLS Guidelines — Recovery Position Indications"
@@ -4780,7 +4780,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines — QRS Morphology Interpretation"
                                         },
                                         {
-                                                "text": "The regular rhythm, which rules out any dangerous cardiac condition",
+                                                "text": "The regular rhythm, which is reassuring for a benign cardiac etiology",
                                                 "correct": false,
                                                 "explanation": "A regular rhythm does not rule out a dangerous condition. This patient has a regular rhythm at 38 bpm that is causing significant hemodynamic compromise — regularity does not equal safety.",
                                                 "guideline_ref": "AHA ACLS Guidelines — Clinical Correlation of Rhythm Findings"
@@ -4963,14 +4963,14 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Guidelines — Adenosine Administration; Expected Effects"
                                         },
                                         {
-                                                "text": "Immediately administer a second dose of adenosine 12mg since the patient is still symptomatic",
+                                                "text": "Immediately administer a second dose of adenosine 12 mg for persistent tachycardia",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "The rhythm has successfully converted to normal sinus at 82 bpm. The patient's complaint is about the expected transient side effects of adenosine, not ongoing SVT. Administering additional adenosine to a patient in sinus rhythm could cause dangerous bradycardia or prolonged asystole.",
                                                 "guideline_ref": "AHA ACLS Guidelines — Adenosine Dosing"
                                         },
                                         {
-                                                "text": "Begin immediate CPR since the monitor showed asystole",
+                                                "text": "Begin immediate CPR based on the rhythm observed on the monitor",
                                                 "correct": false,
                                                 "explanation": "The brief asystole (3 seconds) after adenosine is expected and transient. The rhythm has already converted to sinus at 82 bpm with an improving blood pressure. CPR is not indicated when a perfusing rhythm is present.",
                                                 "guideline_ref": "AHA ACLS Guidelines — Post-Adenosine Monitoring"
@@ -5177,7 +5177,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "EMT National Education Standards — Ongoing Assessment and Communication"
                                         },
                                         {
-                                                "text": "Assume the patient is improving since the wheezing has decreased, and reduce interventions",
+                                                "text": "Note the decrease in wheezing as a sign of improvement and reduce interventions accordingly",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Decreasing wheezing with worsening mental status and falling SpO2 is NOT improvement — it indicates the patient is moving so little air that wheezing can no longer be generated. This is a critical, life-threatening deterioration.",
@@ -5238,7 +5238,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Acute Asthma Management; AHA PALS Guidelines"
                                         },
                                         {
-                                                "text": "Perform needle decompression bilaterally as a prophylactic measure since pneumothorax is common after intubation in asthma",
+                                                "text": "Perform bilateral needle decompression as a prophylactic measure following intubation in a severe asthma patient",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Needle decompression is only indicated when clinical signs of tension pneumothorax are present (absent breath sounds unilaterally, tracheal deviation, hemodynamic collapse not improved by disconnecting the ETT). Prophylactic decompression causes unnecessary iatrogenic injury.",
@@ -5901,7 +5901,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Position Statement on Prehospital Pain Management; 2021 National EMS Education Standards — Pediatric Pharmacology"
                                         },
                                         {
-                                                "text": "Withhold analgesics because pain medication may mask injuries and complicate the hospital evaluation",
+                                                "text": "Withhold analgesics to preserve the ability to perform serial neurological assessments during transport",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Withholding pain management in a child with an obvious fracture is inappropriate. Adequate analgesia does not mask clinically significant injuries and is an ethical obligation. Untreated pain causes physiologic stress responses harmful to children.",
@@ -7173,7 +7173,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Toxicology Emergencies; American Association of Poison Control Centers Guidelines"
                                         },
                                         {
-                                                "text": "Since vital signs are normal, this is primarily a psychiatric emergency, not medical",
+                                                "text": "Normal vital signs suggest this is primarily a psychiatric emergency requiring psychiatric-focused intervention",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "This is BOTH a medical and psychiatric emergency. Dismissing the medical significance because vitals are currently normal could result in the patient dying from liver failure days later.",
@@ -7187,7 +7187,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Toxicology Guidelines; American Association of Poison Control Centers"
                                         },
                                         {
-                                                "text": "Since she regrets the action, she is no longer a suicide risk",
+                                                "text": "Her expressed regret and current cooperation indicate a low ongoing suicide risk",
                                                 "correct": false,
                                                 "explanation": "Expressing regret does not eliminate suicide risk. Ambivalence is common in suicidal patients. She still requires psychiatric evaluation.",
                                                 "guideline_ref": "NAEMSP Behavioral Emergency Guidelines; National Suicide Prevention Standards"
@@ -8293,14 +8293,14 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP — Patient Refusal of Transport"
                                         },
                                         {
-                                                "text": "Inform the patient you will restrain and transport him against his will because his cardiac history makes this situation potentially dangerous",
+                                                "text": "Inform the patient you will restrain and transport him against his will given his cardiac history and current presentation",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Transporting a competent adult against their will constitutes assault and battery and false imprisonment. A patient with decision-making capacity has the legal right to refuse, even if the decision is medically unwise.",
                                                 "guideline_ref": "NAEMSP — Patient Refusal; Legal Principles of EMS"
                                         },
                                         {
-                                                "text": "Leave the scene without documenting the interaction since the patient has verbally refused all care and transport to the hospital",
+                                                "text": "Leave the scene after the patient's verbal refusal of all care and transport",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Failure to document a refusal is a major medical-legal liability. Thorough documentation of the assessment, risks explained, patient understanding, and refusal is essential to protect both the patient and the provider.",
@@ -8501,7 +8501,7 @@ const SCENARIOS = [
                                 "phase": "treatment",
                                 "prompt": "Place the following interventions in the correct order of priority for this patient:",
                                 "type": "order",
-                                "level_filter": "EMR-EMT-AEMT",
+                                "level_filter": "EMT-AEMT",
                                 "narrative": "The patient's SpO2 has dropped to 91% and she is becoming more tachypneic. She remains alert but is now having difficulty completing full sentences.",
                                 "vitals_update": {
                                         "spo2": 91,
@@ -8562,7 +8562,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "General prehospital documentation standards"
                                         },
                                         {
-                                                "text": "Withhold all pain medication because the patient takes oxycodone at home",
+                                                "text": "Withhold all pain medication given the patient's current oxycodone prescription",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Withholding pain management from a patient in sickle cell crisis is inappropriate and harmful. Pain itself worsens sickling through stress responses. Treat pain aggressively within your scope.",
@@ -8598,7 +8598,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Prehospital Pain Management; 2021 National EMS Education Standards — Paramedic Pharmacology; Sickle Cell Pain Management Guidelines"
                                         },
                                         {
-                                                "text": "Morphine 4 mg IV since the documented reaction is only a predictable side effect, not a true IgE-mediated allergy",
+                                                "text": "Morphine 4 mg IV, noting the documented reaction as a predictable side effect rather than a true allergy",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "While technically the 'itching' reaction to morphine is a predictable histamine-mediated side effect rather than a true allergy, giving a medication the patient reports as an allergy creates medicolegal risk and erodes patient trust. Better alternatives exist. Additionally, morphine's histamine release can worsen bronchospasm in a patient with respiratory compromise.",
@@ -8951,7 +8951,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS — Atrial Fibrillation; ACC/AHA Heart Failure Guidelines"
                                         },
                                         {
-                                                "text": "Perform immediate synchronized cardioversion at 120-200J since the rapid rate is the primary cause of hemodynamic instability",
+                                                "text": "Perform immediate synchronized cardioversion at 120-200J to address the rapid ventricular rate",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "While cardioversion is an option for hemodynamically unstable atrial fibrillation, this patient's instability is primarily from pump failure (chronic EF 25%), not the rate alone. Cardioversion of chronic atrial fibrillation often fails to convert or maintain sinus rhythm, and the procedure requires sedation which carries additional hemodynamic risk. This decision is better made in the ED with more resources.",
@@ -9601,12 +9601,12 @@ const SCENARIOS = [
                                                 "explanation": "All chest pain patients warrant ED evaluation regardless of initial ECG findings. Serial ECGs, troponin levels, and observation are needed to definitively rule out ACS. Continue monitoring and transport."
                                         },
                                         {
-                                                "text": "Administer aspirin 324 mg and nitroglycerin 0.4 mg sublingually since any patient with chest pain requires full ACS protocol",
+                                                "text": "Administer aspirin 324 mg and nitroglycerin 0.4 mg sublingually per standard ACS protocol",
                                                 "correct": false,
                                                 "explanation": "While aspirin may be appropriate per protocol, nitroglycerin requires thorough blood pressure assessment and clinical evaluation first. Automatic full ACS protocol without clinical correlation is not appropriate."
                                         },
                                         {
-                                                "text": "Administer a benzodiazepine for anxiety since the normal ECG confirms this is purely a psychiatric presentation requiring sedation",
+                                                "text": "Administer a benzodiazepine for acute anxiety management following the reassuring ECG findings",
                                                 "correct": false,
                                                 "explanation": "A normal ECG does not confirm a psychiatric diagnosis. Administering benzodiazepines as primary treatment without ruling out organic causes could mask worsening cardiac symptoms and delay appropriate care."
                                         }
@@ -9694,7 +9694,7 @@ const SCENARIOS = [
                                                 "explanation": "Delirium is the most likely cause of acute behavior change in a dementia patient. This patient has multiple risk factors: active UTI with fever, recent fall with potential subdural hematoma, and baseline cognitive impairment that increases delirium vulnerability."
                                         },
                                         {
-                                                "text": "Primary psychiatric disorder requiring immediate pharmacological sedation to control the dangerous combative behavior",
+                                                "text": "Primary psychiatric disorder requiring immediate pharmacological sedation to control the combative behavior",
                                                 "correct": false,
                                                 "explanation": "New-onset primary psychiatric disorders do not emerge acutely at age 78. The acute change from cooperative baseline to combative behavior, combined with fever and medical history, points to delirium from an organic cause, not a psychiatric disorder."
                                         },
@@ -10780,7 +10780,7 @@ const SCENARIOS = [
                                                 "explanation": "This is incorrect. Station a cardiac team at the main stage — cardiac cases all required transport does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
                                         },
                                         {
-                                                "text": "Reduce overall staffing levels since the current treat-and-release rate is already 88%, suggesting adequate on-site coverage",
+                                                "text": "Reduce overall staffing levels based on the current 88% treat-and-release rate",
                                                 "correct": false,
                                                 "explanation": "This is incorrect. Reduce staffing since the treat-and-release rate is already 88% does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
                                         }
@@ -12972,7 +12972,7 @@ const SCENARIOS = [
                                                 "explanation": "This is incorrect. Vigorously stimulate the baby until crying begins before any airway management does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
                                         },
                                         {
-                                                "text": "Begin chest compressions immediately at a 3:1 ratio with ventilations because the heart rate is below 100 beats per minute",
+                                                "text": "Begin chest compressions immediately at a 3:1 ratio with ventilations for the heart rate below 100 bpm",
                                                 "correct": false,
                                                 "explanation": "This is incorrect. Begin chest compressions immediately due to heart rate below 100 does not represent the best approach for this clinical scenario based on current guidelines and evidence-based practice."
                                         }
@@ -13191,7 +13191,7 @@ const SCENARIOS = [
                                                 "explanation": "Calcium is normally first-line for hyperkalemia, but it is CONTRAINDICATED in digoxin toxicity. Calcium potentiates digoxin's effects on the myocardium and can cause refractory ventricular fibrillation ('stone heart')."
                                         },
                                         {
-                                                "text": "Withhold all interventions and arrange non-emergent transport since the patient is currently conscious and vitals appear adequate for her age",
+                                                "text": "Withhold further interventions and arrange non-emergent transport with the patient currently conscious and hemodynamically stable",
                                                 "correct": false,
                                                 "explanation": "This patient is NOT stable — GCS 13, HR 52, and BP 88/54 indicate significant hemodynamic compromise. Withholding interventions and non-emergent transport could lead to cardiac arrest from worsening toxicity."
                                         }
@@ -13664,7 +13664,7 @@ const SCENARIOS = [
                                                 "explanation": "Neurogenic shock results from spinal cord injury causing loss of sympathetic tone below the injury level. The mechanism here involves lower extremity compression, not spinal cord involvement, making neurogenic shock unlikely."
                                         },
                                         {
-                                                "text": "Rhabdomyolysis is only a clinical concern after 6 or more hours of sustained muscle entrapment",
+                                                "text": "Rhabdomyolysis typically develops after prolonged entrapment and is unlikely in the early phase",
                                                 "correct": false,
                                                 "explanation": "Rhabdomyolysis can begin within 1 hour of sustained muscle compression, not just after 6 hours. Any entrapment exceeding 60 minutes with significant muscle mass involvement warrants pre-treatment for anticipated crush syndrome."
                                         }
@@ -15161,7 +15161,7 @@ const SCENARIOS = [
                                                 "explanation": "Reducing environmental stimuli addresses the root cause of the crisis (sensory overload). Consulting the caregiver about triggers and communication methods provides critical patient-specific information that guides a safe, effective approach."
                                         },
                                         {
-                                                "text": "Administer chemical sedation immediately to stop the dangerous self-injurious behavior before conducting any further clinical assessment",
+                                                "text": "Administer chemical sedation immediately to stop the self-injurious behavior before conducting further clinical assessment",
                                                 "correct": false,
                                                 "explanation": "Immediate sedation without attempting de-escalation is inappropriate and potentially dangerous. Chemical sedation carries risks of respiratory depression and adverse reactions, and should only be used when safety cannot be maintained through behavioral interventions."
                                         },
@@ -15218,7 +15218,7 @@ const SCENARIOS = [
                                                 "explanation": "IM ketamine for procedural sedation is a disproportionate intervention for transport-related agitation. Given the head injury requiring evaluation, sedation also obscures the neurological exam and should be reserved for safety-critical situations."
                                         },
                                         {
-                                                "text": "Allow the patient to remain at home since he has calmed down with comfort items, and advise the mother to follow up with his physician",
+                                                "text": "Allow the patient to remain at home now that he has calmed down with comfort items, and advise the mother to follow up with his physician",
                                                 "correct": false,
                                                 "explanation": "The patient has a 4cm forehead hematoma from repetitive head-banging and needs medical evaluation for potential intracranial injury. Allowing him to remain home without assessment would be a failure to ensure appropriate medical evaluation."
                                         }
@@ -15336,17 +15336,17 @@ const SCENARIOS = [
                                                 "explanation": "Validating grief as a normal response while offering concrete support (ED transport for resources) respects the patient's autonomy and emotional experience. The ED can provide social work, chaplain services, and crisis support that exceed prehospital capabilities."
                                         },
                                         {
-                                                "text": "Administer a benzodiazepine such as midazolam for acute anxiety management since the patient is requesting pharmacological intervention for her distress",
+                                                "text": "Administer a benzodiazepine such as midazolam for acute anxiety management per the patient's request",
                                                 "correct": false,
                                                 "explanation": "Benzodiazepine administration for acute grief is inappropriate — grief is a normal emotional response, not a psychiatric emergency requiring pharmacological intervention. Sedation may impair the patient's ability to make critical decisions about her children and affairs."
                                         },
                                         {
-                                                "text": "Advise her to take an extra dose of her daily sertraline medication since it is prescribed for anxiety and may provide acute symptom relief",
+                                                "text": "Advise her to take an extra dose of her daily sertraline medication for acute symptom relief",
                                                 "correct": false,
                                                 "explanation": "Advising a patient to take an extra dose of their own medication is outside EMS scope of practice and clinically inappropriate. Sertraline is an SSRI that takes weeks to reach therapeutic effect and an extra dose provides no acute anxiolytic benefit."
                                         },
                                         {
-                                                "text": "Reassure her that she doesn't need medical care since her vital signs are normalizing and the hyperventilation episode has resolved on its own",
+                                                "text": "Reassure her that the episode has resolved with vital signs normalizing and recommend outpatient follow-up",
                                                 "correct": false,
                                                 "explanation": "Dismissing the patient because vitals are improving invalidates her emotional distress and fails to address the crisis comprehensively. She may benefit from hospital-based social services, crisis counseling, and safety planning."
                                         }
@@ -15463,7 +15463,7 @@ const SCENARIOS = [
                                                 "explanation": "DTs requires aggressive, repeated benzodiazepine dosing — a single dose rarely achieves adequate sedation. These patients often need massive cumulative doses. Continued monitoring and rapid transport to ICU-level care are essential for survival."
                                         },
                                         {
-                                                "text": "Withhold further benzodiazepine administration since the active seizure has terminated and additional sedation risks respiratory depression",
+                                                "text": "Withhold further benzodiazepine administration now that the active seizure has terminated",
                                                 "correct": false,
                                                 "explanation": "Withholding further benzodiazepines because the seizure stopped ignores the ongoing delirium and autonomic instability of DTs. The seizure is only one manifestation — untreated DTs has 5-15% mortality from cardiovascular collapse, hyperthermia, and recurrent seizures."
                                         },
@@ -15625,7 +15625,7 @@ const SCENARIOS = [
                                                 "explanation": "A dental surgery center is completely inappropriate for this patient. Traumatic midface fractures with airway compromise require emergency surgical and critical care capabilities far beyond what dental facilities can provide."
                                         },
                                         {
-                                                "text": "Allow the patient to refuse transport since his SpO2 improved",
+                                                "text": "Allow the patient to refuse transport given the SpO2 improvement",
                                                 "correct": false,
                                                 "explanation": "This patient should not refuse transport — SpO2 improvement to 94% with supplemental oxygen does not address the underlying pathology. Facial edema worsens over 24-48 hours, and the airway may completely obstruct without hospital-based airway management."
                                         }
@@ -15878,7 +15878,7 @@ const SCENARIOS = [
 										"guideline_ref": "American Academy of Clinical Toxicology Position Statement"
 								},
 								{
-										"text": "Apply the AED pads and prepare for cardiac arrest since the heart rate is dangerously low",
+										"text": "Apply the AED pads and prepare for potential cardiac arrest with the current heart rate",
 										"correct": false,
 										"critical": false,
 										"explanation": "While cardiac monitoring is appropriate, the patient has a pulse and is conscious. AED application for monitoring may be reasonable, but the focus should be on supportive care and transport, not cardiac arrest preparation as the primary intervention.",
@@ -16640,7 +16640,7 @@ const SCENARIOS = [
 										"guideline_ref": "Surviving Sepsis Campaign 2021; National EMS Education Standards — Pharmacology"
 								},
 								{
-										"text": "Discontinue vasopressors and focus solely on rapid transport since the medications aren't working",
+										"text": "Discontinue vasopressors and focus solely on rapid transport to definitive care",
 										"correct": false,
 										"critical": true,
 										"explanation": "Discontinuing vasopressors in refractory shock would worsen hypotension and potentially cause cardiovascular collapse. Even if the current dose is insufficient, the vasopressor is providing some hemodynamic support. Escalation, not discontinuation, is appropriate.",
@@ -17543,7 +17543,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS ACS Guidelines 2020; National EMS Education Standards"
 								},
 								{
-										"text": "Administer half the standard nitroglycerin dose since the sildenafil was taken over 12 hours ago",
+										"text": "Administer half the standard nitroglycerin dose given the interval from sildenafil use",
 										"correct": false,
 										"critical": true,
 										"explanation": "Dose reduction does not mitigate the interaction. The contraindication is absolute within 24 hours of sildenafil regardless of the nitrate dose. There is no safe reduced dose when PDE-5 inhibitor is still active.",
@@ -18254,14 +18254,14 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Consent and Refusal; Behavioral Emergencies"
 								},
 								{
-										"text": "Transport the patient involuntarily because PTSD flashbacks indicate she is a danger to herself",
+										"text": "Transport the patient involuntarily based on the active PTSD flashback episode",
 										"correct": false,
 										"critical": false,
 										"explanation": "A PTSD flashback that has resolved does not meet criteria for involuntary commitment. The patient is oriented, calm, has capacity, and is not expressing suicidal or homicidal ideation. Involuntary transport is not warranted.",
 										"guideline_ref": "National EMS Education Standards — Behavioral Emergencies; Involuntary Commitment Criteria"
 								},
 								{
-										"text": "Leave the scene without documentation since no medical treatment was provided",
+										"text": "Leave the scene without documentation given that no medical treatment was provided",
 										"correct": false,
 										"critical": true,
 										"explanation": "All patient contacts require documentation, including refusals. The assessment, interventions (grounding, de-escalation), and informed refusal must be documented.",
@@ -18497,7 +18497,7 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
 								},
 								{
-										"text": "Refuse transport since opioid withdrawal is not a medical emergency and advise the patient to contact his prescriber",
+										"text": "Advise the patient that opioid withdrawal is self-limiting and recommend outpatient follow-up with his prescriber",
 										"correct": false,
 										"critical": false,
 										"explanation": "While opioid withdrawal is rarely life-threatening, the patient is requesting help and has a right to emergency medical evaluation. Additionally, this is an opportunity to connect the patient with addiction medicine resources. Refusing transport is inappropriate.",
@@ -18653,7 +18653,7 @@ const SCENARIOS = [
 										"guideline_ref": "NAEMSP Position Statement on Patient Restraint; National EMS Education Standards — Behavioral Emergencies"
 								},
 								{
-										"text": "Continue verbal de-escalation indefinitely because the patient has the right to refuse treatment",
+										"text": "Continue verbal de-escalation attempts and respect the patient's right to refuse treatment",
 										"correct": false,
 										"critical": true,
 										"explanation": "While patients have rights, this patient is actively self-harming with signs of hemodynamic compromise (tachycardia, hypotension, pallor). She poses an immediate threat to her own life. Continued delay in treatment when de-escalation has failed for 10+ minutes puts the patient at risk of life-threatening hemorrhage.",
@@ -18736,7 +18736,7 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Documentation; Behavioral Emergencies"
 								},
 								{
-										"text": "Obtain a signed refusal form from the patient's husband since the patient cannot sign",
+										"text": "Obtain a signed refusal form from the patient's husband as a surrogate",
 										"correct": false,
 										"critical": false,
 										"explanation": "No refusal is being generated — the patient is being transported involuntarily under emergency commitment criteria. A refusal form is not applicable in this scenario.",
@@ -19031,7 +19031,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA/ASA Stroke Guidelines 2019"
 								},
 								{
-										"text": "Continue current management without changes since the patient's GCS is still above 8",
+										"text": "Continue current management without changes given the patient's current GCS",
 										"correct": false,
 										"critical": false,
 										"explanation": "New neurological deficits represent a significant change in patient condition requiring immediate re-evaluation of transport destination and hospital notification. A GCS above 8 does not mean the patient is stable.",
@@ -19547,7 +19547,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS 2020 — Wide-Complex Tachycardia; Pre-Excitation Syndromes"
 								},
 								{
-										"text": "Amiodarone — it slows all conduction pathways equally and causes dangerous bradycardia in young patients",
+										"text": "Amiodarone — it slows all conduction pathways equally and is effective for rate control",
 										"correct": false,
 										"critical": false,
 										"explanation": "Amiodarone actually slows conduction through both the AV node and accessory pathways, making it one of the acceptable pharmacologic options for WPW with wide-complex tachycardia. It does not preferentially enhance accessory pathway conduction.",
@@ -19695,7 +19695,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS Post-Cardiac Arrest Care 2020"
 								},
 								{
-										"text": "Maintain 100% oxygen at all times post-arrest because any reduction risks secondary brain injury",
+										"text": "Maintain 100% oxygen at all times post-arrest to ensure maximal cerebral oxygenation",
 										"correct": false,
 										"critical": false,
 										"explanation": "Prolonged hyperoxia (PaO2 >300 mmHg) has been associated with worse neurological outcomes post-cardiac arrest. Current guidelines recommend titrating oxygen to SpO2 94-99% once a reliable SpO2 reading is obtainable.",
@@ -20335,7 +20335,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS 2020"
 								},
 								{
-										"text": "Immediately discontinue oxygen since SpO2 has normalized to 97%",
+										"text": "Immediately discontinue supplemental oxygen with SpO2 normalized to 97%",
 										"correct": false,
 										"critical": false,
 										"explanation": "While titrating oxygen to avoid hyperoxia is appropriate, abrupt discontinuation immediately post-cardioversion is premature. Continue to monitor and wean oxygen gradually while the patient stabilizes.",
@@ -24501,7 +24501,7 @@ const SCENARIOS = [
 										"guideline_ref": "ACS TQIP Geriatric Trauma Guidelines; PHTLS 9th Edition"
 								},
 								{
-										"text": "Anticoagulation has no effect on fracture hemorrhage since bone bleeding is primarily from rigid vessels that cannot be compressed",
+										"text": "Anticoagulation has minimal effect on fracture hemorrhage, which originates primarily from rigid bony vessels",
 										"correct": false,
 										"critical": false,
 										"explanation": "While some bone bleeding comes from rigid intraosseous vessels, the majority of hip fracture hemorrhage comes from the surrounding soft tissue, muscle, and periosteal vessels — all of which are affected by anticoagulation. The risk of significant hemorrhage is substantially increased.",
@@ -24829,7 +24829,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA Guidelines 2020 — Drowning Resuscitation"
 								},
 								{
-										"text": "Immediately begin chest compressions since the heart rate is below 60",
+										"text": "Immediately begin chest compressions for the bradycardic heart rate",
 										"correct": false,
 										"critical": false,
 										"explanation": "In adults and adolescents, a heart rate below 60 alone is not an indication for chest compressions if a pulse is present. Compressions are indicated for pulselessness or, in pediatric patients, for bradycardia with poor perfusion unresponsive to oxygenation and ventilation. This patient still has a pulse — prioritize oxygenation first.",
@@ -25109,7 +25109,7 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Environmental Emergencies"
 								},
 								{
-										"text": "Withhold all treatment and transport non-emergently since this appears to be an anxiety attack",
+										"text": "Withhold further treatment and transport non-emergently for a likely anxiety-related presentation",
 										"correct": false,
 										"critical": true,
 										"explanation": "This patient has life-threatening vital sign abnormalities including dangerous tachycardia and hyperthermia. Dismissing this as anxiety could be fatal. Thyroid storm has mortality rates of 10-30% even with treatment.",
@@ -25566,7 +25566,7 @@ const SCENARIOS = [
 										"guideline_ref": "Wilderness Medical Society — Exercise-Associated Hyponatremia Guidelines"
 								},
 								{
-										"text": "Salt administration in any form is contraindicated in hyponatremia because rapid sodium correction causes permanent brain damage",
+										"text": "Salt administration in any form is contraindicated in hyponatremia due to the risk of osmotic demyelination with rapid correction",
 										"correct": false,
 										"critical": false,
 										"explanation": "While overly rapid correction of chronic hyponatremia risks osmotic demyelination syndrome, exercise-associated hyponatremia is acute (developing over hours). Acute hyponatremia can and should be corrected more rapidly, especially with neurological symptoms.",
@@ -26231,7 +26231,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS Guidelines 2020"
 								},
 								{
-										"text": "Withhold further interventions and increase transport speed since definitive care requires emergent dialysis",
+										"text": "Withhold further interventions and increase transport speed for emergent dialysis at the receiving facility",
 										"correct": false,
 										"critical": true,
 										"explanation": "Withholding treatment in an actively deteriorating patient is dangerous. The patient may arrest before reaching the hospital. Prehospital stabilization with pacing and calcium is critical bridge therapy.",
@@ -26366,21 +26366,21 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Endocrine Emergencies; NAEMSP Hypoglycemia Guidelines"
 								},
 								{
-										"text": "Administer oral glucose gel since the patient has a GCS of 13 and can protect her airway",
+										"text": "Administer oral glucose gel given the patient's GCS of 13 and intact airway reflexes",
 										"correct": false,
 										"critical": false,
 										"explanation": "While the patient has a GCS of 13, she has been vomiting and is at risk for aspiration. IV dextrose is preferred when IV access is already established, especially in a patient with active nausea and altered mentation.",
 										"guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
 								},
 								{
-										"text": "Withhold glucose correction since the hypoglycemia will resolve once stress-dose steroids are administered",
+										"text": "Withhold glucose correction and prioritize stress-dose steroid administration for definitive correction",
 										"correct": false,
 										"critical": true,
 										"explanation": "Hypoglycemia requires immediate correction regardless of planned steroid administration. Steroids take time to restore gluconeogenesis, and persistent hypoglycemia can cause seizures and neurological damage.",
 										"guideline_ref": "National EMS Education Standards — Endocrine Emergencies"
 								},
 								{
-										"text": "Administer glucagon 1 mg IM since it will mobilize hepatic glycogen stores more effectively than IV dextrose",
+										"text": "Administer glucagon 1 mg IM to mobilize hepatic glycogen stores for glucose correction",
 										"correct": false,
 										"critical": false,
 										"explanation": "Glucagon stimulates hepatic glycogenolysis and gluconeogenesis, both of which require cortisol. In adrenal crisis, glucagon may have a diminished or delayed response. IV dextrose is preferred when IV access is available.",
@@ -26931,14 +26931,14 @@ const SCENARIOS = [
 										"guideline_ref": "NAEMSP Prehospital Pain Management Guidelines"
 								},
 								{
-										"text": "Morphine 4 mg IV since itching is not a true allergy and can be managed with diphenhydramine",
+										"text": "Morphine 4 mg IV with diphenhydramine 25 mg IV pretreatment for the reported itching reaction",
 										"correct": false,
 										"critical": false,
 										"explanation": "While morphine-induced pruritus is indeed a histamine-mediated side effect rather than a true allergy, it is documented as an allergy in the patient's history. Best practice is to use alternative agents when available rather than challenge a documented adverse reaction in the field.",
 										"guideline_ref": "National EMS Education Standards — Pharmacology"
 								},
 								{
-										"text": "Nalbuphine (Nubain) 10 mg IV since it is an agonist-antagonist and cannot cause allergic reactions",
+										"text": "Nalbuphine (Nubain) 10 mg IV as an agonist-antagonist opioid alternative",
 										"correct": false,
 										"critical": false,
 										"explanation": "Nalbuphine is a mixed agonist-antagonist opioid. While it may be an option in some protocols, the claim that it cannot cause allergic reactions is incorrect — any medication can potentially cause adverse reactions. Additionally, it is not commonly carried in EMS systems.",
@@ -28338,7 +28338,7 @@ const SCENARIOS = [
 										"guideline_ref": "OSHA Confined Space Standards; NFPA 1670"
 								},
 								{
-										"text": "Send the patient's coworker back down since he is familiar with the space and can retrieve the patient quickly",
+										"text": "Send the patient's coworker back down to retrieve the patient given his familiarity with the space",
 										"correct": false,
 										"critical": true,
 										"explanation": "The coworker already experienced symptoms upon approach. Sending an untrained, unequipped person into a confirmed hazardous atmosphere will likely create a second victim.",
@@ -29070,7 +29070,7 @@ const SCENARIOS = [
 										"guideline_ref": "C-TECC Guidelines 2021; PHTLS 9th Edition"
 								},
 								{
-										"text": "Remove the tourniquet and convert to a pressure dressing since the patient is now in the cold zone",
+										"text": "Remove the tourniquet and convert to a pressure dressing now that the patient is in the cold zone",
 										"correct": false,
 										"critical": true,
 										"explanation": "Tourniquet conversion should only be attempted by trained personnel in a controlled environment when transport time exceeds 2 hours and specific criteria are met. In the field CCP with imminent transport, leave the effective tourniquet in place.",
@@ -29320,7 +29320,7 @@ const SCENARIOS = [
 						"level_filter": "EMT-AEMT-Paramedic",
 						"options": [
 								{
-										"text": "Transport to the closer community hospital because the child's history of febrile seizures creates a time-sensitive risk that requires the nearest facility",
+										"text": "Transport to the closer community hospital given the child's seizure history and need for rapid evaluation",
 										"correct": false,
 										"critical": false,
 										"explanation": "While the history of febrile seizures warrants monitoring, the child is currently stable with no seizure activity. A prior febrile seizure alone does not mandate transport to the closest facility if the child is stable.",
@@ -29334,14 +29334,14 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Transport Decisions; NAEMSP Position Statement on EMS Destination"
 								},
 								{
-										"text": "Refuse to transport to the farther hospital under any circumstances because EMS protocol always requires transport to the nearest appropriate facility",
+										"text": "Decline the request and transport to the nearest appropriate facility per EMS protocol",
 										"correct": false,
 										"critical": false,
 										"explanation": "While transporting to the nearest appropriate facility is the general default, many EMS systems allow patient/family preference when the patient is stable. Rigidly refusing parental input without clinical justification can damage the provider-patient relationship and may not be supported by local protocol.",
 										"guideline_ref": "National EMS Education Standards — Transport Decisions"
 								},
 								{
-										"text": "Allow the parents to drive the child to the pediatric hospital themselves since she appears stable enough not to need an ambulance",
+										"text": "Allow the parents to drive the child to the pediatric hospital themselves given her current stable presentation",
 										"correct": false,
 										"critical": false,
 										"explanation": "Once EMS has been activated for a pediatric patient, recommending private vehicle transport abdicates responsibility. The child has a fever and a history of febrile seizures — she should be transported with monitoring capability.",
@@ -29611,7 +29611,7 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Medical-Legal"
 								},
 								{
-										"text": "Ignore the post because your partner is responsible for their own social media activity and it's not your obligation to intervene",
+										"text": "Take no action, as your partner is responsible for their own social media activity",
 										"correct": false,
 										"critical": false,
 										"explanation": "EMS providers have an ethical obligation to protect patient privacy and to address violations they observe. Ignoring a known HIPAA violation may also expose you to liability, particularly if the agency determines you were aware and failed to act.",
@@ -30327,7 +30327,7 @@ const SCENARIOS = [
 										"guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
 								},
 								{
-										"text": "Administer synchronized cardioversion at 100J since the monitor shows an organized wide-complex rhythm",
+										"text": "Administer synchronized cardioversion at 100J for the organized wide-complex rhythm on the monitor",
 										"correct": false,
 										"critical": true,
 										"explanation": "Synchronized cardioversion is for unstable patients WITH a pulse. This patient is pulseless — synchronized cardioversion in a pulseless patient may fail to deliver a shock if the device cannot identify a synchronization point. Unsynchronized defibrillation is indicated for pulseless VT.",
@@ -30430,14 +30430,14 @@ const SCENARIOS = [
 										"guideline_ref": "AAP Clinical Practice Guideline — Febrile Seizures"
 								},
 								{
-										"text": "The tonic-clonic nature of the seizure activity, since meningitis only presents with tonic-clonic seizures while febrile seizures are always absence-type",
+										"text": "The tonic-clonic nature of the seizure activity, which is more characteristic of meningitis than a simple febrile seizure",
 										"correct": false,
 										"critical": false,
 										"explanation": "This is incorrect. Both febrile seizures and meningitis-related seizures can present as generalized tonic-clonic activity. The seizure type alone does not differentiate the etiology.",
 										"guideline_ref": "National EMS Education Standards — Pediatric Emergencies"
 								},
 								{
-										"text": "The child's age of 3 years, since simple febrile seizures never occur in children older than 2 years of age",
+										"text": "The child's age of 3 years, which falls outside the typical age range for simple febrile seizures",
 										"correct": false,
 										"critical": false,
 										"explanation": "Simple febrile seizures can occur in children from 6 months to 5 years of age. A 3-year-old is well within the typical age range. Age alone does not differentiate simple febrile seizure from meningitis.",
