@@ -7,6 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0a0a0f">
 <title>MEDIC7 — EMS Scenario Trainer</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
@@ -295,6 +296,18 @@ body.light-mode .tag-proto{background:rgba(0,100,150,.06);color:#1a5276;border-c
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+<div id="authBar" style="max-width:600px;margin:8px auto 0;padding:0 16px;display:flex;align-items:center;gap:8px;justify-content:flex-end;padding-right:48px"></div>
+<div id="authModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;justify-content:center;align-items:center">
+  <div style="background:#0e1225;border:1px solid rgba(0,240,255,.2);border-radius:16px;padding:24px;width:90%;max-width:340px;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+    <h3 style="color:#00f0ff;margin-bottom:16px;text-align:center" id="authTitle">Sign In</h3>
+    <input id="authEmail" type="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <input id="authPass" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <div id="authError" style="display:none;color:#ff4422;font-size:.8em;margin-bottom:8px;text-align:center"></div>
+    <button onclick="doAuth('login')" style="width:100%;padding:10px;border:none;border-radius:8px;background:#00f0ff;color:#000;font-weight:600;cursor:pointer;margin-bottom:6px">Sign In</button>
+    <button onclick="doAuth('signup')" style="width:100%;padding:10px;border:none;border-radius:8px;background:transparent;color:#00f0ff;border:1px solid rgba(0,240,255,.3);cursor:pointer;margin-bottom:12px">Create Account</button>
+    <button onclick="hideAuthModal()" style="width:100%;padding:8px;border:none;background:transparent;color:#9aa0b0;cursor:pointer;font-size:.85em">Cancel</button>
+  </div>
+</div>
 <div class="container" id="app"></div>
 
 <script>
@@ -315,6 +328,69 @@ function updateThemeIcon(){
   if(btn) btn.textContent=document.body.classList.contains('light-mode')?'🌙':'☀️';
 }
 initTheme();
+
+// ===== SUPABASE AUTH (isolated - does not affect app rendering) =====
+var _sb = null;
+try { if (window.supabase) _sb = window.supabase.createClient('https://syomwtowczbifyiledmg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo'); } catch(e) {}
+
+var _auth = { user: null, profile: null, isPro: false };
+
+function _renderAuth() {
+  try {
+    var bar = document.getElementById('authBar');
+    if (!bar || !_sb) return;
+    if (_auth.user) {
+      var name = (_auth.profile && _auth.profile.display_name) || _auth.user.email.split('@')[0];
+      var pro = _auth.isPro ? ' <span style="background:linear-gradient(135deg,#ff4422,#ff8800);color:#fff;font-size:.6em;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:4px">PRO</span>' : '';
+      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + name + pro + '</span> <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
+    } else {
+      bar.innerHTML = '<button onclick="showAuthModal()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign In</button>';
+    }
+  } catch(e) {}
+}
+
+function showAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
+function hideAuthModal() { document.getElementById('authModal').style.display = 'none'; document.getElementById('authError').style.display = 'none'; }
+
+function doAuth(mode) {
+  var email = document.getElementById('authEmail').value;
+  var pass = document.getElementById('authPass').value;
+  var errEl = document.getElementById('authError');
+  if (!email || !pass) { errEl.textContent = 'Enter email and password'; errEl.style.display = 'block'; return; }
+  var p = mode === 'signup' ? _sb.auth.signUp({email:email, password:pass}) : _sb.auth.signInWithPassword({email:email, password:pass});
+  p.then(function(res) {
+    if (res.error) { errEl.textContent = res.error.message; errEl.style.display = 'block'; return; }
+    hideAuthModal();
+    _loadProfile();
+  }).catch(function(e) { errEl.textContent = e.message; errEl.style.display = 'block'; });
+}
+
+function signOut() {
+  if (_sb) _sb.auth.signOut().then(function() { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); });
+}
+
+function _loadProfile() {
+  if (!_sb) return;
+  _sb.auth.getUser().then(function(res) {
+    _auth.user = res.data.user;
+    if (_auth.user) {
+      _sb.from('profiles').select('*').eq('user_id', _auth.user.id).single().then(function(r) {
+        _auth.profile = r.data;
+        _auth.isPro = r.data && r.data.subscription_status === 'pro';
+        _renderAuth();
+      });
+    } else { _renderAuth(); }
+  }).catch(function() { _renderAuth(); });
+}
+
+if (_sb) {
+  _sb.auth.onAuthStateChange(function(event) {
+    if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') _loadProfile();
+    else if (event === 'SIGNED_OUT') { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); }
+  });
+  _loadProfile();
+} else { _renderAuth(); }
+// ===== END SUPABASE AUTH =====
 
 const SCENARIOS = [
         {
