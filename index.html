@@ -356,7 +356,9 @@ function _loadLocalAnswers() {
   try {
     var rows = JSON.parse(localStorage.getItem(_answersKey()) || '[]');
     if (!Array.isArray(rows)) return [];
-    return rows.sort(function(a, b) { return String(b.created_at).localeCompare(String(a.created_at)); });
+    var kept = rows.filter(function(a) { return a && a.scenario_id !== 'local-demo'; });
+    if (kept.length !== rows.length) localStorage.setItem(_answersKey(), JSON.stringify(kept));
+    return kept.sort(function(a, b) { return String(b.created_at).localeCompare(String(a.created_at)); });
   } catch (e) { return []; }
 }
 
@@ -365,46 +367,6 @@ function _saveLocalAnswer(row) {
   try { rows = JSON.parse(localStorage.getItem(_answersKey()) || '[]'); } catch (e) { rows = []; }
   if (!Array.isArray(rows)) rows = [];
   rows.push(row);
-  localStorage.setItem(_answersKey(), JSON.stringify(rows));
-}
-
-function _seedLocalAnswers() {
-  if (_loadLocalAnswers().length) return;
-  var now = Date.now();
-  var specs = [
-    ['Cardiology', true, 18000, 'mc'],
-    ['Cardiology', true, 22000, 'order'],
-    ['Cardiology', false, 41000, 'mc'],
-    ['Cardiology', true, 15000, 'mc'],
-    ['Airway & Breathing', true, 12000, 'mc'],
-    ['Airway & Breathing', false, 30000, 'order'],
-    ['Airway & Breathing', false, 27000, 'mc'],
-    ['Trauma', true, 19000, 'mc'],
-    ['Trauma', true, 16000, 'categorize'],
-    ['Trauma', true, 21000, 'mc'],
-    ['Pharmacology', false, 45000, 'mc'],
-    ['Pharmacology', false, 38000, 'mr'],
-    ['Pharmacology', true, 24000, 'mc'],
-    ['Medical Emergencies', true, 20000, 'mc'],
-    ['Medical Emergencies', true, 17000, 'order'],
-    ['OB/Peds/Neonatal', false, 33000, 'mc'],
-    ['OB/Peds/Neonatal', true, 26000, 'mc'],
-    ['EMS Operations', true, 14000, 'mc']
-  ];
-  var rows = specs.map(function(s, i) {
-    return {
-      user_id: _auth.user.id,
-      scenario_id: 'local-demo',
-      question_index: i,
-      question_type: s[3],
-      is_correct: s[1],
-      time_taken_ms: s[2],
-      category: s[0],
-      difficulty: 'Moderate',
-      selected_answer: [],
-      created_at: new Date(now - (specs.length - i) * 3600000).toISOString()
-    };
-  });
   localStorage.setItem(_answersKey(), JSON.stringify(rows));
 }
 
@@ -461,7 +423,7 @@ function _renderAuth() {
 function showAuthModal() {
   document.getElementById('authModal').style.display = 'flex';
   if (_remoteDown || !_sb) {
-    _showAuthHint('The account server is unreachable. Use any email and password to open a local Pro session in this browser and test the dashboard.');
+    _showAuthHint('The account server is unreachable. Use any email and password to open a local session in this browser. The dashboard starts empty and records only scenarios you finish.');
   }
 }
 function hideAuthModal() {
@@ -471,7 +433,6 @@ function hideAuthModal() {
 
 function _beginLocalSession(email) {
   _applyLocalSession(email);
-  _seedLocalAnswers();
   hideAuthModal();
 }
 
@@ -555,7 +516,7 @@ fetch(SB_URL + '/auth/v1/health', { headers: { apikey: SB_KEY } }).then(function
 }).catch(function() {
   _remoteDown = true;
   if (document.getElementById('authModal').style.display === 'flex') {
-    _showAuthHint('The account server is unreachable. Use any email and password to open a local Pro session in this browser and test the dashboard.');
+    _showAuthHint('The account server is unreachable. Use any email and password to open a local session in this browser. The dashboard starts empty and records only scenarios you finish.');
   }
 });
 
