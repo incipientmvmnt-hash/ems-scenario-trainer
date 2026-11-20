@@ -2206,7 +2206,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
-                                "prompt": "Which of the following are contraindications to nitroglycerin administration to nitroglycerin administration in the prehospital setting? (Select ALL that apply)",
+                                "prompt": "Which of the following are general contraindications to nitroglycerin in the prehospital setting? (Select ALL that apply)",
                                 "type": "mr",
                                 "level_filter": "EMT-AEMT-Paramedic",
                                 "narrative": "Before administering nitroglycerin, you review potential contraindications. The patient's current BP is 142/88. His right-sided ECG (V4R) shows 1 mm ST elevation. He denies taking any erectile dysfunction medications.",
@@ -4648,7 +4648,7 @@ const SCENARIOS = [
                 "difficulty": "Medium",
                 "level_min": "EMR",
                 "patient": {
-                        "age": 1.5,
+                        "age": 0.67,
                         "sex": "M",
                         "cc": "Choking"
                 },
@@ -4671,7 +4671,7 @@ const SCENARIOS = [
                                 "prompt": "You confirm the infant is conscious but has a complete airway obstruction — no cry, no cough, no air movement. What is your immediate intervention?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
-                                "narrative": "The child is limp in the mother's arms. His chest is barely moving with minimal air exchange. His lips and fingertips are blue. You open his mouth and perform a visual check — you do not see a foreign body.",
+                                "narrative": "The infant is awake and struggling in the mother's arms, with no cry and no effective cough. His chest is barely moving. His lips and fingertips are blue. You open his mouth and perform a visual check — you do not see a foreign body.",
                                 "clinical_pearl": "Blind finger sweeps are contraindicated in infants and children — they can push the object deeper. Only remove a foreign body you can directly visualize.",
                                 "options": [
                                         {
@@ -8949,7 +8949,7 @@ const SCENARIOS = [
                                 "vitals_update": {
                                         "hr": 52
                                 },
-                                "explanation": "After calcium stabilizes the heart, albuterol provides rapid potassium shifting via beta-2 stimulation. Sodium bicarbonate further shifts potassium into cells. Continuous monitoring is essential as these are temporizing measures — only dialysis provides definitive treatment. Rapid transport to a facility with dialysis capability is critical.",
+                                "explanation": "Calcium has already stabilized the membrane. Apply pacing pads and keep the monitor on before any step that takes time. Notify the hospital and start transport to a dialysis-capable facility while the temporizing drugs are given. Nebulized albuterol shifts potassium intracellularly en route. Bicarbonate is considered if metabolic acidosis is suspected. Only dialysis removes the potassium.",
                                 "guideline_ref": "AHA ACLS Guidelines — Hyperkalemia Management Algorithm; NAEMSP Renal Emergency Guidelines",
                                 "items": [
                                         "Administer nebulized albuterol (high dose) to shift potassium intracellularly",
@@ -8959,13 +8959,13 @@ const SCENARIOS = [
                                         "Provide early hospital notification with ECG findings and missed dialysis history"
                                 ],
                                 "correctOrder": [
-                                        0,
-                                        1,
                                         2,
+                                        4,
                                         3,
-                                        4
+                                        0,
+                                        1
                                 ],
-                                "clinical_pearl": "After calcium stabilizes the heart, albuterol provides rapid potassium shifting via beta-2 stimulation."
+                                "clinical_pearl": "Pacing pads go on as soon as calcium is in. Albuterol and bicarbonate only shift potassium for a short time. They do not replace dialysis, and they should not delay leaving the scene."
                         }
                 ]
         },
@@ -9342,25 +9342,25 @@ const SCENARIOS = [
                                         "rr": 26,
                                         "spo2": 93
                                 },
-                                "explanation": "Epinephrine IM is the single most important intervention in anaphylaxis and should never be delayed. It addresses all pathophysiology: bronchospasm, vasodilation, and edema. High-flow oxygen supports the airway. Positioning (supine with legs elevated) supports blood pressure unless respiratory distress requires upright positioning. IV fluid bolus treats distributive shock. Adjunct medications (diphenhydramine, albuterol) address remaining symptoms. Transport should not be delayed for adjuncts.",
+                                "explanation": "Epinephrine IM is first and must not be delayed. This patient has both wheezing and hypotension (96/62), so the position is a compromise: semi-recumbent, not flat and not sitting bolt upright. High-flow oxygen goes on with that positioning. IV saline treats the distributive shock. Diphenhydramine and albuterol do not come before epinephrine. Be ready to repeat epinephrine in 5–15 minutes and do not stay on scene for the adjuncts.",
                                 "guideline_ref": "NIAID/FAAN Anaphylaxis Guidelines; AHA Anaphylaxis Algorithm; NAEMSP Epinephrine Position Statement",
                                 "items": [
                                         "Administer epinephrine IM (0.3 mg 1:1,000) in the lateral thigh immediately",
                                         "Apply high-flow oxygen via non-rebreather mask",
-                                        "Position patient appropriately — monitor airway closely for worsening edema",
+                                        "Position semi-recumbent — upright enough to breathe, not flat, while airway edema is worsening",
                                         "Establish IV access and administer normal saline bolus for hypotension",
                                         "Consider adjunct medications: diphenhydramine, nebulized albuterol for persistent wheezing",
                                         "Initiate rapid transport — be prepared to repeat epinephrine in 5-15 minutes if no improvement"
                                 ],
                                 "correctOrder": [
                                         0,
-                                        1,
                                         2,
+                                        1,
                                         3,
                                         4,
                                         5
                                 ],
-                                "clinical_pearl": "Epinephrine IM is the single most important intervention in anaphylaxis and should never be delayed."
+                                "clinical_pearl": "Epinephrine IM is the single most important intervention in anaphylaxis and should never be delayed. With both respiratory distress and hypotension, sit the patient up only as far as breathing requires."
                         },
                         {
                                 "phase": "evaluation",
@@ -9626,12 +9626,12 @@ const SCENARIOS = [
                                         "Negative Symptoms of Psychosis"
                                 ],
                                 "correctCategories": [
-                                        "Positive Symptoms of Psychosis",
-                                        "Positive Symptoms of Psychosis",
-                                        "Negative Symptoms of Psychosis",
-                                        "Positive Symptoms of Psychosis",
-                                        "Negative Symptoms of Psychosis",
-                                        "Positive Symptoms of Psychosis"
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0
                                 ],
                                 "explanation": "Positive symptoms represent additions to normal experience (hallucinations, delusions, disorganized speech). Negative symptoms represent loss of normal function (flat affect, avolition, social withdrawal). Understanding this distinction helps communicate effectively with receiving facilities.",
                                 "guideline_ref": "APA Practice Guidelines for Schizophrenia (2020)",
@@ -10174,7 +10174,7 @@ const SCENARIOS = [
                                         2,
                                         1
                                 ],
-                                "explanation": "Both drug classes cause bradycardia, hypotension, and decreased contractility through different mechanisms. Bronchospasm and hyperglycemia (masked hypoglycemia) are beta-blocker-specific effects. Peripheral vasodilation is primarily a CCB effect (especially dihydropyridines like amlodipine).",
+                                "explanation": "Both classes cause bradycardia, hypotension, and depressed contractility. Bronchospasm is from beta-2 blockade and is a beta-blocker effect. Hyperglycemia from impaired insulin release is a calcium-channel blocker effect. Beta-blockers cause hypoglycemia, not hyperglycemia. Peripheral vasodilation is mainly a dihydropyridine calcium-channel blocker effect.",
                                 "guideline_ref": "ACMT Position Statement on Beta-Blocker and Calcium Channel Blocker Toxicity (2023); AHA ACLS Toxicology Guidelines",
                                 "clinical_pearl": "Beta-blocker OD classically causes hypoglycemia (impaired glycogenolysis), while CCB OD causes HYPERglycemia (impaired insulin release). Finding hyperglycemia in a mixed OD suggests the CCB component is significant—this is a useful toxicologic differentiator."
                         },
@@ -10192,15 +10192,15 @@ const SCENARIOS = [
                                         "Vasopressor infusion (norepinephrine)"
                                 ],
                                 "correctOrder": [
-                                        1,
                                         4,
+                                        1,
                                         3,
                                         0,
                                         2,
                                         5
                                 ],
                                 "critical": true,
-                                "explanation": "Atropine is given first as a fast, low-risk intervention for symptomatic bradycardia (though often ineffective in significant OD). Calcium directly antagonizes CCB effects and should be given early. Volume resuscitation addresses vasodilation. Glucagon bypasses the beta-receptor to increase cAMP and improve chronotropy/inotropy — specific to the BB component. High-dose insulin euglycemic therapy (HIET) is the definitive treatment for severe CCB/BB toxicity but requires careful glucose monitoring. Vasopressors are added if above measures fail.",
+                                "explanation": "In this mixed overdose with a heart rate of 38 and a pressure of 72/40, calcium is the first drug. It directly opposes the calcium-channel blocker effect on the heart and the vessels. Atropine can be given while calcium is drawn up, but it is often ineffective and must not come first. A fluid bolus treats the vasodilation. Glucagon is aimed at the beta-blocker component. High-dose insulin with dextrose is the most effective therapy once the first drugs are in. Add norepinephrine if the pressure is still inadequate.",
                                 "guideline_ref": "ACMT Guidelines for Management of Beta-Blocker and Calcium Channel Blocker Poisoning (2023); ACLS Toxicology Algorithms",
                                 "clinical_pearl": "High-dose insulin therapy (1 U/kg bolus + 1 U/kg/hr drip) is the single most effective intervention for severe BB/CCB toxicity—it improves cardiac output by enhancing myocardial glucose utilization. Start D10W co-infusion and check glucose every 15-20 minutes."
                         },
@@ -10480,12 +10480,12 @@ const SCENARIOS = [
                                         "NOT Expected in Adrenal Crisis"
                                 ],
                                 "correctCategories": [
-                                        "Expected in Adrenal Crisis",
-                                        "Expected in Adrenal Crisis",
-                                        "Expected in Adrenal Crisis",
-                                        "NOT Expected in Adrenal Crisis",
-                                        "Expected in Adrenal Crisis",
-                                        "Expected in Adrenal Crisis"
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        0,
+                                        0
                                 ],
                                 "explanation": "Adrenal crisis causes: hypoglycemia (cortisol is needed for gluconeogenesis), hyperkalemia (aldosterone deficiency impairs K+ excretion), hyponatremia (aldosterone-mediated Na+ wasting + ADH effects), hypercalcemia (cortisol normally suppresses calcium absorption), and elevated BUN/Cr (prerenal from hypovolemia). Metabolic ACIDOSIS (not alkalosis) occurs from poor perfusion.",
                                 "guideline_ref": "Endocrine Society Clinical Practice Guideline: Adrenal Insufficiency (2022)",
@@ -14901,10 +14901,10 @@ const SCENARIOS = [
                                         {
                                                 "text": "Administer morphine IV",
                                                 "correct": false,
-                                                "explanation": "Morphine causes histamine release, leading to vasodilation and potential hypotension — problematic in a patient with BP 98/62 who is already hemodynamically borderline. Additionally, morphine has higher emetic potential than fentanyl, which could worsen this patient's nausea and vomiting. Fentanyl is preferred for its hemodynamic stability and lower emetic profile."
+                                                "explanation": "Morphine releases histamine, which dilates vessels and can drop the pressure further in a patient whose pressure is already 96/62. It also causes more nausea than fentanyl, which this patient does not need. The old sphincter-of-Oddi concern is not the reason to avoid it here."
                                         }
                                 ],
-                                "explanation": "Codeine nausea is a common side effect, not a true allergy, but even if treated as such, fentanyl is a synthetic opioid with minimal cross-reactivity to natural opiates. Ketorolac is relatively contraindicated due to the hypotension and potential renal effects. Morphine historically was avoided in pancreatitis (sphincter of Oddi spasm concern), though this is debated.",
+                                "explanation": "Codeine nausea is a side effect, not a true allergy, so withholding every opioid is not required. Fentanyl is the better choice here because this patient is hypotensive at 96/62 and already vomiting: it releases little histamine and causes less nausea. Ketorolac can worsen renal perfusion in a volume-down patient. Morphine is the wrong opioid for this pressure, not because of the old sphincter-of-Oddi teaching.",
                                 "guideline_ref": "NASEMSO National Model EMS Clinical Guidelines — Pain Management; ACS Opioid Cross-Reactivity Guidelines",
                                 "clinical_pearl": "The old teaching that 'morphine is contraindicated in pancreatitis' due to sphincter of Oddi spasm has been largely debunked — but fentanyl remains preferred in most EMS protocols due to its rapid onset, easy titration, and minimal histamine release."
                         },
@@ -15196,14 +15196,14 @@ const SCENARIOS = [
                                         "Recent viral illness"
                                 ],
                                 "correctCategories": [
-                                        "Pericarditis",
-                                        "Acute Coronary Syndrome",
-                                        "Pericarditis",
-                                        "Acute Coronary Syndrome",
-                                        "Pericarditis",
-                                        "Pericarditis",
-                                        "Acute Coronary Syndrome",
-                                        "Pericarditis"
+                                        0,
+                                        1,
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        1,
+                                        0
                                 ],
                                 "explanation": "Pericarditis presents with sharp/pleuritic pain relieved by leaning forward, friction rub, diffuse (not territorial) ST elevation, and often follows a viral illness. ACS typically presents with pressure-type pain radiating to arm/jaw with focal ST changes.",
                                 "guideline_ref": "ESC 2015 Guidelines for Diagnosis and Management of Pericardial Diseases / AHA Chest Pain Evaluation",
@@ -15617,13 +15617,13 @@ const SCENARIOS = [
                                         "Active cooling if temp exceeds 104°F"
                                 ],
                                 "correctCategories": [
-                                        "Appropriate",
-                                        "Appropriate",
-                                        "Appropriate",
-                                        "Inappropriate",
-                                        "Inappropriate",
-                                        "Appropriate",
-                                        "Appropriate"
+                                        0,
+                                        0,
+                                        0,
+                                        1,
+                                        1,
+                                        0,
+                                        0
                                 ],
                                 "explanation": "Benzodiazepines are the cornerstone of DTs treatment. Thiamine should precede glucose to prevent Wernicke encephalopathy. Phenytoin is ineffective for alcohol withdrawal seizures. Physical restraints alone without pharmacological management increase mortality (rhabdomyolysis, hyperthermia). Cardiac monitoring is essential due to dysrhythmia risk.",
                                 "guideline_ref": "ASAM 2020 Alcohol Withdrawal Guidelines / ACEP Clinical Policy on Seizures",
