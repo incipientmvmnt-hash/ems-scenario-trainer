@@ -95,6 +95,9 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 .btn-random:hover::before{left:100%}
 .btn-random:hover{box-shadow:0 0 30px rgba(0,240,255,.4),0 0 60px rgba(0,240,255,.12),0 0 30px rgba(255,68,34,.15);border-color:#00f0ff;transform:translateY(-2px)}
 .btn-random:hover{box-shadow:0 0 36px rgba(0,240,255,.3),0 0 36px rgba(255,68,34,.2)}
+.btn-random.active{border-color:#00f0ff;color:#00f0ff;box-shadow:0 0 18px rgba(0,240,255,.35)}
+.train-row{display:flex;gap:10px;margin-top:20px}
+.train-row .btn-random{flex:1;margin-top:0;letter-spacing:1px;padding:16px 8px}
 .browse-link{display:block;text-align:center;color:#9aa0b0;font-size:.9em;margin-top:12px;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(0,240,255,.3)}
 .browse-link:hover{color:#00f0ff}
 .counter-text{text-align:center;color:#00f0ff;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.85em;margin-top:8px}
@@ -241,6 +244,7 @@ body.light-mode .btn-primary{background:rgba(0,100,150,.08);color:#1a5276;border
 body.light-mode .btn-primary:disabled{background:#ddd;color:#888;border-color:#ccc}
 body.light-mode .btn-secondary{background:rgba(0,0,0,.04);color:#1a1a2e;border-color:rgba(0,0,0,.1);box-shadow:none}
 body.light-mode .btn-random{background:rgba(0,100,150,.1);color:#1a5276;border-color:rgba(0,100,150,.2);box-shadow:none}
+body.light-mode .btn-random.active{border-color:#1a5276;color:#1a5276;box-shadow:none}
 body.light-mode .option.selected{background:rgba(0,100,150,.08);border-color:rgba(0,100,150,.4)}
 body.light-mode .option.correct{background:rgba(52,199,89,.1);border-color:rgba(52,199,89,.5)}
 body.light-mode .option.incorrect{background:rgba(200,80,50,.08);border-color:rgba(200,80,50,.5)}
@@ -636,23 +640,8 @@ function showDashboard() {
 }
 window.showDashboard = showDashboard;
 function trainDomain(d) {
-  state.selectedDomains = new Set([d]);
-  state.selectedLevel = null;
-  state.selectedDifficulties = new Set();
-  var avail = SCENARIOS.filter(function(s) { return s.category === d; });
-  if (avail.length > 0) {
-    var s = avail[Math.floor(Math.random() * avail.length)];
-    state.currentScenario = s;
-    state.questionIndex = 0;
-    state.answered = false;
-    state.selectedOptions = new Set();
-    state.answers = [];
-    state.screen = 'scenario';
-    render();
-  } else {
-    state.screen = 'home';
-    render();
-  }
+  state.focusDomainOverride = d;
+  if (typeof startFocused === 'function') startFocused();
 }
 window.trainDomain = trainDomain;
 // ===== END SUPABASE AUTH =====
@@ -30983,24 +30972,109 @@ const state = {
 const DOMAINS = ['Airway & Breathing','Cardiology','Medical Emergencies','Trauma','OB/Peds/Neonatal','Behavioral/Psychiatric','Pharmacology','EMS Operations','Environmental'];
 const DIFFICULTIES = ['Easy','Medium','Hard'];
 
-function getAvailableScenarios() {
+function questionMatchesLevel(q) {
+  if (!state.selectedLevel) return true;
+  var filter = (q && q.level_filter) || '';
+  if (!filter) return true;
+  return filter.split('-').indexOf(state.selectedLevel) >= 0;
+}
+
+function scenarioHasLevelQuestions(sc) {
+  var qs = (sc && sc.questions) || [];
+  return qs.some(questionMatchesLevel);
+}
+
+function scenariosFor(opts) {
+  opts = opts || {};
   const levelOrder = {EMR:1, EMT:2, AEMT:3, Paramedic:4};
-  let s = SCENARIOS;
+  let s = SCENARIOS.filter(scenarioHasLevelQuestions);
   if (state.selectedLevel) {
     const userLevel = levelOrder[state.selectedLevel] || 1;
-    s = s.filter(sc => {
-      const minLevel = levelOrder[sc.level_min] || 1;
-      return userLevel >= minLevel;
-    });
+    s = s.filter(sc => (levelOrder[sc.level_min] || 1) <= userLevel);
   }
-  if (state.selectedDomains.size > 0) s = s.filter(sc => sc.category && state.selectedDomains.has(sc.category));
-  if (state.selectedDifficulties.size > 0) s = s.filter(sc => state.selectedDifficulties.has(sc.difficulty));
+  if (opts.useDifficulty !== false && state.selectedDifficulties.size > 0) {
+    s = s.filter(sc => state.selectedDifficulties.has(sc.difficulty));
+  }
+  if (opts.useDomains && state.selectedDomains.size > 0) {
+    s = s.filter(sc => sc.category && state.selectedDomains.has(sc.category));
+  }
+  if (opts.category) s = s.filter(sc => sc.category === opts.category);
+  if (opts.excludeId) s = s.filter(sc => sc.id !== opts.excludeId);
   return s;
+}
+
+function getAvailableScenarios() {
+  return scenariosFor({ useDomains: true, useDifficulty: true });
 }
 
 function getFilteredQuestions() {
   if (!state.currentScenario) return [];
-  return state.currentScenario.questions;
+  return (state.currentScenario.questions || []).filter(questionMatchesLevel);
+}
+
+function getTrainMode() {
+  try { return localStorage.getItem('medic7-train-mode') === 'focused' ? 'focused' : 'random'; }
+  catch (e) { return 'random'; }
+}
+
+function setTrainMode(mode) {
+  var next = mode === 'focused' ? 'focused' : 'random';
+  try { localStorage.setItem('medic7-train-mode', next); } catch (e) {}
+  state.trainMode = next;
+}
+
+function loadFocusStats() {
+  try {
+    var stats = JSON.parse(localStorage.getItem('medic7-focus-stats') || '{}');
+    return stats && typeof stats === 'object' ? stats : {};
+  } catch (e) { return {}; }
+}
+
+function loadLastResult() {
+  if (state.lastResult !== undefined) return state.lastResult;
+  try { state.lastResult = JSON.parse(localStorage.getItem('medic7-last-result') || 'null'); }
+  catch (e) { state.lastResult = null; }
+  return state.lastResult;
+}
+
+function weakestMissDomain() {
+  var stats = loadFocusStats();
+  var worst = null, worstPct = 101, worstMisses = 0;
+  Object.keys(stats).forEach(function(cat) {
+    var row = stats[cat];
+    if (!row || !row.misses) return;
+    var pct = row.total ? (row.correct / row.total) : 1;
+    if (pct < worstPct || (pct === worstPct && row.misses > worstMisses)) {
+      worst = cat;
+      worstPct = pct;
+      worstMisses = row.misses;
+    }
+  });
+  return worst;
+}
+
+function rememberScenarioResult() {
+  if (!state.currentScenario || !state.answers.length) return;
+  var correctCount = state.answers.filter(function(a) { return a.correct; }).length;
+  var key = state.currentScenario.id + ':' + state.answers.length + ':' + correctCount;
+  if (state.statsRecordedFor === key) return;
+  state.statsRecordedFor = key;
+  var stats = loadFocusStats();
+  var cat = state.currentScenario.category || 'Unknown';
+  if (!stats[cat]) stats[cat] = { correct: 0, total: 0, misses: 0 };
+  state.answers.forEach(function(a) {
+    stats[cat].total++;
+    if (a.correct) stats[cat].correct++;
+    else stats[cat].misses++;
+  });
+  try { localStorage.setItem('medic7-focus-stats', JSON.stringify(stats)); } catch (e) {}
+  var rec = {
+    id: state.currentScenario.id,
+    category: cat,
+    missed: state.answers.some(function(a) { return !a.correct; })
+  };
+  state.lastResult = rec;
+  try { localStorage.setItem('medic7-last-result', JSON.stringify(rec)); } catch (e) {}
 }
 
 function cleanProtocolRef(ref) {
@@ -31046,7 +31120,11 @@ function renderHome() {
       </div>
     </div>
 
-    <button class="btn btn-random" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>RANDOM SCENARIO</button>
+    <div class="train-row">
+      <button class="btn btn-random ${getTrainMode() === 'random' ? 'active' : ''}" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>Random</button>
+      <button class="btn btn-random ${getTrainMode() === 'focused' ? 'active' : ''}" onclick="startFocused()" ${scenariosFor({ useDomains: false, useDifficulty: false }).length === 0 ? 'disabled' : ''}>Focused</button>
+    </div>
+    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? 'Focused follows the domain you miss.' : 'Random uses your level, domain, and difficulty filters.'}</p>
 
     <div class="home-section" style="margin-top:24px">
       <div class="category-header">Domain <span style="font-weight:400;font-size:.85em">(optional)</span></div>
@@ -31083,12 +31161,50 @@ window.toggleDifficulty = function(d) {
   render();
 };
 
-window.startRandom = function() {
+function startRandom(opts) {
+  opts = opts || {};
+  if (!opts.keepMode) {
+    setTrainMode('random');
+    state.trainNote = '';
+  }
   const avail = getAvailableScenarios();
-  if (avail.length === 0) return;
+  if (avail.length === 0) {
+    state.screen = 'home';
+    render();
+    return;
+  }
   const s = avail[Math.floor(Math.random() * avail.length)];
   startScenario(s.id);
-};
+}
+window.startRandom = startRandom;
+
+function startFocused() {
+  setTrainMode('focused');
+  var override = state.focusDomainOverride;
+  state.focusDomainOverride = null;
+  var last = loadLastResult();
+  var domain = override || ((last && last.missed && last.category) ? last.category : weakestMissDomain());
+  if (!domain) {
+    state.trainNote = 'No misses yet. Starting a random scenario.';
+    startRandom({ keepMode: true });
+    return;
+  }
+  var pool = scenariosFor({
+    category: domain,
+    excludeId: last && last.id,
+    useDomains: false,
+    useDifficulty: !override
+  });
+  if (!pool.length) {
+    state.trainNote = 'No other ' + domain + ' scenario fits this level. Starting a random scenario.';
+    startRandom({ keepMode: true });
+    return;
+  }
+  state.trainNote = '';
+  var s = pool[Math.floor(Math.random() * pool.length)];
+  startScenario(s.id);
+}
+window.startFocused = startFocused;
 
 window.startScenario = function(id) {
   const s = SCENARIOS.find(sc => sc.id === id);
@@ -31099,6 +31215,13 @@ window.startScenario = function(id) {
   state.answered = false;
   state.selectedOptions = new Set();
   state.userState = {};
+  if (!getFilteredQuestions().length) {
+    state.trainNote = 'That scenario has no questions at this level.';
+    state.currentScenario = null;
+    state.screen = 'home';
+    render();
+    return;
+  }
   state.screen = 'scenario';
   window.scrollTo(0, 0);
   render();
@@ -31169,6 +31292,7 @@ function renderScenario() {
 
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
+    ${state.trainNote ? `<p class="muted-label" style="text-align:center;margin:0 0 12px;font-size:.8em;color:#f0ad4e">${state.trainNote}</p>` : ''}
     <div class="progress-bar">
       ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
     </div>`;
@@ -31529,6 +31653,7 @@ function nextQuestion() {
 }
 
 function renderDebrief() {
+  rememberScenarioResult();
   const s = state.currentScenario;
   const total = state.answers.length;
   const correct = state.answers.filter(a => a.correct).length;
@@ -31585,8 +31710,14 @@ function renderDebrief() {
       </div>`;
   });
 
+  var trainMode = getTrainMode();
+  var nextFn = trainMode === 'focused' ? 'startFocused()' : 'startRandom()';
+  var nextLabel = trainMode === 'focused' ? 'Next focused' : 'Next random';
+  var altFn = trainMode === 'focused' ? 'startRandom()' : 'startFocused()';
+  var altLabel = trainMode === 'focused' ? 'Random instead' : 'Focused instead';
   html += `
-    <button class="btn btn-primary" onclick="startRandom()" style="margin-top:16px">NEXT SCENARIO</button>
+    <button class="btn btn-primary" onclick="${nextFn}" style="margin-top:16px">${nextLabel}</button>
+    <button class="btn btn-secondary" onclick="${altFn}">${altLabel}</button>
     <button class="btn btn-secondary" onclick="startScenario('${s.id}')">🔄 Try Again</button>
     <button class="btn btn-secondary" onclick="state.screen='select';render()">← Choose Another Scenario</button>
     <button class="btn btn-secondary" onclick="state.screen='home';render()">🏠 Home</button>
