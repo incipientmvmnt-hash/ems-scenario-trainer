@@ -302,6 +302,7 @@ body.light-mode .tag-proto{background:rgba(0,100,150,.06);color:#1a5276;border-c
     <h3 style="color:#00f0ff;margin-bottom:16px;text-align:center" id="authTitle">Sign In</h3>
     <input id="authEmail" type="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
     <input id="authPass" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <div id="authHint" style="display:none;color:#9aa0b0;font-size:.75em;margin-bottom:8px;text-align:center;line-height:1.4"></div>
     <div id="authError" style="display:none;color:#ff4422;font-size:.8em;margin-bottom:8px;text-align:center"></div>
     <button onclick="doAuth('login')" style="width:100%;padding:10px;border:none;border-radius:8px;background:#00f0ff;color:#000;font-weight:600;cursor:pointer;margin-bottom:6px">Sign In</button>
     <button onclick="doAuth('signup')" style="width:100%;padding:10px;border:none;border-radius:8px;background:transparent;color:#00f0ff;border:1px solid rgba(0,240,255,.3);cursor:pointer;margin-bottom:12px">Create Account</button>
@@ -330,76 +331,242 @@ function updateThemeIcon(){
 initTheme();
 
 // ===== SUPABASE AUTH (isolated - does not affect app rendering) =====
+var SB_URL = 'https://syomwtowczbifyiledmg.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo';
+var LOCAL_SESSION_KEY = 'medic7-local-session';
 var _sb = null;
-try { if (window.supabase) _sb = window.supabase.createClient('https://syomwtowczbifyiledmg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo'); } catch(e) {}
+var _localMode = false;
+var _remoteDown = false;
+try { if (window.supabase) _sb = window.supabase.createClient(SB_URL, SB_KEY); } catch(e) {}
 
 var _auth = { user: null, profile: null, isPro: false };
+
+function _esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+function _answersKey() {
+  var email = (_auth.user && _auth.user.email) || 'anon';
+  return 'medic7-local-answers:' + email.toLowerCase();
+}
+
+function _loadLocalAnswers() {
+  try {
+    var rows = JSON.parse(localStorage.getItem(_answersKey()) || '[]');
+    if (!Array.isArray(rows)) return [];
+    return rows.sort(function(a, b) { return String(b.created_at).localeCompare(String(a.created_at)); });
+  } catch (e) { return []; }
+}
+
+function _saveLocalAnswer(row) {
+  var rows = [];
+  try { rows = JSON.parse(localStorage.getItem(_answersKey()) || '[]'); } catch (e) { rows = []; }
+  if (!Array.isArray(rows)) rows = [];
+  rows.push(row);
+  localStorage.setItem(_answersKey(), JSON.stringify(rows));
+}
+
+function _seedLocalAnswers() {
+  if (_loadLocalAnswers().length) return;
+  var now = Date.now();
+  var specs = [
+    ['Cardiology', true, 18000, 'mc'],
+    ['Cardiology', true, 22000, 'order'],
+    ['Cardiology', false, 41000, 'mc'],
+    ['Cardiology', true, 15000, 'mc'],
+    ['Airway & Breathing', true, 12000, 'mc'],
+    ['Airway & Breathing', false, 30000, 'order'],
+    ['Airway & Breathing', false, 27000, 'mc'],
+    ['Trauma', true, 19000, 'mc'],
+    ['Trauma', true, 16000, 'categorize'],
+    ['Trauma', true, 21000, 'mc'],
+    ['Pharmacology', false, 45000, 'mc'],
+    ['Pharmacology', false, 38000, 'mr'],
+    ['Pharmacology', true, 24000, 'mc'],
+    ['Medical Emergencies', true, 20000, 'mc'],
+    ['Medical Emergencies', true, 17000, 'order'],
+    ['OB/Peds/Neonatal', false, 33000, 'mc'],
+    ['OB/Peds/Neonatal', true, 26000, 'mc'],
+    ['EMS Operations', true, 14000, 'mc']
+  ];
+  var rows = specs.map(function(s, i) {
+    return {
+      user_id: _auth.user.id,
+      scenario_id: 'local-demo',
+      question_index: i,
+      question_type: s[3],
+      is_correct: s[1],
+      time_taken_ms: s[2],
+      category: s[0],
+      difficulty: 'Moderate',
+      selected_answer: [],
+      created_at: new Date(now - (specs.length - i) * 3600000).toISOString()
+    };
+  });
+  localStorage.setItem(_answersKey(), JSON.stringify(rows));
+}
+
+function _applyLocalSession(email) {
+  email = String(email || '').trim();
+  _localMode = true;
+  _auth.user = { id: 'local:' + email.toLowerCase(), email: email, local: true };
+  _auth.profile = { display_name: email.split('@')[0], subscription_status: 'pro' };
+  _auth.isPro = true;
+  localStorage.setItem(LOCAL_SESSION_KEY, JSON.stringify({ email: email }));
+  _renderAuth();
+}
+
+function _restoreLocalSession() {
+  try {
+    var saved = JSON.parse(localStorage.getItem(LOCAL_SESSION_KEY) || 'null');
+    if (!saved || !saved.email) return false;
+    _applyLocalSession(saved.email);
+    return true;
+  } catch (e) { return false; }
+}
+
+function _isNetworkError(err) {
+  if (!err) return false;
+  var msg = ((err.message || '') + ' ' + (err.name || '')).toLowerCase();
+  if (err.status === 0) return true;
+  return msg.indexOf('failed to fetch') >= 0 || msg.indexOf('network') >= 0 || msg.indexOf('load failed') >= 0 || msg.indexOf('authretryablefetcherror') >= 0 || msg.indexOf('timeout') >= 0;
+}
+
+function _showAuthHint(text) {
+  var hint = document.getElementById('authHint');
+  if (!hint) return;
+  if (!text) { hint.style.display = 'none'; hint.textContent = ''; return; }
+  hint.textContent = text;
+  hint.style.display = 'block';
+}
 
 function _renderAuth() {
   try {
     var bar = document.getElementById('authBar');
-    if (!bar || !_sb) return;
+    if (!bar) return;
     if (_auth.user) {
       var name = (_auth.profile && _auth.profile.display_name) || _auth.user.email.split('@')[0];
       var pro = _auth.isPro ? ' <span style="background:linear-gradient(135deg,#ff4422,#ff8800);color:#fff;font-size:.6em;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:4px">PRO</span>' : '';
+      var localTag = _localMode ? ' <span style="border:1px solid rgba(240,173,78,.45);color:#f0ad4e;font-size:.6em;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:4px">LOCAL</span>' : '';
       var dashBtn = _auth.isPro ? ' <button onclick="showDashboard()" style="background:none;border:1px solid rgba(255,68,34,.3);color:#ff4422;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">📊 Dashboard</button>' : '';
-      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + name + pro + '</span>' + dashBtn + ' <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
+      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + _esc(name) + pro + localTag + '</span>' + dashBtn + ' <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
     } else {
       bar.innerHTML = '<button onclick="showAuthModal()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign In</button>';
     }
   } catch(e) {}
 }
 
-function showAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
-function hideAuthModal() { document.getElementById('authModal').style.display = 'none'; document.getElementById('authError').style.display = 'none'; }
+function showAuthModal() {
+  document.getElementById('authModal').style.display = 'flex';
+  if (_remoteDown || !_sb) {
+    _showAuthHint('The account server is unreachable. Use any email and password to open a local Pro session in this browser and test the dashboard.');
+  }
+}
+function hideAuthModal() {
+  document.getElementById('authModal').style.display = 'none';
+  document.getElementById('authError').style.display = 'none';
+}
+
+function _beginLocalSession(email) {
+  _applyLocalSession(email);
+  _seedLocalAnswers();
+  hideAuthModal();
+}
 
 function doAuth(mode) {
-  var email = document.getElementById('authEmail').value;
+  var email = document.getElementById('authEmail').value.trim();
   var pass = document.getElementById('authPass').value;
   var errEl = document.getElementById('authError');
   if (!email || !pass) { errEl.textContent = 'Enter email and password'; errEl.style.display = 'block'; return; }
+  if (!_sb || _remoteDown) { _beginLocalSession(email); return; }
   var p = mode === 'signup' ? _sb.auth.signUp({email:email, password:pass}) : _sb.auth.signInWithPassword({email:email, password:pass});
   p.then(function(res) {
-    if (res.error) { errEl.textContent = res.error.message; errEl.style.display = 'block'; return; }
+    if (res.error) {
+      if (_isNetworkError(res.error)) { _remoteDown = true; _beginLocalSession(email); return; }
+      errEl.textContent = res.error.message; errEl.style.display = 'block'; return;
+    }
+    if (mode === 'signup' && !(res.data && res.data.session)) {
+      errEl.textContent = 'Check your email to confirm the account, then sign in.';
+      errEl.style.display = 'block';
+      return;
+    }
+    _localMode = false;
+    localStorage.removeItem(LOCAL_SESSION_KEY);
     hideAuthModal();
     _loadProfile();
-  }).catch(function(e) { errEl.textContent = e.message; errEl.style.display = 'block'; });
+  }).catch(function(e) {
+    if (_isNetworkError(e)) { _remoteDown = true; _beginLocalSession(email); return; }
+    errEl.textContent = e.message || 'Sign in failed'; errEl.style.display = 'block';
+  });
 }
 
 function signOut() {
-  if (_sb) _sb.auth.signOut().then(function() { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); });
+  var wasLocal = _localMode || (_auth.user && _auth.user.local);
+  localStorage.removeItem(LOCAL_SESSION_KEY);
+  _localMode = false;
+  _auth = {user:null, profile:null, isPro:false};
+  _renderAuth();
+  if (_sb && !wasLocal) _sb.auth.signOut().catch(function(){});
 }
 
 function _loadProfile() {
-  if (!_sb) return;
+  if (_localMode) { _renderAuth(); return; }
+  if (!_sb) { _renderAuth(); return; }
   _sb.auth.getUser().then(function(res) {
-    _auth.user = res.data.user;
-    if (_auth.user) {
-      _sb.from('profiles').select('*').eq('user_id', _auth.user.id).single().then(function(r) {
-        _auth.profile = r.data;
-        _auth.isPro = r.data && r.data.subscription_status === 'pro';
-        _renderAuth();
-      });
-    } else { _renderAuth(); }
-  }).catch(function() { _renderAuth(); });
+    if (res.error && _isNetworkError(res.error)) {
+      _remoteDown = true;
+      if (!_localMode) _renderAuth();
+      return;
+    }
+    var user = res.data && res.data.user;
+    if (!user) { if (!_localMode) _renderAuth(); return; }
+    _localMode = false;
+    localStorage.removeItem(LOCAL_SESSION_KEY);
+    _auth.user = user;
+    _sb.from('profiles').select('*').eq('user_id', user.id).maybeSingle().then(function(r) {
+      _auth.profile = r.data || null;
+      _auth.isPro = !!(r.data && r.data.subscription_status === 'pro');
+      _renderAuth();
+    });
+  }).catch(function(e) {
+    if (_isNetworkError(e)) _remoteDown = true;
+    if (!_localMode) _renderAuth();
+  });
 }
 
+_restoreLocalSession();
+_renderAuth();
 if (_sb) {
   _sb.auth.onAuthStateChange(function(event) {
+    if (_localMode && event !== 'SIGNED_IN') return;
     if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') _loadProfile();
-    else if (event === 'SIGNED_OUT') { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); }
+    else if (event === 'SIGNED_OUT' && !_localMode) { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); }
   });
   _loadProfile();
-} else { _renderAuth(); }
+} else {
+  _remoteDown = true;
+  _renderAuth();
+}
+
+fetch(SB_URL + '/auth/v1/health', { headers: { apikey: SB_KEY } }).then(function(r) {
+  if (!r.ok) _remoteDown = true;
+}).catch(function() {
+  _remoteDown = true;
+  if (document.getElementById('authModal').style.display === 'flex') {
+    _showAuthHint('The account server is unreachable. Use any email and password to open a local Pro session in this browser and test the dashboard.');
+  }
+});
 
 // ===== SCORE TRACKING (Pro only) =====
 var _trackStartTime = 0;
 function _startTimer() { _trackStartTime = Date.now(); }
 function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty, selectedAnswer) {
   try {
-    if (!_sb || !_auth.isPro || !_auth.user) return;
+    if (!_auth.isPro || !_auth.user) return;
     var timeTaken = _trackStartTime ? Date.now() - _trackStartTime : 0;
-    _sb.from('answers').insert({
+    var row = {
       user_id: _auth.user.id,
       scenario_id: scenarioId,
       question_index: qIndex,
@@ -408,89 +575,101 @@ function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty
       time_taken_ms: timeTaken,
       category: category,
       difficulty: difficulty,
-      selected_answer: selectedAnswer
-    }).then(function(){}).catch(function(){});
+      selected_answer: selectedAnswer,
+      created_at: new Date().toISOString()
+    };
+    if (_localMode || !_sb) { _saveLocalAnswer(row); return; }
+    _sb.from('answers').insert(row).then(function(){}).catch(function(){});
   } catch(e) {}
 }
 
 // ===== DASHBOARD =====
+function _paintDashboard(answers) {
+  var app = document.getElementById('app');
+  if (!answers.length) {
+    app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h2 style="text-align:center;margin:16px 0">📊 Performance Dashboard</h2><p style="text-align:center;color:#9aa0b0;margin-top:40px">No data yet. Complete some scenarios to see your analytics!</p><button class="btn btn-primary" onclick="state.screen=\'home\';render()" style="margin-top:20px">Start Training</button></div>';
+    return;
+  }
+
+  var total = answers.length;
+  var correct = answers.filter(function(a){return a.is_correct}).length;
+  var pct = Math.round(correct/total*100);
+  var avgTime = Math.round(answers.reduce(function(s,a){return s+(a.time_taken_ms||0)},0)/total/1000*10)/10;
+
+  var cats = {};
+  answers.forEach(function(a) {
+    var c = a.category || 'Unknown';
+    if (!cats[c]) cats[c] = {total:0,correct:0};
+    cats[c].total++;
+    if (a.is_correct) cats[c].correct++;
+  });
+
+  var weakest = null, weakestPct = 101;
+  var catNames = Object.keys(cats).sort();
+  catNames.forEach(function(c) {
+    var p = Math.round(cats[c].correct/cats[c].total*100);
+    if (p < weakestPct && cats[c].total >= 2) { weakestPct = p; weakest = c; }
+  });
+
+  var scoreClass = pct >= 80 ? 'score-good' : pct >= 60 ? 'score-ok' : 'score-bad';
+  var html = '<div class="fade-in" style="padding-top:20px">';
+  html += '<button class="back-btn" onclick="state.screen=\'home\';render()">Home</button>';
+  html += '<h2 style="text-align:center;margin:16px 0">\u{1F4CA} Performance Dashboard</h2>';
+  if (_localMode) {
+    html += '<p style="text-align:center;color:#f0ad4e;font-size:.8em;margin-bottom:8px">Local test session. Scores stay in this browser.</p>';
+  }
+
+  html += '<div style="display:flex;justify-content:center;gap:24px;margin:20px 0">';
+  html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + total + '</div><div class="muted-label" style="font-size:.7em">Questions</div></div>';
+  html += '<div style="text-align:center"><div class="score-circle ' + scoreClass + '" style="width:80px;height:80px;font-size:1.2em">' + pct + '<span class="pct">%</span></div><div class="muted-label" style="font-size:.7em;margin-top:4px">Accuracy</div></div>';
+  html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + avgTime + 's</div><div class="muted-label" style="font-size:.7em">Avg Time</div></div>';
+  html += '</div>';
+
+  html += '<div class="home-section" style="margin-top:20px">';
+  html += '<div class="category-header">Performance by Domain</div>';
+  catNames.forEach(function(c) {
+    var p = Math.round(cats[c].correct/cats[c].total*100);
+    var color = p >= 80 ? '#34c759' : p >= 60 ? '#f0ad4e' : '#ff4422';
+    html += '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:4px"><span>' + _esc(c) + '</span><span style="color:' + color + '">' + p + '% (' + cats[c].correct + '/' + cats[c].total + ')</span></div>';
+    html += '<div style="height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden"><div style="height:100%;width:' + p + '%;background:' + color + ';border-radius:3px"></div></div></div>';
+  });
+  html += '</div>';
+
+  if (weakest) {
+    html += '<div style="background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.2);border-radius:12px;padding:16px;margin:16px 0;text-align:center">';
+    html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest Domain: ' + _esc(weakest) + ' (' + weakestPct + '%)</div>';
+    html += '<button class="btn btn-primary" data-domain="' + _esc(weakest) + '" onclick="trainDomain(this.getAttribute(\'data-domain\'))" style="font-size:.85em;padding:8px 16px">Train This Domain</button>';
+    html += '</div>';
+  }
+
+  html += '<div class="home-section" style="margin-top:16px">';
+  html += '<div class="category-header">Recent Answers</div>';
+  answers.slice(0, 20).forEach(function(a) {
+    var icon = a.is_correct ? '\u2705' : '\u274C';
+    var time = a.time_taken_ms ? Math.round(a.time_taken_ms/1000) + 's' : '';
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
+    html += '<span>' + icon + ' ' + _esc(a.category||'?') + ' \u2014 ' + _esc(a.question_type||'?') + '</span>';
+    html += '<span class="muted-label">' + time + '</span></div>';
+  });
+  html += '</div>';
+  html += '<div style="height:40px"></div></div>';
+  app.innerHTML = html;
+}
+
 function showDashboard() {
-  if (!_sb || !_auth.isPro || !_auth.user) return;
+  if (!_auth.isPro || !_auth.user) return;
   state.screen = 'dashboard';
   var app = document.getElementById('app');
   app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h2 style="text-align:center;margin:16px 0">📊 Performance Dashboard</h2><p style="text-align:center;color:#9aa0b0">Loading...</p></div>';
-  
+  if (_localMode || !_sb) { _paintDashboard(_loadLocalAnswers()); return; }
+
   _sb.from('answers').select('*').eq('user_id', _auth.user.id).order('created_at', {ascending:false}).then(function(res) {
-    var answers = res.data || [];
-    if (answers.length === 0) {
-      app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><h2 style="text-align:center;margin:16px 0">📊 Performance Dashboard</h2><p style="text-align:center;color:#9aa0b0;margin-top:40px">No data yet. Complete some scenarios to see your analytics!</p><button class="btn btn-primary" onclick="state.screen=\'home\';render()" style="margin-top:20px">Start Training</button></div>';
+    if (res.error) {
+      app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><p style="text-align:center;color:#ff4422;margin-top:40px">Error loading dashboard</p></div>';
       return;
     }
-    
-    var total = answers.length;
-    var correct = answers.filter(function(a){return a.is_correct}).length;
-    var pct = Math.round(correct/total*100);
-    var avgTime = Math.round(answers.reduce(function(s,a){return s+(a.time_taken_ms||0)},0)/total/1000*10)/10;
-    
-    // By category
-    var cats = {};
-    answers.forEach(function(a) {
-      var c = a.category || 'Unknown';
-      if (!cats[c]) cats[c] = {total:0,correct:0};
-      cats[c].total++;
-      if (a.is_correct) cats[c].correct++;
-    });
-    
-    var weakest = null, weakestPct = 101;
-    var catNames = Object.keys(cats).sort();
-    catNames.forEach(function(c) {
-      var p = Math.round(cats[c].correct/cats[c].total*100);
-      if (p < weakestPct && cats[c].total >= 2) { weakestPct = p; weakest = c; }
-    });
-    
-    var scoreClass = pct >= 80 ? 'score-good' : pct >= 60 ? 'score-ok' : 'score-bad';
-    
-    var html = '<div class="fade-in" style="padding-top:20px">';
-    html += '<button class="back-btn" onclick="state.screen=\'home\';render()">Home</button>';
-    html += '<h2 style="text-align:center;margin:16px 0">\u{1F4CA} Performance Dashboard</h2>';
-    
-    html += '<div style="display:flex;justify-content:center;gap:24px;margin:20px 0">';
-    html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + total + '</div><div class="muted-label" style="font-size:.7em">Questions</div></div>';
-    html += '<div style="text-align:center"><div class="score-circle ' + scoreClass + '" style="width:80px;height:80px;font-size:1.2em">' + pct + '<span class="pct">%</span></div><div class="muted-label" style="font-size:.7em;margin-top:4px">Accuracy</div></div>';
-    html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + avgTime + 's</div><div class="muted-label" style="font-size:.7em">Avg Time</div></div>';
-    html += '</div>';
-    
-    html += '<div class="home-section" style="margin-top:20px">';
-    html += '<div class="category-header">Performance by Domain</div>';
-    catNames.forEach(function(c) {
-      var p = Math.round(cats[c].correct/cats[c].total*100);
-      var color = p >= 80 ? '#34c759' : p >= 60 ? '#f0ad4e' : '#ff4422';
-      html += '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:4px"><span>' + c + '</span><span style="color:' + color + '">' + p + '% (' + cats[c].correct + '/' + cats[c].total + ')</span></div>';
-      html += '<div style="height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden"><div style="height:100%;width:' + p + '%;background:' + color + ';border-radius:3px"></div></div></div>';
-    });
-    html += '</div>';
-    
-    if (weakest) {
-      html += '<div style="background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.2);border-radius:12px;padding:16px;margin:16px 0;text-align:center">';
-      html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest Domain: ' + weakest + ' (' + weakestPct + '%)</div>';
-      html += '<button class="btn btn-primary" onclick="trainDomain(\'' + weakest + '\')" style="font-size:.85em;padding:8px 16px">Train This Domain</button>';
-      html += '</div>';
-    }
-    
-    html += '<div class="home-section" style="margin-top:16px">';
-    html += '<div class="category-header">Recent Answers</div>';
-    answers.slice(0, 20).forEach(function(a) {
-      var icon = a.is_correct ? '\u2705' : '\u274C';
-      var time = a.time_taken_ms ? Math.round(a.time_taken_ms/1000) + 's' : '';
-      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
-      html += '<span>' + icon + ' ' + (a.category||'?') + ' \u2014 ' + (a.question_type||'?') + '</span>';
-      html += '<span class="muted-label">' + time + '</span></div>';
-    });
-    html += '</div>';
-    
-    html += '<div style="height:40px"></div></div>';
-    app.innerHTML = html;
-  }).catch(function(e) {
+    _paintDashboard(res.data || []);
+  }).catch(function() {
     app.innerHTML = '<div class="fade-in" style="padding-top:20px"><button class="back-btn" onclick="state.screen=\'home\';render()">Home</button><p style="text-align:center;color:#ff4422;margin-top:40px">Error loading dashboard</p></div>';
   });
 }
