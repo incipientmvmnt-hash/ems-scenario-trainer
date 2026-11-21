@@ -739,22 +739,24 @@ const SCENARIOS = [
                                 "type": "order",
                                 "level_filter": "Paramedic",
                                 "items": [
-                                        "Defibrillate at 200J biphasic (or manufacturer recommendation) — resume CPR immediately after shock",
-                                        "Establish IV/IO access during CPR",
-                                        "Administer epinephrine 1 mg IV/IO as soon as IV/IO access exists",
-                                        "After 3rd shock, administer amiodarone 300 mg IV/IO bolus",
-                                        "Continue CPR cycles — reassess rhythm every 2 minutes with pulse checks; repeat epinephrine every 3-5 minutes"
+                                        "Defibrillate at 200J biphasic (or manufacturer recommendation) and resume CPR immediately",
+                                        "Establish IV/IO access during CPR without pausing compressions",
+                                        "After a 2-minute CPR cycle, recheck the rhythm and deliver a second shock if ventricular fibrillation persists",
+                                        "After the second shock, administer epinephrine 1 mg IV/IO during CPR",
+                                        "After the third shock, administer amiodarone 300 mg IV/IO bolus",
+                                        "Repeat epinephrine every 3-5 minutes and keep 2-minute CPR cycles between rhythm checks"
                                 ],
                                 "correctOrder": [
                                         0,
                                         1,
                                         2,
                                         3,
-                                        4
+                                        4,
+                                        5
                                 ],
-                                "explanation": "The ACLS VF/pVT sequence is: (1) Defibrillate as soon as VF is identified, (2) Establish vascular access during CPR, (3) Give epinephrine 1 mg IV/IO as soon as that access exists. Do not hold the first dose for a specific shock number. (4) Amiodarone 300 mg if VF persists after further shocks (may repeat 150 mg once), (5) Continue cycles with epinephrine every 3-5 minutes. CPR quality and early defibrillation remain the highest priorities. Medications are secondary and must not interrupt compressions.",
-                                "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm",
-                                "clinical_pearl": "Epinephrine's primary benefit in cardiac arrest is its alpha-1 mediated vasoconstriction, which increases coronary and cerebral perfusion pressure during CPR. Give the first dose as soon as IV or IO access exists. Do not wait for a set shock number, and never delay defibrillation or stop compressions to give the drug."
+                                "explanation": "Shock ventricular fibrillation as soon as it is seen and resume CPR immediately. Obtain IV or IO access during CPR, without pausing compressions. After a 2-minute cycle, recheck the rhythm and shock a second time if ventricular fibrillation persists. Give epinephrine 1 mg IV/IO after that second shock, during CPR, then every 3 to 5 minutes. Give amiodarone 300 mg IV/IO if ventricular fibrillation persists after the third shock. One later amiodarone dose of 150 mg is the repeat. Do not delay defibrillation, and do not pause compressions to give either drug.",
+                                "guideline_ref": "AHA 2025 adult cardiac arrest algorithm — ventricular fibrillation and pulseless VT",
+                                "clinical_pearl": "In ventricular fibrillation, shock first and resume CPR. Do not delay the shock. Obtain IV or IO access during CPR without pausing compressions. Give the first epinephrine, 1 mg IV/IO, after the second shock, while CPR continues, then every 3 to 5 minutes. If fibrillation persists after the third shock, give amiodarone 300 mg IV/IO. One later dose of 150 mg is the repeat. Epinephrine's benefit here is vasoconstriction that raises coronary and cerebral perfusion pressure. Do not stop compressions to give it."
                         },
                         {
                                 "phase": "treatment",
