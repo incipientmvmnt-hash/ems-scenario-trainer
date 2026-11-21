@@ -3838,49 +3838,34 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "assessment",
-                                "prompt": "You are performing your physical examination. For each finding listed, indicate where you would expect to observe it on this patient. Select the correct anatomical location or physical exam technique for each finding.",
-                                "type": "mr",
+                                "prompt": "Sort each finding to where you would expect to observe it on this patient.",
+                                "type": "categorize",
                                 "level_filter": "AEMT-Paramedic",
-                                "narrative": "You are systematically examining the patient to confirm your suspicion of tension pneumothorax and identify all injuries.",
-                                "vitals_update": {},
-                                "clinical_pearl": "A systematic chest exam in penetrating trauma includes inspection (wounds, symmetry, JVD, tracheal position), palpation (subcutaneous emphysema, chest wall instability), auscultation (bilateral breath sounds), and percussion (hyperresonance vs dullness). Always log-roll the patient to check for exit wounds — the most dangerous wound may be the one you don't see.",
-                                "options": [
-                                        {
-                                                "text": "Absent breath sounds → Right lateral and anterior chest on auscultation",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Breath sounds will be absent on the side of the pneumothorax. Auscultate bilaterally at the anterior chest and mid-axillary lines to compare.",
-                                                "guideline_ref": "PHTLS 10th Edition; 2021 National EMS Education Standards"
-                                        },
-                                        {
-                                                "text": "Hyperresonance to percussion → Right chest wall",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Trapped air under tension causes hyperresonance when the affected side is percussed. This helps differentiate pneumothorax (hyperresonant) from hemothorax (dull).",
-                                                "guideline_ref": "PHTLS 10th Edition"
-                                        },
-                                        {
-                                                "text": "Jugular venous distension → Bilateral neck, visible above the clavicles",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "JVD occurs because the tension pneumothorax compresses the vena cava and right heart, impeding venous return. It is observed bilaterally in the neck.",
-                                                "guideline_ref": "PHTLS 10th Edition"
-                                        },
-                                        {
-                                                "text": "Tracheal deviation → Palpated and observed at the sternal notch, deviated to the LEFT (away from injury)",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Increasing pressure in the right pleural space pushes the mediastinal structures, including the trachea, toward the left (unaffected) side. Palpate at the sternal notch.",
-                                                "guideline_ref": "PHTLS 10th Edition"
-                                        },
-                                        {
-                                                "text": "Subcutaneous emphysema → Palpated around the wound site and right chest wall as a crackling sensation",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Air leaking from the injured lung can track into subcutaneous tissues, producing crepitus (a rice-crispy sensation) on palpation around the wound and chest wall.",
-                                                "guideline_ref": "PHTLS 10th Edition"
-                                        }
-                                ]
+                                "narrative": "You are examining him to confirm tension pneumothorax. The open wound is on the right chest.",
+                                "items": [
+                                        "Absent breath sounds",
+                                        "Hyperresonance to percussion",
+                                        "Jugular venous distension",
+                                        "Tracheal deviation",
+                                        "Subcutaneous emphysema"
+                                ],
+                                "categories": [
+                                        "Neck, visible above both clavicles",
+                                        "Sternal notch, deviated to the left, away from the wound",
+                                        "Palpation of the skin around the right chest wound",
+                                        "Percussion of the right chest wall",
+                                        "Auscultation of the right chest, anterior and mid-axillary"
+                                ],
+                                "correctCategories": [
+                                        4,
+                                        3,
+                                        0,
+                                        1,
+                                        2
+                                ],
+                                "explanation": "Absent breath sounds are heard on auscultation of the right chest. Hyperresonance is on percussion of the right chest, unlike the dullness of blood in the chest. Jugular venous distension is seen in the neck above both clavicles. The trachea is felt at the sternal notch and is pushed left, away from the right-sided injury. Subcutaneous emphysema is crepitus in the skin around the wound.",
+                                "guideline_ref": "PHTLS 10th Edition; 2021 National EMS Education Standards",
+                                "clinical_pearl": "On this right chest wound, listen for absent breath sounds over the right chest, front and mid-axillary line. Percuss that side for hyperresonance, which is trapped air rather than the dullness of blood. Look for jugular venous distension in the neck above both clavicles. Feel the trachea at the sternal notch. It is pushed to the left, away from the injury. Feel for a crackling sensation in the skin around the wound. Log-roll him and look for an exit wound."
                         },
                         {
                                 "phase": "treatment",
@@ -8161,11 +8146,10 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "reassessment",
-                                "prompt": "The patient develops signs of a severe allergic reaction during transport. Review the clinical findings and match each sign to the appropriate body system affected by the envenomation.",
-                                "type": "mr",
+                                "prompt": "The patient develops signs of a severe allergic reaction during transport. Sort each sign by the body system it reflects.",
+                                "type": "categorize",
                                 "level_filter": "Paramedic",
-                                "multi_select": false,
-                                "narrative": "The patient now has diffuse urticaria on his trunk, his lips are swelling, and he reports throat tightness. BP has dropped to 88/54. Wheezing is audible. You are unsure if this is worsening envenomation, anaphylaxis to the venom itself, or both. The distinction matters less than the treatment.",
+                                "narrative": "He now has diffuse urticaria on his trunk, his lips are swelling, and he reports throat tightness. Blood pressure has dropped to 88/54. Wheezing is audible. This may be worsening envenomation, anaphylaxis to the venom, or both.",
                                 "vitals_update": {
                                         "hr": 134,
                                         "bp": "88/54",
@@ -8173,37 +8157,24 @@ const SCENARIOS = [
                                         "spo2": 92,
                                         "gcs": 15
                                 },
-                                "clinical_pearl": "True anaphylaxis to snake venom (IgE-mediated) is rare but can occur, particularly in patients with prior exposure. More commonly, venom components directly activate mast cells (anaphylactoid reaction). The treatment is identical: epinephrine IM, aggressive fluids, and airway management. Do not withhold epinephrine while debating the mechanism — the patient is in distributive shock with airway compromise.",
-                                "options": [
-                                        {
-                                                "text": "Urticaria and lip swelling → Integumentary/immune system",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Urticaria and angioedema result from histamine release causing local vasodilation and plasma extravasation. This can be IgE-mediated (true anaphylaxis) or direct mast cell activation by venom components.",
-                                                "guideline_ref": "2021 National EMS Education Standards — Immunology; AHA Anaphylaxis Guidelines"
-                                        },
-                                        {
-                                                "text": "Wheezing and throat tightness → Respiratory system",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Histamine and leukotrienes cause bronchospasm and mucosal edema in the upper and lower airways. Throat tightness with wheezing indicates both upper and lower airway involvement — this can progress to complete airway obstruction.",
-                                                "guideline_ref": "2021 National EMS Education Standards — Immunology/Airway; AHA Anaphylaxis Guidelines"
-                                        },
-                                        {
-                                                "text": "Hypotension (88/54) → Cardiovascular system",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Anaphylactic shock is a form of distributive shock. Massive vasodilation combined with fluid shifts out of the vascular space causes hypotension. This is compounded by the direct cardiovascular effects of the pit viper venom.",
-                                                "guideline_ref": "2021 National EMS Education Standards — Shock; AHA Anaphylaxis Guidelines"
-                                        },
-                                        {
-                                                "text": "Treatment: Epinephrine 0.3 mg IM (lateral thigh), repeat every 5-15 minutes; aggressive IV fluids; prepare for advanced airway management if upper airway edema worsens",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Epinephrine is the ONLY first-line treatment for anaphylaxis. It reverses bronchospasm (beta-2), supports blood pressure (alpha-1 and beta-1), and inhibits further mast cell degranulation. IM in the lateral thigh provides the fastest absorption. Aggressive fluids address the distributive shock. Airway management may be needed if laryngeal edema progresses.",
-                                                "guideline_ref": "AHA 2020 Anaphylaxis Guidelines; 2021 National EMS Education Standards — Immunology"
-                                        }
-                                ]
+                                "items": [
+                                        "Urticaria and lip swelling",
+                                        "Wheezing and throat tightness",
+                                        "Blood pressure 88/54"
+                                ],
+                                "categories": [
+                                        "Respiratory",
+                                        "Cardiovascular",
+                                        "Integumentary / immune"
+                                ],
+                                "correctCategories": [
+                                        2,
+                                        0,
+                                        1
+                                ],
+                                "explanation": "Urticaria and lip swelling are integumentary and immune. Wheezing and throat tightness are respiratory. A blood pressure of 88/54 is cardiovascular distributive shock. The treatment is epinephrine 0.3 mg IM in the lateral thigh, repeated every 5 to 15 minutes if the reaction continues, plus IV fluid and readiness to manage the airway.",
+                                "guideline_ref": "AHA anaphylaxis guidelines; 2021 National EMS Education Standards — Immunology",
+                                "clinical_pearl": "Urticaria and lip swelling are the skin and immune response. Wheezing and throat tightness are the airway, and the tightness can close it. A pressure of 88/54 is distributive shock. True allergy to venom is uncommon. Venom more often triggers the mast cells directly. Treat it either way: epinephrine 0.3 mg IM in the lateral thigh, repeated every 5 to 15 minutes if the reaction continues, IV fluid for the low pressure, and prepare to manage the airway. Do not wait to decide which mechanism it is."
                         }
                 ]
         },
