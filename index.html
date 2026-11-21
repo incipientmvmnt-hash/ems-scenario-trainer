@@ -741,7 +741,7 @@ const SCENARIOS = [
                                 "items": [
                                         "Defibrillate at 200J biphasic (or manufacturer recommendation) — resume CPR immediately after shock",
                                         "Establish IV/IO access during CPR",
-                                        "After 2nd shock and 2 minutes of CPR, administer epinephrine 1 mg IV/IO",
+                                        "Administer epinephrine 1 mg IV/IO as soon as IV/IO access exists",
                                         "After 3rd shock, administer amiodarone 300 mg IV/IO bolus",
                                         "Continue CPR cycles — reassess rhythm every 2 minutes with pulse checks; repeat epinephrine every 3-5 minutes"
                                 ],
@@ -752,9 +752,9 @@ const SCENARIOS = [
                                         3,
                                         4
                                 ],
-                                "explanation": "The ACLS VF/pVT algorithm sequences: (1) Defibrillate as soon as VF is identified, (2) Establish vascular access during CPR, (3) Epinephrine 1 mg after the 2nd shock cycle, (4) Amiodarone 300 mg after the 3rd shock (may repeat 150 mg once), (5) Continue cycles with epinephrine q3-5 min. CPR quality and early defibrillation remain the highest priorities — medications are secondary.",
+                                "explanation": "The ACLS VF/pVT sequence is: (1) Defibrillate as soon as VF is identified, (2) Establish vascular access during CPR, (3) Give epinephrine 1 mg IV/IO as soon as that access exists. Do not hold the first dose for a specific shock number. (4) Amiodarone 300 mg if VF persists after further shocks (may repeat 150 mg once), (5) Continue cycles with epinephrine every 3-5 minutes. CPR quality and early defibrillation remain the highest priorities. Medications are secondary and must not interrupt compressions.",
                                 "guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm",
-                                "clinical_pearl": "Epinephrine's primary benefit in cardiac arrest is its alpha-1 mediated vasoconstriction, which increases coronary and cerebral perfusion pressure during CPR. Give it early but never delay defibrillation or interrupt compressions for drug administration."
+                                "clinical_pearl": "Epinephrine's primary benefit in cardiac arrest is its alpha-1 mediated vasoconstriction, which increases coronary and cerebral perfusion pressure during CPR. Give the first dose as soon as IV or IO access exists. Do not wait for a set shock number, and never delay defibrillation or stop compressions to give the drug."
                         },
                         {
                                 "phase": "treatment",
@@ -893,7 +893,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "National EMS Education Standards — Immunologic Emergencies"
                                         },
                                         {
-                                                "text": "Patient report of throat tightness alone, which is consistent with an anaphylaxis diagnosis",
+                                                "text": "Isolated patient report of throat tightness, without skin, breathing, or blood-pressure changes, which by itself confirms an anaphylaxis diagnosis",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Throat tightness alone is not diagnostic of anaphylaxis. While concerning, it can be caused by anxiety, vocal cord dysfunction, or other conditions. Anaphylaxis requires a pattern of multi-system involvement.",
@@ -1011,7 +1011,7 @@ const SCENARIOS = [
                                 "level_filter": "EMT-AEMT-Paramedic",
                                 "options": [
                                         {
-                                                "text": "Paradoxical chest wall movement on the right side with SpO2 of 84% indicating a flail chest with likely underlying pulmonary contusion",
+                                                "text": "Paradoxical movement of the right chest wall during the primary survey, with an oxygen saturation of 84 percent",
                                                 "correct": true,
                                                 "critical": false,
                                                 "explanation": "In the XABCDE approach, life-threatening chest injuries take priority after hemorrhage control. The paradoxical chest movement indicates flail chest with probable underlying pulmonary contusion, explaining the severely compromised oxygenation (SpO2 84%). This requires immediate positive-pressure ventilation and high-flow oxygen.",
@@ -1025,7 +1025,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "PHTLS 10th Edition — Primary Survey"
                                         },
                                         {
-                                                "text": "The left femur deformity with shortened and rotated extremity, which requires immediate traction splinting",
+                                                "text": "The shortened and externally rotated left femur, which appears to require immediate traction splinting before leaving the scene",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Femur fractures can cause significant blood loss (750-1500 mL), but splinting is a secondary survey intervention. The flail chest with hypoxia is the more immediately life-threatening finding that must be addressed in the primary survey.",
@@ -1530,8 +1530,8 @@ const SCENARIOS = [
                                         2
                                 ],
                                 "explanation": "First priority: verify restraints are safe — ensure the patient is not prone (risk of positional asphyxia), restraints allow chest expansion, and distal circulation is intact. Second: assess glucose (hypoglycemia can mimic agitation) and establish IV access for medications. Third: actively cool — hyperthermia above 104°F is a medical emergency associated with sympathomimetic toxicity, and can lead to rhabdomyolysis, DIC, and death. Fourth: continuous cardiac monitoring — stimulant drugs can cause lethal dysrhythmias.",
-                                "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; NAEMSP Position Statement on Patient Restraint; Excited Delirium/Acute Behavioral Disturbance Guidelines",
-                                "clinical_pearl": "Excited delirium/acute behavioral disturbance is a medical emergency, not just a behavioral problem. Hyperthermia, tachycardia, and agitation with substance use carry significant mortality risk. These patients need aggressive cooling, sedation (ketamine or benzodiazepines per scope), and rapid transport. Never leave a restrained patient unmonitored — sudden cardiac arrest is a known risk."
+                                "guideline_ref": "National EMS Education Standards — Behavioral Emergencies; NAEMSP Position Statement on Patient Restraint; NAEMSP Position Statement on Agitated/Violent Patient Management",
+                                "clinical_pearl": "Hyperactive delirium with severe agitation is a medical emergency, not just a behavioral problem. Hyperthermia, tachycardia, and agitation with substance use carry significant mortality risk. These patients need aggressive cooling, sedation (ketamine or benzodiazepines per scope), and rapid transport. Never leave a restrained patient unmonitored — sudden cardiac arrest is a known risk."
                         }
                 ]
         },
@@ -1904,43 +1904,29 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "assessment",
-                                "prompt": "Review the following clinical presentations. Identify which findings are consistent with ACUTE STROKE versus common STROKE MIMICS:",
-                                "type": "mr",
+                                "prompt": "Review the following clinical presentations. Sort each one as acute stroke or a common stroke mimic.",
+                                "type": "categorize",
                                 "level_filter": "EMT-AEMT-Paramedic",
-                                "multi_select": false,
-                                "narrative": "Consider the following clinical scenarios and classify each as more likely stroke or more likely a stroke mimic. This distinction is important for clinical reasoning, though prehospital providers should treat all suspected strokes as emergencies.",
-                                "vitals_update": {},
-                                "clinical_pearl": "Up to 30% of suspected strokes are ultimately diagnosed as mimics. However, prehospital providers should err on the side of transporting to a stroke center — the consequences of missing a real stroke far outweigh overtriage. Hypoglycemia is the most common and most important mimic to rule out in the field.",
-                                "options": [
-                                        {
-                                                "text": "Sudden unilateral facial droop with arm weakness and speech difficulty in a patient with atrial fibrillation → ACUTE STROKE",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Classic acute stroke presentation: sudden onset, unilateral deficits, and a major risk factor (atrial fibrillation). This is a high-probability stroke.",
-                                                "guideline_ref": "AHA/ASA Stroke Recognition Guidelines"
-                                        },
-                                        {
-                                                "text": "Gradual onset of bilateral tingling in hands and feet with anxiety and hyperventilation → STROKE MIMIC",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Bilateral symptoms, gradual onset, and association with hyperventilation suggest a mimic — likely hyperventilation syndrome or anxiety. Stroke typically causes unilateral, sudden-onset deficits.",
-                                                "guideline_ref": "AHA/ASA Stroke Differential Diagnosis"
-                                        },
-                                        {
-                                                "text": "Unresponsive patient with blood glucose of 38 mg/dL and left-sided weakness → STROKE MIMIC",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "Hypoglycemia is the most common stroke mimic and can produce focal neurological deficits identical to stroke. Treat the glucose first — if symptoms resolve, it was likely hypoglycemia.",
-                                                "guideline_ref": "AHA/ASA 2019 Guidelines; National EMS Education Standards"
-                                        },
-                                        {
-                                                "text": "Sudden severe headache described as 'worst of my life' with vomiting and neck stiffness → ACUTE STROKE (hemorrhagic)",
-                                                "correct": true,
-                                                "critical": false,
-                                                "explanation": "This 'thunderclap headache' presentation with meningeal signs is classic for subarachnoid hemorrhage, a form of hemorrhagic stroke. This is a true neurological emergency.",
-                                                "guideline_ref": "AHA/ASA Subarachnoid Hemorrhage Guidelines"
-                                        }
-                                ]
+                                "narrative": "Classify each presentation. Prehospital providers should still treat every suspected stroke as an emergency.",
+                                "items": [
+                                        "Sudden unilateral facial droop with arm weakness and speech difficulty in a patient with atrial fibrillation",
+                                        "Gradual onset of bilateral tingling in hands and feet with anxiety and hyperventilation",
+                                        "Unresponsive patient with blood glucose of 38 mg/dL and left-sided weakness",
+                                        "Sudden severe headache described as 'worst of my life' with vomiting and neck stiffness"
+                                ],
+                                "categories": [
+                                        "Acute Stroke",
+                                        "Stroke Mimic"
+                                ],
+                                "correctCategories": [
+                                        0,
+                                        1,
+                                        1,
+                                        0
+                                ],
+                                "explanation": "Sudden unilateral deficits with atrial fibrillation are a high-probability acute stroke. A thunderclap headache with vomiting and neck stiffness is a hemorrhagic stroke pattern, including subarachnoid hemorrhage. Gradual bilateral tingling with hyperventilation is a mimic. Focal weakness with a glucose of 38 mg/dL is hypoglycemia, the most important field mimic: treat the glucose first.",
+                                "guideline_ref": "AHA/ASA Stroke Recognition Guidelines; AHA/ASA 2019 Guidelines",
+                                "clinical_pearl": "Up to 30% of suspected strokes are ultimately diagnosed as mimics. However, prehospital providers should err on the side of transporting to a stroke center — the consequences of missing a real stroke far outweigh overtriage. Hypoglycemia is the most common and most important mimic to rule out in the field."
                         },
                         {
                                 "phase": "treatment",
@@ -4570,15 +4556,15 @@ const SCENARIOS = [
                                         "spo2": 84,
                                         "gcs": 12
                                 },
-                                "clinical_pearl": "Diminishing wheezing in a worsening patient is an ominous sign — it means air movement is so poor that there is not enough flow to generate wheezes. This 'silent chest' combined with rising EtCO2, confusion, and fatigue signals imminent respiratory arrest. Prepare for assisted ventilation and consider all pharmacologic options including IV/IM epinephrine for severe refractory bronchospasm.",
+                                "clinical_pearl": "Diminishing wheezing in a worsening patient is an ominous sign — it means air movement is so poor that there is not enough flow to generate wheezes. This 'silent chest' combined with rising EtCO2, confusion, and fatigue signals imminent respiratory arrest. Prepare for assisted ventilation. Epinephrine is not routine COPD care. Consider it only for imminent arrest, and the cardiac risk is real in an older patient with hypertension.",
                                 "items": [
                                         "Assist ventilations with BVM — slow rate (10-12/min) with prolonged expiratory phase to avoid air trapping",
-                                        "Administer epinephrine 0.3 mg IM (1:1,000) for severe refractory bronchospasm",
+                                        "Consider epinephrine 0.3 mg IM (1:1,000) only for life-threatening bronchospasm with imminent arrest, weighing cardiac risk",
                                         "Prepare for advanced airway placement (supraglottic or endotracheal) if BVM ventilation is inadequate",
                                         "Consider IV magnesium sulfate 2g over 20 minutes as adjunct bronchodilator",
                                         "Notify receiving facility of impending respiratory failure — request respiratory therapy at bedside on arrival"
                                 ],
-                                "explanation": "Assisted ventilation is the immediate priority when the patient is failing. Epinephrine IM provides potent bronchodilation via beta-2 stimulation. Advanced airway preparation is prudent if BVM is inadequate. Magnesium sulfate is an evidence-based adjunct that relaxes bronchial smooth muscle. Early hospital notification ensures resources are ready. Note: ventilate slowly to avoid auto-PEEP and air trapping, which can cause pneumothorax in obstructive disease.",
+                                "explanation": "Assisted ventilation is the immediate priority when the patient is failing. GOLD does not put epinephrine in the COPD algorithm the way asthma guidelines do. Consider 0.3 mg IM only if bronchospasm is life-threatening and arrest is imminent after the other measures, and weigh the cardiac risk in this elderly patient with hypertension. Advanced airway preparation is prudent if BVM is inadequate. Magnesium sulfate is an evidence-based adjunct that relaxes bronchial smooth muscle. Early hospital notification ensures resources are ready. Ventilate slowly to avoid auto-PEEP and air trapping, which can cause pneumothorax in obstructive disease.",
                                 "guideline_ref": "NAEMSP Airway Management; GOLD COPD Guidelines; National EMS Education Standards — Airway Management",
                                 "correctOrder": [
                                         0,
@@ -6405,13 +6391,13 @@ const SCENARIOS = [
                                 "type": "order",
                                 "level_filter": "EMR-EMT",
                                 "narrative": "You have positioned the patient on her left side and suctioned her airway. She remains postictal with a GCS of 10. Her SpO2 is 94% and vitals are unchanged.",
-                                "explanation": "Airway management and oxygenation take priority, followed by protecting the patient from injury, continuous monitoring, and initiating transport to an appropriate facility with OB capability.",
+                                "explanation": "Airway management and oxygenation take priority, followed by protecting the patient from injury and continuous monitoring. EMRs do not start IVs. Prepare for transport, and obtain vascular access only if it is within your scope. Then transport to a facility with obstetric capability.",
                                 "guideline_ref": "NAEMSP Obstetric Emergencies; National EMS Education Standards",
-                                "clinical_pearl": "For EMR/EMT providers, the key to eclampsia management is airway protection, left lateral positioning, supplemental oxygen, and rapid transport to a facility with obstetric capability. Seizure precautions and supportive care are the focus at this level.",
+                                "clinical_pearl": "For EMR and EMT providers, the key to eclampsia management is airway protection, left lateral positioning, supplemental oxygen, and rapid transport to a facility with obstetric capability. Vascular access is not an EMR skill. Seizure precautions and supportive care are the focus at this level.",
                                 "items": [
                                         "Apply high-flow oxygen via non-rebreather mask",
                                         "Pad surrounding area and maintain seizure precautions",
-                                        "Obtain vascular access or prepare for transport",
+                                        "Prepare for transport (obtain vascular access only if it is within your scope)",
                                         "Perform ongoing neurological and vital sign reassessment",
                                         "Transport emergently to closest appropriate facility with OB capability"
                                 ],
@@ -7004,7 +6990,7 @@ const SCENARIOS = [
         },
         {
                 "id": "nat-beh-02",
-                "title": "Excited Delirium / Agitated Patient",
+                "title": "Severe Agitation / Hyperactive Delirium",
                 "dispatch": "30-year-old male, combative, police on scene, needs medical",
                 "category": "Behavioral/Psychiatric",
                 "difficulty": "Hard",
@@ -7040,8 +7026,8 @@ const SCENARIOS = [
                                                 "text": "Cardiac arrest from metabolic crisis",
                                                 "correct": true,
                                                 "critical": false,
-                                                "explanation": "The combination of severe hyperthermia (104.2°F), extreme physical exertion, tachycardia, and likely metabolic acidosis places this patient at imminent risk for sudden cardiac arrest. This is the leading cause of death in excited delirium.",
-                                                "guideline_ref": "NAEMSP Position Statement on Excited Delirium; NAEMSP Position Statement on Agitated/Violent Patient Management"
+                                                "explanation": "The combination of severe hyperthermia (104.2°F), extreme physical exertion, tachycardia, and likely metabolic acidosis places this patient at imminent risk for sudden cardiac arrest. This is the leading cause of death in hyperactive delirium with severe agitation.",
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management"
                                         },
                                         {
                                                 "text": "Airway obstruction from prone positioning",
@@ -7065,7 +7051,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "NAEMSP Conducted Energy Device Injuries"
                                         }
                                 ],
-                                "clinical_pearl": "Excited delirium syndrome carries a significant risk of sudden cardiac arrest. The combination of extreme metabolic demand, hyperthermia, acidosis, and catecholamine surge creates a perfect storm for fatal dysrhythmias. Rapid cooling and sedation (at Paramedic level) are time-critical."
+                                "clinical_pearl": "Hyperactive delirium with severe agitation carries a significant risk of sudden cardiac arrest. The combination of extreme metabolic demand, hyperthermia, acidosis, and a hyperadrenergic crisis can cause fatal dysrhythmias. Rapid cooling and sedation (at Paramedic level) are time-critical. Older materials called this excited delirium. The AMA and ACEP withdrew that term in 2023."
                         },
                         {
                                 "phase": "treatment",
@@ -7078,14 +7064,14 @@ const SCENARIOS = [
                                                 "correct": true,
                                                 "critical": false,
                                                 "explanation": "Prone restraint contributes to positional asphyxia and is especially dangerous in agitated, obese, or intoxicated patients. The patient must be placed on their side or sitting up as soon as possible.",
-                                                "guideline_ref": "NAEMSP Position Statement on Excited Delirium; DOJ Positional Asphyxia Guidelines"
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; DOJ Positional Asphyxia Guidelines"
                                         },
                                         {
                                                 "text": "Begin active cooling measures",
                                                 "correct": true,
                                                 "critical": false,
                                                 "explanation": "Hyperthermia (104.2°F) is immediately life-threatening. Aggressive cooling is critical to prevent organ damage, rhabdomyolysis, and cardiac arrest.",
-                                                "guideline_ref": "NAEMSP Excited Delirium Management; NAEMSP Hyperthermia Management Guidelines"
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; NAEMSP Hyperthermia Management Guidelines"
                                         },
                                         {
                                                 "text": "Apply a hobble restraint connecting wrists to ankles behind the back",
@@ -7106,7 +7092,7 @@ const SCENARIOS = [
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Waiting for the patient to 'calm down' is extremely dangerous. Sudden quiet after extreme agitation may indicate impending cardiovascular collapse, not improvement. Immediate medical intervention is required.",
-                                                "guideline_ref": "NAEMSP Excited Delirium Management; NAEMSP Agitation Management Position Statement"
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management"
                                         }
                                 ],
                                 "clinical_pearl": "Positioning and cooling are the two interventions available at all provider levels that most directly reduce mortality. Get the patient off their stomach and start cooling immediately — don't wait for ALS.",
@@ -7128,29 +7114,29 @@ const SCENARIOS = [
                                                 "text": "Ketamine 4 mg/kg IM",
                                                 "correct": true,
                                                 "critical": false,
-                                                "explanation": "Ketamine IM is the preferred agent for excited delirium: rapid onset (3-5 minutes IM), reliable absorption, preserved respiratory drive, bronchodilation, and does not cause the respiratory depression seen with benzodiazepines at sedating doses. The 4 mg/kg IM dose is well-established for this indication.",
-                                                "guideline_ref": "NAEMSP Position Statement on Excited Delirium; NAEMSP Ketamine for Agitation; 2021 National EMS Education Standards — Paramedic Pharmacology"
+                                                "explanation": "Ketamine IM is the preferred agent for hyperactive delirium with severe agitation: rapid onset (3-5 minutes IM), reliable absorption, preserved respiratory drive, bronchodilation, and does not cause the respiratory depression seen with benzodiazepines at sedating doses. The 4 mg/kg IM dose is well-established for this indication.",
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; NAEMSP Ketamine for Agitation; 2021 National EMS Education Standards — Paramedic Pharmacology"
                                         },
                                         {
                                                 "text": "Midazolam 5 mg IM",
                                                 "correct": false,
                                                 "critical": false,
-                                                "explanation": "Midazolam 5 mg IM is often inadequate for severe excited delirium and may require repeated doses. Onset is slower than ketamine (10-15 min IM vs 3-5 min), and at the doses needed for effective sedation, respiratory depression is significant. It remains an acceptable alternative if ketamine is unavailable.",
-                                                "guideline_ref": "NAEMSP Excited Delirium Management; 2021 National EMS Education Standards"
+                                                "explanation": "Midazolam 5 mg IM is often inadequate for hyperactive delirium with severe agitation and may require repeated doses. Onset is slower than ketamine (10-15 min IM vs 3-5 min), and at the doses needed for effective sedation, respiratory depression is significant. It remains an acceptable alternative if ketamine is unavailable.",
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; 2021 National EMS Education Standards"
                                         },
                                         {
                                                 "text": "Haloperidol 10 mg IM",
                                                 "correct": false,
                                                 "critical": true,
                                                 "explanation": "Haloperidol lowers the seizure threshold, prolongs QT interval, and has a slow onset (20-40 minutes IM). In a patient with severe hyperthermia and tachycardia who is at imminent risk for cardiac arrest, haloperidol's QT prolongation can trigger torsades de pointes. It is not appropriate for this acute metabolic crisis.",
-                                                "guideline_ref": "NAEMSP Excited Delirium Management; FDA Black Box Warning — QT Prolongation"
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; FDA Black Box Warning — QT Prolongation"
                                         },
                                         {
                                                 "text": "Diphenhydramine 50 mg IM",
                                                 "correct": false,
                                                 "critical": false,
                                                 "explanation": "Diphenhydramine has anticholinergic properties that impair sweating and worsen hyperthermia. It provides inadequate sedation for this level of agitation and would actively harm this patient by further elevating temperature.",
-                                                "guideline_ref": "NAEMSP Excited Delirium Management; Anticholinergic toxicity considerations"
+                                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; Anticholinergic toxicity considerations"
                                         }
                                 ],
                                 "clinical_pearl": "Ketamine IM has become the preferred agent for severe prehospital agitation because it works fast, works reliably, and maintains respiratory drive. Always have suction and airway equipment ready — emergence reactions and hypersalivation can occur. Once sedated, continue aggressive cooling and cardiac monitoring. Prepare for possible apnea, especially if benzodiazepines were given first."
@@ -7176,8 +7162,8 @@ const SCENARIOS = [
                                         4
                                 ],
                                 "explanation": "The treatment sequence prioritizes preventing positional asphyxia (most immediate death risk), then addressing hyperthermia, ensuring oxygenation, monitoring for cardiac arrest, and transporting emergently. Every minute of delay increases mortality risk.",
-                                "guideline_ref": "NAEMSP Excited Delirium Management; NAEMSP Agitation Management Guidelines",
-                                "clinical_pearl": "Time is the enemy in excited delirium. The goal is rapid sedation (Paramedic level), aggressive cooling, and emergent transport. Do not spend extended time on scene. If chemical sedation is achieved, continue cooling and monitoring en route — these patients can arrest without warning even after sedation."
+                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; 2021 National EMS Education Standards — Behavioral Emergencies",
+                                "clinical_pearl": "Time is the enemy in hyperactive delirium with severe agitation. The goal is rapid sedation (Paramedic level), aggressive cooling, and emergent transport. Do not spend extended time on scene. If chemical sedation is achieved, continue cooling and monitoring en route — these patients can arrest without warning even after sedation."
                         },
                         {
                                 "phase": "decision-making",
@@ -7200,8 +7186,8 @@ const SCENARIOS = [
                                         "Cardiac monitor shows widening QRS complexes"
                                 ],
                                 "explanation": "Differentiating expected findings from signs of imminent collapse is essential. Sudden cessation of agitation, declining mental status, and loss of pulses indicate the patient is transitioning from a hypermetabolic state to cardiovascular collapse.",
-                                "guideline_ref": "NAEMSP Excited Delirium Management; NAEMSP Position Statement on Agitated/Violent Patient Management",
-                                "clinical_pearl": "The most dangerous moment in excited delirium is when the patient suddenly becomes quiet and stops struggling. This is NOT a sign of improvement — it often precedes cardiac arrest. Treat sudden calm as a critical deterioration.",
+                                "guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management",
+                                "clinical_pearl": "The most dangerous moment in hyperactive delirium with severe agitation is when the patient suddenly becomes quiet and stops struggling. This is NOT a sign of improvement — it often precedes cardiac arrest. Treat sudden calm as a critical deterioration.",
                                 "correctCategories": [
                                         0,
                                         1,
@@ -7238,7 +7224,7 @@ const SCENARIOS = [
                                                 "text": "Supraventricular tachycardia with aberrant conduction",
                                                 "correct": false,
                                                 "critical": true,
-                                                "explanation": "In the context of excited delirium with metabolic derangement, wide-complex tachycardia should be treated as ventricular tachycardia. Adenosine is ineffective for VT and delays definitive treatment. In unstable patients, cardioversion is the priority regardless of rhythm interpretation.",
+                                                "explanation": "In a hyperadrenergic crisis with this metabolic derangement, wide-complex tachycardia should be treated as ventricular tachycardia. Adenosine is ineffective for VT and delays definitive treatment. In unstable patients, cardioversion is the priority regardless of rhythm interpretation.",
                                                 "guideline_ref": "AHA ACLS Tachycardia Algorithm; Brugada Criteria for WCT"
                                         },
                                         {
@@ -7256,7 +7242,7 @@ const SCENARIOS = [
                                                 "guideline_ref": "AHA ACLS Cardiac Arrest Algorithm"
                                         }
                                 ],
-                                "clinical_pearl": "In excited delirium, cardiac arrest is often preceded by a wide-complex tachycardia — the hyperadrenergic state, acidosis, hyperkalemia, and hyperthermia all promote ventricular irritability. When you see a wide-complex tachycardia in this context, act immediately. Synchronized cardioversion for unstable VT with a pulse; defibrillation if pulses are lost."
+                                "clinical_pearl": "In hyperactive delirium with severe agitation, cardiac arrest is often preceded by a wide-complex tachycardia. The hyperadrenergic state, acidosis, hyperkalemia, and hyperthermia all promote ventricular irritability. When you see a wide-complex tachycardia in this context, act immediately. Synchronized cardioversion for unstable VT with a pulse; defibrillation if pulses are lost."
                         }
                 ]
         },
@@ -7987,27 +7973,27 @@ const SCENARIOS = [
                                 "clinical_pearl": "Electrical injury patients often have injuries far worse than what is visible externally. The current travels through the body along the path of least resistance, damaging muscles, nerves, and blood vessels internally. Always assume the worst.",
                                 "options": [
                                         {
-                                                "text": "Establish manual in-line cervical spine stabilization",
+                                                "text": "Establish manual in-line cervical spine stabilization while assessing the airway",
                                                 "correct": true,
-                                                "explanation": "This patient has both an electrical injury and a fall from height (~12 feet). Spinal injury must be assumed. Manual C-spine stabilization takes priority after confirming the scene is safe and the power source is off.",
+                                                "explanation": "Power is already off. PHTLS teaches manual in-line stabilization and airway assessment together in the primary survey (XABCDE), not cervical stabilization as a step by itself. This patient also fell about 12 feet, so assume a spinal injury while you open and assess the airway.",
                                                 "guideline_ref": "NAEMSP/ACS Position Statement on Spinal Motion Restriction; PHTLS 10th Edition — Electrical Injuries"
                                         },
                                         {
                                                 "text": "Immediately assess and treat the burn wounds",
                                                 "correct": false,
-                                                "explanation": "While burns need attention, spinal stabilization is the priority given the mechanism (fall from height). Burns are addressed after life threats and spinal precautions.",
+                                                "explanation": "Burns are not the first action. With the power already off, manual stabilization and airway assessment happen together. Burn care comes after those life threats.",
                                                 "guideline_ref": "PHTLS 10th Edition"
                                         },
                                         {
                                                 "text": "Perform a 12-lead ECG before any other intervention",
                                                 "correct": false,
-                                                "explanation": "Cardiac monitoring is important for electrical injuries but does not precede airway management, C-spine stabilization, and primary survey in a trauma patient.",
+                                                "explanation": "Cardiac monitoring is important for electrical injuries, but it does not come before the primary survey. Hold manual stabilization while you assess the airway.",
                                                 "guideline_ref": "AHA ACLS 2020; PHTLS 10th Edition"
                                         },
                                         {
                                                 "text": "Cool the burns with running water for 20 minutes",
                                                 "correct": false,
-                                                "explanation": "Burn cooling is a secondary concern. Prolonged cooling in a patient with altered consciousness and potential spinal injury can cause hypothermia and delay critical interventions.",
+                                                "explanation": "Burn cooling is a secondary concern. Prolonged cooling in a patient with altered consciousness can cause hypothermia and delay the primary survey, which starts with airway assessment while you hold manual stabilization.",
                                                 "guideline_ref": "ABA Burn Referral Criteria; PHTLS 10th Edition"
                                         }
                                 ]
@@ -8640,8 +8626,8 @@ const SCENARIOS = [
                                         "Apply high-flow oxygen via non-rebreather mask",
                                         "Position patient upright for comfort and breathing",
                                         "Keep patient warm — avoid cold exposure",
-                                        "Establish IV access and administer normal saline bolus",
-                                        "Provide appropriate pain management per protocol",
+                                        "Establish IV access and give a normal saline bolus if that is within your scope",
+                                        "Treat pain within your scope",
                                         "Initiate rapid transport to appropriate facility"
                                 ],
                                 "correctOrder": [
@@ -8652,7 +8638,7 @@ const SCENARIOS = [
                                         4,
                                         5
                                 ],
-                                "explanation": "Oxygen is the immediate priority given worsening hypoxemia. Positioning and keeping the patient warm prevent further sickling. IV access enables fluid and medication administration. Pain management is important but follows life-threat interventions. Transport should not be delayed.",
+                                "explanation": "Oxygen is the immediate priority given worsening hypoxemia. Positioning and keeping the patient warm prevent further sickling. Establish IV access and give a normal saline bolus only if that is within your scope. Treat pain within your scope. Do not teach IV analgesia as an EMT step. Transport should not be delayed.",
                                 "guideline_ref": "NAEMSP Sickle Cell Prehospital Guidelines; National Association of EMS Physicians position statement on SCD",
                                 "clinical_pearl": "Cold exposure and dehydration trigger sickling. Keep the ambulance warm, use warmed IV fluids if available, and avoid ice packs. Sickle cell patients often have difficult IV access due to repeated hospitalizations — consider alternative sites early."
                         },
@@ -8775,12 +8761,12 @@ const SCENARIOS = [
                                         "Reduce oxygen flow to 2 LPM nasal cannula to prevent oxygen toxicity",
                                         "Notify receiving facility early for preparation of blood transfusion and respiratory support"
                                 ],
-                                "explanation": "Worsening acute chest syndrome requires escalating respiratory support: CPAP provides positive pressure to recruit collapsed alveoli. If CPAP fails, intubation may be necessary. Albuterol can help if bronchospasm is contributing. Aggressive fluid boluses can worsen pulmonary edema in ACS. Reducing oxygen in a patient with SpO2 85% is dangerous. Early hospital notification allows preparation of exchange transfusion, the definitive treatment.",
+                                "explanation": "Worsening acute chest syndrome requires escalating respiratory support: CPAP provides positive pressure to recruit collapsed alveoli. If CPAP fails, intubation may be necessary. Albuterol can help if bronchospasm is contributing. Even a maintenance saline rate can worsen pulmonary edema when the SpO2 is 85% and crackles are present, so hold extra fluid unless directed. The 2-liter bolus is not appropriate. Reducing oxygen in a patient with SpO2 85% is dangerous. Early hospital notification allows preparation of exchange transfusion, the definitive treatment.",
                                 "guideline_ref": "NAEMSP Sickle Cell Prehospital Guidelines; ACS Management Guidelines; 2021 National EMS Education Standards — Paramedic Respiratory Emergencies",
-                                "clinical_pearl": "CPAP is a powerful tool for sickle cell patients with acute chest syndrome. The positive pressure recruits collapsed alveoli and improves V/Q matching without intubation. If you don't have CPAP, assist ventilations with BVM if the patient tires. Early notification to the ED is critical — these patients may need emergent exchange transfusion, which requires advance preparation.",
+                                "clinical_pearl": "CPAP is a powerful tool for sickle cell patients with acute chest syndrome. The positive pressure recruits collapsed alveoli and improves V/Q matching without intubation. If you don't have CPAP, assist ventilations with BVM if the patient tires. Hold extra saline, including a maintenance drip, when the SpO2 is 85% with crackles. That fluid can worsen pulmonary edema unless a physician directs it. Early notification to the ED is critical — these patients may need emergent exchange transfusion, which requires advance preparation.",
                                 "correctCategories": [
                                         0,
-                                        0,
+                                        1,
                                         0,
                                         0,
                                         1,
@@ -8957,7 +8943,7 @@ const SCENARIOS = [
                                         {
                                                 "text": "Standard CHF treatments like nitroglycerin require adequate blood pressure, which this patient lacks",
                                                 "correct": true,
-                                                "explanation": "Nitroglycerin is first-line for acute CHF with adequate BP (typically SBP >100), but this patient's SBP of 92 makes vasodilator use dangerous. This is cardiogenic shock — the heart is failing as a pump, and reducing preload further could cause cardiovascular collapse.",
+                                                "explanation": "Nitroglycerin is often held below a blood-pressure cutoff, but that cutoff is not one universal number. Protocols use thresholds from about 90 to 110 mmHg. This patient's SBP is 92 and she is in cardiogenic shock. The contraindication is pump failure: reducing preload can collapse cardiac output. Do not give nitroglycerin here because a card says the cutoff is 100.",
                                                 "guideline_ref": "AHA/ACC Heart Failure Guidelines; NAEMSP CHF Prehospital Management"
                                         },
                                         {
@@ -9029,9 +9015,9 @@ const SCENARIOS = [
                                         "spo2": 82,
                                         "gcs": 13
                                 },
-                                "explanation": "CPAP is the highest-impact intervention for cardiogenic pulmonary edema — it reduces preload, afterload, and work of breathing simultaneously. Upright positioning aids breathing. IV access is needed but fluids should be avoided. Given hypotension, nitroglycerin is contraindicated. Early hospital notification allows preparation for advanced interventions.",
+                                "explanation": "Sit the patient fully upright before or at the same time as CPAP. You cannot apply CPAP to a supine patient, and sitting up itself eases breathing. CPAP and the upright position happen together. Then establish IV access and keep the line at a TKO rate. Avoid a fluid bolus. Monitor continuously and obtain a 12-lead to look for acute MI as the cause. Notify the hospital early of cardiogenic shock and transport, reassessing CPAP tolerance every 2-3 minutes. Nitroglycerin is contraindicated at this blood pressure.",
                                 "guideline_ref": "AHA/ACC Heart Failure Guidelines; NAEMSP CPAP Position Statement; Cardiogenic Shock Management",
-                                "clinical_pearl": "CPAP is the single most impactful prehospital intervention for cardiogenic pulmonary edema. It works by: (1) increasing intraalveolar pressure to push fluid out of alveoli, (2) reducing preload by increasing intrathoracic pressure, (3) reducing afterload by decreasing transmural LV pressure, (4) recruiting collapsed alveoli. Start at 5 cmH2O and titrate up to 10 cmH2O as tolerated.",
+                                "clinical_pearl": "Sit the patient up first. You cannot put CPAP on a patient who is lying flat, and the upright position itself eases breathing. CPAP then reduces preload and work of breathing. Start at 5 cmH2O and titrate up to 10 cmH2O as tolerated. Keep the IV at a TKO rate.",
                                 "items": [
                                         "Apply CPAP at 5-10 cmH2O (if patient can cooperate and maintain airway)",
                                         "Position patient sitting fully upright with legs dependent",
@@ -9041,8 +9027,8 @@ const SCENARIOS = [
                                         "Rapid transport — reassess CPAP tolerance and respiratory status every 2-3 minutes"
                                 ],
                                 "correctOrder": [
-                                        0,
                                         1,
+                                        0,
                                         2,
                                         3,
                                         4,
@@ -9841,7 +9827,7 @@ const SCENARIOS = [
                                 "phase": "assessment",
                                 "prompt": "Given this patient's history, which acute conditions must you consider? Select all that apply.",
                                 "type": "mr",
-                                "selectCount": 4,
+                                "selectCount": 3,
                                 "level_filter": "EMT-AEMT-Paramedic",
                                 "options": [
                                         {
@@ -9866,8 +9852,8 @@ const SCENARIOS = [
                                         },
                                         {
                                                 "text": "Hypertensive emergency with end-organ damage",
-                                                "correct": true,
-                                                "explanation": "Blood pressure of 168/94 with altered mental status raises concern for hypertensive emergency. End-organ damage including hypertensive encephalopathy could contribute to the acute behavior change."
+                                                "correct": false,
+                                                "explanation": "A blood pressure of 168/94 is not a hypertensive emergency. That diagnosis needs a pressure roughly above 180/120 plus acute end-organ damage. Altered mentation here is better explained by infection, a subdural, or low glucose."
                                         },
                                         {
                                                 "text": "Alzheimer's medication side effects causing hallucinations",
@@ -9875,7 +9861,7 @@ const SCENARIOS = [
                                                 "explanation": "Donepezil (a cholinesterase inhibitor) can cause GI side effects but does not typically cause acute hallucinations or combative behavior. The acute onset and multiple medical risk factors make medication side effects an unlikely primary cause."
                                         }
                                 ],
-                                "explanation": "Sepsis (fever + UTI + tachycardia), subdural hematoma (fall + anticoagulant-age risk), hypoglycemia (metformin + likely decreased intake), and hypertensive emergency (168/94 with altered mentation) are all plausible. New-onset schizophrenia at age 78 is essentially unheard of.",
+                                "explanation": "Sepsis (fever + UTI + tachycardia), subdural hematoma (yesterday's fall), and hypoglycemia (metformin + likely decreased intake) are the conditions to chase. A pressure of 168/94 is not a hypertensive emergency, which needs roughly above 180/120 plus acute end-organ damage. New-onset schizophrenia at age 78 is essentially unheard of.",
                                 "guideline_ref": "Surviving Sepsis Campaign (2021); ACEP Geriatric Emergency Guidelines (2022)",
                                 "clinical_pearl": "Elderly patients on metformin who become acutely ill often stop eating but keep taking medications. Always check blood glucose in altered elderly patients—it takes 30 seconds and can be immediately life-saving."
                         },
@@ -10862,7 +10848,7 @@ const SCENARIOS = [
                                 "type": "categorize",
                                 "level_filter": "EMT-AEMT-Paramedic",
                                 "categories": [
-                                        "First Aid / BLS Tier",
+                                        "Basic Care / First Aid Tier",
                                         "ALS Treatment Tier",
                                         "Transport / Hospital Interface"
                                 ],
@@ -10882,7 +10868,7 @@ const SCENARIOS = [
                                         1,
                                         2
                                 ],
-                                "explanation": "Tiered medical coverage ensures minor complaints are handled at the point of contact, ALS-level care is available on site, and transport resources are preserved for true emergencies.",
+                                "explanation": "Tiered medical coverage keeps minor complaints, including blister care and basic first aid, at the point of contact. A separate tier provides on-site advanced care, and transport resources stay available for true emergencies.",
                                 "guideline_ref": "NAEMSP Mass Gathering Position Statement; NFPA 1584; DHS Special Event Contingency Planning Guide",
                                 "clinical_pearl": "The goal of on-site mass gathering medicine is to treat and release 80-90% of patients at the venue, preventing unnecessary ED transports that could overwhelm local hospitals."
                         },
@@ -11236,7 +11222,7 @@ const SCENARIOS = [
                         "bp": "138/88",
                         "rr": 28,
                         "spo2": 82,
-                        "gcs": 14,
+                        "gcs": 15,
                         "temp": "99.8°F"
                 },
                 "questions": [
@@ -11523,11 +11509,11 @@ const SCENARIOS = [
                                 "type": "order",
                                 "level_filter": "AEMT-Paramedic",
                                 "items": [
-                                        "Immediate defibrillation",
-                                        "Resume high-quality CPR",
-                                        "Establish IV/IO access",
-                                        "Administer epinephrine 1 mg IV/IO",
-                                        "Perform advanced airway management"
+                                        "Defibrillate the ventricular fibrillation immediately",
+                                        "Resume high-quality CPR for a 2-minute cycle, then recheck the rhythm",
+                                        "Establish IV/IO access during CPR",
+                                        "After the second shock, administer epinephrine 1 mg IV/IO",
+                                        "Perform advanced airway management without pausing compressions"
                                 ],
                                 "correctOrder": [
                                         0,
@@ -11536,9 +11522,9 @@ const SCENARIOS = [
                                         3,
                                         4
                                 ],
-                                "explanation": "VF in lightning strike is treated per standard ACLS. Immediate defibrillation is the priority for a shockable rhythm. CPR resumes immediately after the shock. IV/IO access enables epinephrine administration. Advanced airway is important but should not delay defibrillation or compressions.",
+                                "explanation": "This list is when each action starts, not a claim that nothing else happens between the steps. Shock the VF, then run a 2-minute CPR cycle and recheck the rhythm. Epinephrine follows the second shock. IV/IO access starts during CPR so the drug is ready. Rhythm checks sit between the shock and the drug. Advanced airway placement must not interrupt compressions.",
                                 "guideline_ref": "AHA ACLS Guidelines – Ventricular Fibrillation/Pulseless VT Algorithm (2020)",
-                                "clinical_pearl": "Lightning strike cardiac arrest has a much higher survival rate than other causes of cardiac arrest — up to 70-90% with prompt intervention. Never withhold resuscitation based on initial appearance; these patients can have excellent neurological outcomes."
+                                "clinical_pearl": "Lightning strike cardiac arrest has a much higher survival rate than other causes of cardiac arrest — up to 70-90% with prompt intervention. Never withhold resuscitation based on initial appearance. After the first shock, finish a 2-minute CPR cycle and recheck the rhythm before the first epinephrine."
                         },
                         {
                                 "phase": "assessment",
@@ -12190,7 +12176,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
-                                "prompt": "Categorize each intervention as appropriate for EMT-level or Paramedic-level care for this patient:",
+                                "prompt": "Categorize each intervention by the lowest provider level that can perform it for this patient.",
                                 "type": "categorize",
                                 "level_filter": "EMT-AEMT-Paramedic",
                                 "items": [
@@ -12203,17 +12189,18 @@ const SCENARIOS = [
                                 ],
                                 "categories": [
                                         "EMT-Level",
+                                        "AEMT-Level",
                                         "Paramedic-Level"
                                 ],
                                 "correctCategories": [
                                         0,
                                         0,
                                         1,
-                                        1,
+                                        2,
                                         0,
                                         1
                                 ],
-                                "explanation": "Basic interventions like high-flow O2, positioning, and SpO2 monitoring are EMT-scope. IV access, 12-lead ECG acquisition, and fluid resuscitation for hypotension require advanced-level providers.",
+                                "explanation": "High-flow oxygen, upright positioning, and pulse oximetry are EMT-level. IV access and an IV fluid bolus are AEMT scope under the 2021 National EMS Education Standards, not paramedic-only skills. 12-lead acquisition stays in the paramedic category for this question.",
                                 "guideline_ref": "NAEMSP Scope of Practice; National EMS Education Standards",
                                 "clinical_pearl": "Massive PE with hypotension may require cautious fluid boluses (250–500 mL) — aggressive volume loading can worsen RV dilation and further compromise cardiac output."
                         },
@@ -12870,7 +12857,7 @@ const SCENARIOS = [
                                         1
                                 ],
                                 "explanation": "Placental abruption typically presents with constant pain, a rigid uterus, dark blood (trapped behind placenta), and may follow trauma. Placenta previa classically causes painless, bright red bleeding often triggered by cervical dilation or exam. Both are third-trimester emergencies but management priorities differ.",
-                                "guideline_ref": "ACOG Practice Bulletin #200 (2018) — Early Pregnancy Loss; NAEMSP Position Statement on Obstetric Emergencies",
+                                "guideline_ref": "ACOG guidance on antepartum hemorrhage and placental abruption; NAEMSP Position Statement on Obstetric Emergencies",
                                 "clinical_pearl": "Never perform a vaginal exam on a third-trimester bleeding patient in the field — if it's previa, you could provoke catastrophic hemorrhage."
                         },
                         {
@@ -12886,13 +12873,13 @@ const SCENARIOS = [
                                         "Initiate rapid transport to closest facility with OB surgical capability"
                                 ],
                                 "correctOrder": [
-                                        2,
                                         0,
+                                        2,
                                         1,
                                         3,
                                         4
                                 ],
-                                "explanation": "Oxygen addresses fetal and maternal hypoxia first. Left lateral tilt prevents aortocaval compression and improves venous return. Crystalloid resuscitation addresses hypovolemia. Early notification allows the OB team to prepare for possible emergent C-section. Transport must be to a facility with surgical OB capability — a community ED without OB is insufficient.",
+                                "explanation": "Left lateral tilt comes first. At 34 weeks with a blood pressure of 86/52, taking the uterus off the vena cava is the fastest way to improve venous return. Her oxygen saturation is 96%, so hypoxia is not the main threat. High-flow oxygen is next, then an isotonic crystalloid bolus for hemorrhagic shock. Early notification lets the obstetric team prepare for a possible emergent cesarean delivery. Transport must go to a facility with surgical obstetric capability.",
                                 "guideline_ref": "AHA/ACOG Maternal Cardiac Arrest Guidelines; NAEMSP Obstetric Emergency Position Statement",
                                 "clinical_pearl": "In abruption, visible bleeding often underestimates total blood loss — blood can be concealed behind the placenta. Treat the clinical shock, not the visible hemorrhage.",
                                 "critical": true
@@ -17879,14 +17866,14 @@ const SCENARIOS = [
 										"correct": true,
 										"critical": false,
 										"explanation": "Severe hyperthermia in the setting of extreme agitation indicates a hypermetabolic state that can rapidly progress to multi-organ failure, rhabdomyolysis, and cardiac arrest if not aggressively managed.",
-										"guideline_ref": "NAEMSP Position Statement on Excited Delirium; National EMS Education Standards — Behavioral Emergencies"
+										"guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; National EMS Education Standards — Behavioral Emergencies"
 								},
 								{
 										"text": "Extreme agitation with apparent insensitivity to pain",
 										"correct": true,
 										"critical": false,
-										"explanation": "Pain insensitivity combined with extreme agitation is a hallmark of excited delirium syndrome and indicates significant CNS dysfunction with high risk of sudden cardiac arrest.",
-										"guideline_ref": "ACEP White Paper on Excited Delirium 2009; National EMS Education Standards — Behavioral Emergencies"
+										"explanation": "Pain insensitivity combined with extreme agitation is a hallmark of hyperactive delirium with severe agitation and indicates significant CNS dysfunction with high risk of sudden cardiac arrest.",
+										"guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; National EMS Education Standards — Behavioral Emergencies"
 								},
 								{
 										"text": "Tachycardia at 162 beats per minute",
@@ -17899,8 +17886,8 @@ const SCENARIOS = [
 										"text": "Diaphoresis and undressing despite cold ambient temperature",
 										"correct": true,
 										"critical": false,
-										"explanation": "Paradoxical undressing in cold weather with profuse diaphoresis indicates severe thermoregulatory dysfunction, a key feature of excited delirium syndrome.",
-										"guideline_ref": "NAEMSP Position Statement on Excited Delirium"
+										"explanation": "Paradoxical undressing in cold weather with profuse diaphoresis indicates severe thermoregulatory dysfunction, a key feature of a hyperadrenergic crisis.",
+										"guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management"
 								},
 								{
 										"text": "Bleeding lacerations on the patient's hands from punching glass",
@@ -17910,7 +17897,7 @@ const SCENARIOS = [
 										"guideline_ref": "National EMS Education Standards — Behavioral Emergencies"
 								}
 						],
-						"clinical_pearl": "Excited delirium is a medical emergency, not simply a behavioral problem. These patients are at high risk for sudden cardiac arrest. Rapid sedation, cooling, and transport are priorities — prolonged physical restraint increases metabolic demand and death risk."
+						"clinical_pearl": "Hyperactive delirium with severe agitation is a medical emergency, not simply a behavioral problem. These patients are at high risk for sudden cardiac arrest. Rapid sedation, cooling, and transport are priorities — prolonged physical restraint increases metabolic demand and death risk."
 				},
 				{
 						"phase": "treatment",
@@ -17932,8 +17919,8 @@ const SCENARIOS = [
 								3
 						],
 						"explanation": "First, coordinate a safe approach with law enforcement while drawing up sedation — crew safety is always the priority. Second, administer chemical sedation as rapidly as possible to reduce the hypermetabolic state. Third, apply cardiac monitoring as these patients are at extreme risk for lethal dysrhythmias. Fourth, establish vascular access. Fifth, initiate cooling measures. Chemical sedation is the cornerstone of treatment — it reduces metabolic demand, lowers temperature, and decreases cardiac arrest risk.",
-						"guideline_ref": "NAEMSP Position Statement on Excited Delirium; National EMS Education Standards — Behavioral Emergencies",
-						"clinical_pearl": "Ketamine is preferred in excited delirium because it provides rapid, reliable sedation via IM route without requiring IV access, has a favorable hemodynamic profile, and is less likely to cause respiratory depression than benzodiazepines at sedation doses."
+						"guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; National EMS Education Standards — Behavioral Emergencies",
+						"clinical_pearl": "Ketamine is preferred for hyperactive delirium with severe agitation because it provides rapid, reliable sedation via the IM route without requiring IV access, has a favorable hemodynamic profile, and is less likely to cause respiratory depression than benzodiazepines at sedation doses."
 				},
 				{
 						"phase": "treatment",
@@ -18482,7 +18469,7 @@ const SCENARIOS = [
 										"text": "Ketamine 4 mg/kg IM for rapid sedation of the agitated patient",
 										"correct": false,
 										"critical": false,
-										"explanation": "While ketamine is useful for excited delirium and acute agitation from other causes, benzodiazepines are specifically indicated for alcohol withdrawal because they directly address the GABA-receptor deficit that causes the withdrawal syndrome.",
+										"explanation": "While ketamine is useful for hyperactive delirium with severe agitation and for acute agitation from other causes, benzodiazepines are specifically indicated for alcohol withdrawal because they directly address the GABA-receptor deficit that causes the withdrawal syndrome.",
 										"guideline_ref": "National EMS Education Standards — Toxicology and Substance Abuse"
 								},
 								{
@@ -30801,9 +30788,9 @@ const SCENARIOS = [
 								2,
 								3
 						],
-						"explanation": "Priority: (1) Address restraint safety immediately — prone restraint in excited delirium/sympathomimetic toxicity is associated with sudden death. Transition to chemical restraint urgently. (2) Benzodiazepine sedation is THE critical intervention — it reduces agitation, muscle activity (reducing rhabdomyolysis), lowers temperature, decreases heart rate and BP, and prevents sudden cardiac death. Large and repeated doses may be needed. (3) Aggressive cooling — hyperthermia above 104°F causes multi-organ damage and death. (4) IV fluids — aggressive crystalloid helps prevent renal failure from myoglobin and addresses dehydration. (5) Monitor and glucose — identify hyperkalemia (peaked T waves, widened QRS) and hypoglycemia.",
-						"guideline_ref": "NAEMSP Position Statement — Excited Delirium; ACMT Guidelines — Sympathomimetic Toxicity; National EMS Education Standards — Toxicology",
-						"clinical_pearl": "In sympathomimetic toxicity with excited delirium, sedation with benzodiazepines is the single most important intervention. It addresses nearly every pathologic process simultaneously — agitation, hyperthermia, tachycardia, hypertension, and ongoing muscle damage. Don't underestimate the doses needed — these patients may require 20-40+ mg of midazolam."
+						"explanation": "Priority: (1) Address restraint safety immediately — prone restraint during a hyperadrenergic crisis or sympathomimetic toxicity is associated with sudden death. Transition to chemical restraint urgently. (2) Benzodiazepine sedation is THE critical intervention — it reduces agitation, muscle activity (reducing rhabdomyolysis), lowers temperature, decreases heart rate and BP, and prevents sudden cardiac death. Large and repeated doses may be needed. (3) Aggressive cooling — hyperthermia above 104°F causes multi-organ damage and death. (4) IV fluids — aggressive crystalloid helps prevent renal failure from myoglobin and addresses dehydration. (5) Monitor and glucose — identify hyperkalemia (peaked T waves, widened QRS) and hypoglycemia.",
+						"guideline_ref": "NAEMSP Position Statement on Agitated/Violent Patient Management; ACMT Guidelines — Sympathomimetic Toxicity; National EMS Education Standards — Toxicology",
+						"clinical_pearl": "In sympathomimetic toxicity with hyperactive delirium and severe agitation, sedation with benzodiazepines is the single most important intervention. It addresses nearly every pathologic process simultaneously — agitation, hyperthermia, tachycardia, hypertension, and ongoing muscle damage. Don't underestimate the doses needed — these patients may require 20-40+ mg of midazolam."
 				},
 				{
 						"phase": "treatment",
@@ -30922,7 +30909,7 @@ const SCENARIOS = [
 										"correct": true,
 										"critical": false,
 										"explanation": "In sympathomimetic toxicity, the pathologic cascade flows from agitation/muscle hyperactivity → hyperthermia + rhabdomyolysis → myoglobinuria + hyperkalemia + metabolic acidosis → renal failure + cardiac dysrhythmia → death. Benzodiazepines interrupt this cascade at its origin by reducing psychomotor agitation and muscle activity. Early, aggressive dosing can prevent the entire downstream cascade from developing.",
-										"guideline_ref": "ACMT Position Statement — Sympathomimetic Toxicity; NAEMSP Guidelines — Excited Delirium"
+										"guideline_ref": "ACMT Position Statement — Sympathomimetic Toxicity; NAEMSP Position Statement on Agitated/Violent Patient Management"
 								},
 								{
 										"text": "Benzodiazepines directly lower serum potassium levels through a GABA-mediated renal excretion mechanism",
