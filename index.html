@@ -839,6 +839,276 @@ const SCENARIOS = [
                 ]
         },
         {
+                "id": "nat-card-26",
+                "title": "62M — Chest Pressure in a Chair",
+                "dispatch": "62-year-old male, chest pressure",
+                "category": "Cardiology",
+                "difficulty": "Medium",
+                "level_min": "EMR",
+                "patient": {
+                        "age": 62,
+                        "sex": "M",
+                        "cc": "Heavy pressure in the center of his chest"
+                },
+                "scene": "You are the EMR on a first-response engine, and an EMT partner is with you. The kitchen is safe. A 62-year-old man is awake in a chair. He says a heavy pressure started in the center of his chest about 15 minutes ago, while he was sitting still. It goes down his left arm. He is sweaty and nauseated. He has not collapsed, and he is speaking in full sentences.",
+                "history": {
+                        "pmh": "Hypertension, high cholesterol",
+                        "meds": "Lisinopril, atorvastatin",
+                        "allergies": "No known drug allergies"
+                },
+                "vitals": {
+                        "hr": 96,
+                        "bp": "146/86",
+                        "rr": 18,
+                        "spo2": 97,
+                        "gcs": 15,
+                        "temp": "98.6°F"
+                },
+                "questions": [
+                        {
+                                "phase": "assessment",
+                                "prompt": "He is awake, sweaty, and nauseated, with heavy chest pressure going to his left arm. The pressure began at rest. What is the right initial judgment?",
+                                "type": "mc",
+                                "level_filter": "EMR",
+                                "multi_select": false,
+                                "narrative": "Your EMT partner applies a pulse oximeter and reports 97 percent. His breathing is not labored. He denies an aspirin allergy, and he is not bleeding.",
+                                "vitals_update": {},
+                                "clinical_pearl": "Treat pressure, tightness, or aching in the chest as possible cardiac chest pain when it comes with sweat, nausea, or radiation to the arm, neck, or jaw. Onset at rest is more concerning, not less. An EMR does not need a 12-lead to act. Keep the patient still and move him on a stretcher.",
+                                "options": [
+                                        {
+                                                "text": "Treat this as possible cardiac chest pain, keep him seated, and move him on a stretcher instead of having him walk.",
+                                                "correct": true,
+                                                "critical": false,
+                                                "explanation": "Pressure at rest with sweat, nausea, and radiation to the arm is treated as acute coronary syndrome until a hospital workup says otherwise. Walking raises the heart's oxygen demand and he can collapse. Do not wait for a 12-lead. Acquiring one is not an EMR skill.",
+                                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome; 2021 National EMS Education Standards — Cardiovascular"
+                                        },
+                                        {
+                                                "text": "Treat this as a panic attack, because he is awake and talking and his saturation is 97 percent on room air.",
+                                                "correct": false,
+                                                "critical": false,
+                                                "explanation": "Being awake and well saturated does not rule out a coronary occlusion. Panic is not a field diagnosis while this pattern is present.",
+                                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome"
+                                        },
+                                        {
+                                                "text": "Have him walk slowly to the stretcher, because he is alert and a short walk will show whether the chest pressure is serious.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "A walk is not a test for chest pain. Exertion can extend the injury, and a patient who arrests in a hallway is harder to resuscitate than one who is already on the stretcher.",
+                                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome; 2021 National EMS Education Standards — Cardiovascular"
+                                        },
+                                        {
+                                                "text": "Wait on scene for the pressure to ease, because it began while he was sitting and he has not collapsed or lost consciousness.",
+                                                "correct": false,
+                                                "critical": false,
+                                                "explanation": "Pain that starts at rest is a reason to move faster, not a reason to wait. Do not delay transport to see if the pressure fades.",
+                                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome"
+                                        }
+                                ]
+                        },
+                        {
+                                "phase": "treatment",
+                                "prompt": "Arrange your actions for this seated patient. He is awake, breathing without labor, and has a strong radial pulse. Your EMT partner reports a saturation of 97 percent.",
+                                "type": "order",
+                                "level_filter": "EMR",
+                                "narrative": "The scene remains safe. He is still sitting in the chair and can talk in full sentences.",
+                                "items": [
+                                        "Confirm that he is awake, breathing, and has a pulse",
+                                        "Keep him seated at a position of comfort and do not walk him",
+                                        "Withhold supplemental oxygen because his saturation is 97 percent and his breathing is not labored",
+                                        "Move him on a stretcher and tell the receiving facility this is suspected cardiac chest pain"
+                                ],
+                                "correctOrder": [
+                                        0,
+                                        1,
+                                        2,
+                                        3
+                                ],
+                                "explanation": "Confirm a pulse and breathing before anyone reaches for an AED or starts CPR. Keep him seated and move him by stretcher. Withhold oxygen at 97 percent with unlabored breathing. Then transport and notify. Aspirin and nitroglycerin are not steps in this EMR sequence.",
+                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome; 2019 National EMS Scope of Practice Model",
+                                "clinical_pearl": "In this trainer, give oxygen for suspected cardiac chest pain when the saturation is below 94 percent or breathing is labored. Withhold it at 97 percent with normal breathing. The EMR oxygen devices are a nasal cannula and a non-rebreather mask. Pulse oximetry is an EMT skill, so your partner reports the number. Do not delay transport for a 12-lead."
+                        },
+                        {
+                                "phase": "treatment",
+                                "prompt": "Your EMT partner is ready to help. Which actions are appropriate for you, the EMR, on this call? (Select ALL that apply)",
+                                "type": "mr",
+                                "level_filter": "EMR",
+                                "multi_select": true,
+                                "narrative": "He has no aspirin allergy and no active bleeding. He has not taken a chest-pain dose of aspirin today. Blood pressure is 146/86. Saturation is 97 percent. He did not take a medicine for erectile dysfunction.",
+                                "vitals_update": {},
+                                "clinical_pearl": "Chewed aspirin, 162 to 325 mg, is the early drug for suspected cardiac chest pain when there is no aspirin allergy and no active bleeding. Blood pressure does not decide the aspirin. The 2019 National EMS Scope of Practice Model assigns aspirin to EMT, AEMT, and Paramedic. An EMR does not give it. Nitroglycerin is not an EMR drug. Never deliver an AED shock to a person who is awake or has a pulse.",
+                                "options": [
+                                        {
+                                                "text": "Keep him sitting in a position of comfort and move him on a stretcher instead of having him walk.",
+                                                "correct": true,
+                                                "critical": false,
+                                                "explanation": "Position of comfort and stretcher movement are the EMR priorities for this awake patient. Do not walk him.",
+                                                "guideline_ref": "2021 National EMS Education Standards — Cardiovascular"
+                                        },
+                                        {
+                                                "text": "Leave chewed aspirin, 162 to 325 mg, to the EMT partner. An EMR does not administer it.",
+                                                "correct": true,
+                                                "critical": false,
+                                                "explanation": "Suspected ischemic chest pain with no aspirin allergy and no active bleeding is an indication for chewed aspirin, 162 to 325 mg. The EMT confirms that indication and gives it under protocol. The national model does not put oral aspirin in EMR scope.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model; AHA guidance on suspected acute coronary syndrome"
+                                        },
+                                        {
+                                                "text": "Administer 324 mg of chewed aspirin yourself from the first-response kit.",
+                                                "correct": false,
+                                                "critical": false,
+                                                "explanation": "The dose and the drug can be right for this patient, and the person who gives it is not. Oral aspirin for suspected ischemic chest pain is an EMT, AEMT, or Paramedic medication in the 2019 national model.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model"
+                                        },
+                                        {
+                                                "text": "Give one spray of nitroglycerin from your kit now, because his blood pressure is 146/86.",
+                                                "correct": false,
+                                                "critical": false,
+                                                "explanation": "An EMR does not administer nitroglycerin, and an EMR kit should not be the source of it. Assisting with the patient's own nitroglycerin is an EMT skill. Supplying nitroglycerin that is not the patient's own is an AEMT or Paramedic skill. A pressure of 146/86 does not put the drug into EMR scope.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model"
+                                        },
+                                        {
+                                                "text": "Attach the AED and deliver a shock now, while he is awake and still has a pulse.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "An AED shock is for a patient who is unresponsive, not breathing normally, and pulseless. Shocking a beating heart can cause ventricular fibrillation. Leave the AED closed and within reach in case he arrests.",
+                                                "guideline_ref": "AHA BLS guidelines — AED use"
+                                        }
+                                ],
+                                "selectCount": 2
+                        }
+                ]
+        },
+        {
+                "id": "nat-card-27",
+                "title": "55F — Dizzy with Chest Tightness",
+                "dispatch": "55-year-old female, chest tightness and dizziness",
+                "category": "Cardiology",
+                "difficulty": "Medium",
+                "level_min": "EMR",
+                "patient": {
+                        "age": 55,
+                        "sex": "F",
+                        "cc": "Chest tightness and dizziness"
+                },
+                "scene": "You are the EMR at a community gym. The scene is safe. A 55-year-old woman is awake on a bench and says her chest feels tight and she is dizzy. She is pale and speaks in short phrases. A friend has pulled the wall AED off its hook and is holding the woman's own nitroglycerin spray. Your EMT partner is beside you. She has a weak radial pulse.",
+                "history": {
+                        "pmh": "Hypertension",
+                        "meds": "Amlodipine, her own nitroglycerin spray",
+                        "allergies": "No known drug allergies"
+                },
+                "vitals": {
+                        "hr": 110,
+                        "bp": "86/54",
+                        "rr": 24,
+                        "spo2": 91,
+                        "gcs": 15,
+                        "temp": "98.2°F"
+                },
+                "questions": [
+                        {
+                                "phase": "assessment",
+                                "prompt": "Her friend wants to attach the AED and shock her, because the machine is for heart problems. She is awake, breathing, and you feel a radial pulse. What do you do?",
+                                "type": "mc",
+                                "level_filter": "EMR",
+                                "multi_select": false,
+                                "narrative": "She follows commands and answers questions. The pulse is weak, but it is present. She is not in cardiac arrest.",
+                                "vitals_update": {},
+                                "clinical_pearl": "Use an AED only when the patient is unresponsive, is not breathing normally, and has no pulse. If the patient is awake or you feel a pulse, do not analyze and do not shock. Keep the AED next to her in case she loses that pulse. That is a different decision from delivering a shock the AED has already advised during CPR.",
+                                "options": [
+                                        {
+                                                "text": "Stop the friend. Do not attach the AED or deliver a shock, because she is awake and has a pulse.",
+                                                "correct": true,
+                                                "critical": false,
+                                                "explanation": "A shock is for cardiac arrest. She is awake and has a pulse, so a shock is not indicated and can put her into ventricular fibrillation. Keep the AED nearby and unused.",
+                                                "guideline_ref": "AHA BLS guidelines — AED use"
+                                        },
+                                        {
+                                                "text": "Allow the AED to analyze, and deliver a shock if the device advises one, even though she is awake.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "Do not run an AED analysis on a conscious patient with a pulse. An advised shock in this setting would still be the wrong treatment and could stop her perfusing rhythm.",
+                                                "guideline_ref": "AHA BLS guidelines — AED use"
+                                        },
+                                        {
+                                                "text": "Attach the pads and deliver a shock if her heart rate remains above 100 beats per minute while she sits there.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "A heart rate of 110 with a pulse is a perfusing rhythm, not a shockable arrest. Tachycardia is not an indication for an AED shock.",
+                                                "guideline_ref": "AHA BLS guidelines — AED use"
+                                        },
+                                        {
+                                                "text": "Have her hold the pads on her bare chest and press the shock button once while she is still sitting up.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "She would be touching the pads during a shock, and she has a pulse. Do not deliver a shock. Do not have a conscious patient hold the pads.",
+                                                "guideline_ref": "AHA BLS guidelines — AED use"
+                                        }
+                                ]
+                        },
+                        {
+                                "phase": "treatment",
+                                "prompt": "Her friend offers the woman's own nitroglycerin spray for the chest tightness. Her blood pressure is 86/54. What should you do with the spray?",
+                                "type": "mc",
+                                "level_filter": "EMR",
+                                "multi_select": false,
+                                "narrative": "The prescription label is hers. She has not taken a medicine for erectile dysfunction. She is dizzy, pale, and still has chest tightness.",
+                                "vitals_update": {},
+                                "clinical_pearl": "An EMR does not administer nitroglycerin and does not assist a patient with their own nitroglycerin. Assisting with the patient's own spray is an EMT skill, and giving nitroglycerin that is not the patient's own is an AEMT or Paramedic skill. Withhold it when the systolic pressure is already low. Hers is 86, which is below the band this trainer uses, about 90 to 110. Nitroglycerin would be expected to drop that pressure further.",
+                                "options": [
+                                        {
+                                                "text": "Do not give the nitroglycerin. Her systolic pressure is 86, and an EMR does not administer or assist with it.",
+                                                "correct": true,
+                                                "critical": false,
+                                                "explanation": "Two reasons, and either one is enough. The national model does not put nitroglycerin in EMR scope. Her systolic pressure is 86, so a provider who did have the skill would still withhold it. One spray can drop the pressure further.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model; AHA guidance on suspected acute coronary syndrome"
+                                        },
+                                        {
+                                                "text": "Assist her with one spray of her own nitroglycerin, because an EMR may help a patient take a personal prescription.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "Assisting with a patient's own nitroglycerin is an EMT skill, not an EMR skill. At a systolic pressure of 86 it is also contraindicated for the EMT. Do not give the spray.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model"
+                                        },
+                                        {
+                                                "text": "Give one spray and then lay her flat, because nitroglycerin will raise the blood pressure of a dizzy patient.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "Nitroglycerin dilates veins and lowers preload. It does not raise blood pressure. At 86/54 it can worsen the dizziness and the shock.",
+                                                "guideline_ref": "AHA guidance on suspected acute coronary syndrome"
+                                        },
+                                        {
+                                                "text": "Give three sprays at once so the chest tightness stops before you move her onto the ambulance stretcher.",
+                                                "correct": false,
+                                                "critical": true,
+                                                "explanation": "Three sprays at once is not a dose, and nitroglycerin is not an EMR drug. Stacking doses at a systolic pressure of 86 can cause a severe drop in blood pressure.",
+                                                "guideline_ref": "2019 National EMS Scope of Practice Model; AHA guidance on suspected acute coronary syndrome"
+                                        }
+                                ]
+                        },
+                        {
+                                "phase": "transport",
+                                "prompt": "She is awake, short of breath, and dizzy. Saturation is 91 percent. Systolic pressure is 86. A radial pulse is present. Arrange the care you will give.",
+                                "type": "order",
+                                "level_filter": "EMR",
+                                "narrative": "Your EMT partner confirms the saturation of 91 percent. Her lungs sound clear to that partner. She says lying all the way flat makes her feel like she cannot breathe.",
+                                "items": [
+                                        "Leave the AED unused and confirm that she is breathing and has a pulse",
+                                        "Give oxygen by non-rebreather mask because she is short of breath and her saturation is 91 percent",
+                                        "Let her sit partly upright, only as high as she needs to breathe, and do not give nitroglycerin",
+                                        "Move her on a stretcher and transport, and do not have her walk"
+                                ],
+                                "correctOrder": [
+                                        0,
+                                        1,
+                                        2,
+                                        3
+                                ],
+                                "explanation": "Confirm the pulse so the AED stays off. Give oxygen by non-rebreather because she is hypoxic and short of breath. Let her sit only as high as she needs to breathe, because she cannot tolerate lying flat, and do not give nitroglycerin. Then move her by stretcher. A flat position would be preferred for the low blood pressure if she could breathe that way. She cannot.",
+                                "guideline_ref": "2019 National EMS Scope of Practice Model; AHA guidance on suspected acute coronary syndrome",
+                                "clinical_pearl": "This patient needs oxygen. She is short of breath and her saturation is 91 percent, below the 94 percent line used in this trainer. A non-rebreather mask is the EMR device for that distress. A nasal cannula is the other oxygen device in EMR scope, for a milder need. Do not use a simple face mask, a Venturi mask, or a humidifier as an EMR. Do not give nitroglycerin, and do not shock her."
+                        }
+                ]
+        },
+        {
                 "id": "nat-allergy-01",
                 "title": "28F — Anaphylaxis at the Park",
                 "dispatch": "28-year-old female, swelling, difficulty breathing",
