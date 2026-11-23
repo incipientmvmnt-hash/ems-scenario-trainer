@@ -335,8 +335,8 @@ function updateThemeIcon(){
 initTheme();
 
 // ===== SUPABASE AUTH (isolated - does not affect app rendering) =====
-var SB_URL = 'https://syomwtowczbifyiledmg.supabase.co';
-var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5b213dG93Y3piaWZ5aWxlZG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNzYyNjMsImV4cCI6MjA4Nzk1MjI2M30.V7edJqT2OSK7LYYGjZFriIbJsuFkLSx-vg8UORgENKo';
+var SB_URL = 'https://lpoadlvofrcqwmenajiu.supabase.co';
+var SB_KEY = 'sb_publishable_AMoiD8b1fPIwVkN2tpFSzg_Q086olJh';
 var LOCAL_SESSION_KEY = 'medic7-local-session';
 var _sb = null;
 var _localMode = false;
@@ -476,6 +476,12 @@ function signOut() {
   if (_sb && !wasLocal) _sb.auth.signOut().catch(function(){});
 }
 
+function _applyProfileRow(row) {
+  _auth.profile = row || null;
+  _auth.isPro = !!(row && row.subscription_status === 'pro');
+  _renderAuth();
+}
+
 function _loadProfile() {
   if (_localMode) { _renderAuth(); return; }
   if (!_sb) { _renderAuth(); return; }
@@ -491,9 +497,19 @@ function _loadProfile() {
     localStorage.removeItem(LOCAL_SESSION_KEY);
     _auth.user = user;
     _sb.from('profiles').select('*').eq('user_id', user.id).maybeSingle().then(function(r) {
-      _auth.profile = r.data || null;
-      _auth.isPro = !!(r.data && r.data.subscription_status === 'pro');
-      _renderAuth();
+      if (r.data) { _applyProfileRow(r.data); return; }
+      if (r.error) { _applyProfileRow(null); return; }
+      var name = (user.email || 'user').split('@')[0];
+      _sb.from('profiles').insert({
+        user_id: user.id,
+        display_name: name,
+        subscription_status: 'pro'
+      }).select('*').maybeSingle().then(function(ins) {
+        if (ins.data) { _applyProfileRow(ins.data); return; }
+        _sb.from('profiles').select('*').eq('user_id', user.id).maybeSingle().then(function(again) {
+          _applyProfileRow((again && again.data) || null);
+        });
+      });
     });
   }).catch(function(e) {
     if (_isNetworkError(e)) _remoteDown = true;
