@@ -304,12 +304,14 @@ body.light-mode .tag-proto{background:rgba(0,100,150,.06);color:#1a5276;border-c
 <div id="authModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;justify-content:center;align-items:center">
   <div style="background:#0e1225;border:1px solid rgba(0,240,255,.2);border-radius:16px;padding:24px;width:90%;max-width:340px;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
     <h3 style="color:#00f0ff;margin-bottom:16px;text-align:center" id="authTitle">Sign In</h3>
-    <input id="authEmail" type="email" placeholder="Email" style="width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
-    <input id="authPass" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <input id="authEmail" type="email" placeholder="Email" autocomplete="email" style="width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <input id="authPass" type="password" placeholder="Password" autocomplete="current-password" style="width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
+    <input id="authPass2" type="password" placeholder="Confirm password" autocomplete="new-password" style="display:none;width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(0,240,255,.2);background:rgba(0,0,0,.3);color:#eee;font-size:.9em">
     <div id="authHint" style="display:none;color:#9aa0b0;font-size:.75em;margin-bottom:8px;text-align:center;line-height:1.4"></div>
     <div id="authError" style="display:none;color:#ff4422;font-size:.8em;margin-bottom:8px;text-align:center"></div>
-    <button onclick="doAuth('login')" style="width:100%;padding:10px;border:none;border-radius:8px;background:#00f0ff;color:#000;font-weight:600;cursor:pointer;margin-bottom:6px">Sign In</button>
-    <button onclick="doAuth('signup')" style="width:100%;padding:10px;border:none;border-radius:8px;background:transparent;color:#00f0ff;border:1px solid rgba(0,240,255,.3);cursor:pointer;margin-bottom:12px">Create Account</button>
+    <button id="authPrimary" onclick="submitAuth()" style="width:100%;padding:10px;border:none;border-radius:8px;background:#00f0ff;color:#000;font-weight:600;cursor:pointer;margin-bottom:6px">Sign In</button>
+    <button id="authSecondary" onclick="secondaryAuth()" style="width:100%;padding:10px;border:none;border-radius:8px;background:transparent;color:#00f0ff;border:1px solid rgba(0,240,255,.3);cursor:pointer;margin-bottom:6px">Create Account</button>
+    <button id="authForgot" onclick="showForgotPassword()" style="width:100%;padding:8px;border:none;background:transparent;color:#00f0ff;cursor:pointer;font-size:.8em">Forgot password?</button>
     <button onclick="hideAuthModal()" style="width:100%;padding:8px;border:none;background:transparent;color:#9aa0b0;cursor:pointer;font-size:.85em">Cancel</button>
   </div>
 </div>
@@ -341,7 +343,21 @@ var LOCAL_SESSION_KEY = 'medic7-local-session';
 var _sb = null;
 var _localMode = false;
 var _remoteDown = false;
-try { if (window.supabase) _sb = window.supabase.createClient(SB_URL, SB_KEY); } catch(e) {}
+var _authMode = 'signin';
+
+function _readAuthHash() {
+  var raw = (window.location.hash || '').replace(/^#/, '');
+  var params;
+  try { params = new URLSearchParams(raw); } catch (e) { return { recovery: false, error: '' }; }
+  var err = params.get('error_description') || '';
+  if (!err) err = params.get('error') || '';
+  try { err = decodeURIComponent(String(err).replace(/\+/g, ' ')); } catch (e2) {}
+  return { recovery: params.get('type') === 'recovery', error: err };
+}
+var _authHash = _readAuthHash();
+try {
+  if (window.supabase) _sb = window.supabase.createClient(SB_URL, SB_KEY, { auth: { flowType: 'implicit', detectSessionInUrl: true } });
+} catch(e) {}
 
 var _auth = { user: null, profile: null, isPro: false };
 
@@ -424,15 +440,167 @@ function _renderAuth() {
   } catch(e) {}
 }
 
+function _setAuthMode(mode) {
+  _authMode = mode === 'forgot' || mode === 'recovery' ? mode : 'signin';
+  var title = document.getElementById('authTitle');
+  var email = document.getElementById('authEmail');
+  var pass = document.getElementById('authPass');
+  var pass2 = document.getElementById('authPass2');
+  var primary = document.getElementById('authPrimary');
+  var secondary = document.getElementById('authSecondary');
+  var forgot = document.getElementById('authForgot');
+  var errEl = document.getElementById('authError');
+  primary.disabled = false;
+  errEl.style.display = 'none';
+  errEl.textContent = '';
+  if (_authMode === 'forgot') {
+    title.textContent = 'Reset password';
+    email.style.display = 'block';
+    pass.style.display = 'none';
+    pass2.style.display = 'none';
+    primary.textContent = 'Send reset link';
+    secondary.style.display = 'block';
+    secondary.textContent = 'Back to sign in';
+    forgot.style.display = 'none';
+    _showAuthHint((_remoteDown || !_sb) ? 'The account server is unreachable, so a reset link cannot be sent.' : 'We will email you a link to choose a new password.');
+    return;
+  }
+  if (_authMode === 'recovery') {
+    title.textContent = 'Choose a new password';
+    email.style.display = 'none';
+    pass.style.display = 'block';
+    pass.placeholder = 'New password';
+    pass.setAttribute('autocomplete', 'new-password');
+    pass2.style.display = 'block';
+    primary.textContent = 'Save password';
+    secondary.style.display = 'none';
+    forgot.style.display = 'none';
+    _showAuthHint('Choose a new password for this account.');
+    return;
+  }
+  title.textContent = 'Sign In';
+  email.style.display = 'block';
+  pass.style.display = 'block';
+  pass.placeholder = 'Password';
+  pass.setAttribute('autocomplete', 'current-password');
+  pass2.style.display = 'none';
+  pass2.value = '';
+  primary.textContent = 'Sign In';
+  secondary.style.display = 'block';
+  secondary.textContent = 'Create Account';
+  forgot.style.display = 'block';
+  _showAuthHint((_remoteDown || !_sb) ? 'The account server is unreachable. Use any email and password to open a local session in this browser. The dashboard starts empty and records only scenarios you finish.' : '');
+}
+
+function _resetRedirect() {
+  var host = window.location.hostname;
+  if (host === 'www.medic7.co' || host === 'medic7.co') return 'https://www.medic7.co/';
+  return window.location.origin + window.location.pathname;
+}
+
 function showAuthModal() {
+  if (_authMode !== 'recovery') _setAuthMode('signin');
   document.getElementById('authModal').style.display = 'flex';
-  if (_remoteDown || !_sb) {
+  if ((_remoteDown || !_sb) && _authMode === 'signin') {
     _showAuthHint('The account server is unreachable. Use any email and password to open a local session in this browser. The dashboard starts empty and records only scenarios you finish.');
   }
 }
 function hideAuthModal() {
   document.getElementById('authModal').style.display = 'none';
-  document.getElementById('authError').style.display = 'none';
+  document.getElementById('authPass').value = '';
+  document.getElementById('authPass2').value = '';
+  var errEl = document.getElementById('authError');
+  errEl.style.display = 'none';
+  errEl.textContent = '';
+  if (_authMode !== 'signin') _setAuthMode('signin');
+}
+
+function showForgotPassword() {
+  document.getElementById('authModal').style.display = 'flex';
+  _setAuthMode('forgot');
+}
+
+function submitAuth() {
+  if (_authMode === 'forgot') { sendPasswordReset(); return; }
+  if (_authMode === 'recovery') { saveNewPassword(); return; }
+  doAuth('login');
+}
+
+function secondaryAuth() {
+  if (_authMode === 'forgot' || _authMode === 'recovery') { _setAuthMode('signin'); return; }
+  doAuth('signup');
+}
+
+function _showRecovery() {
+  _authHash.recovery = false;
+  _localMode = false;
+  localStorage.removeItem(LOCAL_SESSION_KEY);
+  document.getElementById('authPass').value = '';
+  document.getElementById('authPass2').value = '';
+  document.getElementById('authModal').style.display = 'flex';
+  _setAuthMode('recovery');
+}
+
+function sendPasswordReset() {
+  var email = document.getElementById('authEmail').value.trim();
+  var errEl = document.getElementById('authError');
+  var btn = document.getElementById('authPrimary');
+  if (!email) { errEl.textContent = 'Enter your email'; errEl.style.display = 'block'; return; }
+  if (!_sb || _remoteDown) {
+    errEl.textContent = 'The account server is unreachable, so a reset link cannot be sent.';
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  errEl.textContent = '';
+  btn.disabled = true;
+  _sb.auth.resetPasswordForEmail(email, { redirectTo: _resetRedirect() }).then(function(res) {
+    btn.disabled = false;
+    if (res.error) {
+      if (_isNetworkError(res.error)) _remoteDown = true;
+      errEl.textContent = res.error.message || 'Could not send the reset link';
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    _showAuthHint('Check your email for the reset link. It opens this site so you can choose a new password.');
+  }).catch(function(e) {
+    btn.disabled = false;
+    if (_isNetworkError(e)) _remoteDown = true;
+    errEl.textContent = (e && e.message) || 'Could not send the reset link';
+    errEl.style.display = 'block';
+  });
+}
+
+function saveNewPassword() {
+  var pass = document.getElementById('authPass').value;
+  var pass2 = document.getElementById('authPass2').value;
+  var errEl = document.getElementById('authError');
+  var btn = document.getElementById('authPrimary');
+  if (!pass || !pass2) { errEl.textContent = 'Enter the new password twice'; errEl.style.display = 'block'; return; }
+  if (pass !== pass2) { errEl.textContent = 'Passwords do not match'; errEl.style.display = 'block'; return; }
+  if (pass.length < 6) { errEl.textContent = 'Password must be at least 6 characters'; errEl.style.display = 'block'; return; }
+  if (!_sb) { errEl.textContent = 'The account server is unreachable.'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  errEl.textContent = '';
+  btn.disabled = true;
+  _sb.auth.updateUser({ password: pass }).then(function(res) {
+    btn.disabled = false;
+    if (res.error) {
+      errEl.textContent = res.error.message || 'Could not save the password';
+      errEl.style.display = 'block';
+      return;
+    }
+    document.getElementById('authPass').value = '';
+    document.getElementById('authPass2').value = '';
+    if (window.history && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    hideAuthModal();
+    _loadProfile();
+  }).catch(function(e) {
+    btn.disabled = false;
+    errEl.textContent = (e && e.message) || 'Could not save the password';
+    errEl.style.display = 'block';
+  });
 }
 
 function _beginLocalSession(email) {
@@ -521,6 +689,11 @@ _restoreLocalSession();
 _renderAuth();
 if (_sb) {
   _sb.auth.onAuthStateChange(function(event) {
+    if (event === 'PASSWORD_RECOVERY' || (_authHash.recovery && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION'))) {
+      _showRecovery();
+      _loadProfile();
+      return;
+    }
     if (_localMode && event !== 'SIGNED_IN') return;
     if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') _loadProfile();
     else if (event === 'SIGNED_OUT' && !_localMode) { _auth = {user:null,profile:null,isPro:false}; _renderAuth(); }
@@ -529,6 +702,15 @@ if (_sb) {
 } else {
   _remoteDown = true;
   _renderAuth();
+}
+
+if (_authHash.error) {
+  _setAuthMode('signin');
+  document.getElementById('authModal').style.display = 'flex';
+  var _hashErr = document.getElementById('authError');
+  _hashErr.textContent = _authHash.error;
+  _hashErr.style.display = 'block';
+  if (window.history && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
 }
 
 fetch(SB_URL + '/auth/v1/health', { headers: { apikey: SB_KEY } }).then(function(r) {
