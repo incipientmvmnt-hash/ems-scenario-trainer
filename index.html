@@ -580,6 +580,23 @@ function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty
 }
 
 // ===== DASHBOARD =====
+function _scenarioTitle(id) {
+  if (!id || typeof SCENARIOS === 'undefined') return 'Scenario';
+  for (var i = 0; i < SCENARIOS.length; i++) {
+    if (SCENARIOS[i].id === id) return SCENARIOS[i].title || id;
+  }
+  return id;
+}
+
+function _answerWhen(iso) {
+  if (!iso) return '';
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  var opts = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' };
+  if (d.getFullYear() !== new Date().getFullYear()) opts.year = 'numeric';
+  return d.toLocaleString(undefined, opts);
+}
+
 function _paintDashboard(answers) {
   var app = document.getElementById('app');
   if (!answers.length) {
@@ -643,9 +660,14 @@ function _paintDashboard(answers) {
   answers.slice(0, 20).forEach(function(a) {
     var icon = a.is_correct ? '\u2705' : '\u274C';
     var time = a.time_taken_ms ? Math.round(a.time_taken_ms/1000) + 's' : '';
-    html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
-    html += '<span>' + icon + ' ' + _esc(a.category||'?') + ' \u2014 ' + _esc(a.question_type||'?') + '</span>';
-    html += '<span class="muted-label">' + time + '</span></div>';
+    var when = _answerWhen(a.created_at);
+    var detail = _esc(a.category || '?') + ' \u2014 ' + _esc(a.question_type || '?');
+    if (time) detail += ' \u00b7 ' + time;
+    html += '<div class="answer-row" style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
+    html += '<div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">';
+    html += '<span style="min-width:0">' + icon + ' ' + _esc(_scenarioTitle(a.scenario_id)) + '</span>';
+    html += '<span class="muted-label" style="white-space:nowrap">' + _esc(when) + '</span></div>';
+    html += '<div class="muted-label" style="margin:2px 0 0 1.6em">' + detail + '</div></div>';
   });
   html += '</div>';
   html += '<div style="height:40px"></div></div>';
