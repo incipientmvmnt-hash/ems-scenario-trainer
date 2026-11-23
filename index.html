@@ -542,7 +542,15 @@ fetch(SB_URL + '/auth/v1/health', { headers: { apikey: SB_KEY } }).then(function
 
 // ===== SCORE TRACKING (Pro only) =====
 var _trackStartTime = 0;
+var _answerWrites = [];
 function _startTimer() { _trackStartTime = Date.now(); }
+function _flushAnswerWrites() {
+  var pending = _answerWrites.slice();
+  if (!pending.length) return Promise.resolve();
+  return Promise.all(pending.map(function(write) {
+    return Promise.resolve(write).then(function() {}, function() {});
+  }));
+}
 function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty, selectedAnswer) {
   try {
     if (!_auth.isPro || !_auth.user) return;
@@ -560,7 +568,14 @@ function _trackAnswer(scenarioId, qIndex, qType, isCorrect, category, difficulty
       created_at: new Date().toISOString()
     };
     if (_localMode || !_sb) { _saveLocalAnswer(row); return; }
-    _sb.from('answers').insert(row).then(function(){}).catch(function(){});
+    var tracked = new Promise(function(resolve) {
+      _sb.from('answers').insert(row).then(function() { resolve(); }, function() { resolve(); });
+    });
+    _answerWrites.push(tracked);
+    tracked.then(function() {
+      var i = _answerWrites.indexOf(tracked);
+      if (i >= 0) _answerWrites.splice(i, 1);
+    });
   } catch(e) {}
 }
 
@@ -31283,10 +31298,9 @@ function loadLastResult() {
   return state.lastResult;
 }
 
-function weakestMissDomain() {
-  var stats = loadFocusStats();
+function _weakestFromStats(stats) {
   var worst = null, worstPct = 101, worstMisses = 0;
-  Object.keys(stats).forEach(function(cat) {
+  Object.keys(stats || {}).forEach(function(cat) {
     var row = stats[cat];
     if (!row || !row.misses) return;
     var pct = row.total ? (row.correct / row.total) : 1;
@@ -31297,6 +31311,70 @@ function weakestMissDomain() {
     }
   });
   return worst;
+}
+
+function weakestMissDomain() {
+  return _weakestFromStats(loadFocusStats());
+}
+
+function _usesCloudFocus() {
+  return !!(_sb && !_localMode && !_remoteDown && _auth.isPro && _auth.user && !_auth.user.local);
+}
+
+function _focusFromAnswers(rows) {
+  var stats = {};
+  (rows || []).forEach(function(row) {
+    if (!row) return;
+    var cat = row.category || 'Unknown';
+    if (!stats[cat]) stats[cat] = { correct: 0, total: 0, misses: 0 };
+    stats[cat].total++;
+    if (row.is_correct) stats[cat].correct++;
+    else stats[cat].misses++;
+  });
+  var sorted = (rows || []).filter(function(row) { return row && row.scenario_id; }).slice().sort(function(a, b) {
+    return String(a.created_at || '').localeCompare(String(b.created_at || ''));
+  });
+  var last = null;
+  if (sorted.length) {
+    var latest = sorted[sorted.length - 1];
+    var attempt = [latest];
+    var seenIndex = Number(latest.question_index);
+    // The latest attempt is the trailing run whose question index keeps falling.
+    for (var i = sorted.length - 2; i >= 0; i--) {
+      var row = sorted[i];
+      if (row.scenario_id !== latest.scenario_id) break;
+      var idx = Number(row.question_index);
+      if (!(idx < seenIndex)) break;
+      attempt.push(row);
+      seenIndex = idx;
+    }
+    last = {
+      id: latest.scenario_id,
+      category: latest.category || 'Unknown',
+      missed: attempt.some(function(row) { return !row.is_correct; })
+    };
+  }
+  return { stats: stats, last: last };
+}
+
+function _fetchAnswerRows() {
+  var pageSize = 1000;
+  var all = [];
+  function page(from) {
+    return _sb.from('answers')
+      .select('scenario_id,question_index,is_correct,category,created_at')
+      .eq('user_id', _auth.user.id)
+      .order('created_at', { ascending: true })
+      .range(from, from + pageSize - 1)
+      .then(function(res) {
+        if (res.error) throw res.error;
+        var rows = res.data || [];
+        all = all.concat(rows);
+        if (rows.length < pageSize || all.length >= 20000) return all;
+        return page(from + pageSize);
+      });
+  }
+  return page(0);
 }
 
 function rememberScenarioResult() {
@@ -31370,7 +31448,7 @@ function renderHome() {
       <button class="btn btn-random ${getTrainMode() === 'random' ? 'active' : ''}" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>Random</button>
       <button class="btn btn-random ${getTrainMode() === 'focused' ? 'active' : ''}" onclick="startFocused()" ${scenariosFor({ useDomains: false, useDifficulty: false }).length === 0 ? 'disabled' : ''}>Focused</button>
     </div>
-    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? 'Focused follows the domain you miss.' : 'Random uses your level, domain, and difficulty filters.'}</p>
+    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? (_usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the domain you miss.') : 'Random uses your level, domain, and difficulty filters.'}</p>
 
     <div class="home-section" style="margin-top:24px">
       <div class="category-header">Domain <span style="font-weight:400;font-size:.85em">(optional)</span></div>
@@ -31424,12 +31502,11 @@ function startRandom(opts) {
 }
 window.startRandom = startRandom;
 
-function startFocused() {
-  setTrainMode('focused');
-  var override = state.focusDomainOverride;
-  state.focusDomainOverride = null;
-  var last = loadLastResult();
-  var domain = override || ((last && last.missed && last.category) ? last.category : weakestMissDomain());
+var _focusBusy = false;
+
+function _beginFocused(override, last, stats) {
+  _focusBusy = false;
+  var domain = override || ((last && last.missed && last.category) ? last.category : _weakestFromStats(stats));
   if (!domain) {
     state.trainNote = 'No misses yet. Starting a random scenario.';
     startRandom({ keepMode: true });
@@ -31449,6 +31526,26 @@ function startFocused() {
   state.trainNote = '';
   var s = pool[Math.floor(Math.random() * pool.length)];
   startScenario(s.id);
+}
+
+function startFocused() {
+  if (_focusBusy) return;
+  setTrainMode('focused');
+  var override = state.focusDomainOverride;
+  state.focusDomainOverride = null;
+  if (_usesCloudFocus()) {
+    _focusBusy = true;
+    _flushAnswerWrites().then(function() {
+      return _fetchAnswerRows();
+    }).then(function(rows) {
+      var built = _focusFromAnswers(rows);
+      _beginFocused(override, built.last, built.stats);
+    }).catch(function() {
+      _beginFocused(override, loadLastResult(), loadFocusStats());
+    });
+    return;
+  }
+  _beginFocused(override, loadLastResult(), loadFocusStats());
 }
 window.startFocused = startFocused;
 
@@ -31538,7 +31635,7 @@ function renderScenario() {
 
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
-    ${state.trainNote ? `<p class="muted-label" style="text-align:center;margin:0 0 12px;font-size:.8em;color:#f0ad4e">${state.trainNote}</p>` : ''}
+    ${state.trainNote ? `<p class="muted-label" style="text-align:center;margin:0 0 12px;font-size:.8em;color:#f0ad4e">${_esc(state.trainNote)}</p>` : ''}
     <div class="progress-bar">
       ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
     </div>`;
