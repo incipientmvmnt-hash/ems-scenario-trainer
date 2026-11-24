@@ -98,6 +98,9 @@ h1{font-size:1.6em;text-align:center;margin:20px 0 4px}
 .btn-random.active{border-color:#00f0ff;color:#00f0ff;box-shadow:0 0 18px rgba(0,240,255,.35)}
 .train-row{display:flex;gap:10px;margin-top:20px}
 .train-row .btn-random{flex:1;margin-top:0;letter-spacing:1px;padding:16px 8px}
+.drill-row{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 14px}
+.drill-row .btn{flex:1 1 180px;width:auto;margin-top:0;font-size:.8em;letter-spacing:.4px;padding:14px 8px;text-transform:uppercase;white-space:normal;line-height:1.25}
+.drill-row .btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
 .browse-link{display:block;text-align:center;color:#9aa0b0;font-size:.9em;margin-top:12px;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(0,240,255,.3)}
 .browse-link:hover{color:#00f0ff}
 .counter-text{text-align:center;color:#00f0ff;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:.85em;margin-top:8px}
@@ -912,6 +915,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "You confirm the patient is unresponsive with no pulse and no breathing. Arrange the following initial interventions in the correct order of priority.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT",
@@ -933,6 +937,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "CPR is in progress. Your partner retrieves the AED and powers it on. The AED analyzes the rhythm and advises 'Shock advised.' What is your next action?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT",
@@ -1375,6 +1380,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "Based on the patient's presentation, which set of findings BEST confirms this is anaphylaxis rather than a localized allergic reaction?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -1412,6 +1418,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "You have confirmed anaphylaxis. Arrange the following treatment interventions in the correct order of priority.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -1514,6 +1521,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "During the primary survey of this multi-system trauma patient, what is the MOST critical finding that must be addressed first?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -1604,6 +1612,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Arrange the following treatment interventions in the correct order for this multi-system trauma patient.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -1794,6 +1803,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "The seizure has stopped and the child is now in a post-ictal state. What is the MOST important initial management priority?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -1931,6 +1941,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "As you arrive on scene, what is the MOST important initial consideration before approaching this patient?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -2013,6 +2024,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Despite de-escalation attempts, the patient's agitation is worsening. He is now hyperthermic (104.1°F), tachycardic (152), and becoming increasingly combative. Law enforcement assists with safe restraint. Arrange the following priorities in order.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -2072,6 +2084,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "You encounter a confused, diaphoretic 55-year-old male with a diabetes medical alert bracelet. What is the MOST important initial assessment to determine the cause of his altered mental status?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -2887,6 +2900,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "What is the MOST important assessment priority for this patient beyond the obvious hip injury?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -3136,6 +3150,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "What is the MOST critical first intervention for this patient?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -3175,6 +3190,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Place the following steps of opioid overdose management in the correct sequence:",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -3398,6 +3414,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Which of the following are appropriate steps in neonatal resuscitation if the newborn is NOT vigorous at birth? (Select ALL that apply)",
                                 "type": "mr",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -3504,6 +3521,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "Based on this presentation, which condition does this patient MOST likely have, and what is the critical distinguishing feature from a less severe heat illness?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -3720,6 +3738,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "Based on the clinical presentation, which finding is MOST indicative that this patient is experiencing sepsis rather than a simple infection?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -3889,6 +3908,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "For this submersion victim who has a pulse but is not breathing, what is the MOST important initial intervention?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -3929,6 +3949,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Place the following steps for managing this submersion victim in the correct sequence.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -4435,6 +4456,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "As the first arriving EMS unit to this mass casualty incident, what is your MOST important first action?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -4475,6 +4497,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "assessment",
+                                "exam_area": "scene",
                                 "prompt": "Using START triage, categorize each of the following four patients into the correct triage category.",
                                 "type": "categorize",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -4604,6 +4627,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "Place the initial steps of newborn resuscitation (NRP) in the correct order for this non-breathing newborn.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -4627,6 +4651,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "After 30 seconds of effective PPV, you assess the newborn's heart rate by palpating the base of the umbilical cord. The heart rate is 48 bpm. What is the correct next intervention?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -4772,6 +4797,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "scene",
                                 "prompt": "Place the following management steps in the correct priority order for this organophosphate poisoning patient.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -4876,6 +4902,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "Your patient is on home oxygen at 2 LPM via nasal cannula and his SpO2 reads 86%. What is the MOST appropriate next step for oxygen administration?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -5097,6 +5124,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "You confirm the infant is conscious but has a complete airway obstruction — no cry, no cough, no air movement. What is your immediate intervention?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -5135,6 +5163,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "During your intervention, the infant becomes unresponsive. Arrange the following steps in the correct order.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -5218,6 +5247,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "Place the following actions in the correct order upon your arrival at this cardiac arrest scene.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -5242,6 +5272,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "After 2 minutes of high-quality CPR, the AED reanalyzes and advises 'no shock.' You check for a pulse and find a weak but palpable carotid pulse at a rate of approximately 60 bpm. The patient is not breathing. What is the MOST important immediate action?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -5623,6 +5654,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "Which of the following assessment findings would be MOST concerning for imminent respiratory failure in this patient?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -5886,6 +5918,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "You remove the blood-soaked shirt and find a single stab wound to the left lower quadrant with minimal active external bleeding. A small loop of pinkish tissue is visible at the wound edge. What is your MOST appropriate immediate action?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -6061,6 +6094,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient has soot around her nose and mouth, singed nasal hairs, and a hoarse voice since the fire. Her SpO2 reads 96%. What is your GREATEST concern and most important intervention?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -6248,6 +6282,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient is alert with neck pain and bilateral hand tingling after striking his head on the pool bottom. Which of the following BEST describes your initial approach?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -6375,6 +6410,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "scene",
                                 "prompt": "You observe multiple bruises in varying stages of healing on the child's torso and upper legs, along with the reported arm injury. The mechanism described is a fall down 3 carpeted stairs. What is your MOST important consideration?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -6746,6 +6782,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "You observe bright red blood spurting rhythmically from a deep forearm laceration. Direct pressure with a towel has not controlled the bleeding. What is the MOST appropriate next step?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -6844,6 +6881,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient is postictal and has a blood pressure of 188/116. What is the MOST important immediate action?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -7109,6 +7147,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "You observe a loop of pulsating tissue protruding from the vaginal opening. What is the MOST critical immediate intervention?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -7321,6 +7360,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "Based on the Pediatric Assessment Triangle, which component is MOST concerning in this infant?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT",
@@ -7510,6 +7550,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "This patient presents with extreme agitation, hyperthermia, and tachycardia after a violent encounter. What is the GREATEST immediate threat to this patient's life?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -8044,6 +8085,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "Your patient is found outside in freezing weather, shivering intermittently with an altered mental status and a heart rate of 48. What is the MOST important initial intervention?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -8445,6 +8487,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "initial-assessment",
+                                "exam_area": "primary",
                                 "prompt": "What is the MOST critical first action upon arriving at this patient's side?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -8594,6 +8637,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene-size-up",
+                                "exam_area": "scene",
                                 "prompt": "You arrive first on scene and see a visible chemical cloud. What is your MOST appropriate immediate action?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -8630,6 +8674,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "scene-management",
+                                "exam_area": "scene",
                                 "prompt": "Place the following hazmat response steps in the correct order for an EMS crew at the Awareness level.",
                                 "type": "order",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -8658,6 +8703,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "clinical-reasoning",
+                                "exam_area": "scene",
                                 "prompt": "Categorize the following activities into the correct hazmat zone where they should occur.",
                                 "type": "categorize",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -9712,6 +9758,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient has hives, facial swelling, and reports her throat feels 'tight.' Her voice sounds slightly hoarse compared to when you first made contact. What finding would MOST clearly indicate this reaction is progressing to anaphylaxis?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -9747,6 +9794,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "The patient now has audible wheezing and her voice is noticeably hoarse. You determine this is anaphylaxis. Place the following interventions in the correct order:",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -9851,6 +9899,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "This patient has sudden severe abdominal pain with hypotension, tachycardia, and a known abdominal aortic aneurysm. Which of the following is the MOST important consideration guiding your management?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -9994,6 +10043,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "You arrive on scene. The patient is pacing and yelling at the wall. What is your FIRST priority?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -10398,6 +10448,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "Before approaching this patient, which scene safety considerations are MOST important? Select all that apply.",
                                 "type": "mr",
                                 "selectCount": 3,
@@ -11055,6 +11106,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene",
+                                "exam_area": "scene",
                                 "prompt": "Categorize the following actions into the correct threat zone where they should be performed.",
                                 "type": "categorize",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -11085,6 +11137,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "You encounter a victim in the warm zone with massive bleeding from a right thigh wound. Place these RTF interventions in the correct priority order.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -11167,6 +11220,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene",
+                                "exam_area": "scene",
                                 "prompt": "You arrive as the first additional unit. Place your initial actions in the correct order.",
                                 "type": "order",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -11820,6 +11874,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "You arrive to find four family members with similar complaints in a closed home with a kerosene heater. What is your FIRST action?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -11952,6 +12007,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "You arrive to find a single patient down in an open field during an active thunderstorm with visible lightning. What is your FIRST priority before initiating patient care?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -12289,6 +12345,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient is sitting upright in the 'tripod' position, drooling, with a muffled 'hot potato' voice, high fever, and stridor. Which assessment technique must you AVOID?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -12411,6 +12468,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "This patient had a total laryngectomy. Why is this critical information for airway management?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -12797,6 +12855,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "reassessment",
+                                "exam_area": "primary",
                                 "prompt": "During transport, the patient becomes increasingly dyspneic, tachycardic to 130, hypotensive at 82/50, and you note tracheal deviation to the left. What has likely occurred?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -13167,6 +13226,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "You note jugular venous distension and muffled heart sounds. Combined with hypotension, these three findings constitute:",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -13425,6 +13485,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "Which of the following findings would indicate this child is progressing toward respiratory failure? Select all that apply.",
                                 "type": "mr",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -13547,6 +13608,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "The newborn is limp, has gasping respirations at about 6/min, and HR by cord pulsation is approximately 78 bpm. Thick meconium is visible in the mouth and nares. According to current NRP guidelines, what is the correct initial approach?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -14485,6 +14547,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "treatment",
+                                "exam_area": "primary",
                                 "prompt": "What is the FIRST priority intervention for this patient?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -14878,6 +14941,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "scene_size_up",
+                                "exam_area": "scene",
                                 "prompt": "You arrive to find the patient in active tonic-clonic seizure on a hard floor surrounded by furniture. What is your FIRST action?",
                                 "type": "mc",
                                 "level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -16108,6 +16172,7 @@ const SCENARIOS = [
                 "questions": [
                         {
                                 "phase": "assessment",
+                                "exam_area": "primary",
                                 "prompt": "The patient has massive facial swelling, bilateral periorbital ecchymosis, blood pooling in the oropharynx, several missing teeth, and midface instability on palpation. SpO2 is 91%. What is the MOST immediate life threat to address?",
                                 "type": "mc",
                                 "level_filter": "EMT-AEMT-Paramedic",
@@ -16696,6 +16761,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following initial assessment and intervention steps in the correct order of priority for this unresponsive patient.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -18335,6 +18401,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "This patient is displaying signs of a time-sensitive, life-threatening condition. Select ALL clinical findings that support this assessment.",
 						"type": "mr",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -18903,6 +18970,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Based on the clinical presentation, arrange the following assessment findings from MOST concerning to LEAST concerning in terms of immediate life threat.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -21399,6 +21467,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Based on your primary assessment, which combination of findings is MOST consistent with this patient's presentation?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -21459,6 +21528,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "As an EMT without needle decompression in your scope, select ALL appropriate interventions for this patient.",
 						"type": "mr",
 						"level_filter": "EMT",
@@ -21562,6 +21632,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "This child is demonstrating signs of a severe (complete) airway obstruction. Which assessment finding BEST differentiates a complete obstruction from a partial obstruction?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -21599,6 +21670,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the correct sequence of interventions for managing this conscious child with a complete airway obstruction.",
 						"type": "order",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -21620,6 +21692,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "The child loses consciousness during your intervention. Select ALL correct next steps.",
 						"type": "mr",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -22004,6 +22077,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "This patient has a total laryngectomy. Which statement BEST describes why this is critical information for airway management?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -22139,6 +22213,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Select ALL findings that suggest significant inhalation injury and potential for airway compromise in this patient.",
 						"type": "mr",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -23554,6 +23629,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "The patient has signs of hemorrhagic shock with a suspected unstable pelvic fracture. Select ALL findings that support this assessment.",
 						"type": "mr",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -23725,6 +23801,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "The patient is bradycardic and hypotensive with warm, dry skin and flaccid paralysis. What type of shock is MOST consistent with this presentation?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -23762,6 +23839,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following interventions in order of priority for this patient.",
 						"type": "order",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -23895,6 +23973,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Select ALL findings that indicate this patient is at HIGH risk for inhalation injury requiring aggressive airway management.",
 						"type": "mr",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -24163,6 +24242,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "This patient has severe maxillofacial trauma with airway compromise. Select ALL immediate threats to this patient's airway.",
 						"type": "mr",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -24208,6 +24288,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "What is the MOST appropriate initial airway management strategy for this patient at the EMT level?",
 						"type": "mc",
 						"level_filter": "EMR-EMT",
@@ -24364,6 +24445,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "The child has a heart rate of 68, blood pressure of 142/90, and respiratory rate of 14 with a GCS of 8. This combination of vital signs is MOST suggestive of which condition?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -24401,6 +24483,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following interventions in the correct order of priority for this patient.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -25678,6 +25761,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Which prehospital intervention is the HIGHEST priority for this patient given her presentation?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -25813,6 +25897,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "The patient has sickle cell disease with severe chest pain and an SpO2 of 89%. Which complication should you be MOST concerned about?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -27610,6 +27695,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "The infant's head has delivered but the shoulders have not followed after 60 seconds of gentle downward traction. Which finding BEST characterizes this delivery complication?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -27647,6 +27733,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following maneuvers in the correct order for managing this delivery complication.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -27772,6 +27859,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Based on the clinical presentation, which combination of findings is MOST concerning and differentiates this from other causes of third-trimester bleeding?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -27914,6 +28002,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "You have just delivered this newborn with thick meconium-stained fluid. The infant is limp and not breathing. Arrange the initial steps of neonatal resuscitation in the correct order.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -27937,6 +28026,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "After completing initial steps, the infant remains apneic with a heart rate of 70 bpm. What is your next intervention?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -27975,6 +28065,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "You have been providing PPV for 30 seconds. The heart rate is now 50 bpm. Select ALL correct interventions at this point.",
 						"type": "mr",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28350,6 +28441,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "Which combination of findings is MOST suggestive of a ruptured ectopic pregnancy in this patient?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28387,6 +28479,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following prehospital interventions in the correct order of priority.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28528,6 +28621,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Select ALL appropriate prehospital interventions for this patient with postpartum hemorrhage due to uterine atony.",
 						"type": "mr",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28653,6 +28747,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "scene",
 						"prompt": "Two patients are affected by the lightning strike. The unresponsive patient has no pulse and no breathing. The second patient is alert and oriented with tingling in both legs. Using reverse triage principles for lightning-strike mass casualty incidents, which patient should receive immediate treatment first?",
 						"type": "mc",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28690,6 +28785,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "You begin resuscitation on the pulseless patient. Arrange the following interventions in the correct order of priority.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28800,6 +28896,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "You confirm the child is pulseless and apneic. His core temperature is estimated to be severely hypothermic. Which statement BEST guides your resuscitation decision for this patient?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -28837,6 +28934,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "Arrange the following interventions in the correct order of priority for this cold water drowning patient.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -28914,6 +29012,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "scene",
 						"prompt": "Before entering the vault, what is the MOST critical consideration?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -28951,6 +29050,7 @@ const SCENARIOS = [
 				},
 				{
 						"phase": "treatment",
+						"exam_area": "primary",
 						"prompt": "The confined-space rescue team has extricated the patient. He is now at ground level. His respirations are 6/min and shallow, SpO2 74%, GCS 4. Arrange the following treatment steps in the correct order.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -29331,6 +29431,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "scene",
 						"prompt": "Categorize each worker by radiation triage priority based on their exposure history and current symptoms.",
 						"type": "categorize",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -29468,6 +29569,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "This patient's presentation is MOST consistent with which condition, and what single finding is most critical in differentiating it from heat exhaustion?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -29607,6 +29709,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "You are operating in the warm zone during an active threat incident. Arrange the following TECC/THREAT actions in the correct order of priority.",
 						"type": "order",
 						"level_filter": "EMT-AEMT-Paramedic",
@@ -29873,6 +29976,7 @@ const SCENARIOS = [
 		"questions": [
 				{
 						"phase": "assessment",
+						"exam_area": "primary",
 						"prompt": "You are evaluating this pediatric patient for transport destination. Which tool is MOST appropriate for rapidly assessing the severity of this child's illness in the prehospital setting?",
 						"type": "mc",
 						"level_filter": "EMR-EMT-AEMT-Paramedic",
@@ -31428,6 +31532,7 @@ const state = {
   selectedDomains: new Set(),
   selectedDifficulties: new Set(),
   currentScenario: null,
+  examDrill: null,
   questionIndex: 0,
   answers: [],
   answered: false,
@@ -31473,8 +31578,40 @@ function getAvailableScenarios() {
   return scenariosFor({ useDomains: true, useDifficulty: true });
 }
 
+function questionPhaseLabel(q) {
+  if (q && q.exam_area === 'scene') return 'Scene size-up';
+  if (q && q.exam_area === 'primary') return 'Primary assessment';
+  return (q && q.phase) || '';
+}
+
+function examAreaLabel(area) {
+  if (area === 'scene') return 'Scene size-up';
+  if (area === 'primary') return 'Primary assessment';
+  return 'Exam';
+}
+
+function examDrillPool(area) {
+  var levelOrder = { EMR: 1, EMT: 2, AEMT: 3, Paramedic: 4 };
+  var userLevel = state.selectedLevel ? (levelOrder[state.selectedLevel] || 1) : 99;
+  var pool = [];
+  SCENARIOS.forEach(function(sc) {
+    if (state.selectedLevel && (levelOrder[sc.level_min] || 1) > userLevel) return;
+    (sc.questions || []).forEach(function(q, i) {
+      if (!q || q.exam_area !== area) return;
+      if (!questionMatchesLevel(q)) return;
+      pool.push({ id: sc.id, qIndex: i });
+    });
+  });
+  return pool;
+}
+
 function getFilteredQuestions() {
   if (!state.currentScenario) return [];
+  var drill = state.examDrill;
+  if (drill && drill.queue && drill.queue[drill.pos] && state.currentScenario.id === drill.queue[drill.pos].id) {
+    var q = (state.currentScenario.questions || [])[drill.queue[drill.pos].qIndex];
+    return q ? [q] : [];
+  }
   return (state.currentScenario.questions || []).filter(questionMatchesLevel);
 }
 
@@ -31583,6 +31720,30 @@ function _fetchAnswerRows() {
 }
 
 function rememberScenarioResult() {
+  if (state.examDrill) {
+    if (!state.answers.length) return;
+    var tokenKey = 'drill:' + state.examDrill.token;
+    if (state.statsRecordedFor === tokenKey) return;
+    state.statsRecordedFor = tokenKey;
+    var stats = loadFocusStats();
+    var lastMiss = null;
+    state.answers.forEach(function(a) {
+      var cat = a.category || 'Unknown';
+      if (!stats[cat]) stats[cat] = { correct: 0, total: 0, misses: 0 };
+      stats[cat].total++;
+      if (a.correct) stats[cat].correct++;
+      else {
+        stats[cat].misses++;
+        lastMiss = { id: a.scenarioId, category: cat, missed: true };
+      }
+    });
+    try { localStorage.setItem('medic7-focus-stats', JSON.stringify(stats)); } catch (e) {}
+    if (lastMiss) {
+      state.lastResult = lastMiss;
+      try { localStorage.setItem('medic7-last-result', JSON.stringify(lastMiss)); } catch (e) {}
+    }
+    return;
+  }
   if (!state.currentScenario || !state.answers.length) return;
   var correctCount = state.answers.filter(function(a) { return a.correct; }).length;
   var key = state.currentScenario.id + ':' + state.answers.length + ':' + correctCount;
@@ -31619,9 +31780,19 @@ function render() {
 }
 
 function renderHome() {
+  state.examDrill = null;
   const avail = getAvailableScenarios();
   const totalScenarios = SCENARIOS.length;
   const totalQuestions = SCENARIOS.reduce((a, s) => a + (s.questions ? s.questions.length : 0), 0);
+  const showExamDrills = !state.selectedLevel || state.selectedLevel === 'EMR' || state.selectedLevel === 'EMT';
+  const sceneDrillCount = showExamDrills ? examDrillPool('scene').length : 0;
+  const primaryDrillCount = showExamDrills ? examDrillPool('primary').length : 0;
+  const examDrillHtml = showExamDrills ? `
+      <p class="muted-label exam-note">Scene size-up and primary assessment drills use up to ten questions from these calls. A drill follows your certification level and ignores the subject and difficulty chips.</p>
+      <div class="drill-row">
+        <button class="btn btn-primary" onclick="startExamDrill('scene')" ${sceneDrillCount ? '' : 'disabled'}>Scene size-up</button>
+        <button class="btn btn-primary" onclick="startExamDrill('primary')" ${primaryDrillCount ? '' : 'disabled'}>Primary assessment</button>
+      </div>` : '';
   
   let html = `<div class="fade-in" style="padding-top:20px;">
     <div style="text-align:center;margin-bottom:32px">
@@ -31660,6 +31831,7 @@ function renderHome() {
       <p class="muted-label exam-note">These chips are subject practice, not the exam outline.</p>
       <p class="muted-label exam-note">EMR and EMT: scene size-up and safety, primary assessment, secondary assessment, treatment and transport, and operations. Primary assessment is the largest part.</p>
       <p class="muted-label exam-note">AEMT and Paramedic: clinical judgment is the largest part. The exam also covers medical and obstetrics, cardiology, airway, trauma, and operations.</p>
+      ${examDrillHtml}
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
         ${DOMAINS.map(d => `<span class="domain-chip ${state.selectedDomains.has(d)?'selected':''}" onclick="toggleDomain('${d}')">${d}</span>`).join('')}
       </div>
@@ -31758,6 +31930,7 @@ function startFocused() {
 window.startFocused = startFocused;
 
 window.startScenario = function(id) {
+  state.examDrill = null;
   const s = SCENARIOS.find(sc => sc.id === id);
   if (!s) return;
   state.currentScenario = s;
@@ -31778,7 +31951,61 @@ window.startScenario = function(id) {
   render();
 };
 
+function startExamDrill(area) {
+  if (area !== 'scene' && area !== 'primary') return;
+  var pool = examDrillPool(area);
+  if (!pool.length) {
+    state.examDrill = null;
+    state.screen = 'home';
+    render();
+    return;
+  }
+  for (var i = pool.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = pool[i];
+    pool[i] = pool[j];
+    pool[j] = tmp;
+  }
+  state.examDrill = {
+    area: area,
+    queue: pool.slice(0, Math.min(10, pool.length)),
+    pos: 0,
+    token: Date.now() + ':' + Math.random()
+  };
+  state.answers = [];
+  state.statsRecordedFor = null;
+  state.trainNote = '';
+  loadExamDrillItem();
+}
+window.startExamDrill = startExamDrill;
+
+function loadExamDrillItem() {
+  var drill = state.examDrill;
+  if (!drill || drill.pos < 0 || drill.pos >= drill.queue.length) {
+    state.screen = 'debrief';
+    window.scrollTo(0, 0);
+    render();
+    return;
+  }
+  var item = drill.queue[drill.pos];
+  var s = SCENARIOS.find(function(sc) { return sc.id === item.id; });
+  if (!s || !s.questions || !s.questions[item.qIndex]) {
+    drill.pos++;
+    loadExamDrillItem();
+    return;
+  }
+  state.currentScenario = s;
+  state.questionIndex = 0;
+  state.answered = false;
+  state.selectedOptions = new Set();
+  state.userState = {};
+  state.screen = 'scenario';
+  window.scrollTo(0, 0);
+  render();
+}
+
 function renderSelect() {
+  state.examDrill = null;
   const avail = getAvailableScenarios();
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
@@ -31813,16 +32040,28 @@ function renderSelect() {
 function renderScenario() {
   if (typeof _startTimer === 'function') _startTimer();
   const s = state.currentScenario;
+  const drill = state.examDrill;
   const qs = getFilteredQuestions();
-  if (state.questionIndex >= qs.length) {
+  if (drill && drill.pos >= drill.queue.length) {
+    state.screen = 'debrief';
+    render();
+    return;
+  }
+  if (!drill && state.questionIndex >= qs.length) {
     state.screen = 'debrief';
     render();
     return;
   }
   const q = qs[state.questionIndex];
+  if (!q) {
+    state.screen = 'debrief';
+    render();
+    return;
+  }
   const qType = q.type || (q.multi_select ? 'mr' : 'mc');
-  const total = qs.length;
-  const current = state.questionIndex + 1;
+  const total = drill ? drill.queue.length : qs.length;
+  const current = drill ? (drill.pos + 1) : (state.questionIndex + 1);
+  const stepIndex = drill ? drill.pos : state.questionIndex;
 
   // Init user state for special question types
   if (qType === 'order' && !state.userState.order) {
@@ -31844,8 +32083,9 @@ function renderScenario() {
   let html = `<div class="fade-in">
     <button class="back-btn" onclick="state.screen='home';render()">Home</button>
     ${state.trainNote ? `<p class="muted-label" style="text-align:center;margin:0 0 12px;font-size:.8em;color:#f0ad4e">${_esc(state.trainNote)}</p>` : ''}
+    ${drill ? `<h2 style="font-size:1.05em;text-align:center;margin:0 0 12px">${_esc(s.title)}</h2>` : ''}
     <div class="progress-bar">
-      ${qs.map((_, i) => `<div class="progress-step ${i < state.questionIndex ? 'done' : i === state.questionIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
+      ${Array.from({length: total}, (_, i) => `<div class="progress-step ${i < stepIndex ? 'done' : i === stepIndex ? 'active' : ''}">${i + 1}</div>`).join('')}
     </div>`;
 
   // Dispatch & scene context (show on first question, collapsible after)
@@ -31876,8 +32116,9 @@ function renderScenario() {
     </details>`;
   }
 
-  // Phase label
-  if (q.phase) html += `<span class="phase-label">${q.phase}</span>`;
+  // Phase label. Mapped questions use the exam area a student is practicing.
+  var phaseLabel = questionPhaseLabel(q);
+  if (phaseLabel) html += `<span class="phase-label">${_esc(phaseLabel)}</span>`;
 
   // Narrative
   if (q.narrative && qType !== 'graphical') html += `<div class="narrative"><div class="label">UPDATE</div>${q.narrative}</div>`;
@@ -32177,6 +32418,11 @@ function submitAnswer() {
     protocol = q.protocol_ref || '';
   }
 
+  var trackedIndex = state.questionIndex;
+  var trackedScenario = state.currentScenario;
+  if (state.examDrill && state.examDrill.queue[state.examDrill.pos]) {
+    trackedIndex = state.examDrill.queue[state.examDrill.pos].qIndex;
+  }
   state.answers.push({
     question: q.prompt,
     phase: q.phase,
@@ -32184,22 +32430,37 @@ function submitAnswer() {
     selected: selectedText,
     correctAnswer: correctText,
     protocol: protocol,
-    criticalFail: hasCriticalFail
+    criticalFail: hasCriticalFail,
+    scenarioId: trackedScenario ? trackedScenario.id : '',
+    category: trackedScenario ? (trackedScenario.category || 'Unknown') : 'Unknown',
+    qIndex: trackedIndex,
+    scenarioTitle: trackedScenario ? (trackedScenario.title || '') : ''
   });
 
-  // Track for Pro users
-  if (typeof _trackAnswer === 'function' && state.currentScenario) {
-    _trackAnswer(state.currentScenario.id, state.questionIndex, qType, isCorrect, state.currentScenario.category, state.currentScenario.difficulty, selectedText);
+  // Track for Pro users. A drill records the question's real index, not the one-item list position.
+  if (typeof _trackAnswer === 'function' && trackedScenario) {
+    _trackAnswer(trackedScenario.id, trackedIndex, qType, isCorrect, trackedScenario.category, trackedScenario.difficulty, selectedText);
   }
 
   renderScenario();
 }
 
 function nextQuestion() {
-  state.questionIndex++;
   state.answered = false;
   state.selectedOptions = new Set();
   state.userState = {};
+  if (state.examDrill) {
+    state.examDrill.pos++;
+    if (state.examDrill.pos >= state.examDrill.queue.length) {
+      state.screen = 'debrief';
+      window.scrollTo(0, 0);
+      render();
+      return;
+    }
+    loadExamDrillItem();
+    return;
+  }
+  state.questionIndex++;
   render();
 }
 
@@ -32214,8 +32475,23 @@ function renderDebrief() {
   if (pct >= 80) scoreClass = 'score-good';
   else if (pct >= 60) scoreClass = 'score-ok';
 
+  const drill = state.examDrill;
   let tierClass, tierName, tierDesc;
-  if (pct >= 90) {
+  if (drill) {
+    if (pct >= 90) {
+      tierClass = 'tier-expert'; tierName = 'Strong on this drill';
+      tierDesc = 'You handled the decisions in this drill.';
+    } else if (pct >= 70) {
+      tierClass = 'tier-competent'; tierName = 'Most of this drill';
+      tierDesc = 'Most of these decisions were right. Review the ones you missed.';
+    } else if (pct >= 50) {
+      tierClass = 'tier-developing'; tierName = 'Mixed on this drill';
+      tierDesc = 'About half of these decisions need another look. Read the explanations and run the drill again.';
+    } else {
+      tierClass = 'tier-novice'; tierName = 'Another pass';
+      tierDesc = 'Most of these decisions need another look. Read the explanations and run the drill again.';
+    }
+  } else if (pct >= 90) {
     tierClass = 'tier-expert'; tierName = 'Strong on this call';
     tierDesc = 'You handled the decisions on this scenario.';
   } else if (pct >= 70) {
@@ -32230,16 +32506,21 @@ function renderDebrief() {
   }
 
   const criticalFails = state.answers.filter(a => a.criticalFail).length;
+  const heading = drill ? (drill.area === 'scene' ? 'SCENE SIZE-UP' : 'PRIMARY ASSESSMENT') : 'SCENARIO DEBRIEF';
+  const subtitle = drill ? 'Up to ten questions from these calls' : (s && s.title ? s.title : '');
+  const disclaimer = drill
+    ? 'This percentage is for this drill only. It is not an NREMT result.'
+    : 'This percentage is for this call only. It is not an NREMT result.';
 
   let html = `
-    <h1 style="font-size:1.3em;text-align:center">SCENARIO DEBRIEF</h1>
-    <p class="muted-label" style="text-align:center;margin-bottom:16px">${s.title}</p>
+    <h1 style="font-size:1.3em;text-align:center">${heading}</h1>
+    <p class="muted-label" style="text-align:center;margin-bottom:16px">${subtitle}</p>
     
     <div class="score-circle ${scoreClass}">
       ${correct}/${total}
       <div class="pct">${pct}%</div>
     </div>
-    <p class="muted-label exam-note" style="text-align:center;margin:12px 0 0">This percentage is for this call only. It is not an NREMT result.</p>
+    <p class="muted-label exam-note" style="text-align:center;margin:12px 0 0">${disclaimer}</p>
     
     <div class="score-tier ${tierClass}">
       <div class="tier-name">${tierName}</div>
@@ -32252,8 +32533,10 @@ function renderDebrief() {
 
   state.answers.forEach((a, i) => {
     const icon = a.correct ? '✅' : a.criticalFail ? '⛔' : '❌';
+    const call = drill && a.scenarioTitle ? `<div class="muted-label" style="font-size:.75em;margin-bottom:2px">${_esc(a.scenarioTitle)}</div>` : '';
     html += `
       <div class="review-item" ${a.criticalFail ? 'style="border-left:3px solid #b71c1c"' : ''}>
+        ${call}
         <div class="q">${icon} Q${i+1}: ${a.question}</div>
         <div class="your-ans ${a.correct ? '' : 'wrong'}">Your answer: ${a.selected.join(', ')}</div>
         ${a.criticalFail ? '<div style="color:#ffa726;font-size:.8em;font-weight:600">⚠️ Safety Consideration</div>' : ''}
@@ -32262,6 +32545,18 @@ function renderDebrief() {
       </div>`;
   });
 
+  if (drill) {
+    var againLabel = drill.area === 'scene' ? 'Another scene drill' : 'Another primary drill';
+    var otherArea = drill.area === 'scene' ? 'primary' : 'scene';
+    var otherLabel = drill.area === 'scene' ? 'Primary assessment drill' : 'Scene size-up drill';
+    html += `
+    <button class="btn btn-primary" onclick="startExamDrill('${drill.area}')" style="margin-top:16px">${againLabel}</button>
+    <button class="btn btn-secondary" onclick="startExamDrill('${otherArea}')">${otherLabel}</button>
+    <button class="btn btn-secondary" onclick="state.screen='select';render()">← Choose Another Scenario</button>
+    <button class="btn btn-secondary" onclick="state.screen='home';render()">🏠 Home</button>
+    <div style="height:40px"></div>
+  `;
+  } else {
   var trainMode = getTrainMode();
   var nextFn = trainMode === 'focused' ? 'startFocused()' : 'startRandom()';
   var nextLabel = trainMode === 'focused' ? 'Next focused' : 'Next random';
@@ -32275,6 +32570,7 @@ function renderDebrief() {
     <button class="btn btn-secondary" onclick="state.screen='home';render()">🏠 Home</button>
     <div style="height:40px"></div>
   `;
+  }
 
   app.innerHTML = `<div class="fade-in">${html}</div>`;
 }
