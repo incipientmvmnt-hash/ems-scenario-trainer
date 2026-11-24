@@ -31863,6 +31863,10 @@ function examAreaLabel(area) {
   return 'Exam';
 }
 
+function isExamDrillArea(area) {
+  return area === 'scene' || area === 'primary' || area === 'secondary' || area === 'treatment' || area === 'operations';
+}
+
 function examDrillHeading(area) {
   if (area === 'scene') return 'SCENE SIZE-UP';
   if (area === 'primary') return 'PRIMARY ASSESSMENT';
@@ -31915,6 +31919,16 @@ function setTrainMode(mode) {
   var next = mode === 'focused' ? 'focused' : 'random';
   try { localStorage.setItem('medic7-train-mode', next); } catch (e) {}
   state.trainMode = next;
+}
+
+function focusedHomeNote() {
+  var bls = !state.selectedLevel || state.selectedLevel === 'EMR' || state.selectedLevel === 'EMT';
+  if (!bls) {
+    return _usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the subject you miss.';
+  }
+  return _usesCloudFocus()
+    ? 'Focused follows the exam area of misses saved on this account. A miss outside the drills follows the subject.'
+    : 'Focused follows the exam area you miss. A miss outside the drills follows the subject.';
 }
 
 function loadFocusStats() {
@@ -31981,11 +31995,19 @@ function _focusFromAnswers(rows) {
       attempt.push(row);
       seenIndex = idx;
     }
+    var missRow = null;
+    for (var j = 0; j < attempt.length; j++) {
+      if (!attempt[j].is_correct) { missRow = attempt[j]; break; }
+    }
     last = {
       id: latest.scenario_id,
       category: latest.category || 'Unknown',
-      missed: attempt.some(function(row) { return !row.is_correct; })
+      missed: !!missRow
     };
+    if (missRow) {
+      var area = _answerExamArea(missRow);
+      if (isExamDrillArea(area)) last.examArea = area;
+    }
   }
   return { stats: stats, last: last };
 }
@@ -32026,6 +32048,7 @@ function rememberScenarioResult() {
       else {
         stats[cat].misses++;
         lastMiss = { id: a.scenarioId, category: cat, missed: true };
+        if (isExamDrillArea(a.examArea)) lastMiss.examArea = a.examArea;
       }
     });
     try { localStorage.setItem('medic7-focus-stats', JSON.stringify(stats)); } catch (e) {}
@@ -32043,10 +32066,14 @@ function rememberScenarioResult() {
   var stats = loadFocusStats();
   var cat = state.currentScenario.category || 'Unknown';
   if (!stats[cat]) stats[cat] = { correct: 0, total: 0, misses: 0 };
+  var lastMissArea = '';
   state.answers.forEach(function(a) {
     stats[cat].total++;
     if (a.correct) stats[cat].correct++;
-    else stats[cat].misses++;
+    else {
+      stats[cat].misses++;
+      lastMissArea = isExamDrillArea(a.examArea) ? a.examArea : '';
+    }
   });
   try { localStorage.setItem('medic7-focus-stats', JSON.stringify(stats)); } catch (e) {}
   var rec = {
@@ -32054,6 +32081,7 @@ function rememberScenarioResult() {
     category: cat,
     missed: state.answers.some(function(a) { return !a.correct; })
   };
+  if (rec.missed && lastMissArea) rec.examArea = lastMissArea;
   state.lastResult = rec;
   try { localStorage.setItem('medic7-last-result', JSON.stringify(rec)); } catch (e) {}
 }
@@ -32121,7 +32149,7 @@ function renderHome() {
       <button class="btn btn-random ${getTrainMode() === 'random' ? 'active' : ''}" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>Random</button>
       <button class="btn btn-random ${getTrainMode() === 'focused' ? 'active' : ''}" onclick="startFocused()" ${scenariosFor({ useDomains: false, useDifficulty: false }).length === 0 ? 'disabled' : ''}>Focused</button>
     </div>
-    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? (_usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the subject you miss.') : 'Random uses your level, subject, and difficulty filters.'}</p>
+    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? focusedHomeNote() : 'Random uses your level, subject, and difficulty filters.'}</p>
     <button class="btn btn-secondary" onclick="state.screen='select';render()">Choose a Scenario</button>
 
     <div class="home-section" style="margin-top:24px">
@@ -32184,6 +32212,12 @@ var _focusBusy = false;
 
 function _beginFocused(override, last, stats) {
   _focusBusy = false;
+  var bls = !state.selectedLevel || state.selectedLevel === 'EMR' || state.selectedLevel === 'EMT';
+  if (!override && bls && last && last.missed && isExamDrillArea(last.examArea) && examDrillPool(last.examArea).length) {
+    state.trainNote = '';
+    startExamDrill(last.examArea);
+    return;
+  }
   var domain = override || ((last && last.missed && last.category) ? last.category : _weakestFromStats(stats));
   if (!domain) {
     state.trainNote = 'No misses yet. Starting a random scenario.';
@@ -32721,6 +32755,10 @@ function submitAnswer() {
   if (state.examDrill && state.examDrill.queue[state.examDrill.pos]) {
     trackedIndex = state.examDrill.queue[state.examDrill.pos].qIndex;
   }
+  if (trackedScenario && trackedScenario.questions) {
+    var foundAt = trackedScenario.questions.indexOf(q);
+    if (foundAt >= 0) trackedIndex = foundAt;
+  }
   state.answers.push({
     question: q.prompt,
     phase: q.phase,
@@ -32732,6 +32770,7 @@ function submitAnswer() {
     scenarioId: trackedScenario ? trackedScenario.id : '',
     category: trackedScenario ? (trackedScenario.category || 'Unknown') : 'Unknown',
     qIndex: trackedIndex,
+    examArea: isExamDrillArea(q && q.exam_area) ? q.exam_area : '',
     scenarioTitle: trackedScenario ? (trackedScenario.title || '') : ''
   });
 
