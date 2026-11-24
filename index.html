@@ -32215,17 +32215,17 @@ function renderDebrief() {
 
   let tierClass, tierName, tierDesc;
   if (pct >= 90) {
-    tierClass = 'tier-expert'; tierName = '🏆 Expert';
-    tierDesc = 'Outstanding clinical decision-making. You demonstrate mastery of these protocols.';
+    tierClass = 'tier-expert'; tierName = 'Strong on this call';
+    tierDesc = 'You handled the decisions on this scenario.';
   } else if (pct >= 70) {
-    tierClass = 'tier-competent'; tierName = '✅ Competent';
-    tierDesc = 'Solid foundation. Review the protocols you missed to strengthen your practice.';
+    tierClass = 'tier-competent'; tierName = 'Most of this call';
+    tierDesc = 'Most of these decisions were right. Review the ones you missed.';
   } else if (pct >= 50) {
-    tierClass = 'tier-developing'; tierName = 'Developing';
-    tierDesc = "You're building knowledge but need more protocol review before these calls.";
+    tierClass = 'tier-developing'; tierName = 'Mixed on this call';
+    tierDesc = 'About half of these decisions need another look. Read the explanations and run the call again.';
   } else {
-    tierClass = 'tier-novice'; tierName = '📚 Building Foundation';
-    tierDesc = 'These are tough scenarios. Review the referenced protocols and try again — repetition builds confidence.';
+    tierClass = 'tier-novice'; tierName = 'Another pass';
+    tierDesc = 'Most of these decisions need another look. Read the explanations and run the call again.';
   }
 
   const criticalFails = state.answers.filter(a => a.criticalFail).length;
@@ -32238,6 +32238,7 @@ function renderDebrief() {
       ${correct}/${total}
       <div class="pct">${pct}%</div>
     </div>
+    <p class="muted-label exam-note" style="text-align:center;margin:12px 0 0">This percentage is for this call only. It is not an NREMT result.</p>
     
     <div class="score-tier ${tierClass}">
       <div class="tier-name">${tierName}</div>
