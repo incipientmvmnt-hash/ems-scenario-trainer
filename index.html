@@ -31653,10 +31653,10 @@ function renderHome() {
       <button class="btn btn-random ${getTrainMode() === 'random' ? 'active' : ''}" onclick="startRandom()" ${avail.length === 0 ? 'disabled' : ''}>Random</button>
       <button class="btn btn-random ${getTrainMode() === 'focused' ? 'active' : ''}" onclick="startFocused()" ${scenariosFor({ useDomains: false, useDifficulty: false }).length === 0 ? 'disabled' : ''}>Focused</button>
     </div>
-    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? (_usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the domain you miss.') : 'Random uses your level, domain, and difficulty filters.'}</p>
+    <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? (_usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the subject you miss.') : 'Random uses your level, subject, and difficulty filters.'}</p>
 
     <div class="home-section" style="margin-top:24px">
-      <div class="category-header">Domain <span style="font-weight:400;font-size:.85em">(optional)</span></div>
+      <div class="category-header">Subject <span style="font-weight:400;font-size:.85em">(optional)</span></div>
       <p class="muted-label exam-note">These chips are subject practice, not the exam outline.</p>
       <p class="muted-label exam-note">EMR and EMT: scene size-up and safety, primary assessment, secondary assessment, treatment and transport, and operations. Primary assessment is the largest part.</p>
       <p class="muted-label exam-note">AEMT and Paramedic: clinical judgment is the largest part. The exam also covers medical and obstetrics, cardiology, airway, trauma, and operations.</p>
