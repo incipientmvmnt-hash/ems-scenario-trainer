@@ -782,6 +782,18 @@ function _answerWhen(iso) {
   return d.toLocaleString(undefined, opts);
 }
 
+function _answerExamArea(a) {
+  if (!a || typeof SCENARIOS === 'undefined') return '';
+  var idx = Number(a.question_index);
+  if (!isFinite(idx) || idx < 0) return '';
+  for (var i = 0; i < SCENARIOS.length; i++) {
+    if (SCENARIOS[i].id !== a.scenario_id) continue;
+    var q = (SCENARIOS[i].questions || [])[idx];
+    return (q && q.exam_area) || '';
+  }
+  return '';
+}
+
 function _paintDashboard(answers) {
   var app = document.getElementById('app');
   if (!answers.length) {
@@ -824,6 +836,49 @@ function _paintDashboard(answers) {
   html += '</div>';
   html += '<p class="muted-label exam-note" style="text-align:center;margin:0 0 8px">This is your saved practice. It is not an NREMT result.</p>';
 
+  var showExamAreas = !state.selectedLevel || state.selectedLevel === 'EMR' || state.selectedLevel === 'EMT';
+  var areaOrder = ['scene', 'primary', 'secondary', 'treatment', 'operations'];
+  var areas = {};
+  var weakestArea = null, weakestAreaPct = 101, weakestAreaN = 0;
+  if (showExamAreas) {
+    answers.forEach(function(a) {
+      var area = _answerExamArea(a);
+      if (areaOrder.indexOf(area) < 0) return;
+      if (!areas[area]) areas[area] = { total: 0, correct: 0 };
+      areas[area].total++;
+      if (a.is_correct) areas[area].correct++;
+    });
+    areaOrder.forEach(function(area) {
+      if (!areas[area] || areas[area].total < 2) return;
+      var p = Math.round(areas[area].correct / areas[area].total * 100);
+      if (p < weakestAreaPct || (p === weakestAreaPct && areas[area].total > weakestAreaN)) {
+        weakestAreaPct = p;
+        weakestArea = area;
+        weakestAreaN = areas[area].total;
+      }
+    });
+  }
+  var anyArea = false;
+  areaOrder.forEach(function(area) { if (areas[area]) anyArea = true; });
+  if (showExamAreas && anyArea) {
+    html += '<div class="home-section" style="margin-top:20px">';
+    html += '<div class="category-header">Practice by exam area</div>';
+    areaOrder.forEach(function(area) {
+      if (!areas[area]) return;
+      var p = Math.round(areas[area].correct / areas[area].total * 100);
+      var color = p >= 80 ? '#34c759' : p >= 60 ? '#f0ad4e' : '#ff4422';
+      html += '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:4px"><span>' + _esc(examAreaLabel(area)) + '</span><span style="color:' + color + '">' + p + '% (' + areas[area].correct + '/' + areas[area].total + ')</span></div>';
+      html += '<div style="height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden"><div style="height:100%;width:' + p + '%;background:' + color + ';border-radius:3px"></div></div></div>';
+    });
+    html += '</div>';
+    if (weakestArea) {
+      html += '<div style="background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.2);border-radius:12px;padding:16px;margin:16px 0;text-align:center">';
+      html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest exam area: ' + _esc(examAreaLabel(weakestArea)) + ' (' + weakestAreaPct + '%)</div>';
+      html += '<button class="btn btn-primary" onclick="startExamDrill(\'' + weakestArea + '\')" style="font-size:.85em;padding:8px 16px">Practice this area</button>';
+      html += '</div>';
+    }
+  }
+
   html += '<div class="home-section" style="margin-top:20px">';
   html += '<div class="category-header">Practice by subject</div>';
   catNames.forEach(function(c) {
@@ -848,6 +903,10 @@ function _paintDashboard(answers) {
     var time = a.time_taken_ms ? Math.round(a.time_taken_ms/1000) + 's' : '';
     var when = _answerWhen(a.created_at);
     var detail = _esc(a.category || '?') + ' \u2014 ' + _esc(a.question_type || '?');
+    if (showExamAreas) {
+      var areaName = examAreaLabel(_answerExamArea(a));
+      if (areaName && areaName !== 'Exam') detail = _esc(areaName) + ' \u00b7 ' + detail;
+    }
     if (time) detail += ' \u00b7 ' + time;
     html += '<div class="answer-row" style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em">';
     html += '<div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">';
