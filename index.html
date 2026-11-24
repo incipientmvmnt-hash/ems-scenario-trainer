@@ -2442,13 +2442,13 @@ const SCENARIOS = [
                                 "multi_select": true,
                                 "narrative": "You have established a saline lock on the left (non-affected) arm. The patient's BP has remained elevated at 182/98. Your partner asks whether you should treat the hypertension.",
                                 "vitals_update": {},
-                                "clinical_pearl": "In acute ischemic stroke, hypertension is often a compensatory response to maintain cerebral perfusion through occluded or narrowed vessels (the ischemic penumbra). Aggressively lowering BP can extend the infarct by reducing perfusion to at-risk brain tissue. The threshold for prehospital treatment is generally >220/120 mmHg.",
+                                "clinical_pearl": "In acute ischemic stroke, hypertension is often a compensatory response to maintain cerebral perfusion through occluded or narrowed vessels (the ischemic penumbra). Aggressively lowering BP can extend the infarct by reducing perfusion to at-risk brain tissue. Do not lower the blood pressure on this call.",
                                 "options": [
                                         {
                                                 "text": "Do NOT treat this blood pressure",
                                                 "correct": true,
                                                 "critical": false,
-                                                "explanation": "AHA/ASA guidelines recommend NOT lowering BP unless it exceeds 220/120 mmHg in patients who are not candidates for thrombolytics, or >185/110 in those who may receive tPA. At 182/98, this patient's BP should not be treated prehospitally.",
+                                                "explanation": "At 182/98, do not lower this blood pressure in the field. Prehospital blood-pressure reduction has not improved outcome and can extend the infarct. The numbers 185/110 and 220/120 are hospital decisions. They are not an order for the ambulance to start a pressure medication.",
                                                 "guideline_ref": "AHA/ASA 2019 Guidelines for Early Management of Acute Ischemic Stroke"
                                         },
                                         {
@@ -2462,7 +2462,7 @@ const SCENARIOS = [
                                                 "text": "Administer labetalol 10 mg IV push to bring the blood pressure below 140/90 mmHg and reduce the risk of hemorrhagic conversion during transport",
                                                 "correct": false,
                                                 "critical": true,
-                                                "explanation": "Aggressively lowering BP to 140/90 in acute ischemic stroke can extend the infarct by reducing perfusion to the ischemic penumbra. Prehospital BP reduction is only considered for extreme hypertension (>220/120) and should target modest reductions, not normotension.",
+                                                "explanation": "Lowering this pressure to 140/90 with labetalol can extend the infarct by reducing perfusion to the ischemic penumbra. Do not give a blood-pressure drug on this call.",
                                                 "guideline_ref": "AHA/ASA 2019 Guidelines — Blood Pressure Management in Acute Stroke"
                                         },
                                         {
@@ -12000,8 +12000,8 @@ const SCENARIOS = [
                                         4
                                 ],
                                 "explanation": "This list is when each action starts, not a claim that nothing else happens between the steps. Shock the VF, then run a 2-minute CPR cycle and recheck the rhythm. Epinephrine follows the second shock. IV/IO access starts during CPR so the drug is ready. Rhythm checks sit between the shock and the drug. Advanced airway placement must not interrupt compressions.",
-                                "guideline_ref": "AHA ACLS Guidelines – Ventricular Fibrillation/Pulseless VT Algorithm (2020)",
-                                "clinical_pearl": "Lightning strike cardiac arrest has a much higher survival rate than other causes of cardiac arrest — up to 70-90% with prompt intervention. Never withhold resuscitation based on initial appearance. After the first shock, finish a 2-minute CPR cycle and recheck the rhythm before the first epinephrine."
+                                "guideline_ref": "AHA 2025 adult cardiac arrest algorithm — ventricular fibrillation and pulseless VT",
+                                "clinical_pearl": "Do not withhold resuscitation because of how a lightning victim looks at first. Shock the ventricular fibrillation and resume CPR. Give the first epinephrine, 1 mg IV/IO, after the second shock, while CPR continues, then every 3 to 5 minutes."
                         },
                         {
                                 "phase": "assessment",
