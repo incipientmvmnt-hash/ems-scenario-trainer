@@ -430,10 +430,9 @@ function _renderAuth() {
     if (!bar) return;
     if (_auth.user) {
       var name = (_auth.profile && _auth.profile.display_name) || _auth.user.email.split('@')[0];
-      var pro = _auth.isPro ? ' <span style="background:linear-gradient(135deg,#ff4422,#ff8800);color:#fff;font-size:.6em;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:4px">PRO</span>' : '';
       var localTag = _localMode ? ' <span style="border:1px solid rgba(240,173,78,.45);color:#f0ad4e;font-size:.6em;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:4px">LOCAL</span>' : '';
       var dashBtn = _auth.isPro ? ' <button onclick="showDashboard()" style="background:none;border:1px solid rgba(255,68,34,.3);color:#ff4422;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">📊 Dashboard</button>' : '';
-      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + _esc(name) + pro + localTag + '</span>' + dashBtn + ' <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
+      bar.innerHTML = '<span style="font-size:.75em;color:#9aa0b0;font-family:monospace">' + _esc(name) + localTag + '</span>' + dashBtn + ' <button onclick="signOut()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign Out</button>';
     } else {
       bar.innerHTML = '<button onclick="showAuthModal()" style="background:none;border:1px solid rgba(0,240,255,.3);color:#00f0ff;font-size:.75em;padding:4px 12px;border-radius:6px;cursor:pointer">Sign In</button>';
     }
