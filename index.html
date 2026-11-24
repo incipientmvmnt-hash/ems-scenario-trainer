@@ -31798,7 +31798,7 @@ function renderSelect() {
             <div class="title">${s.title}</div>
             <div class="tags">
               <span class="tag ${diffTag}">${s.difficulty}</span>
-              ${s.domains ? s.domains.map(d => `<span class="tag tag-proto">${d}</span>`).join('') : ''}
+              ${s.category ? `<span class="tag tag-proto">${_esc(s.category)}</span>` : ''}
             </div>
           </div>
           <div style="color:#9aa0b0;font-size:1.2em">›</div>
