@@ -31985,6 +31985,7 @@ function renderHome() {
       <button class="btn btn-random ${getTrainMode() === 'focused' ? 'active' : ''}" onclick="startFocused()" ${scenariosFor({ useDomains: false, useDifficulty: false }).length === 0 ? 'disabled' : ''}>Focused</button>
     </div>
     <p class="muted-label" style="text-align:center;margin-top:8px;font-size:.75em">${getTrainMode() === 'focused' ? (_usesCloudFocus() ? 'Focused follows misses saved on this account.' : 'Focused follows the subject you miss.') : 'Random uses your level, subject, and difficulty filters.'}</p>
+    <button class="btn btn-secondary" onclick="state.screen='select';render()">Choose a Scenario</button>
 
     <div class="home-section" style="margin-top:24px">
       <div class="category-header">Subject <span style="font-weight:400;font-size:.85em">(optional)</span></div>
