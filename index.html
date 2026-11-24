@@ -217,6 +217,7 @@ body.light-mode .theme-toggle{background:rgba(255,255,255,.8);border-color:rgba(
 .diff-chip.selected{background:rgba(0,240,255,.12);border-color:rgba(0,240,255,.35);color:#00f0ff;box-shadow:0 0 10px rgba(0,240,255,.15)}
 
 .muted-label{color:#9aa0b0}
+.exam-note{font-size:.8em;line-height:1.45;margin:0 0 8px;text-align:left}
 .hero-title{font-size:2em;margin:0 0 6px;color:#00f0ff;text-shadow:0 0 10px rgba(0,240,255,.6),0 0 30px rgba(0,240,255,.3),0 0 60px rgba(0,240,255,.15);animation:glitch 4s ease-in-out infinite;letter-spacing:2px;font-weight:800}
 .hero-sub{color:#9aa0b0;font-size:.9em;margin:0;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;letter-spacing:.5px}
 .stat-divider{width:1px;background:rgba(0,240,255,.15)}
@@ -31655,6 +31656,9 @@ function renderHome() {
 
     <div class="home-section" style="margin-top:24px">
       <div class="category-header">Domain <span style="font-weight:400;font-size:.85em">(optional)</span></div>
+      <p class="muted-label exam-note">These chips are subject practice, not the exam outline.</p>
+      <p class="muted-label exam-note">EMR and EMT: scene size-up and safety, primary assessment, secondary assessment, treatment and transport, and operations. Primary assessment is the largest part.</p>
+      <p class="muted-label exam-note">AEMT and Paramedic: clinical judgment is the largest part. The exam also covers medical and obstetrics, cardiology, airway, trauma, and operations.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
         ${DOMAINS.map(d => `<span class="domain-chip ${state.selectedDomains.has(d)?'selected':''}" onclick="toggleDomain('${d}')">${d}</span>`).join('')}
       </div>
