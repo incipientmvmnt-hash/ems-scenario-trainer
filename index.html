@@ -819,9 +819,10 @@ function _paintDashboard(answers) {
   html += '<div style="text-align:center"><div class="score-circle ' + scoreClass + '" style="width:80px;height:80px;font-size:1.2em">' + pct + '<span class="pct">%</span></div><div class="muted-label" style="font-size:.7em;margin-top:4px">Accuracy</div></div>';
   html += '<div style="text-align:center"><div class="stat-num" style="font-size:1.4em">' + avgTime + 's</div><div class="muted-label" style="font-size:.7em">Avg Time</div></div>';
   html += '</div>';
+  html += '<p class="muted-label exam-note" style="text-align:center;margin:0 0 8px">This is your saved practice. It is not an NREMT result.</p>';
 
   html += '<div class="home-section" style="margin-top:20px">';
-  html += '<div class="category-header">Performance by Domain</div>';
+  html += '<div class="category-header">Practice by subject</div>';
   catNames.forEach(function(c) {
     var p = Math.round(cats[c].correct/cats[c].total*100);
     var color = p >= 80 ? '#34c759' : p >= 60 ? '#f0ad4e' : '#ff4422';
@@ -832,7 +833,7 @@ function _paintDashboard(answers) {
 
   if (weakest) {
     html += '<div style="background:rgba(255,68,34,.08);border:1px solid rgba(255,68,34,.2);border-radius:12px;padding:16px;margin:16px 0;text-align:center">';
-    html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest Domain: ' + _esc(weakest) + ' (' + weakestPct + '%)</div>';
+    html += '<div style="font-size:.85em;color:#ff4422;font-weight:600;margin-bottom:8px">\u26A0\uFE0F Weakest subject: ' + _esc(weakest) + ' (' + weakestPct + '%)</div>';
     html += '<button class="btn btn-primary" data-domain="' + _esc(weakest) + '" onclick="trainDomain(this.getAttribute(\'data-domain\'))" style="font-size:.85em;padding:8px 16px">Train This Domain</button>';
     html += '</div>';
   }
