@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ems-national-v28';
+const CACHE_NAME = 'ems-national-v29';
 const ASSETS = ['./index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -12,5 +12,8 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  // A plain fetch() keeps GitHub Pages' 10-minute HTML cache, so a desktop
+  // that opened the site just before a deploy can keep the old page.
+  const req = e.request.mode === 'navigate' ? fetch(e.request, { cache: 'no-cache' }) : fetch(e.request);
+  e.respondWith(req.catch(() => caches.match(e.request.mode === 'navigate' ? './index.html' : e.request)));
 });
