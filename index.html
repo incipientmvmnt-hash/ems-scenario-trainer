@@ -11656,18 +11656,16 @@ const SCENARIOS = [
                                 "level_filter": "Paramedic",
                                 "items": [
                                         "Confirm rhythm on the monitor and assess patient responsiveness",
-                                        "Administer amiodarone 150mg IV over 10 minutes",
-                                        "Prepare for synchronized cardioversion if pharmacologic therapy fails",
+                                        "Sedate if the patient is awake, then perform synchronized cardioversion",
                                         "Contact medical control and the receiving facility to update on status change"
                                 ],
                                 "correctOrder": [
                                         0,
                                         1,
-                                        2,
-                                        3
+                                        2
                                 ],
-                                "explanation": "Symptomatic VT with a pulse and borderline hemodynamics (BP 88/54) warrants urgent pharmacologic intervention (amiodarone) in a patient who still has a pulse and is not in extremis. If hemodynamics worsen or medication fails, synchronized cardioversion is indicated. Continuous communication with medical control is essential during IFT.",
-                                "guideline_ref": "AHA ACLS Guidelines — Stable Wide-Complex Tachycardia Algorithm; NAEMSP Critical Care Transport Position Statement",
+                                "explanation": "Ventricular tachycardia with a pulse and a pressure of 88/54 is unstable. Confirm the rhythm and that a pulse is still present. Sedate if the patient is awake, then perform synchronized cardioversion. Update medical control and the receiving facility. A 10-minute amiodarone infusion is not the first treatment.",
+                                "guideline_ref": "AHA ACLS — Unstable tachycardia with a pulse: synchronized cardioversion",
                                 "clinical_pearl": "Morphine allergy is documented — remember this if considering pain management. Fentanyl is a safe alternative. Allergy review before departure prevents mid-transport surprises."
                         },
                         {
@@ -12686,7 +12684,7 @@ const SCENARIOS = [
                         },
                         {
                                 "phase": "treatment",
-                                "prompt": "You successfully reinsert a backup trach tube. Which of the following confirms correct placement and ensures ongoing patency?",
+                                "prompt": "You successfully reinsert a backup trach tube. You see (A) a capnography waveform on the monitor, (B) condensation in the trach tube during exhalation, (C) bilateral chest rise with ventilation, and (D) subcutaneous crepitus around the stoma. Which findings confirm correct placement?",
                                 "type": "mc",
                                 "level_filter": "AEMT-Paramedic",
                                 "image_desc": "Diagram showing a cross-section of the neck with a tracheostomy tube in place. Labels point to: (A) Capnography waveform on monitor, (B) Condensation in the trach tube during exhalation, (C) Bilateral chest rise with ventilation, (D) Subcutaneous crepitus around the stoma site.",
@@ -12694,7 +12692,7 @@ const SCENARIOS = [
                                         {
                                                 "text": "A, B, and C all confirm correct placement",
                                                 "correct": true,
-                                                "explanation": "This is correct. Capnography (ETCO2 waveform), chest rise with ventilation, and bilateral lung sounds on auscultation together provide comprehensive confirmation that the trach tube is in the tracheal lumen and ventilation is reaching both lungs. Multiple confirmation methods reduce the risk of unrecognized misplacement."
+                                                "explanation": "Capnography, condensation in the tube, and bilateral chest rise together confirm the tube is in the trachea and ventilation is reaching both lungs. Crepitus around the stoma does not."
                                         },
                                         {
                                                 "text": "D confirms correct placement",
@@ -12704,7 +12702,7 @@ const SCENARIOS = [
                                         {
                                                 "text": "Only A (capnography) is reliable; B and C can be misleading",
                                                 "correct": false,
-                                                "explanation": "This is incorrect. While capnography is the gold standard, chest rise and bilateral lung sounds provide valuable corroborating evidence. In combination, these three findings offer high confidence in correct placement. Dismissing physical exam findings reduces your ability to detect problems like mainstem intubation that capnography alone may not catch."
+                                                "explanation": "Capnography is the strongest single check. Condensation in the tube and bilateral chest rise still support correct placement. Use them with the waveform."
                                         },
                                         {
                                                 "text": "Correct placement cannot be confirmed in the field",
@@ -13182,7 +13180,7 @@ const SCENARIOS = [
                                 "prompt": "Which of the following are important considerations before attempting pharmacological or electrical cardioversion of atrial fibrillation? Select all that apply.",
                                 "type": "mr",
                                 "level_filter": "AEMT-Paramedic",
-                                "selectCount": 2,
+                                "selectCount": 1,
                                 "options": [
                                         {
                                                 "text": "Duration of AFib episode",
@@ -13191,8 +13189,8 @@ const SCENARIOS = [
                                         },
                                         {
                                                 "text": "Rapidly normalize blood pressure to 120/80 mmHg within 30 minutes using aggressive IV antihypertensive boluses",
-                                                "correct": true,
-                                                "explanation": "Verifying anticoagulation status is critical — patients on therapeutic anticoagulation have lower stroke risk with cardioversion. Uncoagulated patients with AFib >48 hours require TEE to rule out atrial thrombus before cardioversion can be safely performed."
+                                                "correct": false,
+                                                "explanation": "Forcing the pressure to 120/80 with antihypertensive boluses is not a step before cardioversion. A rapid drop can reduce perfusion. The duration of the atrial fibrillation is the consideration that changes the stroke risk of conversion."
                                         },
                                         {
                                                 "text": "The patient must be intubated before any cardioversion attempt",
@@ -13205,7 +13203,7 @@ const SCENARIOS = [
                                                 "explanation": "Age alone is not a contraindication to cardioversion. Elderly patients may benefit from rhythm control, and the decision is based on hemodynamic stability, duration of AFib, and anticoagulation status — not arbitrary age cutoffs."
                                         }
                                 ],
-                                "explanation": "AFib lasting >48 hours (or unknown duration) carries a risk of atrial thrombus formation. Cardioversion can dislodge thrombus causing stroke. Anticoagulation status (this patient takes apixaban) and episode duration are critical factors.",
+                                "explanation": "Atrial fibrillation longer than 48 hours, or of unknown duration, can hold a clot in the left atrium. Cardioversion can send that clot. Duration is the consideration before conversion. Driving the pressure to 120/80 with antihypertensive boluses is not required and can drop perfusion.",
                                 "guideline_ref": "AHA/ACC/HRS 2023 AFib Guideline; AHA ACLS Provider Manual",
                                 "clinical_pearl": "This patient's apixaban use is important context — if he's been compliant, he may already be therapeutically anticoagulated. Always relay medication information to the receiving facility for cardioversion decisions."
                         }
@@ -22104,7 +22102,7 @@ const SCENARIOS = [
 						"items": [
 								"Nitroglycerin 0.4 mg sublingual",
 								"Normal saline 1-liter IV bolus",
-								"Furosemide 40 mg IV (per medical direction)",
+								"Furosemide 40 mg IV",
 								"Albuterol 2.5 mg nebulized as sole treatment",
 								"CPAP at 5-10 cmH2O"
 						],
@@ -22115,11 +22113,11 @@ const SCENARIOS = [
 						"correctCategories": [
 								0,
 								1,
-								0,
+								1,
 								1,
 								0
 						],
-						"explanation": "Nitroglycerin reduces preload and afterload, directly addressing the hemodynamic problem. CPAP provides critical respiratory support and reduces preload. IV furosemide promotes diuresis (per medical direction). A normal saline bolus adds volume to an already fluid-overloaded patient, worsening pulmonary edema. Albuterol alone treats bronchospasm, not the underlying fluid problem—while cardiac asthma wheezing may occur, relying solely on albuterol misses the root cause.",
+						"explanation": "Nitroglycerin reduces preload and afterload. CPAP supports breathing and reduces preload. A liter saline bolus adds volume to a fluid-overloaded patient. Albuterol as the only treatment misses the fluid problem. Furosemide does not replace CPAP and nitroglycerin, and a diuretic can worsen hypotension.",
 						"guideline_ref": "National EMS Education Standards — Cardiovascular Emergencies; AHA Heart Failure Guidelines",
 						"clinical_pearl": "Distinguishing cardiac asthma (wheezing from pulmonary edema) from true bronchospasm is critical. Key differentiators: cardiac asthma typically presents with crackles, orthopnea, peripheral edema, and frothy sputum—not seen in primary asthma/COPD."
 				}
@@ -23940,22 +23938,20 @@ const SCENARIOS = [
 						"phase": "treatment",
 						"prompt": "As a Paramedic, you apply a pelvic binder and prepare for transport. Arrange the following resuscitation steps in the correct priority order.",
 						"type": "order",
-						"level_filter": "AEMT-Paramedic",
+						"level_filter": "Paramedic",
 						"items": [
 								"Administer tranexamic acid (TXA) 1 g IV over 10 minutes",
 								"Establish two large-bore IV lines and initiate crystalloid resuscitation targeting SBP 80-90 mmHg",
 								"Administer high-flow oxygen via non-rebreather mask",
-								"Contact the receiving trauma center with early activation notification",
-								"Consider push-dose vasopressors if hypotension persists despite fluid resuscitation"
+								"Contact the receiving trauma center with early activation notification"
 						],
 						"correctOrder": [
 								2,
 								1,
 								0,
-								3,
-								4
+								3
 						],
-						"explanation": "Begin with high-flow oxygen to maximize available hemoglobin saturation. Establish IV access and begin permissive hypotension resuscitation (target SBP 80-90 in penetrating/hemorrhagic trauma). TXA should be administered within 3 hours of injury to inhibit fibrinolysis and reduce hemorrhage-related mortality. Notify the trauma center early for resource mobilization. Push-dose vasopressors are a last resort when fluids are insufficient.",
+						"explanation": "Begin with high-flow oxygen. Establish large-bore IV access and resuscitate with crystalloid toward a systolic pressure of 80-90 mmHg. Give TXA 1 g IV over 10 minutes when it is within protocol and within 3 hours of injury. Notify the trauma center early. Do not chase the pressure with a push-dose vasopressor while the pelvis is still bleeding.",
 						"guideline_ref": "PHTLS 9th Ed — Hemorrhagic Shock Resuscitation; CRASH-2 Trial; National EMS Education Standards — Shock Management",
 						"clinical_pearl": "Permissive hypotension (SBP 80-90 mmHg) in hemorrhagic shock avoids disrupting early clot formation. However, this strategy is contraindicated in traumatic brain injury — in combined TBI + hemorrhagic shock, target SBP ≥ 90 mmHg to maintain cerebral perfusion."
 				},
@@ -31261,7 +31257,7 @@ const SCENARIOS = [
 						"prompt": "During transport, the patient becomes unresponsive and the monitor shows a wide-complex tachycardia at 180 bpm with no palpable pulse. Select ALL appropriate immediate interventions.",
 						"type": "mr",
 						"level_filter": "Paramedic",
-						"selectCount": 3,
+						"selectCount": 2,
 						"narrative": "The patient suddenly becomes unresponsive. The cardiac monitor shows a wide-complex tachycardia at a rate of 180 bpm. No pulse is palpable. This is pulseless ventricular tachycardia.",
 						"vitals_update": {
 								"hr": 180,
@@ -31287,9 +31283,9 @@ const SCENARIOS = [
 								},
 								{
 										"text": "Administer amiodarone 300 mg IV bolus after the first unsuccessful defibrillation attempt and a 2-minute CPR cycle",
-										"correct": true,
+										"correct": false,
 										"critical": false,
-										"explanation": "Per ACLS guidelines, amiodarone 300 mg IV/IO is administered for refractory VF/pVT after the third shock. However, given this patient's known cardiac history, compromised myocardium, and ongoing STEMI, early antiarrhythmic administration is appropriate as the rhythm is likely to be refractory.",
+										"explanation": "Amiodarone 300 mg IV/IO is for refractory VF or pulseless VT after the third shock, not after the first failed shock. The immediate actions are defibrillation and CPR.",
 										"guideline_ref": "AHA ACLS 2020 — VF/Pulseless VT Algorithm"
 								},
 								{
